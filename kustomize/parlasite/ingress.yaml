@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parlasite-x
+  name: parlasite
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
@@ -10,7 +10,7 @@ spec:
     - hosts:
         - parlametar.hr
         - www.parlametar.hr
-      secretName: parlasite-x-tls
+      secretName: parlasite-tls
   rules:
     - host: parlametar.hr
       http:
@@ -19,7 +19,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: parlasite-x
+                name: parlasite
                 port:
                   number: 3066
     - host: www.parlametar.hr
@@ -29,6 +29,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: parlasite-x
+                name: parlasite
                 port:
                   number: 3066
