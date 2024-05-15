@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parlasite-xi
+  labels:
+    app: parlasite-xi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parlasite-xi
+  template:
+    metadata:
+      labels:
+        app: parlasite-xi
+    spec:
+      containers:
+        - name: parlasite-xi
+          image: parlasite-hrvaska
+          ports:
+            - containerPort: 3066
+          resources:
+            requests:
+              memory: 400Mi
+              cpu: 100m
+            limits:
+              memory: 400Mi
+              cpu: 100m
+          env:
+            - name: PARLASITE_LEADER_ID
+              value: "0"
+            - name: PARLASITE_ROOT_ORG_ID
+              value: "1127"
+            - name: PARLASITE_MANDATE_ID
+              value: "14"
+            - name: PARLASITE_DEFAULT_CARD_DATE
+              value: ""
+            - name: PARLASITE_NEWSLETTER_SEGMENT_ID
+              value: "2"
