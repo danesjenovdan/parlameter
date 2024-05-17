@@ -39,3 +39,5 @@ spec:
               value: https://meta-image-generator.lb.djnd.si/parlameter
             - name: VITE_PARLASITE_URL_BEFORE_2020-07-21
               value: https://9.parlametar.hr
+            - name: VITE_PARLASITE_URL_BEFORE_2024-03-24
+              value: https://10.parlametar.hr

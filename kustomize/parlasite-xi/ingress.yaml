@@ -8,10 +8,21 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - 11.parlametar.hr
+        - parlametar.hr
+        - www.parlametar.hr
       secretName: parlasite-xi-tls
   rules:
-    - host: 11.parlametar.hr
+    - host: parlametar.hr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlasite-xi
+                port:
+                  number: 3066
+    - host: www.parlametar.hr
       http:
         paths:
           - path: /
