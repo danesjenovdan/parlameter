@@ -242,7 +242,10 @@ export default {
       url.searchParams.set('legislation:page', this.page);
       url.searchParams.set('text', this.textFilter);
 
-      if (this.currentOrganizationTab !== 'all') {
+      if (
+        this.currentOrganizationTab &&
+        this.currentOrganizationTab !== 'all'
+      ) {
         url.searchParams.set('organization', this.currentOrganizationTab);
       }
 
