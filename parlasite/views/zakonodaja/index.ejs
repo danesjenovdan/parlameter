@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/legislation/', mandateId, { "showExportButton": true }) %>
+<%- await fetchCard('/misc/legislation/', mandateId, { generator: true, organizationTabs: "33;Predstavnički dom|34;Dom naroda", filterByStatus: true, "showExportButton": true }) %>
 
 <%- await include('../_partials/footer.ejs') %>
