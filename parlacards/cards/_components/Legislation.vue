@@ -1,5 +1,18 @@
 <template>
   <card-wrapper ref="card" :header-config="headerConfig" max-height>
+    <template #generator>
+      <div v-if="organizationTabs?.length" class="party-list-generator">
+        <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              v-model="currentOrganizationTab"
+              :items="organizationTabs"
+              @update:model-value="searchLegislationImmediate"
+            />
+          </div>
+        </div>
+      </div>
+    </template>
     <div class="legislation-list-container">
       <div class="filters">
         <div class="filter text-filter">
@@ -80,17 +93,21 @@ import {
   legislationListContextUrl,
   sessionLegislationContextUrl,
 } from '@/_mixins/contextUrls.js';
+import BlueButtonList from '@/_components/BlueButtonList.vue';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import SortableTable from '@/_components/SortableTable.vue';
 import Pagination from '@/_components/Pagination.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import { LEGISLATION_PER_PAGE } from '@/_helpers/constants.js';
-import legislationStatus from '@/_helpers/legislationStatus.js';
+import legislationStatus, {
+  sortLegislationStatuses,
+} from '@/_helpers/legislationStatus.js';
 
 export default {
   name: 'Legislation',
   components: {
+    BlueButtonList,
     SearchField,
     StripedButton,
     SortableTable,
@@ -132,20 +149,56 @@ export default {
 
     // create filterOptions from classifications contained in the API response
     const classifications = cardData?.data?.results?.classifications || [];
-    const filterOptions = classifications
+    const filterOptionsClassification = classifications
       .slice()
       .sort()
       .reverse()
       .map((classification) => ({
         id: classification,
-        color: 'for', // TODO this color should be properly named
+        color: 'for',
         label: this.$t(`legislation-classifications.${classification}`),
         selected: cardState?.filter === classification,
       }));
 
+    const statuses = cardData?.data?.results?.statuses || [];
+    const filterOptionsStatus = statuses
+      .slice()
+      .sort(sortLegislationStatuses)
+      .map((status) => ({
+        id: status,
+        color: status,
+        label: this.$t(legislationStatus(status).translationKey),
+        selected: cardState?.filter === status,
+      }));
+
+    const filterByStatus =
+      cardState?.filterByStatus && cardState?.filterByStatus !== 'false';
+
+    const filterOptions = filterByStatus
+      ? filterOptionsStatus
+      : filterOptionsClassification;
+
+    const orgs = (cardState?.organizationTabs || '').split('|').map((org) => {
+      const [id, name] = org.split(';');
+      return { id, name };
+    });
+
+    let organizationTabs = [];
+    if (orgs.length) {
+      organizationTabs = orgs.map((org) => ({
+        id: org.id,
+        label: org.name,
+      }));
+      organizationTabs.unshift({
+        id: 'all',
+        label: this.$t('everybody'),
+      });
+    }
+
     return {
       legislation: cardData?.data?.results || [],
       filterOptions,
+      filterByStatus,
       currentFilter: cardState?.filter,
       currentSort: 'timestamp',
       currentSortOrder: 'desc',
@@ -154,6 +207,8 @@ export default {
       // onlyWithVotes: !!state.onlyWithVotes,
       showEpaColumn:
         cardState?.showEpaColumn && cardState?.showEpaColumn !== 'false',
+      organizationTabs,
+      currentOrganizationTab: organizationTabs?.[0]?.id || null,
 
       // pagination
       pages,
@@ -184,10 +239,15 @@ export default {
       url.searchParams.set('legislation:page', this.page);
       url.searchParams.set('text', this.textFilter);
 
-      // TODO the following line is a little bit smelly
-      // classifications is an array
-      if (this.selectedFilterOption) {
+      if (this.currentOrganizationTab !== 'all') {
+        url.searchParams.set('organization', this.currentOrganizationTab);
+      }
+
+      if (this.selectedFilterOption && !this.filterByStatus) {
         url.searchParams.set('classification', this.selectedFilterOption.id);
+      }
+      if (this.selectedFilterOption && this.filterByStatus) {
+        url.searchParams.set('status', this.selectedFilterOption.id);
       }
 
       // set sort param
@@ -406,7 +466,7 @@ export default {
       gap: 3px;
 
       .striped-button {
-        padding: 0 20px;
+        padding: 0 8px;
       }
     }
   }
