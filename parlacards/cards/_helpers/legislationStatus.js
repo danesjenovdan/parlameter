@@ -27,9 +27,20 @@ const LEGISLATION_STATUSES = {
     iconClass: 'vote-result--in_procedure',
     translationKey: 'vote-result--in_procedure',
   },
+  suspended: {
+    iconClass: 'vote-result--suspended',
+    translationKey: 'vote-result--suspended',
+  },
 };
 
 export default (status) => {
   const key = status || 'in_procedure';
   return LEGISLATION_STATUSES[key] || LEGISLATION_STATUSES.in_procedure;
+};
+
+export const sortLegislationStatuses = (a, b) => {
+  const statuses = Object.keys(LEGISLATION_STATUSES);
+  const aIndex = statuses.indexOf(a);
+  const bIndex = statuses.indexOf(b);
+  return aIndex - bIndex;
 };

@@ -127,6 +127,7 @@ vote-result--retracted: Retracted
 vote-result--adopted: Passed
 vote-result--received: Received
 vote-result--in_procedure: In procedure
+vote-result--suspended: Suspended
 average: Average
 maximum: Most
 coalition: coalition
