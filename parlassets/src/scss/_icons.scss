@@ -107,17 +107,7 @@
     background-image: url($cdn_home_icon + 'omrezja.svg');
 }
 
-$vote-results: (
-    'enacted': $icon-accepted,
-    'adopted': $icon-accepted,
-    'rejected': $icon-rejected,
-    'retracted': $icon-rejected,
-    'submitted': $icon-accepted,
-    'received': $icon-accepted,
-    'in_procedure': $font-default,
-);
-
-@each $result, $color in $vote-results {
+@each $result, $color in $vote-results-colors {
     .parlaicon.vote-result--#{$result} {
         background-image: url(encode-svg(str-replace(fs-readFile('icons/vote-result--#{$result}.svg'), '#000', '#{$color}')));
     }

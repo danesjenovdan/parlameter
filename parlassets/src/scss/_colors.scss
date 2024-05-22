@@ -147,3 +147,25 @@ $binary-vote-colors-hover: (
   'binary-for': rgba($icon-accepted, 0.7),
   'binary-against': rgba($icon-rejected, 0.7),
 );
+
+$vote-results-colors: (
+  'enacted': $icon-accepted,
+  'adopted': $icon-accepted,
+  'rejected': $icon-rejected,
+  'retracted': $icon-rejected,
+  'submitted': $icon-accepted,
+  'received': $icon-accepted,
+  'in_procedure': $font-default,
+  'suspended': $font-default,
+);
+
+$vote-results-colors-hover: (
+  'enacted': rgba($icon-accepted, 0.7),
+  'adopted': rgba($icon-accepted, 0.7),
+  'rejected': rgba($icon-rejected, 0.7),
+  'retracted': rgba($icon-rejected, 0.7),
+  'submitted': rgba($icon-accepted, 0.7),
+  'received': rgba($icon-accepted, 0.7),
+  'in_procedure': rgba($font-default, 0.7),
+  'suspended': rgba($font-default, 0.7),
+);
