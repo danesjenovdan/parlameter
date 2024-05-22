@@ -178,10 +178,13 @@ export default {
       ? filterOptionsStatus
       : filterOptionsClassification;
 
-    const orgs = (cardState?.organizationTabs || '').split('|').map((org) => {
-      const [id, name] = org.split(';');
-      return { id, name };
-    });
+    const orgs = (cardState?.organizationTabs || '')
+      .split('|')
+      .filter(Boolean)
+      .map((org) => {
+        const [id, name] = org.split(';');
+        return { id, name };
+      });
 
     let organizationTabs = [];
     if (orgs.length) {
