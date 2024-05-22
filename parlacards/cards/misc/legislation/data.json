@@ -1,138 +1,139 @@
 {
-  "id": 1,
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/misc/legislation/?id=1",
+  "id": 2,
+  "url": "https://parladata-bosna.lb.djnd.si/v3/cards/misc/legislation/?id=2",
   "data": {
     "results": {
       "legislation": [
         {
-          "id": 895,
-          "uid": "PZ8|C1257A70003EE6A1C125862C00537B8D",
-          "text": "Zakon o ratifikaciji Sporazuma med Vlado Republike Slovenije in Vlado Mongolije o mednarodnem cestnem prevozu potnikov in blaga",
-          "epa": "1506-VIII",
-          "status": "enacted",
-          "passed": true,
+          "id": 425,
+          "uid": null,
+          "text": "Razmatranje aktuelne političke situacije u institucijama Bosne i Hercegovine – ustavna zakonodavna uloga Parlamentarne skupštine BiH, u skladu s članom IV. 4. a) Ustava BiH",
+          "epa": "1-50-1-779/24",
+          "status": null,
+          "passed": null,
           "classification": "law",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": null
+          "timestamp": "2024-04-18T12:00:00"
         },
         {
-          "id": 479,
-          "uid": "PA|646A15E41827FD7FC12587B40022C72E",
-          "text": "Resolucija o nacionalnem programu za kulturo 2022–2029",
-          "epa": "2382-VIII",
+          "id": 413,
+          "uid": null,
+          "text": "Prijedlog zakona o dopunama Zakona o plaćama i drugim naknadama u sudskim i tužilačkim institucijama na nivou Bosne i Hercegovine",
+          "epa": "2-2-1-649/24",
           "status": null,
           "passed": null,
-          "classification": "act",
+          "classification": "law",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2021-12-22T00:00:00"
+          "timestamp": "2024-04-02T12:00:00"
         },
         {
-          "id": 911,
-          "uid": "PZ8|C1257A70003EE6A1C12587B30028C06F",
-          "text": "Zakon o elektronskih komunikacijah",
-          "epa": "2379-VIII",
+          "id": 399,
+          "uid": null,
+          "text": "Prijedlog zakona o sprečavanju sukoba interesa u institucijama na nivou Bosne i Hercegovine (P.Z.E.I.)",
+          "epa": "2-2-1-532/24",
+          "status": null,
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2024-03-08T14:00:00"
+        },
+        {
+          "id": 415,
+          "uid": null,
+          "text": "Prijedlog zakona o dopunama Zakona o odbrani Bosne i Hercegovine",
+          "epa": "1-2-1-2736/23",
+          "status": null,
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2024-02-28T12:00:00"
+        },
+        {
+          "id": 393,
+          "uid": null,
+          "text": "Prijedlog zakona o sprečavanju pranja novca i finansiranja terorističkih aktivnosti (P.Z.E.I) po hitnom postupku, u skladu s članom 124. Poslovnika Doma naroda",
+          "epa": "2-2-1-2665/23",
+          "status": "enacted",
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2024-02-16T10:30:00"
+        },
+        {
+          "id": 395,
+          "uid": null,
+          "text": "Zahtjev Vijeća ministara BiH za razmatranje Prijedloga zakona o izmjenama i dopuni Zakona o Visokom sudskom i tužilačkom vijeću BiH, po hitnom postupku, u skladu s članom 124. Poslovnika Doma naroda",
+          "epa": "2-2-1-141/24",
+          "status": "enacted",
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2024-01-31T11:00:00"
+        },
+        {
+          "id": 400,
+          "uid": null,
+          "text": "Zahtjev Vijeća ministara BiH za razmatranje Prijedloga zakona o izmjenama i dopunama Zakona o Agenciji za pružanje usluga u zračnoj plovidbi Bosne i Hercegovine po hitnom postupku, u skladu s članom 124. Poslovnika Doma naroda",
+          "epa": "2-2-1-167/24",
+          "status": "enacted",
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2024-01-31T11:00:00"
+        },
+        {
+          "id": 403,
+          "uid": null,
+          "text": "Zahtjev delegatkinje Marine Pendeš za razmatranje Prijedloga zakona o dopunama Zakona o odbrani Bosne i Hercegovine, po hitnom postupku, u skladu s članom 124. Poslovnika Doma naroda",
+          "epa": "2-2-1-2736/23",
+          "status": "enacted",
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2024-01-31T11:00:00"
+        },
+        {
+          "id": 404,
+          "uid": null,
+          "text": "Prijedlog zakona o izmjeni i dopunama Zakona o osnovama sigurnosti saobraćaja na putevima u Bosni i Hercegovini",
+          "epa": "2-2-1-2192/23",
           "status": "rejected",
-          "passed": false,
+          "passed": null,
           "classification": "law",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2021-12-22T00:00:00"
+          "timestamp": "2024-01-31T11:00:00"
         },
         {
-          "id": 913,
-          "uid": "PZ8|C1257A70003EE6A1C12587AA005549F2",
-          "text": "Zakon o začasnih ukrepih za preprečevanje energetske revščine",
-          "epa": "2350-VIII",
+          "id": 398,
+          "uid": null,
+          "text": "Prijedlog zakona o izmjenama i dopunama Zakona o državnoj službi u institucijama Bosne i Hercegovine",
+          "epa": "2-2-1-166/24",
           "status": null,
           "passed": null,
           "classification": "law",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2021-12-13T00:00:00"
-        },
-        {
-          "id": 452,
-          "uid": "PZ8|C1257A70003EE6A1C12587A30023BEFC",
-          "text": "Zakon o spremembah in dopolnitvi Zakona o financiranju občin",
-          "epa": "2333-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-12-03T00:00:00"
-        },
-        {
-          "id": 451,
-          "uid": "PZ8|C1257A70003EE6A1C12587990036E87B",
-          "text": "Zakon o spremembah in dopolnitvah Zakona o zdravniški službi",
-          "epa": "2311-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-26T00:00:00"
-        },
-        {
-          "id": 449,
-          "uid": "PZ8|C1257A70003EE6A1C1258792004575E9",
-          "text": "Zakon o spremembah Zakona o interventnih ukrepih za omilitev in odpravo posledic epidemije Covid-19",
-          "epa": "2295-VIII",
-          "status": null,
-          "passed": null,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-19T00:00:00"
-        },
-        {
-          "id": 450,
-          "uid": "PZ8|C1257A70003EE6A1C125879200626406",
-          "text": "Zakon o dodatnih ukrepih za preprečevanje širjenja, omilitev, obvladovanje, okrevanje in odpravo posledic COVID-19",
-          "epa": "2297-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-19T00:00:00"
-        },
-        {
-          "id": 878,
-          "uid": "PZ8|C1257A70003EE6A1C125879200304830",
-          "text": "Zakon o spremembah in dopolnitvah Zakona o posebnih pravicah italijanske in madžarske narodne skupnosti na področju vzgoje in izobraževanja",
-          "epa": "2290-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-19T00:00:00"
-        },
-        {
-          "id": 447,
-          "uid": "PZ8|C1257A70003EE6A1C125879100499642",
-          "text": "Zakon o spremembah in dopolnitvah Zakona o spodbujanju investicij",
-          "epa": "2284-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-18T00:00:00"
+          "timestamp": "2024-01-30T12:00:00"
         }
       ],
       "classifications": ["act", "law"]
     },
     "mandate": {
-      "description": "VIII",
-      "beginning": null
+      "id": 2,
+      "description": "9",
+      "beginning": "2022-12-01T00:00:00"
     },
-    "legislation:count": 454,
-    "legislation:pages": 46,
+    "legislation:count": 41,
+    "legislation:pages": 5,
     "legislation:page": 1,
     "legislation:per_page": 10
   }

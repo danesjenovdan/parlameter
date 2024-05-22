@@ -1,5 +1,18 @@
 <template>
   <card-wrapper ref="card" :header-config="headerConfig" max-height>
+    <template #generator>
+      <div v-if="organizationTabs?.length" class="party-list-generator">
+        <div class="row">
+          <div class="col-md-12">
+            <blue-button-list
+              v-model="currentOrganizationTab"
+              :items="organizationTabs"
+              @update:model-value="searchLegislationImmediate"
+            />
+          </div>
+        </div>
+      </div>
+    </template>
     <div class="legislation-list-container">
       <div class="filters">
         <div class="filter text-filter">
@@ -80,6 +93,7 @@ import {
   legislationListContextUrl,
   sessionLegislationContextUrl,
 } from '@/_mixins/contextUrls.js';
+import BlueButtonList from '@/_components/BlueButtonList.vue';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import SortableTable from '@/_components/SortableTable.vue';
@@ -91,6 +105,7 @@ import legislationStatus from '@/_helpers/legislationStatus.js';
 export default {
   name: 'Legislation',
   components: {
+    BlueButtonList,
     SearchField,
     StripedButton,
     SortableTable,
@@ -143,6 +158,23 @@ export default {
         selected: cardState?.filter === classification,
       }));
 
+    const orgs = (cardState?.organizationTabs || '').split('|').map((org) => {
+      const [id, name] = org.split(';');
+      return { id, name };
+    });
+
+    let organizationTabs = [];
+    if (orgs.length) {
+      organizationTabs = orgs.map((org) => ({
+        id: org.id,
+        label: org.name,
+      }));
+      organizationTabs.unshift({
+        id: 'all',
+        label: this.$t('everybody'),
+      });
+    }
+
     return {
       legislation: cardData?.data?.results || [],
       filterOptions,
@@ -154,6 +186,8 @@ export default {
       // onlyWithVotes: !!state.onlyWithVotes,
       showEpaColumn:
         cardState?.showEpaColumn && cardState?.showEpaColumn !== 'false',
+      organizationTabs,
+      currentOrganizationTab: organizationTabs?.[0]?.id || null,
 
       // pagination
       pages,
@@ -183,6 +217,10 @@ export default {
 
       url.searchParams.set('legislation:page', this.page);
       url.searchParams.set('text', this.textFilter);
+
+      if (this.currentOrganizationTab !== 'all') {
+        url.searchParams.set('organization', this.currentOrganizationTab);
+      }
 
       // TODO the following line is a little bit smelly
       // classifications is an array
