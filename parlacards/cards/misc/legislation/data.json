@@ -9,7 +9,7 @@
           "uid": null,
           "text": "Razmatranje aktuelne političke situacije u institucijama Bosne i Hercegovine – ustavna zakonodavna uloga Parlamentarne skupštine BiH, u skladu s članom IV. 4. a) Ustava BiH",
           "epa": "1-50-1-779/24",
-          "status": null,
+          "status": "suspended",
           "passed": null,
           "classification": "law",
           "has_votes": true,
@@ -125,7 +125,8 @@
           "timestamp": "2024-01-30T12:00:00"
         }
       ],
-      "classifications": ["act", "law"]
+      "classifications": ["act", "law"],
+      "statuses": ["enacted", "in_procedure", "rejected", "suspended"]
     },
     "mandate": {
       "id": 2,

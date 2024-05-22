@@ -100,7 +100,9 @@ import SortableTable from '@/_components/SortableTable.vue';
 import Pagination from '@/_components/Pagination.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import { LEGISLATION_PER_PAGE } from '@/_helpers/constants.js';
-import legislationStatus from '@/_helpers/legislationStatus.js';
+import legislationStatus, {
+  sortLegislationStatuses,
+} from '@/_helpers/legislationStatus.js';
 
 export default {
   name: 'Legislation',
@@ -147,16 +149,34 @@ export default {
 
     // create filterOptions from classifications contained in the API response
     const classifications = cardData?.data?.results?.classifications || [];
-    const filterOptions = classifications
+    const filterOptionsClassification = classifications
       .slice()
       .sort()
       .reverse()
       .map((classification) => ({
         id: classification,
-        color: 'for', // TODO this color should be properly named
+        color: 'for',
         label: this.$t(`legislation-classifications.${classification}`),
         selected: cardState?.filter === classification,
       }));
+
+    const statuses = cardData?.data?.results?.statuses || [];
+    const filterOptionsStatus = statuses
+      .slice()
+      .sort(sortLegislationStatuses)
+      .map((status) => ({
+        id: status,
+        color: status,
+        label: this.$t(legislationStatus(status).translationKey),
+        selected: cardState?.filter === status,
+      }));
+
+    const filterByStatus =
+      cardState?.filterByStatus && cardState?.filterByStatus !== 'false';
+
+    const filterOptions = filterByStatus
+      ? filterOptionsStatus
+      : filterOptionsClassification;
 
     const orgs = (cardState?.organizationTabs || '').split('|').map((org) => {
       const [id, name] = org.split(';');
@@ -178,6 +198,7 @@ export default {
     return {
       legislation: cardData?.data?.results || [],
       filterOptions,
+      filterByStatus,
       currentFilter: cardState?.filter,
       currentSort: 'timestamp',
       currentSortOrder: 'desc',
@@ -222,10 +243,11 @@ export default {
         url.searchParams.set('organization', this.currentOrganizationTab);
       }
 
-      // TODO the following line is a little bit smelly
-      // classifications is an array
-      if (this.selectedFilterOption) {
+      if (this.selectedFilterOption && !this.filterByStatus) {
         url.searchParams.set('classification', this.selectedFilterOption.id);
+      }
+      if (this.selectedFilterOption && this.filterByStatus) {
+        url.searchParams.set('status', this.selectedFilterOption.id);
       }
 
       // set sort param
@@ -444,7 +466,7 @@ export default {
       gap: 3px;
 
       .striped-button {
-        padding: 0 20px;
+        padding: 0 8px;
       }
     }
   }

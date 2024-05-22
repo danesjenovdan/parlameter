@@ -1,5 +1,6 @@
 {
   "showEpaColumn": false,
   "generator": true,
-  "organizationTabs": "33;Predstavnički dom|34;Dom naroda"
+  "organizationTabs": "33;Predstavnički dom|34;Dom naroda",
+  "filterByStatus": true
 }
