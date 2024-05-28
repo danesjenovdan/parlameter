@@ -22,7 +22,6 @@
             @update:model-value="searchLegislation"
           />
         </div>
-        <div class="filter" style="flex: 1"></div>
         <!-- only show filters if we have more than one classification to show -->
         <div v-if="filterOptions.length > 1" class="filter buttons-filter">
           <striped-button
@@ -434,8 +433,13 @@ export default {
 .legislation-list-container {
   .filters {
     display: flex;
+    justify-content: space-between;
     padding-bottom: 12px;
     margin-bottom: 12px;
+
+    @include respond-to(mobile) {
+      flex-wrap: wrap;
+    }
 
     .filter {
       @include respond-to(desktop) {
@@ -469,10 +473,21 @@ export default {
     .buttons-filter {
       display: flex;
       align-items: flex-end;
+      justify-content: flex-end;
       gap: 3px;
+
+      @include respond-to(mobile) {
+        justify-content: center;
+        margin-top: 10px;
+      }
 
       .striped-button {
         padding: 0 8px;
+
+        @include respond-to(mobile) {
+          flex: 1;
+          padding: 0;
+        }
       }
     }
   }
@@ -503,6 +518,10 @@ export default {
     &.status-col {
       flex: 0 0 150px;
       margin-left: 30px;
+
+      .parlaicon {
+        flex-shrink: 0;
+      }
 
       @include respond-to(mobile) {
         flex: 0.45;
