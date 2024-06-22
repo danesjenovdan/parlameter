@@ -3,7 +3,7 @@
     <div class="session-name">{{ session.name }}</div>
     <div class="session-date">{{ formatDate(session.start_time) }}</div>
     <hr />
-    <template v-if="tfidf.length > 0">
+    <template v-if="tfidf.length > 0 && false">
       <div class="link">
         <a
           :href="getSessionTranscriptLink(session)"

@@ -2,11 +2,11 @@
 
 <%- await include('./_header.ejs') %>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/session/tfidf/', session.id) %>
+    <%# await fetchCard('/session/tfidf/', session.id) %>
   </div>
-</div>
+</div> -->
 <div class="row">
   <div class="col-md-12">
     <%- await fetchCard('/session/speeches/', session.id, { page: page, "showExportButton": true }) %>
