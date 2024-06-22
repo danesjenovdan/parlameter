@@ -102,7 +102,7 @@ select-placeholder: Odaberi
 selected-placeholder: 'Odabranih: {num}'
 data: Podaci
 name: Ime
-epa: PZ/PZE
+epa: Broj
 change: Promjena
 status: Status
 result: Rezultat
