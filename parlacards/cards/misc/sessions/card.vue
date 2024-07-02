@@ -231,7 +231,7 @@ export default {
           ? {
               id: 'end_time',
               label: this.$t('end-date'),
-              additionalClass: 'date date--end',
+              additionalClass: 'date date--end optional',
             }
           : null,
         // TODO this should be properly optional instead of commented out
@@ -385,6 +385,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'parlassets/scss/breakpoints';
+@import 'parlassets/scss/colors';
+
 .filters {
   margin-top: 14px;
 
@@ -400,16 +403,22 @@ export default {
     .column {
       &.date {
         margin: 0 16px;
-        flex-basis: 140px;
+        flex-basis: 80px;
         flex-shrink: 0;
         flex-grow: 0;
         text-align: left;
+
+        @include respond-to(desktop) {
+          flex-basis: 140px;
+        }
       }
 
       &.date--start,
       &.date--end,
       &.date:not(:last-child) {
-        flex-basis: 110px;
+        @include respond-to(desktop) {
+          flex-basis: 110px;
+        }
       }
 
       &.organization {
