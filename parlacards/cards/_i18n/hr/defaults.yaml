@@ -187,6 +187,9 @@ full-speech: Cijeli govor
 session-processing: Sjednica je u tijeku.
 organization: Tijelo
 start: Početak
+date: Datum
+start-date: Datum početka
+end-date: Datum završetka
 legislation: Zakonodavstvo
 laws: Zakoni
 acts: Akti
