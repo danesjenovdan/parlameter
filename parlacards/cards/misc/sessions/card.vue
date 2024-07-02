@@ -143,6 +143,21 @@ export default {
       };
     });
 
+    const showOrganizationColumn = (() => {
+      let value = String(cardState?.showOrganizationColumn);
+      if (value === 'true') value = 'always';
+      if (value === 'false') value = 'never';
+      if (['always', 'never', 'secondary-only'].includes(value)) return value;
+      return 'secondary-only';
+    })();
+
+    const showEndDate = (() => {
+      const value = String(cardState?.showEndDate);
+      if (value === 'true') return true;
+      if (value === 'false') return false;
+      return false;
+    })();
+
     return {
       tabs,
       // sessions: cardData?.data?.results,
@@ -155,10 +170,8 @@ export default {
         heading: cardData?.data?.mandate?.description,
         title: this.$t('card.title'),
       }),
-      showOrganizationColumn:
-        cardState?.showOrganizationColumn &&
-        cardState?.showOrganizationColumn !== 'false',
-
+      showOrganizationColumn,
+      showEndDate,
       // pagination
       pages,
       initialPage,
@@ -197,23 +210,41 @@ export default {
 
       return url.toString();
     },
-
+    isFirstTabActive() {
+      return this.currentFilter === this.tabs?.[0]?.id;
+    },
     columns() {
+      const showOrgCol =
+        this.showOrganizationColumn === 'always' ||
+        (this.showOrganizationColumn === 'secondary-only' &&
+          !this.isFirstTabActive);
+
       return [
         { id: 'image', label: '', additionalClass: 'image' },
-        { id: 'name', label: this.$t('title'), additionalClass: 'wider name' },
-        { id: 'start_time', label: this.$t('date') },
+        { id: 'name', label: this.$t('title'), additionalClass: 'name' },
+        {
+          id: 'start_time',
+          label: this.showEndDate ? this.$t('start-date') : this.$t('date'),
+          additionalClass: this.showEndDate ? 'date date--start' : 'date',
+        },
+        this.showEndDate
+          ? {
+              id: 'end_time',
+              label: this.$t('end-date'),
+              additionalClass: 'date date--end',
+            }
+          : null,
         // TODO this should be properly optional instead of commented out
         // {
         //   id: 'updated',
         //   label: this.$t('change'),
         //   additionalClass: 'optional',
         // },
-        this.showOrganizationColumn
+        showOrgCol
           ? {
               id: 'workingBody',
               label: this.$t('organization'),
-              additionalClass: 'wider optional',
+              additionalClass: 'organization optional',
             }
           : null,
       ].filter(Boolean);
@@ -238,6 +269,11 @@ export default {
     },
 
     mappedSessions() {
+      const showOrgCol =
+        this.showOrganizationColumn === 'always' ||
+        (this.showOrganizationColumn === 'secondary-only' &&
+          !this.isFirstTabActive);
+
       return this.currentPageSessions.map((session) =>
         [
           {
@@ -247,9 +283,14 @@ export default {
             }.svg`,
           },
           { link: this.getSessionLink(session), text: session.name },
-          session.start_time ? dateFormatter(session.start_time) : '',
-          // session.end_time ? formatDate(session.end_time) : '',
-          this.showOrganizationColumn
+          session.start_time ? dateFormatter(session.start_time) : ' ',
+          // eslint-disable-next-line no-nested-ternary
+          this.showEndDate
+            ? session.end_time
+              ? dateFormatter(session.end_time)
+              : ' '
+            : null,
+          showOrgCol
             ? {
                 contents: session.organizations.map((org) => ({
                   text: org.name,
@@ -350,6 +391,40 @@ export default {
   .dropdown-filter {
     margin: 0;
     flex: 1.5;
+  }
+}
+
+:deep(.session-list) {
+  .item,
+  .headers {
+    .column {
+      &.date {
+        margin: 0 16px;
+        flex-basis: 140px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        text-align: left;
+      }
+
+      &.date--start,
+      &.date--end,
+      &.date:not(:last-child) {
+        flex-basis: 110px;
+      }
+
+      &.organization {
+        text-align: left;
+      }
+    }
+  }
+
+  .headers {
+    .column {
+      &.date--start,
+      &.date--end {
+        white-space: normal;
+      }
+    }
   }
 }
 </style>
