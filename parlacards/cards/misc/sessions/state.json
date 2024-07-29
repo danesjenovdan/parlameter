@@ -1,4 +1,5 @@
 {
   "generator": true,
-  "showOrganizationColumn": true
+  "showOrganizationColumn": "secondary-only",
+  "showEndDate": "true"
 }
