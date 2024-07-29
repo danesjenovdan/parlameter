@@ -1,7 +1,7 @@
 {
   "generator": true,
-  "showWorkingBodiesFilter": "false",
-  "showDistrictsFilter": "true",
+  "showWorkingBodiesFilter": "true",
+  "showDistrictsFilter": "false",
   "showGendersFilter": "true",
   "showDemographicsAge": "true",
   "showDemographicsEducation": "true",
