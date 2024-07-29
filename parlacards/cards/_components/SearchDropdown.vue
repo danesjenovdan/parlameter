@@ -44,7 +44,7 @@
       </div>
       <template v-for="(item, index) in filteredItems" :key="`${item.id}`">
         <li v-if="item.groupLabel" class="search-dropdown-group-label">
-          {{ item.groupLabel }}
+          <span>{{ item.groupLabel }}</span>
         </li>
         <li
           :class="generateItemClass(item, index)"
@@ -67,8 +67,10 @@
               v-else-if="item.colorClass"
               :class="['color', item.colorClass]"
             />
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <span v-html="item.highlightLabel" />
+            <span class="label-text">
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <span class="clamp-lines" v-html="item.highlightLabel"></span>
+            </span>
           </div>
           <div v-if="item.count">{{ item.count }}</div>
         </li>
@@ -421,38 +423,77 @@ export default {
 
   li {
     margin-right: 0;
+    min-height: 24px;
+    height: auto;
+    padding: 0 5px;
 
-    &.large {
-      height: 46px;
-      line-height: 46px;
-      padding: 0 5px;
+    .search-dropdown-label {
+      display: flex;
+      align-items: center;
 
-      &::after {
-        content: none;
+      .image,
+      .color {
+        flex-shrink: 0;
       }
 
+      .label-text {
+        margin-top: 1px;
+        line-height: 1.2;
+        padding-block: 6px;
+        margin-inline: 10px 5px;
+
+        .clamp-lines {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+    }
+
+    &.large {
+      min-height: 46px;
+      height: auto;
+      padding: 0 5px;
+
       .image {
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
-        height: 37px;
-        margin-right: 3px;
-        width: 37px;
+        margin-right: 5px;
+        object-fit: cover;
       }
 
       .color {
         display: inline-block;
-        border-radius: 50%;
-        height: 16px;
-        margin: 0 13px -3px 11px;
         width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        margin-inline: 10px 15px;
+      }
+
+      .label-text {
+        padding-block: 11px;
+        margin-inline: 0;
       }
     }
 
     &.search-dropdown-group-label {
       @include gradient('horizontal');
-      // background: linear-gradient(to left, $first, $third);
       color: $white;
-      &::after {
-        content: none;
+      min-height: 24px;
+      height: auto;
+      line-height: 1.2;
+      padding-inline: 10px;
+      padding-block: 4px;
+
+      span {
+        margin-top: 1px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
   }
