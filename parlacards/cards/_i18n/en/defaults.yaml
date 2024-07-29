@@ -187,6 +187,9 @@ full-speech: Whole speech
 session-processing: Session is being processed.
 organization: Organisation
 start: Beginning
+date: Date
+start-date: Start date
+end-date: End date
 legislation: Legislation
 laws: Laws
 acts: Acts
