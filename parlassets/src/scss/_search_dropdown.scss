@@ -79,17 +79,15 @@
     overflow-y: auto;
     padding: 0;
     position: absolute;
-    top: $height + 1px;
+    top: $height - 1px;
     width: calc(100% + 2px);
     z-index: 11;
     &.visible { display: block; }
     li {
       cursor: pointer;
       display: flex;
+      align-items: center;
       font-size: 12px;
-      height: $item-height;
-      line-height: $item-height;
-      padding: 0 14px;
       position: relative;
       user-select: none;
       &.search-dropdown-group-label {
@@ -103,22 +101,12 @@
         color: $white;
         &.focused { background: darken($selected-background, 10%); }
       }
-      &:not(:last-of-type):not(.selected)::after {
-        $left-right-spacing: 22px;
-        content: '';
-        background: $background;
-        height: 1px;
-        width: calc(100% - 2*#{$left-right-spacing});
-        position: absolute;
-        top: $item-height - 1;
-        left: $left-right-spacing;
+      &:not(:last-of-type):not(.selected) {
+        border-bottom: $border-width solid $background;
       }
       .search-dropdown-label {
         flex: 1;
-        margin-right: 4px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        margin-right: 5px;
       }
     }
   }
