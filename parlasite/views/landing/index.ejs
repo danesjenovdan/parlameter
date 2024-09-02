@@ -1,11 +1,7 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await include('../_partials/infopush-cta.ejs') %>
-
-<%- await include('../_partials/infopush-youtube-embed.ejs') %>
-
 <%
-  var showInfoCard = true; // TODO: get from config
+  var showInfoCard = false; // TODO: get from config
 %>
 
 <div class="row about-wrapper">
@@ -80,6 +76,12 @@
   </div>
   <div class="col-md-12">
     <%- await fetchCard('/misc/last-session/', rootOrgId) %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <%- await fetchCard('/misc/newsletter-signup/', mandateId, { segment: newsletterSegmentId, no_card_data: true }); %>
   </div>
 </div>
 
