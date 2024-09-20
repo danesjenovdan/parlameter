@@ -65,10 +65,10 @@ export default {
 @import 'parlassets/scss/breakpoints';
 
 .result-chart {
-  @include show-for(desktop, flex);
-
   align-items: center;
   justify-content: flex-end;
+
+  @include show-for(desktop, flex);
 
   @include respond-to(desktop) {
     justify-content: flex-start;
