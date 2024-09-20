@@ -9,7 +9,7 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "body-parser": "^1.20.3",
     "chalk": "^4.1.2",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
