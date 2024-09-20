@@ -2,7 +2,7 @@ import { defineConfig, loadEnv } from 'vite';
 import { fileURLToPath } from 'url';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
-import glob from 'glob';
+import * as glob from 'glob';
 import vue from '@vitejs/plugin-vue';
 import virtual from '@rollup/plugin-virtual';
 import scssFunctions from './scss-functions.js';
