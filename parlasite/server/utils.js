@@ -7,7 +7,7 @@ const { urls, locale, defaultCardDate } = require('../config');
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
     const query = Object.keys(params)
-      .filter(key => params[key] != null) // maybe params[key] is undefined
+      .filter((key) => params[key] != null) // maybe params[key] is undefined
       .map((key) => {
         const val = (typeof params[key] === 'object')
           ? JSON.stringify(params[key])
@@ -86,9 +86,9 @@ async function fetchCard(cardPath, id, params = {}) {
   }
 }
 
-const asyncRoute = fn => (...args) => fn(...args).catch(args[2]);
+const asyncRoute = (fn) => (...args) => fn(...args).catch(args[2]);
 
-const asyncRender = fn => (req, res, next) => {
+const asyncRender = (fn) => (req, res, next) => {
   const render = (view, opts) => {
     const options = {
       ...opts,
@@ -101,8 +101,8 @@ const asyncRender = fn => (req, res, next) => {
         next(error);
       } else {
         promise
-          .then(html => res.send(html))
-          .catch(pError => next(pError));
+          .then((html) => res.send(html))
+          .catch((pError) => next(pError));
       }
     });
   };
@@ -111,7 +111,7 @@ const asyncRender = fn => (req, res, next) => {
     // if return value is a promise (also true with async functions)
     if (ret && ret.then && ret.catch) {
       // catch any async errors
-      ret.catch(error => next(error));
+      ret.catch((error) => next(error));
     }
   } catch (error) {
     // catch any sync errors
