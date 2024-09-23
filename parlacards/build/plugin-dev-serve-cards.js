@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'fs';
 import { resolve, dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import glob from 'glob';
+import * as glob from 'glob';
 import { groupBy, mapValues } from 'lodash-es';
 
 const dir = dirname(fileURLToPath(import.meta.url));
