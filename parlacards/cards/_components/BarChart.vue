@@ -107,6 +107,7 @@ export default {
 
   .column-label {
     margin-right: 15px;
+
     &:not(.flexible) {
       flex: 1;
     }
@@ -131,6 +132,7 @@ export default {
       margin-bottom: -5px;
       font-size: 16px;
       font-weight: 300;
+
       @include respond-to(mobile) {
         font-size: 14px;
       }
@@ -140,6 +142,7 @@ export default {
         height: 40px;
         margin-right: 10px;
         width: 40px;
+
         @include show-for('above-limbo', inline);
       }
     }
@@ -147,11 +150,13 @@ export default {
 }
 
 .progress_number {
+  line-height: 27px;
+
   @include respond-to(mobile) {
     display: none;
   }
-  line-height: 27px;
 }
+
 .progress.hugebar {
   height: 27px;
 }
