@@ -1,7 +1,5 @@
 const express = require('express');
 const chalk = require('chalk');
-const serveStatic = require('serve-static');
-const bodyParser = require('body-parser');
 const config = require('../config');
 const { i18n: _i18n, asyncRender: ar } = require('./utils');
 
@@ -57,6 +55,7 @@ function setupExpress() {
     app.use((error, req, res, next) => {
       ar((render) => {
         // TODO: sentry
+        // eslint-disable-next-line no-console
         console.log('error', error);
         res.status(500);
         render('error/500', {

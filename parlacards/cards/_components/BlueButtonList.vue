@@ -56,11 +56,12 @@ export default {
 @import 'parlassets/scss/colors';
 
 .blue-button-list {
-  @include show-for(desktop, flex);
   list-style: none;
   margin-top: 14px;
   margin-bottom: 0;
   padding: 0;
+
+  @include show-for(desktop, flex);
 
   &-item {
     align-items: center;

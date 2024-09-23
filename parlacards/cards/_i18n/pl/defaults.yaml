@@ -11,38 +11,31 @@ trigger: wyzwalacz
 match: dopasowanie
 interval: interwał
 email: e-mail
-add_trigger: Dodaj wyzwalacz
-add: Dodaj
-continue: Dalej
-back: Wstecz
-confirm_trigger: Ustaw przypomnienie
-add_new_trigger: Dodaj nowe przypomnienie
-steps:
-  - textfirst: Ustaw wyzwalacz dla słowa lub frazy o których chcesz być powiadomiony.
-    textsecond: >-
-      Dostaniesz wiadomość e-mail zaraz po tym, gdy słowo lub fraza zostanie
-      użyte w trakcie posiedzenia sejmu.
-  - textfirst: Wybierz metodę dopasowania
-    firstbullet: 'dokładne dopasowanie:'
-    secondbullet: 'szerokie dopasowanie:'
-  - textfirst: Jak często chcesz otrzymywać powiadomienia?
-    textsecond: kiedy coś się dzieje
-    textthird: maksymalnie raz dziennie
-    textfourth: maksymalnie raz tygodniowo
-  - textfirst: Potrzebujemy już tylko twój adres e-mail
-  - textfirst: Zapisano!
-    textsecond: Na adres e-mail
-    textthird: >-
-      wysłano zgłoszenie do Parlametru w sprawie powiadomień o słowach
-      kluczowych
-    textfourth: Zajrzyj do skrzynki odbiorczej!
-events:
-  event: kiedy coś się dzieje
-  day: maksymalnie raz dziennie
-  week: maksymalnie raz tygodniowo
-modes:
-  precise: 'dokładne dopasowanie:'
-  broad: 'szerokie dopasowanie:'
+notification-steps:
+- textfirst: >-
+    Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
+    obvestimo.
+  textsecond: >-
+    Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
+    teles, ti to sporočimo po e-pošti.
+- textfirst: Izberi način ujemanja
+  firstbullet: 'natančno ujemanje'
+  secondbullet: 'široko ujemanje'
+- textfirst: Kako pogosto naj ti pišemo?
+  firstbullet: največ enkrat na dan
+  secondbullet: največ enkrat na teden
+  thirdbullet: največ enkrat na mesec
+- textfirst: Samo še tvoj e-naslov
+- textfirst: Zabeleženo!
+  textsecond: >-
+    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+    mejlu.
+- textfirst: Potrjeno!
+  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+- textfirst: Napaka!
+  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+submit: Oddaj
+confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
 comparator-text: >-
   Chcę wiedzieć, na których głosowaniach {same} głosowali jednakowo, a
   {different} głosowali inaczej od nich. {load}
