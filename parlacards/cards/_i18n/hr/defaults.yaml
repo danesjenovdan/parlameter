@@ -11,13 +11,7 @@ trigger: okidač
 match: podudaranje
 interval: interval
 email: email
-add_trigger: Dodaj okidač
-add: Dodaj
-continue: Nastavi
-back: Natrag
-confirm_trigger: Postavite podsjetnik
-add_new_trigger: Dodaj novi podsjetnik
-steps:
+notification-steps:
 - textfirst: >-
     Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti
     obavijest.
@@ -25,24 +19,23 @@ steps:
     Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici
     HS-a.
 - textfirst: Odaberite način podudaranja
-  firstbullet: 'točno podudaranje:'
-  secondbullet: 'široko podudaranje:'
+  firstbullet: 'točno podudaranje'
+  secondbullet: 'široko podudaranje'
 - textfirst: Koliko često želite primati obavijesti?
-  textsecond: po događaju
-  textthird: najviše jednom dnevno
-  textfourth: najviše jednom tjedno
+  firstbullet: najviše jednom dnevno
+  secondbullet: najviše jednom tjedno
+  thirdbullet: najviše jednom mjesečno
 - textfirst: Još samo email adresa
 - textfirst: Zabilježeno!
-  textsecond: Na email adresu
-  textthird: poslana je prijava za Parlametar obavijesti za ključnu riječ
-  textfourth: Pogledaj u inbox!
-events:
-  event: po događaju
-  day: najviše jednom dnevno
-  week: najviše jednom tjedno
-modes:
-  precise: 'točno podudaranje:'
-  broad: 'široko podudaranje:'
+  textsecond: >-
+    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+    mejlu.
+- textfirst: Potrjeno!
+  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+- textfirst: Napaka!
+  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+submit: Oddaj
+confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
 comparator-text: >-
   Zanima me, na kojim glasanjima su {same} glasali jednako, a {different}
   različito od njih. {load}

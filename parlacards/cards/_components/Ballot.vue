@@ -65,19 +65,7 @@ export default {
 @import 'parlassets/scss/colors';
 
 .ballot {
-  @include respond-to(desktop) {
-    display: flex;
-    margin: 10px 0;
-  }
-
   text-decoration: none;
-
-  &:hover {
-    text-decoration: none;
-    background-color: $link-hover-background;
-    color: $link;
-  }
-
   background: $background;
   color: $font-default;
   display: block;
@@ -86,7 +74,23 @@ export default {
   padding: 10px 14px;
   position: relative;
 
+  @include respond-to(desktop) {
+    display: flex;
+    margin: 10px 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: $link-hover-background;
+    color: $link;
+  }
+
   .disunion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
     @include respond-to(mobile) {
       padding-bottom: 10px;
     }
@@ -94,15 +98,17 @@ export default {
     @include respond-to(desktop) {
       padding-right: 16px;
     }
-
-    display: flex;
-
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
   }
 
   .name {
+    border-bottom: 1px solid $font-placeholder;
+    border-top: 1px solid $font-placeholder;
+    font-family: 'Roboto Slab', 'Times New Roman', serif;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1.45em;
+    padding: 10px 0;
+
     @include respond-to(desktop) {
       border-bottom: none;
       border-top: none;
@@ -114,28 +120,12 @@ export default {
       padding: 5px 20px;
     }
 
-    border-bottom: 1px solid $font-placeholder;
-    border-top: 1px solid $font-placeholder;
-    font-family: 'Roboto Slab', 'Times New Roman', serif;
-    font-size: 11px;
-    font-weight: 300;
-    line-height: 1.45em;
-    padding: 10px 0;
-
     p {
       margin: 0;
     }
   }
 
   .outcome {
-    @include respond-to(desktop) {
-      border-left: 1px solid $font-placeholder;
-      justify-content: left;
-      padding: 0 0 0 16px;
-      width: 136px;
-      margin-right: 16px;
-    }
-
     align-items: center;
     display: flex;
     justify-content: center;
@@ -145,6 +135,14 @@ export default {
     text-align: left;
     text-transform: uppercase;
     padding: 10px 0 0;
+
+    @include respond-to(desktop) {
+      border-left: 1px solid $font-placeholder;
+      justify-content: left;
+      padding: 0 0 0 16px;
+      width: 136px;
+      margin-right: 16px;
+    }
 
     @include respond-to(mobile) {
       margin: 0 15px;
@@ -194,12 +192,6 @@ export default {
   }
 
   .icon {
-    @include show-for(desktop);
-
-    @include respond-to(mobile) {
-      margin: 0 auto;
-    }
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -211,6 +203,12 @@ export default {
     display: flex;
     align-items: center;
     height: 42px;
+
+    @include show-for(desktop);
+
+    @include respond-to(mobile) {
+      margin: 0 auto;
+    }
 
     &.for {
       background-image: url('#{get-parlassets-url()}/icons/g_za_v2.svg');

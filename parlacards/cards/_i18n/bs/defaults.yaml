@@ -11,38 +11,31 @@ trigger: okidač
 match: podudaranje
 interval: interval
 email: email
-add_trigger: Dodaj okidač
-add: Dodaj
-continue: Nastavi
-back: Nazad
-confirm_trigger: Postavite podsjetnik
-add_new_trigger: Dodaj novi podsjetnik
-steps:
-  - textfirst: >-
-      Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti
-      obavještenje.
-    textsecond: >-
-      Dobit ćete e-mail nedugo nakon što o tome progovore na sjednici
-      Parlamenta.
-  - textfirst: Odaberite način podudaranja
-    firstbullet: 'tačno podudaranje:'
-    secondbullet: 'široko podudaranje:'
-  - textfirst: Koliko često želite primati obavještenja?
-    textsecond: po događaju
-    textthird: najviše jednom dnevno
-    textfourth: najviše jednom sedmično
-  - textfirst: Još samo email adresa
-  - textfirst: Zabilježeno!
-    textsecond: Na email adresu
-    textthird: poslana prijava za Parlameter obavještenja za ključnu riječ
-    textfourth: Pogledaj u inbox!
-events:
-  event: po događaju
-  day: najviše jednom dnevno
-  week: najviše jednom sedmično
-modes:
-  precise: 'tačno podudaranje:'
-  broad: 'široko podudaranje:'
+notification-steps:
+- textfirst: >-
+    Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti
+    obavještenje.
+  textsecond: >-
+    Dobit ćete e-mail nedugo nakon što o tome progovore na sjednici
+    Parlamenta.
+- textfirst: Odaberite način podudaranja
+  firstbullet: 'tačno podudaranje'
+  secondbullet: 'široko podudaranje'
+- textfirst: Koliko često želite primati obavještenja?
+  firstbullet: najviše jednom dnevno
+  secondbullet: najviše jednom sedmično
+  thirdbullet: najviše jednom mjesečno
+- textfirst: Još samo email adresa
+- textfirst: Zabilježeno!
+  textsecond: >-
+    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+    mejlu.
+- textfirst: Potrjeno!
+  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+- textfirst: Napaka!
+  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+submit: Oddaj
+confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
 comparator-text: >-
   Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili
   različito od njih. {load}
