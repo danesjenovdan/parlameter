@@ -430,9 +430,11 @@ export default {
   .striped-button {
     width: calc(33.33% - 3.33px);
     margin-bottom: 5px;
+
     @include respond-to(desktop) {
       flex: 1;
       margin-bottom: 0;
+
       &:not(:first-child) {
         margin-left: 5px;
       }
@@ -441,15 +443,16 @@ export default {
 }
 
 .filters {
-  @include respond-to(mobile) {
-    flex-wrap: wrap;
-    min-height: 154px;
-  }
   $label-height: 26px;
 
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+
+  @include respond-to(mobile) {
+    flex-wrap: wrap;
+    min-height: 154px;
+  }
 
   .filter-label {
     font-size: 14px;
@@ -542,8 +545,10 @@ export default {
       flex-direction: column;
       padding-right: 16px;
     }
+
     .percentage {
       font-size: 24px;
+
       @include respond-to(desktop) {
         font-size: 30px;
       }
@@ -554,6 +559,7 @@ export default {
       line-height: 34px;
       margin-left: 10px;
       text-transform: uppercase;
+
       @include respond-to(desktop) {
         font-size: 16px;
         line-height: 23px;

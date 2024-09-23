@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import jsYaml from 'js-yaml';
-import glob from 'glob';
+import * as glob from 'glob';
 import { resolve, dirname, join, relative } from 'path';
 import { fileURLToPath } from 'url';
 import { processLocaleMarkdown } from './process-locale-markdown.js';
