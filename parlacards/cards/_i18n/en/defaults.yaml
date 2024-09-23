@@ -11,36 +11,31 @@ trigger: trigger
 match: match
 interval: interval
 email: email
-add_trigger: Add a trigger
-add: Add
-continue: Next
-back: Back
-confirm_trigger: Confirm the trigger
-add_new_trigger: Add new trigger
-steps:
-  - textfirst: Set a trigger for a word or a phrase you want to be notified about.
-    textsecond: >-
-      You will get an email notification not long after the word or the phrase
-      is used in the House of Commons.
-  - textfirst: Chose the match
-    firstbullet: 'exact match:'
-    secondbullet: 'broad match:'
-  - textfirst: How often do you want to be notified?
-    textsecond: as it happens
-    textthird: maximum once per day
-    textfourth: maximum once per week
-  - textfirst: The last thing we need is your email address
-  - textfirst: Confirmed!
-    textsecond: To email address
-    textthird: subscription to Parlameter notifications for key word sent
-    textfourth: Check your inbox!
-events:
-  event: as it happens
-  day: maximum once per day
-  week: maximum once per week
-modes:
-  precise: 'exact match:'
-  broad: 'broad match:'
+notification-steps:
+- textfirst: >-
+    Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
+    obvestimo.
+  textsecond: >-
+    Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
+    teles, ti to sporočimo po e-pošti.
+- textfirst: Izberi način ujemanja
+  firstbullet: 'natančno ujemanje'
+  secondbullet: 'široko ujemanje'
+- textfirst: Kako pogosto naj ti pišemo?
+  firstbullet: največ enkrat na dan
+  secondbullet: največ enkrat na teden
+  thirdbullet: največ enkrat na mesec
+- textfirst: Samo še tvoj e-naslov
+- textfirst: Zabeleženo!
+  textsecond: >-
+    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+    mejlu.
+- textfirst: Potrjeno!
+  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+- textfirst: Napaka!
+  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+submit: Oddaj
+confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
 comparator-text: >-
   I want to know, when {same} voted the same, but {different} voted differently.
   {load}
