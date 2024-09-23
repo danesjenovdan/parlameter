@@ -1,16 +1,19 @@
-import * as sass from 'sass';
+import { SassString } from 'sass';
 
 export default {
   'get-parlassets-url()': () => {
-    return new sass.types.String(process.env.VITE_PARLASSETS_URL ?? '');
+    return new SassString(process.env.VITE_PARLASSETS_URL ?? '');
   },
   'fs-readFile($filePath)': () => {
-    return new sass.types.String('');
+    // this is only used in parlassets, noop here for compile compatibility
+    return new SassString('');
   },
   'encode-svg($svg)': () => {
-    return new sass.types.String('');
+    // this is only used in parlassets, noop here for compile compatibility
+    return new SassString('');
   },
   'str-replace($str, $find: "", $replace: "")': () => {
-    return new sass.types.String('');
+    // this is only used in parlassets, noop here for compile compatibility
+    return new SassString('');
   },
 };
