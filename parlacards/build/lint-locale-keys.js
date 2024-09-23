@@ -1,5 +1,5 @@
 import fs from 'fs';
-import glob from 'glob';
+import * as glob from 'glob';
 import jsYaml from 'js-yaml';
 import { intersection, difference } from 'lodash-es';
 

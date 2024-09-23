@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import glob from 'glob';
+import * as glob from 'glob';
 import { camelCase, upperFirst } from 'lodash-es';
 
 const FIX_NAMES = process.argv.includes('--fix');
