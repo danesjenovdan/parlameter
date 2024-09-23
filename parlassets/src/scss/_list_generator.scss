@@ -14,9 +14,9 @@
   .analyses {
     @extend %list-flex;
 
-    @include show-for(desktop, flex);
-
     margin: 14px 0;
+
+    @include show-for(desktop, flex);
 
     li {
       align-items: center;
@@ -95,21 +95,21 @@
 
   .districts,
   .dropdown-filter {
-    @include show-for(desktop, flex);
-
     flex: 1;
     margin-left: 15px;
+
+    @include show-for(desktop, flex);
   }
 
   .exclude-presiding,
   .align-checkbox {
-    @include show-for(desktop, flex);
-
     align-items: center;
     // justify-content: center;
     margin-left: 20px;
     width: 142px;
     flex: 1;
+
+    @include show-for(desktop, flex);
 
     label {
       margin: 0;
