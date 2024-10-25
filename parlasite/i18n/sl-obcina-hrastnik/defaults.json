@@ -131,7 +131,7 @@
   "tools": {
     "notifications": {
       "title": "Parlameter obvestila",
-      "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več)."
+      "text": "Prijavi se na obvestila. Izberi besedo ali besedno zvezo in prejmi e-pošto, ko jo nekdo izgovori v državnem zboru."
     },
     "voteComparator": {
       "title": "Primerjalnik glasovanj",
