@@ -1,6 +1,10 @@
 <template>
   <card-wrapper :header-config="headerConfig" max-height>
-    <div class="session-name">{{ session.name }}</div>
+    <div class="session-name">
+      <a :href="getSessionLink(session)" class="funblue-light-hover">{{
+        session.name
+      }}</a>
+    </div>
     <div class="session-date">{{ formatDate(session.start_time) }}</div>
     <hr />
     <template v-if="tfidf.length > 0">
