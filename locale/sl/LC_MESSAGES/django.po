@@ -252,7 +252,7 @@ msgstr ""
 
 #: parlanotifications/management/commands/send_utils.py:80
 msgid "Parlameter notification"
-msgstr ""
+msgstr "V državnem zboru je bila omenjena izbrana tema"
 
 #: parlanotifications/templates/add_keyword.html:6
 #: parlanotifications/templates/notification.html:7
@@ -265,11 +265,11 @@ msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:11
 msgid "Na ta e-naslov je nekdo prijavil Parlameter obvestila za ključno besedo"
-msgstr ""
+msgstr "Ta e-naslov je bil uporabljen za prijavo na Parlametrova obvestila, in sicer za ključno besedo oz. besedno zvezo"
 
 #: parlanotifications/templates/add_keyword.html:11
 msgid "Če si bil/-a to ti, potrdi naročilo s klikom na povezavo:"
-msgstr ""
+msgstr "Če želiš potrditi prijavo, klikni tukaj"
 
 #: parlanotifications/templates/add_keyword.html:12
 msgid ""
@@ -295,7 +295,7 @@ msgstr "transkript"
 
 #: parlanotifications/templates/notification.html:23
 msgid "Uredi svoje nastavitve"
-msgstr ""
+msgstr "Odjavi se od obvestil ali uredi svoje nastavitve"
 
 #: parlanotifications/templates/notification.html:23
 msgid ""
@@ -309,4 +309,4 @@ msgstr ""
 
 #: parlanotifications/views.py:30
 msgid "Parlameter obvestila - potrditev"
-msgstr ""
+msgstr "Potrdi prijavo na obvestila"
