@@ -127,7 +127,8 @@ def calculate_organization_vote_discord(vote, organization, playing_field, times
     )
 
     ballots_count = ballots.count()
-
+    if ballots_count == 0:
+        return None
     discord = (
         ballots.filter(option=options_aggregated["option"]).count()
         / ballots_count
@@ -147,6 +148,8 @@ def save_organization_vote_discord(vote, playing_field, timestamp=None):
     for party in organizations:
 
         discord = calculate_organization_vote_discord(vote, party, playing_field)
+        if discord is None:
+            continue
 
         OrganizationVoteDiscord(
             organization=party,
