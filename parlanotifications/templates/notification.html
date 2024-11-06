@@ -9,27 +9,27 @@
 <body>
 	<div class="dndkeywordauthorsession" style="color: #222222; font-family: Arial; font-size: 14px; line-height: 18px;">
 		{% trans 'Živjo' %}, <br/><br/>
-		{% trans 'Spodaj najdeš omembe izbranih besed oz. besednih zvez iz Parlametra.' %} <br/>
+		{% trans 'Spodaj najdeš omembe izbranih besed oz. besednih zvez iz Parlametra.' %} <br/><br/>
+		{% trans 'Srečno' %},<br/>
+		{% trans 'ekipa Parlametra' %}
 	</div>
-{% for key, value in data.items %}
-<b style="color: #222222; font-family: Arial; font-size: 13px;">{{key.keyword}}</b><br/>
-	{% for speech in value %}
-	<div class="dndkeywordalert" style="padding-left: 40px; padding-bottom: 20px;">
-	<div class="dndkeyworddate" style="color: #999999; font-family: Arial; font-size: 11px;">{{ speech.date|date:"d. m. Y"}}</div>
-	<div class="dndkeywordauthorsession" style="color: #999999; font-family: Arial; font-size: 14px;">{{ speech.speaker_name }}, {{ speech.session_name }}</div><br/>
-	<div style="color: #222222; font-family: Arial; font-size: 12px; text-decoration: underline;"><a href="{% trans 'https://parlameter.si/seja/' %}{{ speech.session_id }}/{% trans 'transkript-url' %}?page={{ speech.order }}#{{ speech.id }}">{{speech.content|safe}}</a></div><br/>
-	</div>
-	<p>
+	<br/>
+	<br/>
+	{% for key, value in data.items %}
+	<b style="color: #222222; font-family: Arial; font-size: 13px;">{{key.keyword}}</b><br/>
+		{% for speech in value %}
+		<div class="dndkeywordalert" style="padding-left: 40px; padding-bottom: 20px;">
+		<div class="dndkeyworddate" style="color: #999999; font-family: Arial; font-size: 11px;">{{ speech.date|date:"d. m. Y"}}</div>
+		<div class="dndkeywordauthorsession" style="color: #999999; font-family: Arial; font-size: 14px;">{{ speech.speaker_name }}, {{ speech.session_name }}</div><br/>
+		<div style="color: #222222; font-family: Arial; font-size: 12px; text-decoration: underline;"><a href="{% trans 'https://parlameter.si/seja/' %}{{ speech.session_id }}/{% trans 'transkript-url' %}?page={{ speech.order }}#{{ speech.id }}">{{speech.content|safe}}</a></div><br/>
+		</div>
+		<p>
+		{% endfor %}
 	{% endfor %}
-{% endfor %}
-<div class="dndkeywordauthorsession" style="color: #222222; font-family: Arial; font-size: 14px; line-height: 18px;">
-	{% trans 'Srečno' %},<br/>
-	{% trans 'ekipa Parlametra' %}
-</div>
-<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
-	<div class="footer" style="color: #222222; font-family: Arial; font-size: 10px;">
-	{% trans 'Uredi svoje nastavitve' %} <a href="{% trans 'https://parlacards-slovenija.lb.djnd.si/tools/notifications/?id=undefined&no_card_data=true&locale=sl&template=share&action=list' %}&uuid={{ uuid }}" style="color: #222222; font-family: Arial; font-size: 10px;">{% trans 'tukaj' %}</a>.
+	<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
+		<div class="footer" style="color: #222222; font-family: Arial; font-size: 10px;">
+		{% trans 'Uredi svoje nastavitve' %} <a href="{% trans 'https://parlacards-slovenija.lb.djnd.si/tools/notifications/?id=undefined&no_card_data=true&locale=sl&template=share&action=list' %}&uuid={{ uuid }}" style="color: #222222; font-family: Arial; font-size: 10px;">{% trans 'tukaj' %}</a>.
+		</div>
 	</div>
-</div>
 </body>
 </html>

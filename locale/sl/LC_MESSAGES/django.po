@@ -269,7 +269,7 @@ msgstr "Ta e-naslov je bil uporabljen za prijavo na Parlametrova obvestila, in s
 
 #: parlanotifications/templates/add_keyword.html:11
 msgid "Če si bil/-a to ti, potrdi naročilo s klikom na povezavo:"
-msgstr "Če želiš potrditi prijavo, klikni tukaj"
+msgstr "Če želiš potrditi prijavo, "
 
 #: parlanotifications/templates/add_keyword.html:12
 msgid ""
