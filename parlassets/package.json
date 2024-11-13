@@ -12,9 +12,9 @@
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
-    "sass": "^1.79.3"
+    "sass": "^1.80.7"
   },
   "devDependencies": {
     "http-server": "^14.1.1",

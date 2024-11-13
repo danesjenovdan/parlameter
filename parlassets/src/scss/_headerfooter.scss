@@ -1,3 +1,7 @@
+@use "breakpoints";
+@use "colors";
+@use "helper";
+
 html {
   position: relative;
   min-height: 100%;
@@ -52,19 +56,19 @@ body {
 
 .menu-container .menu a {
   font-size: 16px;
-  color: $font-default;
+  color: colors.$font-default;
   font-weight: 500;
   padding: 0 30px;
   margin: 0;
 }
 
 .menu-container .menu a.active {
-  color: $tab-active;
+  color: colors.$tab-active;
   text-decoration: none;
 }
 
 .menu-container .menu a:hover {
-  color: $tab-hover;
+  color: colors.$tab-hover;
   text-decoration: none;
 }
 
@@ -75,7 +79,7 @@ body {
 
 .open-search span:hover,
 .close-search span:hover {
-  color: $tab-active;
+  color: colors.$tab-active;
   cursor: pointer;
 }
 
@@ -107,7 +111,7 @@ body {
 
   .mobile-menu {
     &__bg {
-      background-color: $background;
+      background-color: colors.$background;
       width: 40px;
       height: 40px;
       position: absolute;
@@ -127,7 +131,7 @@ body {
       z-index: 99;
 
       &-line {
-        background-color: $font-default;
+        background-color: colors.$font-default;
         height: 3px;
         width: 28px;
         position: absolute;
@@ -195,7 +199,7 @@ body {
   width: 100%;
   z-index: 1;
   // set bg color to prevent firefox repaint issue on display change
-  background-color: $background;
+  background-color: colors.$background;
 
   [id^=misc_menu-search] {
     width: 100%;
@@ -261,15 +265,15 @@ footer.footer {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 210px;
-  color: $font-default;
+  color: colors.$font-default;
 
   a {
-    color: $link;
+    color: colors.$link;
     font-weight: 400;
   }
 
   .cnt {
-    border-top: 1px solid $font-placeholder;
+    border-top: 1px solid colors.$font-placeholder;
     padding-top: 10px;
     margin-top: 10px;
   }
@@ -284,7 +288,7 @@ footer.footer {
       content: '';
       height: 1px;
       width: calc(100% - 30px);
-      background-color: $font-placeholder;
+      background-color: colors.$font-placeholder;
       position: absolute;
       display: block;
       top: 0;
@@ -302,7 +306,7 @@ footer.footer {
       content: '';
       height: 1px;
       width: calc(100% - 30px);
-      border-top: 1px dashed $font-placeholder;
+      border-top: 1px dashed colors.$font-placeholder;
       position: absolute;
       display: block;
       top: 0;
@@ -340,14 +344,14 @@ footer.footer {
   .parlaicon-facebook-parlameter .blue,
   .parlaicon-twitter-parlameter .blue,
   .parlaicon-instagram-parlameter .blue {
-    fill: $card-footer-button-passive-background;
+    fill: colors.$card-footer-button-passive-background;
     // stroke: $card-footer-button-passive-background;
   }
 
   .parlaicon-facebook-parlameter:hover .blue,
   .parlaicon-twitter-parlameter:hover .blue,
   .parlaicon-instagram-parlameter:hover .blue {
-    fill: $card-footer-button-hover-background;
+    fill: colors.$card-footer-button-hover-background;
     // stroke: $card-footer-button-hover-background;
     text-decoration: none;
   }
@@ -357,7 +361,7 @@ footer.footer {
   }
 
   .doniraj {
-    border: 1px solid $font-placeholder;
+    border: 1px solid colors.$font-placeholder;
     background: none;
     text-transform: uppercase;
     border-radius: 0;
@@ -372,7 +376,7 @@ footer.footer {
     right: -5px;
     margin-right: 5px;
 
-    color: $second;
+    color: colors.$second;
   }
 
   .parlaicon-doniraj .red {
@@ -403,7 +407,7 @@ footer.footer {
   input.form-control.newslettersubscribe {
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid $font-placeholder;
+    border-bottom: 1px solid colors.$font-placeholder;
     background: none;
     padding-left: 0;
   }
@@ -415,18 +419,18 @@ footer.footer {
   .newslettersubscribeButton {
     border: none;
     border-radius: 0;
-    border-bottom: 1px solid $font-placeholder;
+    border-bottom: 1px solid colors.$font-placeholder;
     background: none;
     padding: 7px 12px 6px 12px;
-    color: $link;
+    color: colors.$link;
     padding-right: 0;
     text-transform: uppercase;
   }
 
   .newslettersubscribeButton:hover {
     background: none;
-    border-bottom: 1px solid $font-placeholder;
-    color: $link;
+    border-bottom: 1px solid colors.$font-placeholder;
+    color: colors.$link;
     padding-right: 0;
   }
 
@@ -454,9 +458,9 @@ footer.footer {
   height: 40px;
   width: 100%;
   overflow: hidden;
-  @include gradient('horizontal');
+  @include helper.gradient('horizontal');
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     height: 20px;
   }
 }
@@ -467,7 +471,7 @@ footer.footer {
   left: -5%;
   width: 110%;
   height: 200%;
-  background: $background;
+  background: colors.$background;
   top: 15px;
   -webkit-transform: rotate(1deg);
   -moz-transform: rotate(1deg);
@@ -479,7 +483,7 @@ footer.footer {
   height: 30px;
   width: 100%;
   overflow: hidden;
-  background: $background;
+  background: colors.$background;
   /*bottom: 0;*/
 }
 
@@ -489,7 +493,7 @@ footer.footer {
   left: 0;
   width: 100%;
   height: 200%;
-  @include gradient('horizontal');
+  @include helper.gradient('horizontal');
   top: 15px;
   -webkit-transform: rotate(1deg);
   -moz-transform: rotate(1deg);
@@ -498,7 +502,7 @@ footer.footer {
 
 
 
-@include respond-to(desktop) {
+@include breakpoints.respond-to(desktop) {
   header.header {
     .search-field {
       display: none;

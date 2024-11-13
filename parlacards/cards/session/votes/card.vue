@@ -182,8 +182,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .votes-list {
   .filters {
@@ -191,11 +191,11 @@ export default {
     padding-bottom: 12px;
 
     .filter {
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         margin-right: 10px;
       }
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         width: 100%;
       }
 
@@ -213,7 +213,7 @@ export default {
     .text-filter {
       width: 100%;
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         width: 50%;
       }
     }
@@ -223,7 +223,7 @@ export default {
       align-items: flex-end;
       gap: 3px;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         display: none;
       }
 
@@ -236,10 +236,10 @@ export default {
   .votes-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
-    height: $full-card-height;
+    height: breakpoints.$full-card-height;
 
     &.has-filters {
-      height: $full-card-height - 89;
+      height: breakpoints.$full-card-height - 89;
     }
   }
 
@@ -249,7 +249,7 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    background: $white-hover;
+    background: colors.$white-hover;
     z-index: 4;
 
     .nalagalnik {

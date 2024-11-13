@@ -1,3 +1,6 @@
+@use "breakpoints";
+@use "colors";
+
 %list-flex {
   display: flex;
   list-style: none;
@@ -16,13 +19,13 @@
 
     margin: 14px 0;
 
-    @include show-for(desktop, flex);
+    @include breakpoints.show-for(desktop, flex);
 
     li {
       align-items: center;
       border: none;
       box-sizing: border-box;
-      color: $white;
+      color: colors.$white;
       cursor: pointer;
       display: flex;
       font-size: 10px;
@@ -31,29 +34,29 @@
       margin-right: 3px;
       padding: 0 12px;
       text-transform: uppercase;
-      background-color: $tab-passive;
+      background-color: colors.$tab-passive;
 
-      @include respond-to(limbo) {
+      @include breakpoints.respond-to(limbo) {
         font-size: 12px;
       }
 
       &:last-child { margin-right: 0; }
 
       &:hover {
-        background-color: $tab-hover;
-        color: $white;
+        background-color: colors.$tab-hover;
+        color: colors.$white;
       }
 
       &.selected {
-        background-color: $tab-active;
-        color: $white;
+        background-color: colors.$tab-active;
+        color: colors.$white;
         cursor: default;
       }
     }
   }
 
   .mobile-analyses {
-    @include show-for(mobile, block);
+    @include breakpoints.show-for(mobile, block);
 
     label {
       font-size: 11px;
@@ -75,7 +78,7 @@
 
     flex: 2;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       flex-wrap: wrap;
       justify-content: space-between;
       margin-top: 7px;
@@ -86,7 +89,7 @@
       margin-right: 3px;
       &:last-child { margin-right: 0; }
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         flex: none;
         margin: 3px 0 0;
       }
@@ -98,7 +101,7 @@
     flex: 1;
     margin-left: 15px;
 
-    @include show-for(desktop, flex);
+    @include breakpoints.show-for(desktop, flex);
   }
 
   .exclude-presiding,
@@ -109,7 +112,7 @@
     width: 142px;
     flex: 1;
 
-    @include show-for(desktop, flex);
+    @include breakpoints.show-for(desktop, flex);
 
     label {
       margin: 0;
@@ -120,7 +123,7 @@
 .party-list-generator {
   @extend %list-generator;
 
-  @include respond-to(limbo) {
+  @include breakpoints.respond-to(limbo) {
     .analyses {
       flex-wrap: wrap;
       margin-bottom: 11px;
@@ -157,12 +160,12 @@ div[id^="orodja-"] .party-list-generator .analyses li {
 
   .parties li,
   .button-filters li {
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       width: calc(25% - 2.25px);
     }
   }
 
-  @include respond-to(limbo) {
+  @include breakpoints.respond-to(limbo) {
     .analyses {
       flex-wrap: wrap;
       margin-bottom: 11px;
@@ -181,12 +184,12 @@ div[id^="orodja-"] .party-list-generator .analyses li {
   @extend %list-generator;
 
   .button-filters li {
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       width: calc(33.333% - 2px);
     }
   }
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     .filters { flex-wrap: wrap; }
     .button-filters {
       flex: 0 1 auto;

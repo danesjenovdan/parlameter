@@ -129,15 +129,24 @@
               v-model="signUpData.email"
               type="email"
               required
-              :placeholder="$t('email')"
+              :placeholder="$t('email-address')"
               class="form-control"
             />
+          </div>
+
+          <div class="input-container">
+            <div class="form-element-checkbox">
+              <input id="consent" type="checkbox" class="checkbox" required />
+              <label for="consent">{{
+                $t('notification-steps[3].textsecond')
+              }}</label>
+            </div>
           </div>
         </div>
 
         <div class="submit-container text-center">
           <button type="submit" class="signup-button" :disabled="isLoading">
-            {{ $t('submit') }}
+            {{ $t('notification-steps[3].submit') }}
           </button>
         </div>
       </form>
@@ -145,6 +154,7 @@
       <div v-if="isLoading || success || error" class="loader-container">
         <div v-if="isLoading" class="nalagalnik"></div>
         <div v-else-if="success === 'submit'" class="success">
+          <button class="close-modal" @click="closeModal">&times;</button>
           <div>
             <p>
               <strong>{{ $t('notification-steps[4].textfirst') }}</strong>
@@ -153,6 +163,7 @@
           </div>
         </div>
         <div v-else-if="success === 'confirm'" class="success">
+          <button class="close-modal" @click="closeModal">&times;</button>
           <div>
             <p>
               <strong>{{ $t('notification-steps[5].textfirst') }}</strong>
@@ -162,12 +173,13 @@
                 <strong>{{ signUpData.email }}</strong>
               </template>
               <template #keyword>
-                <strong>"{{ signUpData.keyword }}"</strong>
+                <strong>{{ signUpData.keyword }}</strong>
               </template>
             </i18n-t>
           </div>
         </div>
         <div v-else-if="error" class="error">
+          <button class="close-modal" @click="closeModal">&times;</button>
           <div>
             <p>
               <strong>{{ $t('notification-steps[6].textfirst') }}</strong>
@@ -345,13 +357,29 @@ export default {
         console.error(error);
       }
     },
+    closeModal() {
+      if (this.success === 'confirm') {
+        this.isLoading = true;
+        this.listData.uuid = this.confirmData.uuid;
+        this.listSubscriptions();
+      }
+
+      this.success = null;
+      this.error = null;
+      this.signUpData = {
+        keyword: '',
+        notification_frequency: 'DAILY',
+        matching_method: 'NARROW',
+        email: '',
+      };
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/color_classes';
 
 .notification-list {
   .list-table {
@@ -395,13 +423,13 @@ export default {
       justify-content: center;
       align-items: center;
       font-size: 24px;
-      background-color: $tab-hover;
-      color: $white;
+      background-color: colors.$tab-hover;
+      color: colors.$white;
       line-height: 1;
 
       &:hover {
-        background-color: $tab-passive;
-        color: $white;
+        background-color: colors.$tab-passive;
+        color: colors.$white;
       }
 
       span {
@@ -464,22 +492,22 @@ export default {
       border: none;
       background: none;
       font-weight: 300;
-      color: $white;
-      background-color: $tab-passive;
+      color: colors.$white;
+      background-color: colors.$tab-passive;
 
       &:disabled {
         cursor: not-allowed;
       }
 
       &:not(:disabled):hover {
-        color: $white;
-        background-color: $tab-hover;
+        color: colors.$white;
+        background-color: colors.$tab-hover;
       }
 
       &:active,
       &:hover:active {
-        color: $white;
-        background-color: $tab-active;
+        color: colors.$white;
+        background-color: colors.$tab-active;
       }
     }
   }
@@ -493,7 +521,7 @@ export default {
   bottom: 0;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   background: rgba(255, 255, 255, 0.85);
   z-index: 1000;
 
@@ -503,10 +531,33 @@ export default {
 
   .success,
   .error {
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
+    min-width: min(100%, 500px);
+    padding: 42px 16px 32px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-size: 16px;
+
+    .close-modal {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1em;
+      margin: 10px;
+      padding: 0;
+      font-size: 24px;
+      line-height: 1em;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      @include color_classes.link-hover;
+    }
   }
 }
 </style>

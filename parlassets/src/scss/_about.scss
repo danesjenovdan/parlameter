@@ -1,3 +1,8 @@
+@use "breakpoints";
+@use "color_classes";
+@use "colors";
+@use "helper";
+
 .about-wrapper {
     margin-top: 30px;
 }
@@ -13,12 +18,12 @@
 
 #about .lead-text-container {
     font-family: "Roboto Slab", sans-serif;
-    color: $white;
+    color: colors.$white;
     font-style: italic;
     font-size: 24px;
     // text-align: center;
     margin: 45px 20px 45px 25px;
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
         font-size: 18px;
     }
 }
@@ -32,28 +37,28 @@
 }
 
 #about .lead-text-container .lead-text {
-    background-color: $cta-passive-background;
+    background-color: colors.$cta-passive-background;
     padding: 5px 0;
     line-height: 2;
     /* fix inline multiline text padding */
-    box-shadow: 10px 0 0 $cta-passive-background, -10px 0 0 $cta-passive-background;
+    box-shadow: 10px 0 0 colors.$cta-passive-background, -10px 0 0 colors.$cta-passive-background;
     box-decoration-break: clone;
-    color: $white;
+    color: colors.$white;
     font-weight: 300;
 }
 
 #about .lead-text-container a:hover .lead-text,
 #about .lead-text-container a:focus .lead-text,
 #about .lead-text-container a:active .lead-text {
-    background-color: $cta-hover-background;
+    background-color: colors.$cta-hover-background;
     /* fix inline multiline text padding */
-    box-shadow: 10px 0 0 $cta-hover-background, -10px 0 0 $cta-hover-background;
-    color: $white;
+    box-shadow: 10px 0 0 colors.$cta-hover-background, -10px 0 0 colors.$cta-hover-background;
+    color: colors.$white;
     text-decoration: none;
 }
 
 #about .lead-text a {
-    color: $white;
+    color: colors.$white;
     font-variant: small-caps;
     font-weight: 700;
 }
@@ -64,7 +69,7 @@
     margin-top: 45px;
     margin-bottom: 45px;
     margin-left: 15px;
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
         font-size: 16px;
     }
 }
@@ -96,13 +101,13 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: $first;
+    color: colors.$first;
 }
 
 @supports ( -webkit-background-clip: text ) {
     #about .gradient-title {
 
-        @include gradient(horizontal);
+        @include helper.gradient(horizontal);
 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -115,7 +120,7 @@
 }
 
 #about .post-entry {
-    background: $background;
+    background: colors.$background;
     padding: 20px;
     font-family: "Roboto Slab", sans-serif;
     font-weight: 300;
@@ -126,7 +131,7 @@
 
 #about .post-entry .post-info {
     flex-grow: 2;
-    color: $font-placeholder;
+    color: colors.$font-placeholder;
 }
 
 #about .post-entry .post-title {
@@ -144,11 +149,11 @@
 
 #about .post-entry .post-download i {
     vertical-align: middle;
-    color: $link;
+    color: colors.$link;
 }
 
 #about .thumbnail {
-    background: $background;
+    background: colors.$background;
     border: none;
     border-radius: 0;
     font-style: italic;
@@ -159,7 +164,7 @@
     line-height: 20px;
     display: flex;
     margin-bottom: -4px;
-    color: $font-placeholder;
+    color: colors.$font-placeholder;
 }
 
 #about .thumbnail .caption-text {
@@ -170,12 +175,12 @@
     font-size: 24px;
     line-height: 20px;
     vertical-align: bottom;
-    color: $link;
+    color: colors.$link;
 }
 
 #about .legal-text-container {
     a {
-        @include link-hover;
+        @include color_classes.link-hover;
     }
 
     h3 {

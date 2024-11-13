@@ -90,23 +90,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 path {
   &.for {
-    fill: $button-for;
+    fill: colors.$button-for;
   }
 
   &.against {
-    fill: $button-against;
+    fill: colors.$button-against;
   }
 
   &.abstain {
-    fill: $button-abstained;
+    fill: colors.$button-abstained;
   }
 
   &.absent {
-    fill: $button-absent;
+    fill: colors.$button-absent;
   }
 }
 </style>

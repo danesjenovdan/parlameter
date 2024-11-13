@@ -1,5 +1,8 @@
+@use "colors";
+@use "helper";
+
 .searchfilter-container {
-  background-color: $link-hover-background;
+  background-color: colors.$link-hover-background;
   padding: 15px;
 }
 
@@ -29,7 +32,7 @@
   margin-top: 5px;
   width: 30px;
   height: 30px;
-  background-color: $background;
+  background-color: colors.$background;
 }
 
 .searchfilter-checkbox .checkbox.with-input+label:before {
@@ -51,17 +54,17 @@
   position: relative;
   width: 250px;
   text-align: center;
-  color: $white;
+  color: colors.$white;
   padding: 10px;
-  background-color: $first;
+  background-color: colors.$first;
   cursor: pointer;
   display: block;
   margin-top: 20px;
 }
 
 .parlabutton-filter:hover {
-  background-color: $second;
-  color: $white;
+  background-color: colors.$second;
+  color: colors.$white;
   text-decoration: none;
 }
 
@@ -81,7 +84,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: $white-hover;
+  background: colors.$white-hover;
 }
 
 .search-loader .nalagalnik {
@@ -92,9 +95,9 @@
 
 // search info button
 .searchinfo {
-    background-color: $white;
+    background-color: colors.$white;
     border-radius: 50%;
-    color: $link;
+    color: colors.$link;
     cursor: pointer;
     font-family: 'Roboto Slab', serif;
     font-weight: 700;
@@ -104,7 +107,7 @@
     top: 54px;
     width: 20px;
 
-    @include card(1);
+    @include helper.card(1);
 }
 // end of search info button
 
@@ -142,7 +145,7 @@
           height: 16px;
           line-height: 16px;
           font-size: 12px;
-          background-color: $background;
+          background-color: colors.$background;
           top: 0;
           left: 0;
           padding-left: 5px;
@@ -155,17 +158,17 @@
       }
 
       .searchperson-container {
-        border-bottom: 1px solid $background;
+        border-bottom: 1px solid colors.$background;
         height: 60px;
         padding: 10px;
         line-height: 40px;
-        background-color: $white;
+        background-color: colors.$white;
       }
 
       .session-ac-search {
-        background: $link-hover-background;
+        background: colors.$link-hover-background;
         padding: 10px 5px;
-        color: $second;
+        color: colors.$second;
         cursor: pointer;
       }
     }

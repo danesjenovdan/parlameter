@@ -1,3 +1,8 @@
+@use "breakpoints";
+@use "colors";
+@use "helper";
+@use "font";
+
 @mixin column-list($image-width, $image-height, $image-margin, $mobile-image-width, $mobile-image-height, $mobile-image-margin) {
   flex-direction: column;
   list-style: none;
@@ -12,7 +17,7 @@
 
   .column {
     &.district,
-    &.optional { @include show-for(desktop); }
+    &.optional { @include breakpoints.show-for(desktop); }
   }
 
   .headers {
@@ -21,7 +26,7 @@
     margin-left: $image-width + $image-margin;
 
     .column {
-      color: $font-placeholder;
+      color: colors.$font-placeholder;
       cursor: pointer;
       font-size: 14px;
       font-weight: 500;
@@ -38,7 +43,7 @@
   .item {
     @extend %flex;
 
-    border-bottom: 1px solid $background;
+    border-bottom: 1px solid colors.$background;
     padding: 8px 0;
     &:last-child { border: none; }
 
@@ -80,7 +85,7 @@
         text-align: left;
 
         .text {
-          color: $font-default;
+          color: colors.$font-default;
           font-size: 18px;
           font-weight: 300;
           margin-left: 16px;
@@ -99,18 +104,18 @@
           }
 
           &.glyphicon-ok {
-            color: $icon-accepted;
+            color: colors.$icon-accepted;
           }
 
           &.glyphicon-remove {
-            color: $icon-rejected;
+            color: colors.$icon-rejected;
           }
         }
       }
     }
   }
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     .headers { margin-left: $mobile-image-width + $mobile-image-margin; }
 
     .person,

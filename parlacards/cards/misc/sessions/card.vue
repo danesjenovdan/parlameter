@@ -385,8 +385,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .filters {
   margin-top: 14px;
@@ -408,7 +407,7 @@ export default {
         flex-grow: 0;
         text-align: left;
 
-        @include respond-to(desktop) {
+        @include breakpoints.respond-to(desktop) {
           flex-basis: 140px;
         }
       }
@@ -416,7 +415,7 @@ export default {
       &.date--start,
       &.date--end,
       &.date:not(:last-child) {
-        @include respond-to(desktop) {
+        @include breakpoints.respond-to(desktop) {
           flex-basis: 110px;
         }
       }

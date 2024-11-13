@@ -1,3 +1,5 @@
+@use "colors";
+
 .single_voting {
   .lightning-badge,
   .fire-badge,
@@ -6,7 +8,7 @@
     left: 0;
 
     &::before {
-      background-color: $font-placeholder;
+      background-color: colors.$font-placeholder;
       border-radius: 50%;
       content: '';
       height: 31px;
@@ -38,7 +40,7 @@
 }
 
 #votingCardHorizontal {
-  color: $font-placeholder;
+  color: colors.$font-placeholder;
   margin-right: 4px;
   overflow: hidden;
 
@@ -154,7 +156,7 @@
 }
 
 .member {
-  border-bottom: 1px solid $background;
+  border-bottom: 1px solid colors.$background;
   padding: 10px 15px 10px 0;
   position: relative;
 
@@ -186,7 +188,7 @@
 }
 
 #votingCard {
-  color: $font-placeholder;
+  color: colors.$font-placeholder;
 
   #scrollbar-voting-card {
     position: relative;
@@ -196,10 +198,6 @@
 
   .no-border {
     border-bottom: 0 !important;
-  }
-
-  .member {
-    @extend .member;
   }
 }
 
@@ -225,7 +223,7 @@
 }
 
 .recent-activity {
-  color: $font-placeholder;
+  color: colors.$font-placeholder;
 
   #scrollbar-recent-activity {
     position: relative;
@@ -249,7 +247,7 @@
       margin: 0 20px 0 0;
       list-style-type: none;
       float: left;
-      border-top: 1px solid $background;
+      border-top: 1px solid colors.$background;
       padding: 0 15px 0 0;
       width: calc(100%);
 
@@ -332,7 +330,7 @@
 }
 
 .bgwhite {
-  background: $white;
+  background: colors.$white;
 }
 
 .other_poslanec .img-circle {
@@ -353,14 +351,14 @@
 }
 
 .poslanec .bordertop {
-  border-top: 1px solid $background;
+  border-top: 1px solid colors.$background;
 }
 
 .poslanec .key {
   display: inline-block;
   font-size: 16px;
   padding: 10px 0;
-  color: $font-placeholder;
+  color: colors.$font-placeholder;
   width: 88%;
 }
 
@@ -393,13 +391,13 @@
   border: medium none;
   border-radius: 0;
   padding: 5px;
-  color: $second;
+  color: colors.$second;
   font-size: 40px;
   line-height: 20px;
 }
 
 .poslanec .getListFriendlyBodies .nav-tabs li.active a {
-  color: $first;
+  color: colors.$first;
 }
 
 .me_poslanec_mini {
@@ -413,37 +411,37 @@
 
 .progress.smallbar .red,
 .indicator.red {
-  background: $first;
+  background: colors.$first;
 }
 
 .progress.smallbar .sadblue-light,
 .indicator.sadblue-light {
-  background: $link;
+  background: colors.$link;
 }
 
 .progress.smallbar .ignoreblue,
 .indicator.ignoreblue {
-  background: $button-absent;
+  background: colors.$button-absent;
 }
 
 .progress.smallbar .funblue,
 .indicator.funblue {
-  background: $second;
+  background: colors.$second;
 }
 
 .progress.smallbar .noblue,
 .indicator.noblue {
-  background: $button-abstained;
+  background: colors.$button-abstained;
 }
 
 .progress.smallbar .fontblue,
 .indicator.fontblue {
-  background: $link;
+  background: colors.$link;
 }
 
 .progress.smallbar .funblue-light,
 .indicator.funblue-light {
-  background: $link-hover-background;
+  background: colors.$link-hover-background;
 }
 
 .nmbr {
@@ -468,12 +466,12 @@
   border: none;
   a {
     text-align: center;
-    color: $white;
+    color: colors.$white;
     font-size: 24px;
     line-height: 58px;
     margin: 5px;
     padding: 10px 10px;
-    background: $second;
+    background: colors.$second;
     .more {
       font-size: 18px;
       text-transform: uppercase;
@@ -486,8 +484,8 @@
 
 .indexsessionpart {
   .link {
-    border-top: 1px solid $background;
-    color: $link;
+    border-top: 1px solid colors.$background;
+    color: colors.$link;
     margin-top: 10px;
     padding: 10px 0 20px;
     text-transform: uppercase;
@@ -505,7 +503,7 @@
       width: 25px;
       font-size: 34px;
       line-height: 34px;
-      color: $background;
+      color: colors.$background;
       font-family: megafont;
     }
   }
@@ -517,13 +515,13 @@
 .iconshowtype {
   display: inline-block;
   padding: 6px;
-  color: $font-placeholder;
+  color: colors.$font-placeholder;
   font-size: 24px;
 }
 
 .iconshowtype:hover,
 .iconshowtype.active {
-  color: $second;
+  color: colors.$second;
   text-decoration: none;
 }
 
@@ -535,8 +533,8 @@
         margin: 0;
         width: 10.8%;
         a {
-          background: $first;
-          color: $white;
+          background: colors.$first;
+          color: colors.$white;
           padding: 10px;
           text-align: center;
           font-size: 14px;
@@ -544,8 +542,8 @@
         }
         a.active,
         a:hover {
-          color: $white;
-          background: $second;
+          color: colors.$white;
+          background: colors.$second;
           text-decoration: none;
         }
       }
@@ -560,7 +558,7 @@
 
     a {
       line-height: 28px;
-      color: $font-placeholder;
+      color: colors.$font-placeholder;
       text-align: center;
       display: inline-block;
       cursor: pointer;
@@ -571,32 +569,32 @@
         line-height: 10px;
         margin-left: 20px;
         vertical-align: middle;
-        color: $first;
+        color: colors.$first;
 
         a.icon.up {
-          color: $first;
+          color: colors.$first;
         }
         a.icon.down {
-          color: $first;
+          color: colors.$first;
         }
       }
     }
 
     a:hover {
-      color: $second;
+      color: colors.$second;
       text-decoration: none;
       .icon {
         .up {
-          color: $first;
+          color: colors.$first;
         }
         .down {
-          color: $first;
+          color: colors.$first;
         }
         .up.active {
-          color: $second;
+          color: colors.$second;
         }
         .down.active {
-          color: $second;
+          color: colors.$second;
         }
       }
     }
@@ -612,7 +610,7 @@
   }
 
   .form-control:focus {
-    border: 1px solid $font-placeholder;
+    border: 1px solid colors.$font-placeholder;
   }
   .input-group-btn:hover {
     border: none;
@@ -624,10 +622,10 @@
     height: 40px;
     background: none;
     box-shadow: none;
-    color: $second;
+    color: colors.$second;
   }
   .member {
-    border-bottom: 1px solid $background;
+    border-bottom: 1px solid colors.$background;
     padding: 10px 0;
     .image {
       background-position: center center;
@@ -656,7 +654,7 @@
 .searchnastopi {
   .row {
     .border {
-      border-bottom: 1px solid $background;
+      border-bottom: 1px solid colors.$background;
       margin-bottom: 10px;
       padding-bottom: 10px;
     }

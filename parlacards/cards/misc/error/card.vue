@@ -49,8 +49,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-
 .errored {
   display: flex;
   flex-direction: column;

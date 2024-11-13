@@ -1,3 +1,8 @@
+@use "breakpoints";
+@use "colors";
+@use "helper";
+@use "font";
+
 .me_poslanec {
     padding-bottom: 25px;
 }
@@ -5,7 +10,7 @@
 .me_poslanec .poslanec_title {
     font-size: 18px;
     font-weight: 300;
-    @include respond-to(mobile) { font-size: 14px; }
+    @include breakpoints.respond-to(mobile) { font-size: 14px; }
 }
 
 .me_poslanec .progress_number {
@@ -19,7 +24,7 @@
 .me_poslanec_mini .poslanec_title{
     font-size: 18px;
     font-weight: 300;
-    @include respond-to(mobile) { font-size: 14px; }
+    @include breakpoints.respond-to(mobile) { font-size: 14px; }
 }
 .me_poslanec_mini .progress_number{
     font-size: 16px;
@@ -42,16 +47,16 @@
       height: 30px;
 
       .this {
-          background: $barchart-this;
+          background: colors.$barchart-this;
       }
     }
     &.smallbar {
 
       .this {
-          background: $barchart-this;
+          background: colors.$barchart-this;
       }
       .other {
-          background: $barchart-other;
+          background: colors.$barchart-other;
       }
     }
 }
@@ -60,13 +65,13 @@
     border: none;
     box-shadow: none;
     border-radius: 0;
-    background-color: $barchart-default;
+    background-color: colors.$barchart-default;
 
     .this {
-        background: $barchart-this;
+        background: colors.$barchart-this;
     }
     .other {
-        background: $barchart-other;
+        background: colors.$barchart-other;
     }
 }
 
@@ -104,12 +109,12 @@
     text-align: center;
     border: 0px;
     pointer-events: none;
-    background-color: $font-placeholder;
+    background-color: colors.$font-placeholder;
     border-radius: 3px;
     padding: 2px 10px;
     opacity: 0;
 
-    color: $white;
+    color: colors.$white;
 
     transition: opacity 0.25s ease-out;
 
@@ -132,7 +137,7 @@
     background-position: center;
     background-size: cover;
 
-    border: 2px solid $white;
+    border: 2px solid colors.$white;
 
     &[data-name="PS Levica"], &.levica-background {
         font-size: 8px;

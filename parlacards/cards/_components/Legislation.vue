@@ -266,7 +266,9 @@ export default {
       return [
         {
           id: 'text',
-          label: this.$t('name'),
+          label: this.$te('name--for-legislation')
+            ? this.$t('name--for-legislation')
+            : this.$t('name'),
           additionalClass: 'name-col',
         },
         // TODO this is commented out because
@@ -427,8 +429,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .legislation-list-container {
   .filters {
@@ -437,16 +438,16 @@ export default {
     padding-bottom: 12px;
     margin-bottom: 12px;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       flex-wrap: wrap;
     }
 
     .filter {
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         margin-right: 10px;
       }
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         width: 100%;
       }
 
@@ -464,7 +465,7 @@ export default {
     .text-filter {
       flex-basis: 100%;
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         flex-basis: 50%;
         flex-grow: 0;
       }
@@ -476,7 +477,7 @@ export default {
       justify-content: flex-end;
       gap: 3px;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         justify-content: center;
         margin-top: 10px;
       }
@@ -484,7 +485,7 @@ export default {
       .striped-button {
         padding: 0 8px;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
           flex: 1;
           padding: 0;
         }
@@ -501,7 +502,7 @@ export default {
       flex: 0 0 80px;
       margin-left: 30px;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         display: none;
       }
     }
@@ -510,7 +511,7 @@ export default {
       flex: 0 0 100px;
       margin-left: 30px;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         display: none;
       }
     }
@@ -523,7 +524,7 @@ export default {
         flex-shrink: 0;
       }
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         flex: 0.45;
 
         .outcome .text {
@@ -568,12 +569,12 @@ export default {
 // }
 
 // label[for='only-abstracts']::after {
-//   background-image: url('#{icon-abstract($font-default)}');
+//   background-image: url('#{icon-abstract(colors.$font-default)}');
 //   background-size: 17px;
 // }
 
 // label[for='only-with-votes']::after {
-//   background-image: url('#{icon-votes($font-default)}');
+//   background-image: url('#{icon-votes(colors.$font-default)}');
 //   background-size: 19px;
 // }
 </style>

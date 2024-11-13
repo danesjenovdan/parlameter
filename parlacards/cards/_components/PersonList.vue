@@ -88,16 +88,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .person-list-shadow {
   overflow-y: auto;
-  height: $full-card-height;
+  height: breakpoints.$full-card-height;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     height: auto;
-    max-height: $full-card-height;
+    max-height: breakpoints.$full-card-height;
   }
 
   .person-name,
@@ -121,7 +121,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: $white-hover;
+  background: colors.$white-hover;
   z-index: 4;
 
   .nalagalnik {

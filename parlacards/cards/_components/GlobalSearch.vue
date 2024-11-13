@@ -120,7 +120,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 :deep(.card-container.transparent) {
   z-index: 1;
@@ -132,7 +132,7 @@ export default {
   }
 
   .search-dropdown-input {
-    background-color: $white;
+    background-color: colors.$white;
   }
 
   .search-icon-wrapper {
@@ -150,7 +150,7 @@ export default {
     font-family: 'Glyphicons Halflings';
     border: none;
     font-size: 22px;
-    color: $first;
+    color: colors.$first;
     cursor: pointer;
   }
 }

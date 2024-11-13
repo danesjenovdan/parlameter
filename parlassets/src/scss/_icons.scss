@@ -1,3 +1,6 @@
+@use "colors";
+@use "helper";
+
 .parlaicon {
     width: 30px;
     height: 30px;
@@ -8,69 +11,69 @@
 }
 
 .parlaicon-clanstva {
-    background-image: url($cdn_home_icon + 'clanstva.svg');
+    background-image: url(helper.$cdn_home_icon + 'clanstva.svg');
 }
 .parlaicon-skupina {
-    background-image: url($cdn_home_icon + 'skupina.svg');
+    background-image: url(helper.$cdn_home_icon + 'skupina.svg');
 }
 .parlaicon-funkcija {
-    background-image: url($cdn_home_icon + 'funkcija.svg');
+    background-image: url(helper.$cdn_home_icon + 'funkcija.svg');
 }
 .parlaicon-delaza {
-    background-image: url($cdn_home_icon + 'delaza.svg');
+    background-image: url(helper.$cdn_home_icon + 'delaza.svg');
 }
 .parlaicon-mandat {
-    background-image: url($cdn_home_icon + 'mandat.svg');
+    background-image: url(helper.$cdn_home_icon + 'mandat.svg');
 }
 .parlaicon-status {
-    background-image: url($cdn_home_icon + 'status.svg');
+    background-image: url(helper.$cdn_home_icon + 'status.svg');
 }
 .parlaicon-izobrazba {
-    background-image: url($cdn_home_icon + 'izobrazba.svg');
+    background-image: url(helper.$cdn_home_icon + 'izobrazba.svg');
 }
 .parlaicon-starost {
-    background-image: url($cdn_home_icon + 'starost.svg');
+    background-image: url(helper.$cdn_home_icon + 'starost.svg');
 }
 .parlaicon-globe {
-    background-image: url($cdn_home_icon + 'globe.svg');
+    background-image: url(helper.$cdn_home_icon + 'globe.svg');
 }
 .parlaicon-budget {
-    background-image: url($cdn_home_icon + 'budget.svg');
+    background-image: url(helper.$cdn_home_icon + 'budget.svg');
 }
 .parlaicon-vodja {
-    background-image: url($cdn_home_icon + 'vodja.svg');
+    background-image: url(helper.$cdn_home_icon + 'vodja.svg');
 }
 .parlaicon-kontakt {
-    background-image: url($cdn_home_icon + 'kontakt.svg');
+    background-image: url(helper.$cdn_home_icon + 'kontakt.svg');
 }
 .parlaicon-documents {
-    background-image: url($cdn_home_icon + 'documents.svg');
+    background-image: url(helper.$cdn_home_icon + 'documents.svg');
 }
 
 .parlaicon-za {
     //background-image: url($cdn_home_icon + 'za.svg');
-    background-image: url($cdn_home_icon + 'za_v2.svg');
+    background-image: url(helper.$cdn_home_icon + 'za_v2.svg');
 }
 .parlaicon-ni {
-    background-image: url($cdn_home_icon + 'ni_v2.svg');
+    background-image: url(helper.$cdn_home_icon + 'ni_v2.svg');
 }
 .parlaicon-proti {
-    background-image: url($cdn_home_icon + 'proti_v2.svg');
+    background-image: url(helper.$cdn_home_icon + 'proti_v2.svg');
 }
 .parlaicon-brez-glasu {
-    background-image: url($cdn_home_icon + 'brez-glasu.svg');
+    background-image: url(helper.$cdn_home_icon + 'brez-glasu.svg');
 }
 .parlaicon-kvorum {
-    background-image: url($cdn_home_icon + 'vzdrzan_v2.svg');
+    background-image: url(helper.$cdn_home_icon + 'vzdrzan_v2.svg');
 }
 .parlaicon-govor {
-    background-image: url($cdn_home_icon + 'govor.svg');
+    background-image: url(helper.$cdn_home_icon + 'govor.svg');
 }
 .parlaicon-vprasanje {
-    background-image: url($cdn_home_icon + 'vprasanja.svg');
+    background-image: url(helper.$cdn_home_icon + 'vprasanja.svg');
 }
 .parlaicon-odgovor {
-    background-image: url($cdn_home_icon + 'odgovor.svg');
+    background-image: url(helper.$cdn_home_icon + 'odgovor.svg');
 }
 
 
@@ -80,7 +83,7 @@
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home_icon + 'facebook.svg');
+    background-image: url(helper.$cdn_home_icon + 'facebook.svg');
 }
 .parlaicon-twitter {
     width: 22px;
@@ -88,7 +91,7 @@
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home_icon + 'twitter.svg');
+    background-image: url(helper.$cdn_home_icon + 'twitter.svg');
 }
 .parlaicon-linkedin {
     width: 22px;
@@ -96,7 +99,7 @@
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home_icon + 'linkedin.svg');
+    background-image: url(helper.$cdn_home_icon + 'linkedin.svg');
 }
 .parlaicon-instagram {
     width: 22px;
@@ -104,7 +107,7 @@
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home_icon + 'instagram.svg');
+    background-image: url(helper.$cdn_home_icon + 'instagram.svg');
 }
 .parlaicon-tiktok {
     width: 22px;
@@ -112,7 +115,7 @@
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home_icon + 'tiktok.svg');
+    background-image: url(helper.$cdn_home_icon + 'tiktok.svg');
 }
 .parlaicon-omrezja {
     width: 22px;
@@ -120,29 +123,29 @@
     line-height: 22px;
     position: relative;
     bottom: -5px;
-    background-image: url($cdn_home_icon + 'omrezja.svg');
+    background-image: url(helper.$cdn_home_icon + 'omrezja.svg');
 }
 
-@each $result, $color in $vote-results-colors {
+@each $result, $color in colors.$vote-results-colors {
     .parlaicon.vote-result--#{$result} {
         background-image: url(encode-svg(str-replace(fs-readFile('icons/vote-result--#{$result}.svg'), '#000', '#{$color}')));
     }
 }
 
 .legislation-link-icon {
-    background-image: url(encode-svg(str-replace(fs-readFile('icons/zakonodaja.svg'), '#000', '#{$link}')));
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/zakonodaja.svg'), '#000', '#{colors.$link}')));
     background-repeat: no-repeat;
     background-position: center left;
 }
 
 .transcript-link-icon {
-    background-image: url(encode-svg(str-replace(fs-readFile('icons/navigation/transcripts.svg'), '#fff', '#{$link}')));
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/navigation/transcripts.svg'), '#fff', '#{colors.$link}')));
     background-repeat: no-repeat;
     background-position: center left;
 }
 
 .donation-icon {
-    background-image: url(encode-svg(str-replace(fs-readFile('img/icons/donacija.svg'), '#000', '#{$link}')));
+    background-image: url(encode-svg(str-replace(fs-readFile('img/icons/donacija.svg'), '#000', '#{colors.$link}')));
     background-repeat: no-repeat;
     background-position: center;
     width: 75px;
@@ -151,13 +154,13 @@
 }
 
 .empty-icon {
-    background-image: url(encode-svg(str-replace(fs-readFile('icons/empty.svg'), '#000', '#{$font-default}')));
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/empty.svg'), '#000', '#{colors.$font-default}')));
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .agenda-item-icon {
-    background-image: url(encode-svg(str-replace(fs-readFile('icons/calendar.svg'), '#000', '#{$white}')));
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/calendar.svg'), '#000', '#{colors.$white}')));
     background-repeat: no-repeat;
     background-position: center;
 }
