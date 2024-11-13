@@ -62,8 +62,8 @@
 </template>
 
 <script>
-import { parseISO, format } from 'date-fns';
-import { groupBy, sortBy, zipObject } from 'lodash-es';
+import { parseISO } from 'date-fns';
+import { groupBy } from 'lodash-es';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import StripedButton from '@/_components/StripedButton.vue';
