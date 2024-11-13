@@ -144,8 +144,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'parlassets/scss/breakpoints';
-
 .event {
   display: flex;
   font-weight: 500;

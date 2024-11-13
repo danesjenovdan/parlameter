@@ -1,4 +1,4 @@
-@import 'breakpoints';
+@use 'breakpoints';
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&subset=latin,latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,700&subset=latin,latin-ext');
@@ -62,13 +62,13 @@ h1 {
 %list-text {
   font-size: 18px;
   font-weight: 300;
-  @include respond-to(mobile) { font-size: 14px; }
+  @include breakpoints.respond-to(mobile) { font-size: 14px; }
 }
 
 %progress-text {
   font-size: 20px;
   font-weight: 500;
-  @include respond-to(mobile) { font-size: 16px; }
+  @include breakpoints.respond-to(mobile) { font-size: 16px; }
 }
 
 /* end of global fonts */

@@ -65,8 +65,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .excerpt {
   display: flex;
@@ -77,18 +77,18 @@ export default {
   line-height: 1.5em;
   margin: 12px 0;
   padding: 40px;
-  background: $background;
+  background: colors.$background;
   height: 442px;
   position: relative;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     padding: 20px;
   }
 
   .icon-container {
     display: flex;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       display: none;
     }
 
@@ -104,7 +104,7 @@ export default {
       background-size: 65%;
       width: 100px;
       height: 100px;
-      background-color: $white;
+      background-color: colors.$white;
       border-radius: 50%;
       align-self: center;
     }
@@ -119,7 +119,7 @@ export default {
     margin: auto;
     width: 100%;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       padding: 0 20px 0 10px;
       height: 320px;
     }
@@ -127,7 +127,7 @@ export default {
     &.show-parent {
       max-height: 320px;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         padding: 0;
         min-height: 320px;
       }
@@ -139,7 +139,7 @@ export default {
       :deep(p) {
         flex: 2;
         font-size: 18px;
-        border-bottom: 1px solid $font-placeholder;
+        border-bottom: 1px solid colors.$font-placeholder;
         margin-bottom: 0;
         padding-top: 1em;
         padding-bottom: 1em;
@@ -163,7 +163,7 @@ export default {
           padding-left: 20px;
           padding-top: 1em;
           padding-bottom: 1em;
-          border-bottom: 1px solid $font-placeholder;
+          border-bottom: 1px solid colors.$font-placeholder;
 
           &:last-child {
             border-bottom: none !important;
@@ -186,7 +186,7 @@ export default {
 }
 
 hr {
-  background: $font-placeholder;
+  background: colors.$font-placeholder;
   height: 1px;
   margin: 10px 0 0 0;
 }
@@ -195,11 +195,11 @@ hr {
   position: absolute;
   width: calc(100% - 80px);
   bottom: 10px;
-  background: $background;
+  background: colors.$background;
 
   .metadata {
     font-size: 14px;
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       display: flex;
     }
 
@@ -225,7 +225,7 @@ hr {
   font-family: 'Roboto Slab', serif;
   text-align: center;
   font-size: 16px;
-  color: $font-default;
+  color: colors.$font-default;
   width: 100%;
   font-style: italic;
   padding-bottom: 40px;
