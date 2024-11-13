@@ -266,7 +266,9 @@ export default {
       return [
         {
           id: 'text',
-          label: this.$t('name'),
+          label: this.$te('name--for-legislation')
+            ? this.$t('name--for-legislation')
+            : this.$t('name'),
           additionalClass: 'name-col',
         },
         // TODO this is commented out because
