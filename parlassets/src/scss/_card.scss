@@ -1,3 +1,8 @@
+@use "breakpoints";
+@use "colors";
+@use "helper";
+@use "scroller";
+
 .card-container {
     margin-top: 20px;
     height: 100%;
@@ -6,8 +11,8 @@
     left: 0;
     padding: 0;
     overflow: hidden;
-    background-color: $white;
-    @include card(1);
+    background-color: colors.$white;
+    @include helper.card(1);
     @extend %scroller;
 }
 .card-header {
@@ -32,7 +37,7 @@
     }
 
     .card-header-border {
-      @include gradient('vertical');
+      @include helper.gradient('vertical');
       display: flex;
       float: none;
       height: auto;
@@ -49,7 +54,7 @@
       padding-right: 13px;
       padding-top: 6px;
       padding-bottom: 6px;
-      @include respond-to(mobile) { font-size: 18px; }
+      @include breakpoints.respond-to(mobile) { font-size: 18px; }
     }
 }
 .card-content {
@@ -62,23 +67,23 @@
 .card-content-front { height: 100%; }
 // muki made this global (removed col-md-12 > etc.)
 .card-container .card-content.full {
-    $height: $full-card-height;
+    $height: breakpoints.$full-card-height;
     max-height: $height;
     .card-content-front { max-height: $height }
     .card-content-info { max-height: $height }
-    @include respond-to(desktop) { height: $height }
+    @include breakpoints.respond-to(desktop) { height: $height }
 }
 .card-container .card-content.half {
-    $height: $half-card-height;
+    $height: breakpoints.$half-card-height;
     max-height: $height;
     .card-content-front { max-height: $height }
     .card-content-info { max-height: $height }
-    @include respond-to(desktop) { height: $height; }
+    @include breakpoints.respond-to(desktop) { height: $height; }
 }
 // end of muki made this global (removed col-md-12 > etc.)
 
 .card-placeholder {
-    background-color: $background;
+    background-color: colors.$background;
     width: 100%;
     height: 300px;
 }
@@ -97,7 +102,7 @@
         left: 0;
         width: 100%;
         height: 1px;
-        @include gradient('horizontal');
+        @include helper.gradient('horizontal');
     }
 }
 .card-circle-button,
@@ -107,36 +112,36 @@
     display: block;
     float: right;
     margin-left: 8px;
-    @include border-radius(50%);
-    background-color: $card-footer-button-passive-background;
+    @include helper.border-radius(50%);
+    background-color: colors.$card-footer-button-passive-background;
     font-family: 'Roboto Slab';
     font-weight: 700;
     font-size: 16px;
     line-height: 30px;
     text-align: center;
-    color: $white;
+    color: colors.$white;
     cursor: pointer;
     &:hover {
-        background-color: $card-footer-button-hover-background;
+        background-color: colors.$card-footer-button-hover-background;
     }
 }
 .card-info {
     font-weight: 100;
 }
 .card-embed {
-    background-image: url($cdn_home_icon + 'embed.svg');
+    background-image: url(helper.$cdn_home_icon + 'embed.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70% 70%;
 }
 .card-share {
-    background-image: url($cdn_home_icon + 'share.svg');
+    background-image: url(helper.$cdn_home_icon + 'share.svg');
     background-repeat: no-repeat;
     background-position: 6px center;
     background-size: 50% 50%;
 }
 .card-export {
-    background-image: url($cdn_home_icon + 'export.svg');
+    background-image: url(helper.$cdn_home_icon + 'export.svg');
     background-repeat: no-repeat;
     background-position: 4px 3px;
     background-size: 70% 70%;
@@ -160,14 +165,14 @@
         margin-left: 15px;
 
         h1 {
-            color: $first;
+            color: colors.$first;
             font-weight: 200;
             font-size: 20px !important;
             line-height: 20px !important;
         }
 
         h2 {
-            color: $font-placeholder;
+            color: colors.$font-placeholder;
             font-size: 18px;
             font-weight: 200;
 
@@ -188,7 +193,7 @@
 .card-embed-header-divider {
     height: 1px;
 
-    background-image: url($cdn_home_img + 'shortline.png');
+    background-image: url(helper.$cdn_home_img + 'shortline.png');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -254,7 +259,7 @@
 .back {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
-    background: $white;
+    background: colors.$white;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -264,7 +269,7 @@
 }
 
 .card-exit {
-    background-color: $card-footer-button-passive-background;
+    background-color: colors.$card-footer-button-passive-background;
     background-image: none;
     font-size: 26px;
     font-weight: 300;
@@ -303,9 +308,9 @@ input.form-control, textarea.form-control {
 }
 
 .btn-parlameter {
-    background-color: $first;
+    background-color: colors.$first;
     border: none;
-    color: $white;
+    color: colors.$white;
     height: 34px;
     line-height: 30px;
     padding: 0 10px;;
@@ -361,16 +366,16 @@ input.form-control, textarea.form-control {
             float: left;
             width: 50%;
             text-align: left;
-            background-color: $tab-passive;
+            background-color: colors.$tab-passive;
             padding-left: 10px;
-            color: $white;
+            color: colors.$white;
         }
 
         .rightswitch {
             float: right;
             width: 50%;
             text-align: right;
-            background-color: $background;
+            background-color: colors.$background;
             padding-right: 10px;
         }
     }
@@ -382,7 +387,7 @@ input.form-control, textarea.form-control {
     width: 26px;
     height: 26px;
     border-radius: 13px;
-    background-color: $first;
+    background-color: colors.$first;
     position: absolute;
     top: 3px;
     right: 10px;
@@ -460,7 +465,7 @@ input.form-control, textarea.form-control {
 .card-content {
     position: relative;
     z-index: 1;
-    min-height: $half-card-height;
+    min-height: breakpoints.$half-card-height;
 
     &__empty {
         display: flex;
@@ -471,19 +476,19 @@ input.form-control, textarea.form-control {
         height: auto;
         padding-top: 10vh;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
             padding-top: 30px;
         }
     }
 
     &__empty-inner {
-        background: $background;
+        background: colors.$background;
         width: 216px;
         height: 216px;
         border-radius: 50%;
         padding: 40px;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
             width: 196px;
             height: 196px;
         }
@@ -492,19 +497,19 @@ input.form-control, textarea.form-control {
             margin: 0 auto 5px;
             display: block;
 
-            @include respond-to(mobile) {
+            @include breakpoints.respond-to(mobile) {
                 max-width: 60px;
             }
         }
 
         p {
             font-family: "Roboto Slab", sans-serif;
-            color: $font-default;
+            color: colors.$font-default;
             font-style: italic;
             font-size: 16px;
             text-align: center;
 
-            @include respond-to(mobile) {
+            @include breakpoints.respond-to(mobile) {
                 font-size: 14px;
             }
         }
@@ -514,7 +519,7 @@ input.form-control, textarea.form-control {
 }
 .card-container::before {
     content: '';
-    background-color: $card-footer-button-hover-background;
+    background-color: colors.$card-footer-button-hover-background;
     position: absolute;
     border-radius: 50%;
     width: 30px;
@@ -543,7 +548,7 @@ input.form-control, textarea.form-control {
     animation: ripple 1s forwards;
 }
 .card-container.revealed::before {
-    background-color: $card-footer-button-hover-background;
+    background-color: colors.$card-footer-button-hover-background;
     animation: ripple 1s forwards;
 }
 
@@ -611,12 +616,12 @@ input.form-control, textarea.form-control {
         height: 420px;
         overflow-y: auto;
         overflow-x: hidden;
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
             height: 267px;
         }
 
         .date {
-            background-color: $background;
+            background-color: colors.$background;
             font-weight: bold;
             padding: 10px;
         }

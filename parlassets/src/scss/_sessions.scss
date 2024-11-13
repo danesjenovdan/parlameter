@@ -1,3 +1,8 @@
+@use "breakpoints";
+@use "colors";
+@use "helper";
+@use "font";
+
 .session-container {
   height: 100%;
   left: 0;
@@ -41,7 +46,7 @@
 
 .session-types {
   .session-types-title {
-    color: $font-placeholder;
+    color: colors.$font-placeholder;
     font-size: 18px;
     font-weight: 500;
   }
@@ -53,25 +58,25 @@
     padding: 0;
     .session-type {
       align-items: center;
-      border: 1px solid $font-placeholder;
-      color: $white;
+      border: 1px solid colors.$font-placeholder;
+      color: colors.$white;
       display: flex;
       justify-content: center;
       padding: 5px 20px;
       text-transform: uppercase;
       width: calc(33.33% - 6.667px);
-      background-color: $first;
+      background-color: colors.$first;
       &.active,
       &:hover {
-        background: $second;
-        color: $white;
+        background: colors.$second;
+        color: colors.$white;
       }
       &:active,
       &:focus,
       &:hover {
         text-decoration: none;
       }
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         font-size: 12px;
         padding: 8px 10px;
       }
@@ -91,28 +96,28 @@
       border-right: medium none;
       font-size: 20px;
       height: 50px;
-      border-color: $font-placeholder;
+      border-color: colors.$font-placeholder;
       border-right: none;
 
       &:focus {
-        border-color: $second;
+        border-color: colors.$second;
       }
       &:focus ~ .input-group-btn .btn {
-        border-color: $second;
+        border-color: colors.$second;
       }
     }
     .btn {
-      border-color: $font-placeholder;
+      border-color: colors.$font-placeholder;
       border-left: none;
       border-radius: 0;
-      color: $second;
+      color: colors.$second;
       height: 50px;
       transition: border-color 0.15s;
     }
   }
   h3.searchresults {
     font-size: 18px;
-    color: $font-placeholder;
+    color: colors.$font-placeholder;
     font-weight: 500;
   }
 }
@@ -121,10 +126,10 @@
   display: flex;
   flex-wrap: wrap;
   .session {
-    background-color: $second;
+    background-color: colors.$second;
     box-shadow: 0 1.5px 4px rgba(#000, 0.24), 0 1.5px 6px rgba(#000, 0.12);
     box-sizing: border-box;
-    color: $white;
+    color: colors.$white;
     display: flex;
     flex-direction: column;
     font-size: 18px;
@@ -146,13 +151,13 @@
     }
     &.active,
     &:hover {
-      color: $font-placeholder;
+      color: colors.$font-placeholder;
     }
     &.active {
       cursor: default;
       &:after {
         $arrow-size: 22px;
-        background: $second;
+        background: colors.$second;
         content: '';
         width: $arrow-size;
         height: $arrow-size;
@@ -163,9 +168,9 @@
       }
     }
     .session-date {
-      color: $font-placeholder;
+      color: colors.$font-placeholder;
     }
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       font-size: 14px;
       min-height: 0;
       margin-right: 0;
@@ -186,10 +191,10 @@
     padding-top: 15px;
     padding-bottom: 15px;
     &.border-right {
-      border-right: 1px solid $background;
+      border-right: 1px solid colors.$background;
     }
     .member {
-      border-bottom: 1px solid $background;
+      border-bottom: 1px solid colors.$background;
       padding: 10px 0;
       position: relative;
       h3 {
@@ -222,7 +227,7 @@
           display: inline-block;
           font-size: 16px;
           font-weight: 300;
-          border-bottom: 1px solid $background;
+          border-bottom: 1px solid colors.$background;
           margin-bottom: 10px;
           padding: 0 20px 10px 20px;
         }
@@ -244,7 +249,7 @@
       a {
         border: medium none;
         border-radius: 0;
-        color: $second;
+        color: colors.$second;
         font-size: 40px;
         line-height: 20px;
         padding: 0;
@@ -253,7 +258,7 @@
     }
     li.active {
       a {
-        color: $first;
+        color: colors.$first;
       }
     }
   }
@@ -262,28 +267,28 @@
   $size: 90px;
   $padding: 10px;
 
-  color: $white;
+  color: colors.$white;
   text-align: center;
   width: $size;
   height: $size;
   margin: 0 auto 20px auto;
   padding: $padding;
-  background-color: $font-default;
+  background-color: colors.$font-default;
 
   &.backgroundred {
-    background-color: $icon-session;
+    background-color: colors.$icon-session;
   }
 
   &.backgroundblue {
-    background-color: $gradient-third;
+    background-color: colors.$gradient-third;
   }
 
   &.law-logo {
-    background-color: $icon-transcript;
+    background-color: colors.$icon-transcript;
   }
 
   &.backgroundwhite {
-    background-color: $white;
+    background-color: colors.$white;
 
     // icon styles
     background-size: 65%;
@@ -292,7 +297,7 @@
   }
 
   &.law-logo {
-    background-color: $icon-transcript;
+    background-color: colors.$icon-transcript;
   }
 
   b {
@@ -303,7 +308,7 @@
 }
 
 .person-logo {
-  color: $white;
+  color: colors.$white;
   text-align: center;
   width: 90px;
   height: 90px;
@@ -313,7 +318,7 @@
   object-fit: cover;
 
   &.backgroundred {
-    background-color: $first;
+    background-color: colors.$first;
   }
 
   b {
@@ -338,15 +343,15 @@
         vertical-align: middle;
         line-height: 30px;
         //                width: 160px;
-        color: $font-placeholder;
-        border: 1px solid $font-placeholder;
+        color: colors.$font-placeholder;
+        border: 1px solid colors.$font-placeholder;
         padding: 0 20px;
         text-transform: uppercase;
       }
       a.active,
       a:hover {
-        color: $white;
-        background: $second;
+        color: colors.$white;
+        background: colors.$second;
         text-decoration: none;
       }
     }
@@ -354,7 +359,7 @@
 }
 .session_transcript {
   .panel {
-    background-color: $white;
+    background-color: colors.$white;
     border: 1px solid transparent;
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -365,12 +370,12 @@
     margin-bottom: 0;
   }
   .panel-default {
-    border-color: $font-placeholder;
+    border-color: colors.$font-placeholder;
   }
   .panel-default > .panel-heading {
-    background-color: $white;
-    border-color: $font-placeholder;
-    color: $font-default;
+    background-color: colors.$white;
+    border-color: colors.$font-placeholder;
+    color: colors.$font-default;
   }
   .panel-group .panel-heading {
     border-bottom: 0 none;
@@ -394,14 +399,14 @@
       margin-right: 1%;
     }
     a .status {
-      background: url($cdn_home_img + 'arrup.png') top center no-repeat;
+      background: url(helper.$cdn_home_img + 'arrup.png') top center no-repeat;
       width: 40px;
       height: 40px;
       display: inline-block;
       float: right;
     }
     a.collapsed .status {
-      background: url($cdn_home_img + 'arrdown.png') top center no-repeat;
+      background: url(helper.$cdn_home_img + 'arrdown.png') top center no-repeat;
       width: 40px;
       height: 40px;
     }
@@ -425,7 +430,7 @@
     position: relative;
   }
   .panel-collapse .status a {
-    background: url($cdn_home_img + 'arrup.png') top center no-repeat;
+    background: url(helper.$cdn_home_img + 'arrup.png') top center no-repeat;
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -435,7 +440,7 @@
     text-decoration: none;
   }
   .panel-collapse.collapsed .status a {
-    background: url($cdn_home_img + 'arrdown.png') top center no-repeat;
+    background: url(helper.$cdn_home_img + 'arrdown.png') top center no-repeat;
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -472,14 +477,14 @@
   font-size: 18px;
   font-weight: 400;
   .single_voting {
-    background: $background;
+    background: colors.$background;
     margin-bottom: 20px;
   }
   .session_title {
     margin: 15px 0;
   }
   .border-left {
-    border-left: 2px solid $font-placeholder;
+    border-left: 2px solid colors.$font-placeholder;
   }
   .accepted {
     text-align: center;
@@ -487,10 +492,10 @@
     font-size: 24px;
   }
   .accepted.aye {
-    color: $icon-accepted;
+    color: colors.$icon-accepted;
   }
   .accepted.nay {
-    color: $icon-rejected;
+    color: colors.$icon-rejected;
   }
   .session_votes {
     text-align: center;
@@ -512,19 +517,19 @@
     }
     .progress.smallbar .aye,
     .indicator.aye {
-      background: $button-for;
+      background: colors.$button-for;
     }
     .progress.smallbar .ney,
     .indicator.ney {
-      background: $button-against;
+      background: colors.$button-against;
     }
     .progress.smallbar .abstention,
     .indicator.abstention {
-      background: $button-abstained;
+      background: colors.$button-abstained;
     }
     .progress.smallbar .not,
     .indicator.not {
-      background: $button-absent;
+      background: colors.$button-absent;
     }
     .progress.smallbar .none,
     .indicator.none {
@@ -541,11 +546,11 @@
     color: inherit;
   }
   a:hover {
-    color: $second;
+    color: colors.$second;
   }
 }
 .session_report {
-  background: $background;
+  background: colors.$background;
   padding: 10px 20px;
   .type {
     float: left;
@@ -572,7 +577,7 @@
     .status1 {
       line-height: 50px;
       font-size: 18px;
-      color: $font-placeholder;
+      color: colors.$font-placeholder;
       b {
         font-weight: bold;
         text-transform: uppercase;
@@ -598,7 +603,7 @@
 .odpri-vse {
   margin-top: 20px;
   margin-bottom: 10px;
-  color: $second;
+  color: colors.$second;
   font-size: 18px;
   line-height: 26.4px;
   cursor: pointer;
@@ -610,19 +615,19 @@
 
   h2 {
     font-weight: 500;
-    color: $font-default;
+    color: colors.$font-default;
   }
 }
 h2.izberi-vrsto-seje {
   font-size: 18px;
-  color: $font-placeholder;
+  color: colors.$font-placeholder;
   font-weight: 500;
 }
 
 span.session-date {
   display: inline;
   font-size: 16px;
-  color: $font-placeholder;
+  color: colors.$font-placeholder;
 }
 
 .empty-state-session-no-data {

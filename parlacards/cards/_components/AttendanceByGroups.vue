@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/breakpoints';
 
 .party-grid {
   display: grid;
@@ -70,7 +70,7 @@ export default {
   gap: 10px;
   align-items: center;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     grid-template-columns: 1fr;
     gap: 0;
   }
@@ -80,7 +80,7 @@ export default {
     font-size: 18px;
     line-height: 1.1;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       font-size: 14px;
       line-height: 1.3;
     }
@@ -91,7 +91,7 @@ export default {
       .party-name {
         margin-right: 20px;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
           margin-right: 0;
         }
       }
@@ -101,13 +101,13 @@ export default {
       font-weight: 500;
       text-align: right;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         text-align: left;
       }
     }
 
     &.chart {
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         margin-bottom: 10px;
       }
     }
@@ -117,7 +117,7 @@ export default {
 // .party-list .labeled-chart {
 //   // min-height: 46px;
 
-//   @include respond-to(mobile) {
+//   @include breakpoints.respond-to(mobile) {
 //     flex-direction: column;
 //     align-items: start;
 //   }
@@ -130,7 +130,7 @@ export default {
 //     margin-bottom: 0;
 //     width: 100px;
 
-//     @include respond-to(mobile) {
+//     @include breakpoints.respond-to(mobile) {
 //       width: 100%;
 //     }
 //   }
@@ -144,7 +144,7 @@ export default {
 //   }
 
 //   .column.chart {
-//     @include respond-to(mobile) {
+//     @include breakpoints.respond-to(mobile) {
 //       width: 100%;
 //       margin-left: 0;
 //     }

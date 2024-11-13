@@ -196,10 +196,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/helper';
-@import 'parlassets/scss/icons';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .parlaicon-namestnik {
   background-image: url('#{get-parlassets-url()}/icons/namestnik.svg');
@@ -216,7 +214,7 @@ export default {
 
 .parlaicon-container {
   padding: 10px 16px;
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     min-width: 70px;
   }
 
@@ -227,7 +225,7 @@ export default {
 }
 
 .bordertop {
-  border-top: 1px solid $background;
+  border-top: 1px solid colors.$background;
   padding: 10px 0;
   flex: 1;
 }
@@ -244,7 +242,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100%;
-  max-height: $full-card-height;
+  max-height: breakpoints.$full-card-height;
   overflow-y: auto;
 
   .row {
@@ -262,7 +260,7 @@ export default {
     }
 
     .key {
-      color: $font-default;
+      color: colors.$font-default;
     }
   }
 }
@@ -282,7 +280,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: $white-hover;
+  background: colors.$white-hover;
   z-index: 4;
 
   .nalagalnik {

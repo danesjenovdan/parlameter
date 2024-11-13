@@ -35,9 +35,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/helper';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/helper';
 
 .card-modal {
   position: absolute;
@@ -47,16 +46,16 @@ export default {
   transform: translateX(-50%);
   top: 40px;
   z-index: 100;
-  background-color: $background;
+  background-color: colors.$background;
 
-  @include card(2);
+  @include helper.card(2);
 
   &-button {
     width: 100%;
     line-height: 40px;
     font-size: 16px;
-    color: $white;
-    background-color: $first;
+    color: colors.$white;
+    background-color: colors.$first;
     text-align: center;
     margin-top: 10px;
     cursor: pointer;
@@ -69,8 +68,8 @@ export default {
 
   &-header {
     width: 100%;
-    background-color: $first;
-    color: $white;
+    background-color: colors.$first;
+    color: colors.$white;
     font-family: 'Roboto Slab', serif;
     padding: 10px 50px 10px 10px;
     position: relative;

@@ -1,3 +1,7 @@
+@use "colors";
+@use "helper";
+@use "scroller";
+
 @use "sass:color";
 
 .search-dropdown {
@@ -11,15 +15,15 @@
   $item-height: 23px;
   $border-width: 1px;
 
-  border: $border-width solid $font-placeholder;
+  border: $border-width solid colors.$font-placeholder;
   box-sizing: border-box;
   position: relative;
 
-  @include arrow(18px, 11px, 20px, 14px);
+  @include helper.arrow(18px, 11px, 20px, 14px);
   @extend %scroller;
 
   &.disabled::before {
-    background-color: $white-hover;
+    background-color: colors.$white-hover;
     bottom: 0;
     content: "";
     display: block;
@@ -49,7 +53,7 @@
   &-clear {
     $size: 20px;
 
-    color: $first;
+    color: colors.$first;
     cursor: pointer;
     font-size: 25px;
     height: $clear-button-size;
@@ -62,7 +66,7 @@
   }
 
   &-input {
-    background: $background;
+    background: colors.$background;
     border: none;
     box-sizing: border-box;
     font-size: 16px;
@@ -74,12 +78,12 @@
   }
 
   &-options {
-    $normal-background: $white;
-    $selected-background: $first;
+    $normal-background: colors.$white;
+    $selected-background: colors.$first;
     background: $normal-background;
-    border-left: $border-width solid $font-placeholder;
-    border-bottom: $border-width solid $font-placeholder;
-    border-right: $border-width solid $font-placeholder;
+    border-left: $border-width solid colors.$font-placeholder;
+    border-bottom: $border-width solid colors.$font-placeholder;
+    border-right: $border-width solid colors.$font-placeholder;
     display: none;
     max-height: $item-height * 10;
     left: -1px;
@@ -102,7 +106,7 @@
       position: relative;
       user-select: none;
       &.search-dropdown-group-label {
-        background: $background;
+        background: colors.$background;
         cursor: default;
         text-transform: uppercase;
       }
@@ -111,13 +115,13 @@
       }
       &.selected {
         background-color: $selected-background;
-        color: $white;
+        color: colors.$white;
         &.focused {
           background: color.adjust($selected-background, $lightness: -10%);
         }
       }
       &:not(:last-of-type):not(.selected) {
-        border-bottom: $border-width solid $background;
+        border-bottom: $border-width solid colors.$background;
       }
       .search-dropdown-label {
         flex: 1;

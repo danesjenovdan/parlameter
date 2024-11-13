@@ -1,3 +1,7 @@
+@use "sass:string";
+@use "breakpoints";
+@use "colors";
+
 .modal-dialog {
     width: 400px;
     max-width: 100%;
@@ -24,19 +28,19 @@
 }
 
 .modal-header {
-    background: $cta-passive-background;
+    background: colors.$cta-passive-background;
 
     .modal-title {
         font-size: 20px;
         line-height: 24px;
         margin-left: 15px;
-        color: $white;
+        color: colors.$white;
     }
 
     .modal-logo {
         width: 60px;
         height: 60px;
-        background: $white;
+        background: colors.$white;
         border-radius: 50%;
         margin: -35px auto -25px;
         img {
@@ -50,7 +54,7 @@
         font-weight: 300;
         font-size: 42px;
         line-height: 24px;
-        color: $white;
+        color: colors.$white;
         opacity: 1;
         text-shadow: none;
         vertical-align: baseline;
@@ -83,7 +87,7 @@
     }
 
     .form-control {
-        border-color: $second;
+        border-color: colors.$second;
     }
 
     .large-text {
@@ -115,7 +119,7 @@
         }
 
         &:checked + label:before {
-            background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26.5" height="23.125" fill="%23#{str-slice("#{$second}", 2)}" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>');
+            background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="26.5" height="23.125" fill="%23#{string.slice("#{colors.$second}", 2)}" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>');
         }
     }
 
@@ -134,13 +138,13 @@
     }
 
     .heart {
-        fill: $first;
+        fill: colors.$first;
         width: 150px;
         display: inline-block;
     }
 
     .light-bg {
-        background-color: $link-hover-background;
+        background-color: colors.$link-hover-background;
         padding: 10px 15px;
         margin-bottom: 30px;
 
@@ -151,7 +155,7 @@
     }
 
     .flex-wrap {
-        @include respond-to(desktop) {
+        @include breakpoints.respond-to(desktop) {
             display: flex;
             flex-wrap: wrap;
             > div {
@@ -170,9 +174,9 @@
 
     .btn-payment,
     .btn-multiline {
-        background-color: $first;
+        background-color: colors.$first;
         border: none;
-        color: $white;
+        color: colors.$white;
         padding: 10px 0;
         margin-bottom: 10px;
     }
@@ -200,7 +204,7 @@
 
         input {
             margin-top: 8px;
-            border-color: $second;
+            border-color: colors.$second;
             font-size: 12px;
             text-align: center;
         }

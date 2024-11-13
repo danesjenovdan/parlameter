@@ -96,7 +96,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .pagination-container {
   text-align: center;
@@ -115,21 +115,21 @@ export default {
         justify-content: center;
         align-items: center;
         font-size: 12px;
-        background-color: $tab-hover;
-        color: $white;
+        background-color: colors.$tab-hover;
+        color: colors.$white;
         line-height: 1;
       }
 
       .separator {
         background-color: transparent;
-        color: $font-default;
+        color: colors.$font-default;
       }
 
       &.prev,
       &.next {
         a {
           background-color: transparent;
-          color: $first;
+          color: colors.$first;
           font-size: 28px;
           padding-bottom: 5px;
           font-weight: 300;
@@ -140,13 +140,13 @@ export default {
       &.active {
         a,
         a:hover {
-          background-color: $tab-active;
+          background-color: colors.$tab-active;
         }
       }
 
       a:hover {
-        background-color: $tab-passive;
-        color: $white;
+        background-color: colors.$tab-passive;
+        color: colors.$white;
       }
 
       &.disabled,
@@ -154,7 +154,7 @@ export default {
         a,
         a:hover {
           background-color: transparent;
-          color: $font-default;
+          color: colors.$font-default;
         }
       }
     }
