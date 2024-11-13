@@ -1,3 +1,6 @@
+@use "colors";
+@use "helper";
+
 .tool-row {
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +32,7 @@
 }
 
 .tool-content {
-  border: 1px solid $tools-border;
+  border: 1px solid colors.$tools-border;
   padding: 22px 18px 45px 27px;
   width: 100%;
   float: left;
@@ -37,7 +40,7 @@
 }
 
 .tool-content:hover {
-  background-color: $tools-background-hover;
+  background-color: colors.$tools-background-hover;
   transition: all linear 0.3s;
 }
 
@@ -61,7 +64,7 @@
 .tool-arrow {
   width: 36px;
   height: 29px;
-  background-image: url(encode-svg(str-replace(fs-readFile('icons/arrow_right.svg'), '#000', '#{$tools-arrow}')));
+  background-image: url(encode-svg(str-replace(fs-readFile('icons/arrow_right.svg'), '#000', '#{colors.$tools-arrow}')));
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
@@ -79,7 +82,7 @@
 .circle {
   height: 101px;
   width: 102px;
-  background-color: $white;
+  background-color: colors.$white;
   padding: 27px 15px 24px 27px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -87,31 +90,31 @@
 }
 
 .obvestila .circle {
-  background-image: url($cdn_home_img + 'orodja/obvestila.svg');
+  background-image: url(helper.$cdn_home_img + 'orodja/obvestila.svg');
   background-size: 60px 50px;
 }
 
 .primerjalnik-glasovanj .circle {
-  background-image: url($cdn_home_img + 'orodja/primerjalnik.svg');
+  background-image: url(helper.$cdn_home_img + 'orodja/primerjalnik.svg');
   background-size: 58px 48px;
 }
 
 .raziskovalec-neenotnosti .circle {
-  background-image: url($cdn_home_img + 'orodja/neenotnost.svg');
+  background-image: url(helper.$cdn_home_img + 'orodja/neenotnost.svg');
   background-size: 44px 44px;
 }
 
 .parlamentarni-kompas .circle {
-  background-image: url($cdn_home_img + 'orodja/kompas.svg');
+  background-image: url(helper.$cdn_home_img + 'orodja/kompas.svg');
   background-size: 50px 50px;
 }
 
 .parlatube .circle {
-  background-image: url($cdn_home_img + 'orodja/parlatube.svg');
+  background-image: url(helper.$cdn_home_img + 'orodja/parlatube.svg');
   background-size: 39px 25px;
 }
 
 .skupine-besed .circle {
-  background-image: url($cdn_home_img + 'orodja/skupine-besed.svg');
+  background-image: url(helper.$cdn_home_img + 'orodja/skupine-besed.svg');
   background-size: 50px 50px;
 }

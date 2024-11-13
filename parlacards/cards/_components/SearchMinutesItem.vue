@@ -36,17 +36,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .person-speech {
-  border-bottom: 1px solid $background;
+  border-bottom: 1px solid colors.$background;
   padding: 15px 0;
   list-style: none;
   display: flex;
   align-items: center;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     flex-wrap: wrap;
   }
 
@@ -59,7 +59,7 @@ export default {
     display: flex;
     padding: 0 7px;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       flex-grow: 1;
       flex-shrink: 0;
       flex-basis: 100%;
@@ -87,12 +87,12 @@ export default {
     flex: 4;
     padding: 0 7px;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       padding: 10px 4px 0;
     }
 
     a {
-      color: $font-default;
+      color: colors.$font-default;
       font-size: 14px;
       line-height: 20px;
       font-weight: 300;

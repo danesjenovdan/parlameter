@@ -53,8 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .documents {
   height: 453px;
@@ -62,7 +61,7 @@ export default {
   overflow-y: auto;
 
   .section-name {
-    background-color: $background;
+    background-color: colors.$background;
     font-weight: bold;
     padding: 10px;
   }
@@ -73,7 +72,7 @@ export default {
     list-style: none;
 
     .link {
-      border-bottom: 1px solid $background;
+      border-bottom: 1px solid colors.$background;
       padding: 15px 0;
       list-style: none;
       display: flex;

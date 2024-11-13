@@ -38,9 +38,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
-
 .data-not-published {
   min-height: 320px;
   display: flex;

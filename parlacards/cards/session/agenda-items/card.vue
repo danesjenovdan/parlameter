@@ -59,8 +59,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .agenda-items {
   .agenda-item-headers,
@@ -74,7 +74,7 @@ export default {
   }
 
   .agenda-item-headers {
-    color: $font-default;
+    color: colors.$font-default;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -82,18 +82,18 @@ export default {
   }
 
   .agenda-item {
-    background: $background;
+    background: colors.$background;
     margin: 12px 0;
 
     &:target {
-      background: $link-hover-background;
+      background: colors.$link-hover-background;
     }
 
     > div {
       padding: 15px;
 
       &:nth-child(2) {
-        border-left: 2px solid $font-placeholder;
+        border-left: 2px solid colors.$font-placeholder;
       }
     }
 
@@ -131,17 +131,17 @@ export default {
       font-weight: 300;
       line-height: 30px;
       padding: 10px 30px;
-      color: $white;
+      color: colors.$white;
       border: none;
-      background-color: $tab-passive;
+      background-color: colors.$tab-passive;
 
       &:hover {
-        color: $white;
-        background-color: $tab-hover;
+        color: colors.$white;
+        background-color: colors.$tab-hover;
         text-decoration: none;
       }
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         font-size: 14px;
         padding: 6px 16px;
       }
@@ -153,7 +153,7 @@ export default {
       background-position: 24px center;
       padding-left: 60px;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         padding-left: 40px;
         background-size: 18px 100%;
         background-position: 14px center !important;
@@ -165,7 +165,7 @@ export default {
       background-size: 29px 100%;
       background-position: 21px center;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         background-size: 22px 100%;
       }
     }

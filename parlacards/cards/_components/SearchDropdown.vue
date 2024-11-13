@@ -403,9 +403,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/helper';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/helper';
 
 .search-dropdown {
   text-align: left;
@@ -413,7 +412,7 @@ export default {
 
 .up {
   border-bottom: none;
-  border-top: 1px solid $font-placeholder;
+  border-top: 1px solid colors.$font-placeholder;
 }
 
 .search-dropdown-options {
@@ -479,8 +478,8 @@ export default {
     }
 
     &.search-dropdown-group-label {
-      @include gradient('horizontal');
-      color: $white;
+      @include helper.gradient('horizontal');
+      color: colors.$white;
       min-height: 24px;
       height: auto;
       line-height: 1.2;

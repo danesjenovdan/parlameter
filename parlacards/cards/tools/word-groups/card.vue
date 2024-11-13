@@ -320,8 +320,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 :deep(.card-content) {
   min-height: 660px;
@@ -349,7 +349,7 @@ export default {
     display: flex;
     padding: 10px;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       flex-direction: column;
     }
 
@@ -364,15 +364,15 @@ export default {
       flex: 1 0 66%;
       padding: 5px 10px 5px 0;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         padding-right: 0;
       }
 
       p {
         margin: 15px 0 20px;
 
-        @include respond-to(mobile) {
-          border-bottom: 1px solid $tools-border;
+        @include breakpoints.respond-to(mobile) {
+          border-bottom: 1px solid colors.$tools-border;
           padding-bottom: 25px;
         }
       }
@@ -381,7 +381,7 @@ export default {
         display: flex;
         justify-content: center;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
           margin-bottom: 20px;
         }
 
@@ -393,7 +393,7 @@ export default {
             margin-bottom: 0;
             font-size: 11px;
             line-height: 30px;
-            color: $font-default;
+            color: colors.$font-default;
 
             &::before {
               margin-top: 0;
@@ -407,9 +407,9 @@ export default {
     .skupine-besed-button {
       flex: 1 0 33%;
       padding: 5px 0 5px 10px;
-      border-left: 1px solid $tools-border;
+      border-left: 1px solid colors.$tools-border;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         border-left: none;
         padding-left: 0;
       }
@@ -419,9 +419,9 @@ export default {
         line-height: 20px;
         text-align: center;
         font-size: 11px;
-        color: $font-default;
+        color: colors.$font-default;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
           margin-top: 15px;
         }
       }

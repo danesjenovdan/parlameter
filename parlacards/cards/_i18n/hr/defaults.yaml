@@ -101,6 +101,7 @@ select-placeholder: Odaberi
 selected-placeholder: 'Odabranih: {num}'
 data: Podaci
 name: Ime
+name--for-legislation: Naziv
 epa: PZ/PZE
 change: Promjena
 status: Status
