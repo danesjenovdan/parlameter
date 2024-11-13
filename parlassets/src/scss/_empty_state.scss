@@ -1,3 +1,5 @@
+@use "breakpoints";
+
 #empty_state .lead-container {
   font-family: "Roboto Slab", sans-serif;
   color: #000;
@@ -7,7 +9,7 @@
   padding: 80px 0;
   min-height: 300px;
   width: 100%;
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     font-size: 14px;
   }
 }

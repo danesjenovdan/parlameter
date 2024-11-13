@@ -1,12 +1,16 @@
+@use "sass:string";
+@use "breakpoints";
+@use "colors";
+
 .card-govor, .card-govori {
   $toggle-arrow-height: 72px;
   $similar-speech-tab-height: 126px;
   $similar-speech-tab-content-distance: 17px;
   $similar-speech-tabs-offset-bottom: 46px;
 
-  $blue: $second;
-  $light-gray: $background;
-  $medium-gray: $font-placeholder;
+  $blue: colors.$second;
+  $light-gray: colors.$background;
+  $medium-gray: colors.$font-placeholder;
 
   %text-styling {
     font-family: Roboto Slab;
@@ -29,7 +33,7 @@
     background-position: center;
     background-size: cover;
     border-radius: 50%;
-    box-shadow: 0 0 4px $font-placeholder;
+    box-shadow: 0 0 4px colors.$font-placeholder;
     height: 32px;
     width: 32px;
   }
@@ -83,7 +87,7 @@
         top: 50%;
       }
       .speech-text {
-        color: $font-placeholder;
+        color: colors.$font-placeholder;
         span { color: #000; }
       }
       .full-text-link {
@@ -103,15 +107,15 @@
     padding: 0 133px;
     position: relative;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       padding: 0;
     }
   }
 
   .quote-button {
-    background: $first;
+    background: colors.$first;
     border-radius: 50%;
-    color: $white;
+    color: colors.$white;
     cursor: pointer;
     display: none;
     font-family: "Times New Roman", serif;
@@ -124,7 +128,7 @@
     text-align: center;
     user-select: none;
     width: 33px;
-    @include respond-to(mobile) { display: none !important; }
+    @include breakpoints.respond-to(mobile) { display: none !important; }
   }
 
   .similar-speech {
@@ -158,7 +162,7 @@
           line-height: $heading-height;
           position: relative;
           .close-button {
-            background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="%23#{str-slice("#{$first}", 2)}" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
+            background: no-repeat center center url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.4979166 4.4979168" height="17" width="17"><path fill="%23#{string.slice("#{colors.$first}", 2)}" d="M2.25 1.83L.417 0 0 .418l1.83 1.83L0 4.08l.418.418 1.83-1.83 1.832 1.83.418-.418-1.83-1.83L4.497.417 4.08 0z"/></svg>');
             cursor: pointer;
             height: 17px;
             position: absolute;
@@ -258,7 +262,7 @@
     }
 
     .toggle-arrow {
-      background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="%23#{str-slice("#{$first}", 2)}"/></svg>') rgba(#f9f9f9, 0.9);
+      background: no-repeat center 26px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="19.775" viewBox="0 0 9.7895829 5.232016"><path d="M4.895 5.232L9.79.346 9.443 0 4.895 4.537.347 0 0 .346z" fill="%23#{string.slice("#{colors.$first}", 2)}"/></svg>') rgba(#f9f9f9, 0.9);
       border-bottom: 20px solid rgba(#f9f9f9, 0.9);
       bottom: 0;
       cursor: pointer;

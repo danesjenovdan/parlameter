@@ -1,3 +1,7 @@
+@use "breakpoints";
+@use "colors";
+@use "helper";
+
 .group-container {
   height: 100%;
   left: 0;
@@ -36,7 +40,7 @@
         margin-right: 0;
       }
 
-      @include respond-to(small-mobile) {
+      @include breakpoints.respond-to(small-mobile) {
         width: 100%;
         margin-top: 6px;
       }
@@ -47,24 +51,24 @@
         font-weight: 300;
         line-height: 30px;
         padding: 10px 30px;
-        color: $white;
+        color: colors.$white;
         border: none;
         // text-transform: uppercase;
-        background-color: $tab-passive;
+        background-color: colors.$tab-passive;
 
         &:hover {
-          color: $white;
-          background-color: $tab-hover;
+          color: colors.$white;
+          background-color: colors.$tab-hover;
           text-decoration: none;
         }
 
         &.active {
-          color: $white;
-          background-color: $tab-active;
+          color: colors.$white;
+          background-color: colors.$tab-active;
           text-decoration: none;
         }
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
           font-size: 14px;
           padding: 6px 16px;
         }
@@ -76,7 +80,7 @@
         background-position: 24px center;
         padding-left: 60px;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
           padding-left: 40px;
           background-size: 18px 100%;
           background-position: 14px center !important;
@@ -106,7 +110,7 @@
         background-size: 29px 100%;
         background-position: 21px center;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
           background-size: 22px 100%;
         }
       }
@@ -117,13 +121,13 @@
   ul {
     li {
       a {
-        background: $link;
-        color: $white;
+        background: colors.$link;
+        color: colors.$white;
       }
       a.active,
       a:hover {
-        color: $white;
-        background: $link-hover-background;
+        color: colors.$white;
+        background: colors.$link-hover-background;
         text-decoration: none;
       }
     }

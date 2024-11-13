@@ -1,9 +1,11 @@
+@use "colors";
+
 .group_voting {
     ul {
         padding: 0;
         li {
             width: 10%;
-            background: $background;
+            background: colors.$background;
             list-style: none;
             margin-right: 1%;
             float: left;

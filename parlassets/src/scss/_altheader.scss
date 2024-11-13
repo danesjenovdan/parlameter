@@ -1,3 +1,6 @@
+@use "colors";
+@use "helper";
+
 // ALT HEADER
 .alt-header-container {
     display: flex;
@@ -22,7 +25,7 @@
             flex-shrink: 0;
             width: $size;
             height: $size;
-            background-color: $icon-session;
+            background-color: colors.$icon-session;
             padding: $padding;
 
             b {
@@ -62,13 +65,13 @@
 
                 margin-top: 18px;
 
-                color: $first;
+                color: colors.$first;
             }
         }
 
         .icon-circle {
           $size: 80px;
-          background: $second;
+          background: colors.$second;
           border-radius: 50%;
           flex-shrink: 0;
           height: $size;
@@ -92,6 +95,6 @@
     .alt-header-border {
         height: 1px;
         width: 100%;
-        @include gradient('horizontal');
+        @include helper.gradient('horizontal');
     }
 }
