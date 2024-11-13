@@ -1,3 +1,5 @@
+@use "colors";
+
 .card-header .alt-header .media-object.img-circle.session-logo {
   overflow: hidden;
 
@@ -21,6 +23,6 @@
 [id^="s_zakonodaja-iskanje"],
 [id^="c_zakonodaja"] {
   .legislation-list a {
-    color: $third;
+    color: colors.$third;
   }
 }

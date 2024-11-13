@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "colors";
 @use "helper";
 
@@ -126,7 +127,7 @@
     background-image: url(helper.$cdn_home_icon + 'omrezja.svg');
 }
 .parlaicon-unknown {
-    background-image: url(encode-svg(str-replace(fs-readFile('icons/question-mark.svg'), '#197197', '#{map-get($proper-vote-colors-hover, against)}')));
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/question-mark.svg'), '#197197', '#{map.get(colors.$proper-vote-colors-hover, against)}')));
 }
 
 @each $result, $color in colors.$vote-results-colors {
