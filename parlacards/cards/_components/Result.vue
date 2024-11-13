@@ -61,16 +61,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/breakpoints';
 
 .result-chart {
   align-items: center;
   justify-content: flex-end;
 
-  @include show-for(desktop, flex);
+  @include breakpoints.show-for(desktop, flex);
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     justify-content: flex-start;
   }
 
@@ -107,7 +106,7 @@ export default {
       font-size: 24px;
       white-space: nowrap;
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         font-size: 30px;
       }
     }
@@ -118,7 +117,7 @@ export default {
       max-width: 140px;
       text-transform: uppercase;
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         font-size: 16px;
         line-height: 23px;
       }

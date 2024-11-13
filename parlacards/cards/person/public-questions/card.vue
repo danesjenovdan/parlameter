@@ -113,8 +113,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .question-input {
   resize: vertical;
@@ -131,14 +130,14 @@ export default {
   }
 
   &:not(:disabled):hover {
-    color: $white;
-    background-color: $tab-hover;
+    color: colors.$white;
+    background-color: colors.$tab-hover;
   }
 
   &:active,
   &:hover:active {
-    color: $white;
-    background-color: $tab-active;
+    color: colors.$white;
+    background-color: colors.$tab-active;
   }
 }
 
@@ -149,7 +148,7 @@ export default {
   color: #888;
 
   a {
-    color: $link;
+    color: colors.$link;
   }
 }
 </style>

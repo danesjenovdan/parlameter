@@ -570,8 +570,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .blue-button-list-item {
   font-size: 12px;
@@ -617,7 +616,7 @@ export default {
     }
   }
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     flex-wrap: wrap;
 
     .search-field {
@@ -651,7 +650,7 @@ export default {
   }
 
   &.barchartcontainer {
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       display: none;
     }
   }
@@ -669,7 +668,7 @@ export default {
     width: 80px + 18px - 16px; // image width + image margin-right - header horizontal margin;
     visibility: hidden;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       width: 41px + 4px - 16px; // image width + image margin-right - header horizontal margin;
     }
   }

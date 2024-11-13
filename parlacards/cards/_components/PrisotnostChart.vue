@@ -292,12 +292,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .prisotnost-chart :deep(svg) {
   .tick line {
     stroke-width: 1;
-    stroke: $font-placeholder;
+    stroke: colors.$font-placeholder;
   }
 
   .tick text {
@@ -310,23 +310,23 @@ export default {
   }
 
   .prisotnost-bar-present {
-    fill: $time-presence-present-passive;
+    fill: colors.$time-presence-present-passive;
 
     &.hovered {
-      fill: $time-presence-present-active;
+      fill: colors.$time-presence-present-active;
     }
   }
 
   .prisotnost-bar-absent {
-    fill: $time-presence-absent-passive;
+    fill: colors.$time-presence-absent-passive;
 
     &.hovered {
-      fill: $time-presence-absent-active;
+      fill: colors.$time-presence-absent-active;
     }
   }
 
   .prisotnost-bar-noMandate {
-    fill: $time-presence-no-term-passive;
+    fill: colors.$time-presence-no-term-passive;
     opacity: 0.4;
 
     &.hovered {
@@ -345,10 +345,10 @@ export default {
 
   .chart-tooltip rect {
     border: 0px;
-    background-color: $font-placeholder;
+    background-color: colors.$font-placeholder;
     border-radius: 3px;
     padding: 2px 10px;
-    color: $white;
+    color: colors.$white;
   }
 }
 </style>

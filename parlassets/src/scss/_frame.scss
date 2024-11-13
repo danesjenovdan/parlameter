@@ -1,3 +1,6 @@
+@use "colors";
+@use "helper";
+
 #framed {
   .logo {
     max-width: 120px;
@@ -18,7 +21,7 @@
     left: 0;
     z-index: -1;
 
-    @include gradient('horizontal');
+    @include helper.gradient('horizontal');
   }
   .gradient {
     position: absolute;
@@ -37,7 +40,7 @@
     /* IE6-9 */
   }
   .permalink {
-    color: $font-default;
+    color: colors.$font-default;
     margin: auto;
     display: block;
     width: 100%;

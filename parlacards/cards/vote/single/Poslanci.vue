@@ -268,21 +268,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/breakpoints';
 
 .filters {
   margin-top: 10px;
   margin-bottom: 10px;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     align-items: center;
     display: flex;
   }
 
   .search-field {
     width: 100%;
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       flex: 1;
       width: auto;
       // max-width: 200px;
@@ -293,12 +292,12 @@ export default {
     min-width: 33%; // fix ie
     display: flex;
     margin: 8px 0;
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       margin: 0 0 0 30px;
     }
     .striped-button {
       flex: 1;
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         width: 97px;
       }
       &:not(:last-child) {
@@ -308,7 +307,7 @@ export default {
   }
 
   .result-chart {
-    @include show-for(above-limbo, flex);
+    @include breakpoints.show-for(above-limbo, flex);
   }
 }
 
@@ -316,7 +315,7 @@ export default {
   height: 231px;
   overflow: auto;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     height: 453px - 65;
   }
 
@@ -349,7 +348,7 @@ export default {
     margin-right: 8px;
   }
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     height: 97px;
     font-size: 18px;
   }
@@ -367,7 +366,7 @@ export default {
     padding-top: 40px;
     text-transform: uppercase;
     width: 58px;
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       width: 125px;
     }
 

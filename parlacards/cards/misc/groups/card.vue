@@ -181,7 +181,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/breakpoints';
 
 :deep(.card-content) {
   min-height: 265px;
@@ -190,7 +190,7 @@ export default {
 .party-list .labeled-chart {
   // min-height: 46px;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     flex-direction: column;
   }
 
@@ -202,13 +202,13 @@ export default {
     margin-bottom: 0;
     width: 100px;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       width: 100%;
     }
   }
 
   .column.chart {
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       width: 100%;
       margin-left: 0;
     }

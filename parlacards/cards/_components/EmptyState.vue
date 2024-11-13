@@ -26,14 +26,14 @@ export default {
 
 <style scoped lang="scss">
 @use 'sass:math';
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 @mixin circle($size: 220px) {
   width: $size;
   height: $size;
   padding: #{math.div($size, 1.6)} #{math.div($size, 8)} 0;
-  background-color: $light-background;
+  background-color: colors.$light-background;
   background-size: math.div($size, 3);
   background-position: center #{math.div($size, 5)};
   background-repeat: no-repeat;
@@ -61,7 +61,7 @@ export default {
       @include circle(180px);
     }
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       &,
       &.small {
         @include circle(150px);

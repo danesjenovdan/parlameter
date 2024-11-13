@@ -1,4 +1,6 @@
-@each $option, $color in $option-colors {
+@use "colors";
+
+@each $option, $color in colors.$option-colors {
   .#{$option}-fill {
     fill: $color;
   }
@@ -6,12 +8,12 @@
 
 @mixin link-hover {
   transition: background-color 0.2s;
-  color: $link;
+  color: colors.$link;
 
   &:hover {
-    background-color: $link-hover-background;
+    background-color: colors.$link-hover-background;
     text-decoration: none;
-    color: $link;
+    color: colors.$link;
   }
 }
 

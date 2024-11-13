@@ -74,12 +74,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/breakpoints';
 
 :deep(.card-content) {
   height: 265px;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     height: auto;
   }
 }
@@ -95,7 +95,7 @@ export default {
   gap: 20px;
   width: 100%;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     flex-direction: column;
     gap: 0;
   }
@@ -103,7 +103,7 @@ export default {
   .word-list {
     flex: 1 1 auto;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       &:first-child {
         margin-bottom: 0;
       }
