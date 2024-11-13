@@ -105,14 +105,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .legislation-list {
   .legislation-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
-    height: $full-card-height;
+    height: breakpoints.$full-card-height;
   }
 
   .nalagalnik__wrapper {
@@ -121,7 +121,7 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    background: $white-hover;
+    background: colors.$white-hover;
     z-index: 4;
 
     .nalagalnik {

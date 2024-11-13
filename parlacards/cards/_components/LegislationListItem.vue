@@ -44,11 +44,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .item {
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     flex-direction: column;
   }
 
@@ -78,13 +77,13 @@ export default {
       .outcome .text {
         min-width: 92px;
 
-        @include respond-to(mobile) {
+        @include breakpoints.respond-to(mobile) {
           min-width: 75px;
           font-size: 14px !important;
         }
       }
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         margin-left: 8px;
         margin-top: 25px;
       }

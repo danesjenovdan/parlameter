@@ -3,15 +3,15 @@
 </template>
 
 <style lang="scss">
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .plus {
-  background-color: $white;
+  background-color: colors.$white;
   padding: 0.2px 7px;
   font-size: 21px;
   line-height: 12px;
   cursor: pointer;
-  color: $first;
+  color: colors.$first;
   position: relative;
   top: 3px;
   font-family: 'Roboto', sans-serif;

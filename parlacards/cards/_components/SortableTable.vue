@@ -118,7 +118,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .empty-container {
   position: relative;
@@ -128,7 +128,7 @@ export default {
 
 .headers {
   .column {
-    color: $font-default;
+    color: colors.$font-default;
     position: relative;
 
     span {
@@ -140,7 +140,7 @@ export default {
     &:not(.sort):hover span::after {
       content: '';
       border-style: solid;
-      border-color: transparent transparent $first;
+      border-color: transparent transparent colors.$first;
       border-width: 0 6px 7px;
       position: absolute;
       margin-left: 6px;
@@ -164,11 +164,11 @@ export default {
 }
 
 .session-list .item .column.ticker {
-  color: $second;
+  color: colors.$second;
   line-height: 18px;
 
   &.red {
-    color: $third;
+    color: colors.$third;
   }
 }
 
@@ -183,7 +183,7 @@ export default {
 .value {
   font-size: 16px;
   line-height: 18px;
-  background-color: $white;
+  background-color: colors.$white;
   // padding-right: 20px;
   display: flex;
   flex: 0 0 74px;
@@ -197,7 +197,7 @@ export default {
 
 .bar {
   width: 100%;
-  background-color: $barchart-default;
+  background-color: colors.$barchart-default;
   height: 18px;
   display: flex;
   flex-wrap: nowrap;
@@ -215,7 +215,7 @@ export default {
     .column {
       text-align: left;
       padding: 0 15px;
-      color: $font-default;
+      color: colors.$font-default;
 
       &:first-child {
         margin-left: 0;

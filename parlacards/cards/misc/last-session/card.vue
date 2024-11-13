@@ -169,8 +169,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .session-name {
   font-weight: 500;
@@ -184,7 +184,7 @@ hr,
   text-transform: uppercase;
 
   .link-color {
-    color: $link;
+    color: colors.$link;
   }
 
   .glyphicon {
@@ -208,7 +208,7 @@ hr,
     }
   }
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     flex-direction: column;
 
     .word-list {
@@ -243,7 +243,7 @@ hr,
   .votes-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
-    height: $full-card-height;
+    height: breakpoints.$full-card-height;
   }
 
   .nalagalnik__wrapper {
@@ -252,7 +252,7 @@ hr,
     bottom: 0;
     left: 0;
     right: 0;
-    background: $white-hover;
+    background: colors.$white-hover;
     z-index: 4;
 
     .nalagalnik {

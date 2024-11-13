@@ -152,9 +152,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/color_classes';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .empty-container {
   position: relative;
@@ -162,9 +161,9 @@ export default {
 }
 
 .multiple-speeches :deep(.speech-holder) {
-  border-top: 1px solid $background;
+  border-top: 1px solid colors.$background;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     padding-bottom: 20px;
     padding-top: 20px;
   }
@@ -172,13 +171,13 @@ export default {
   .person-session {
     height: 64px;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       height: auto;
     }
   }
 
   &:target {
-    background: $background;
+    background: colors.$background;
   }
 }
 

@@ -463,8 +463,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .p-tabs :deep(.p-tabs-content) {
   &,
@@ -491,14 +491,14 @@ export default {
 }
 
 .summary {
-  $section-border: 1px solid $font-placeholder;
-  background: $background;
+  $section-border: 1px solid colors.$font-placeholder;
+  background: colors.$background;
   margin: 7px 0 8px 0;
   min-height: 90px;
   padding: 10px 14px;
   position: relative;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     display: flex;
     margin-bottom: 24px;
   }
@@ -510,7 +510,7 @@ export default {
     justify-content: center;
     padding: 0 0 10px 0;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       border-bottom: none;
       border-right: $section-border;
       padding: 0 22px 0 0;
@@ -521,14 +521,14 @@ export default {
       margin-bottom: 4px;
 
       &.accepted {
-        color: $icon-accepted;
+        color: colors.$icon-accepted;
       }
 
       &.not-accepted {
-        color: $icon-rejected;
+        color: colors.$icon-rejected;
       }
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         font-size: 29px;
       }
     }
@@ -540,7 +540,7 @@ export default {
       background-size: contain;
       background-position: center;
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         width: 29px;
         height: 29px;
       }
@@ -554,7 +554,7 @@ export default {
     }
 
     .text {
-      color: $font-default;
+      color: colors.$font-default;
       font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;
@@ -569,7 +569,7 @@ export default {
     line-height: 1.45em;
     padding: 10px 0 4px 0;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       display: flex;
       flex: 4;
       font-size: 14px;
@@ -589,7 +589,7 @@ export default {
         text-transform: uppercase;
 
         .project--tooltip {
-          color: $font-default;
+          color: colors.$font-default;
           text-decoration: none;
           cursor: help;
 
@@ -625,7 +625,7 @@ export default {
 
 .tooltip {
   position: fixed;
-  background-color: $font-default;
+  background-color: colors.$font-default;
   color: #fff;
   top: 45%;
   font-family: Roboto;
@@ -664,7 +664,7 @@ export default {
       line-height: 20px;
       text-transform: uppercase;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         font-size: 10px;
       }
     }
@@ -673,10 +673,10 @@ export default {
 </style>
 
 <style lang="scss">
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .lightning-badge::before {
-  background: $font-placeholder;
+  background: colors.$font-placeholder;
   border-radius: 50%;
   content: '';
   height: 31px;
@@ -691,7 +691,7 @@ export default {
 }
 
 .fire-badge::before {
-  background: $font-placeholder;
+  background: colors.$font-placeholder;
   border-radius: 50%;
   content: '';
   height: 31px;
@@ -712,7 +712,7 @@ export default {
   padding: 10px;
   text-align: center;
   text-transform: uppercase;
-  background: $font-placeholder;
+  background: colors.$font-placeholder;
   margin-bottom: 10px;
 }
 </style>

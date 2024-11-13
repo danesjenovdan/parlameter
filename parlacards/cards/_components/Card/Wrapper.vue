@@ -127,8 +127,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .card-content {
   &__empty {
@@ -140,7 +139,7 @@ export default {
     position: relative;
 
     &::before {
-      background-color: $white-hover;
+      background-color: colors.$white-hover;
       background-image: url('#{get-parlassets-url()}/img/loader.gif');
       background-repeat: no-repeat;
       background-position: center center;

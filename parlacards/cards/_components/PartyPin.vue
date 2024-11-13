@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .partypin-container {
   float: right;
@@ -53,8 +53,8 @@ export default {
     line-height: 27px;
     cursor: pointer;
     font-size: 10px;
-    color: $white;
-    background-color: $font-default;
+    color: colors.$white;
+    background-color: colors.$font-default;
     overflow: hidden;
   }
 
@@ -66,12 +66,12 @@ export default {
     text-align: center;
     border: 0px;
     pointer-events: none;
-    background-color: $font-default;
+    background-color: colors.$font-default;
     border-radius: 3px;
     padding: 2px 10px;
     opacity: 0;
 
-    color: $white;
+    color: colors.$white;
 
     transition: opacity 0.25s ease-out;
 
