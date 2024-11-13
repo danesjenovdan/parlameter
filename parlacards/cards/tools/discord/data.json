@@ -1,5 +1,433 @@
 {
+  "url": "http://localhost:8000/v3/cards/tools/discord/?format=json&id=1127",
+  "id": 1127,
   "data": {
-    "results": []
+    "results": {
+      "votes": [
+        {
+          "title": "prijedlog odluke o osnivanju istražnog povjerenstva o radu stožera i drugih nadležnih institucija za vrijeme trajanja pandemije covid 19 u hrvatskoj - predlagatelji: 17 zastupnika u hrvatskome saboru",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136405,
+          "value": 69.5364238410596,
+          "passed": false,
+          "timestamp": "2024-07-12T12:46:00"
+        },
+        {
+          "title": "prijedlog odluke o imenovanju dva člana državnoodvjetničkog vijeća iz reda zastupnika hrvatskoga sabora - predlagatelj: odbor za pravosuđe hrvatskoga sabora",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136360,
+          "value": 87.41721854304636,
+          "passed": true,
+          "timestamp": "2024-07-12T12:45:00"
+        },
+        {
+          "title": "prijedlog odluke o imenovanju dva člana državnog sudbenog vijeća iz reda zastupnika hrvatskoga sabora - predlagatelj: odbor za pravosuđe hrvatskoga sabora",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136361,
+          "value": 88.0794701986755,
+          "passed": true,
+          "timestamp": "2024-07-12T12:44:00"
+        },
+        {
+          "title": "prijedlog odluke o izboru zamjenice pučke pravobraniteljice - predlagateljica: pučka pravobraniteljica",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136409,
+          "value": 88.0794701986755,
+          "passed": true,
+          "timestamp": "2024-07-12T12:42:00"
+        },
+        {
+          "title": "prijedlog rezolucije o umjetnoj inteligenciji - predlagateljica: zastupnica marija selak raspudić",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136399,
+          "value": 52.317880794701985,
+          "passed": true,
+          "timestamp": "2024-07-12T12:41:00"
+        },
+        {
+          "title": "izvješće o radu i poslovanju hrvatskog zavoda za mirovinsko osiguranje za 2022. - podnositelj: hrvatski zavod za mirovinsko osiguranje",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136373,
+          "value": 52.980132450331126,
+          "passed": true,
+          "timestamp": "2024-07-12T12:37:00"
+        },
+        {
+          "title": "izvješće o obavljenoj reviziji učinkovitosti unaprjeđenje kvalitete vode te dostupnost vode za ljudsku potrošnju u republici hrvatskoj - podnositelj: državni ured za reviziju",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136372,
+          "value": 87.41721854304636,
+          "passed": true,
+          "timestamp": "2024-07-12T12:37:00"
+        },
+        {
+          "title": "izvješće o radu pravobranitelja za osobe s invaliditetom za 2022. godinu - podnositeljica: pravobraniteljica za osobe s invaliditetom",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136392,
+          "value": 92.71523178807946,
+          "passed": true,
+          "timestamp": "2024-07-12T12:35:00"
+        },
+        {
+          "title": "prijedlog godišnjeg izvještaja o izvršenju državnog proračuna republike hrvatske za 2023. godinu - predlagateljica: vlada republike hrvatske",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136393,
+          "value": 52.317880794701985,
+          "passed": true,
+          "timestamp": "2024-07-12T12:29:00"
+        },
+        {
+          "title": "prijedlog zakona o izmjenama zakona o gradnji, prvo čitanje, p.z. br. 9 - predlagateljica: zastupnica marija selak raspudić",
+          "session": {
+            "name": "2. sjednica",
+            "id": 1751,
+            "start_time": "2024-06-12T09:00:00",
+            "end_time": "2024-07-12T13:00:00",
+            "organizations": [
+              {
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
+                "color": "#09A2CC",
+                "classification": "root",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
+            "has_minutes": false,
+            "has_legislation": true,
+            "has_votes": true
+          },
+          "vote_id": 136402,
+          "value": 52.317880794701985,
+          "passed": true,
+          "timestamp": "2024-07-12T12:23:00"
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Klub zastupnika Domovinskog pokreta",
+          "acronym": "Domovinski pokret",
+          "slug": "957-klub-zastupnika-domovinskog-pokreta",
+          "color": "#06637D",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub zastupnika Samostalne demokratske srpske stranke",
+          "acronym": "SDSS",
+          "slug": "969-klub-zastupnika-samostalne-demokratske-srpske-stranke",
+          "color": "#9D26CC",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub zastupnika Možemo!",
+          "acronym": "Možemo!",
+          "slug": "972-klub-zastupnika-mozemo",
+          "color": "#1DE900",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub zastupnika Hrvatske demokratske zajednice",
+          "acronym": "HDZ",
+          "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
+          "color": "#1523FF",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+          "acronym": "SDP",
+          "slug": "1009-klub-zastupnika-socijaldemokratske-partije-hrvatske",
+          "color": "#F04118",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub zastupnika Mosta",
+          "acronym": "Most",
+          "slug": "1043-klub-zastupnika-mosta",
+          "color": "#00E1E7",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka",
+          "acronym": "HSLS i V. Bilek",
+          "slug": "1049-klub-zastupnika-hrvatske-socijalno-liberalne-stranke-i-nezavisnog-zastupnika-vladimira-bileka",
+          "color": "#9F9E54",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub Zastupnika Hrvatskih Suverenista, Stranke Pravo I Pravda I Nezavisnog Zastupnika Josipa Jurčevića",
+          "acronym": "H. suverenisti, PiP i NZ",
+          "slug": "1129-klub-zastupnika-hrvatskih-suverenista-stranke-pravo-i-pravda-i-nezavisnog-zastupnika-josipa-jurcevica",
+          "color": "#000000",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub Zastupnika Centra I Nezavisne Platforme Sjevera",
+          "acronym": "Centar i NP Sjever",
+          "slug": "1130-klub-zastupnika-centra-i-nezavisne-platforme-sjevera",
+          "color": "#FFF600",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub Zastupnika Hrvatske Seljačke Stranke, Građansko-Liberalnog Saveza I Dalije Orešković I Stranke S Imenom I Prezimenom",
+          "acronym": "HSS, GLAS, DOSIP",
+          "slug": "1134-klub-zastupnika-hrvatske-seljacke-stranke-graansko-liberalnog-saveza-i-dalije-oreskovic-i-stranke-s-imenom-i-prezimenom",
+          "color": "#FFA500",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub Zastupnika Nezavisni I Fokus",
+          "acronym": "NZ i Fokus",
+          "slug": "1135-klub-zastupnika-nezavisni-i-fokus",
+          "color": "#E890FF",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub Zastupnika Istarskog Demokratskog Sabora (Ids), Primorsko-Goranskog Saveza (Pgs), Unije Kvarnera (Unija) I Istarske Stranke Umirovljenika - Partito Istriano Dei Pensionati (Isu - Pip)",
+          "acronym": "IDS, PGU, UK i ISU",
+          "slug": "1136-klub-zastupnika-istarskog-demokratskog-sabora-ids-primorsko-goranskog-saveza-pgs-unije-kvarnera-unija-i-istarske-stranke-umirovljenika-partito-istriano-dei-pensionati-isu-pip",
+          "color": "#49A343",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Klub Zastupnika Hrvatske Narodne Stranke I Nezavisnih Zastupnika",
+          "acronym": "HNS i NZ",
+          "slug": "1137-klub-zastupnika-hrvatske-narodne-stranke-i-nezavisnih-zastupnika",
+          "color": "#CCB899",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Sabor",
+          "acronym": null,
+          "slug": "1127-sabor",
+          "color": "#09A2CC",
+          "classification": "root",
+          "is_in_coalition": false
+        }
+      ]
+    },
+    "mandate": {
+      "id": 14,
+      "description": "Sabor, XI saziv",
+      "beginning": "2024-05-15T00:00:00"
+    },
+    "count": 48,
+    "pages": 5,
+    "page": 1,
+    "per_page": 10
   }
 }

@@ -90,11 +90,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .time-bar-chart :deep(svg) {
   .bar {
-    fill: $time-chart-passive;
+    fill: colors.$time-chart-passive;;
   }
 }
 </style>

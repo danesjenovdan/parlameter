@@ -249,8 +249,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .parties {
   height: 453px;
@@ -259,11 +259,11 @@ export default {
 }
 
 .party {
-  background: $background;
+  background: colors.$background;
   margin-bottom: 12px;
   padding: 10px 18px 14px;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     padding-bottom: 0;
     padding-top: 0;
   }
@@ -275,7 +275,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     flex-wrap: nowrap;
     height: 79px;
   }
@@ -285,7 +285,7 @@ export default {
   font-size: 14px;
   min-width: 94px;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     font-size: 18px;
     order: 1;
     font-weight: 300;
@@ -297,7 +297,7 @@ export default {
   display: flex;
   width: 100%;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     order: 2;
     width: 400px;
   }
@@ -314,13 +314,13 @@ export default {
 .result-chart {
   flex: 1.2;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     max-width: 300px;
     order: 3;
     justify-content: center;
   }
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     display: flex;
     flex: 0;
 
@@ -344,13 +344,13 @@ export default {
 .members {
   padding-top: 14px;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     padding-top: 0;
   }
 
   .person-list {
     .item {
-      border-color: $font-placeholder;
+      border-color: colors.$font-placeholder;
     }
 
     .person-name,

@@ -81,14 +81,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/functions';
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'sass:map';
+@use 'parlassets/scss/functions';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .striped-button {
   align-items: center;
-  background: $white;
-  border: 1px solid $font-placeholder;
+  background: colors.$white;
+  border: 1px solid colors.$font-placeholder;
   cursor: default;
   display: flex;
   flex-direction: column;
@@ -129,7 +130,7 @@ export default {
   &.is-selected,
   &.is-hovered:not(.is-disabled) {
     border-color: transparent !important;
-    color: $white;
+    color: colors.$white;
   }
 
   &:not(.is-disabled) {
@@ -141,7 +142,7 @@ export default {
     font-size: 10px;
     line-height: 1.2;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       font-size: 12px;
     }
 
@@ -154,18 +155,18 @@ export default {
     font-size: 22px;
     line-height: 1;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       font-size: 24px;
     }
   }
 
-  $all-colors: map-merge($proper-vote-colors, $binary-vote-colors);
-  $all-colors: map-merge($all-colors, $vote-results-colors);
-  $all-colors-hover: map-merge(
-    $proper-vote-colors-hover,
-    $binary-vote-colors-hover
+  $all-colors: map.merge(colors.$proper-vote-colors, colors.$binary-vote-colors);
+  $all-colors: map.merge($all-colors, colors.$vote-results-colors);
+  $all-colors-hover: map.merge(
+    colors.$proper-vote-colors-hover,
+    colors.$binary-vote-colors-hover
   );
-  $all-colors-hover: map-merge($all-colors-hover, $vote-results-colors-hover);
+  $all-colors-hover: map.merge($all-colors-hover, colors.$vote-results-colors-hover);
 
   @each $name, $color in $all-colors {
     &.#{$name} {
@@ -176,12 +177,12 @@ export default {
 
       &.is-selected {
         background-color: $color;
-        color: choose-contrast-color($color, $white, $font-default);
+        color: choose-contrast-color($color, colors.$white, colors.$font-default);
       }
 
       &.is-hovered:not(.is-disabled) {
-        background-color: map-get($all-colors-hover, $name);
-        color: choose-contrast-color($color, $white, $font-default);
+        background-color: map.get($all-colors-hover, $name);
+        color: choose-contrast-color($color, colors.$white, colors.$font-default);
 
         &::after {
           background-color: $color;

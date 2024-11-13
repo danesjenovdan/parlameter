@@ -97,8 +97,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .legislation {
   overflow: hidden;
@@ -110,8 +110,8 @@ export default {
   }
 
   &__single {
-    background: $background;
-    color: $font-default;
+    background: colors.$background;
+    color: colors.$font-default;
     display: flex;
     align-items: center;
     height: 125px;
@@ -130,7 +130,7 @@ export default {
     .circle {
       height: 101px;
       width: 102px;
-      background-color: $white;
+      background-color: colors.$white;
       padding: 20px;
     }
 
@@ -139,8 +139,8 @@ export default {
     }
 
     &:hover {
-      color: $link;
-      background-color: $link-hover-background;
+      color: colors.$link;
+      background-color: colors.$link-hover-background;
     }
 
     &:focus,
@@ -155,13 +155,13 @@ export default {
     position: relative;
 
     &:nth-child(odd) {
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         padding-right: 7px;
       }
     }
 
     &:nth-child(even) {
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         padding-left: 7px;
       }
     }
@@ -172,7 +172,7 @@ export default {
     left: 0;
     bottom: 0;
     padding: 4px 20px 15px 20px;
-    background: $white;
+    background: colors.$white;
     width: 100%;
 
     a {
