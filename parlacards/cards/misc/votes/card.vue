@@ -129,8 +129,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .empty-container {
   position: relative;
@@ -143,11 +142,11 @@ export default {
     padding-bottom: 12px;
 
     .filter {
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         margin-right: 10px;
       }
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         width: 100%;
       }
 
@@ -165,7 +164,7 @@ export default {
     .text-filter {
       width: 100%;
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         width: 50%;
       }
     }

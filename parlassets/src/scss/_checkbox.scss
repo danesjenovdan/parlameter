@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "colors";
+
 .checkbox {
   $size: 22px;
 
@@ -13,7 +16,7 @@
     user-select: none;
 
     &:before {
-      border: 1px solid $font-placeholder;
+      border: 1px solid colors.$font-placeholder;
       box-sizing: border-box;
       content: '';
       height: $size;
@@ -24,7 +27,7 @@
     }
   }
   &:checked + label:before {
-    background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="10.125" fill="%23#{str-slice("#{$first}", 2)}" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>');
+    background: no-repeat 4px 5px url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13.5" height="10.125" fill="%23#{string.slice("#{colors.$first}", 2)}" viewBox="0 0 3.5718749 2.6789063"><path d="M.893 2.423l.256.256L3.57.254 3.317 0 .894 2.423zM0 1.53l.893.893.256-.255-.894-.892L0 1.53z" fill-rule="evenodd"/></svg>');
   }
   &.checkbox-twolines + label {
     line-height: 14px;

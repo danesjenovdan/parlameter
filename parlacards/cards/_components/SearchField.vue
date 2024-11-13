@@ -36,10 +36,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .search-field {
-  border: 1px solid $font-placeholder;
+  border: 1px solid colors.$font-placeholder;
   font-size: 16px;
   height: 51px;
   line-height: 27px;

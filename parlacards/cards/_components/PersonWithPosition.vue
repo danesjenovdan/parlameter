@@ -52,8 +52,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .row {
   display: flex;
@@ -70,7 +70,7 @@ export default {
   }
 
   .key {
-    color: $font-default;
+    color: colors.$font-default;
   }
 }
 
@@ -95,7 +95,7 @@ export default {
     margin: 10px 15px 10px 0;
     object-fit: cover;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       margin-right: 25px;
     }
   }

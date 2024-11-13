@@ -1,0 +1,20 @@
+@use "colors";
+
+.status404 h1 span {
+  font-size: 72px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.status404 h1 .fo {
+  background-image: linear-gradient(to right, colors.$first, colors.$second);
+}
+
+.status404 h1 .oo {
+  background-image: linear-gradient(to right, colors.$second, colors.$third);
+}
+
+.status404 h1 .of {
+  background-image: linear-gradient(to right, colors.$third, colors.$third);
+}
