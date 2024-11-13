@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .toggle {
   $height: 51px;
@@ -45,20 +45,20 @@ export default {
 
   .option {
     align-items: center;
-    background: $tab-passive;
-    color: $white;
+    background: colors.$tab-passive;
+    color: colors.$white;
     cursor: pointer;
     flex: 1;
     text-align: center;
     padding: 0 10px;
 
     &:hover {
-      background: $tab-hover;
+      background: colors.$tab-hover;
     }
 
     &.is-selected {
-      background: $tab-active;
-      color: $white;
+      background: colors.$tab-active;
+      color: colors.$white;
       cursor: default;
     }
   }

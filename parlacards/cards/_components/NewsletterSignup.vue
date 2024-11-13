@@ -181,8 +181,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .newsletter-signup-container {
   padding: 32px 16px;
@@ -194,22 +193,22 @@ export default {
     border: none;
     background: none;
     font-weight: 300;
-    color: $white;
-    background-color: $tab-passive;
+    color: colors.$white;
+    background-color: colors.$tab-passive;
 
     &:disabled {
       cursor: not-allowed;
     }
 
     &:not(:disabled):hover {
-      color: $white;
-      background-color: $tab-hover;
+      color: colors.$white;
+      background-color: colors.$tab-hover;
     }
 
     &:active,
     &:hover:active {
-      color: $white;
-      background-color: $tab-active;
+      color: colors.$white;
+      background-color: colors.$tab-active;
     }
   }
 
@@ -297,7 +296,7 @@ export default {
   &.type-banner {
     display: flex;
     padding: 20px 24px;
-    background: $white;
+    background: colors.$white;
 
     .title-and-description {
       flex: 1;

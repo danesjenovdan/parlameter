@@ -5,11 +5,11 @@
 </template>
 
 <style lang="scss">
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .text-frame {
   text-align: center;
-  background-color: $light-background;
+  background-color: colors.$light-background;
   padding: 30px;
   font-size: 18px;
   line-height: 30px;

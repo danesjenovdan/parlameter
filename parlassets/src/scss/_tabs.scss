@@ -1,5 +1,5 @@
-@import "colors";
-@import "breakpoints";
+@use "colors";
+@use "breakpoints";
 
 .tabs {
   display: flex;
@@ -12,8 +12,8 @@
     padding: 0;
     .tabs-header {
       align-items: center;
-      background: $background;
-      color: $font-placeholder;
+      background: colors.$background;
+      color: colors.$font-placeholder;
       cursor: pointer;
       display: flex;
       flex: 1;
@@ -25,11 +25,11 @@
       user-select: none;
       &:last-child { margin-right: 0; }
       &.active {
-        background: $second;
-        color: $white;
+        background: colors.$second;
+        color: colors.$white;
         cursor: default;
       }
-      @include respond-to(desktop) { font-size: 14px; }
+      @include breakpoints.respond-to(desktop) { font-size: 14px; }
     }
   }
   .tabs-content {
@@ -45,10 +45,10 @@
       padding-bottom: 7px;
       padding-top: 8px;
       text-transform: uppercase;
-      background: $first;
-      &.active { background: $second; }
-      &:hover { background: $second-hover }
-      @include respond-to(desktop) {
+      background: colors.$first;
+      &.active { background: colors.$second; }
+      &:hover { background: colors.$second-hover }
+      @include breakpoints.respond-to(desktop) {
         font-size: 16px;
         padding-bottom: 15px;
         padding-top: 16px;
@@ -68,10 +68,10 @@
 
     &:first-child { margin-left: 0 }
     & > a {
-      background: $background;
+      background: colors.$background;
       border: none;
       border-radius: 0;
-      color: $font-placeholder;
+      color: colors.$font-placeholder;
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -82,18 +82,18 @@
     }
     &.active {
       & > a, & > a:focus, & > a:hover {
-        color: $white;
-        background: $second;
+        color: colors.$white;
+        background: colors.$second;
         border: none;
       }
     }
     &:hover {
       & > a, & > a:focus, & > a:hover {
-        color: $white;
-        background: $second;
+        color: colors.$white;
+        background: colors.$second;
         border: none;
       }
     }
   }
-  @include respond-to(mobile) { font-size: 11px; }
+  @include breakpoints.respond-to(mobile) { font-size: 11px; }
 }

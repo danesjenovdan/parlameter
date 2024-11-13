@@ -54,8 +54,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .p-tabs {
   display: flex;
@@ -88,29 +88,29 @@ export default {
         cursor: default;
         pointer-events: none;
       }
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         font-size: 16px;
       }
       &.dark {
-        background: $tab-passive;
-        color: $white;
+        background: colors.$tab-passive;
+        color: colors.$white;
         &.active {
-          background: $tab-active;
+          background: colors.$tab-active;
         }
         &:hover {
-          background: $tab-hover;
+          background: colors.$tab-hover;
         }
       }
       &.light {
-        background: $background;
-        color: $font-placeholder;
+        background: colors.$background;
+        color: colors.$font-placeholder;
         &.active {
-          background: $second;
-          color: $white;
+          background: colors.$second;
+          color: colors.$white;
         }
         &:hover {
-          background: $second-hover;
-          color: $white;
+          background: colors.$second-hover;
+          color: colors.$white;
         }
       }
     }

@@ -5,13 +5,13 @@
 </template>
 
 <style lang="scss">
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .tag {
   display: inline-block;
   white-space: nowrap;
-  background-color: $first;
-  color: $white;
+  background-color: colors.$first;
+  color: colors.$white;
   padding: 0px 7px;
   font-size: 14px;
   cursor: pointer;

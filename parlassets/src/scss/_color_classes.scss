@@ -1,15 +1,17 @@
-@each $option, $color in $option-colors {
+@use "colors";
+
+@each $option, $color in colors.$option-colors {
   .#{$option}-fill {
     fill: $color;
   }
 }
 
 @mixin link-hover {
-  color: $link;
+  color: colors.$link;
 
   &:hover {
     text-decoration: none;
-    color: $link-hover;
+    color: colors.$link-hover;
   }
 }
 

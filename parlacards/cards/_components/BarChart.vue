@@ -98,7 +98,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/breakpoints';
 
 .word-list {
   max-height: 480px;
@@ -133,7 +133,7 @@ export default {
       font-size: 16px;
       font-weight: 300;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         font-size: 14px;
       }
 
@@ -143,7 +143,7 @@ export default {
         margin-right: 10px;
         width: 40px;
 
-        @include show-for('above-limbo', inline);
+        @include breakpoints.show-for('above-limbo', inline);
       }
     }
   }
@@ -152,7 +152,7 @@ export default {
 .progress_number {
   line-height: 27px;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     display: none;
   }
 }

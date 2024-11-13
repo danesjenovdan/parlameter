@@ -232,8 +232,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .session_voting {
   padding: 0;
@@ -283,7 +283,7 @@ export default {
       line-height: 20px;
       text-transform: uppercase;
 
-      @include respond-to(mobile) {
+      @include breakpoints.respond-to(mobile) {
         font-size: 10px;
       }
     }
@@ -331,7 +331,7 @@ export default {
     margin: 3px 0;
     justify-content: center;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       margin-top: 15px;
       margin-bottom: 10px;
     }
@@ -350,9 +350,9 @@ export default {
   }
 
   a:hover {
-    background-color: $link-hover-background;
+    background-color: colors.$link-hover-background;
     text-decoration: none;
-    color: $link;
+    color: colors.$link;
   }
 }
 

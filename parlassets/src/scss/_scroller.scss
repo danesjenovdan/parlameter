@@ -1,3 +1,5 @@
+@use "colors";
+
 %scroller {
   ::-webkit-scrollbar {
     width: 4px;
@@ -5,12 +7,12 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: $scroller;
+    background: colors.$scroller;
     border-radius: 0;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: $element;
+    background: colors.$element;
     border-radius: 0;
   }
 }
