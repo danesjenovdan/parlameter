@@ -14,8 +14,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-
 :deep(.search-dropdown) {
   // this is intentionally doubled to raise specificity of this rule
   &.search-dropdown {

@@ -52,8 +52,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .blue-button-list {
   list-style: none;
@@ -61,13 +61,13 @@ export default {
   margin-bottom: 0;
   padding: 0;
 
-  @include show-for(desktop, flex);
+  @include breakpoints.show-for(desktop, flex);
 
   &-item {
     align-items: center;
-    border-left: 1px solid $font-placeholder;
+    border-left: 1px solid colors.$font-placeholder;
     box-sizing: border-box;
-    color: $link;
+    color: colors.$link;
     display: flex;
     font-size: 13px;
     line-height: 16px;
@@ -75,14 +75,14 @@ export default {
     min-height: 46px;
 
     &:last-child {
-      border-right: 1px solid $font-placeholder;
+      border-right: 1px solid colors.$font-placeholder;
     }
 
     &:hover,
     &.is-selected {
       border-left-color: transparent;
       border-right-color: transparent;
-      background-color: $link-hover-background;
+      background-color: colors.$link-hover-background;
     }
 
     &:hover {
@@ -102,7 +102,7 @@ export default {
   }
 
   &-mobile {
-    @include show-for(mobile, block);
+    @include breakpoints.show-for(mobile, block);
 
     label {
       font-size: 11px;

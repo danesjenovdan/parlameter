@@ -1,3 +1,6 @@
+@use "colors";
+@use "helper";
+
 .member-container {
   height: 100%;
   left: 0;
@@ -17,7 +20,7 @@
       margin-bottom: 30px;
 
       a {
-        color: $link;
+        color: colors.$link;
       }
     }
   }
@@ -74,7 +77,7 @@
 
     justify-content: flex-end;
 
-    color: $font-placeholder;
+    color: colors.$font-placeholder;
     font-weight: 500;
   }
 }

@@ -96,19 +96,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .legislation-status-container {
-  $section-border: 1px solid $font-placeholder;
+  $section-border: 1px solid colors.$font-placeholder;
 
-  background: $background;
+  background: colors.$background;
   margin: 0 0 20px 0;
   min-height: 90px;
   padding: 10px 14px;
   position: relative;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     display: flex;
   }
 
@@ -118,7 +118,7 @@ export default {
     display: flex;
     justify-content: center;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       border-bottom: none;
       border-right: $section-border;
     }
@@ -128,7 +128,7 @@ export default {
     }
 
     .legislation-status-text {
-      color: $font-default;
+      color: colors.$font-default;
       font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;
@@ -144,7 +144,7 @@ export default {
     justify-content: flex-start;
     font-weight: 300;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       margin-top: 12px;
       padding-top: 12px;
       border-top: $section-border;
@@ -158,11 +158,11 @@ export default {
   .votes-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
-    height: $full-card-height - 89;
+    height: breakpoints.$full-card-height - 89;
   }
 }
 
 .legislation-tabs :deep(.p-tabs-content) {
-  height: $full-card-height - 89;
+  height: breakpoints.$full-card-height - 89;
 }
 </style>

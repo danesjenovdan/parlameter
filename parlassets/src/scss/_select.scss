@@ -1,3 +1,6 @@
+@use "colors";
+@use "helper";
+
 .select {
   $height: 31px;
   display: inline-block;
@@ -8,11 +11,11 @@
   select {
     appearance: none;
     align-items: center;
-    background-color: $white;
-    border: 1px solid $font-placeholder;
+    background-color: colors.$white;
+    border: 1px solid colors.$font-placeholder;
     border-radius: 0;
     box-sizing: border-box;
-    color: $font-default;
+    color: colors.$font-default;
     cursor: pointer;
     display: inline-flex;
     font-size: 12px;
@@ -26,5 +29,5 @@
     vertical-align: top;
   }
 
-  @include arrow(12px, 6px, 13px, 10px);
+  @include helper.arrow(12px, 6px, 13px, 10px);
 }

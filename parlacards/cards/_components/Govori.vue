@@ -249,25 +249,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .filters {
   display: flex;
   padding-bottom: 12px;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     flex-wrap: wrap;
     min-height: 154px;
   }
 
   .filter {
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       margin-right: 10px;
       flex: 1;
     }
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       width: 100%;
     }
 
@@ -284,7 +284,7 @@ export default {
   .text-filter {
     flex-basis: 100%;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       flex-basis: 50%;
       flex-grow: 0;
     }
@@ -295,10 +295,10 @@ export default {
   .speeches-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
-    height: $full-card-height;
+    height: breakpoints.$full-card-height;
 
     &.has-filters {
-      height: $full-card-height - 89;
+      height: breakpoints.$full-card-height - 89;
     }
   }
 
@@ -313,7 +313,7 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    background: $white-hover;
+    background: colors.$white-hover;
     z-index: 4;
 
     .nalagalnik {
@@ -323,7 +323,7 @@ export default {
   }
 
   .date {
-    background-color: $background;
+    background-color: colors.$background;
     font-weight: bold;
     padding: 10px;
   }

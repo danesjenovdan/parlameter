@@ -378,9 +378,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/color_classes';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/color_classes';
 
 .notification-list {
   .list-table {
@@ -424,13 +423,13 @@ export default {
       justify-content: center;
       align-items: center;
       font-size: 24px;
-      background-color: $tab-hover;
-      color: $white;
+      background-color: colors.$tab-hover;
+      color: colors.$white;
       line-height: 1;
 
       &:hover {
-        background-color: $tab-passive;
-        color: $white;
+        background-color: colors.$tab-passive;
+        color: colors.$white;
       }
 
       span {
@@ -493,22 +492,22 @@ export default {
       border: none;
       background: none;
       font-weight: 300;
-      color: $white;
-      background-color: $tab-passive;
+      color: colors.$white;
+      background-color: colors.$tab-passive;
 
       &:disabled {
         cursor: not-allowed;
       }
 
       &:not(:disabled):hover {
-        color: $white;
-        background-color: $tab-hover;
+        color: colors.$white;
+        background-color: colors.$tab-hover;
       }
 
       &:active,
       &:hover:active {
-        color: $white;
-        background-color: $tab-active;
+        color: colors.$white;
+        background-color: colors.$tab-active;
       }
     }
   }
@@ -557,7 +556,7 @@ export default {
       border: none;
       cursor: pointer;
 
-      @include link-hover;
+      @include color_classes.link-hover;
     }
   }
 }

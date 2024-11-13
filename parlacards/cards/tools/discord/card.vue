@@ -62,8 +62,8 @@
 </template>
 
 <script>
-import { parseISO, format } from 'date-fns';
-import { groupBy, sortBy, zipObject } from 'lodash-es';
+import { parseISO } from 'date-fns';
+import { groupBy } from 'lodash-es';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import StripedButton from '@/_components/StripedButton.vue';
@@ -129,7 +129,7 @@ export default {
 
       textFilter: '',
       allTags: [],
-      
+
       allClassifications: [],
     };
   },
@@ -192,7 +192,7 @@ export default {
       } else {
         return {"all": this.votes};
       }
-      
+
     },
     searchUrl() {
       const url = new URL(this.cardData.url);
@@ -283,13 +283,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .votes-list-shadow {
   overflow-y: auto;
   overflow-x: hidden;
-  height: $full-card-height - 89;
+  height: breakpoints.$full-card-height - 89;
 }
 
 .groups {
@@ -302,7 +302,7 @@ export default {
     width: calc(33.33% - 3.33px);
     margin-bottom: 5px;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       flex: 1;
       margin-bottom: 0;
 
@@ -320,7 +320,7 @@ export default {
   justify-content: space-between;
   margin-bottom: 20px;
 
-  @include respond-to(mobile) {
+  @include breakpoints.respond-to(mobile) {
     flex-wrap: wrap;
     min-height: 154px;
   }
@@ -334,7 +334,7 @@ export default {
   .text-filter {
     width: 100%;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       width: 26%;
     }
   }
@@ -342,7 +342,7 @@ export default {
   .tag-dropdown {
     width: 100%;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       width: 26%;
     }
   }
@@ -350,7 +350,7 @@ export default {
   .type-dropdown {
     width: 100%;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       width: 17.5%;
     }
   }
@@ -365,7 +365,7 @@ export default {
     overflow-y: hidden;
     position: relative;
     &::before {
-      background: $white url('#{get-parlassets-url()}/img/loader.gif') no-repeat
+      background: colors.$white url('#{get-parlassets-url()}/img/loader.gif') no-repeat
         center center;
       content: '';
       height: 100%;
@@ -384,9 +384,9 @@ export default {
 }
 
 .ballot {
-  $section-border: 1px solid $font-placeholder;
-  background: $background;
-  color: $font-default;
+  $section-border: 1px solid colors.$font-placeholder;
+  background: colors.$background;
+  color: colors.$font-default;
   display: block;
   margin: 7px 0 8px 0;
   min-height: 90px;
@@ -397,11 +397,11 @@ export default {
   &:active,
   &:focus {
     text-decoration: none;
-    background: $link-hover-background;
-    color: $link;
+    background: colors.$link-hover-background;
+    color: colors.$link;
   }
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     display: flex;
     margin: 10px 0;
 
@@ -415,7 +415,7 @@ export default {
     justify-content: center;
     text-align: center;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       flex-direction: column;
       padding-right: 16px;
     }
@@ -423,7 +423,7 @@ export default {
     .percentage {
       font-size: 24px;
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         font-size: 30px;
       }
     }
@@ -434,7 +434,7 @@ export default {
       margin-left: 10px;
       text-transform: uppercase;
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         font-size: 16px;
         line-height: 23px;
         margin-left: 0;
@@ -451,7 +451,7 @@ export default {
     line-height: 1.45em;
     padding: 10px 0;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       border-bottom: none;
       border-top: none;
       border-left: $section-border;
@@ -470,7 +470,7 @@ export default {
     justify-content: center;
     padding: 10px 0 0 0;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       border-left: $section-border;
       justify-content: left;
       padding: 0 0 0 16px;
@@ -482,20 +482,20 @@ export default {
       margin-bottom: 4px;
 
       &.accepted {
-        color: $icon-accepted;
+        color: colors.$icon-accepted;
       }
 
       &.not-accepted {
-        color: $icon-rejected;
+        color: colors.$icon-rejected;
       }
 
-      @include respond-to(desktop) {
+      @include breakpoints.respond-to(desktop) {
         font-size: 29px;
       }
     }
 
     .text {
-      color: $font-default;
+      color: colors.$font-default;
       font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;
