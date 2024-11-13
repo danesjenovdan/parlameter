@@ -61,28 +61,28 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'parlassets/scss/breakpoints';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
 
 .ballot {
   text-decoration: none;
-  background: $background;
-  color: $font-default;
+  background: colors.$background;
+  color: colors.$font-default;
   display: block;
   margin: 7px 0 8px;
   min-height: 90px;
   padding: 10px 14px;
   position: relative;
 
-  @include respond-to(desktop) {
+  @include breakpoints.respond-to(desktop) {
     display: flex;
     margin: 10px 0;
   }
 
   &:hover {
     text-decoration: none;
-    background-color: $link-hover-background;
-    color: $link;
+    background-color: colors.$link-hover-background;
+    color: colors.$link;
   }
 
   .disunion {
@@ -91,28 +91,28 @@ export default {
     justify-content: center;
     text-align: center;
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       padding-bottom: 10px;
     }
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       padding-right: 16px;
     }
   }
 
   .name {
-    border-bottom: 1px solid $font-placeholder;
-    border-top: 1px solid $font-placeholder;
+    border-bottom: 1px solid colors.$font-placeholder;
+    border-top: 1px solid colors.$font-placeholder;
     font-family: 'Roboto Slab', 'Times New Roman', serif;
     font-size: 11px;
     font-weight: 300;
     line-height: 1.45em;
     padding: 10px 0;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       border-bottom: none;
       border-top: none;
-      border-left: 1px solid $font-placeholder;
+      border-left: 1px solid colors.$font-placeholder;
       align-items: center;
       display: flex;
       flex: 4;
@@ -136,20 +136,20 @@ export default {
     text-transform: uppercase;
     padding: 10px 0 0;
 
-    @include respond-to(desktop) {
-      border-left: 1px solid $font-placeholder;
+    @include breakpoints.respond-to(desktop) {
+      border-left: 1px solid colors.$font-placeholder;
       justify-content: left;
       padding: 0 0 0 16px;
       width: 136px;
       margin-right: 16px;
     }
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       margin: 0 15px;
     }
 
     .text {
-      color: $font-default;
+      color: colors.$font-default;
       font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
@@ -171,11 +171,11 @@ export default {
         text-align: center;
 
         &.glyphicon-ok {
-          color: $icon-accepted;
+          color: colors.$icon-accepted;
         }
 
         &.glyphicon-remove {
-          color: $icon-rejected;
+          color: colors.$icon-rejected;
         }
 
         &.parlaicon-unknown {
@@ -204,9 +204,9 @@ export default {
     align-items: center;
     height: 42px;
 
-    @include show-for(desktop);
+    @include breakpoints.show-for(desktop);
 
-    @include respond-to(mobile) {
+    @include breakpoints.respond-to(mobile) {
       margin: 0 auto;
     }
 
@@ -233,7 +233,7 @@ export default {
     text-transform: uppercase;
     font-weight: 500;
 
-    @include respond-to(desktop) {
+    @include breakpoints.respond-to(desktop) {
       line-height: 12px;
     }
   }

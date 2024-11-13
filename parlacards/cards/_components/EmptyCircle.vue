@@ -18,7 +18,7 @@ export default {
 
 <style scoped lang="scss">
 @use 'sass:math';
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .empty {
   bottom: 0;
@@ -31,7 +31,7 @@ export default {
     $size: 220px;
     border-radius: 50%;
     background-image: url('#{get-parlassets-url()}/img/orodja/primerjalnik.svg');
-    background-color: $light-background;
+    background-color: colors.$light-background;
     background-size: math.div($size, 2.5);
     background-position: center 40px;
     background-repeat: no-repeat;

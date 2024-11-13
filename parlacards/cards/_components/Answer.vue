@@ -49,8 +49,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import 'parlassets/scss/breakpoints';
-
 .show-hide-answer {
   margin-left: 40px;
   margin-bottom: 20px;

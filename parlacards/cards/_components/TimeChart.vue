@@ -224,11 +224,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
+@use 'parlassets/scss/colors';
 
 .time-chart :deep(svg) {
   path {
-    stroke: $time-chart-passive;
+    stroke: colors.$time-chart-passive;
   }
 
   text {
@@ -236,10 +236,10 @@ export default {
   }
 
   .dot {
-    fill: $time-chart-passive;
+    fill: colors.$time-chart-passive;
 
     &.hovered {
-      fill: $time-chart-active;
+      fill: colors.$time-chart-active;
     }
   }
 }

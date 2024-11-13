@@ -86,8 +86,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'parlassets/scss/colors';
-@import 'parlassets/scss/breakpoints';
+@use 'parlassets/scss/colors';
+@use 'parlassets/scss/breakpoints';
 
 .questions {
   min-height: 100px;
@@ -95,7 +95,7 @@ export default {
   overflow-y: auto;
   max-height: 100%;
   position: relative;
-  height: $full-card-height;
+  height: breakpoints.$full-card-height;
 
   .date {
     font-weight: 500;
@@ -108,7 +108,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background: $white-hover;
+  background: colors.$white-hover;
   z-index: 4;
 
   .nalagalnik {
