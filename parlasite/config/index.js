@@ -10,6 +10,9 @@ const config = {
     parladata: 'https://data.ajdovscina.parlameter.si/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
+  mandates: [
+    // insert mandates for selector here e.g. { id: 1, name: '2018–2022', url: 'https://x.parlameter.si' },
+  ],
   locale: 'sl-obcina-ajdovscina',
   leaderId: process.env.PARLASITE_LEADER_ID,
   rootOrgId: process.env.PARLASITE_ROOT_ORG_ID,
