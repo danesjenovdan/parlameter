@@ -12,6 +12,9 @@ const config = {
   },
   mandates: [
     // insert mandates for selector here e.g. { id: 1, name: '2018–2022', url: 'https://x.parlameter.si' },
+    { id: 2, name: '2022–2026', url: 'https://parlameter.si' },
+    { id: 1, name: '2018–2022', url: 'https://viii.parlameter.si' },
+    { id: 3, name: '2014–2018', url: 'https://vii.parlameter.si' },
   ],
   locale: 'sl',
   leaderId: process.env.PARLASITE_LEADER_ID,
