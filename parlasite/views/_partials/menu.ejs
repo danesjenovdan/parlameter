@@ -21,7 +21,7 @@
           <div class="select">
             <select class="mandate-select">
               <% for (const m of config.mandates) { %>
-                <option value="<%- m.url %>" <%- mandateId === m.id ? 'selected' : '' %>><%- m.name %></option>
+                <option value="<%- m.url %>" <%- mandateId == m.id ? 'selected' : '' %>><%- m.name %></option>
               <% } %>
             </select>
           </div>
