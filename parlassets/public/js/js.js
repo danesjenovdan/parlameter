@@ -23,6 +23,11 @@ $(function() {
     $('.open-search').removeClass('hidden');
     $('.close-search').addClass('hidden');
   });
+
+  // mandate selector
+  $('select.mandate-select').on('change', function() {
+    window.location.href = $(this).val();
+  });
 });
 
 // LEGAL TEXT

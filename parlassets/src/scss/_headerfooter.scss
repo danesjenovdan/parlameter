@@ -32,23 +32,41 @@ body {
   position: relative;
 }
 
+.menu-container .logo-and-mandate,
+.menu-container .open-search,
+.menu-container .close-search {
+  flex-shrink: 0;
+}
+
 .menu-container .logo {
-  // width: 110px;
-  height: 80px !important;
+  height: 64px !important;
   overflow: hidden;
   display: block;
-  flex-shrink: 0;
 
   .logo-image-height {
     height: 100%;
+    width: auto;
+  }
+}
+
+.menu-container .select {
+  margin-top: 10px;
+  width: 100%;
+
+  .mandate-select {
     width: 100%;
+    background-color: colors.$background;
+    padding-left: 8px;
+    padding-right: 28px;
+    font-size: 13px;
+    line-height: 30px;
   }
 }
 
 .menu-container .open-search,
 .menu-container .close-search,
 .menu-container .menu {
-  padding-bottom: 14px;
+  // padding-bottom: 14px;
   display: flex;
   width: auto;
   align-items: center;
@@ -95,18 +113,19 @@ body {
   }
 
   .mobile-menu__button {
+    flex-shrink: 0;
     width: 40px;
-    height: 70px;
-    line-height: 70px;
+    height: 64px;
+    line-height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
     float: right;
     cursor: pointer;
     overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
   }
 
   .mobile-menu {
@@ -156,11 +175,11 @@ body {
     }
 
     &__button {
-      height: 70px;
-      line-height: 70px;
+      height: 64px;
+      line-height: 64px;
       display: flex;
       align-items: center;
-      float: right;
+      // float: right;
       cursor: pointer;
       overflow: hidden;
     }
@@ -193,7 +212,6 @@ body {
 }
 
 .menu-search {
-  padding-bottom: 14px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -208,28 +226,44 @@ body {
 
 @media (max-width: 992px) {
   .menu-container {
-    flex-direction: column;
+    // flex-direction: column;
   }
 
-  .menu-container .logo {
-    width: 80px;
-    // margin-top: 10px;
+  .menu-container .logo-and-mandate {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    .logo {
+      flex-shrink: 0;
+      width: 80px;
+      // margin-top: 10px;
+    }
+
+    .select {
+      margin-top: 0;
+    }
   }
 
+  .menu-container.open {
+    flex-wrap: wrap;
+  }
 
   .menu-container.open .menu {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: calc(100% - 50px);
   }
 
-  .menu-container.open .logo {
+  .menu-container.open .logo-and-mandate {
     display: none;
   }
 
   .menu-container.open .menu-search {
     display: block !important;
+    order: 1;
+    flex-basis: 100%;
   }
 
   .menu-container.open .menu a {
