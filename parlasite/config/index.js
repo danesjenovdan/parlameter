@@ -12,6 +12,8 @@ const config = {
   },
   mandates: [
     // insert mandates for selector here e.g. { id: 1, name: '2018–2022', url: 'https://x.parlameter.si' },
+    { id: 2, name: '2022–2026', url: 'https://ljubljana.parlameter.si/' },
+    { id: 1, name: '2018–2022', url: 'https://2018.ljubljana.parlameter.si/' },
   ],
   locale: 'sl-obcina-ljubljana',
   leaderId: process.env.PARLASITE_LEADER_ID,
