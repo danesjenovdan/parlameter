@@ -13,9 +13,20 @@
     <div class="stripeeltop"></div>
     <div class="container">
       <div class="menu-container">
-        <a class="logo" href="/">
-          <img class="logo-image-height" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="logo">
-        </a>
+        <div class="logo-and-mandate">
+          <a class="logo" href="/">
+            <img class="logo-image-height" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="logo">
+          </a>
+          <% if (config.mandates?.length) { %>
+          <div class="select">
+            <select class="mandate-select">
+              <% for (const m of config.mandates) { %>
+                <option value="<%- m.url %>" <%- mandateId == m.id ? 'selected' : '' %>><%- m.name %></option>
+              <% } %>
+            </select>
+          </div>
+          <% } %>
+        </div>
         <div class="menu">
           <a class="<%- isActiveMenu('sessions')    %>" href="/<%- sm.landing.sessions    %>"><%- i18n('menu.sessions')    %></a>
           <a class="<%- isActiveMenu('mps')         %>" href="/<%- sm.landing.members     %>"><%- i18n('menu.mps')         %></a>
