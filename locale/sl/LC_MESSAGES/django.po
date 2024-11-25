@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-10 09:54+0200\n"
+"POT-Creation-Date: 2024-11-25 14:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -260,53 +260,79 @@ msgid "Obvestila"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:10
+#: parlanotifications/templates/notification.html:11
 msgid "Živjo"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:11
 msgid "Na ta e-naslov je nekdo prijavil Parlameter obvestila za ključno besedo"
-msgstr "Ta e-naslov je bil uporabljen za prijavo na Parlametrova obvestila, in sicer za ključno besedo oz. besedno zvezo"
+msgstr ""
+"Ta e-naslov je bil uporabljen za prijavo na Parlametrova obvestila, in sicer "
+"za ključno besedo oz. besedno zvezo"
 
-#: parlanotifications/templates/add_keyword.html:11
+#: parlanotifications/templates/add_keyword.html:12
 msgid "Če si bil/-a to ti, potrdi naročilo s klikom na povezavo:"
 msgstr "Če želiš potrditi prijavo, "
 
-#: parlanotifications/templates/add_keyword.html:12
+#: parlanotifications/templates/add_keyword.html:13
 msgid ""
 "https://parlacards-slovenija.lb.djnd.si/tools/notifications/?"
 "id=undefined&no_card_data=true&locale=sl&template=share&action=confirm"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:13
-msgid "Srečno"
+msgid "klikni tukaj"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:14
+#: parlanotifications/templates/notification.html:13
+msgid "Srečno"
+msgstr ""
+
+#: parlanotifications/templates/add_keyword.html:15
+#: parlanotifications/templates/notification.html:14
 msgid "ekipa Parlametra"
 msgstr ""
 
-#: parlanotifications/templates/notification.html:16
-msgid "https://parlameter.si/seja/"
+#: parlanotifications/templates/add_keyword.html:18
+#: parlanotifications/templates/notification.html:32
+msgid "https://parlameter.si/"
 msgstr ""
 
-#: parlanotifications/templates/notification.html:16
-msgid "transkript-url"
-msgstr "transkript"
+#: parlanotifications/templates/add_keyword.html:19
+#: parlanotifications/templates/notification.html:33
+msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter.svg"
+msgstr ""
 
-#: parlanotifications/templates/notification.html:23
+#: parlanotifications/templates/add_keyword.html:22
+#: parlanotifications/templates/notification.html:36
 msgid "Uredi svoje nastavitve"
 msgstr "Odjavi se od obvestil ali uredi svoje nastavitve"
 
-#: parlanotifications/templates/notification.html:23
+#: parlanotifications/templates/add_keyword.html:22
+#: parlanotifications/templates/notification.html:36
 msgid ""
 "https://parlacards-slovenija.lb.djnd.si/tools/notifications/?"
 "id=undefined&no_card_data=true&locale=sl&template=share&action=list"
 msgstr ""
 
-#: parlanotifications/templates/notification.html:23
+#: parlanotifications/templates/add_keyword.html:22
+#: parlanotifications/templates/notification.html:36
 msgid "tukaj"
 msgstr ""
 
-#: parlanotifications/views.py:30
+#: parlanotifications/templates/notification.html:12
+msgid "Spodaj najdeš omembe izbranih besed oz. besednih zvez iz Parlametra."
+msgstr ""
+
+#: parlanotifications/templates/notification.html:26
+msgid "https://parlameter.si/seja/"
+msgstr ""
+
+#: parlanotifications/templates/notification.html:26
+msgid "transkript-url"
+msgstr "transkript"
+
+#: parlanotifications/views.py:25
 msgid "Parlameter obvestila - potrditev"
 msgstr "Potrdi prijavo na obvestila"
