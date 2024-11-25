@@ -16,7 +16,7 @@
 	<br/>
 	<br/>
 	{% for key, value in data.items %}
-	<b style="color: #222222; font-family: Arial; font-size: 13px;">{{key.keyword}}</b><br/>
+	<b style="color: #222222; font-family: Arial; font-size: 13px;">"{{key.keyword}}"</b><br/>
 </br>
 		{% for speech in value %}
 		<div class="dndkeywordalert" style="padding-left: 0px; padding-bottom: 20px; width: 1000px;">
@@ -30,7 +30,7 @@
 	{% endfor %}
 	<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
 	<a class="logo" href="{% trans 'https://parlameter.si/' %}">
-		<img class="logo-image-height" src="{% trans 'https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter.svg' %}" alt="logo" width="100px">
+		<img src="{% trans 'https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png' %}" alt="logo" width="100px">
 	</a>
 	<div class="footer" style="color: #222222; font-family: Arial; font-size: 10px;">
 	{% trans 'Uredi svoje nastavitve' %} <a href="{% trans 'https://parlacards-slovenija.lb.djnd.si/tools/notifications/?id=undefined&no_card_data=true&locale=sl&template=share&action=list' %}&uuid={{ uuid }}" style="color: #222222; font-family: Arial; font-size: 10px;">{% trans 'tukaj' %}</a>.
