@@ -189,3 +189,16 @@ class Quote(Timestampable):
         blank=True, null=True,
         help_text='index of last character of quote string'
     )
+
+
+class OrganizationVoteDiscord(Score):
+    vote = models.ForeignKey(
+        "parladata.Vote",
+        related_name="organization_vote_discords",
+        on_delete=models.CASCADE,
+    )
+    organization = models.ForeignKey(
+        "parladata.Organization",
+        related_name="organization_vote_discords",
+        on_delete=models.CASCADE,
+    )

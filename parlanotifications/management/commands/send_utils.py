@@ -147,7 +147,7 @@ def send_emails():
                             "speaker_name": speech.speaker.name,
                             "session_name": speech.session.name,
                             "session_id": speech.session_id,
-                            "order": speech.order,
+                            "order": int((speech.order - 1) / 10) + 1,
                         }
                     )
                 keyword_ids.append(keyword.id)

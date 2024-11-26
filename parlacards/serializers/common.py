@@ -272,7 +272,7 @@ class GroupScoreCardSerializer(CardSerializer):
     def __init__(self, group, *args, **kwargs):
         super().__init__(group, *args, **kwargs)
         """
-        Get playing field and mandate for person
+        Get playing field and mandate for group
         """
         try:
             self.playing_field, self.mandate = group.get_last_playing_field_with_mandate(

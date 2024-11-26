@@ -77,6 +77,7 @@ from parlacards.serializers.cards import (
     SingleMinutesCardSerializer,
     MandateMinutesCardSerializer,
     PublicPersonQuestionCardSerializer,
+    ToolsDiscordCardSerializer,
 )
 from parlacards.serializers.speech import SpeechSerializer
 from parlacards.serializers.quote import QuoteSerializer
@@ -641,3 +642,12 @@ class GroupMediaReportsView(CardView):
     '''
     thing = Organization
     card_serializer = GroupMediaReportsCardSerializer
+
+
+class ToolsDiscord(CardView):
+    """
+    Discord for organizations
+    """
+
+    thing = Organization
+    card_serializer = ToolsDiscordCardSerializer

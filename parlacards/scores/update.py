@@ -1,7 +1,10 @@
 from parlacards.scores.attendance import save_people_vote_attendance, save_groups_vote_attendance
 from parlacards.scores.avg_number_of_speeches_per_session import save_people_avg_number_of_speeches_per_session
 from parlacards.scores.deviation_from_group import save_people_deviations_from_group
-from parlacards.scores.discord import save_groups_discords
+from parlacards.scores.discord import (
+    save_groups_discords,
+    save_organizations_vote_discords,
+)
 from parlacards.scores.monthly_attendance import save_people_monthly_vote_attendance, save_groups_monthly_vote_attendance
 from parlacards.scores.number_of_questions import save_people_number_of_questions, save_group_number_of_questions
 from parlacards.scores.number_of_spoken_words import save_people_number_of_spoken_words
@@ -135,6 +138,7 @@ def run_vote_analyses_on_date(playing_field, timestamp):
     save_groups_vote_attendance(playing_field, timestamp)
     save_people_deviations_from_group(playing_field, timestamp)
     save_groups_discords(playing_field, timestamp)
+    save_organizations_vote_discords(playing_field, timestamp)
     save_people_monthly_vote_attendance(playing_field, timestamp)
     save_groups_monthly_vote_attendance(playing_field, timestamp)
     save_groups_vote_attendance_on_sessions(playing_field, timestamp)

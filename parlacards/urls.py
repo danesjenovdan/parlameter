@@ -75,5 +75,7 @@ urlpatterns = [
     path('search/most-used-by-people/', MandateMostUsedByPeople.as_view()),
     path('search/usage-through-time-in-speeches/', MandateUsageThroughTimeInSpeeches.as_view()),
     path('search/usage-through-time-in-agenda-items/', MandateUsageThroughTimeInAgendaItems.as_view()),
+
+    path("tools/discord/", ToolsDiscord.as_view()),
 ]
 

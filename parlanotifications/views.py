@@ -10,11 +10,6 @@ from parlanotifications.models import Keyword, NotificationUser
 from parlanotifications.serializers import KeywordSerializer
 from parladata.update_utils import send_email
 
-# Create your views here.
-
-# TODO
-# naredi da bo kul pošiljanje emailov
-
 
 class KeywordView(viewsets.ModelViewSet):
     permission_classes = []

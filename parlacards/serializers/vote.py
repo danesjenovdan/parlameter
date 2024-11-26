@@ -7,6 +7,8 @@ from rest_framework import serializers
 
 from parladata.models.ballot import Ballot
 
+from parlacards.models import OrganizationVoteDiscord
+
 from parlacards.serializers.session import SessionSerializer
 from parlacards.serializers.link import LinkSerializer
 
@@ -478,6 +480,22 @@ class SpeechVoteSerializer(CommonSerializer):
         # obj is the vote
         serializer = VoteSumsSerializer(
             obj,
+            context=self.context
+        )
+        return serializer.data
+
+
+class ToolsDiscordSerializer(CommonSerializer):
+    title = serializers.CharField(source='vote.name')
+    session = serializers.SerializerMethodField()
+    vote_id = serializers.IntegerField(source="vote.id")
+    value = serializers.FloatField()
+    passed = serializers.BooleanField(source="vote.result")
+    timestamp = serializers.DateTimeField(source="vote.timestamp")
+
+    def get_session(self, discord):
+        serializer = SessionSerializer(
+            discord.vote.motion.session,
             context=self.context
         )
         return serializer.data

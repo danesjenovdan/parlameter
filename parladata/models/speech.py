@@ -64,7 +64,7 @@ class Speech(Versionable, Timestampable, Taggable):
         if self.lemmatized_content:
             return
         lemmatize_many = get_lemmatize_method('lemmatize_many')
-        self.lemmatized_content = self.lemmatize(self.content)
+        self.lemmatized_content = lemmatize_many(self.content)
         self.save()
     
     @staticmethod

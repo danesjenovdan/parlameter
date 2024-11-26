@@ -51,11 +51,14 @@ def create_solr_paginator(params, solr_params, prefix='', document_type='speech'
 class SolrPaginator(Paginator):
     def __init__(self, solr_params, per_page, orphans=0,
                  allow_empty_first_page=True, document_type='speech'):
+        super().__init__(
+            object_list=None,
+            per_page=per_page,
+            orphans=orphans,
+            allow_empty_first_page=allow_empty_first_page,
+        )
+
         self.solr_params = solr_params
-        self.object_list = None
-        self.per_page = int(per_page)
-        self.orphans = int(orphans)
-        self.allow_empty_first_page = allow_empty_first_page
         self.document_type = document_type
         self.search_method = None
 
