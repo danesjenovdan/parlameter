@@ -29,11 +29,11 @@ class QuestionAdmin(admin.ModelAdmin):
 class AnswerAdmin(admin.ModelAdmin):
     list_display = ['question', 'timestamp']
     autocomplete_fields = ['question', 'person_authors', 'organization_authors']
-    search_fields = ["title"]
+    search_fields = ["text"]
     inlines = [
         LinkAnswerInline
     ]
-    fields = ['content', 'question', 'person_authors', 'organization_authors', 'timestamp']
+    fields = ['text', 'question', 'person_authors', 'organization_authors', 'timestamp']
     readonly_fields = ['created_at', 'updated_at']
 
 
