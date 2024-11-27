@@ -5,6 +5,24 @@ from tinymce.models import HTMLField
 from parladata.behaviors.models import Timestampable, Taggable
 
 
+class LegislationStatus(Timestampable):
+    name = models.TextField(
+        blank=True,
+        null=True,
+        help_text='Status of legisaltion'
+    )
+
+    def __str__(self):
+        return self.name
+    
+    @classmethod
+    def get_or_create_default_photo_pk(cls):
+        obj, created_bool = cls.objects.get_or_create(
+            name='in_procedure'
+        )
+        return obj.pk
+
+
 class Law(Timestampable, Taggable):
     """Laws which taken place in parlament."""
     STATUSES = [
@@ -54,9 +72,10 @@ class Law(Timestampable, Taggable):
 
     status = models.ForeignKey(
         'LegislationStatus',
-        on_delete=models.CASCADE,
+        on_delete=models.SET_DEFAULT,
         blank=True,
         null=True,
+        default=LegislationStatus.get_or_create_default_photo_pk,
     )
 
     passed = models.BooleanField(blank=True, null=True)
@@ -155,17 +174,6 @@ class LegislationConsideration(Timestampable):
         related_name='legislation_considerations',
         help_text='Session at which the legislation was discussed'
     )
-
-
-class LegislationStatus(Timestampable):
-    name = models.TextField(
-        blank=True,
-        null=True,
-        help_text='Status of legisaltion'
-    )
-
-    def __str__(self):
-        return self.name
 
 
 class LegislationClassification(Timestampable):
