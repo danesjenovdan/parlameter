@@ -14,7 +14,7 @@
     "cssnano": "^7.0.6",
     "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
-    "sass": "^1.80.7"
+    "sass": "^1.82.0"
   },
   "devDependencies": {
     "http-server": "^14.1.1",
