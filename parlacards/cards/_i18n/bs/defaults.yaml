@@ -342,6 +342,14 @@ party-leader--m: Predsjednik kluba
 party-leader--f: Predsjednica kluba
 deputy-leader--m: Zamjenik
 deputy-leader--f: Zamjenica
+leader--m: Vođa
+leader--f: Vođa
+president--m: Predsjedavajući
+president--f: Predsjedavajuća
+deputy--m: Zamjenik
+deputy--f: Zamjenica
+member--m: Član
+member--f: Članica
 number-of-seats: 'Broj zastupničkih mjesta:'
 contact: 'Kontakt:'
 mp: Zastupnik
