@@ -373,6 +373,14 @@ party-leader--m: Vodja svetniškega kluba
 party-leader--f: Vodja svetniškega kluba
 deputy-leader--m: Namestnik
 deputy-leader--f: Namestnica
+leader--m: Vodja
+leader--f: Vodja
+president--m: Predsednik
+president--f: Predsednica
+deputy--m: Podpredsednik
+deputy--f: Podpredsednica
+member--m: Član
+member--f: Članica
 number-of-seats: 'Število svetniških sedežev'
 contact: 'Kontakt'
 mp: Svetnik/-ka
