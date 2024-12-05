@@ -357,6 +357,14 @@ party-leader--m: Leader
 party-leader--f: Leader
 deputy-leader--m: Deputy
 deputy-leader--f: Deputy
+leader--m: Leader
+leader--f: Leader
+president--m: President
+president--f: President
+deputy--m: Deputy
+deputy--f: Deputy
+member--m: Member
+member--f: Member
 number-of-seats: 'Number of seats in the parliament:'
 contact: 'Contact:'
 mp: MP
