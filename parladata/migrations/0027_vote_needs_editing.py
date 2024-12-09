@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0026_rename_datetime_vote_timestamp'),
+        ("parladata", "0026_rename_datetime_vote_timestamp"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='vote',
-            name='needs_editing',
-            field=models.BooleanField(default=False, verbose_name='Is vote needs editing'),
+            model_name="vote",
+            name="needs_editing",
+            field=models.BooleanField(
+                default=False, verbose_name="Is vote needs editing"
+            ),
         ),
     ]

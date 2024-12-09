@@ -1,8 +1,8 @@
 from rest_framework import serializers
 
 from parlacards.serializers.common import CommonCachableSerializer
-
 from parlacards.serializers.tag import TagSerializer
+
 
 class MotionSerializer(CommonCachableSerializer):
     def calculate_cache_key(self, instance):

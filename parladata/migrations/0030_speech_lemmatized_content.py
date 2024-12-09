@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0029_auto_20210524_1152'),
+        ("parladata", "0029_auto_20210524_1152"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='speech',
-            name='lemmatized_content',
-            field=models.TextField(blank=True, help_text='Lemmatized words spoken', null=True),
+            model_name="speech",
+            name="lemmatized_content",
+            field=models.TextField(
+                blank=True, help_text="Lemmatized words spoken", null=True
+            ),
         ),
     ]

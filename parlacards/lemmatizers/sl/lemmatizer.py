@@ -8,5 +8,6 @@ def get_stopwords():
 def lemmatize_many(speech):
     # initialize the lemmatizer class only once
     from parlacards.lemmatizers.classla import ClasslaLemmatizer
+
     lemmatiser = ClasslaLemmatizer("sl")
     return " ".join(lemmatiser.lemmatize(speech))

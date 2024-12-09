@@ -1,11 +1,9 @@
 from django.contrib import admin
-
 from import_export.admin import ExportMixin
 
 from export.resources.person import PersonNumberOfSpokenWordsResource
-
-from parlacards.models import PersonNumberOfSpokenWords
 from parlacards.admin.common import LatestScoresAdmin
+from parlacards.models import PersonNumberOfSpokenWords
 
 
 # TODO this could be abstracted away into a sort of current score admin
