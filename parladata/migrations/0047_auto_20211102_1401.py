@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0046_auto_20211025_1620'),
+        ("parladata", "0046_auto_20211025_1620"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='educationlevel',
-            options={'ordering': ['order']},
+            name="educationlevel",
+            options={"ordering": ["order"]},
         ),
         migrations.AddField(
-            model_name='educationlevel',
-            name='order',
+            model_name="educationlevel",
+            name="order",
             field=models.PositiveIntegerField(default=1),
         ),
     ]

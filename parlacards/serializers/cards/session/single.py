@@ -8,8 +8,5 @@ class SingleSessionCardSerializer(CardSerializer):
         return serializer.data
 
     def get_mandate(self, session):
-        serializer = MandateSerializer(
-            session.mandate,
-            context=self.context
-        )
+        serializer = MandateSerializer(session.mandate, context=self.context)
         return serializer.data

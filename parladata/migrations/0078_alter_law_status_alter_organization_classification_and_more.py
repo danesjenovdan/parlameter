@@ -2,8 +2,9 @@
 
 import colorfield.fields
 import django.db.models.deletion
-import parladata.models.legislation
 from django.db import migrations, models
+
+import parladata.models.legislation
 
 
 class Migration(migrations.Migration):

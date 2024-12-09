@@ -6,77 +6,100 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0016_auto_20210511_1223'),
+        ("parladata", "0016_auto_20210511_1223"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='motion',
-            old_name='recap',
-            new_name='summary',
+            model_name="motion",
+            old_name="recap",
+            new_name="summary",
         ),
         migrations.RemoveField(
-            model_name='motion',
-            name='agenda_item',
+            model_name="motion",
+            name="agenda_item",
         ),
         migrations.RemoveField(
-            model_name='motion',
-            name='date',
+            model_name="motion",
+            name="date",
         ),
         migrations.RemoveField(
-            model_name='motion',
-            name='doc_title',
+            model_name="motion",
+            name="doc_title",
         ),
         migrations.RemoveField(
-            model_name='motion',
-            name='organization',
+            model_name="motion",
+            name="organization",
         ),
         migrations.RemoveField(
-            model_name='motion',
-            name='party',
+            model_name="motion",
+            name="party",
         ),
         migrations.RemoveField(
-            model_name='motion',
-            name='person',
+            model_name="motion",
+            name="person",
         ),
         migrations.AddField(
-            model_name='motion',
-            name='agenda_items',
-            field=models.ManyToManyField(blank=True, help_text='Agenda items', related_name='motions', to='parladata.AgendaItem'),
+            model_name="motion",
+            name="agenda_items",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Agenda items",
+                related_name="motions",
+                to="parladata.AgendaItem",
+            ),
         ),
         migrations.AddField(
-            model_name='motion',
-            name='champions',
-            field=models.ManyToManyField(help_text='The people who proposed the motion.', to='parladata.Person'),
+            model_name="motion",
+            name="champions",
+            field=models.ManyToManyField(
+                help_text="The people who proposed the motion.", to="parladata.Person"
+            ),
         ),
         migrations.AddField(
-            model_name='motion',
-            name='datetime',
-            field=models.DateTimeField(blank=True, help_text='The date and time when the motion was proposed', null=True),
+            model_name="motion",
+            name="datetime",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="The date and time when the motion was proposed",
+                null=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='motion',
-            name='classification',
-            field=models.TextField(blank=True, help_text='Motion classification', null=True),
+            model_name="motion",
+            name="classification",
+            field=models.TextField(
+                blank=True, help_text="Motion classification", null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='motion',
-            name='requirement',
-            field=models.TextField(blank=True, help_text='The requirement for the motion to pass', null=True),
+            model_name="motion",
+            name="requirement",
+            field=models.TextField(
+                blank=True,
+                help_text="The requirement for the motion to pass",
+                null=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='motion',
-            name='result',
-            field=models.TextField(blank=True, help_text='Did the motion pass?', null=True),
+            model_name="motion",
+            name="result",
+            field=models.TextField(
+                blank=True, help_text="Did the motion pass?", null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='motion',
-            name='title',
-            field=models.TextField(blank=True, help_text='Title of the motion', null=True),
+            model_name="motion",
+            name="title",
+            field=models.TextField(
+                blank=True, help_text="Title of the motion", null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='motion',
-            name='uid',
-            field=models.TextField(blank=True, help_text='motions uid from DZ page', null=True),
+            model_name="motion",
+            name="uid",
+            field=models.TextField(
+                blank=True, help_text="motions uid from DZ page", null=True
+            ),
         ),
     ]

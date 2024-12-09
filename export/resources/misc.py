@@ -1,24 +1,9 @@
 from datetime import datetime, timedelta
 
 from django.db.models import Q
-
 from import_export.fields import Field
 
 from export.resources.common import ExportModelResource, get_cached_person_name
-
-from parladata.models import (
-    Person,
-    Vote,
-    Mandate,
-    Law,
-    Session,
-    PersonMembership,
-    Organization,
-    OrganizationMembership,
-    PublicPersonQuestion,
-    Ballot,
-    Question,
-)
 from parlacards.models import (
     DeviationFromGroup,
     GroupDiscord,
@@ -26,14 +11,27 @@ from parlacards.models import (
     GroupVocabularySize,
     GroupVoteAttendance,
     PersonAvgSpeechesPerSession,
+    PersonMonthlyVoteAttendance,
     PersonNumberOfQuestions,
     PersonNumberOfSpokenWords,
+    PersonStyleScore,
+    PersonTfidf,
     PersonVocabularySize,
     PersonVoteAttendance,
-    PersonMonthlyVoteAttendance,
-    PersonStyleScore,
     VotingDistance,
-    PersonTfidf,
+)
+from parladata.models import (
+    Ballot,
+    Law,
+    Mandate,
+    Organization,
+    OrganizationMembership,
+    Person,
+    PersonMembership,
+    PublicPersonQuestion,
+    Question,
+    Session,
+    Vote,
 )
 from parladata.models.person import Person
 
@@ -61,9 +59,13 @@ class MPResource(ExportModelResource):
             mandate_id = Mandate.objects.last()
         try:
             mandate = Mandate.objects.get(id=mandate_id)
-            from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(datetime.now())
-            before_end = to_timestamp-timedelta(minutes=1)
-            root_organization, playing_field = mandate.query_root_organizations(before_end)
+            from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(
+                datetime.now()
+            )
+            before_end = to_timestamp - timedelta(minutes=1)
+            root_organization, playing_field = mandate.query_root_organizations(
+                before_end
+            )
             members = playing_field.query_members(before_end)
             self.people = playing_field.query_voters(before_end)
             self.playing_field = playing_field
@@ -77,34 +79,34 @@ class MPResource(ExportModelResource):
     class Meta:
         model = Person
         fields = (
-            'id',
-            'name',
-            'date_of_birth',
-            'age',
-            'education_level',
-            'preferred_pronoun',
-            'number_of_mandates',
-            'speeches_per_session',
-            'number_of_questions',
-            'mismatch_of_pg',
-            'presence_votes',
-            'spoken_words',
-            'vocabulary_size',
+            "id",
+            "name",
+            "date_of_birth",
+            "age",
+            "education_level",
+            "preferred_pronoun",
+            "number_of_mandates",
+            "speeches_per_session",
+            "number_of_questions",
+            "mismatch_of_pg",
+            "presence_votes",
+            "spoken_words",
+            "vocabulary_size",
         )
         export_order = (
-            'id',
-            'name',
-            'date_of_birth',
-            'age',
-            'education_level',
-            'preferred_pronoun',
-            'number_of_mandates',
-            'speeches_per_session',
-            'number_of_questions',
-            'mismatch_of_pg',
-            'presence_votes',
-            'spoken_words',
-            'vocabulary_size',
+            "id",
+            "name",
+            "date_of_birth",
+            "age",
+            "education_level",
+            "preferred_pronoun",
+            "number_of_mandates",
+            "speeches_per_session",
+            "number_of_questions",
+            "mismatch_of_pg",
+            "presence_votes",
+            "spoken_words",
+            "vocabulary_size",
         )
 
     def dehydrate_name(self, person):
@@ -117,12 +119,11 @@ class MPResource(ExportModelResource):
 
     def get_score(self, ScoreModel, person):
         latest_scores = ScoreModel.objects.filter(
-                person=person,
-                playing_field=self.playing_field,
-            ) \
-            .order_by('-timestamp')
+            person=person,
+            playing_field=self.playing_field,
+        ).order_by("-timestamp")
         if latest_scores.exists():
-            latest_score = latest_scores.latest('created_at')
+            latest_score = latest_scores.latest("created_at")
             return latest_score.value
         else:
             return None
@@ -172,9 +173,13 @@ class GroupsResource(ExportModelResource):
         if mandate_id:
             try:
                 mandate = Mandate.objects.get(id=mandate_id)
-                from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(datetime.now())
-                before_end = to_timestamp-timedelta(minutes=1)
-                root_organization, playing_field = mandate.query_root_organizations(before_end)
+                from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(
+                    datetime.now()
+                )
+                before_end = to_timestamp - timedelta(minutes=1)
+                root_organization, playing_field = mandate.query_root_organizations(
+                    before_end
+                )
                 organizations = playing_field.query_organization_members(before_end)
                 self.playing_field = playing_field
                 return organizations
@@ -182,21 +187,24 @@ class GroupsResource(ExportModelResource):
             except:
                 return Organization.objects.none()
         else:
-            memberships = OrganizationMembership.objects.filter(organization__classification='root').values_list('member__id', flat=True)
+            memberships = OrganizationMembership.objects.filter(
+                organization__classification="root"
+            ).values_list("member__id", flat=True)
             return Organization.objects.filter(id__in=memberships)
 
     class Meta:
         model = Organization
         fields = (
-            'id',
-            'name',
-            'acronym',
-            'number_of_members_at',
-            'intra_disunion',
-            'vocabulary_size',
-            'number_of_questions',
-            'vote_attendance',)
-        export_order = ('id', 'name', 'acronym', 'number_of_members_at')
+            "id",
+            "name",
+            "acronym",
+            "number_of_members_at",
+            "intra_disunion",
+            "vocabulary_size",
+            "number_of_questions",
+            "vote_attendance",
+        )
+        export_order = ("id", "name", "acronym", "number_of_members_at")
 
     def get_group_score(self, ScoreModel, group):
         scores = ScoreModel.objects.filter(
@@ -204,7 +212,7 @@ class GroupsResource(ExportModelResource):
             playing_field=self.playing_field,
         )
         if scores:
-            latest_scores = scores.order_by('-timestamp').latest('created_at')
+            latest_scores = scores.order_by("-timestamp").latest("created_at")
             return latest_scores.value
         return None
 
@@ -244,17 +252,31 @@ class MembershipResource(ExportModelResource):
         Or returns all memberships if there is no mandate id.
         """
         if mandate_id:
-            votes = PersonMembership.objects.filter(
-                mandate=mandate_id
-            )
+            votes = PersonMembership.objects.filter(mandate=mandate_id)
             return votes
         else:
             return PersonMembership.objects.all()
 
     class Meta:
         model = PersonMembership
-        fields = ('id', 'start_time', 'end_time', 'organization', 'on_behalf_of', 'member', 'role')
-        export_order = ('id', 'start_time', 'end_time', 'organization', 'on_behalf_of', 'member', 'role')
+        fields = (
+            "id",
+            "start_time",
+            "end_time",
+            "organization",
+            "on_behalf_of",
+            "member",
+            "role",
+        )
+        export_order = (
+            "id",
+            "start_time",
+            "end_time",
+            "organization",
+            "on_behalf_of",
+            "member",
+            "role",
+        )
 
     def dehydrate_member(self, membership):
         return membership.member.name if membership.member else None
@@ -275,20 +297,34 @@ class SessionResource(ExportModelResource):
         Or returns all sessions if there is no mandate id.
         """
         if mandate_id:
-            sessions = Session.objects.filter(
-                mandate=mandate_id
-            )
+            sessions = Session.objects.filter(mandate=mandate_id)
             return sessions
         else:
             return Session.objects.all()
 
     class Meta:
         model = Session
-        fields = ('id', 'name', 'organizations', 'start_time', 'classification', 'in_review')
-        export_order = ('id', 'name', 'organizations', 'start_time', 'classification', 'in_review')
+        fields = (
+            "id",
+            "name",
+            "organizations",
+            "start_time",
+            "classification",
+            "in_review",
+        )
+        export_order = (
+            "id",
+            "name",
+            "organizations",
+            "start_time",
+            "classification",
+            "in_review",
+        )
 
     def dehydrate_organizations(self, session):
-        return ' & '.join(list(session.organizations.values_list('latest_name', flat=True)))
+        return " & ".join(
+            list(session.organizations.values_list("latest_name", flat=True))
+        )
 
 
 class LegislationResource(ExportModelResource):
@@ -307,29 +343,47 @@ class LegislationResource(ExportModelResource):
         """
         if mandate_id:
             legislation = Law.objects.filter(
-                Q(legislationconsideration__session__mandate_id=mandate_id) |
-                Q(mandate_id=mandate_id)
+                Q(legislationconsideration__session__mandate_id=mandate_id)
+                | Q(mandate_id=mandate_id)
             )
             if request_id:
-                legislation = legislation.filter(legislationconsideration__session_id=request_id)
+                legislation = legislation.filter(
+                    legislationconsideration__session_id=request_id
+                )
             return legislation
         else:
             return Law.objects.all()
 
     class Meta:
         model = Law
-        fields = ('id', 'text', 'epa', 'passed', 'classification', 'timestamp', 'procedure_phase')
-        export_order = ('id', 'text', 'epa', 'passed', 'classification', 'timestamp', 'procedure_phase')
+        fields = (
+            "id",
+            "text",
+            "epa",
+            "passed",
+            "classification",
+            "timestamp",
+            "procedure_phase",
+        )
+        export_order = (
+            "id",
+            "text",
+            "epa",
+            "passed",
+            "classification",
+            "timestamp",
+            "procedure_phase",
+        )
 
     def dehydrate_classification(self, legislation):
-        return legislation.classification.name if legislation.classification else ''
+        return legislation.classification.name if legislation.classification else ""
 
     def dehydrate_procedure_phase(self, legislation):
         procedure_phase = legislation.considerations.last()
         if procedure_phase:
             return procedure_phase.name
         else:
-            return ''
+            return ""
 
     def dehydrate_text(self, legislation):
         return legislation.text
@@ -341,4 +395,4 @@ class LegislationResource(ExportModelResource):
         return legislation.epa
 
     def dehydrate_timestamp(self, legislation):
-        return legislation.timestamp.isoformat() if legislation.timestamp else ''
+        return legislation.timestamp.isoformat() if legislation.timestamp else ""

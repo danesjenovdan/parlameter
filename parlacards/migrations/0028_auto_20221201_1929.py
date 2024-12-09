@@ -6,19 +6,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlacards', '0027_quote'),
+        ("parlacards", "0027_quote"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='groupmonthlyvoteattendance',
-            name='no_data',
+            model_name="groupmonthlyvoteattendance",
+            name="no_data",
             field=models.FloatField(default=0),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='personmonthlyvoteattendance',
-            name='no_data',
+            model_name="personmonthlyvoteattendance",
+            name="no_data",
             field=models.FloatField(default=0),
             preserve_default=False,
         ),

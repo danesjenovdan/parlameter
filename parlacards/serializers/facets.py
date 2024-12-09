@@ -1,6 +1,10 @@
 from rest_framework import serializers
 
-from .common import CommonOrganizationSerializer, CommonPersonSerializer, CommonSerializer
+from .common import (
+    CommonOrganizationSerializer,
+    CommonPersonSerializer,
+    CommonSerializer,
+)
 
 
 class GroupFacetSerializer(CommonSerializer):

@@ -6,18 +6,38 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0041_agendaitem_text'),
+        ("parladata", "0041_agendaitem_text"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='ballot',
-            name='option',
-            field=models.CharField(blank=True, choices=[('for', 'for'), ('against', 'against'), ('abstain', 'abstain'), ('absent', 'absent')], help_text='Yes, no, abstain', max_length=128, null=True),
+            model_name="ballot",
+            name="option",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("for", "for"),
+                    ("against", "against"),
+                    ("abstain", "abstain"),
+                    ("absent", "absent"),
+                ],
+                help_text="Yes, no, abstain",
+                max_length=128,
+                null=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='session',
-            name='classification',
-            field=models.CharField(choices=[('regular', 'regular'), ('irregular', 'regular'), ('correspondent', 'correspondent')], default='regular', help_text='Session classification', max_length=128),
+            model_name="session",
+            name="classification",
+            field=models.CharField(
+                choices=[
+                    ("regular", "regular"),
+                    ("irregular", "regular"),
+                    ("correspondent", "correspondent"),
+                ],
+                default="regular",
+                help_text="Session classification",
+                max_length=128,
+            ),
         ),
     ]
