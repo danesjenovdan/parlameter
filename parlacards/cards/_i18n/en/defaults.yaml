@@ -7,35 +7,42 @@ all-legislation: All legislation
 select-mps: Choose MPs
 selected-mps: 'Chosen: {num}'
 search_placeholder: Search
-trigger: trigger
-match: match
-interval: interval
-email: email
+trigger: Trigger
+input-trigger: Enter trigger phrase
+match: Match
+interval: Interval
+email: Email
+input-email: Enter email
 notification-steps:
 - textfirst: >-
-    Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
-    obvestimo.
+    Izberi besedo ali besedno zvezo, ki jo želiš spremljati.
   textsecond: >-
-    Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
-    teles, ti to sporočimo po e-pošti.
+    Kmalu za tem, ko jo nekdo izgovori na seji državnega zbora ali enega od
+    delovnih teles, ti to sporočimo po e-pošti.
 - textfirst: Izberi način ujemanja
-  firstbullet: 'natančno ujemanje'
-  secondbullet: 'široko ujemanje'
+  firstbullet: 'Natančno ujemanje'
+  secondbullet: 'Široko ujemanje'
 - textfirst: Kako pogosto naj ti pišemo?
-  firstbullet: največ enkrat na dan
-  secondbullet: največ enkrat na teden
-  thirdbullet: največ enkrat na mesec
-- textfirst: Samo še tvoj e-naslov
+  firstbullet: Največ enkrat na dan
+  secondbullet: Največ enkrat na teden
+  thirdbullet: Največ enkrat na mesec
+- textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
+  textsecond: >-
+    Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila ob omembi
+    izbranih besed ali besednih zvez v državnem zboru.
+  submit: Prijavi me
 - textfirst: Zabeleženo!
   textsecond: >-
-    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
-    mejlu.
+    Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
+    e-poštnem predalu.
 - textfirst: Potrjeno!
-  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+  textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
 - textfirst: Napaka!
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
-submit: Oddaj
-confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
+add-new-trigger: Dodaj nov sprožilec
+to-notification-list: Na seznam obvestil
+remove: Odstrani
+confirm-delete-notification: Ali si prepričan_a, da želiš odstraniti to obvestilo?
 comparator-text: >-
   I want to know, when {same} voted the same, but {different} voted differently.
   {load}
