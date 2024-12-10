@@ -22,18 +22,33 @@
               </td>
               <td class="delete">
                 <button @click="deleteKeyword(item)">
-                  <span>&times;</span>
+                  <span>{{ $t('remove') }}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 12 18"
+                  >
+                    <path
+                      d="M1.2 16.2c0 .992.807 1.8 1.8 1.8h6c.992 0 1.8-.808 1.8-1.8V6H1.2v10.2ZM6.9 9a.6.6 0 1 1 1.2 0v6a.6.6 0 1 1-1.2 0V9Zm-3 0a.6.6 0 1 1 1.2 0v6a.6.6 0 1 1-1.2 0V9Zm6.3-6.6H8.1v-.3C8.1.942 7.158 0 6 0 4.842 0 3.9.942 3.9 2.1v.3H1.8C.808 2.4 0 3.208 0 4.2v.6h12v-.6c0-.993-.808-1.8-1.8-1.8Zm-5.1-.3a.9.9 0 0 1 1.8 0v.3H5.1v-.3Z"
+                    />
+                  </svg>
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
         <PaginationLimitOffset
+          v-if="listData.response.count > listData.limit"
           :limit="listData.limit"
           :offset="listData.offset"
           :count="listData.response.count"
           @change="changePage"
         />
+        <div class="submit-container text-center">
+          <button type="button" class="signup-button" @click="resetState">
+            {{ $t('add-new-trigger') }}
+          </button>
+        </div>
       </div>
       <form v-else class="notification-signup" @submit="submitForm">
         <div class="notification-signup-row">
@@ -281,7 +296,10 @@ export default {
         WEEKLY: 'notification-steps[2].secondbullet',
         MONTHLY: 'notification-steps[2].thirdbullet',
       },
-      headerConfig: defaultHeaderConfig(this),
+      headerConfig: defaultHeaderConfig(this, {
+        heading: '',
+        circleIcon: 'obvestila',
+      }),
     };
   },
   mounted() {
@@ -293,6 +311,21 @@ export default {
     }
   },
   methods: {
+    resetState() {
+      this.isLoading = false;
+      this.success = null;
+      this.error = null;
+      this.confirmData.kid = null;
+      this.confirmData.uuid = null;
+      this.listData.uuid = null;
+      this.listData.response = null;
+      this.signUpData = {
+        keyword: '',
+        notification_frequency: 'DAILY',
+        matching_method: 'NARROW',
+        email: '',
+      };
+    },
     async submitForm(event) {
       event.preventDefault();
 
@@ -419,18 +452,18 @@ export default {
 
     th,
     td {
-      padding: 0.5rem;
+      padding: 1rem 0.5rem;
       border-bottom: 1px solid #ccc;
       text-align: left;
     }
 
     th {
-      text-transform: uppercase;
+      font-size: 16px;
     }
 
     th.keyword,
     td.keyword {
-      width: 50%;
+      width: 45%;
     }
 
     th.method,
@@ -443,28 +476,68 @@ export default {
       width: 25%;
     }
 
-    td.delete button {
-      border: none;
-      border-radius: 50%;
-      padding: 0;
-      margin: 0 2px;
-      height: 24px;
-      width: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
-      background-color: colors.$tab-hover;
-      color: colors.$white;
-      line-height: 1;
-
-      &:hover {
-        background-color: colors.$tab-passive;
+    td.delete {
+      button {
+        padding: 6px 12px 4px;
+        border: none;
+        background: none;
+        font-size: 14px;
+        font-weight: 400;
         color: colors.$white;
+        background-color: colors.$tab-passive;
+        white-space: nowrap;
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+
+        &:not(:disabled):hover {
+          color: colors.$white;
+          background-color: colors.$tab-hover;
+        }
+
+        &:active,
+        &:hover:active {
+          color: colors.$white;
+          background-color: colors.$tab-active;
+        }
+
+        svg {
+          width: 12px;
+          height: 18px;
+          margin-block: -3px;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+
+  .submit-container {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+
+    .signup-button {
+      padding: 6px 12px 5px;
+      border: none;
+      background: none;
+      font-size: 14px;
+      font-weight: 400;
+      color: colors.$white;
+      background-color: colors.$tab-passive;
+
+      &:disabled {
+        cursor: not-allowed;
       }
 
-      span {
-        margin-top: -2px;
+      &:not(:disabled):hover {
+        color: colors.$white;
+        background-color: colors.$tab-hover;
+      }
+
+      &:active,
+      &:hover:active {
+        color: colors.$white;
+        background-color: colors.$tab-active;
       }
     }
   }

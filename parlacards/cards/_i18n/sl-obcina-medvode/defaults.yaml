@@ -42,7 +42,8 @@ notification-steps:
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
 add-new-trigger: Dodaj nov sprožilec
 to-notification-list: Na seznam obvestil
-confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
+remove: Odstrani
+confirm-delete-notification: Ali si prepričan_a, da želiš odstraniti to obvestilo?
 comparator-text: >-
   Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa
   drugače od njih. {load}
