@@ -1,18 +1,18 @@
 from datetime import datetime
+
 from django.db import models
 from django.db.models import Q
 
 from parladata.behaviors.models import Timestampable
-from parladata.models.memberships import OrganizationMembership, PersonMembership
-
 from parladata.exceptions import NoMembershipException
+from parladata.models.memberships import OrganizationMembership, PersonMembership
 
 
 class ActiveAtQuerySet(models.QuerySet):
     def active_at(self, timestamp):
         return self.filter(
             Q(beginning__lte=timestamp) | Q(beginning__isnull=True),
-            Q(ending__gte=timestamp) | Q(ending__isnull=True)
+            Q(ending__gte=timestamp) | Q(ending__isnull=True),
         )
 
 
@@ -32,12 +32,13 @@ class Mandate(models.Model):
             timestamp = datetime.now()
 
         memberships = OrganizationMembership.valid_at(timestamp).filter(
-            mandate=self,
-            member__classification='root'
+            mandate=self, member__classification="root"
         )
         if not memberships:
-            raise NoMembershipException(f'No root organization memberships exist for mandate {self.description}!')
-        #raise Exception(f'Multiple root organization memberships exist for this mandate!')
+            raise NoMembershipException(
+                f"No root organization memberships exist for mandate {self.description}!"
+            )
+        # raise Exception(f'Multiple root organization memberships exist for this mandate!')
 
         playing_field = memberships.first().member
         root_organization = memberships.first().organization
@@ -47,20 +48,17 @@ class Mandate(models.Model):
     # TODO fix this to use mandate for multiple root organizatuons
     def query_person_root_organization(self, person, timestamp=None):
         if timestamp:
-            valid_memberships = PersonMembership.valid_at(
-                timestamp
-            )
+            valid_memberships = PersonMembership.valid_at(timestamp)
         else:
             valid_memberships = PersonMembership.objects.all()
 
         person_memberships = valid_memberships.filter(
-            member=person,
-            organization__classification='root'
+            member=person, organization__classification="root"
         ).first()
         if person_memberships:
             return person_memberships.organization
         else:
-            raise Exception('No root organization memberships exist for this person!')
+            raise Exception("No root organization memberships exist for this person!")
 
     def __str__(self):
         return self.description
@@ -83,7 +81,7 @@ class Mandate(models.Model):
         if mandate:
             return mandate
         else:
-            raise Exception('There\'s no mandate for the given timestamp')
+            raise Exception("There's no mandate for the given timestamp")
 
 
 class EducationLevel(Timestampable):
@@ -94,4 +92,4 @@ class EducationLevel(Timestampable):
         return self.text
 
     class Meta(object):
-        ordering = ['order']
+        ordering = ["order"]

@@ -1,8 +1,8 @@
+import uuid
+
 from django.db import models
 
 from parladata.behaviors.models import Timestampable
-
-import uuid
 
 
 # Create your models here.
@@ -18,13 +18,13 @@ class NotificationUser(Timestampable):
 
 class Keyword(Timestampable):
     class Frequency(models.TextChoices):
-        DAILY = 'DAILY', 'Daily'
-        WEEKLY = 'WEEKLY', 'Weekly'
-        MONTHLY = 'MONTHLY', 'Monthly'
+        DAILY = "DAILY", "Daily"
+        WEEKLY = "WEEKLY", "Weekly"
+        MONTHLY = "MONTHLY", "Monthly"
 
     class MatchingMethods(models.TextChoices):
-        WIDE = 'WIDE', 'Wide'
-        NARROW = 'NARROW', 'Narrow'
+        WIDE = "WIDE", "Wide"
+        NARROW = "NARROW", "Narrow"
 
     keyword = models.CharField(max_length=255)
     user = models.ForeignKey(

@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0064_auto_20220908_1825'),
+        ("parladata", "0064_auto_20220908_1825"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='task',
-            name='module_name',
-            field=models.TextField(default='parladata.tasks', help_text='Name of task'),
+            model_name="task",
+            name="module_name",
+            field=models.TextField(default="parladata.tasks", help_text="Name of task"),
         ),
     ]

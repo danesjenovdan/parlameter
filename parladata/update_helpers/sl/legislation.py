@@ -1,11 +1,11 @@
-from parladata.models import Law, Motion, LegislationStatus
-
 from django.db.models import Q
 
+from parladata.models import Law, LegislationStatus, Motion
 
 ENACTED = LegislationStatus.objects.get(name='enacted')
 ACCEPTED =  LegislationStatus.objects.get(name='submitted')
 REJECTED = LegislationStatus.objects.get(name='rejected')
+
 
 def set_legislation_result():
     for legislation in Law.objects.exclude(status__in=LegislationStatus.objects.filter(name__in=['rejected', 'enacted'])):
@@ -19,6 +19,7 @@ def set_legislation_result():
         if end_motion:
             print('has end motion')
             set_single_legislation_result(legislation)
+
 
 def is_accepeted(motion):
     accepted_option = False if 'ni primeren' in motion.text else True

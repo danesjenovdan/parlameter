@@ -1,7 +1,7 @@
 from uk_stemmer import UkStemmer
-from parlacards.scores.common import tokenize, remove_punctuation
 
 from parlacards.lemmatizers.ua.stop_words import STOPWORDS
+from parlacards.scores.common import remove_punctuation, tokenize
 
 
 def get_stopwords():
