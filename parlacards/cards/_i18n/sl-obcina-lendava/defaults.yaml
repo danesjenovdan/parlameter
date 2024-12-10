@@ -8,9 +8,11 @@ select-mps: Izberi svetnike
 selected-mps: 'Izbranih: {num}'
 search_placeholder: Išči
 trigger: Sprožilec
+input-trigger: Vpiši sprožilec
 match: Ujemanje
 interval: Pogostost
 email: E-pošta
+input-email: Vpiši svoj e-naslov
 email-address: E-naslov
 notification-steps:
 - textfirst: >-
@@ -25,7 +27,7 @@ notification-steps:
   firstbullet: Največ enkrat na dan
   secondbullet: Največ enkrat na teden
   thirdbullet: Največ enkrat na mesec
-- textfirst: Vpiši svoj e-naslov
+- textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
   textsecond: >-
     Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila ob omembi
     izbranih besed ali besednih zvez v državnem zboru.
@@ -38,6 +40,8 @@ notification-steps:
   textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
 - textfirst: Napaka!
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
+add-new-trigger: Dodaj nov sprožilec
+to-notification-list: Na seznam obvestil
 confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
 comparator-text: >-
   Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa

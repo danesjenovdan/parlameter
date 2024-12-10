@@ -36,113 +36,138 @@
         />
       </div>
       <form v-else class="notification-signup" @submit="submitForm">
-        <div class="form-group">
-          <h4 class="group-title text-center">{{ $t('trigger') }}</h4>
-
-          <div class="text-center">
-            <p>{{ $t('notification-steps[0].textfirst') }}</p>
-            <p>{{ $t('notification-steps[0].textsecond') }}</p>
+        <div class="notification-signup-row">
+          <div class="left-col">
+            <div class="icon-col">
+              <div class="parlaicon parlaicon-notification-trigger" />
+            </div>
+            <div class="text-col">
+              <h4 class="group-title">{{ $t('trigger') }}</h4>
+              <p>{{ $t('notification-steps[0].textfirst') }}</p>
+              <p>{{ $t('notification-steps[0].textsecond') }}</p>
+            </div>
           </div>
-
-          <div class="input-container">
-            <input
-              v-model="signUpData.keyword"
-              type="text"
-              required
-              :placeholder="$t('trigger')"
-              class="form-control"
-            />
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="form-group">
-          <h4 class="group-title text-center">{{ $t('match') }}</h4>
-
-          <div class="text-center">
-            <p>{{ $t('notification-steps[1].textfirst') }}</p>
-          </div>
-
-          <div class="input-container inputs-inline">
-            <template
-              v-for="(methodValue, methodKey) in matchingMethods"
-              :key="methodKey"
-            >
-              <div class="form-element-checkbox">
+          <div class="right-col">
+            <div class="input-container">
+              <label>
+                <span>{{ $t('input-trigger') }}</span>
                 <input
-                  :id="`method_${methodKey}`"
-                  v-model="signUpData.matching_method"
-                  type="radio"
-                  class="checkbox"
-                  :value="methodKey"
+                  v-model="signUpData.keyword"
+                  type="text"
+                  required
+                  class="form-control"
                 />
-                <label :for="`method_${methodKey}`">{{
-                  $t(methodValue)
-                }}</label>
-              </div>
-            </template>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="form-group">
-          <h4 class="group-title text-center">{{ $t('interval') }}</h4>
-
-          <div class="text-center">
-            <p>{{ $t('notification-steps[2].textfirst') }}</p>
-          </div>
-
-          <div class="input-container inputs-inline">
-            <template
-              v-for="(frequencyValue, frequencyKey) in frequencies"
-              :key="frequencyKey"
-            >
-              <div class="form-element-checkbox">
-                <input
-                  :id="`frequency_${frequencyKey}`"
-                  v-model="signUpData.notification_frequency"
-                  type="radio"
-                  class="checkbox"
-                  :value="frequencyKey"
-                />
-                <label :for="`frequency_${frequencyKey}`">{{
-                  $t(frequencyValue)
-                }}</label>
-              </div>
-            </template>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="form-group">
-          <h4 class="group-title text-center">{{ $t('email') }}</h4>
-
-          <div class="text-center">
-            <p>{{ $t('notification-steps[3].textfirst') }}</p>
-          </div>
-
-          <div class="input-container">
-            <input
-              v-model="signUpData.email"
-              type="email"
-              required
-              :placeholder="$t('email-address')"
-              class="form-control"
-            />
-          </div>
-
-          <div class="input-container">
-            <div class="form-element-checkbox">
-              <input id="consent" type="checkbox" class="checkbox" required />
-              <label for="consent">{{
-                $t('notification-steps[3].textsecond')
-              }}</label>
+              </label>
             </div>
           </div>
         </div>
+
+        <hr />
+
+        <div class="notification-signup-row">
+          <div class="left-col">
+            <div class="icon-col">
+              <div class="parlaicon parlaicon-notification-match" />
+            </div>
+            <div class="text-col">
+              <h4 class="group-title">{{ $t('match') }}</h4>
+              <p>{{ $t('notification-steps[1].textfirst') }}</p>
+            </div>
+          </div>
+          <div class="right-col">
+            <div class="input-container">
+              <template
+                v-for="(methodValue, methodKey) in matchingMethods"
+                :key="methodKey"
+              >
+                <div class="form-element-checkbox is-radio">
+                  <input
+                    :id="`method_${methodKey}`"
+                    v-model="signUpData.matching_method"
+                    type="radio"
+                    class="checkbox"
+                    :value="methodKey"
+                  />
+                  <label :for="`method_${methodKey}`">
+                    <span>{{ $t(methodValue) }}</span>
+                  </label>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="notification-signup-row">
+          <div class="left-col">
+            <div class="icon-col">
+              <div class="parlaicon parlaicon-notification-interval" />
+            </div>
+            <div class="text-col">
+              <h4 class="group-title">{{ $t('interval') }}</h4>
+              <p>{{ $t('notification-steps[2].textfirst') }}</p>
+            </div>
+          </div>
+          <div class="right-col">
+            <div class="input-container">
+              <template
+                v-for="(frequencyValue, frequencyKey) in frequencies"
+                :key="frequencyKey"
+              >
+                <div class="form-element-checkbox is-radio">
+                  <input
+                    :id="`frequency_${frequencyKey}`"
+                    v-model="signUpData.notification_frequency"
+                    type="radio"
+                    class="checkbox"
+                    :value="frequencyKey"
+                  />
+                  <label :for="`frequency_${frequencyKey}`">
+                    <span>{{ $t(frequencyValue) }}</span>
+                  </label>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="notification-signup-row">
+          <div class="left-col">
+            <div class="icon-col">
+              <div class="parlaicon parlaicon-notification-email" />
+            </div>
+            <div class="text-col">
+              <h4 class="group-title">{{ $t('email') }}</h4>
+              <p>{{ $t('notification-steps[3].textfirst') }}</p>
+            </div>
+          </div>
+          <div class="right-col">
+            <div class="input-container">
+              <label>
+                <span>{{ $t('input-email') }}</span>
+                <input
+                  v-model="signUpData.email"
+                  type="email"
+                  required
+                  class="form-control"
+                />
+              </label>
+            </div>
+            <div class="input-container">
+              <div class="form-element-checkbox is-check">
+                <input id="consent" type="checkbox" class="checkbox" required />
+                <label for="consent">{{
+                  $t('notification-steps[3].textsecond')
+                }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
 
         <div class="submit-container text-center">
           <button type="submit" class="signup-button" :disabled="isLoading">
@@ -154,20 +179,21 @@
       <div v-if="isLoading || success || error" class="loader-container">
         <div v-if="isLoading" class="nalagalnik"></div>
         <div v-else-if="success === 'submit'" class="success">
-          <button class="close-modal" @click="closeModal">&times;</button>
           <div>
-            <p>
+            <div class="circle-with-icon parlaicon-notification-email">
               <strong>{{ $t('notification-steps[4].textfirst') }}</strong>
-            </p>
+            </div>
             <p>{{ $t('notification-steps[4].textsecond') }}</p>
+            <button class="close-modal" @click="closeModal">
+              {{ $t('add-new-trigger') }}
+            </button>
           </div>
         </div>
         <div v-else-if="success === 'confirm'" class="success">
-          <button class="close-modal" @click="closeModal">&times;</button>
           <div>
-            <p>
+            <div class="circle-with-icon parlaicon-notification-email">
               <strong>{{ $t('notification-steps[5].textfirst') }}</strong>
-            </p>
+            </div>
             <i18n-t keypath="notification-steps[5].textsecond" tag="p">
               <template #email>
                 <strong>{{ signUpData.email }}</strong>
@@ -176,15 +202,18 @@
                 <strong>{{ signUpData.keyword }}</strong>
               </template>
             </i18n-t>
+            <button class="close-modal" @click="closeModal">
+              {{ $t('to-notification-list') }}
+            </button>
           </div>
         </div>
         <div v-else-if="error" class="error">
-          <button class="close-modal" @click="closeModal">&times;</button>
           <div>
             <p>
               <strong>{{ $t('notification-steps[6].textfirst') }}</strong>
             </p>
             <p>{{ $t('notification-steps[6].textsecond') }}</p>
+            <button class="close-modal" @click="closeModal">&times;</button>
           </div>
         </div>
       </div>
@@ -378,6 +407,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
+@use 'sass:string';
 @use 'parlassets/scss/colors';
 @use 'parlassets/scss/color_classes';
 
@@ -440,45 +471,133 @@ export default {
 }
 
 .notification-signup {
-  .group-title {
-    margin-bottom: 2rem;
-    text-transform: uppercase;
+  margin-top: 12px;
+
+  hr {
+    margin-block: 26px;
   }
 
-  .input-container {
-    max-width: 350px;
-    margin-inline: auto;
-    margin-block: 2rem;
+  .notification-signup-row {
+    display: flex;
+    gap: 48px;
 
-    &.inputs-inline {
-      max-width: 500px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem 2rem;
+    .left-col,
+    .right-col {
+      flex: 1;
     }
 
-    .form-element-checkbox {
-      position: relative;
+    .left-col {
+      display: flex;
+      gap: 24px;
 
-      .checkbox {
-        position: absolute;
-        top: 15px;
-        left: 11px;
-        clip: rect(0, 0, 0, 0);
-        pointer-events: none;
-        display: inline;
-        width: 1px;
-        height: 1px;
+      .icon-col {
+        flex-shrink: 0;
+        margin-left: 12px;
       }
 
-      label {
-        display: flex;
-        align-items: center;
+      .group-title {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin-top: 0;
         margin-bottom: 0;
-        min-height: 22px;
-        font-size: 13px;
-        line-height: 1.1;
+        font-family: 'Roboto Slab', 'Times New Roman', serif;
+      }
+    }
+
+    .right-col {
+      margin-right: 12px;
+
+      .input-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        label {
+          display: block;
+
+          input {
+            width: 100%;
+            margin-block: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 50px;
+            height: 50px;
+
+            &,
+            &:focus {
+              outline: none;
+              box-shadow: none;
+              color: colors.$font-default;
+              border-color: colors.$font-default;
+            }
+          }
+        }
+
+        .form-element-checkbox.is-radio {
+          input.checkbox {
+            & + label {
+              display: flex;
+              align-items: center;
+              margin: 0;
+              font-size: 14px;
+              line-height: 20px;
+              font-weight: 400;
+
+              span {
+                margin-top: 1.5px;
+              }
+
+              &::before {
+                width: 20px;
+                height: 20px;
+                border-radius: 9999rem;
+                border-color: colors.$font-default;
+              }
+            }
+
+            &:checked + label {
+              font-weight: 700;
+
+              &::before {
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 14px;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23#{string.slice("#{colors.$tab-passive}", 2)}" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" /></svg>');
+                border-color: colors.$tab-passive;
+              }
+            }
+          }
+        }
+
+        .form-element-checkbox.is-check {
+          input.checkbox {
+            & + label {
+              font-size: 13px;
+              font-weight: 400;
+              line-height: 1.2;
+
+              &::before {
+                width: 24px;
+                height: 24px;
+                border-color: colors.$font-default;
+              }
+            }
+
+            &:checked + label {
+              &::before {
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 15px;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23#{string.slice("#{colors.$tab-passive}", 2)}" viewBox="0 0 16 15"><path d="M5.97 13.536 0 7.939l2.848-2.67L5.97 8.197l7.181-6.733L16 4.134 5.97 13.536Z" /></svg>');
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -488,10 +607,11 @@ export default {
     margin-bottom: 2rem;
 
     .signup-button {
-      padding: 10px 16px;
+      padding: 14px 40px;
       border: none;
       background: none;
-      font-weight: 300;
+      font-size: 16px;
+      font-weight: 400;
       color: colors.$white;
       background-color: colors.$tab-passive;
 
@@ -531,32 +651,68 @@ export default {
 
   .success,
   .error {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: min(100%, 500px);
-    padding: 42px 16px 32px;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid #ccc;
+    padding: 42px 32px;
+    background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-size: 16px;
 
-    .close-modal {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 1em;
-      margin: 10px;
-      padding: 0;
-      font-size: 24px;
-      line-height: 1em;
-      background: none;
-      border: none;
-      cursor: pointer;
+    .circle-with-icon {
+      $size: 180px;
+      width: $size;
+      height: $size;
+      margin-inline: auto;
+      padding: math.div($size, 1.55) 26px 0;
+      background-color: colors.$light-background;
+      background-size: math.div($size, 3.5);
+      background-position: center math.div($size, 4);
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+    }
 
-      @include color_classes.link-hover;
+    p {
+      max-width: 360px;
+      margin-block: 21px;
+      font-family: 'Roboto Slab', 'Times New Roman', serif;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .close-modal {
+      margin-top: 28px;
+      padding: 14px 28px;
+      border: none;
+      background: none;
+      font-size: 16px;
+      font-weight: 400;
+      color: colors.$white;
+      background-color: colors.$tab-passive;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+
+      &:not(:disabled):hover {
+        color: colors.$white;
+        background-color: colors.$tab-hover;
+      }
+
+      &:active,
+      &:hover:active {
+        color: colors.$white;
+        background-color: colors.$tab-active;
+      }
     }
   }
 }
