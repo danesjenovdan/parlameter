@@ -20,8 +20,8 @@
 </br>
 		{% for speech in value %}
 		<div class="dndkeywordalert" style="padding-left: 0px; padding-bottom: 20px; max-width: 1000px;">
-			<div class="dndkeyworddate" style="color: #999999; font-family: Arial; font-size: 11px;">{{ speech.timestamp|date:"d. m. Y"}}</div>
-			<div class="dndkeywordauthorsession" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.speaker_name }}, {{ speech.session_name }}</div><br/>
+			<div class="dndkeyworddate" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.timestamp|date:"d. m. Y"}}</div>
+			<div class="dndkeywordauthorsession" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.speaker_name }}, {{ speech.session_name }}</div>
 			<div style="color: #222222; font-family: Arial; font-size: 0.875rem; text-decoration: underline;">
 			<a href="{% trans 'https://parlameter.si/seja/' %}{{ speech.session_id }}/{% trans 'transkript-url' %}?page={{ speech.order }}#{{ speech.id }}">{{speech.content|safe}}</a>
 		</div><br/>
