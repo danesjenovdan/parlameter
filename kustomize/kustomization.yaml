@@ -20,10 +20,10 @@ resources:
 images:
   - name: parlacards-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlacards-hrvaska
-    newTag: 'b6fea2071314ce618d9c9fe2e511619fc432ac7e'
+    newTag: '41b1eced5a80edc3cdf838002ed0b484c20517f7'
   - name: parlasite-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlasite-hrvaska
-    newTag: 'b6fea2071314ce618d9c9fe2e511619fc432ac7e'
+    newTag: '41b1eced5a80edc3cdf838002ed0b484c20517f7'
   - name: parlassets-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlassets-hrvaska
-    newTag: 'b6fea2071314ce618d9c9fe2e511619fc432ac7e'
+    newTag: '41b1eced5a80edc3cdf838002ed0b484c20517f7'
