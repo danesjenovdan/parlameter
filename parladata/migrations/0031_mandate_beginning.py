@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0030_speech_lemmatized_content'),
+        ("parladata", "0030_speech_lemmatized_content"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='mandate',
-            name='beginning',
+            model_name="mandate",
+            name="beginning",
             field=models.DateTimeField(blank=True, null=True),
         ),
     ]

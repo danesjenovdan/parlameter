@@ -4,7 +4,7 @@ from parladata.update_utils import reset_order_on_speech
 
 
 class Command(BaseCommand):
-    help = 'Set motion tags'
+    help = "Set motion tags"
 
     def handle(self, *args, **options):
         reset_order_on_speech()

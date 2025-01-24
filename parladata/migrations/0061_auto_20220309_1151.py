@@ -6,21 +6,38 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0060_auto_20220222_0941'),
+        ("parladata", "0060_auto_20220222_0941"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='agendaitem',
-            options={'ordering': ['order']},
+            name="agendaitem",
+            options={"ordering": ["order"]},
         ),
         migrations.AlterModelOptions(
-            name='speech',
-            options={'verbose_name_plural': 'Speeches'},
+            name="speech",
+            options={"verbose_name_plural": "Speeches"},
         ),
         migrations.AlterField(
-            model_name='organization',
-            name='classification',
-            field=models.TextField(blank=True, choices=[('root', 'root'), ('pg', 'pg'), ('commission', 'commission'), ('committee', 'committee'), ('council', 'council'), ('delegation', 'delegation'), ('friendship_group', 'friendship_group'), ('investigative_commission', 'investigative_commission'), ('other', 'other'), ('coalition', 'coalition')], help_text='An organization category, e.g. committee', null=True, verbose_name='classification'),
+            model_name="organization",
+            name="classification",
+            field=models.TextField(
+                blank=True,
+                choices=[
+                    ("root", "root"),
+                    ("pg", "pg"),
+                    ("commission", "commission"),
+                    ("committee", "committee"),
+                    ("council", "council"),
+                    ("delegation", "delegation"),
+                    ("friendship_group", "friendship_group"),
+                    ("investigative_commission", "investigative_commission"),
+                    ("other", "other"),
+                    ("coalition", "coalition"),
+                ],
+                help_text="An organization category, e.g. committee",
+                null=True,
+                verbose_name="classification",
+            ),
         ),
     ]

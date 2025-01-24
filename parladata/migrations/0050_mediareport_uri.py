@@ -6,14 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0049_auto_20211126_0851'),
+        ("parladata", "0049_auto_20211126_0851"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='mediareport',
-            name='uri',
-            field=models.TextField(db_index=True, default='', help_text='Article URI', verbose_name='uri'),
+            model_name="mediareport",
+            name="uri",
+            field=models.TextField(
+                db_index=True, default="", help_text="Article URI", verbose_name="uri"
+            ),
             preserve_default=False,
         ),
     ]

@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from parladata.behaviors.models import Timestampable, Taggable
+from parladata.behaviors.models import Taggable, Timestampable
 
 
 class Document(Timestampable, Taggable):

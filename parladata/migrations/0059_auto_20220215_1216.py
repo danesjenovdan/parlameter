@@ -6,17 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0058_alter_motion_title'),
+        ("parladata", "0058_alter_motion_title"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='medium',
-            options={'ordering': ['order']},
+            name="medium",
+            options={"ordering": ["order"]},
         ),
         migrations.AddField(
-            model_name='medium',
-            name='order',
+            model_name="medium",
+            name="order",
             field=models.PositiveIntegerField(default=1),
         ),
     ]

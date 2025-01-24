@@ -6,60 +6,62 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0019_auto_20210511_1309'),
+        ("parladata", "0019_auto_20210511_1309"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='agendaitem',
-            old_name='date',
-            new_name='datetime',
+            model_name="agendaitem",
+            old_name="date",
+            new_name="datetime",
         ),
         migrations.RenameField(
-            model_name='debate',
-            old_name='agenda_item',
-            new_name='agenda_items',
+            model_name="debate",
+            old_name="agenda_item",
+            new_name="agenda_items",
         ),
         migrations.RenameField(
-            model_name='debate',
-            old_name='date',
-            new_name='datetime',
+            model_name="debate",
+            old_name="date",
+            new_name="datetime",
         ),
         migrations.RenameField(
-            model_name='question',
-            old_name='date_of_answer',
-            new_name='answer_datetime',
+            model_name="question",
+            old_name="date_of_answer",
+            new_name="answer_datetime",
         ),
         migrations.RenameField(
-            model_name='question',
-            old_name='date',
-            new_name='datetime',
+            model_name="question",
+            old_name="date",
+            new_name="datetime",
         ),
         migrations.RemoveField(
-            model_name='question',
-            name='author_orgs',
+            model_name="question",
+            name="author_orgs",
         ),
         migrations.RemoveField(
-            model_name='question',
-            name='json_data',
+            model_name="question",
+            name="json_data",
         ),
         migrations.RemoveField(
-            model_name='question',
-            name='signature',
+            model_name="question",
+            name="signature",
         ),
         migrations.AlterField(
-            model_name='agendaitem',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='gov_id of agenda item', null=True),
+            model_name="agendaitem",
+            name="gov_id",
+            field=models.TextField(
+                blank=True, help_text="gov_id of agenda item", null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='debate',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='gov_id of debate', null=True),
+            model_name="debate",
+            name="gov_id",
+            field=models.TextField(blank=True, help_text="gov_id of debate", null=True),
         ),
         migrations.AlterField(
-            model_name='question',
-            name='type_of_question',
+            model_name="question",
+            name="type_of_question",
             field=models.TextField(blank=True, null=True),
         ),
     ]

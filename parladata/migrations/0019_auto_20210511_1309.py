@@ -6,38 +6,42 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0018_auto_20210511_1256'),
+        ("parladata", "0018_auto_20210511_1256"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='law',
-            old_name='note',
-            new_name='abstract',
+            model_name="law",
+            old_name="note",
+            new_name="abstract",
         ),
         migrations.RenameField(
-            model_name='law',
-            old_name='date',
-            new_name='datetime',
+            model_name="law",
+            old_name="date",
+            new_name="datetime",
         ),
         migrations.AlterField(
-            model_name='law',
-            name='classification',
-            field=models.TextField(blank=True, help_text='Type of law', null=True),
+            model_name="law",
+            name="classification",
+            field=models.TextField(blank=True, help_text="Type of law", null=True),
         ),
         migrations.AlterField(
-            model_name='law',
-            name='epa',
-            field=models.TextField(blank=True, help_text='EPA number', null=True),
+            model_name="law",
+            name="epa",
+            field=models.TextField(blank=True, help_text="EPA number", null=True),
         ),
         migrations.AlterField(
-            model_name='law',
-            name='mdt',
-            field=models.TextField(blank=True, help_text='Working body text', max_length=1024, null=True),
+            model_name="law",
+            name="mdt",
+            field=models.TextField(
+                blank=True, help_text="Working body text", max_length=1024, null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='law',
-            name='uid',
-            field=models.TextField(blank=True, help_text='law uid from DZ page', null=True),
+            model_name="law",
+            name="uid",
+            field=models.TextField(
+                blank=True, help_text="law uid from DZ page", null=True
+            ),
         ),
     ]
