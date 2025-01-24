@@ -2,7 +2,7 @@ name: Build and publish Docker image
 on:
   push:
     branches:
-      - 'lendava'
+      - "lendava"
 jobs:
   push_to_registry:
     name: Build and push Docker image to registry
@@ -20,6 +20,26 @@ jobs:
           registry: rg.fr-par.scw.cloud/djnd
           username: nologin
           password: ${{ secrets.SCW_SECRET_TOKEN }}
+
+      - name: Build and push parladata
+        uses: docker/build-push-action@v3
+        with:
+          context: ./parladata
+          file: dockerfiles/parladata.Dockerfile
+          push: true
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parladata-lendava:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parladata-lendava:latest
+
+      - name: Build and push solr
+        uses: docker/build-push-action@v3
+        with:
+          context: ./parladata/solr
+          file: dockerfiles/solr.Dockerfile
+          push: true
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parlasolr-lendava:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasolr-lendava:latest
 
       - name: Build and push parlassets
         uses: docker/build-push-action@v3
@@ -64,5 +84,5 @@ jobs:
       - name: Commit and push new image versions
         uses: EndBug/add-and-commit@v9
         with:
-          add: '.'
-          message: 'Update image versions in kustomize/kustomization.yaml'
+          add: "."
+          message: "Update image versions in kustomize/kustomization.yaml"
