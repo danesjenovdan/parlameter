@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load static %}
+<html>
+<body>
+    <div>
+        <h2>{% translate 'Completed tasks at the Parlameter' %}</h2>
+    </div>
+    <div>
+        <ul>
+        {% for message in msgs %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div>
+    </div>
+</body>
+</html>

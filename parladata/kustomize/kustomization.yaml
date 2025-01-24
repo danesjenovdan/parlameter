@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: parlameter-trbovlje
+resources:
+  # - statefulset.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  - pvc.yaml
+  - solr.yaml
+
+  # uncomment cronjob to enable it
+  - cronjobs/task_runner_cronjob.yaml
+  - cronjobs/optimu_import_cronjob.yaml
+images:
+  - name: parladata-trbovlje
+    newName: rg.fr-par.scw.cloud/djnd/parladata-trbovlje
+    newTag: '99784049bdb1a7d56a6e28f67fa1cd9011d2d8e6'
+  - name: parlasolr-trbovlje
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-trbovlje
+    newTag: '99784049bdb1a7d56a6e28f67fa1cd9011d2d8e6'
