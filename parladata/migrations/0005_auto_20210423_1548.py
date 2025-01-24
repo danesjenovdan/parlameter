@@ -6,43 +6,43 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0004_auto_20210423_1538'),
+        ("parladata", "0004_auto_20210423_1538"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='identifier',
-            name='organization',
+            model_name="identifier",
+            name="organization",
         ),
         migrations.RemoveField(
-            model_name='identifier',
-            name='person',
+            model_name="identifier",
+            name="person",
         ),
         migrations.RemoveField(
-            model_name='ignore',
-            name='tags',
+            model_name="ignore",
+            name="tags",
         ),
         migrations.RemoveField(
-            model_name='othername',
-            name='organization',
+            model_name="othername",
+            name="organization",
         ),
         migrations.RemoveField(
-            model_name='othername',
-            name='person',
+            model_name="othername",
+            name="person",
         ),
         migrations.DeleteModel(
-            name='session_deleted',
+            name="session_deleted",
         ),
         migrations.DeleteModel(
-            name='tmp_votelinks',
+            name="tmp_votelinks",
         ),
         migrations.DeleteModel(
-            name='Identifier',
+            name="Identifier",
         ),
         migrations.DeleteModel(
-            name='Ignore',
+            name="Ignore",
         ),
         migrations.DeleteModel(
-            name='OtherName',
+            name="OtherName",
         ),
     ]

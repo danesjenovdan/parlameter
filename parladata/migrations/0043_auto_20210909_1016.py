@@ -7,23 +7,43 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0042_auto_20210902_1552'),
+        ("parladata", "0042_auto_20210902_1552"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='organization',
-            name='color',
-            field=colorfield.fields.ColorField(default='#09a2cc', max_length=18),
+            model_name="organization",
+            name="color",
+            field=colorfield.fields.ColorField(default="#09a2cc", max_length=18),
         ),
         migrations.AlterField(
-            model_name='personmembership',
-            name='role',
-            field=models.TextField(choices=[('member', 'member'), ('voter', 'voter'), ('president', 'president'), ('deputy', 'deputy')], default='member', help_text='The role that the person fulfills in the organization', verbose_name='role'),
+            model_name="personmembership",
+            name="role",
+            field=models.TextField(
+                choices=[
+                    ("member", "member"),
+                    ("voter", "voter"),
+                    ("president", "president"),
+                    ("deputy", "deputy"),
+                ],
+                default="member",
+                help_text="The role that the person fulfills in the organization",
+                verbose_name="role",
+            ),
         ),
         migrations.AlterField(
-            model_name='session',
-            name='classification',
-            field=models.CharField(choices=[('unknown', 'unknown'), ('regular', 'regular'), ('irregular', 'irregular'), ('correspondent', 'correspondent')], default='unknown', help_text='Session classification', max_length=128),
+            model_name="session",
+            name="classification",
+            field=models.CharField(
+                choices=[
+                    ("unknown", "unknown"),
+                    ("regular", "regular"),
+                    ("irregular", "irregular"),
+                    ("correspondent", "correspondent"),
+                ],
+                default="unknown",
+                help_text="Session classification",
+                max_length=128,
+            ),
         ),
     ]

@@ -2,83 +2,81 @@
 from .defaults import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'hashhashhashhashashwkopaskfpjoij3rijfdsf2332fdw!!'
+SECRET_KEY = "hashhashhashhashashwkopaskfpjoij3rijfdsf2332fdw!!"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'parladata-db',
-        'PORT': '5432',
-        'NAME': 'parladata',
-        'USER': 'user',
-        'PASSWORD': 'password',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "HOST": "parladata-db",
+        "PORT": "5432",
+        "NAME": "parladata",
+        "USER": "user",
+        "PASSWORD": "password",
     }
 }
 
 # static files for development
-#STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, '../static')
+# STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "../static")
 
 # static files for production
-STATIC_URL ='/static/'
-#STATIC_ROOT = '/home/parlauser/parlastatic/parlalize/'
+STATIC_URL = "/static/"
+# STATIC_ROOT = '/home/parlauser/parlastatic/parlalize/'
 
 
 RAVEN_CONFIG = {
     #'dsn': 'http://123sdfsd123:123gdfsg123@sentry.url.si/40',
     # If you are using git, you can also automatically configure the
     # release based on the git info.
-#    'release': raven.fetch_git_sha(os.path.dirname(__file__)),
+    #    'release': raven.fetch_git_sha(os.path.dirname(__file__)),
 }
 
 
 # Mail settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
-EMAIL_HOST = 'host.si'
+EMAIL_HOST = "host.si"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'user'
-EMAIL_HOST_PASSWORD = 'password'
+EMAIL_HOST_USER = "user"
+EMAIL_HOST_PASSWORD = "password"
 
-ADMINS = [('admin', 'admin@mail.com')]
+ADMINS = [("admin", "admin@mail.com")]
 
-DATA_ADMINS = [('data admin', 'dataadmin@mail.com')]
+DATA_ADMINS = [("data admin", "dataadmin@mail.com")]
 
-PARSER_ADMINS = [('parser admin', 'parseradmin@mail.com')]
+PARSER_ADMINS = [("parser admin", "parseradmin@mail.com")]
 
-PARLALIZE_API_KEY = 'parlalize_api_key'
-SETTER_KEY = 'setter_api_key'
+PARLALIZE_API_KEY = "parlalize_api_key"
+SETTER_KEY = "setter_api_key"
 
-DASHBOARD_URL = 'http://localhost:8881'
+DASHBOARD_URL = "http://localhost:8881"
 
-#FORCE_SCRIPT_NAME = '/data'
+# FORCE_SCRIPT_NAME = '/data'
 
-#National Assembly id in database
+# National Assembly id in database
 DZ_ID = 1
 PEOPLE_ID = None
 COALITION_ID = 2
 OPPOSITION_ID = 3
 
-country = 'HR'
+country = "HR"
 
-PS = 'pg'
+PS = "pg"
 
-PS_NP = ['pg', 'unaligned MP']
+PS_NP = ["pg", "unaligned MP"]
 
-PS_NP_D = ['pg', 'unaligned MP', 'club']
-WBS = ['committee',
-       'comission',
-       'investigative comission']
+PS_NP_D = ["pg", "unaligned MP", "club"]
+WBS = ["committee", "comission", "investigative comission"]
 
-FRIENDSHIP_GROUP = ['friendship group']
+FRIENDSHIP_GROUP = ["friendship group"]
 
-DELEGATION = ['delegation']
+DELEGATION = ["delegation"]
 
-COUNCIL = ['council']
+COUNCIL = ["council"]
 
-#['ministrstvo', 'vlada']
-MINISTRY_GOV = ['ministry', 'gov']
+# ['ministrstvo', 'vlada']
+MINISTRY_GOV = ["ministry", "gov"]
 
-GOV_STAFF = ['gov_service', 'gov_office']
+GOV_STAFF = ["gov_service", "gov_office"]

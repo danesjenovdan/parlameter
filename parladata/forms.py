@@ -1,25 +1,26 @@
+from datetime import datetime
+
 from django import forms
-from django.contrib.admin.widgets import AutocompleteSelectMultiple, AutocompleteSelect
 from django.contrib import admin
-from django.urls import reverse
+from django.contrib.admin.widgets import AutocompleteSelect, AutocompleteSelectMultiple
 from django.core.exceptions import ValidationError
 from django.forms.widgets import HiddenInput
+from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from parladata.models import Person, Question, Organization
+from parladata.models import Organization, Person, Question
 
-from datetime import datetime
 
 class QuestionAutocompleteSelectMultiple(AutocompleteSelectMultiple):
     def get_url(self):
         model = Question
-        return reverse(self.url_name % ('admin'))
+        return reverse(self.url_name % ("admin"))
 
 
 class QuestionAutocompleteSelect(AutocompleteSelect):
     def get_url(self):
         model = Question
-        return reverse(self.url_name % ('admin'))
+        return reverse(self.url_name % ("admin"))
 
 
 # person autocompelte field
@@ -29,8 +30,11 @@ class UserChoiceField(forms.ModelChoiceField):
         if queryset is None:
             queryset = Person.objects.all()
         if widget is None:
-            widget = QuestionAutocompleteSelect(Question._meta.get_field('person_authors'), admin.site)
+            widget = QuestionAutocompleteSelect(
+                Question._meta.get_field("person_authors"), admin.site
+            )
         super().__init__(queryset, widget=widget, **kwargs)
+
 
 # multiple select person autocompelte field
 class UsersChoiceField(forms.ModelChoiceField):
@@ -39,7 +43,9 @@ class UsersChoiceField(forms.ModelChoiceField):
         if queryset is None:
             queryset = Person.objects.all()
         if widget is None:
-            widget = QuestionAutocompleteSelectMultiple(Question._meta.get_field('person_authors'), admin.site)
+            widget = QuestionAutocompleteSelectMultiple(
+                Question._meta.get_field("person_authors"), admin.site
+            )
         super().__init__(queryset, widget=widget, **kwargs)
 
 
@@ -50,7 +56,9 @@ class OrganizationChoiceField(forms.ModelChoiceField):
         if queryset is None:
             queryset = Organization.objects.all()
         if widget is None:
-            widget = QuestionAutocompleteSelect(Question._meta.get_field('organization_authors'), admin.site)
+            widget = QuestionAutocompleteSelect(
+                Question._meta.get_field("organization_authors"), admin.site
+            )
         super().__init__(queryset, widget=widget, **kwargs)
 
 
@@ -61,7 +69,9 @@ class OrganizationsChoiceField(forms.ModelChoiceField):
         if queryset is None:
             queryset = Organization.objects.all()
         if widget is None:
-            widget = QuestionAutocompleteSelectMultiple(Question._meta.get_field('organization_authors'), admin.site)
+            widget = QuestionAutocompleteSelectMultiple(
+                Question._meta.get_field("organization_authors"), admin.site
+            )
         super().__init__(queryset, widget=widget, **kwargs)
 
 
@@ -101,8 +111,8 @@ class VersionableValidatorInlineFormset(forms.models.BaseInlineFormSet):
         # get forms that actually have valid data
         dates = []
         for form in self.forms:
-            valid_from = form.cleaned_data.get('valid_from', datetime.min)
-            valid_to = form.cleaned_data.get('valid_to', datetime.min)
+            valid_from = form.cleaned_data.get("valid_from", datetime.min)
+            valid_to = form.cleaned_data.get("valid_to", datetime.min)
             if not valid_from:
                 valid_from = datetime.min
 
@@ -110,7 +120,12 @@ class VersionableValidatorInlineFormset(forms.models.BaseInlineFormSet):
                 valid_to = datetime.max
 
             for date in dates:
-                print((date[1] - valid_from).total_seconds(), (date[0] - valid_to).total_seconds())
-                if (date[1] - valid_from).total_seconds() * (date[0] - valid_to).total_seconds() <= 0:
-                    raise forms.ValidationError(_('Time intervals are in intersection'))
+                print(
+                    (date[1] - valid_from).total_seconds(),
+                    (date[0] - valid_to).total_seconds(),
+                )
+                if (date[1] - valid_from).total_seconds() * (
+                    date[0] - valid_to
+                ).total_seconds() <= 0:
+                    raise forms.ValidationError(_("Time intervals are in intersection"))
             dates.append((valid_from, valid_to))

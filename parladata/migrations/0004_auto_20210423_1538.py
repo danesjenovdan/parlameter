@@ -6,88 +6,88 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0003_auto_20210423_1301'),
+        ("parladata", "0003_auto_20210423_1301"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='Membership',
-            new_name='PersonMembership',
+            old_name="Membership",
+            new_name="PersonMembership",
         ),
         migrations.RemoveField(
-            model_name='milestone',
-            name='mandate',
+            model_name="milestone",
+            name="mandate",
         ),
         migrations.RemoveField(
-            model_name='milestone',
-            name='organization',
+            model_name="milestone",
+            name="organization",
         ),
         migrations.RemoveField(
-            model_name='milestone',
-            name='person',
+            model_name="milestone",
+            name="person",
         ),
         migrations.RemoveField(
-            model_name='milestone',
-            name='session',
+            model_name="milestone",
+            name="session",
         ),
         migrations.RemoveField(
-            model_name='milestone',
-            name='speech',
+            model_name="milestone",
+            name="speech",
         ),
         migrations.RemoveField(
-            model_name='milestone',
-            name='tags',
+            model_name="milestone",
+            name="tags",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='membership',
+            model_name="post",
+            name="membership",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='organization',
+            model_name="post",
+            name="organization",
         ),
         migrations.RemoveField(
-            model_name='post',
-            name='tags',
+            model_name="post",
+            name="tags",
         ),
         migrations.RemoveField(
-            model_name='source',
-            name='contact_detail',
+            model_name="source",
+            name="contact_detail",
         ),
         migrations.RemoveField(
-            model_name='source',
-            name='membership',
+            model_name="source",
+            name="membership",
         ),
         migrations.RemoveField(
-            model_name='source',
-            name='organization',
+            model_name="source",
+            name="organization",
         ),
         migrations.RemoveField(
-            model_name='source',
-            name='person',
+            model_name="source",
+            name="person",
         ),
         migrations.RemoveField(
-            model_name='source',
-            name='post',
+            model_name="source",
+            name="post",
         ),
         migrations.RemoveField(
-            model_name='source',
-            name='tags',
+            model_name="source",
+            name="tags",
         ),
         migrations.RemoveField(
-            model_name='question',
-            name='recipient_post',
+            model_name="question",
+            name="recipient_post",
         ),
         migrations.DeleteModel(
-            name='ContactDetail',
+            name="ContactDetail",
         ),
         migrations.DeleteModel(
-            name='Milestone',
+            name="Milestone",
         ),
         migrations.DeleteModel(
-            name='Post',
+            name="Post",
         ),
         migrations.DeleteModel(
-            name='Source',
+            name="Source",
         ),
     ]
