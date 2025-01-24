@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parladata-deployment
+  name: parladata-ua
   labels:
-    app: parladata
+    app: parladata-ua
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parladata
+      app: parladata-ua
   template:
     metadata:
       labels:
-        app: parladata
+        app: parladata-ua
     spec:
       volumes:
         - name: parladata-shared-storage
           emptyDir: {}
       initContainers:
         - name: collectstatic
-          image: parladata
+          image: parladata-ua
           volumeMounts:
             - name: parladata-shared-storage
               mountPath: /pvc
@@ -34,7 +34,7 @@ spec:
             - name: DJANGO_STATIC_ROOT
               value: "/pvc/static"
             - name: DJANGO_STATIC_URL_BASE
-              value: "https://files.parladata.lb.djnd.si/static/"
+              value: "https://files.parladata-ua.lb.djnd.si/static/"
           envFrom:
             - secretRef:
                 name: parladata-credentials
@@ -48,7 +48,7 @@ spec:
               memory: 200Mi
               cpu: 200m
         - name: migrate
-          image: parladata
+          image: parladata-ua
           command:
             - python
             - manage.py
@@ -69,8 +69,8 @@ spec:
               memory: 200Mi
               cpu: 200m
       containers:
-        - name: parladata
-          image: parladata
+        - name: parladata-ua
+          image: parladata-ua
           volumeMounts:
             - name: parladata-shared-storage
               mountPath: /pvc
@@ -98,20 +98,20 @@ spec:
             - name: DJANGO_SETTINGS_MODULE
               value: parladata_project.settings.k8s
             - name: LEMMATIZER_LANGUAGE_CODE
-              value: sl
+              value: ua
             - name: DJANGO_STATIC_ROOT
               value: "/pvc/static"
             - name: DJANGO_STATIC_URL_BASE
-              value: "https://files.parladata.lb.djnd.si/static/"
+              value: "https://files.parladata-ua.lb.djnd.si/static/"
             - name: INSTALATION_NAME
-              value: default
+              value: Ukraina
           resources:
             requests:
               memory: 400Mi
-              cpu: 200m
+              cpu: 300m
             limits:
               memory: 400Mi
-              cpu: 200m
+              cpu: 600m
         - name: parladata-nginx
           ports:
             - name: http

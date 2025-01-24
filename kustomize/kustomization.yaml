@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter
+namespace: parlameter-ua
 resources:
   # - statefulset.yaml
   - deployment.yaml
@@ -12,9 +12,9 @@ resources:
   # uncomment cronjob to enable it
   #- cronjobs/task_runner_cronjob.yaml
 images:
-  - name: parladata
-    newName: rg.fr-par.scw.cloud/djnd/parladata
-    newTag: '599fdfecb3214afd8183d615fe83018892e643cc'
-  - name: parlasolr
-    newName: rg.fr-par.scw.cloud/djnd/parlasolr
-    newTag: 'b8e243ad15dba3009e3537b78f41dd56a77fb35b'
+  - name: parladata-ua
+    newName: rg.fr-par.scw.cloud/djnd/parladata-ua
+    newTag: '7461158a344d4a453d453507db37f82d6ec03d6b'
+  - name: parlasolr-ua
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-ua
+    newTag: '7461158a344d4a453d453507db37f82d6ec03d6b'

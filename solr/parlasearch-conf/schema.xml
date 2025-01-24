@@ -107,30 +107,17 @@
 
   <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
     <analyzer type="index">
-      <tokenizer class="solr.StandardTokenizerFactory" />
-      <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true" />
-      <filter class="solr.WordDelimiterGraphFilterFactory"
-              generateWordParts="1" generateNumberParts="1" splitOnCaseChange="0"
-              catenateWords="1" catenateNumbers="1" catenateAll="1"
-              preserveOriginal="1" stemEnglishPossessive="0" />
-      <filter class="solr.LowerCaseFilterFactory" />
-      <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt" />
-      <filter class="si.virag.solr.RdrLemmatizerFactory" dictionary="/opt/solr-slolem/data/lem-me-sl.bin" />
+      <tokenizer class="solr.StandardTokenizerFactory"/>
+      <filter class="solr.StopFilterFactory" words="org/apache/lucene/analysis/uk/stopwords.txt"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.MorfologikFilterFactory" dictionary="ua/net/nlp/ukrainian.dict"/>
       <filter class="solr.ShingleFilterFactory" outputUnigrams="true" maxShingleSize="2" />
-      <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
-      <filter class="solr.FlattenGraphFilterFactory" />
     </analyzer>
     <analyzer type="query">
       <tokenizer class="solr.StandardTokenizerFactory"/>
-      <filter class="solr.SynonymGraphFilterFactory" expand="true" ignoreCase="true" synonyms="synonyms.txt" />
-      <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
-      <filter class="solr.WordDelimiterGraphFilterFactory"
-              generateWordParts="1" generateNumberParts="1" splitOnCaseChange="0"
-              catenateWords="1" catenateNumbers="1" catenateAll="1"
-              preserveOriginal="1" stemEnglishPossessive="0" />
-      <filter class="solr.LowerCaseFilterFactory" />
-      <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt" />
-      <filter class="si.virag.solr.RdrLemmatizerFactory" dictionary="/opt/solr-slolem/data/lem-me-sl.bin" />
+      <filter class="solr.StopFilterFactory" words="org/apache/lucene/analysis/uk/stopwords.txt"/>
+      <filter class="solr.LowerCaseFilterFactory"/>
+      <filter class="solr.MorfologikFilterFactory" dictionary="ua/net/nlp/ukrainian.dict"/>
     </analyzer>
   </fieldType>
 </schema>

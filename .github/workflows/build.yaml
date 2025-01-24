@@ -2,7 +2,7 @@ name: Build and publish Docker image
 on:
   push:
     branches:
-      - 'k8s'
+      - 'ua'
 jobs:
   push_to_registry:
     name: Build and push Docker image to registry
@@ -30,8 +30,8 @@ jobs:
           context: .
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parladata:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parladata:latest
+            rg.fr-par.scw.cloud/djnd/parladata-ua:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parladata-ua:latest
 
       - name: Build and push SOLR
         uses: docker/build-push-action@v3
@@ -39,8 +39,8 @@ jobs:
           context: ./solr
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlasolr:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlasolr:latest
+            rg.fr-par.scw.cloud/djnd/parlasolr-ua:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasolr-ua:latest
 
       - name: Update image versions in kustomize/kustomization.yaml
         run: |

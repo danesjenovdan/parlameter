@@ -4,7 +4,7 @@
   this file, see http://wiki.apache.org/solr/SolrConfigXml.
 -->
 <config>
-  <luceneMatchVersion>7.6.0</luceneMatchVersion>
+  <luceneMatchVersion>7.7.0</luceneMatchVersion>
 
   <lib dir="${solr.install.dir:../../../..}/contrib/extraction/lib" regex=".*\.jar" />
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-cell-\d.*\.jar" />
@@ -18,7 +18,9 @@
   <lib dir="${solr.install.dir:../../../..}/contrib/velocity/lib" regex=".*\.jar" />
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-velocity-\d.*\.jar" />
 
-  <lib path="/opt/solr-slolem/sl_lemmatizer-1.0.jar" />
+  <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lib" regex=".*\.jar" />
+  <lib dir="${solr.install.dir:../../../..}/contrib/analysis-extras/lucene-libs" regex=".*\.jar" />
+
 
   <dataDir>${solr.data.dir:}</dataDir>
 
