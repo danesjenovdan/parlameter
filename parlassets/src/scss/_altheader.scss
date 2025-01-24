@@ -67,6 +67,10 @@
 
                 color: colors.$first;
             }
+
+            h2.cardname:only-child {
+                margin-top: 26px;
+            }
         }
 
         .icon-circle {

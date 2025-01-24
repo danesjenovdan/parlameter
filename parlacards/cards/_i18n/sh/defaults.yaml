@@ -336,6 +336,14 @@ party-leader--m: Vodja poslanske skupine
 party-leader--f: Vodja poslanske skupine
 deputy-leader--m: Namestnik
 deputy-leader--f: Namestnica
+leader--m: Vodja
+leader--f: Vodja
+president--m: Vodja
+president--f: Vodja
+deputy--m: Namestnik
+deputy--f: Namestnica
+member--m: Član
+member--f: Članica
 number-of-seats: 'Število poslanskih sedežev:'
 contact: 'Kontakt:'
 mp: Poslanec/-ka

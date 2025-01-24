@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - "dev"
-  pull_request:
-    branches:
-      - "k8s"
 jobs:
   check_python_formatting:
     name: Check Python formatting
@@ -25,8 +22,8 @@ jobs:
 
       - name: Check formatting with black
         run: |
-          black . --check --diff
+          (cd ./parladata && black . --check --diff)
 
       - name: Check formatting with isort
         run: |
-          isort . --check --diff --profile black
+          (cd ./parladata && isort . --check --diff --profile black)

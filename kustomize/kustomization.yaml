@@ -2,9 +2,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: parlameter-ajdovscina
 resources:
+  - parladata/deployment.yaml
+  - parladata/ingress.yaml
+  - parladata/pvc.yaml
+  - parladata/service.yaml
+  - parladata/solr.yaml
+  # uncomment cronjob to enable it
+  # - parladata/cronjobs/task_runner_cronjob.yaml
+
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
@@ -15,12 +24,18 @@ resources:
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
+  - name: parladata-ajdovscina
+    newName: rg.fr-par.scw.cloud/djnd/parladata-ajdovscina
+    newTag: 'latest'
+  - name: parlasolr-ajdovscina
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-ajdovscina
+    newTag: 'latest'
   - name: parlacards-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ajdovscina
-    newTag: '04baad51895831a73541d6c8110dab8d5d306e28'
+    newTag: 'latest'
   - name: parlasite-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ajdovscina
-    newTag: '04baad51895831a73541d6c8110dab8d5d306e28'
+    newTag: 'latest'
   - name: parlassets-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ajdovscina
-    newTag: '04baad51895831a73541d6c8110dab8d5d306e28'
+    newTag: 'latest'
