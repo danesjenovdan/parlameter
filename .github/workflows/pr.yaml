@@ -2,7 +2,7 @@ name: Automatic PRs
 on:
   push:
     branches:
-      - dev
+      - "dev"
 jobs:
   pull-requests:
     name: Automatic PRs
@@ -73,7 +73,7 @@ jobs:
           destination_branch: "medvode"
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into medvode"
-      
+
       - name: pull-request-trbovlje
         uses: repo-sync/pull-request@v2
         with:

@@ -2,6 +2,13 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: parlameter-hrvaska
 resources:
+  - parladata/deployment.yaml
+  - parladata/ingress.yaml
+  - parladata/pvc.yaml
+  - parladata/service.yaml
+  - parladata/solr.yaml
+  - parladata/cronjobs/task_runner_cronjob.yaml
+
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
@@ -18,12 +25,18 @@ resources:
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
+  - name: parladata-hrvaska
+    newName: rg.fr-par.scw.cloud/djnd/parladata-hrvaska
+    newTag: 'latest'
+  - name: parlasolr-hrvaska
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-hrvaska
+    newTag: 'latest'
   - name: parlacards-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlacards-hrvaska
-    newTag: '41b1eced5a80edc3cdf838002ed0b484c20517f7'
+    newTag: 'latest'
   - name: parlasite-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlasite-hrvaska
-    newTag: '41b1eced5a80edc3cdf838002ed0b484c20517f7'
+    newTag: 'latest'
   - name: parlassets-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlassets-hrvaska
-    newTag: '41b1eced5a80edc3cdf838002ed0b484c20517f7'
+    newTag: 'latest'
