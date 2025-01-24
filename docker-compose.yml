@@ -1,10 +1,68 @@
-version: '3'
+volumes:
+  pgdata:
 
 services:
+  parladata:
+    build:
+      context: ./parladata
+      dockerfile: ../dockerfiles/parladata.Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      PYTHONUNBUFFERED: 1
+      DJANGO_DEBUG: "yes"
+      DJANGO_SETTINGS_MODULE: parladata_project.settings.k8s
+      DJANGO_SECRET_KEY: make-me-secret
+      DJANGO_DATABASE_HOST: db
+      PARLADATA_URL: http://localhost:8000/v1
+      PARLALIZE_URL: http://localhost:8080/v1
+      ISCI_URL: http://localhost:8888/
+      PARLAMETER_URL: https://parlameter.si/
+      CARDS_URL: https://glej.parlameter.si/
+      NOTIFICATIONS_URL: https://obvestila.parlameter.si/
+      PARLAMETER_SOLR_URL: http://solr:8983/solr/parlasearch
+      PARLAMETER_ENABLE_S3: ""
+      PARLAMETER_AWS_ACCESS_KEY_ID: ""
+      PARLAMETER_AWS_SECRET_ACCESS_KEY: ""
+      PARLAMETER_AWS_STORAGE_BUCKET_NAME: "parlameter"
+      PARLAMETER_AWS_LOCATION: "dev"
+      DRF_RECAPTCHA_SITE_KEY: ""
+      DRF_RECAPTCHA_SECRET_KEY: ""
+    volumes:
+      - ./:/app
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: parladata
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  cache:
+    image: memcached
+    entrypoint:
+      - memcached
+      - -m 64
+
+  solr:
+    build:
+      context: ./parladata/solr
+      dockerfile: ../../dockerfiles/solr.Dockerfile
+    ports:
+      - 8983:8983
+    volumes:
+      - ./solr/parlasearch-conf:/parlasearch-conf
+
   parlacards:
     build:
       context: .
-      dockerfile: dockerfiles/dev.parlacards.Dockerfile
+      dockerfile: ./dockerfiles/dev.parlacards.Dockerfile
     ports:
       - 3000:3000
     environment:
@@ -24,7 +82,7 @@ services:
   parlassets:
     build:
       context: .
-      dockerfile: dockerfiles/dev.parlassets.Dockerfile
+      dockerfile: ./dockerfiles/dev.parlassets.Dockerfile
     ports:
       - 8080:8080
     volumes:
@@ -35,13 +93,12 @@ services:
   parlasite:
     build:
       context: .
-      dockerfile: dockerfiles/dev.parlasite.Dockerfile
+      dockerfile: ./dockerfiles/dev.parlasite.Dockerfile
     ports:
       - 3066:3066
     environment:
       - PARLASITE_LEADER_ID=1
       - PARLASITE_ROOT_ORG_ID=1
-      - PARLASITE_ROOT_ORG_ID2=1
       - PARLASITE_MANDATE_ID=1
       - PARLASITE_DEFAULT_CARD_DATE=
       - PARLASITE_NEWSLETTER_SEGMENT_ID=

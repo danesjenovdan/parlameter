@@ -2,9 +2,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: parlameter-bosna
 resources:
+  - parladata/deployment.yaml
+  - parladata/ingress.yaml
+  - parladata/pvc.yaml
+  - parladata/service.yaml
+  - parladata/solr.yaml
+  # uncomment cronjob to enable it
+  # - parladata/cronjobs/task_runner_cronjob.yaml
+
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
@@ -15,12 +24,18 @@ resources:
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
+  - name: parladata-bosna
+    newName: rg.fr-par.scw.cloud/djnd/parladata-bosna
+    newTag: 'latest'
+  - name: parlasolr-bosna
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-bosna
+    newTag: 'latest'
   - name: parlacards-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlacards-bosna
-    newTag: '68e17759ba71b54563074491ed47e8e0d325f566'
+    newTag: 'latest'
   - name: parlasite-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlasite-bosna
-    newTag: '68e17759ba71b54563074491ed47e8e0d325f566'
+    newTag: 'latest'
   - name: parlassets-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlassets-bosna
-    newTag: '68e17759ba71b54563074491ed47e8e0d325f566'
+    newTag: 'latest'
