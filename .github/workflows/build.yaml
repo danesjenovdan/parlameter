@@ -21,6 +21,26 @@ jobs:
           username: nologin
           password: ${{ secrets.SCW_SECRET_TOKEN }}
 
+      - name: Build and push parladata
+        uses: docker/build-push-action@v3
+        with:
+          context: ./parladata
+          file: dockerfiles/parladata.Dockerfile
+          push: true
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parladata-hrastnik:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parladata-hrastnik:latest
+
+      - name: Build and push solr
+        uses: docker/build-push-action@v3
+        with:
+          context: ./parladata/solr
+          file: dockerfiles/solr.Dockerfile
+          push: true
+          tags: |
+            rg.fr-par.scw.cloud/djnd/parlasolr-hrastnik:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasolr-hrastnik:latest
+
       - name: Build and push parlassets
         uses: docker/build-push-action@v3
         with:

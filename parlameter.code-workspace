@@ -10,6 +10,9 @@
       "path": "parlasite"
     },
     {
+      "path": "parladata"
+    },
+    {
       "path": ".",
       "name": "root"
     }
@@ -26,7 +29,8 @@
     "files.exclude": {
       "parlacards/": true,
       "parlassets/": true,
-      "parlasite/": true
+      "parlasite/": true,
+      "parladata/": true,
     }
   }
 }

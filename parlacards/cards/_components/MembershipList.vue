@@ -1,32 +1,24 @@
 <template>
   <scroll-shadow ref="shadow">
     <div
-      id="membership-list"
-      :class="{ 'no-tabs': noTabs }"
+      class="membership-list date-list"
       @scroll="$refs.shadow.check($event.currentTarget)"
     >
-      <empty-state v-if="!contents?.length" small />
-      <ul v-else class="membership-list">
-        <template v-if="contents.length">
-          <li
-            v-for="membershipItem in contents"
-            :key="membershipItem?.name"
-            class="key"
-          >
-            <template v-if="name === 'Delovna telesa'">
-              {{ membershipItem?.name }}
-            </template>
-            <a
-              v-else-if="membershipItem?.url != null"
-              :href="membershipItem?.url"
-              class="funblue-light-hover"
-              target="_blank"
-              >{{ membershipItem?.name }}</a
+      <empty-state v-if="!results?.length" small />
+      <div v-else>
+        <div v-for="(memberships, role) in membershipsByRole" :key="role">
+          <div class="date">{{ formatRole(role || 'member') }}</div>
+          <div class="membership-items">
+            <div
+              v-for="(membership, i) in memberships"
+              :key="`${role}-${i}`"
+              class="membership-item"
             >
-            <template v-else>{{ membershipItem?.name }}</template>
-          </li>
-        </template>
-      </ul>
+              {{ membership?.organization?.name }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </scroll-shadow>
 </template>
@@ -34,6 +26,7 @@
 <script>
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import EmptyState from '@/_components/EmptyState.vue';
+import { groupBy } from 'lodash-es';
 
 export default {
   name: 'MembershipList',
@@ -42,45 +35,62 @@ export default {
     EmptyState,
   },
   props: {
-    name: {
-      type: String,
-      default: '',
-    },
-    contents: {
+    results: {
       type: Array,
-      default: () => [],
+      required: true,
     },
-    noTabs: {
-      type: Boolean,
-      default: false,
+    person: {
+      type: Object,
+      default: () => ({}),
     },
   },
-  data() {
-    return {};
+  computed: {
+    membershipsByRole() {
+      const grouped = groupBy(
+        this.results,
+        (membership) => membership.role || 'member',
+      );
+
+      // insertion order is guaranteed, so insert the roles in the order we want
+      let sorted = {};
+      ['leader', 'president', 'deputy', 'member'].forEach((role) => {
+        if (role in grouped && grouped[role].length) {
+          sorted[role] = grouped[role];
+          delete grouped[role];
+        }
+      });
+      // add any remaining roles
+      sorted = { ...sorted, ...grouped };
+
+      return sorted;
+    },
+  },
+  methods: {
+    formatRole(role) {
+      const form = this.person.preferred_pronoun === 'she' ? '--f' : '--m';
+      return this.$te(`${role}${form}`)
+        ? this.$t(`${role}${form}`)
+        : this.$t(role);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-#membership-list {
-  height: 125px;
+.membership-list {
+  height: 180px;
   overflow-y: auto;
 
-  &.no-tabs {
-    height: 180px;
+  .date {
+    font-weight: 500;
   }
-}
 
-.membership-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  .membership-items {
+    padding: 8px 0 16px;
 
-  .key {
-    line-height: 1.3em;
-    margin: 4px 0;
-    text-align: left;
-    width: 100%;
+    .membership-item {
+      padding: 2px 10px;
+    }
   }
 }
 </style>
