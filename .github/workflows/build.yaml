@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./parladata
-          file: ../dockerfiles/parladata.Dockerfile
+          file: dockerfiles/parladata.Dockerfile
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parladata-slovenija:${{ github.sha }}
@@ -35,7 +35,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./parladata/solr
-          file: ../../dockerfiles/solr.Dockerfile
+          file: dockerfiles/solr.Dockerfile
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlasolr-slovenija:${{ github.sha }}
