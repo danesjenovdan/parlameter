@@ -1,11 +1,11 @@
 from rest_framework import serializers
 
-from parlacards.serializers.common import CommonSerializer, CommonCachableSerializer
-from parlacards.serializers.vote import BareVoteSerializer
+from parlacards.serializers.common import CommonCachableSerializer, CommonSerializer
 from parlacards.serializers.link import LinkSerializer
-
-from parladata.models.vote import Vote
+from parlacards.serializers.vote import BareVoteSerializer
 from parladata.models.link import Link
+from parladata.models.vote import Vote
+
 
 class LegislationSerializer(CommonCachableSerializer):
     id = serializers.IntegerField()
@@ -39,17 +39,12 @@ class LegislationDetailSerializer(LegislationSerializer):
 
     def get_votes(self, obj):
         votes = Vote.objects.filter(motion__law=obj)
-        return BareVoteSerializer(
-            votes,
-            many=True,
-            context=self.context
-        ).data
+        return BareVoteSerializer(votes, many=True, context=self.context).data
 
     def get_documents(self, obj):
-        links = Link.objects.filter(motion__law=obj).exclude(tags__name='vote-pdf').distinct('url')
-        return LinkSerializer(
-            links,
-            many=True,
-            context=self.context
-        ).data
-
+        links = (
+            Link.objects.filter(motion__law=obj)
+            .exclude(tags__name="vote-pdf")
+            .distinct("url")
+        )
+        return LinkSerializer(links, many=True, context=self.context).data

@@ -6,28 +6,45 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0051_rename_authors_question_person_authors'),
+        ("parladata", "0051_rename_authors_question_person_authors"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='question',
-            name='organization_authors',
-            field=models.ManyToManyField(blank=True, help_text="Recipient organization (if it's an organization).", related_name='questions_org_author', to='parladata.Organization'),
+            model_name="question",
+            name="organization_authors",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Recipient organization (if it's an organization).",
+                related_name="questions_org_author",
+                to="parladata.Organization",
+            ),
         ),
         migrations.AlterField(
-            model_name='motion',
-            name='champions',
-            field=models.ManyToManyField(blank=True, help_text='The people who proposed the motion.', to='parladata.Person'),
+            model_name="motion",
+            name="champions",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="The people who proposed the motion.",
+                to="parladata.Person",
+            ),
         ),
         migrations.AlterField(
-            model_name='question',
-            name='type_of_question',
-            field=models.TextField(blank=True, choices=[('question', 'question'), ('initiative', 'initiative'), ('unknown', 'unknown')], null=True),
+            model_name="question",
+            name="type_of_question",
+            field=models.TextField(
+                blank=True,
+                choices=[
+                    ("question", "question"),
+                    ("initiative", "initiative"),
+                    ("unknown", "unknown"),
+                ],
+                null=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='task',
-            name='payload',
-            field=models.JSONField(help_text='Payload kwargs'),
+            model_name="task",
+            name="payload",
+            field=models.JSONField(help_text="Payload kwargs"),
         ),
     ]
