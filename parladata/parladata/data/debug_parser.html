@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<style type="text/css">
+		.end {
+			height: 10px;
+			width: 100%;
+			background-color: grey;
+			margin-bottom: 30px;
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('.table').DataTable();
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<h2 id="votes">Katere seje nimajo govora in glasovanja</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Session</th>
+				<th>date</th>
+				<th>id</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in empty_session %}
+			<tr>
+				<th scope="row"></th>
+				<td>{{fail.name}}</td>
+				<td>{{fail.start_time}}</td>
+				<td>{{fail.id}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+
+	<h2 id="votes">Katere seje nimajo govora in glasovanja</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Session</th>
+				<th>date</th>
+				<th>org</th>
+				<th>Motions</th>
+				<th>Votes</th>
+				<th>Ballots</th>
+				<th>Speeches</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in sessions_for_delete %}
+				{% for session in fail %}
+					<tr>
+						<th scope="row"></th>
+						<td>{{session.session.name}}</td>
+						<td>{{session.session.start_time}}</td>
+						<td>{{session.org}}</td>
+						<td>{{session.motions}}</td>
+						<td>{{session.votes}}</td>
+						<td>{{session.ballots}}</td>
+						<td>{{session.speeches}}</td>
+					</tr>
+				{% endfor %}
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+
+</body>
+
+</html>
