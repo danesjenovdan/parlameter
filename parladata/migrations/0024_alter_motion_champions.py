@@ -6,13 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0023_alter_personmembership_role'),
+        ("parladata", "0023_alter_personmembership_role"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='motion',
-            name='champions',
-            field=models.ManyToManyField(blank=True, help_text='The people who proposed the motion.', null=True, to='parladata.Person'),
+            model_name="motion",
+            name="champions",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="The people who proposed the motion.",
+                null=True,
+                to="parladata.Person",
+            ),
         ),
     ]

@@ -6,29 +6,34 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0015_auto_20210511_1204'),
+        ("parladata", "0015_auto_20210511_1204"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='speech',
-            name='agenda_item',
+            model_name="speech",
+            name="agenda_item",
         ),
         migrations.RemoveField(
-            model_name='speech',
-            name='party',
+            model_name="speech",
+            name="party",
         ),
         migrations.RemoveField(
-            model_name='speech',
-            name='tags',
+            model_name="speech",
+            name="tags",
         ),
         migrations.RemoveField(
-            model_name='speech',
-            name='version_con',
+            model_name="speech",
+            name="version_con",
         ),
         migrations.AlterField(
-            model_name='speech',
-            name='agenda_items',
-            field=models.ManyToManyField(blank=True, help_text='Agenda items', related_name='speeches', to='parladata.AgendaItem'),
+            model_name="speech",
+            name="agenda_items",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Agenda items",
+                related_name="speeches",
+                to="parladata.AgendaItem",
+            ),
         ),
     ]

@@ -1,11 +1,12 @@
 from rest_framework import serializers
 
-from parladata.models.link import Link
 from parlacards.serializers.tag import TagSerializer
+from parladata.models.link import Link
+
 
 class LinkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Link
-        fields = ['id', 'url', 'name', 'tags']
+        fields = ["id", "url", "name", "tags"]
 
     tags = TagSerializer(many=True)
