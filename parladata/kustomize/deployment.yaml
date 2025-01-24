@@ -1,0 +1,123 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parladata-deployment
+  labels:
+    app: parladata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parladata
+  template:
+    metadata:
+      labels:
+        app: parladata
+    spec:
+      volumes:
+        - name: parladata-shared-storage
+          emptyDir: {}
+      initContainers:
+        - name: collectstatic
+          image: parladata-medvode
+          volumeMounts:
+            - name: parladata-shared-storage
+              mountPath: /pvc
+          command:
+            - python
+            - manage.py
+            - collectstatic
+            - --no-input
+          env:
+            - name: DJANGO_SETTINGS_MODULE
+              value: parladata_project.settings.k8s
+            - name: DJANGO_STATIC_ROOT
+              value: "/pvc/static"
+            - name: DJANGO_STATIC_URL_BASE
+              value: "https://files.parladata-medvode.lb.djnd.si/static/"
+          envFrom:
+            - secretRef:
+                name: parladata-credentials
+            - secretRef:
+                name: parladata-sentry
+          resources:
+            requests:
+              memory: 200Mi
+              cpu: 100m
+            limits:
+              memory: 200Mi
+              cpu: 200m
+        - name: migrate
+          image: parladata-medvode
+          command:
+            - python
+            - manage.py
+            - migrate
+          env:
+            - name: DJANGO_SETTINGS_MODULE
+              value: parladata_project.settings.k8s
+          envFrom:
+            - secretRef:
+                name: parladata-credentials
+            - secretRef:
+                name: parladata-sentry
+          resources:
+            requests:
+              memory: 200Mi
+              cpu: 100m
+            limits:
+              memory: 200Mi
+              cpu: 200m
+      containers:
+        - name: parladata
+          image: parladata-medvode
+          volumeMounts:
+            - name: parladata-shared-storage
+              mountPath: /pvc
+          command:
+            - gunicorn
+            - parladata_project.wsgi:application
+            - -b
+            - 0.0.0.0:8000
+            - --log-level
+            - DEBUG
+            - --workers
+            - "1"
+            - --threads
+            - "3"
+            - --timeout
+            - "120"
+          ports:
+            - containerPort: 8000
+          envFrom:
+              - secretRef:
+                  name: parladata-credentials
+              - secretRef:
+                  name: parladata-sentry
+          env:
+            - name: DJANGO_SETTINGS_MODULE
+              value: parladata_project.settings.k8s
+            - name: LEMMATIZER_LANGUAGE_CODE
+              value: sl
+            - name: DJANGO_STATIC_ROOT
+              value: "/pvc/static"
+            - name: DJANGO_STATIC_URL_BASE
+              value: "https://files.parladata-medvode.lb.djnd.si/static/"
+            - name: INSTALATION_NAME
+              value: default
+          resources:
+            requests:
+              memory: 400Mi
+              cpu: 100m
+            limits:
+              memory: 400Mi
+              cpu: 400m
+        - name: parladata-nginx
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          image: nginx:alpine
+          volumeMounts:
+            - name: parladata-shared-storage
+              mountPath: /usr/share/nginx/html

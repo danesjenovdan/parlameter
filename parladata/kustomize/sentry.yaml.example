@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: parladata-sentry
+  labels:
+    app.kubernetes.io/name: parladata-sentry
+    app: parladata-sentry
+stringData:
+  # sentry
+  DJANGO_SENTRY_URL: "https://SOMETHING@SOMETHINGELSE.ingest.sentry.io/NUMBERTHING"
+  SENTRY_ENVIRONMENT: "production"
+
+
+# generate your secret key with
+# python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
