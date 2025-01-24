@@ -1,0 +1,17 @@
+{% load i18n %}
+<html lang="hr">
+<body>
+    <p>
+        {% translate 'Question for: ' %}{{ person_name }}</br></br>
+        {% translate 'The following question was asked to you on the Parlameter platform.' %}</br>
+        {% translate 'Please reply to this email and we will publish your reply.' %}</br></br>
+    </p>
+    <p>
+        {{ text }}</br>
+    </p>
+    <p>
+        {% translate 'Thank you in advance' %}</br>
+        {% translate 'Team Parlameter' %}
+    </p>
+</body>
+</html>

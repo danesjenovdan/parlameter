@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: parlameter-hrvaska
+resources:
+  # - statefulset.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  - pvc.yaml
+  - solr.yaml 
+
+  # uncomment cronjob to enable it
+  - cronjobs/task_runner_cronjob.yaml
+images:
+  - name: parladata-hrvaska
+    newName: rg.fr-par.scw.cloud/djnd/parladata-hrvaska
+    newTag: 'c47e98129d83052d631b8b01ab2e5771b1c7aa37'
+  - name: parlasolr-hrvaska
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-hrvaska
+    newTag: 'c47e98129d83052d631b8b01ab2e5771b1c7aa37'

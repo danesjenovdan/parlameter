@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<style type="text/css">
+		.end {
+			height: 10px;
+			width: 100%;
+			background-color: grey;
+			margin-bottom: 30px;
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('.table').DataTable();
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<h2 id="votes">Nekaj je narobe s posti</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Name</th>
+				<th>Start time</th>
+				<th>end time</th>
+				<th>Note</th>
+				<th>link</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in posts %}
+			{% if fail.fails %}
+			<tr class="bg-info">
+				<td></td>
+				<td>{{fail.member.person.name}}</td>
+				<td>{{fail.member.start_time}}</td>
+				<td>{{fail.member.end_time}}</td>
+				<td></td>
+				<td><a href="https://data.parlameter.si/admin/parladata/membership/{{fail.member.id}}/">Edit</td>
+			</tr>
+				{% for groza in fail.fails %}
+					{% for post in groza.posts %}
+						<tr class="bg-warning">
+							<td></td>
+							<td></td>
+							<td>{{post.start_time}}</td>
+							<td>{{post.end_time}}</td>
+							<td>{{groza.note}}</td>
+							<td><a href="https://data.parlameter.si/admin/parladata/post/{{post.id}}/">Edit</td>
+						</tr>
+					{% endfor %}
+					{% if not fail.fails %}
+						<tr class="bg-warning">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>{{groza.note}}</td>
+							<td><a href="https://data.parlameter.si/admin/parladata/post/{{post.id}}/">Edit</td>
+						</tr>
+					{% endif %}
+				{% endfor %}
+			{%endif%}
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+
+</body>
+
+</html>

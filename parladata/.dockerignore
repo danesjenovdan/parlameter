@@ -1,0 +1,6 @@
+*.lexicon.train
+*.lemma_freq
+sl.train
+sloleks_clarin_2.0*
+model.zip
+*.dump

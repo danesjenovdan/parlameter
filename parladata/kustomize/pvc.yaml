@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: parladata-pvc
+  labels:
+    app: parladata
+  annotations:
+    pv.beta.kubernetes.io/gid: "1000"
+spec:
+  storageClassName: 'scw-bssd-retain'
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
