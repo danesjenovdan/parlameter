@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: parlameter-task-runner
+  name: parladata-task-runner
 spec:
   schedule: "15 * * * *"
   successfulJobsHistoryLimit: 1
@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
           - name: parladata-task-runner
-            image: parladata
+            image: parladata-hrvaska
             env:
               - name: DJANGO_SETTINGS_MODULE
                 value: parladata_project.settings.k8s

@@ -19,7 +19,7 @@ spec:
         fsGroup: 8983
       containers:
       - name: parlasolr
-        image: parlasolr # kustomize thing
+        image: parlasolr-hrvaska # kustomize thing
         volumeMounts:
         - name: parlasolr-persistent-storage
           mountPath: /var/solr/data
@@ -49,7 +49,7 @@ spec:
             cpu: 200m
       initContainers:
       - name: create-core
-        image: parlasolr
+        image: parlasolr-hrvaska
         # command: ['solr', 'create_core', '-c', 'parlasearch']
         # create parlasearch core with a convenience script
         command: ['sh', '-c', '/opt/docker-solr/scripts/precreate-core parlasearch']
@@ -65,7 +65,7 @@ spec:
             memory: 100Mi
             cpu: 50m
       - name: link-config-1
-        image: parlasolr
+        image: parlasolr-hrvaska
         command: ['cp', '-f', '/parlasearch-conf/schema.xml', '/var/solr/data/parlasearch/conf/']
         volumeMounts:
         - name: parlasolr-persistent-storage
@@ -79,7 +79,7 @@ spec:
             memory: 100Mi
             cpu: 50m
       - name: link-config-2
-        image: parlasolr
+        image: parlasolr-hrvaska
         command: ['cp', '-f', '/parlasearch-conf/solrconfig.xml', '/var/solr/data/parlasearch/conf/']
         volumeMounts:
         - name: parlasolr-persistent-storage

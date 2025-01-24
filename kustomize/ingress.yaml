@@ -9,10 +9,21 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parladata.lb.djnd.si
+        - parladata-hrvaska.lb.djnd.si
+        - data.10.parlametar.hr
       secretName: parladata-tls
   rules:
-    - host: parladata.lb.djnd.si
+    - host: parladata-hrvaska.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parladata
+                port:
+                  number: 8000
+    - host: data.10.parlametar.hr
       http:
         paths:
           - path: /
@@ -38,10 +49,21 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - files.parladata.lb.djnd.si
+        - files.parladata-hrvaska.lb.djnd.si
+        - files.data.10.parlametar.hr
       secretName: parladata-nginx-tls
   rules:
-    - host: files.parladata.lb.djnd.si
+    - host: files.parladata-hrvaska.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parladata-nginx
+                port:
+                  number: 80
+    - host: files.data.10.parlametar.hr
       http:
         paths:
           - path: /
