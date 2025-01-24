@@ -31,6 +31,10 @@ Running docker compose will:
 
 _TODO: fix parlasite to not use config and move everything to environment variables that can be changed in docker-compose and/or k8s build files. This work is currently ongoing on branch `dev-parlasite-esm`_
 
+## Developing parladata
+
+See [parladata/README.md](./parladata/README.md)
+
 ## Developing parlacards
 
 See [parlacards/README.md](./parlacards/README.md)

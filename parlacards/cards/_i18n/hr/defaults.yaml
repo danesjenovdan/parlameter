@@ -347,8 +347,16 @@ parliament: Sabor
 analysis-not-available: Ova analiza nije dostupna.
 party-leader--m: Predsjednik kluba
 party-leader--f: Predsjednica kluba
-deputy-leader--m: Zamjenik
-deputy-leader--f: Zamjenica
+deputy-leader--m: Potpredsjednik
+deputy-leader--f: Potpredsjednica
+leader--m: Voditelj
+leader--f: Voditeljica
+president--m: Predsjednik
+president--f: Predsjednica
+deputy--m: Potpredsjednik
+deputy--f: Potpredsjednica
+member--m: Član
+member--f: Članica
 number-of-seats: 'Broj zastupničkih mjesta:'
 contact: 'Kontakt:'
 mp: Zastupnica

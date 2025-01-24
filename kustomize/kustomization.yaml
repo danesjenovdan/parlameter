@@ -2,22 +2,38 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: parlameter-trbovlje
 resources:
+  - parladata/deployment.yaml
+  - parladata/ingress.yaml
+  - parladata/pvc.yaml
+  - parladata/service.yaml
+  - parladata/solr.yaml
+  # uncomment cronjob to enable it
+  - parladata/cronjobs/task_runner_cronjob.yaml
+
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
+
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
+  - name: parladata-trbovlje
+    newName: rg.fr-par.scw.cloud/djnd/parladata-trbovlje
+    newTag: 'latest'
+  - name: parlasolr-trbovlje
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-trbovlje
+    newTag: 'latest'
   - name: parlacards-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlacards-trbovlje
-    newTag: 'fa075de0fb1b9aab5d17f92bebad6b3ab0b5f26e'
+    newTag: 'latest'
   - name: parlasite-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlasite-trbovlje
-    newTag: 'fa075de0fb1b9aab5d17f92bebad6b3ab0b5f26e'
+    newTag: 'latest'
   - name: parlassets-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlassets-trbovlje
-    newTag: 'fa075de0fb1b9aab5d17f92bebad6b3ab0b5f26e'
+    newTag: 'latest'
