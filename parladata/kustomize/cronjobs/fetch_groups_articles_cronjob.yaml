@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: parladata-fetch-groups-articles-job-runner
+spec:
+  schedule: "0 0 1 * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        spec:
+          containers:
+          - name: parladata-fetch-groups-articles-job-runner
+            image: rg.fr-par.scw.cloud/djnd/parladata:latest
+            env:
+              - name: DJANGO_SETTINGS_MODULE
+                value: parladata_project.settings.k8s
+              - name: PYTHONUNBUFFERED
+                value: "true"
+            envFrom:
+              - secretRef:
+                  name: parladata-credentials
+            command:
+              - python
+              - manage.py
+              - fetch_groups_articles
+          restartPolicy: Never

@@ -1,0 +1,141 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: parlasolr
+  labels:
+    app: parlasolr
+spec:
+  serviceName: parlasolr
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parlasolr
+  template:
+    metadata:
+      labels:
+        app: parlasolr
+    spec:
+      securityContext:
+        fsGroup: 8983
+      containers:
+      - name: parlasolr
+        image: parlasolr # kustomize thing
+        volumeMounts:
+        - name: parlasolr-persistent-storage
+          mountPath: /var/solr/data
+        ports:
+        - name: http
+          containerPort: 8983
+          protocol: TCP
+        livenessProbe:
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 360
+          periodSeconds: 30
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /solr/parlasearch/admin/ping
+            port: http
+          initialDelaySeconds: 300
+          periodSeconds: 30
+          timeoutSeconds: 5
+        resources:
+          requests:
+            memory: 1Gi
+            cpu: 200m
+          limits:
+            memory: 1Gi
+            cpu: 200m
+      initContainers:
+      - name: create-core
+        image: parlasolr
+        # command: ['solr', 'create_core', '-c', 'parlasearch']
+        # create parlasearch core with a convenience script
+        command: ['sh', '-c', '/opt/docker-solr/scripts/precreate-core parlasearch']
+        volumeMounts:
+        - name: parlasolr-persistent-storage
+          # /var/solr/data it's SOLR_HOME set in Docker file
+          mountPath: /var/solr/data
+        resources:
+          requests:
+            memory: 100Mi
+            cpu: 50m
+          limits:
+            memory: 100Mi
+            cpu: 50m
+      - name: link-config-1
+        image: parlasolr
+        command: ['cp', '-f', '/parlasearch-conf/schema.xml', '/var/solr/data/parlasearch/conf/']
+        volumeMounts:
+        - name: parlasolr-persistent-storage
+          # /var/solr/data it's SOLR_HOME set in Docker file
+          mountPath: /var/solr/data
+        resources:
+          requests:
+            memory: 100Mi
+            cpu: 50m
+          limits:
+            memory: 100Mi
+            cpu: 50m
+      - name: link-config-2
+        image: parlasolr
+        command: ['cp', '-f', '/parlasearch-conf/solrconfig.xml', '/var/solr/data/parlasearch/conf/']
+        volumeMounts:
+        - name: parlasolr-persistent-storage
+          # /var/solr/data it's SOLR_HOME set in Docker file
+          mountPath: /var/solr/data
+        resources:
+          requests:
+            memory: 100Mi
+            cpu: 50m
+          limits:
+            memory: 100Mi
+            cpu: 50m
+  volumeClaimTemplates:
+  - metadata:
+      name: parlasolr-persistent-storage
+      annotations:
+          pv.beta.kubernetes.io/gid: "8983"
+    spec:
+      storageClassName: 'scw-bssd-retain'
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: parlasolr
+spec:
+  selector:
+    app: parlasolr
+  ports:
+    - protocol: TCP
+      port: 8983
+      targetPort: 8983
+---
+# This here ingress is for debugging purposes
+# only. Make sure it's always commented out.
+# Your SOLR instance should not accessible
+# from the public internet.
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: parlasolr
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /
+# spec:
+#   rules:
+#   - host: parlasolr.lb.djnd.si
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: parlasolr
+#             port:
+#               number: 8983
