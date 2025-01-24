@@ -2,29 +2,29 @@
 
 from django.db import migrations
 
+
 def set_mandate_to_memberships(apps, schema_editor):
     PersonMembership = apps.get_model("parladata", "PersonMembership")
     OrganizationMembership = apps.get_model("parladata", "OrganizationMembership")
 
-    for root_membership in OrganizationMembership.objects.filter(member__classification="root"):
+    for root_membership in OrganizationMembership.objects.filter(
+        member__classification="root"
+    ):
         # fix organization memberships mandate
         OrganizationMembership.objects.filter(
             organization=root_membership.member
-        ).update(
+        ).update(mandate=root_membership.mandate)
+
+        # fix person memberships mandate
+        PersonMembership.objects.filter(organization=root_membership.member).update(
             mandate=root_membership.mandate
         )
 
-        # fix person memberships mandate
-        PersonMembership.objects.filter(
-            organization=root_membership.member
-        ).update(
-            mandate=root_membership.mandate
-        )
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0074_alter_legislationconsideration_session'),
+        ("parladata", "0074_alter_legislationconsideration_session"),
     ]
 
     operations = [

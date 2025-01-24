@@ -1,31 +1,31 @@
-from django.core.cache import cache
-from django.db.models.query import QuerySet
-
-from import_export.resources import ModelResource
-from import_export.fields import Field
 from datetime import datetime, timedelta
 
-from parladata.models import Person, Mandate, Organization
-
 import tablib
+from django.core.cache import cache
+from django.db.models.query import QuerySet
+from import_export.fields import Field
+from import_export.resources import ModelResource
+
+from parladata.models import Mandate, Organization, Person
+
 
 def get_cached_person_name(id):
-    cache_key = f'person_name_{id}'
+    cache_key = f"person_name_{id}"
     name = cache.get(cache_key)
     if not name:
         person = Person.objects.get(id=id)
         name = person.name
-        cache.set(cache_key, name, 60*60*24)
+        cache.set(cache_key, name, 60 * 60 * 24)
     return name
 
 
 def get_cached_group_name(id):
-    cache_key = f'group_name_{id}'
+    cache_key = f"group_name_{id}"
     name = cache.get(cache_key)
     if not name:
         organization = Organization.objects.get(id=id)
         name = organization.name
-        cache.set(cache_key, name, 60*60*24)
+        cache.set(cache_key, name, 60 * 60 * 24)
     return name
 
 
@@ -33,6 +33,7 @@ class ExportModelResource(ModelResource):
     """
     Extends ModelResource class with additional functions that allow exporting data from admin using a generator.
     """
+
     def get_queryset(self, mandate_id, request_id=None):
         """
         Queryset for ModelResource to work with.
@@ -40,7 +41,9 @@ class ExportModelResource(ModelResource):
         """
         return self._meta.model.objects.all()
 
-    def export_as_generator_csv(self, queryset=None, mandate_id=None, request_id=None, *args, **kwargs):
+    def export_as_generator_csv(
+        self, queryset=None, mandate_id=None, request_id=None, *args, **kwargs
+    ):
         """
         Generator function that returns queryset in csv format.
         """
@@ -67,9 +70,11 @@ class ExportModelResource(ModelResource):
 
         self.after_export(queryset, data, *args, **kwargs)
 
-        yield '\n'
+        yield "\n"
 
-    def export_as_generator_json(self, queryset=None, mandate_id=None, request_id=None, *args, **kwargs):
+    def export_as_generator_json(
+        self, queryset=None, mandate_id=None, request_id=None, *args, **kwargs
+    ):
         """
         Generator function that returns queryset in json format.
         """
@@ -78,14 +83,14 @@ class ExportModelResource(ModelResource):
             queryset = self.get_queryset(mandate_id=mandate_id, request_id=request_id)
 
         if len(queryset) == 0:
-            yield '[]'
+            yield "[]"
             return
 
         headers = self.get_export_headers()
 
         # no need to yield headers because this is json
         # but we do yield start of list
-        yield '['
+        yield "["
 
         if isinstance(queryset, QuerySet):
             # Iterate without the queryset cache, to avoid wasting memory when
@@ -100,15 +105,16 @@ class ExportModelResource(ModelResource):
             data.append(self.export_resource(obj))
             # data.json will return a LIST of object(s) for each iteration
             # so we cut out first '[' and last ']' and add comma
-            if (index != 0):
-                yield ','
+            if index != 0:
+                yield ","
             yield data.json[1:-1]
             # note to self: should probably think of something less hacky
 
         self.after_export(queryset, data, *args, **kwargs)
 
         # close list at the end
-        yield ']'
+        yield "]"
+
 
 class CardExport(ExportModelResource):
     def get_queryset(self, mandate_id=None, request_id=None):
@@ -119,8 +125,12 @@ class CardExport(ExportModelResource):
         if mandate_id:
             try:
                 mandate = Mandate.objects.get(id=mandate_id)
-                from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(datetime.now())
-                root_organization, playing_field = mandate.query_root_organizations(to_timestamp-timedelta(minutes=1))
+                from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(
+                    datetime.now()
+                )
+                root_organization, playing_field = mandate.query_root_organizations(
+                    to_timestamp - timedelta(minutes=1)
+                )
                 return self._meta.model.objects.filter(playing_field=playing_field)
             # if mandate does not exist return empty queryset
             except:

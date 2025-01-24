@@ -6,23 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0054_auto_20211202_1415'),
+        ("parladata", "0054_auto_20211202_1415"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='motion',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='Gov ID or identifier for parser', null=True),
+            model_name="motion",
+            name="gov_id",
+            field=models.TextField(
+                blank=True, help_text="Gov ID or identifier for parser", null=True
+            ),
         ),
         migrations.AddField(
-            model_name='session',
-            name='needs_editing',
-            field=models.BooleanField(default=False, verbose_name='Session needs editing'),
+            model_name="session",
+            name="needs_editing",
+            field=models.BooleanField(
+                default=False, verbose_name="Session needs editing"
+            ),
         ),
         migrations.AlterField(
-            model_name='vote',
-            name='needs_editing',
-            field=models.BooleanField(default=False, verbose_name='Vote needs editing'),
+            model_name="vote",
+            name="needs_editing",
+            field=models.BooleanField(default=False, verbose_name="Vote needs editing"),
         ),
     ]

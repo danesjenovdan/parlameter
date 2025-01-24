@@ -6,9 +6,8 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlacards', '0006_deviationfromgroup'),
-        ('parlacards', '0006_personavgspeechespersession'),
+        ("parlacards", "0006_deviationfromgroup"),
+        ("parlacards", "0006_personavgspeechespersession"),
     ]
 
-    operations = [
-    ]
+    operations = []
