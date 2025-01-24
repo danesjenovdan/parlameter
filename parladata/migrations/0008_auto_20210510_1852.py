@@ -6,63 +6,63 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0007_auto_20210510_1837'),
+        ("parladata", "0007_auto_20210510_1837"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='personeducation',
-            old_name='person',
-            new_name='owner',
+            model_name="personeducation",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personeducationlevel',
-            old_name='person',
-            new_name='owner',
+            model_name="personeducationlevel",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personemail',
-            old_name='person',
-            new_name='owner',
+            model_name="personemail",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personhonorificprefix',
-            old_name='person',
-            new_name='owner',
+            model_name="personhonorificprefix",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personhonorificsuffix',
-            old_name='person',
-            new_name='owner',
+            model_name="personhonorificsuffix",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personname',
-            old_name='person',
-            new_name='owner',
+            model_name="personname",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personnumberofmandates',
-            old_name='person',
-            new_name='owner',
+            model_name="personnumberofmandates",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personnumberofpoints',
-            old_name='person',
-            new_name='owner',
+            model_name="personnumberofpoints",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personnumberofvoters',
-            old_name='person',
-            new_name='owner',
+            model_name="personnumberofvoters",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personpreferredpronoun',
-            old_name='person',
-            new_name='owner',
+            model_name="personpreferredpronoun",
+            old_name="person",
+            new_name="owner",
         ),
         migrations.RenameField(
-            model_name='personpreviousoccupation',
-            old_name='person',
-            new_name='owner',
+            model_name="personpreviousoccupation",
+            old_name="person",
+            new_name="owner",
         ),
     ]

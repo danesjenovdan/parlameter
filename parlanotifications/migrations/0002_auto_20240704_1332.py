@@ -6,18 +6,30 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlanotifications', '0001_initial'),
+        ("parlanotifications", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='keyword',
-            name='matching_method',
-            field=models.CharField(choices=[('WIDE', 'Wide'), ('NARROW', 'Narrow')], default='WIDE', max_length=10),
+            model_name="keyword",
+            name="matching_method",
+            field=models.CharField(
+                choices=[("WIDE", "Wide"), ("NARROW", "Narrow")],
+                default="WIDE",
+                max_length=10,
+            ),
         ),
         migrations.AlterField(
-            model_name='keyword',
-            name='notification_frequency',
-            field=models.CharField(choices=[('DAILY', 'Daily'), ('WEEKLY', 'Weekly'), ('MONTHLY', 'Monthly')], default='DAILY', max_length=10),
+            model_name="keyword",
+            name="notification_frequency",
+            field=models.CharField(
+                choices=[
+                    ("DAILY", "Daily"),
+                    ("WEEKLY", "Weekly"),
+                    ("MONTHLY", "Monthly"),
+                ],
+                default="DAILY",
+                max_length=10,
+            ),
         ),
     ]
