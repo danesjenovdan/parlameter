@@ -1,0 +1,49 @@
+{% load i18n %}
+{% load static %}
+<html>
+<body>
+    <div>
+        <h2>{% translate 'Parladata data validator' %}</h2>
+    </div>
+    <div>
+        {% if duplicated_sessions %}
+            Duplicated sessions:</br></br>
+            {% for session in duplicated_sessions %}
+                <a href="{{ base_url }}{% url 'admin:parlacards_sessiontfidf_changelist' %}?session__id__exact={{ session.id }}">{{session.name}}</a></br>
+            {% endfor %}
+            </br></br>
+        {% endif %}
+
+        {% if duplicated_votes %}
+            There are duplicated votes: </br>
+            {% for vote in duplicated_votes %}
+                <a href="{{ base_url }}{% url 'admin:parladata_vote_change' vote.id %}">{{ vote.name }}</a></br>
+            {% endfor %}
+            </br></br>
+        {% endif %}
+
+        {% if invalid_votes %}
+        There are something wrong with votes:
+        {% for vote in invalid_votes %}
+            <p>
+                <a href="{{ base_url }}{% url 'admin:parladata_vote_change' vote.id %}">{{ vote.name }}</a>
+            </p>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        {% if duplicated_speeches %}
+        There are duplicated speeches on sessions:
+        {% for speech in sessions_with_duplicated_speeches %}
+            <p>
+                <a href="{{ base_url }}{% url 'admin:parladata_session_change' speech.id %}">{{ speech.session.name }}</a>
+            </p>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+    </div>
+    <div>
+    </div>
+</body>
+</html>
