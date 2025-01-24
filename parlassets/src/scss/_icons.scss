@@ -164,3 +164,29 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+// notification card icons
+
+.parlaicon-notification-email {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/notifications/email.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-notification-interval {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/notifications/interval.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-notification-match {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/notifications/match.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-notification-trigger {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/notifications/trigger.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}

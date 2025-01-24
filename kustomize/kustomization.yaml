@@ -1,10 +1,19 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter
+namespace: parlameter-ljubljana
 resources:
+  - parladata/deployment.yaml
+  - parladata/ingress.yaml
+  - parladata/pvc.yaml
+  - parladata/service.yaml
+  - parladata/solr.yaml
+  # uncomment cronjob to enable it
+  - parladata/cronjobs/task_runner_cronjob.yaml
+
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
@@ -15,12 +24,18 @@ resources:
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
+  - name: parladata-ljubljana
+    newName: rg.fr-par.scw.cloud/djnd/parladata-ljubljana
+    newTag: 'latest'
+  - name: parlasolr-ljubljana
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-ljubljana
+    newTag: 'latest'
   - name: parlacards-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ljubljana
-    newTag: '8536583cc7b009aa3545efbcf3a108007a3e95d4'
+    newTag: 'latest'
   - name: parlasite-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ljubljana
-    newTag: '8536583cc7b009aa3545efbcf3a108007a3e95d4'
+    newTag: 'latest'
   - name: parlassets-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ljubljana
-    newTag: '8536583cc7b009aa3545efbcf3a108007a3e95d4'
+    newTag: 'latest'
