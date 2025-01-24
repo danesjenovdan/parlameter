@@ -1,0 +1,103 @@
+{% load i18n %}
+{% load static %}
+<html>
+<body>
+    <div>
+        <h2>{% translate 'New updates on Parlameter' %}</h2>
+    </div>
+    <div>
+        {% if new_motions %}
+            New motions were added during the night:</br></br>
+            <a href="{{ base_url }}{% url 'admin:parladata_motion_changelist' %}">Check new motions</a>
+            </br></br>
+        {% endif %}
+
+        {% if new_speeches %}
+            There are new TFIDF for sessions in Parlameter: </br>
+            {% for session in new_tfidf_sessions %}
+                for this sessions: {{ session.name }}: {% for org in session.organizations.all %} {{ org.name }} {% endfor %}</br>
+                <a href="{{ base_url }}{% url 'admin:parlacards_sessiontfidf_changelist' %}?session__id__exact={{ session.id }}">Check new session TFIDF</a></br>
+            {% endfor %}
+            </br></br>
+        {% endif %}
+
+        {% if new_speeches %}
+            There are new speeches in Parlameter. You can generate TFIDF in list of sessions: </br>
+            <a href="{{ base_url }}{% url 'admin:parladata_session_changelist' %}">List of sessions</a></br>
+            {% for session in sessions %}
+                <ul>
+                    <li>{{ session.name }}: {% for org in session.organizations.all %} {{ org.name }} {% endfor %}</li>
+                </ul>
+            {% endfor %}
+            </br></br>
+        {% endif %}
+
+        {% if new_voters %}
+        There are voters without memberships:
+        {% for voter in new_voters %}
+            <p>
+                <a href="{{ base_url }}{% url 'admin:parladata_person_change' voter.id %}">{{ voter }}</a>
+            </p>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        {% if new_people %}
+        There are new people:
+        {% for person in new_people %}
+            <p>
+                <a href="{{ base_url }}{% url 'admin:parladata_person_change' person.id %}">{{ person }}</a>
+            </p>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        {% if new_votes_need_editing %}
+        There are new weird votes that need to be edited:
+        {% for vote in new_votes_need_editing %}
+            <p>
+                <a href="{{ base_url }}{% url 'admin:parladata_vote_change' vote.id %}">{{ vote }}</a>
+            </p>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        {% if new_public_questions %}
+        There are public questions for parliament members:
+        {% for person in new_public_questions %}
+            <p>
+                <a href="{{ base_url }}{% url 'admin:parladata_publicpersonquestion_changelist' %}">List of public questions</a>
+            </p>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        {% if new_legislation_considered %}
+        There are consideration of legislation:
+        {% for consideration in new_legislation_considered %}
+            <p>
+                <a href="{{ base_url }}{% url 'admin:parladata_law_change' consideration.legislation.id %}"><h4>Law:</h4></a><br>
+                Number: {{ consideration.legislation.epa }}<br>
+                Text: {{ consideration.legislation.text }}<br>
+                Status {{ consideration.legislation.status }}<br><br>
+                Consideration:<br>
+                Oragnization: {{ consideration.organization.name }}<br>
+                Session: {{ consideration.session.name }}<br>
+                Time: {{ consideration.timestamp }}<br>
+                <hr>
+            </p>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        
+
+
+
+
+        
+    </div>
+    <div>
+    </div>
+</body>
+</html>

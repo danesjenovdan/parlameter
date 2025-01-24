@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<style type="text/css">
+	.end{
+		height: 10px;
+		width: 100%;
+		background-color: grey;
+		margin-bottom: 30px;
+	}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('.table').DataTable();
+		});
+	</script>
+
+</head>
+<body>
+	<h2 id="memberships">Isti čas več membershipov na osebo</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Member</th>
+				<th>Membership 1</th>
+				<th>Start</th>
+				<th> End</th>
+				<th>Membership 2</th>
+				<th>Start</th>
+				<th> End</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in data %}
+				<tr>
+					<th scope="row"></th>
+					<td>{{fail.member.id}} {{fail.member.name}}</td>
+					<td class="bg-info"><a href="https://data.parlameter.si/admin/parladata/membership/{{fail.mem1.id}}/">Edit</a></td>
+					<td class="bg-info">{{fail.mem1.start_time}}</td>
+					<td class="bg-info">{{fail.mem1.end_time}}</td>
+					<td class="bg-success"><a href="https://data.parlameter.si/admin/parladata/membership/{{fail.mem2.id}}/">Edit</a></td>
+					<td class="bg-success">{{fail.mem2.start_time}}</td>
+					<td class="bg-success">{{fail.mem2.end_time}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+	<h2 id="orgMembersDupl">Več membershipov za osebo na organizacijo</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Member</th>
+				<th>Org</th>
+				<th>Membership 1</th>
+				<th>Role</th>
+				<th>Start</th>
+				<th> End</th>
+				<th>Membership 2</th>
+				<th>Role</th>
+				<th>Start</th>
+				<th> End</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in orgs_per_person %}
+				<tr>
+					<th scope="row"></th>
+					<td>{{fail.member.id}} {{fail.member.name}}</td>
+					<td>{{fail.organization.name}}</td>
+					<td class="bg-info"><a href="https://data.parlameter.si/admin/parladata/membership/{{fail.mem1.id}}/">Edit</a></td>
+					<td class="bg-info">{{fail.mem1.role}}</td>
+					<td class="bg-info">{{fail.mem1.start_time}}</td>
+					<td class="bg-info">{{fail.mem1.end_time}}</td>
+					<td class="bg-success"><a href="https://data.parlameter.si/admin/parladata/membership/{{fail.mem2.id}}/">Edit</a></td>
+					<td class="bg-success">{{fail.mem2.role}}</td>
+					<td class="bg-success">{{fail.mem2.start_time}}</td>
+					<td class="bg-success">{{fail.mem2.end_time}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+
+	<h2 id="roles">Katere role ima PS</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Org</th>
+				<th>Roles</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in roles %}
+				<tr>
+					<th scope="row"></th>
+					<td>{{fail.org.id}} {{fail.org.name}}</td>
+					<td>{% for role in fail.roles %}{{role.role}}: {{role.count}}, {% endfor %}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+
+	<h2 id="countOfMembers">Število poslancev v obdobju</h2>
+	<table class="table">
+		<thead>
+			<tr><th>#</th>
+				<th>start_time</th>
+				<th>end_time</th>
+				<th>Št. poslancev</th>
+				<th>Dodani</th>
+				<th>Zbrisani</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in count_of_persons %}
+				<tr>
+					<th scope="row"></th>
+					<td>{{fail.count.start_date}}</td>
+					<td>{{fail.count.end_date}}</td>
+					<td>{{fail.count.count}}</td>
+					<td class="bg-success" width="33%">
+						{% for person in fail.added %}
+							<a href="https://data.parlameter.si/admin/parladata/membership/{{person.membership.id}}" style="color: white;">{{ person.name }},</a>
+						{% endfor %}
+					</td>
+					<td class="bg-danger">
+						{% for person in fail.removed %}
+							<a href="https://data.parlameter.si/admin/parladata/membership/{{person.membership.id}}" style="color: white;">{{ person.name }},</a>
+						{% endfor %}
+					</td>
+				</tr>
+			{% endfor %}
+
+				<tr>
+					Trenutni poslanci
+					<th scope="row"></th>
+					<td class="bg-warning" colspan="5">
+						{% for person in allMps %}
+							<a href="https://data.parlameter.si/admin/parladata/membership/{{person.membership.id}}" style="color: white;">{{ person.name }},</a>
+						{% endfor %}
+					</td>
+				</tr>
+		</tbody>
+	</table>
+	<div class="end"></div>
+
+	<h2 id="voters">Kdo nima vpisanih volilcev</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Person</th>
+				<th>Voters</th>
+				<th>Edit</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in voters_counts %}
+				<tr>
+					<th scope="row"></th>
+					<td>{{fail.id}} {{fail.name}}</td>
+					<td>{{fail.voters}}</td>
+					<td class="bg-success"><a href="https://data.parlameter.si/admin/parladata/person/{{fail.id}}/">Edit</a></td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+	<h2 id="votes">Kateri glasovi nimajo poslanca z membershipom</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Person</th>
+				<th>Voters</th>
+				<th>Edit</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in vote_without_membership %}
+				<tr>
+					<th scope="row"></th>
+					<td>{{fail.date}}</td>
+					<td>{{fail.person__name}}</td>
+					<td>{{fail.person__id}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+
+	<h2 id="memberships">Isti čas več postov na osebo na org</h2>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Member</th>
+				<th>Post 1</th>
+				<th>Start</th>
+				<th> End</th>
+				<th>created_at</th>
+				<th>Post 2</th>
+				<th>Start</th>
+				<th>End</th>
+				<th>created_at</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for fail in post_dupl %}
+				<tr>
+					<th scope="row"></th>
+					<td>{{fail.member.id}} {{fail.member.name}}</td>
+					<td class="bg-info"><a href="https://data.parlameter.si/admin/parladata/post/{{fail.post1.id}}/">Edit</a></td>
+					<td class="bg-info">{{fail.post1.start_time}}</td>
+					<td class="bg-info">{{fail.post1.end_time}}</td>
+					<td class="bg-info">{{fail.post1.created_at}}</td>
+					<td class="bg-success"><a href="https://data.parlameter.si/admin/parladata/post/{{fail.post2.id}}/">Edit</a></td>
+					<td class="bg-success">{{fail.post2.start_time}}</td>
+					<td class="bg-success">{{fail.post2.end_time}}</td>
+					<td class="bg-success">{{fail.post2.created_at}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="end"></div>
+</body>
+</html>
