@@ -6,14 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0057_auto_20220131_1210'),
+        ("parladata", "0057_auto_20220131_1210"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='motion',
-            name='title',
-            field=models.TextField(default='temporary title', help_text='Title of the motion'),
+            model_name="motion",
+            name="title",
+            field=models.TextField(
+                default="temporary title", help_text="Title of the motion"
+            ),
             preserve_default=False,
         ),
     ]

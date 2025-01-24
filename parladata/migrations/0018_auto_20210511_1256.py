@@ -6,54 +6,58 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0017_auto_20210511_1240'),
+        ("parladata", "0017_auto_20210511_1240"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='ballot',
-            old_name='voter',
-            new_name='personvoter',
+            model_name="ballot",
+            old_name="voter",
+            new_name="personvoter",
         ),
         migrations.RemoveField(
-            model_name='ballot',
-            name='voterparty',
+            model_name="ballot",
+            name="voterparty",
         ),
         migrations.RemoveField(
-            model_name='vote',
-            name='counter',
+            model_name="vote",
+            name="counter",
         ),
         migrations.RemoveField(
-            model_name='vote',
-            name='document_url',
+            model_name="vote",
+            name="document_url",
         ),
         migrations.RemoveField(
-            model_name='vote',
-            name='epa',
+            model_name="vote",
+            name="epa",
         ),
         migrations.RemoveField(
-            model_name='vote',
-            name='epa_url',
+            model_name="vote",
+            name="epa_url",
         ),
         migrations.RemoveField(
-            model_name='vote',
-            name='organization',
+            model_name="vote",
+            name="organization",
         ),
         migrations.RemoveField(
-            model_name='vote',
-            name='session',
+            model_name="vote",
+            name="session",
         ),
         migrations.AlterField(
-            model_name='vote',
-            name='name',
-            field=models.TextField(blank=True, help_text='Vote name/identifier', null=True),
+            model_name="vote",
+            name="name",
+            field=models.TextField(
+                blank=True, help_text="Vote name/identifier", null=True
+            ),
         ),
         migrations.AlterField(
-            model_name='vote',
-            name='result',
-            field=models.TextField(blank=True, help_text='The result of the vote', null=True),
+            model_name="vote",
+            name="result",
+            field=models.TextField(
+                blank=True, help_text="The result of the vote", null=True
+            ),
         ),
         migrations.DeleteModel(
-            name='Count',
+            name="Count",
         ),
     ]

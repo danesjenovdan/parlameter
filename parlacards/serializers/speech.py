@@ -1,10 +1,12 @@
 from rest_framework import serializers
 
+from parlacards.serializers.common import (
+    CommonCachableSerializer,
+    CommonPersonSerializer,
+    CommonSerializer,
+)
 from parlacards.serializers.session import SessionSerializer
-
-from parlacards.serializers.common import CommonSerializer, CommonCachableSerializer, CommonPersonSerializer
 from parlacards.serializers.vote import SpeechVoteSerializer
-
 from parladata.models.vote import Vote
 
 
@@ -22,7 +24,7 @@ class BaseSpeechSerializer(CommonSerializer):
     # in parlacards.serializers.vote
     def _get_context_for_speech_date(self, speech):
         new_context = dict.copy(self.context)
-        new_context['date'] = speech.start_time
+        new_context["date"] = speech.start_time
         return new_context
 
     def get_the_order(self, speech):
@@ -36,8 +38,7 @@ class BaseSpeechSerializer(CommonSerializer):
 
     def get_person(self, speech):
         serializer = CommonPersonSerializer(
-            speech.speaker,
-            context=self._get_context_for_speech_date(speech)
+            speech.speaker, context=self._get_context_for_speech_date(speech)
         )
 
         return serializer.data
@@ -55,61 +56,63 @@ class SpeechSerializer(BaseSpeechSerializer, CommonCachableSerializer):
         speech_timestamp = speech.updated_at
         person_timestamp = speech.speaker.updated_at
         try:
-            vote_timestamp = Vote.objects.filter(
-                motion__speech=speech
-            ).latest(
-                'updated_at'
-            ).updated_at
+            vote_timestamp = (
+                Vote.objects.filter(motion__speech=speech)
+                .latest("updated_at")
+                .updated_at
+            )
         except Vote.DoesNotExist:
             vote_timestamp = speech_timestamp
 
         timestamp = max([speech_timestamp, person_timestamp, vote_timestamp])
-        return f'SpeechSerializer_{speech.id}_{timestamp.isoformat()}'
+        return f"SpeechSerializer_{speech.id}_{timestamp.isoformat()}"
 
 
 class BaseSpeechWithSessionSerializer(BaseSpeechSerializer):
     def get_session(self, speech):
-        serializer = SessionSerializer(
-            speech.session,
-            context=self.context
-        )
+        serializer = SessionSerializer(speech.session, context=self.context)
         return serializer.data
 
     session = serializers.SerializerMethodField()
 
-class SpeechWithSessionSerializer(BaseSpeechWithSessionSerializer, CommonCachableSerializer):
-    '''
+
+class SpeechWithSessionSerializer(
+    BaseSpeechWithSessionSerializer, CommonCachableSerializer
+):
+    """
     Use when speeches ARE NOT shortened!
-    '''
+    """
 
     def calculate_cache_key(self, speech):
         speech_timestamp = speech.updated_at
         person_timestamp = speech.speaker.updated_at
         session_timestamp = speech.session.updated_at
         try:
-            vote_timestamp = Vote.objects.filter(
-                motion__speech=speech
-            ).latest(
-                'updated_at'
-            ).updated_at
+            vote_timestamp = (
+                Vote.objects.filter(motion__speech=speech)
+                .latest("updated_at")
+                .updated_at
+            )
         except Vote.DoesNotExist:
             vote_timestamp = speech_timestamp
 
-        timestamp = max([speech_timestamp, person_timestamp, session_timestamp, vote_timestamp])
-        return f'SpeechWithSessionSerializer_{speech.id}_{timestamp.isoformat()}'
+        timestamp = max(
+            [speech_timestamp, person_timestamp, session_timestamp, vote_timestamp]
+        )
+        return f"SpeechWithSessionSerializer_{speech.id}_{timestamp.isoformat()}"
 
 
 class ShortenedSpeechWithSessionSerializer(SpeechWithSessionSerializer):
-    '''
+    """
     Use only when speeches ARE shortened (when speeched are from solr) to get a
     unique cache key and prevent wrongly cached speeches.
 
     Otherwise its the same as `SpeechWithSessionSerializer`
-    '''
+    """
 
     def calculate_cache_key(self, speech):
         cache_key = super().calculate_cache_key(speech)
-        return f'Shortened{cache_key}'
+        return f"Shortened{cache_key}"
 
 
 class HighlightSerializer(BaseSpeechWithSessionSerializer):

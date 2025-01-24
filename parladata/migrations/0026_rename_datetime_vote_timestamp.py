@@ -6,13 +6,13 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0025_alter_session_mandate'),
+        ("parladata", "0025_alter_session_mandate"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='vote',
-            old_name='datetime',
-            new_name='timestamp',
+            model_name="vote",
+            old_name="datetime",
+            new_name="timestamp",
         ),
     ]
