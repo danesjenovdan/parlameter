@@ -6,18 +6,34 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0056_document_tags'),
+        ("parladata", "0056_document_tags"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='question',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='Unique identifier of question on government site.', null=True),
+            model_name="question",
+            name="gov_id",
+            field=models.TextField(
+                blank=True,
+                help_text="Unique identifier of question on government site.",
+                null=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='ballot',
-            name='option',
-            field=models.CharField(blank=True, choices=[('for', 'for'), ('against', 'against'), ('abstain', 'abstain'), ('absent', 'absent'), ('did not vote', 'did not vote')], help_text='Yes, no, abstain', max_length=128, null=True),
+            model_name="ballot",
+            name="option",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("for", "for"),
+                    ("against", "against"),
+                    ("abstain", "abstain"),
+                    ("absent", "absent"),
+                    ("did not vote", "did not vote"),
+                ],
+                help_text="Yes, no, abstain",
+                max_length=128,
+                null=True,
+            ),
         ),
     ]

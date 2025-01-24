@@ -6,37 +6,57 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0013_auto_20210511_1143'),
+        ("parladata", "0013_auto_20210511_1143"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='area',
-            name='tags',
+            model_name="area",
+            name="tags",
         ),
         migrations.AlterField(
-            model_name='area',
-            name='classification',
-            field=models.TextField(blank=True, help_text='Area classification (Unit/Region)', null=True, verbose_name='classification'),
+            model_name="area",
+            name="classification",
+            field=models.TextField(
+                blank=True,
+                help_text="Area classification (Unit/Region)",
+                null=True,
+                verbose_name="classification",
+            ),
         ),
         migrations.AlterField(
-            model_name='area',
-            name='identifier',
-            field=models.TextField(blank=True, help_text='Area identifier', null=True, verbose_name='identifier'),
+            model_name="area",
+            name="identifier",
+            field=models.TextField(
+                blank=True,
+                help_text="Area identifier",
+                null=True,
+                verbose_name="identifier",
+            ),
         ),
         migrations.AlterField(
-            model_name='area',
-            name='name',
-            field=models.TextField(help_text='Area name', verbose_name='name'),
+            model_name="area",
+            name="name",
+            field=models.TextField(help_text="Area name", verbose_name="name"),
         ),
         migrations.AlterField(
-            model_name='organization',
-            name='classification',
-            field=models.TextField(blank=True, help_text='An organization category, e.g. committee', null=True, verbose_name='classification'),
+            model_name="organization",
+            name="classification",
+            field=models.TextField(
+                blank=True,
+                help_text="An organization category, e.g. committee",
+                null=True,
+                verbose_name="classification",
+            ),
         ),
         migrations.AlterField(
-            model_name='personmembership',
-            name='role',
-            field=models.TextField(blank=True, help_text='The role that the person fulfills in the organization', null=True, verbose_name='role'),
+            model_name="personmembership",
+            name="role",
+            field=models.TextField(
+                blank=True,
+                help_text="The role that the person fulfills in the organization",
+                null=True,
+                verbose_name="role",
+            ),
         ),
     ]

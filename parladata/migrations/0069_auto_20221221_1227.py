@@ -6,18 +6,18 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0068_publicpersonanswer_publicpersonquestion'),
+        ("parladata", "0068_publicpersonanswer_publicpersonquestion"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='publicpersonanswer',
-            old_name='notification_set_at',
-            new_name='notification_sent_at',
+            model_name="publicpersonanswer",
+            old_name="notification_set_at",
+            new_name="notification_sent_at",
         ),
         migrations.RenameField(
-            model_name='publicpersonquestion',
-            old_name='notification_set_at',
-            new_name='notification_sent_at',
+            model_name="publicpersonquestion",
+            old_name="notification_set_at",
+            new_name="notification_sent_at",
         ),
     ]

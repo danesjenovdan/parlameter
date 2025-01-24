@@ -1,27 +1,28 @@
 from export.resources.person import (
-    VocabularySizeResource,
-    PersonNumberOfSpokenWordsResource,
     DeviationFromGroupResource,
-    PersonMonthlyVoteAttendanceResource,
-    PersonVoteAttendanceResource,
-    PersonStyleScoresResource,
     PersonAvgSpeechesPerSessionResource,
-    VotingDistanceResource,
-    PersonNumberOfQuestionsResource,
-    PersonPublicQuestionsResource,
-    PersonTfidfResource,
-    PersonMembershipResource,
     PersonBallotsResource,
+    PersonInfoCardResource,
+    PersonMembershipResource,
+    PersonMonthlyVoteAttendanceResource,
+    PersonNumberOfQuestionsResource,
+    PersonNumberOfSpokenWordsResource,
+    PersonPublicQuestionsResource,
     PersonQuestionsResource,
-    PersonInfoCardResource
+    PersonStyleScoresResource,
+    PersonTfidfResource,
+    PersonVoteAttendanceResource,
+    VocabularySizeResource,
+    VotingDistanceResource,
 )
-
 from export.views.common import ExportResourceView
+
 
 class ExportVocabularySize(ExportResourceView):
     """
     Export person's vocabulary size from database and return them as a file in one of the allowed formats (json, csv).
     """
+
     filename = "vocabulary_size"
     resource = VocabularySizeResource()
 
@@ -35,6 +36,7 @@ class ExportPersonNumberOfSpokenWords(ExportResourceView):
     """
     Export person's number of spoken words from database and return them as a file in one of the allowed formats (json, csv).
     """
+
     filename = "number_of_spoken_words"
     resource = PersonNumberOfSpokenWordsResource()
 
