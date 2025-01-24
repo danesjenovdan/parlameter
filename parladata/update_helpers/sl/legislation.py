@@ -1,4 +1,4 @@
-from parladata.models import Law, Motion, LegislationStatus
+from parladata.models import Law, LegislationStatus, Motion
 
 
 def contains_any(text, options):
@@ -7,11 +7,12 @@ def contains_any(text, options):
             return True
     return False
 
+
 def set_legislation_result():
-    in_procedure = LegislationStatus.objects.get(name='in_procedure')
-    rejected = LegislationStatus.objects.get(name='rejected')
-    enacted = LegislationStatus.objects.get(name='enacted')
-    final_vote_titles = ['predlog Akta', 'predlog Odloka']
+    in_procedure = LegislationStatus.objects.get(name="in_procedure")
+    rejected = LegislationStatus.objects.get(name="rejected")
+    enacted = LegislationStatus.objects.get(name="enacted")
+    final_vote_titles = ["predlog Akta", "predlog Odloka"]
     for legislation in Law.objects.filter(passed=None):
         motions = legislation.motions.all()
         for motion in motions:

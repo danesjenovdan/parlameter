@@ -1,9 +1,9 @@
-from rest_framework import serializers
+from datetime import datetime
+
 from django.shortcuts import get_object_or_404
+from rest_framework import serializers
 
 from parlanotifications.models import Keyword, NotificationUser
-
-from datetime import datetime
 
 
 class KeywordSerializer(serializers.ModelSerializer):

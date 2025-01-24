@@ -1,18 +1,16 @@
-from parlanotifications.models import Keyword, NotificationUser
-from parladata.models import Speech
-from parlacards.solr import shorten_highlighted_content
-from parladata.update_utils import send_email
-
-from django.db import transaction
-from django.utils.translation import gettext as _
-
-from itertools import groupby
 from datetime import datetime, timedelta
-from sentry_sdk import capture_message
-
-from django.conf import settings
+from itertools import groupby
 
 import requests
+from django.conf import settings
+from django.db import transaction
+from django.utils.translation import gettext as _
+from sentry_sdk import capture_message
+
+from parlacards.solr import shorten_highlighted_content
+from parladata.models import Speech
+from parladata.update_utils import send_email
+from parlanotifications.models import Keyword, NotificationUser
 
 
 def solr_select(
@@ -80,10 +78,7 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
         _("Parlameter notification"),
         user.email,
         "notification.html",
-        {
-            "data": users_docs,
-            "uuid": user.uuid
-        },
+        {"data": users_docs, "uuid": user.uuid},
     )
     user.notification_sent_at = sending_date
     Keyword.objects.filter(id__in=keyword_ids).update(
@@ -147,7 +142,7 @@ def send_emails():
                             "speaker_name": speech.speaker.name,
                             "session_name": speech.session.name,
                             "session_id": speech.session_id,
-                            "order": speech.order,
+                            "order": int((speech.order - 1) / 10) + 1,
                         }
                     )
                 keyword_ids.append(keyword.id)

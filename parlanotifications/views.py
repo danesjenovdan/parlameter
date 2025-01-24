@@ -1,19 +1,13 @@
-from rest_framework import viewsets, status
-from rest_framework.decorators import action
-from rest_framework.response import Response
-
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.utils.translation import gettext as _
+from rest_framework import status, viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
+from parladata.update_utils import send_email
 from parlanotifications.models import Keyword, NotificationUser
 from parlanotifications.serializers import KeywordSerializer
-from parladata.update_utils import send_email
-
-# Create your views here.
-
-# TODO
-# naredi da bo kul pošiljanje emailov
 
 
 class KeywordView(viewsets.ModelViewSet):
@@ -71,9 +65,12 @@ class KeywordView(viewsets.ModelViewSet):
         if str(instance.user.uuid) == uuid:
             instance.accepted_at = timezone.now()
             instance.save()
-            return Response({
-                "keyword": instance.keyword,
-                "email": instance.user.email,
-            }, status=status.HTTP_200_OK)
+            return Response(
+                {
+                    "keyword": instance.keyword,
+                    "email": instance.user.email,
+                },
+                status=status.HTTP_200_OK,
+            )
         else:
             return Response(status=status.HTTP_403_FORBIDDEN)
