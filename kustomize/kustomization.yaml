@@ -27,10 +27,10 @@ resources:
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
-  - name: parladata
+  - name: parladata-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parladata-slovenija
     newTag: '0909466d677abe8350a321e81e96164ae2a229e7'
-  - name: parlasolr
+  - name: parlasolr-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-slovenija
     newTag: '0909466d677abe8350a321e81e96164ae2a229e7'
   - name: parlacards-slovenija
