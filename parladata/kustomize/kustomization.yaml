@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: parlameter-ajdovscina
+resources:
+  # - statefulset.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  - pvc.yaml
+  - solr.yaml
+
+  # uncomment cronjob to enable it
+  - cronjobs/task_runner_cronjob.yaml
+images:
+  - name: parladata-ajdovscina
+    newName: rg.fr-par.scw.cloud/djnd/parladata-ajdovscina
+    newTag: '586eecad903b9c52b3d28047e9b874a0ed204ea2'
+  - name: parlasolr-ajdovscina
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-ajdovscina
+    newTag: '586eecad903b9c52b3d28047e9b874a0ed204ea2'
