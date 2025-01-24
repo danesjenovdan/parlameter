@@ -2,22 +2,38 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: parlameter-ua
 resources:
+  - parladata/deployment.yaml
+  - parladata/ingress.yaml
+  - parladata/pvc.yaml
+  - parladata/service.yaml
+  - parladata/solr.yaml
+  # uncomment cronjob to enable it
+  # - parladata/cronjobs/task_runner_cronjob.yaml
+
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
   - parlacards/service.yaml
+
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
+
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
+  - name: parladata-ua
+    newName: rg.fr-par.scw.cloud/djnd/parladata-ua
+    newTag: 'latest'
+  - name: parlasolr-ua
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-ua
+    newTag: 'latest'
   - name: parlacards-ua
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ua
-    newTag: 'bc92ea66bd4fff38af8279118a692b2dc747ef1f'
+    newTag: 'latest'
   - name: parlasite-ua
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ua
-    newTag: 'bc92ea66bd4fff38af8279118a692b2dc747ef1f'
+    newTag: 'latest'
   - name: parlassets-ua
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ua
-    newTag: 'bc92ea66bd4fff38af8279118a692b2dc747ef1f'
+    newTag: 'latest'

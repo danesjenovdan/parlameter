@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - dev
-      - tests
   pull_request:
     branches:
       - dev
@@ -11,12 +10,12 @@ jobs:
   test:
     name: Test parladata
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./parladata
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
-
-      - name: Unzip models
-        run: unzip -o tagger/model.zip -d tagger/
 
       - name: Set up PostgreSQL
         uses: harmon758/postgresql-action@v1
