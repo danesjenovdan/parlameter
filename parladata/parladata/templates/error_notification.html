@@ -1,0 +1,22 @@
+{% load i18n %}
+{% load static %}
+<html>
+<body>
+    <div>
+        <h2>{% translate 'Potencialne napake pri prasanju sentio datoteka na Parlametru.' %}</h2>
+    </div>
+    <div>
+
+        {% if errors %}
+            Pri parsanju "{{ session.name }}" smo naleteli na sumljive podatke: </br>
+            {% for error in errors %}
+                {{ error }}
+            {% endfor %}
+            </br></br>
+        {% endif %}
+
+    </div>
+    <div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: parladata-lendava
+spec:
+  selector:
+    app: parladata-lendava
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: parladata-nginx
+spec:
+  selector:
+    app: parladata-lendava
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

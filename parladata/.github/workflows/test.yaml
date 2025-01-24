@@ -1,0 +1,46 @@
+name: Test parladata
+on:
+  push:
+    branches:
+      - dev
+      - tests
+  pull_request:
+    branches:
+      - dev
+jobs:
+  test:
+    name: Test parladata
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+
+      - name: Unzip models
+        run: unzip -o tagger/model.zip -d tagger/
+
+      - name: Set up PostgreSQL
+        uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: "15"
+          postgresql db: "parladata"
+          postgresql user: postgres
+          postgresql password: postgres
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libmemcached-dev libsasl2-modules
+          python -m pip install --upgrade pip
+          echo "git+https://github.com/danesjenovdan/classla.git@upgrade-numpy" >> requirements.txt
+          pip install -r requirements.txt
+
+      - name: Test with pytest
+        env:
+          DJANGO_SETTINGS_MODULE: parladata_project.settings.k8s
+        run: |
+          pytest -n 4

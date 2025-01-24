@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: parladata-cache-votes
+spec:
+  schedule: "0 3 * * *" # 3 AM every day
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        spec:
+          containers:
+          - name: parladata-cache-votes
+            image: rg.fr-par.scw.cloud/djnd/parladata:latest
+            env:
+              - name: DJANGO_SETTINGS_MODULE
+                value: parladata_project.settings.k8s
+              - name: PYTHONUNBUFFERED
+                value: "true"
+            envFrom:
+              - secretRef:
+                  name: parladata-credentials
+            command:
+              - python
+              - manage.py
+              - cache_votes
+          restartPolicy: Never

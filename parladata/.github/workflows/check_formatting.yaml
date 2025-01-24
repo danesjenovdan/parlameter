@@ -1,0 +1,32 @@
+name: Check formatting
+on:
+  push:
+    branches:
+      - "dev"
+  pull_request:
+    branches:
+      - "k8s"
+jobs:
+  check_python_formatting:
+    name: Check Python formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install black isort
+
+      - name: Check formatting with black
+        run: |
+          black . --check --diff
+
+      - name: Check formatting with isort
+        run: |
+          isort . --check --diff --profile black

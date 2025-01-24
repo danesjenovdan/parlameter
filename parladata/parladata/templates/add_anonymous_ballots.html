@@ -1,0 +1,52 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+{% load i18n %}
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href=" {% static 'admin/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/nav_sidebar.css' %}">
+    <script src="{% static 'admin/js/nav_sidebar.js' %}" defer=""></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'static/admin/css/forms.css' %}">
+    <link href=" {% static 'admin/css/vendor/select2/select2.css' %}" type="text/css" media="screen" rel="stylesheet">
+    <link href="{% static 'admin/css/autocomplete.css' %}" type="text/css" media="screen" rel="stylesheet">
+    <script src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+    <script src="{% static 'admin/js/vendor/select2/select2.full.js' %}"></script>
+    <script src="{% static 'admin/js/jquery.init.js' %}"></script>
+    <script src="{% static 'admin/js/core.js' %}"></script>
+    <script src="{% static 'admin/js/autocomplete.js' %}"></script>
+    <script src="{% static 'admin/js/admin/RelatedObjectLookups.js' %}"></script>
+    <script src="{% static 'admin/js/actions.js' %}"></script>
+    <script src="{% static 'admin/js/urlify.js' %}"></script>
+    <script src="{% static 'admin/js/prepopulate.js' %}"></script>
+    <script src=" {% static 'admin/js/vendor/xregexp/xregexp.js' %}"></script>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}">
+    <meta name="robots" content="NONE,NOARCHIVE">
+    <style>
+        .inner{
+            margin: auto;
+            width: 40%;
+            padding: 10px;
+        }
+    </style>
+    <script>
+    </script>
+{% endblock %}
+{% block content %}
+    <div id="content-main">
+        <div class="inner">
+            <h3>{{ info }}</h3>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="confirmed" value="False" id="id_confirmed">
+                    <input type="hidden" name="edit" value="False" id="id_edit">
+                    People for: {{ form.people_for }}<br>
+                    People against: {{ form.people_against }}<br>
+                    People abstains: {{ form.people_abstain }}<br>
+                    People absent: {{ form.people_absent }}<br>
+                    People who did not vote: {{ form.people_did_not_vote }}<br>
+                    <input type="submit" value="Submit">
+                </form>
+        </div>
+    </div>
+
+{% endblock %}

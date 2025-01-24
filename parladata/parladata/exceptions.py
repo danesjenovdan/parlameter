@@ -1,0 +1,2 @@
+class NoMembershipException(Exception):
+    pass
