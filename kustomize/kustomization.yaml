@@ -24,16 +24,16 @@ resources:
 images:
   - name: parladata-ua
     newName: rg.fr-par.scw.cloud/djnd/parladata-ua
-    newTag: 'latest'
+    newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
   - name: parlasolr-ua
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-ua
-    newTag: 'latest'
+    newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
   - name: parlacards-ua
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ua
-    newTag: 'latest'
+    newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
   - name: parlasite-ua
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ua
-    newTag: 'latest'
+    newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
   - name: parlassets-ua
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ua
-    newTag: 'latest'
+    newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
