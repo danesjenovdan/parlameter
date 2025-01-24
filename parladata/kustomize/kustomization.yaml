@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: parlameter-ua
+resources:
+  # - statefulset.yaml
+  - deployment.yaml
+  - service.yaml
+  - ingress.yaml
+  - pvc.yaml
+  - solr.yaml
+
+  # uncomment cronjob to enable it
+  #- cronjobs/task_runner_cronjob.yaml
+images:
+  - name: parladata-ua
+    newName: rg.fr-par.scw.cloud/djnd/parladata-ua
+    newTag: 'f075fc1177cc15f790f4ab4db9837c1b64f59c43'
+  - name: parlasolr-ua
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-ua
+    newTag: 'f075fc1177cc15f790f4ab4db9837c1b64f59c43'
