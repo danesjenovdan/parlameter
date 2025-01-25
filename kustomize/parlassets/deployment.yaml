@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlassets
-          image: parlassets-slovenija
+          image: parlassets-slovenija-staging
           ports:
             - containerPort: 80
           resources:

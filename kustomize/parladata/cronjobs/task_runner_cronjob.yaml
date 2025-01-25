@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
           - name: parladata-task-runner
-            image: parladata-slovenija
+            image: parladata-slovenija-staging
             env:
               - name: DJANGO_SETTINGS_MODULE
                 value: parladata_project.settings.k8s
@@ -21,7 +21,7 @@ spec:
                 value: Slovenija
             envFrom:
               - secretRef:
-                  name: parladata-slovenija-credentials
+                  name: parladata-slovenija-staging-credentials
             command:
               - python
               - manage.py

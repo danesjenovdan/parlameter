@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlasite-viii
-          image: parlasite-slovenija
+          image: parlasite-slovenija-staging
           ports:
             - containerPort: 3066
           resources:

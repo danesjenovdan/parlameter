@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parladata-slovenija
+  name: parladata-slovenija-staging
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
@@ -9,24 +9,24 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parladata-slovenija.lb.djnd.si
-      secretName: parladata-slovenija-tls
+        - parladata-slovenija-staging.lb.djnd.si
+      secretName: parladata-slovenija-staging-tls
   rules:
-    - host: parladata-slovenija.lb.djnd.si
+    - host: parladata-slovenija-staging.lb.djnd.si
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: parladata-slovenija
+                name: parladata-slovenija-staging
                 port:
                   number: 8000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parladata-slovenija-nginx
+  name: parladata-slovenija-staging-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
     nginx.ingress.kubernetes.io/enable-cors: "true"
@@ -38,16 +38,16 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - files.parladata-slovenija.lb.djnd.si
-      secretName: parladata-slovenija-nginx-tls
+        - files.parladata-slovenija-staging.lb.djnd.si
+      secretName: parladata-slovenija-staging-nginx-tls
   rules:
-    - host: files.parladata-slovenija.lb.djnd.si
+    - host: files.parladata-slovenija-staging.lb.djnd.si
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: parladata-slovenija-nginx
+                name: parladata-slovenija-staging-nginx
                 port:
                   number: 80

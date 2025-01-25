@@ -1,14 +1,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter-slovenija
+namespace: parlameter-slovenija-staging
 resources:
-  - parladata/deployment.yaml
-  - parladata/ingress.yaml
-  - parladata/pvc.yaml
-  - parladata/service.yaml
-  - parladata/solr.yaml
-  # uncomment cronjob to enable it
-  - parladata/cronjobs/task_runner_cronjob.yaml
+  # - parladata/deployment.yaml
+  # - parladata/ingress.yaml
+  # - parladata/pvc.yaml
+  # - parladata/service.yaml
+  # - parladata/solr.yaml
+  # # uncomment cronjob to enable it
+  # - parladata/cronjobs/task_runner_cronjob.yaml
 
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
@@ -17,28 +17,29 @@ resources:
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
-  - parlasite-viii/deployment.yaml
-  - parlasite-viii/ingress.yaml
-  - parlasite-viii/service.yaml
-  - parlasite-vii/deployment.yaml
-  - parlasite-vii/ingress.yaml
-  - parlasite-vii/service.yaml
+  # - parlasite-viii/deployment.yaml
+  # - parlasite-viii/ingress.yaml
+  # - parlasite-viii/service.yaml
+  # - parlasite-vii/deployment.yaml
+  # - parlasite-vii/ingress.yaml
+  # - parlasite-vii/service.yaml
+
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
-  - name: parladata-slovenija
-    newName: rg.fr-par.scw.cloud/djnd/parladata-slovenija
+  # - name: parladata-slovenija-staging
+  #   newName: rg.fr-par.scw.cloud/djnd/parladata-slovenija-staging
+  #   newTag: 'd76ac75a2951fdaab91b729a8c3f61f43d018b33'
+  # - name: parlasolr-slovenija-staging
+  #   newName: rg.fr-par.scw.cloud/djnd/parlasolr-slovenija-staging
+  #   newTag: 'd76ac75a2951fdaab91b729a8c3f61f43d018b33'
+  - name: parlacards-slovenija-staging
+    newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija-staging
     newTag: 'd76ac75a2951fdaab91b729a8c3f61f43d018b33'
-  - name: parlasolr-slovenija
-    newName: rg.fr-par.scw.cloud/djnd/parlasolr-slovenija
+  - name: parlasite-slovenija-staging
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-slovenija-staging
     newTag: 'd76ac75a2951fdaab91b729a8c3f61f43d018b33'
-  - name: parlacards-slovenija
-    newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija
-    newTag: 'd76ac75a2951fdaab91b729a8c3f61f43d018b33'
-  - name: parlasite-slovenija
-    newName: rg.fr-par.scw.cloud/djnd/parlasite-slovenija
-    newTag: 'd76ac75a2951fdaab91b729a8c3f61f43d018b33'
-  - name: parlassets-slovenija
-    newName: rg.fr-par.scw.cloud/djnd/parlassets-slovenija
+  - name: parlassets-slovenija-staging
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-slovenija-staging
     newTag: 'd76ac75a2951fdaab91b729a8c3f61f43d018b33'

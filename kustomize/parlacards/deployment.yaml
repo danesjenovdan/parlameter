@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlacards
-          image: parlacards-slovenija
+          image: parlacards-slovenija-staging
           ports:
             - containerPort: 3000
           resources:
@@ -28,11 +28,11 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-slovenija.lb.djnd.si
+              value: https://parlassets-slovenija-staging.lb.djnd.si
             - name: VITE_PARLADATA_URL
               value: https://parladata-slovenija.lb.djnd.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards-slovenija.lb.djnd.si
+              value: https://parlacards-slovenija-staging.lb.djnd.si
             - name: VITE_PARLASITE_URL
               value: https://parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_05_11

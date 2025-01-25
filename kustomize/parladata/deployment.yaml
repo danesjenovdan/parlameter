@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parladata-slovenija-deployment
+  name: parladata-slovenija-staging-deployment
   labels:
-    app: parladata-slovenija
+    app: parladata-slovenija-staging
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: parladata-slovenija
+      app: parladata-slovenija-staging
   template:
     metadata:
       labels:
-        app: parladata-slovenija
+        app: parladata-slovenija-staging
     spec:
       volumes:
         - name: parladata-shared-storage
           emptyDir: {}
       initContainers:
         - name: collectstatic
-          image: parladata-slovenija
+          image: parladata-slovenija-staging
           volumeMounts:
             - name: parladata-shared-storage
               mountPath: /pvc
@@ -34,10 +34,10 @@ spec:
             - name: DJANGO_STATIC_ROOT
               value: "/pvc/static"
             - name: DJANGO_STATIC_URL_BASE
-              value: "https://files.parladata-slovenija.lb.djnd.si/static/"
+              value: "https://files.parladata-slovenija-staging.lb.djnd.si/static/"
           envFrom:
             - secretRef:
-                name: parladata-slovenija-credentials
+                name: parladata-slovenija-staging-credentials
             - secretRef:
                 name: parladata-sentry
           resources:
@@ -48,7 +48,7 @@ spec:
               memory: 200Mi
               cpu: 200m
         - name: migrate
-          image: parladata-slovenija
+          image: parladata-slovenija-staging
           command:
             - python
             - manage.py
@@ -58,7 +58,7 @@ spec:
               value: parladata_project.settings.k8s
           envFrom:
             - secretRef:
-                name: parladata-slovenija-credentials
+                name: parladata-slovenija-staging-credentials
             - secretRef:
                 name: parladata-sentry
           resources:
@@ -69,8 +69,8 @@ spec:
               memory: 200Mi
               cpu: 200m
       containers:
-        - name: parladata-slovenija
-          image: parladata-slovenija
+        - name: parladata-slovenija-staging
+          image: parladata-slovenija-staging
           volumeMounts:
             - name: parladata-shared-storage
               mountPath: /pvc
@@ -91,7 +91,7 @@ spec:
             - containerPort: 8000
           envFrom:
               - secretRef:
-                  name: parladata-slovenija-credentials
+                  name: parladata-slovenija-staging-credentials
               - secretRef:
                   name: parladata-sentry
           env:
@@ -102,7 +102,7 @@ spec:
             - name: DJANGO_STATIC_ROOT
               value: "/pvc/static"
             - name: DJANGO_STATIC_URL_BASE
-              value: "https://files.parladata-slovenija.lb.djnd.si/static/"
+              value: "https://files.parladata-slovenija-staging.lb.djnd.si/static/"
             - name: INSTALATION_NAME
               value: Slovenija
           resources:
