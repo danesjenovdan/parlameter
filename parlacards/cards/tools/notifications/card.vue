@@ -628,6 +628,11 @@ export default {
               outline: 2px solid colors.$tab-passive;
               outline-offset: 1px;
             }
+
+            &:user-invalid {
+              outline: 2px solid colors.$error;
+              outline-offset: 1px;
+            }
           }
         }
 
@@ -712,6 +717,13 @@ export default {
             &:focus-visible + label {
               &::before {
                 outline: 2px solid colors.$tab-passive;
+                outline-offset: 1px;
+              }
+            }
+
+            &:user-invalid + label {
+              &::before {
+                outline: 2px solid colors.$error;
                 outline-offset: 1px;
               }
             }
