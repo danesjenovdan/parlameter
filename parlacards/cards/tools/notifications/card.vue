@@ -240,6 +240,7 @@
 import axios from 'axios';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { toolNotificationContextUrl } from '@/_mixins/contextUrls.js';
 import PaginationLimitOffset from '@/_components/PaginationLimitOffset.vue';
 
 export default {
@@ -247,7 +248,7 @@ export default {
   components: {
     PaginationLimitOffset,
   },
-  mixins: [common],
+  mixins: [common, toolNotificationContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
@@ -442,6 +443,7 @@ export default {
 <style lang="scss" scoped>
 @use 'sass:math';
 @use 'sass:string';
+@use 'parlassets/scss/breakpoints';
 @use 'parlassets/scss/colors';
 @use 'parlassets/scss/color_classes';
 
@@ -554,6 +556,11 @@ export default {
     display: flex;
     gap: 48px;
 
+    @include breakpoints.respond-to(mobile) {
+      flex-direction: column;
+      gap: 24px;
+    }
+
     .left-col,
     .right-col {
       flex: 1;
@@ -566,6 +573,10 @@ export default {
       .icon-col {
         flex-shrink: 0;
         margin-left: 12px;
+
+        @include breakpoints.respond-to(mobile) {
+          margin-left: 0;
+        }
       }
 
       .group-title {
@@ -584,6 +595,10 @@ export default {
 
     .right-col {
       margin-right: 12px;
+
+      @include breakpoints.respond-to(mobile) {
+        margin-right: 0;
+      }
 
       .input-container {
         display: flex;
