@@ -623,11 +623,22 @@ export default {
               color: colors.$font-default;
               border-color: colors.$font-default;
             }
+
+            &:focus-visible {
+              outline: 2px solid colors.$tab-passive;
+              outline-offset: 1px;
+            }
           }
         }
 
         .form-element-checkbox.is-radio {
           input.checkbox {
+            position: absolute;
+            display: inline;
+            width: 1px;
+            height: 1px;
+            clip: rect(0, 0, 0, 0);
+
             & + label {
               display: flex;
               align-items: center;
@@ -659,11 +670,24 @@ export default {
                 border-color: colors.$tab-passive;
               }
             }
+
+            &:focus-visible + label {
+              &::before {
+                outline: 2px solid colors.$tab-passive;
+                outline-offset: 1px;
+              }
+            }
           }
         }
 
         .form-element-checkbox.is-check {
           input.checkbox {
+            position: absolute;
+            display: inline;
+            width: 1px;
+            height: 1px;
+            clip: rect(0, 0, 0, 0);
+
             & + label {
               font-size: 13px;
               font-weight: 400;
@@ -682,6 +706,13 @@ export default {
                 background-position: center center;
                 background-size: 15px;
                 background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23#{string.slice("#{colors.$tab-passive}", 2)}" viewBox="0 0 16 15"><path d="M5.97 13.536 0 7.939l2.848-2.67L5.97 8.197l7.181-6.733L16 4.134 5.97 13.536Z" /></svg>');
+              }
+            }
+
+            &:focus-visible + label {
+              &::before {
+                outline: 2px solid colors.$tab-passive;
+                outline-offset: 1px;
               }
             }
           }
@@ -716,6 +747,11 @@ export default {
       &:hover:active {
         color: colors.$white;
         background-color: colors.$tab-active;
+      }
+
+      &:focus-visible {
+        outline: 2px solid colors.$tab-passive;
+        outline-offset: 1px;
       }
     }
   }
