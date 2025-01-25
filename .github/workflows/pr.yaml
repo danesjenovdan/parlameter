@@ -53,6 +53,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into slovenija"
 
+      - name: pull-request-slovenija-staging
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "slovenija-staging"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Pulling ${{ github.ref }} into slovenija-staging"
+
       - name: pull-request-bosna
         uses: repo-sync/pull-request@v2
         with:
