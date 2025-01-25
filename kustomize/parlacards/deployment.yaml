@@ -34,7 +34,7 @@ spec:
             - name: VITE_PARLACARDS_URL
               value: https://parlacards-slovenija-staging.lb.djnd.si
             - name: VITE_PARLASITE_URL
-              value: https://parlameter.si
+              value: https://parlasite-slovenija-staging.lb.djnd.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_05_11
               value: https://viii.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2018-06-20
