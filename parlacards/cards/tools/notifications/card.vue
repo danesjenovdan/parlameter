@@ -240,6 +240,7 @@
 import axios from 'axios';
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import { toolNotificationContextUrl } from '@/_mixins/contextUrls.js';
 import PaginationLimitOffset from '@/_components/PaginationLimitOffset.vue';
 
 export default {
@@ -247,7 +248,7 @@ export default {
   components: {
     PaginationLimitOffset,
   },
-  mixins: [common],
+  mixins: [common, toolNotificationContextUrl],
   cardInfo: {
     doubleWidth: true,
   },
@@ -442,6 +443,7 @@ export default {
 <style lang="scss" scoped>
 @use 'sass:math';
 @use 'sass:string';
+@use 'parlassets/scss/breakpoints';
 @use 'parlassets/scss/colors';
 @use 'parlassets/scss/color_classes';
 
@@ -554,6 +556,11 @@ export default {
     display: flex;
     gap: 48px;
 
+    @include breakpoints.respond-to(mobile) {
+      flex-direction: column;
+      gap: 24px;
+    }
+
     .left-col,
     .right-col {
       flex: 1;
@@ -566,6 +573,10 @@ export default {
       .icon-col {
         flex-shrink: 0;
         margin-left: 12px;
+
+        @include breakpoints.respond-to(mobile) {
+          margin-left: 0;
+        }
       }
 
       .group-title {
@@ -584,6 +595,10 @@ export default {
 
     .right-col {
       margin-right: 12px;
+
+      @include breakpoints.respond-to(mobile) {
+        margin-right: 0;
+      }
 
       .input-container {
         display: flex;
@@ -608,11 +623,27 @@ export default {
               color: colors.$font-default;
               border-color: colors.$font-default;
             }
+
+            &:focus-visible {
+              outline: 2px solid colors.$tab-passive;
+              outline-offset: 1px;
+            }
+
+            &:user-invalid {
+              outline: 2px solid colors.$error;
+              outline-offset: 1px;
+            }
           }
         }
 
         .form-element-checkbox.is-radio {
           input.checkbox {
+            position: absolute;
+            display: inline;
+            width: 1px;
+            height: 1px;
+            clip: rect(0, 0, 0, 0);
+
             & + label {
               display: flex;
               align-items: center;
@@ -644,11 +675,24 @@ export default {
                 border-color: colors.$tab-passive;
               }
             }
+
+            &:focus-visible + label {
+              &::before {
+                outline: 2px solid colors.$tab-passive;
+                outline-offset: 1px;
+              }
+            }
           }
         }
 
         .form-element-checkbox.is-check {
           input.checkbox {
+            position: absolute;
+            display: inline;
+            width: 1px;
+            height: 1px;
+            clip: rect(0, 0, 0, 0);
+
             & + label {
               font-size: 13px;
               font-weight: 400;
@@ -667,6 +711,20 @@ export default {
                 background-position: center center;
                 background-size: 15px;
                 background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23#{string.slice("#{colors.$tab-passive}", 2)}" viewBox="0 0 16 15"><path d="M5.97 13.536 0 7.939l2.848-2.67L5.97 8.197l7.181-6.733L16 4.134 5.97 13.536Z" /></svg>');
+              }
+            }
+
+            &:focus-visible + label {
+              &::before {
+                outline: 2px solid colors.$tab-passive;
+                outline-offset: 1px;
+              }
+            }
+
+            &:user-invalid + label {
+              &::before {
+                outline: 2px solid colors.$error;
+                outline-offset: 1px;
               }
             }
           }
@@ -701,6 +759,11 @@ export default {
       &:hover:active {
         color: colors.$white;
         background-color: colors.$tab-active;
+      }
+
+      &:focus-visible {
+        outline: 2px solid colors.$tab-passive;
+        outline-offset: 1px;
       }
     }
   }
