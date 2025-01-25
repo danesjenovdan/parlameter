@@ -261,7 +261,7 @@ vote_types:
 tools:
   notifications: Parlametr powiadomienia
   vote-comparator: Komparator głosowań
-  discord: Analiza niezgodności
+  unity: Enotnost
   compass: Sejmowy kompas
   word-groups: Grupy słów
 frame:

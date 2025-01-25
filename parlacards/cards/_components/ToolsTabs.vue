@@ -36,8 +36,8 @@ export default {
           label: this.$t('tools.vote-comparator'),
         },
         {
-          id: 'discord',
-          label: this.$t('tools.discord'),
+          id: 'unity',
+          label: this.$t('tools.unity'),
         },
         {
           id: 'compass',

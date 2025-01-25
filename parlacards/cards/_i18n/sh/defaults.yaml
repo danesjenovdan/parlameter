@@ -261,7 +261,7 @@ vote_types:
 tools:
   notifications: Parlameter obvestila
   vote-comparator: Primerjalnik glasovanj
-  discord: Raziskovalec neenotnosti
+  unity: Enotnost
   compass: Parlamentarni kompas
   word-groups: Skupine besed
 frame:

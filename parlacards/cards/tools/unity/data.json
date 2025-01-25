@@ -1,5 +1,5 @@
 {
-  "url": "http://localhost:8000/v3/cards/tools/discord/?format=json&id=1127",
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/tools/discord/?format=json&id=1127",
   "id": 1127,
   "data": {
     "results": {

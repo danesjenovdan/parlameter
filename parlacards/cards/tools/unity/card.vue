@@ -148,12 +148,13 @@ export default {
     //   return this.allTags.filter((tag) => tag.selected).map((tag) => tag.id);
     // },
     selectedGroup() {
-      const selectedGroup = this.groups.filter((g) => g.selected).map((g) => g.id);
-      if (selectedGroup.length > 0) {
-        return selectedGroup[0];
-      } else {
-        return this.groups[0].id;
-      }
+      return 137;
+      // const selectedGroup = this.groups.filter((g) => g.selected).map((g) => g.id);
+      // if (selectedGroup.length > 0) {
+      //   return selectedGroup[0];
+      // } else {
+      //   return this.groups[0].id;
+      // }
     },
     selectedClassifications() {
       return this.allClassifications

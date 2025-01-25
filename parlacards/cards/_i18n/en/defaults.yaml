@@ -288,7 +288,7 @@ vote_types:
 tools:
   notifications: Parlameter notifications
   vote-comparator: Vote comparator
-  discord: Discord analysis
+  unity: Unity
   compass: Parliamentary compass
   word-groups: Word groups
 frame:

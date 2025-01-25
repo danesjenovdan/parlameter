@@ -282,7 +282,7 @@ vote_types:
 tools:
   notifications: Сповіщення Парламетру
   vote-comparator: Порівняння голосувань
-  discord: Аналіз розбіжностей
+  unity: Enotnost
   compass: Парламентський компас
   word-groups: Групи слів
 frame:

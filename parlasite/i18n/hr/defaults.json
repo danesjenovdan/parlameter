@@ -136,9 +136,9 @@
       "title": "Komparator glasanja",
       "text": "Komparator glasanja odgovara na pitanja poput: Kada su zastupnici SDP-a glasali isto kao i zastupnici HDZ-a?"
     },
-    "discord": {
-      "title": "Pretraživač razjedinjenosti",
-      "text": "Istražite nesložnosti unutar klubova zastupnica s obzirom na to koliko je unutar kluba bilo neslaganja u glasanju."
+    "unity": {
+      "title": "Enotnost",
+      "text": "Raziskuj enotnost v parlamentarnih skupinah glede na to, koliko strinjanja je bilo pri glasovanjih v poslanskih skupinah."
     },
     "compass": {
       "title": "Saborski kompas",

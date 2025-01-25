@@ -271,7 +271,7 @@ vote_types:
 tools:
   notifications: Parlametar obavijesti
   vote-comparator: Komparator glasanja
-  discord: Pretraživač razjedinjenosti
+  unity: Jedinstvo
   compass: Saborski kompas
   word-groups: Grupe riječi
 frame:
