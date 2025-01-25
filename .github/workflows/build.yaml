@@ -2,7 +2,7 @@ name: Build and publish Docker image
 on:
   push:
     branches:
-      - "slovenija"
+      - "slovenija-staging"
 jobs:
   push_to_registry:
     name: Build and push Docker image to registry
