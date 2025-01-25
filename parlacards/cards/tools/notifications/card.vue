@@ -624,13 +624,13 @@ export default {
               border-color: colors.$font-default;
             }
 
-            &:focus-visible {
-              outline: 2px solid colors.$tab-passive;
+            &:user-invalid {
+              outline: 2px solid colors.$error;
               outline-offset: 1px;
             }
 
-            &:user-invalid {
-              outline: 2px solid colors.$error;
+            &:focus-visible {
+              outline: 2px solid colors.$tab-passive;
               outline-offset: 1px;
             }
           }
@@ -714,16 +714,16 @@ export default {
               }
             }
 
-            &:focus-visible + label {
+            &:user-invalid + label {
               &::before {
-                outline: 2px solid colors.$tab-passive;
+                outline: 2px solid colors.$error;
                 outline-offset: 1px;
               }
             }
 
-            &:user-invalid + label {
+            &:focus-visible + label {
               &::before {
-                outline: 2px solid colors.$error;
+                outline: 2px solid colors.$tab-passive;
                 outline-offset: 1px;
               }
             }
