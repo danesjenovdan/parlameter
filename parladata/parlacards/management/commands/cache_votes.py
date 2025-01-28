@@ -12,6 +12,12 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         for vote in Vote.objects.all():
             print(f"Caching vote with id {vote.id}")
-            serializer = VoteSerializer(vote, context={"date": datetime.today(), "request_date": datetime.today()})
+            serializer = VoteSerializer(
+                vote,
+                context={
+                    "date": datetime.today(),
+                    "request_date": datetime.today(),
+                },
+            )
             # call serializer.data to actually cache everything
             serializer.data
