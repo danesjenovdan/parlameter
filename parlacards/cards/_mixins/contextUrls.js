@@ -188,3 +188,10 @@ export const agendaSessionVotesContextUrl = {
     );
   },
 };
+
+export const toolNotificationContextUrl = {
+  created() {
+    const { template, urls, siteMap: sm } = this.$root.$options.contextData;
+    template.contextUrl = `${urls.site}/${sm.landing.tools}/${sm.tools.notifications}`;
+  },
+};
