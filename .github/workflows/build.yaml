@@ -2,7 +2,7 @@ name: Build and publish Docker image
 on:
   push:
     branches:
-      - 'ua'
+      - 'ukrajina'
 jobs:
   push_to_registry:
     name: Build and push Docker image to registry
@@ -28,8 +28,8 @@ jobs:
           file: dockerfiles/parladata.Dockerfile
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parladata-ua:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parladata-ua:latest
+            rg.fr-par.scw.cloud/djnd/parladata-ukrajina:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parladata-ukrajina:latest
 
       - name: Build and push solr
         uses: docker/build-push-action@v3
@@ -38,8 +38,8 @@ jobs:
           file: dockerfiles/solr.Dockerfile
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlasolr-ua:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlasolr-ua:latest
+            rg.fr-par.scw.cloud/djnd/parlasolr-ukrajina:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasolr-ukrajina:latest
 
       - name: Build and push parlassets
         uses: docker/build-push-action@v3
@@ -51,8 +51,8 @@ jobs:
             VITE_PARLASSETS_URL=https://parlassets-ua.lb.djnd.si
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlassets-ua:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlassets-ua:latest
+            rg.fr-par.scw.cloud/djnd/parlassets-ukrajina:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlassets-ukrajina:latest
 
       - name: Build and push parlacards
         uses: docker/build-push-action@v3
@@ -64,8 +64,8 @@ jobs:
             VITE_PARLASSETS_URL=https://parlassets-ua.lb.djnd.si
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlacards-ua:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlacards-ua:latest
+            rg.fr-par.scw.cloud/djnd/parlacards-ukrajina:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlacards-ukrajina:latest
 
       - name: Build and push parlasite
         uses: docker/build-push-action@v3
@@ -74,8 +74,8 @@ jobs:
           file: dockerfiles/parlasite.Dockerfile
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlasite-ua:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlasite-ua:latest
+            rg.fr-par.scw.cloud/djnd/parlasite-ukrajina:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasite-ukrajina:latest
 
       - name: Update image versions in kustomize/kustomization.yaml
         run: |

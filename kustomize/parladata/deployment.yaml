@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parladata-ua
+  name: parladata-ukrajina
   labels:
-    app: parladata-ua
+    app: parladata-ukrajina
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parladata-ua
+      app: parladata-ukrajina
   template:
     metadata:
       labels:
-        app: parladata-ua
+        app: parladata-ukrajina
     spec:
       volumes:
         - name: parladata-shared-storage
           emptyDir: {}
       initContainers:
         - name: collectstatic
-          image: parladata-ua
+          image: parladata-ukrajina
           volumeMounts:
             - name: parladata-shared-storage
               mountPath: /pvc
@@ -48,7 +48,7 @@ spec:
               memory: 200Mi
               cpu: 200m
         - name: migrate
-          image: parladata-ua
+          image: parladata-ukrajina
           command:
             - python
             - manage.py
@@ -69,8 +69,8 @@ spec:
               memory: 200Mi
               cpu: 200m
       containers:
-        - name: parladata-ua
-          image: parladata-ua
+        - name: parladata-ukrajina
+          image: parladata-ukrajina
           volumeMounts:
             - name: parladata-shared-storage
               mountPath: /pvc

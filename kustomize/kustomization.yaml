@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter-ua
+namespace: parlameter-ukrajina
 resources:
   - parladata/deployment.yaml
   - parladata/ingress.yaml
@@ -22,18 +22,18 @@ resources:
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
-  - name: parladata-ua
-    newName: rg.fr-par.scw.cloud/djnd/parladata-ua
+  - name: parladata-ukrajina
+    newName: rg.fr-par.scw.cloud/djnd/parladata-ukrajina
     newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
-  - name: parlasolr-ua
-    newName: rg.fr-par.scw.cloud/djnd/parlasolr-ua
+  - name: parlasolr-ukrajina
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-ukrajina
     newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
-  - name: parlacards-ua
-    newName: rg.fr-par.scw.cloud/djnd/parlacards-ua
+  - name: parlacards-ukrajina
+    newName: rg.fr-par.scw.cloud/djnd/parlacards-ukrajina
     newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
-  - name: parlasite-ua
-    newName: rg.fr-par.scw.cloud/djnd/parlasite-ua
+  - name: parlasite-ukrajina
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-ukrajina
     newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'
-  - name: parlassets-ua
-    newName: rg.fr-par.scw.cloud/djnd/parlassets-ua
+  - name: parlassets-ukrajina
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-ukrajina
     newTag: '89c962ee849aa88fcf1d3a11549c30d6b587f787'

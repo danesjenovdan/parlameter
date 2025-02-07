@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlacards
-          image: parlacards-ua
+          image: parlacards-ukrajina
           ports:
             - containerPort: 3000
           resources:

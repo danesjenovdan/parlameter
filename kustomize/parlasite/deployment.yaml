@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlasite
-          image: parlasite-ua
+          image: parlasite-ukrajina
           ports:
             - containerPort: 3066
           resources:

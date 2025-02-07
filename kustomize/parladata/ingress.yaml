@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parladata-ua
+  name: parladata-ukrajina
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
     nginx.ingress.kubernetes.io/proxy-body-size: 10m
@@ -19,14 +19,14 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: parladata-ua
+                name: parladata-ukrajina
                 port:
                   number: 8000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: parladata-ua-nginx
+  name: parladata-ukrajina-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
     nginx.ingress.kubernetes.io/enable-cors: "true"
@@ -48,6 +48,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: parladata-ua-nginx
+                name: parladata-ukrajina-nginx
                 port:
                   number: 80

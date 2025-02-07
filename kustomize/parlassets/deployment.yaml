@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlassets
-          image: parlassets-ua
+          image: parlassets-ukrajina
           ports:
             - containerPort: 80
           resources:
