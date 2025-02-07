@@ -78,4 +78,5 @@ urlpatterns = [
         MandateUsageThroughTimeInAgendaItems.as_view(),
     ),
     path("tools/discord/", ToolsDiscord.as_view()),
+    path("tools/word-groups/", WordGroupsCardView.as_view()),
 ]
