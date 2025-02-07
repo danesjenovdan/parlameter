@@ -41,6 +41,10 @@ urlpatterns = [
     path("group/number-of-questions/", GroupNumberOfQuestions.as_view()),
     path("group/monthly-vote-attendance/", GroupMonthlyVoteAttendance.as_view()),
     path("group/questions/", GroupQuestions.as_view()),
+    path(
+        "group/average-number-of-speeches-per-session/",
+        GroupAvgSpeechesPerSession.as_view(),
+    ),
     path("group/vote-attendance/", GroupVoteAttendance.as_view()),
     path("group/votes/", GroupBallots.as_view()),
     path("group/most-votes-in-common/", GroupMostVotesInCommon.as_view()),

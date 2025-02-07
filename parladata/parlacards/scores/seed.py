@@ -5,6 +5,7 @@ from parlacards.scores.attendance import (
     save_sparse_people_vote_attendance_between,
 )
 from parlacards.scores.avg_number_of_speeches_per_session import (
+    save_sparse_group_avg_number_of_speeches_per_session_between,
     save_sparse_people_avg_number_of_speeches_per_session_between,
 )
 from parlacards.scores.deviation_from_group import (
@@ -68,6 +69,10 @@ def calculate_sparse_scores(playing_field):
     )
     print("Calculating average number of speeches for people...")
     save_sparse_people_avg_number_of_speeches_per_session_between(
+        playing_field, datetime_from, datetime_to
+    )
+    print("Calculating average number of speeches for groups...")
+    save_sparse_group_avg_number_of_speeches_per_session_between(
         playing_field, datetime_from, datetime_to
     )
     print("Calculating number of questions for people ...")

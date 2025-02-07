@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from parlacards.models import Quote
 from parlacards.serializers.cards import (
     DeviationFromGroupCardSerializer,
+    GroupAvgSpeechesPerSessionCardSerializer,
     GroupCardSerializer,
     GroupDeviationFromGroupCardSerializer,
     GroupDiscordCardSerializer,
@@ -18,6 +19,7 @@ from parlacards.serializers.cards import (
     GroupMostVotesInCommonCardSerializer,
     GroupNumberOfQuestionsCardSerializer,
     GroupQuestionCardSerializer,
+    GroupsCardSerializer,
     GroupSpeechesCardSerializer,
     GroupStyleScoresCardSerializer,
     GroupTfidfCardSerializer,
@@ -54,11 +56,13 @@ from parlacards.serializers.cards import (
     PersonVoteAttendanceCardSerializer,
     PublicPersonQuestionCardSerializer,
     QuoteCardSerializer,
+    RecentActivityCardSerializer,
     RootGroupBasicInfoCardSerializer,
     SearchDropdownSerializer,
     SessionAgendaItemCardSerializer,
     SessionLegislationCardSerializer,
     SessionMinutesCardSerializer,
+    SessionsCardSerializer,
     SessionSpeechesCardSerializer,
     SessionTfidfCardSerializer,
     SessionVotesCardSerializer,
@@ -68,6 +72,7 @@ from parlacards.serializers.cards import (
     StyleScoresCardSerializer,
     ToolsDiscordCardSerializer,
     VoteCardSerializer,
+    VotersCardSerializer,
 )
 from parlacards.serializers.cards.misc.sessions import SessionsCardSerializer
 from parlacards.serializers.cards.person.recent_activity import (
@@ -76,6 +81,7 @@ from parlacards.serializers.cards.person.recent_activity import (
 from parlacards.serializers.group_attendance import SessionGroupAttendanceSerializer
 from parlacards.serializers.public_question import PublicPersonQuestionSerializer
 from parlacards.serializers.quote import QuoteSerializer
+from parlacards.serializers.session import SessionSerializer
 from parlacards.serializers.speech import SpeechSerializer
 from parladata.models.agenda_item import AgendaItem
 from parladata.models.common import Mandate
@@ -405,6 +411,15 @@ class GroupQuestions(CardView):
 
     thing = Organization
     card_serializer = GroupQuestionCardSerializer
+
+
+class GroupAvgSpeechesPerSession(CardView):
+    """
+    A group's average number of speeches per session.
+    """
+
+    thing = Organization
+    card_serializer = GroupAvgSpeechesPerSessionCardSerializer
 
 
 class PersonStyleScores(CardView):
