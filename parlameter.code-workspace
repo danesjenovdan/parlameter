@@ -27,10 +27,10 @@
   },
   "settings": {
     "files.exclude": {
-      "parlacards/": true,
-      "parlassets/": true,
-      "parlasite/": true,
-      "parladata/": true,
+      // "parlacards/": true,
+      // "parlassets/": true,
+      // "parlasite/": true,
+      // "parladata/": true,
     }
   }
 }
