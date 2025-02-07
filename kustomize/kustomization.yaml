@@ -26,16 +26,16 @@ resources:
 images:
   - name: parladata-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parladata-hrastnik
-    newTag: 'b4eb3167fbcbe086092421dad5b26ee7e872953e'
+    newTag: '1d66f26b1266db37a24f45db1024af48aeb67a25'
   - name: parlasolr-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-hrastnik
-    newTag: 'b4eb3167fbcbe086092421dad5b26ee7e872953e'
+    newTag: '1d66f26b1266db37a24f45db1024af48aeb67a25'
   - name: parlacards-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlacards-hrastnik
-    newTag: 'b4eb3167fbcbe086092421dad5b26ee7e872953e'
+    newTag: '1d66f26b1266db37a24f45db1024af48aeb67a25'
   - name: parlasite-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlasite-hrastnik
-    newTag: 'b4eb3167fbcbe086092421dad5b26ee7e872953e'
+    newTag: '1d66f26b1266db37a24f45db1024af48aeb67a25'
   - name: parlassets-hrastnik
     newName: rg.fr-par.scw.cloud/djnd/parlassets-hrastnik
-    newTag: 'b4eb3167fbcbe086092421dad5b26ee7e872953e'
+    newTag: '1d66f26b1266db37a24f45db1024af48aeb67a25'
