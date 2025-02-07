@@ -39,12 +39,12 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: "Pulling ${{ github.ref }} into hrastnik"
 
-      - name: pull-request-ua
+      - name: pull-request-ukrajina
         uses: repo-sync/pull-request@v2
         with:
-          destination_branch: "ua"
+          destination_branch: "ukrajina"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_title: "Pulling ${{ github.ref }} into ua"
+          pr_title: "Pulling ${{ github.ref }} into ukrajina"
 
       - name: pull-request-slovenija
         uses: repo-sync/pull-request@v2

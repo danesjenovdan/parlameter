@@ -70,7 +70,11 @@ notification-steps:
   textsecond: >-
     Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
     teles, ti to sporočimo po e-pošti.
-- textfirst: Izberi način ujemanja
+- textfirst: >-
+    Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
+    besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
+    ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
+    zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
   firstbullet: 'natančno ujemanje'
   secondbullet: 'široko ujemanje'
 - textfirst: Kako pogosto naj ti pišemo?
