@@ -1,0 +1,3 @@
+.vscode
+
+kustomize/**/secrets*.yaml
