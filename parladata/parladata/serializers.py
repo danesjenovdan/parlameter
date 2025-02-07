@@ -15,6 +15,7 @@ class PersonSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
             "name",
+            "honorific_prefix",
             "parser_names",
             "date_of_birth",
             "image",
