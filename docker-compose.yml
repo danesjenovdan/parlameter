@@ -31,7 +31,7 @@ services:
       DRF_RECAPTCHA_SITE_KEY: ""
       DRF_RECAPTCHA_SECRET_KEY: ""
     volumes:
-      - ./:/app
+      - ./parladata:/app
 
   db:
     image: postgres:latest
