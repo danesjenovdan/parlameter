@@ -1,18 +1,10 @@
-from rest_framework import serializers
-
 from parlacards.serializers.ballot import BallotSerializer
 from parlacards.serializers.common import CommonSerializer
 from parlacards.serializers.question import QuestionSerializer
-from parlacards.serializers.session import SessionSerializer
+from parlacards.serializers.speech import RecentActivitySpeechSerializer
 from parladata.models.ballot import Ballot
 from parladata.models.question import Question
 from parladata.models.speech import Speech
-
-
-class RecentActivitySpeechSerializer(CommonSerializer):
-    speech_id = serializers.IntegerField(source="id")
-    start_time = serializers.DateTimeField()
-    session = SessionSerializer()
 
 
 class EventSerializer(CommonSerializer):
