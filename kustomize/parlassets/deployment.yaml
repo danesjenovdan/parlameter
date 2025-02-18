@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlassets
-          image: parlassets-TODO-BRANCH-NAME-HERE
+          image: parlassets-zagreb
           ports:
             - containerPort: 80
           resources:

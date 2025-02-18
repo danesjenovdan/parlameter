@@ -19,7 +19,7 @@ spec:
           emptyDir: {}
       initContainers:
         - name: collectstatic
-          image: parladata
+          image: parladata-zagreb
           volumeMounts:
             - name: parladata-shared-storage
               mountPath: /pvc
@@ -34,7 +34,7 @@ spec:
             - name: DJANGO_STATIC_ROOT
               value: "/pvc/static"
             - name: DJANGO_STATIC_URL_BASE
-              value: "https://files.parladata.lb.djnd.si/static/"
+              value: "https://files.parladata-zagreb.lb.djnd.si/static/"
           envFrom:
             - secretRef:
                 name: parladata-credentials
@@ -102,7 +102,7 @@ spec:
             - name: DJANGO_STATIC_ROOT
               value: "/pvc/static"
             - name: DJANGO_STATIC_URL_BASE
-              value: "https://files.parladata.lb.djnd.si/static/"
+              value: "https://files.parladata-zagreb.lb.djnd.si/static/"
             - name: INSTALATION_NAME
               value: default
           resources:

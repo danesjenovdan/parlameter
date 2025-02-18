@@ -2,7 +2,7 @@ name: Build and publish Docker image
 on:
   push:
     branches:
-      - 'TODO-BRANCH-NAME-HERE'
+      - 'zagreb'
 jobs:
   push_to_registry:
     name: Build and push Docker image to registry
@@ -28,8 +28,8 @@ jobs:
           file: dockerfiles/parladata.Dockerfile
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parladata-TODO-BRANCH-NAME-HERE:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parladata-TODO-BRANCH-NAME-HERE:latest
+            rg.fr-par.scw.cloud/djnd/parladata-zagreb:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parladata-zagreb:latest
 
       - name: Build and push solr
         uses: docker/build-push-action@v3
@@ -38,8 +38,8 @@ jobs:
           file: dockerfiles/solr.Dockerfile
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlasolr-TODO-BRANCH-NAME-HERE:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlasolr-TODO-BRANCH-NAME-HERE:latest
+            rg.fr-par.scw.cloud/djnd/parlasolr-zagreb:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasolr-zagreb:latest
 
       - name: Build and push parlassets
         uses: docker/build-push-action@v3
@@ -48,11 +48,11 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlassets
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+            VITE_PARLASSETS_URL=https://parlassets-zagreb.lb.djnd.si
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:latest
+            rg.fr-par.scw.cloud/djnd/parlassets-zagreb:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlassets-zagreb:latest
 
       - name: Build and push parlacards
         uses: docker/build-push-action@v3
@@ -61,11 +61,11 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlacards
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+            VITE_PARLASSETS_URL=https://parlassets-zagreb.lb.djnd.si
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:latest
+            rg.fr-par.scw.cloud/djnd/parlacards-zagreb:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlacards-zagreb:latest
 
       - name: Build and push parlasite
         uses: docker/build-push-action@v3
@@ -74,8 +74,8 @@ jobs:
           file: dockerfiles/parlasite.Dockerfile
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE:${{ github.sha }}
-            rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE:latest
+            rg.fr-par.scw.cloud/djnd/parlasite-zagreb:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parlasite-zagreb:latest
 
       - name: Update image versions in kustomize/kustomization.yaml
         run: |

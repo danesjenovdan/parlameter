@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+        - parlassets-zagreb.lb.djnd.si
       secretName: parlassets-tls
   rules:
-    - host: parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+    - host: parlassets-zagreb.lb.djnd.si
       http:
         paths:
           - path: /

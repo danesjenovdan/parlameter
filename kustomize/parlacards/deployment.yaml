@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: parlacards
-          image: parlacards-TODO-BRANCH-NAME-HERE
+          image: parlacards-zagreb
           ports:
             - containerPort: 3000
           resources:
@@ -28,12 +28,12 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+              value: https://parlassets-zagreb.lb.djnd.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata-TODO-BRANCH-NAME-HERE.lb.djnd.si/v3
+              value: https://parladata-zagreb.lb.djnd.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards-TODO-BRANCH-NAME-HERE.lb.djnd.si
+              value: https://parlacards-zagreb.lb.djnd.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite-TODO-BRANCH-NAME-HERE.lb.djnd.si
+              value: https://zagreb.parlameter.lb.djnd.si
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter

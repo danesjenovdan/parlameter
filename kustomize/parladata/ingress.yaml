@@ -9,10 +9,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parladata.lb.djnd.si
+        - parladata-zagreb.lb.djnd.si
       secretName: parladata-tls
   rules:
-    - host: parladata.lb.djnd.si
+    - host: parladata-zagreb.lb.djnd.si
       http:
         paths:
           - path: /
@@ -38,10 +38,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - files.parladata.lb.djnd.si
+        - files.parladata-zagreb.lb.djnd.si
       secretName: parladata-nginx-tls
   rules:
-    - host: files.parladata.lb.djnd.si
+    - host: files.parladata-zagreb.lb.djnd.si
       http:
         paths:
           - path: /

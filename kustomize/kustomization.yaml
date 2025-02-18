@@ -1,10 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter-TODO-BRANCH-NAME-HERE
+namespace: parlameter-zagreb
 resources:
   - parladata/deployment.yaml
   - parladata/ingress.yaml
-  - parladata/pvc.yaml
   - parladata/service.yaml
   - parladata/solr.yaml
   # uncomment cronjob to enable it
@@ -22,18 +21,18 @@ resources:
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
-  - name: parladata
-    newName: rg.fr-par.scw.cloud/djnd/parladata-TODO-BRANCH-NAME-HERE
+  - name: parladata-zagreb
+    newName: rg.fr-par.scw.cloud/djnd/parladata-zagreb
     newTag: 'latest'
-  - name: parlasolr
-    newName: rg.fr-par.scw.cloud/djnd/parlasolr-TODO-BRANCH-NAME-HERE
+  - name: parlasolr-zagreb
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-zagreb
     newTag: 'latest'
-  - name: parlacards-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE
+  - name: parlacards-zagreb
+    newName: rg.fr-par.scw.cloud/djnd/parlacards-zagreb
     newTag: 'latest'
-  - name: parlasite-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE
+  - name: parlasite-zagreb
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-zagreb
     newTag: 'latest'
-  - name: parlassets-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE
+  - name: parlassets-zagreb
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-zagreb
     newTag: 'latest'
