@@ -38,8 +38,6 @@ spec:
           envFrom:
             - secretRef:
                 name: parladata-credentials
-            - secretRef:
-                name: parladata-sentry
           resources:
             requests:
               memory: 200Mi
@@ -48,7 +46,7 @@ spec:
               memory: 200Mi
               cpu: 200m
         - name: migrate
-          image: parladata
+          image: parladata-zagreb
           command:
             - python
             - manage.py
@@ -59,8 +57,6 @@ spec:
           envFrom:
             - secretRef:
                 name: parladata-credentials
-            - secretRef:
-                name: parladata-sentry
           resources:
             requests:
               memory: 200Mi
@@ -70,9 +66,9 @@ spec:
               cpu: 200m
       containers:
         - name: parladata
-          image: parladata
+          image: parladata-zagreb
           volumeMounts:
-            - name: parladata-shared-storage
+            - name: parladata-shared-storage 
               mountPath: /pvc
           command:
             - gunicorn
@@ -92,8 +88,6 @@ spec:
           envFrom:
               - secretRef:
                   name: parladata-credentials
-              - secretRef:
-                  name: parladata-sentry
           env:
             - name: DJANGO_SETTINGS_MODULE
               value: parladata_project.settings.k8s
