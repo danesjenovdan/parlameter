@@ -1,7 +1,11 @@
 volumes:
   pgdata:
 
+
 services:
+  # ---
+  # BACKEND
+  # ---
   parladata:
     build:
       context: ./parladata
@@ -57,27 +61,36 @@ services:
     ports:
       - 8983:8983
     volumes:
-      - ./solr/parlasearch-conf:/parlasearch-conf
+      - ./parladata/solr/parlasearch-conf:/parlasearch-conf
 
+  # ---
+  # FRONTEND
+  # ---
   parlacards:
     build:
       context: .
       dockerfile: ./dockerfiles/dev.parlacards.Dockerfile
+    command: sh -c 'yarn build && yarn start'
     ports:
       - 3000:3000
     environment:
       - VITE_PARLASSETS_URL=http://localhost:8080
-      - VITE_PARLADATA_URL=http://localhost:8000/v3
+      - VITE_PARLADATA_URL=http://parladata:8000/v3
       - VITE_PARLACARDS_URL=http://localhost:3000
       - VITE_PARLASITE_URL=http://localhost:3066
       - VITE_METAIMAGES_URL=https://meta-image-generator.lb.djnd.si/parlameter
     volumes:
       - ./parlacards/build/:/app/build
       - ./parlacards/cards/:/app/cards
+      #
+      - ./parlacards/dist/:/app/dist
+      #
+      - ./parlacards/server/:/app/server
       - ./parlacards/.eslintignore:/app/.eslintignore
       - ./parlacards/.eslintrc.cjs:/app/.eslintrc.cjs
       - ./parlacards/.prettierrc.json:/app/.prettierrc.json
       - ./parlassets/:/parlassets
+
 
   parlassets:
     build:
@@ -89,6 +102,9 @@ services:
       - ./parlassets/build/:/app/build
       - ./parlassets/public/:/app/public
       - ./parlassets/src/:/app/src
+      #
+      - ./parlacards/dist/client:/app/public/assets
+      #
 
   parlasite:
     build:
@@ -97,11 +113,14 @@ services:
     ports:
       - 3066:3066
     environment:
-      - PARLASITE_LEADER_ID=1
-      - PARLASITE_ROOT_ORG_ID=1
-      - PARLASITE_MANDATE_ID=1
+      - PARLASITE_CDN_URL=http://localhost:8080
+      - PARLASITE_CARDS_URL=http://parlacards:3000
+      - PARLASITE_DATA_URL=http://localhost:8000/v3
+      - PARLASITE_LEADER_ID=0
+      - PARLASITE_ROOT_ORG_ID=1127
+      - PARLASITE_MANDATE_ID=14
       - PARLASITE_DEFAULT_CARD_DATE=
-      - PARLASITE_NEWSLETTER_SEGMENT_ID=
+      - PARLASITE_NEWSLETTER_SEGMENT_ID=2
     volumes:
       - ./parlasite/config/:/app/config
       - ./parlasite/i18n/:/app/i18n
