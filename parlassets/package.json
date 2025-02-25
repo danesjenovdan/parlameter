@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node build/build-scss.js",
     "watch": "nodemon --ext scss --exec \"yarn build\"",
-    "serve": "http-server -c-1 -p 8080",
+    "serve": "http-server --cors -c-1 -p 8080",
     "dev": "run-p watch serve"
   },
   "dependencies": {
