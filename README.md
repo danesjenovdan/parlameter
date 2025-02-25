@@ -18,18 +18,57 @@ The following components are added:
 
 ## Developing with docker-compose
 
+### 1. Start docker compose
+
 ```sh
 docker-compose up
 ```
 
 Running docker compose will:
-- start a `parlacards` dev server on port `3000`
-- serve `parlasite` on port `3066`
-- serve `parlassets` on port `8080`
+- start `postgresql`, `memcached`, and `solr`
+- start `parladata` on port `8000` (backend)
+- start `parlassets` on port `8080` (static files)
+- start `parlasite` on port `3066` (frontend)
+<!-- - start a `parlacards` dev server on port `3000` -->
 
-**If cards, static files (css, js, ...) or something doesn't load you may need to change evironment variables in docker-compose.yaml or parlasite/config/index.js with correct urls!**
+> [!NOTE]
+> This will not start `parlacards` inside docker because of some underlying issues with how it is run, you will need to run it separately!
 
-_TODO: fix parlasite to not use config and move everything to environment variables that can be changed in docker-compose and/or k8s build files. This work is currently ongoing on branch `dev-parlasite-esm`_
+**If something (other than `parlacards`) doesn't load you may need to change evironment variables in docker-compose.yaml with correct urls!**
+
+### 2. Start parlacards
+
+First open a separate terminal and go to the parlacards folder:
+```sh
+cd parlacards
+```
+
+There are two options for running `parlacards` depending on what you want to do:
+
+#### a) development
+```sh
+# start a development server (with hot reload and good dev experience, but doesnt work within parlasite)
+yarn dev
+```
+
+#### b) serving built cards that work inside parlasite
+```sh
+# build the cards
+VITE_PARLASSETS_URL=http://localhost:8080 \
+yarn build
+
+# serve the built cards
+VITE_PARLASSETS_URL=http://localhost:8080 \
+VITE_PARLACARDS_URL=http://localhost:3000 \
+VITE_PARLASITE_URL=http://localhost:3066 \
+VITE_PARLADATA_URL=http://localhost:8000/v3 \
+yarn start
+```
+
+> [!NOTE]
+> Make sure `parlacards/dist/client` folder exists before running docker compose to prevent permission issues!
+
+---
 
 ## Developing parladata
 

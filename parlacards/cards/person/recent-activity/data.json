@@ -1,442 +1,365 @@
 {
-  "id": 81,
-  "url": "http://localhost:8000/v3/cards/person/recent-activity/?id=81",
+  "id": 1381,
+  "url": "http://localhost:8000/v3/cards/person/recent-activity/?id=1381&page=5",
   "data": {
     "results": [
       {
+        "type": "speech",
+        "id": 1072819,
+        "the_order": 2608,
+        "start_time": "2025-01-16T00:00:00",
+        "session": {
+          "name": "5. sjednica",
+          "id": 1754,
+          "start_time": "2025-01-15T09:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Sabor",
+              "acronym": null,
+              "slug": "1127-sabor",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": true,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        }
+      },
+      {
+        "type": "speech",
+        "id": 1072823,
+        "the_order": 2612,
+        "start_time": "2025-01-16T00:00:00",
+        "session": {
+          "name": "5. sjednica",
+          "id": 1754,
+          "start_time": "2025-01-15T09:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Sabor",
+              "acronym": null,
+              "slug": "1127-sabor",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": true,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        }
+      },
+      {
+        "type": "speech",
+        "id": 1072827,
+        "the_order": 2616,
+        "start_time": "2025-01-16T00:00:00",
+        "session": {
+          "name": "5. sjednica",
+          "id": 1754,
+          "start_time": "2025-01-15T09:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Sabor",
+              "acronym": null,
+              "slug": "1127-sabor",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": true,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        }
+      },
+      {
+        "type": "speech",
+        "id": 1072831,
+        "the_order": 2620,
+        "start_time": "2025-01-16T00:00:00",
+        "session": {
+          "name": "5. sjednica",
+          "id": 1754,
+          "start_time": "2025-01-15T09:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Sabor",
+              "acronym": null,
+              "slug": "1127-sabor",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": true,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        }
+      },
+      {
+        "type": "speech",
+        "id": 1072839,
+        "the_order": 2628,
+        "start_time": "2025-01-16T00:00:00",
+        "session": {
+          "name": "5. sjednica",
+          "id": 1754,
+          "start_time": "2025-01-15T09:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Sabor",
+              "acronym": null,
+              "slug": "1127-sabor",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": true,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        }
+      },
+      {
+        "type": "speech",
+        "id": 1072855,
+        "the_order": 2644,
+        "start_time": "2025-01-16T00:00:00",
+        "session": {
+          "name": "5. sjednica",
+          "id": 1754,
+          "start_time": "2025-01-15T09:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Sabor",
+              "acronym": null,
+              "slug": "1127-sabor",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": true,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        }
+      },
+      {
+        "type": "speech",
+        "id": 1072861,
+        "the_order": 2650,
+        "start_time": "2025-01-16T00:00:00",
+        "session": {
+          "name": "5. sjednica",
+          "id": 1754,
+          "start_time": "2025-01-15T09:30:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Sabor",
+              "acronym": null,
+              "slug": "1127-sabor",
+              "color": "#09A2CC",
+              "classification": "root",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": true,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        }
+      },
+      {
+        "type": "ballot",
         "vote": {
           "all_votes": {
-            "for": 45,
-            "against": 40,
-            "abstain": 1,
-            "absent": 4,
+            "for": 77,
+            "against": 48,
+            "abstain": 0,
+            "absent": 25,
             "did not vote": 0
           },
           "passed": true,
-          "id": 2922,
+          "id": 136586,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o dohodnini - Glasovanje o zakonu v celoti",
-          "timestamp": "2022-03-11T15:55:53",
+          "title": "izvješće o radu vijeća za elektroničke medije i agencije za elektroničke medije za 2023. godinu - podnositelj: ravnatelj agencije za elektroničke medije i vijeća za elektroničke medije",
+          "timestamp": "2024-12-13T13:07:00",
           "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
+            "name": "4. sjednica",
+            "id": 1753,
+            "start_time": "2024-11-05T00:00:00",
+            "end_time": "2024-12-13T21:00:00",
             "organizations": [
               {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
             "has_minutes": false,
-            "has_legislation": false
+            "has_legislation": true,
+            "has_votes": true
           }
         },
-        "option": "for",
-        "type": "ballot"
+        "option": "against"
       },
       {
+        "type": "ballot",
         "vote": {
           "all_votes": {
-            "for": 20,
-            "against": 52,
-            "abstain": 14,
-            "absent": 4,
+            "for": 80,
+            "against": 3,
+            "abstain": 35,
+            "absent": 32,
             "did not vote": 0
           },
-          "passed": false,
-          "id": 2923,
+          "passed": true,
+          "id": 136585,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o dohodnini - Amandma: K 15. členu 6. 12. 2021 [Levica - Poslanska skupina Levica]",
-          "timestamp": "2022-03-11T15:42:58",
+          "title": "izvješće o provedbi deklaracije hrvatskoga sabora o položaju hrvatskog naroda u bosni i hercegovini za 2023. godinu - podnositelj: ministarstvo vanjskih i europskih poslova",
+          "timestamp": "2024-12-13T13:06:00",
           "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
+            "name": "4. sjednica",
+            "id": 1753,
+            "start_time": "2024-11-05T00:00:00",
+            "end_time": "2024-12-13T21:00:00",
             "organizations": [
               {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
             "has_minutes": false,
-            "has_legislation": false
+            "has_legislation": true,
+            "has_votes": true
           }
         },
-        "option": "against",
-        "type": "ballot"
+        "option": "abstain"
       },
       {
+        "type": "ballot",
         "vote": {
           "all_votes": {
-            "for": 20,
-            "against": 46,
-            "abstain": 20,
-            "absent": 4,
-            "did not vote": 0
-          },
-          "passed": false,
-          "id": 2924,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o dohodnini - Amandma: K 4. členu 6. 12. 2021 [Levica - Poslanska skupina Levica]",
-          "timestamp": "2022-03-11T15:42:32",
-          "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
-            "has_minutes": false,
-            "has_legislation": false
-          }
-        },
-        "option": "against",
-        "type": "ballot"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "for": 8,
-            "against": 51,
-            "abstain": 27,
-            "absent": 4,
-            "did not vote": 0
-          },
-          "passed": false,
-          "id": 2925,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o dohodnini - Amandma: K 3. členu 6. 12. 2021 [Levica - Poslanska skupina Levica]",
-          "timestamp": "2022-03-11T15:42:04",
-          "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
-            "has_minutes": false,
-            "has_legislation": false
-          }
-        },
-        "option": "against",
-        "type": "ballot"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "for": 54,
+            "for": 126,
             "against": 0,
-            "abstain": 32,
-            "absent": 4,
+            "abstain": 0,
+            "absent": 24,
             "did not vote": 0
           },
           "passed": true,
-          "id": 2926,
+          "id": 136574,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o gasilstvu - Glasovanje o zakonu v celoti",
-          "timestamp": "2022-03-11T15:41:00",
+          "title": "prijedlog odluke o imenovanju zamjenica pravobranitelja za osobe s invaliditetom - podnositelj: pravobranitelj za osobe s invaliditetom",
+          "timestamp": "2024-12-13T13:05:00",
           "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
+            "name": "4. sjednica",
+            "id": 1753,
+            "start_time": "2024-11-05T00:00:00",
+            "end_time": "2024-12-13T21:00:00",
             "organizations": [
               {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
+                "name": "Sabor",
+                "acronym": null,
+                "slug": "1127-sabor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": true,
             "has_minutes": false,
-            "has_legislation": false
+            "has_legislation": true,
+            "has_votes": true
           }
         },
-        "option": "for",
-        "type": "ballot"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "for": 78,
-            "against": 0,
-            "abstain": 5,
-            "absent": 7,
-            "did not vote": 0
-          },
-          "passed": true,
-          "id": 3441,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Sklep da besedilo predloga za tretjo obravnavo pripravi Vlada",
-          "timestamp": "2022-03-11T15:40:08",
-          "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
-            "has_minutes": false,
-            "has_legislation": false
-          }
-        },
-        "option": "for",
-        "type": "ballot"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "for": 45,
-            "against": 1,
-            "abstain": 40,
-            "absent": 4,
-            "did not vote": 0
-          },
-          "passed": true,
-          "id": 2927,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Amandma: K 67. členu 11. 03. 2022 [SDS - Poslanska skupina Slovenske demokratske stranke, NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, Konkretno - Poslanska skupina Konkretno]",
-          "timestamp": "2022-03-11T15:39:24",
-          "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
-            "has_minutes": false,
-            "has_legislation": false
-          }
-        },
-        "option": "for",
-        "type": "ballot"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "for": 3,
-            "against": 51,
-            "abstain": 29,
-            "absent": 7,
-            "did not vote": 0
-          },
-          "passed": false,
-          "id": 2928,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Amandma: K 60. členu 11. 03. 2022 [SNS - Poslanska skupina Slovenske nacionalne stranke]",
-          "timestamp": "2022-03-11T15:36:38",
-          "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
-            "has_minutes": false,
-            "has_legislation": false
-          }
-        },
-        "option": "against",
-        "type": "ballot"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "for": 23,
-            "against": 46,
-            "abstain": 17,
-            "absent": 4,
-            "did not vote": 0
-          },
-          "passed": false,
-          "id": 2929,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Amandma: K 60. členu 10. 03. 2022 [LMŠ - Poslanska skupina Liste Marjana Šarca, Levica - Poslanska skupina Levica]",
-          "timestamp": "2022-03-11T15:36:10",
-          "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
-            "has_minutes": false,
-            "has_legislation": false
-          }
-        },
-        "option": "against",
-        "type": "ballot"
-      },
-      {
-        "vote": {
-          "all_votes": {
-            "for": 46,
-            "against": 0,
-            "abstain": 38,
-            "absent": 6,
-            "did not vote": 0
-          },
-          "passed": true,
-          "id": 2930,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu - Amandma: K 58. členu 11. 03. 2022 [SDS - Poslanska skupina Slovenske demokratske stranke, NSi - Poslanska skupina Nova Slovenija - krščanski demokrati, Konkretno - Poslanska skupina Konkretno]",
-          "timestamp": "2022-03-11T15:31:22",
-          "session": {
-            "name": "98. izredna seja",
-            "id": 2280,
-            "start_time": "2022-03-11T00:00:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ",
-                "slug": "1-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "irregular",
-            "in_review": true,
-            "has_transcript": false,
-            "has_minutes": false,
-            "has_legislation": false
-          }
-        },
-        "option": "for",
-        "type": "ballot"
+        "option": "for"
       }
     ],
     "mandate": {
-      "description": "VIII",
-      "beginning": null
+      "id": 14,
+      "description": "Sabor, 11. saziv",
+      "beginning": "2024-05-15T00:00:00"
     },
     "person": {
-      "slug": "81-aleksander-rebersek",
-      "name": "Aleksander Reberšek",
+      "slug": "1381-anita-curis-krok",
+      "name": "Anita Curiš Krok",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": "he",
+      "preferred_pronoun": "she",
       "group": {
-        "name": "Nova Slovenija - Krščanski demokrati",
-        "acronym": "NSi",
-        "slug": "7-nova-slovenija-krscanski-demokrati",
-        "color": "#31A8B1",
+        "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
+        "acronym": "SDP",
+        "slug": "1009-klub-zastupnika-socijaldemokratske-partije-hrvatske",
+        "color": "#F04118",
         "classification": "pg",
-        "is_in_coalition": true
+        "is_in_coalition": false
       },
-      "image": "/media/nsi-aleksander-rebersek.jpg"
+      "image": "/media/1381.jpg"
     },
-    "count": 859,
-    "pages": 86,
-    "page": 1,
+    "count": 336,
+    "pages": 34,
+    "page": 5,
     "per_page": 10
   }
 }
