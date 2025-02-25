@@ -27,6 +27,12 @@ spec:
               memory: 400Mi
               cpu: 100m
           env:
+            - name: PARLASITE_CDN_URL
+              value: "https://cdn.ljubljana.parlameter.si"
+            - name: PARLASITE_CARDS_URL
+              value: "https://glej.ljubljana.parlameter.si"
+            - name: PARLASITE_DATA_URL
+              value: "https://data.ljubljana.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
               value: "261"
             - name: PARLASITE_ROOT_ORG_ID
