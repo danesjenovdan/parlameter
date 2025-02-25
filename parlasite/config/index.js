@@ -2,12 +2,9 @@ const config = {
   port: 3066,
   serverTimeout: 120000,
   urls: {
-    // cdn: 'http://localhost:8080',
-    // cards: 'http://localhost:7004',
-    // parladata: 'http://localhost:8000/v3',
-    cdn: 'https://cdn.10.parlametar.hr',
-    cards: 'https://gledaj.10.parlametar.hr',
-    parladata: 'https://data.10.parlametar.hr/v3',
+    cdn: process.env.PARLASITE_CDN_URL || 'http://localhost:8080',
+    cards: process.env.PARLASITE_CARDS_URL || 'http://localhost:3000',
+    parladata: process.env.PARLASITE_DATA_URL || 'http://localhost:8000/v3',
     metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
   },
   mandates: [
