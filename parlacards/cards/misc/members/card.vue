@@ -426,7 +426,7 @@ export default {
       return defaultHeaderConfig(this, {
         heading: this.cardData?.data?.mandate?.description,
         title: `${this.cardTitleOverride || this.$t('card.title')} ${
-          this.currentAnalysisData.titleSuffix
+          this.currentAnalysisData?.titleSuffix
         }`,
       });
     },
