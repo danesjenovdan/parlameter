@@ -27,6 +27,12 @@ spec:
               memory: 400Mi
               cpu: 100m
           env:
+            - name: PARLASITE_CDN_URL
+              value: "https://cdn.hrastnik.parlameter.si"
+            - name: PARLASITE_CARDS_URL
+              value: "https://glej.hrastnik.parlameter.si"
+            - name: PARLASITE_DATA_URL
+              value: "https://data.hrastnik.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
               value: "17"
             - name: PARLASITE_ROOT_ORG_ID
