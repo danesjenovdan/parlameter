@@ -10,7 +10,7 @@ from parlacards.serializers.vote import SpeechVoteSerializer
 from parladata.models.vote import Vote
 
 
-class BaseSpeechSerializer(CommonSerializer):
+class SpeechMixin:
     # Use this when context['date'] should be the date of the speech.
     #
     # This is needed when using the CommonPersonSerializer or similar to return
@@ -27,11 +27,17 @@ class BaseSpeechSerializer(CommonSerializer):
         new_context["date"] = speech.start_time
         return new_context
 
-    def get_the_order(self, speech):
+    def _get_the_order_or_id(self, speech):
         if speech.order:
             return speech.order
         return speech.id
 
+    def _get_session_data(self, speech):
+        serializer = SessionSerializer(speech.session, context=self.context)
+        return serializer.data
+
+
+class BaseSpeechSerializer(CommonSerializer, SpeechMixin):
     def get_votes(self, speech):
         votes = Vote.objects.filter(motion__speech=speech)
         return SpeechVoteSerializer(votes, many=True).data
@@ -45,7 +51,7 @@ class BaseSpeechSerializer(CommonSerializer):
 
     id = serializers.IntegerField()
     content = serializers.CharField()
-    the_order = serializers.SerializerMethodField()
+    the_order = serializers.SerializerMethodField("_get_the_order_or_id")
     person = serializers.SerializerMethodField()
     start_time = serializers.DateTimeField()
     votes = serializers.SerializerMethodField()
@@ -69,11 +75,7 @@ class SpeechSerializer(BaseSpeechSerializer, CommonCachableSerializer):
 
 
 class BaseSpeechWithSessionSerializer(BaseSpeechSerializer):
-    def get_session(self, speech):
-        serializer = SessionSerializer(speech.session, context=self.context)
-        return serializer.data
-
-    session = serializers.SerializerMethodField()
+    session = serializers.SerializerMethodField("_get_session_data")
 
 
 class SpeechWithSessionSerializer(
@@ -117,3 +119,10 @@ class ShortenedSpeechWithSessionSerializer(SpeechWithSessionSerializer):
 
 class HighlightSerializer(BaseSpeechWithSessionSerializer):
     pass
+
+
+class RecentActivitySpeechSerializer(CommonSerializer, SpeechMixin):
+    id = serializers.IntegerField()
+    the_order = serializers.SerializerMethodField("_get_the_order_or_id")
+    start_time = serializers.DateTimeField()
+    session = serializers.SerializerMethodField("_get_session_data")
