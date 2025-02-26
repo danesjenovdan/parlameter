@@ -27,6 +27,12 @@ spec:
               memory: 400Mi
               cpu: 100m
           env:
+            - name: PARLASITE_CDN_URL
+              value: "https://parlassets-zagreb.lb.djnd.si"
+            - name: PARLASITE_CARDS_URL
+              value: "https://parlacards-zagreb.lb.djnd.si"
+            - name: PARLASITE_DATA_URL
+              value: "https://parladata-zagreb.lb.djnd.si/v3"
             - name: PARLASITE_LEADER_ID
               value: "0"
             - name: PARLASITE_ROOT_ORG_ID
