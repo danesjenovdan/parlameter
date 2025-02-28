@@ -78,6 +78,7 @@ from parlacards.serializers.voting_distance import (
     VotingDistanceSerializer,
 )
 from parlacards.solr import parse_search_query_params, solr_select
+from parlacards.utils import process_months_string
 from parladata.exceptions import NoMembershipException
 from parladata.models.agenda_item import AgendaItem
 from parladata.models.ballot import Ballot
@@ -1143,14 +1144,12 @@ class ToolsUnityCardSerializer(CardSerializer):
             self.context["request_date"]
         )
 
-        self.context["organization"] = organization
-
-        playing_field_serializer = CommonOrganizationSerializer(
+        organization_serializer = CommonOrganizationSerializer(
             organization, context=self.context
         )
 
         ### groups = dz + coalition + all pgs
-        groups = [playing_field_serializer.data]
+        groups = [organization_serializer.data]
 
         coalition_organization_membership = (
             organization.organizationmemberships_children.active_at(
@@ -1176,7 +1175,7 @@ class ToolsUnityCardSerializer(CardSerializer):
         ###
 
         ### bodies = dz + all working bodies
-        bodies = [playing_field_serializer.data]
+        bodies = [organization_serializer.data]
 
         filtered_classifications = [
             c[0]
@@ -1200,17 +1199,35 @@ class ToolsUnityCardSerializer(CardSerializer):
         ### get vote scores
         vote_scores = OrganizationVoteDiscord.objects.filter(
             # organization=organization,
-            playing_field=organization,
+            # playing_field=organization,
             timestamp__range=(from_timestamp, to_timestamp),
         ).prefetch_related("vote")
         ###
 
-        ### filter vote scores by organization
-        org_id_filter = self.context.get("GET", {}).get("organization", None)
-        if Organization.objects.filter(id=org_id_filter).exists():
-            vote_scores = vote_scores.filter(organization_id=org_id_filter)
+        ### filter vote scores by group (organization)
+        group_id = self.context.get("GET", {}).get("group", None)
+        if Organization.objects.filter(id=group_id).exists():
+            vote_scores = vote_scores.filter(organization_id=group_id)
         else:
             vote_scores = vote_scores.filter(organization=organization)
+        ###
+
+        ### filter vote scores by body (playing field)
+        body_id = self.context.get("GET", {}).get("body", None)
+        if Organization.objects.filter(id=body_id).exists():
+            vote_scores = vote_scores.filter(playing_field_id=body_id)
+        else:
+            vote_scores = vote_scores.filter(playing_field=organization)
+        ###
+
+        ### filter by months
+        months_filter = self.context.get("GET", {}).get("months", None)
+        ranges = process_months_string(months_filter, min_year=from_timestamp.year)
+        if ranges:
+            Q_object = Q()
+            for range in ranges:
+                Q_object |= Q(timestamp__range=range)
+            vote_scores = vote_scores.filter(Q_object)
         ###
 
         ### filter votes by name
