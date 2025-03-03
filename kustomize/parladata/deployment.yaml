@@ -108,10 +108,10 @@ spec:
           resources:
             requests:
               memory: 400Mi
-              cpu: 100m
+              cpu: 200m
             limits:
               memory: 400Mi
-              cpu: 200m
+              cpu: 400m
         - name: parladata-nginx
           ports:
             - name: http
