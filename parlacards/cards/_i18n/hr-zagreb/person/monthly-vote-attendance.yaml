@@ -1,0 +1,10 @@
+card:
+  title: Prisutnost na glasanjima kroz vrijeme
+  info: >-
+    # Prisutnost zastupnice na glasanju na sjednicama HS-a tijekom vremena.
+
+
+    Svaki mjesec prebroje se svi glasovi zastupnice i taj broj se podijeli sa
+    zbrojem svih glasanja sa sjednica na kojima se moralo glasati taj mjesec.
+    Ako zastupnica u odabranom mjesecu nije imala mandat, prikazuje se u kolikom
+    postotku glasanja nije imala pravo glasati.
