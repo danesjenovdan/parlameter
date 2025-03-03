@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div v-if="results.previous_occupation" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-status" aria-hidden="true"></span>
         </div>
