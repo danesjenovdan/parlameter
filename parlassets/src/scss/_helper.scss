@@ -96,27 +96,27 @@ $cdn_home_icon: get-parlassets-url() + '/icons/';
 @mixin gradient($direction: 'vertical', $reverse: false) {
   $color1: colors.$gradient-first;
   $color2: colors.$gradient-second;
-  $color3: colors.$gradient-third;
+  // $color3: colors.$gradient-third;
   @if $reverse == true {
-    $color1: colors.$gradient-third;
-    $color2: colors.$gradient-second;
-    $color3: colors.$gradient-first;
+    // $color1: colors.$gradient-third;
+    $color1: colors.$gradient-second;
+    $color2: colors.$gradient-first;
   }
   @if $direction == 'vertical' {
     // TOP TO BOTTOM
     /* Created with: http://colorzilla.com/gradient-editor/ */
-    background: $color3; /* Old browsers */
-    background: -moz-linear-gradient(top, $color3 0%, $color2 50%, $color1 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, $color3 0%, $color2 50%, $color1 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, $color3 0%, $color2 50%, $color1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: $color2; /* Old browsers */
+    background: -moz-linear-gradient(top, $color2 0%, $color1 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $color2 0%, $color1 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $color2 0%, $color1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color3', endColorstr='$color1', GradientType=0); /* IE6-9 */
   } @else {
     // LEFT TO RIGHT
     /* Created with: http://colorzilla.com/gradient-editor/*/
     background: $color1; /* Old browsers */
-    background: -moz-linear-gradient(left, $color1 0%, $color2 50%, $color3 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, $color1 0%, $color2 50%, $color3 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, $color1 0%, $color2 50%, $color3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(left, $color1 0%, $color2 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $color1 0%, $color2 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, $color1 0%, $color2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$color1', endColorstr='$color3', GradientType=1); /* IE6-9 */
   }
 }

@@ -115,7 +115,7 @@ export default {
         justify-content: center;
         align-items: center;
         font-size: 12px;
-        background-color: colors.$tab-hover;
+        background-color: colors.$card-footer-button-hover-background;
         color: colors.$white;
         line-height: 1;
       }
@@ -129,7 +129,7 @@ export default {
       &.next {
         a {
           background-color: transparent;
-          color: colors.$first;
+          color: colors.$link;
           font-size: 28px;
           padding-bottom: 5px;
           font-weight: 300;
@@ -140,12 +140,12 @@ export default {
       &.active {
         a,
         a:hover {
-          background-color: colors.$tab-active;
+          background-color: colors.$card-footer-button-passive-background;
         }
       }
 
       a:hover {
-        background-color: colors.$tab-passive;
+        background-color: colors.$card-footer-button-passive-background;
         color: colors.$white;
       }
 

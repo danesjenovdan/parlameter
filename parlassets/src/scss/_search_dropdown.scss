@@ -53,7 +53,7 @@
   &-clear {
     $size: 20px;
 
-    color: colors.$first;
+    color: colors.$link;
     cursor: pointer;
     font-size: 25px;
     height: $clear-button-size;
@@ -79,7 +79,7 @@
 
   &-options {
     $normal-background: colors.$white;
-    $selected-background: colors.$first;
+    $selected-background: colors.$link;
     background: $normal-background;
     border-left: $border-width solid colors.$font-placeholder;
     border-bottom: $border-width solid colors.$font-placeholder;

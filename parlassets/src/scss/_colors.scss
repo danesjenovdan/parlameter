@@ -3,63 +3,63 @@
 /////////////////////////////
 
 // gradient
-$first: #005554;
-$second: #007a78;
-$third: #c41454;
+$first: #f0f;
+$second: #f0f;
+$third: #f0f;
 
-$gradient-first: $second;
-$gradient-second: #80bdbc;
-$gradient-third: #009cdd;
+$gradient-first: #0394CE;
+$gradient-second: #59976A;
+// $gradient-third: #f0f;
 
 // tabs
-$tab-active: $second;
-$tab-hover: rgba($second, 0.7);
-$tab-passive: $first;
+$tab-active: #005C99;
+$tab-hover: #006EB8;
+$tab-passive: #0394CE;
 
 // links
-$link: $first;
-$link-hover-background: #eff7f7;
+$link: #163d73;
+$link-hover-background: #e8ecf1;
 
 // card footer buttons
-$card-footer-button-passive-background: $first;
-$card-footer-button-hover-background: $second;
+$card-footer-button-passive-background: $link;
+$card-footer-button-hover-background: $tab-hover;
 
 // scroller
-$scroller: #eff7f7;
-$element: $first;
+$scroller: #e8ecf1;
+$element: $link;
 
 // divider
 $divider: #c8c8c8;
 
 // barcharts
-$barchart-this: $gradient-third;
-$barchart-other: $second;
-$barchart-default: $second;
+$barchart-this: #59976A;
+$barchart-other: $gradient-first;
+$barchart-default: $gradient-first;
 
 // icons
-$icon-accepted: $second;
-$icon-rejected: $third;
+$icon-accepted: #59976A;
+$icon-rejected: #731650;
 $icon-session: $third;
 $icon-transcript: $first;
-$icon-transcript-hover-background: #eff7f7;
+$icon-transcript-hover-background: #e8ecf1;
 
 
 // buttons
-$button-for: $second;
-$button-against: $third;
-$button-abstained: #009cdd;
-$button-absent: #003130;
+$button-for: #59976A;
+$button-against: #731650;
+$button-abstained: #0394CE;
+$button-absent: #163d73;
 
 // dropdown
-$dropdown-arrow: $first;
+$dropdown-arrow: $link;
 $dropdown-selected-element: #efefef;
 
 // other
 $light-background: #F1F5F7;
-$light-background-link: #900900;
+// $light-background-link: #900900;
 $tools-arrow: $second;
-$cta-passive-background: $second;
-$cta-hover-background: rgba($second, 0.7);
+$cta-passive-background: #005C99;
+$cta-hover-background: #0071BD;
 $tools-arrow: $cta-passive-background;
 $load-icon: $link;
 
@@ -84,8 +84,8 @@ $time-use-bar-active: $second;
 $time-use-bar-passive: $tab-hover;
 
 // time chart
-$time-chart-active: $third;
-$time-chart-passive: $first;
+$time-chart-active: #59976A;
+$time-chart-passive: $link;
 
 $vote-colors: (
   'for': $button-for,
@@ -120,7 +120,7 @@ $button-for-hover: rgba($button-for, 0.7);
 $button-against-hover: rgba($button-against, 0.7);
 $button-absent-hover: rgba($button-absent, 0.7);
 $button-abstained-hover: rgba($button-abstained, 0.7);
-$first-light-hover: #feefec;
+// $first-light-hover: #feefec;
 
 $option-colors-hover: (
   'for': $button-for-hover,

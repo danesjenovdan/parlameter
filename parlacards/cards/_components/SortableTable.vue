@@ -140,7 +140,7 @@ export default {
     &:not(.sort):hover span::after {
       content: '';
       border-style: solid;
-      border-color: transparent transparent colors.$first;
+      border-color: transparent transparent colors.$dropdown-arrow;
       border-width: 0 6px 7px;
       position: absolute;
       margin-left: 6px;

@@ -150,7 +150,7 @@ export default {
     font-family: 'Glyphicons Halflings';
     border: none;
     font-size: 22px;
-    color: colors.$first;
+    color: colors.$link;
     cursor: pointer;
   }
 }
