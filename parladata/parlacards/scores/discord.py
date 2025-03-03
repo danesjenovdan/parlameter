@@ -148,6 +148,8 @@ def save_organization_vote_discord(vote, playing_field, timestamp=None):
         Organization.objects.filter(id=playing_field.id)
     )
 
+    # TODO: calc for working bodies and coalition too?
+
     for party in organizations:
 
         discord = calculate_organization_vote_discord(vote, party, playing_field)
