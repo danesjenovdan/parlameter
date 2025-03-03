@@ -1,0 +1,511 @@
+card-errored: Došlo je do greške kod učitavanja kartice.
+card-in-development: Ova kartica je još u razvoju.
+under-consideration: Trenutno u proceduri
+recently-passed: Nedavno doneseni
+most-discussed: Većina reakcija
+all-legislation: Svi zakoni
+select-mps: Odaberite zastupnice
+selected-mps: 'Odabranih: {num}'
+search_placeholder: Traži
+trigger: okidač
+match: podudaranje
+interval: interval
+email: email
+notification-steps:
+- textfirst: >-
+    Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti
+    obavijest.
+  textsecond: >-
+    Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici
+    HS-a.
+- textfirst: Odaberite način podudaranja
+  firstbullet: 'točno podudaranje'
+  secondbullet: 'široko podudaranje'
+- textfirst: Koliko često želite primati obavijesti?
+  firstbullet: najviše jednom dnevno
+  secondbullet: najviše jednom tjedno
+  thirdbullet: najviše jednom mjesečno
+- textfirst: Još samo email adresa
+- textfirst: Zabilježeno!
+  textsecond: >-
+    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+    mejlu.
+- textfirst: Potrjeno!
+  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+- textfirst: Napaka!
+  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+submit: Oddaj
+confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
+comparator-text: >-
+  Zanima me, na kojim glasanjima su {same} glasali jednako, a {different}
+  različito od njih. {load}
+ignore-absent: Zanemari "odsutne" glasove
+comparator-vote-percent: '{num} filtriranih glasanja predstavlja {percent} svih glasanja.'
+tabs:
+  vote-list: Pregled glasanja
+  time-chart: Dinamika tijekom vremena
+  bar-chart: Dinamika u odnosu na MRT
+select-parties-people: Uključite čitave klubove ili dodajte pojedine zastupnice.
+empty-state-text: Za prikaz glasanja dodajte najmanje dva aktera.
+speakers: Govornice
+input-words: Unesi jednu ili više riječi odvojenih zarezom.
+empty-text: Za prikaz rezultata dodajte najmanje dvije riječi.
+wordgroups-text: 'Prikaži tko najviše spominje sljedeću grupu riječi: {words} {load}'
+show-relative: Prikaži relativni mjerni podatak
+select-working-body-placeholder: Odaberi radno tijelo
+only-abstracts: Samo po sažecima
+only-with-votes: Samo glasanjem
+icon: Ikona
+exposed: Izpostavljeno
+create-commentality: Ustvari na Commentality
+edit-info: Uredi podatke
+only-parties: Samo klubovi
+edit-memberships: Uredi članstva
+only-current: Samo trenutna
+add-member: Dodaj člana
+edit-membership: Uredi članstvo
+save-membership: Shrani članstvo
+member: Član
+add-membership: Dodaj članstvo
+only-mps: Samo zastupnice
+display-name: Ime za prikaz
+update-session: Ažuriranje sjednice
+tags: Oznake
+add-tag: Dodaj oznaku
+votes: Glasovi
+'yes': DA
+'no': NE
+copy: Kopiraj
+copied: Kopirano!
+load: Učitaj
+confirm: Potvrdi
+data-currently-unavailable: Podaci trenutno nisu dostupni.
+data-not-published:
+  link-text: Kliknite za otvaranje Sabora.
+  link-url: https://parlametar.hr/otvaranje-sabora/
+  data-not-available: >-
+    Hrvatski sabor prestao je s 18.3.2020. objavljivati kako je glasao koji
+    zastupnik i tko je bio na glasanju
+  show-of-hands: >-
+    Vaše pretraživanje nema rezultata jer Hrvatski sabor nije otvorio podatke
+    koje tražite. Želite to promijeniti?
+  parlamentary-questions: >-
+    Vaše pretraživanje nema rezultata jer Hrvatski sabor nije otvorio podatke
+    koje tražite. Želite to promijeniti?
+search: Traži
+title-search: Pretraži prema naslovu
+contents-search: Pretraži prema sadržaju govora
+working-body: Matično radno tijelo
+vote-types: Vrste glasanja
+select-placeholder: Odaberi
+selected-placeholder: 'Odabranih: {num}'
+data: Podaci
+name: Ime
+name--for-legislation: Naziv
+epa: PZ/PZE
+change: Promjena
+status: Status
+result: Rezultat
+age: Dob
+education-level: Stupanj obrazovanja
+education: Obrazovanje
+number-of-votes: Broj glasova
+number-of-points: Broj točki
+number-of-terms: Broj mandata
+previous-occupation: Prijašnji status
+district: Izborna jedinica
+birth-date: Datum rođenja
+gender: Spol
+social-media: Društvene mreže
+analysis: Analiza
+vote-passed: Prihvaćen
+vote-not-passed: Odbijen
+vote-under-consideration: U proceduri
+vote-unknown: Nepoznat
+vote-result--enacted: Donesen
+vote-result--submitted: Dostavljeno radi informiranja
+vote-result--rejected: Odbijen
+vote-result--retracted: Povučen
+vote-result--adopted: Prihvaćen
+vote-result--received: Prima se na znanje
+vote-result--in_procedure: U proceduri
+average: Prosjek
+maximum: Najviše
+coalition: koalicija
+opposition: opozicija
+vote-for: Za
+vote-against: Protiv
+vote-abstain: Suzdržana
+vote-abstain--m: Suzdržan
+vote-abstain--f: Suzdržana
+vote-abstain-plural: Suzdržani
+vote-absent: Nema
+vote-absent-plural: Nema
+vote-no-majority: Većinski glas ne postoji
+voted-for--f: Glasala ZA
+voted-for--m: Glasao ZA
+voted-for--plural: Glasali ZA
+voted-against--f: Glasala PROTIV
+voted-against--m: Glasao PROTIV
+voted-against--plural: Glasali PROTIV
+voted-abstain--f: Glasala KVORUM
+voted-abstain--m: Glasao KVORUM
+voted-abstain--plural: Glasali KVORUM
+voted-absent--f: Nije glasala o
+voted-absent--m: Nije glasao o
+voted-absent--plural: Nisu glasali o
+sort-by: Razvrstaj prema
+sort-by--inequality: Razjedinjenosti
+sort-by--date: Datumu
+filtered-to-none: Bez rezultata
+mps: Zastupnice
+party: Klubovi
+parties: Klubovi
+time-period: Vremensko razdoblje
+session-type: Vrsta sjednice
+no-results: Bez rezultata.
+no-speeches: Bez govora.
+no-abstract: Za ovaj zakon, na žalost, nemamo sažetka.
+present--f: Prisutna
+present--m: Prisutan
+present--plural: Prisutni
+absent--f: Odsutna
+absent--m: Odsutan
+absent--plural: Odsutni
+no-term: Bez mandata
+no-data: Bez podataka
+inequality: Nejedinstvenost
+everybody: Svi
+show: Prikaži
+full-speech: Cijeli govor
+session-processing: Sjednica je u tijeku.
+organization: Tijelo
+start: Početak
+date: Datum
+start-date: Datum početka
+end-date: Datum završetka
+legislation: Zakonodavstvo
+laws: Zakoni
+acts: Akti
+votings: Glasanja
+save: Spremi
+save-all: Spremi sve
+saved: Spremljeno
+generate: Kreiraj
+edit-abstract: Uredi sažetak
+abstract: Sažetak
+acronym: Skraćenica
+classification: Klasifikacija
+info:
+  title: Info
+  methodology: METODOLOGIJA
+share:
+  title: Dijelovi
+  direct-link: Izravna poveznica na karticu
+embed:
+  title: Ugradi
+  always-refresh: Podaci se uvijek moraju osvježiti
+previous:
+  title: Prethodne verzije
+export:
+  title: Izvoz podataka
+  csv: Izvoz u .csv
+  json: Izvoz u .json
+membership-list:
+  no-memberships: Bez članstva.
+style-scores:
+  elevated-vocabulary: Uzvišeni rječnik
+  simple-vocabulary: Jednostavan rječnik
+  excessive-vocabulary: Ekscesni rječnik
+question:
+  asked--m: Postavio je pitanje {title} na koje mora odgovoriti {recipient}.
+  asked--f: Postavila je pitanje {title} na koje mora odgovoriti {recipient}.
+  asked--plural: Postavio je pitanje {title} na koje mora odgovoriti {recipient}.
+  asked--with-name--m: '{name} je postavio pitanje {title} na koje mora odgovoriti
+    {recipient}.'
+  asked--with-name--f: '{name} je postavila pitanje {title} na koje mora odgovoriti
+    {recipient}.'
+  asked--with-name--plural: '{name} je postavio pitanje {title} na koje mora odgovoriti
+    {recipient}.'
+event:
+  ballot--for--m: Glasao je ZA {title}
+  ballot--for--f: Glasala je ZA {title}
+  ballot--against--m: Glasao je PROTIV {title}
+  ballot--against--f: Glasala je PROTIV {title}
+  ballot--absent--m: Nije glasao za {title}
+  ballot--absent--f: NIJE glasala za {title}
+  ballot--abstain--m: SUZDRŽAO se od glasanja o {title}
+  ballot--abstain--f: SUZDRŽALA se od glasanja o {title}
+  speech--m: 'Govorio na: {session}'
+  speech--f: 'Govorila na: {session}'
+  show-answer: Prikaži odgovor
+  hide-answer: Skrij odgovor
+months:
+- siječanj
+- veljača
+- ožujak
+- travanj
+- svibanj
+- lipanj
+- srpanj
+- kolovoz
+- rujan
+- listopad
+- studeni
+- prosinac
+vote_types:
+  agenda: dnevni red
+  whole_law: konačni prijedlog zakona
+  amendment: amandman
+  no_confidence: interpelacija
+  record_conclusion: prvo čitanje
+  conclusion_proposal: prijedlog zakona
+  ratification: zakon o ratifikaciji
+  naming: imenovanje
+  call_proposal: za raspisivanje
+  recommendation: preporuka
+  report: izvješće
+  procedural_proposal: proceduralni predlog
+  personal_property_decree: odlok o načrtu ravnanja s stvarnim premoženjem
+  other: ostalo
+tools:
+  notifications: Parlametar obavijesti
+  vote-comparator: Komparator glasanja
+  discord: Pretraživač razjedinjenosti
+  compass: Saborski kompas
+  word-groups: Grupe riječi
+frame:
+  show-in-context: Pokaži karticu u kontekstu web stranice parlametar.hr
+ogText: >-
+  Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih
+  nastupa, olakšava praćenje rada Hrvatskog sabora.
+committees: Radna tijela
+councils: Radna tijela
+commissions: Radna tijela
+delegations: Druga članstva
+friendship_groups: Druga radna tijela
+investigative_comissions: Ostala tijela
+elected-to-district: 'Br. glasova: {numVotes}, {district}'
+elected-to-district--m: Osvojio {numVotes} glasova {district}
+elected-to-district--f: Osvojila {numVotes} glasova {district}
+elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
+elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
+age--years: '{age} godina'
+no-social-media: nije na društvenim mrežama.
+select-district-placeholder: Izborna jedinica
+select-parties-placeholder: Klub
+all-parties: svi klubovi
+all-voting-districts: sve izborne jedinice
+missing-district: izborna jedinica nije unijeta
+voting-district: izborna jedinica
+sort-by--name: abecedi
+sort-by--district: izbornoj jedinici
+sort-by--party: klubu
+sort-by--analysis: rezultatu analize {analysis}
+sort-by--change: trenutačni promjeni u rezultatu analize {analysis}
+sort-by--age: starosti
+sort-by--education: stupanju obrazovanja
+sort-by--terms: broju mandata
+analysis-texts:
+  demographics:
+    label: Demografija
+  presence_votes:
+    label: Prisutnost na glasanjima
+    titleSuffix: ' prema prisutnosti na glasanjima'
+    explanation: >-
+      Broj glasanja kada je zastupnica bila prisutna podijeli se s brojem svih
+      glasanja i normalizira (min 1 - max 100).
+  number_of_questions:
+    label: Br. zastupničkih pitanja i inicijativa
+    titleSuffix: ' prema br. zastupničkih pitanja i inicijativa'
+    explanation: >-
+      Broj zastupničkih pitanja i inicijativa koje je zastupnica postavila u
+      jednom sazivu HS u odnosu na prosječnu i maksimalnu vrijednost.
+  speeches_per_session:
+    label: Br. govora na sjednici
+    titleSuffix: ' prema br. govora na sjednici'
+    explanation: >-
+      Prebroje se govori odabrane zastupnice i broj se podijeli s brojem
+      sjednica na kojima je zastupnica govorila. Broj svih govora najprije se
+      dijeli s brojem zastupnica, a zatim s brojem svih sjednica (na kojima se
+      govorilo). Individualni rezultat uspoređuje se s prosjekom.
+  spoken_words:
+    label: Br. izgovorenih riječi
+    titleSuffix: ' prema br. izgovorenih riječi'
+    explanation: >-
+      Broj riječi koje je zastupnica izgovorila u svim svojim dosadašnjim
+      govorima u HS.
+  mismatch_of_pg:
+    label: Neslaganje s klubom
+    titleSuffix: ' prema neslaganju s klubom'
+    explanation: Odstupanje od većinskog glasa kluba na glasanjima u HS.
+all-votes: sva glasanja
+all-working-bodies: sva matična radna tijela
+everyone: Svi
+parliament: Sabor
+analysis-not-available: Ova analiza nije dostupna.
+party-leader--m: Predsjednik kluba
+party-leader--f: Predsjednica kluba
+deputy-leader--m: Potpredsjednik
+deputy-leader--f: Potpredsjednica
+leader--m: Voditelj
+leader--f: Voditeljica
+president--m: Predsjednik
+president--f: Predsjednica
+deputy--m: Potpredsjednik
+deputy--f: Potpredsjednica
+member--m: Član
+member--f: Članica
+number-of-seats: 'Broj zastupničkih mjesta:'
+contact: 'Kontakt:'
+mp: Zastupnica
+addressee: Primateljica
+analysis-texts--party:
+  seat_count:
+    label: Broj mjesta
+    titleSuffix: ' prema broju mjesta'
+    explanation: >-
+      Broj mjesta svakog kluba izračunava se na način da se prebroje sve njihove
+      trenutno aktivne članice.
+  presence_sessions:
+    label: Prisutnost na sjednicama
+    titleSuffix: ' prema rezultatima analize prisutnosti na sjednicama'
+    explanation: >-
+      Prebroje se sve sjednice i za svaku zastupnicu kluba je li na pojedinoj
+      sjednici bar jednom glasala. Ako jest, smatra se da je bila prisutna toj
+      sjednici. Zbroj svih prisutnih zastupnica kluba na sjednicama HS-a
+      podijeli se brojem svih zastupnica u klubu, a dobiveni rezultat podijeli
+      se brojem sjednica i normalizira (min 1 - max 100).
+  vote_attendance:
+    label: Prisutnost na glasanjima
+    titleSuffix: ' prema rezultatima analize prisutnosti na glasanjima'
+    explanation: >-
+      Prebroje se sva glasanja, a zatim koliko je zastupnica iz kluba bilo
+      prisutno na pojedinom glasanju. Zbroj svih predanih glasova zastupnica
+      istog kluba podijeli se s brojem zastupnica u klubu, a dobiveni rezultat
+      podijeli se brojem glasanja i normalizira (min 1 - max 100).
+  number_of_questions:
+    label: Br. zastupničkih pitanja i inicijativa
+    titleSuffix: ' prema rezultatima analize o br. zastupničkih pitanja i inicijativa'
+    explanation: >-
+      Prebroje se sva pitanja i inicijative zastupnica odabranog kluba u jednom
+      sazivu HS-a. Podaci se preuzimaju s web stranice sabor. hr.
+  number_of_amendments:
+    label: Br. podnesenih amandmana
+    titleSuffix: Prema rezultatima analize br. podnesenih amandmana
+    explanation: ''
+  intra_disunion:
+    label: Razjedinjenost glasanja
+    titleSuffix: ' prema razjedinjenosti glasanja'
+    explanation: ''
+  vocabulary_size:
+    label: Raznolikost vokabulara
+    titleSuffix: ' prema rezultatima analize raznolikosti vokabulara'
+    explanation: >-
+      Iz svih govora zastupnice prebroje se jedinstvene riječi i broj svih
+      izgovorenih riječi. Potom se prebroji koliko se puta svaka jedinstvena
+      riječ pojavljuje. Jedinstvene riječi podjele se u kategorije na način da
+      su u istom skupu riječi koje se ponavljaju jednom, dvaput, triput itd. Na
+      koncu se izračuna koeficijent gdje je broj svih jedinstvenih izgovorenih
+      riječi iznad razlomačke crte, a ispod je broj riječi koje se ponavljaju s
+      određenom učestalošću (jednom, dvaput, triput …) i pomnoži se s brojem
+      ponavljanja na kvadrat (jedan na kvadrat, dva na kvadrat, tri na kvadrat
+      …). Rečenica „Danas je novi dan i danas je dan za Parlametar“ daje
+      rezultat 7/ ((3*2^2) + (4*1^2)) = 0,4375<br><br>Za svaki klub zbrajaju se
+      rezultati zastupnica i dijele s brojem zastupnica u klubu. Pojedinačni
+      rezultati podijele se s ukupnim zbrojem i normaliziraju (min 1 - max 100).
+  privzdignjeno:
+    label: Uzvišeni rječnik
+    titleSuffix: ' prema rezultatima analize uzvišenog rječnika'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Privzdignjeno besedje<br>Kvalifikatorji iz
+      SSKJ<br>evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.),
+      knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>Kvalifikatorji
+      iz SNB<br>/<br><br>Za vsako poslansko skupino seštejemo rezultate
+      poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
+      s skupnim seštevkom in normaliziramo (min 1 - max 100).
+  preprosto:
+    label: Preprosto besedje
+    titleSuffix: ' glede na rezultate analize s preprostim besedjem'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Preprosto besedje<br>Kvalifikatorji iz SSKJ<br>narečno
+      (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>Kvalifikatorji
+      iz SNB<br>pogovorno (pog.)<br><br>Za vsako poslansko skupino seštejemo
+      rezultate poslancev in delimo s številom poslancev v njej. Posamezne
+      seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).
+  problematicno:
+    label: Ekscesno besedje
+    titleSuffix: ' glede na rezultate analize z ekscesnim besedjem'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov poslanskih govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Ekscesno besedje<br>Kvalifikatorji iz SSKJ
+      <br>vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično
+      (iron.), otroško (otr.) <br>Kvalifikatorji iz SNB<br>slabšalno (slabš.),
+      vulgarno (vulg.)<br><br>Za vsako poslansko skupino seštejemo rezultate
+      poslancev in delimo s številom poslancev v njej. Posamezne seštevke delimo
+      s skupnim seštevkom in normaliziramo (min 1 - max 100).
+accepted: doneseni
+rejected: odbijen
+gov-side: Vlada
+summary: Sažetak
+all-mps: Sve zastupnice
+whole-term: Cijeli mandat
+last-year: Posljednjih godinu dana
+limited-to-last-five: ', pregled je ograničen na samo prvih pet sjednica'
+just-last-five: Samo posljednjih 5
+sort-by--updated: datumu zadnje izmjene podataka o sjednici
+sort-by--workingBody: nazivu tijela
+title: Naslov
+other-procedures: Drugi postupci
+organization-classifications:
+  root: Sabor
+  committee: Saborski odbori
+  other: Other working bodies
+  commission: Commission
+legislation-classifications:
+  act: Akt
+  decree: Uredba
+  law: Zakon
+newsletter-signup-title: Registracija za Parlametar bilten!
+newsletter-signup-description: Želite li primati podatke o radu Sabora pravovremeno
+  i pregledno, predbilježite se na Parlametar bilten i stizat će vam svaki tjedan.
+newsletter-signup-input-placeholder: Email
+newsletter-signup-checkbox-text: Vaši podaci čuvaju se dok traje potreba za njihovim
+  korištenjem u skladu sa svrhom za koju je dana privola. Ukoliko s nama podijelite
+  vašu e-mail adresu za potrebe slanja biltena, ona se čuva dok god Gong nudi uslugu
+  slanja biltena, osim u slučaju otkazivanja pretplate – u tom slučaju vaša adresa
+  se uklanja iz baze. Vašim podacima mogu pristupiti isključivo osobe zaposlene u
+  Gongu ovlaštene za pristup podacima, a za svrhe za koje postoji privola korisnika
+  (dakle, za koje ste dali svoje eksplicitno dopuštenje). Zaposlenike Gonga na zaštitu
+  Vaših podataka obvezuje Pravilnik o radu i Pravilnik o zaštiti podataka koji je
+  usuglašen s Općom uredbom o zaštiti podataka.
+newsletter-signup-button-text: Registracija
+newsletter-signup-unsubscribe-button-text: Prestanak registracije!
+newsletter-signup-success-text: Registracija potvrđena!
+vote-for-plural: Za
+vote-against-plural: Protiv
+unaffiliated--f: nepovezana
+unaffiliated--m: nepovezan
+unaffiliated--plural: nepovezani
+ask-person-a-question: Napišite Vaše pitanje za zastupnika/zastupnicu.
+thank-you-for-the-question: Hvala za Vaše pitanje!
+send: Pošalji
+error-message: Ups, nešto se dogodilo.
