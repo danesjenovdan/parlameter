@@ -1,14 +1,14 @@
 {
   "landing": {
-    "title": "Parlametar",
-    "lead": "Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Hrvatskog sabora.",
+    "title": "Parlametar Zagreb",
+    "lead": "Parlametar Zagreb je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Gradske skupštine Grada Zagreba.",
     "search": {
       "part_one": "Traži",
-      "part_two": "zakone, glasanja, zastupnice, klubove ili zastupničke govore"
+      "part_two": "gradski zastupnici i zastupnice, glasanja ili prisutnost na glasanjima"
     }
   },
   "about": {
-    "lead": "Parlametar je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Hrvatskog sabora.",
+    "lead": "Parlametar Zagreb je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Gradske skupštine Grada Zagreba.",
     "afterlead": "Vizualna rješenja prilagođena korisniku i tehnološki napredni modularni dizajn povećavaju transparentnost djelovanja najvažnije demokratske institucije i omogućuju učinkovit uvid u proces donošenja odluka.",
     "videourl": "https://www.youtube.com/embed/lzwpi9ebG48",
     "columns": {
@@ -46,9 +46,9 @@
     }
   },
   "menu": {
-    "legislation": "Zakonodavstvo",
+    "legislation": "Odluke",
     "sessions": "Sjednice",
-    "mps": "Zastupnice",
+    "mps": "Zastupnici",
     "pgs": "Klubovi",
     "tools": "Alati"
   },
@@ -172,7 +172,7 @@
     "tools_intro": "Demokracija je kontinuirani proces koji ovisi o našem sudjelovanju u njemu. Pomoći će sljedeći alati!",
     "page-not-found-text": "Ovdje nema ništa. Što tražiš?",
     "info_email": "info@parlametar.hr",
-    "unaffiliated": "nepovezana",
+    "unaffiliated": "izvan klubova",
     "no-session-data": "(Još) nemamo podataka za ovu sjednicu."
   },
   "social": {
