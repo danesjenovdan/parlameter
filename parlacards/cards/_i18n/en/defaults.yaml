@@ -377,7 +377,7 @@ deputy--f: Deputy
 member--m: Member
 member--f: Member
 number-of-seats: 'Number of seats in the parliament:'
-contact: 'Contact:'
+contact: 'Contact'
 mp: MP
 addressee: Addressed to
 analysis-texts--party:
