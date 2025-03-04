@@ -393,7 +393,7 @@ investigative_comissions: Слідчі комісії
 elected-to-district--f: Набрала {numVotes} голосів у {окрузі}
 missing-district: округ не обраний
 sort-by--change: оновлення результатів аналізу {аналіз}
-number-of-seats: 'Кількість місць у парламентській залі:'
+number-of-seats: 'Кількість місць у парламентській залі'
 organization-classifications:
   root: Parliament
   committee: Committees

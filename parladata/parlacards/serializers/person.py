@@ -30,3 +30,6 @@ class PersonBasicInfoSerializer(CommonSerializer):
     )
     districts = AreaSerializer(many=True)
     social_networks = serializers.SerializerMethodField()
+    email = VersionableSerializerField(
+        property_model_name="PersonEmail"
+    )
