@@ -8,13 +8,13 @@
 }
 
 .status404 h1 .fo {
-  background-image: linear-gradient(to right, colors.$first, colors.$second);
+  background-image: linear-gradient(to right, colors.$gradient-first, colors.$gradient-first);
 }
 
 .status404 h1 .oo {
-  background-image: linear-gradient(to right, colors.$second, colors.$third);
+  background-image: linear-gradient(to right, colors.$gradient-first, colors.$gradient-second);
 }
 
 .status404 h1 .of {
-  background-image: linear-gradient(to right, colors.$third, colors.$third);
+  background-image: linear-gradient(to right, colors.$gradient-second, colors.$gradient-second);
 }
