@@ -7,14 +7,14 @@ $first: #f0f;
 $second: #f0f;
 $third: #f0f;
 
-$gradient-first: #0394CE;
-$gradient-second: #59976A;
+$gradient-first: #163d73;
+$gradient-second: #0166FE;
 // $gradient-third: #f0f;
 
 // tabs
-$tab-active: #005C99;
-$tab-hover: #006EB8;
-$tab-passive: #0394CE;
+$tab-active: #0150C6;
+$tab-hover: #0146AD;
+$tab-passive: #163d73;
 
 // links
 $link: #163d73;
@@ -32,9 +32,9 @@ $element: $link;
 $divider: #c8c8c8;
 
 // barcharts
-$barchart-this: #59976A;
-$barchart-other: $gradient-first;
-$barchart-default: $gradient-first;
+$barchart-this: #163d73;
+$barchart-other: #0166FE;
+$barchart-default: #0166FE;
 
 // icons
 $icon-accepted: #59976A;

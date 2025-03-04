@@ -2,7 +2,7 @@
   <div class="card-footer">
     <a v-if="showFooterLogo" :href="$root.$options.contextData.urls.site">
       <img
-        :src="`${$root.$options.contextData.urls.cdn}/img/logo-parlameter.svg`"
+        :src="`${$root.$options.contextData.urls.cdn}/img/logo-parlameter.svg?v=20250304`"
         alt="parlameter logo"
       />
     </a>
