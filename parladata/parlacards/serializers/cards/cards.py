@@ -1209,7 +1209,9 @@ class ToolsUnityCardSerializer(CardSerializer):
         if Organization.objects.filter(id=group_id).exists():
             vote_scores = vote_scores.filter(organization_id=group_id)
         else:
-            vote_scores = vote_scores.filter(organization=organization)
+            # TODO(unity)
+            # vote_scores = vote_scores.filter(organization=organization)
+            pass
         ###
 
         ### filter vote scores by body (playing field)
@@ -1217,7 +1219,9 @@ class ToolsUnityCardSerializer(CardSerializer):
         if Organization.objects.filter(id=body_id).exists():
             vote_scores = vote_scores.filter(playing_field_id=body_id)
         else:
-            vote_scores = vote_scores.filter(playing_field=organization)
+            # TODO(unity)
+            # vote_scores = vote_scores.filter(playing_field=organization)
+            pass
         ###
 
         ### filter by months

@@ -143,15 +143,19 @@ def save_organization_vote_discord(vote, playing_field, timestamp=None):
     if not timestamp:
         timestamp = datetime.now()
 
-    organizations = playing_field.query_parliamentary_groups(vote.timestamp)
+    if playing_field.classification == "root":
+        organizations = playing_field.query_parliamentary_groups(vote.timestamp)
+    else:
+        # TODO(unity): calculate for pgs too; get pgs from members?
+        organizations = Organization.objects.none()
+
     organizations = organizations.union(
         Organization.objects.filter(id=playing_field.id)
     )
 
-    # TODO: calc for working bodies and coalition too?
+    # TODO(unity): calc for coalition too?
 
     for party in organizations:
-
         discord = calculate_organization_vote_discord(vote, party, playing_field)
         if discord is None:
             continue
@@ -178,7 +182,11 @@ def save_organizations_vote_discords(playing_field, timestamp=None):
     )
 
     votes = (
-        Vote.objects.filter(timestamp__lte=timestamp, motion__session__mandate=mandate)
+        Vote.objects.filter(
+            timestamp__lte=timestamp,
+            motion__session__mandate=mandate,
+            motion__session__organizations=playing_field,
+        )
         .exclude(id__in=votes_already_calculated)
         .exclude(ballots__personvoter__isnull=True)
         .order_by("id")
