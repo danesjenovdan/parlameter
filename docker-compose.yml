@@ -36,6 +36,7 @@ services:
       DRF_RECAPTCHA_SECRET_KEY: ""
     volumes:
       - ./parladata:/app
+      - ./parladata/ipython_config.py:/root/.ipython/profile_default/ipython_config.py
 
   db:
     image: postgres:latest
