@@ -53,6 +53,7 @@ class Command(BaseCommand):
         )
         for membership in memberships:
             existing = PersonMembership.objects.filter(
+                start_time=membership.start_time,
                 organization=organization,
                 member=membership.member,
                 role=new_role,
