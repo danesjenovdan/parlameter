@@ -1,433 +1,523 @@
 {
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/tools/discord/?format=json&id=1127",
-  "id": 1127,
+  "url": "http://localhost:8000/v3/cards/tools/unity/?id=137",
+  "id": 137,
   "data": {
     "results": {
       "votes": [
         {
-          "title": "prijedlog odluke o osnivanju istražnog povjerenstva o radu stožera i drugih nadležnih institucija za vrijeme trajanja pandemije covid 19 u hrvatskoj - predlagatelji: 17 zastupnika u hrvatskome saboru",
+          "title": "Odlok o ustanovitvi in nalogah delovnih teles Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136405,
-          "value": 69.5364238410596,
-          "passed": false,
-          "timestamp": "2024-07-12T12:46:00"
+          "vote_id": 6034,
+          "value": 100.0,
+          "passed": true,
+          "timestamp": "2022-05-25T21:32:58"
         },
         {
-          "title": "prijedlog odluke o imenovanju dva člana državnoodvjetničkog vijeća iz reda zastupnika hrvatskoga sabora - predlagatelj: odbor za pravosuđe hrvatskoga sabora",
+          "title": "Odlok o ustanovitvi in nalogah delovnih teles Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136360,
-          "value": 87.41721854304636,
+          "vote_id": 6034,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:45:00"
+          "timestamp": "2022-05-25T21:32:58"
         },
         {
-          "title": "prijedlog odluke o imenovanju dva člana državnog sudbenog vijeća iz reda zastupnika hrvatskoga sabora - predlagatelj: odbor za pravosuđe hrvatskoga sabora",
+          "title": "Sklep o imenovanju predsednikov in podpredsednikov delovnih teles Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136361,
-          "value": 88.0794701986755,
+          "vote_id": 6033,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:44:00"
+          "timestamp": "2022-05-25T22:01:29"
         },
         {
-          "title": "prijedlog odluke o izboru zamjenice pučke pravobraniteljice - predlagateljica: pučka pravobraniteljica",
+          "title": "Sklep o imenovanju generalne sekretarke Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136409,
-          "value": 88.0794701986755,
+          "vote_id": 6032,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:42:00"
+          "timestamp": "2022-05-25T22:12:09"
         },
         {
-          "title": "prijedlog rezolucije o umjetnoj inteligenciji - predlagateljica: zastupnica marija selak raspudić",
+          "title": "Sklep o imenovanju generalne sekretarke Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136399,
-          "value": 52.317880794701985,
+          "vote_id": 6032,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:41:00"
+          "timestamp": "2022-05-25T22:12:09"
         },
         {
-          "title": "izvješće o radu i poslovanju hrvatskog zavoda za mirovinsko osiguranje za 2022. - podnositelj: hrvatski zavod za mirovinsko osiguranje",
+          "title": "Odlok o ustanovitvi in nalogah delovnih teles Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136373,
-          "value": 52.980132450331126,
+          "vote_id": 6034,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:37:00"
+          "timestamp": "2022-05-25T21:32:58"
         },
         {
-          "title": "izvješće o obavljenoj reviziji učinkovitosti unaprjeđenje kvalitete vode te dostupnost vode za ljudsku potrošnju u republici hrvatskoj - podnositelj: državni ured za reviziju",
+          "title": "Sklep o imenovanju generalne sekretarke Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136372,
-          "value": 87.41721854304636,
+          "vote_id": 6032,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:37:00"
+          "timestamp": "2022-05-25T22:12:09"
         },
         {
-          "title": "izvješće o radu pravobranitelja za osobe s invaliditetom za 2022. godinu - podnositeljica: pravobraniteljica za osobe s invaliditetom",
+          "title": "Sklep o imenovanju predsednikov in podpredsednikov delovnih teles Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136392,
-          "value": 92.71523178807946,
+          "vote_id": 6033,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:35:00"
+          "timestamp": "2022-05-25T22:01:29"
         },
         {
-          "title": "prijedlog godišnjeg izvještaja o izvršenju državnog proračuna republike hrvatske za 2023. godinu - predlagateljica: vlada republike hrvatske",
+          "title": "Sklep o imenovanju predsednikov in podpredsednikov delovnih teles Državnega zbora - Glasovanje o aktu v celoti",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136393,
-          "value": 52.317880794701985,
+          "vote_id": 6033,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:29:00"
+          "timestamp": "2022-05-25T22:01:29"
         },
         {
-          "title": "prijedlog zakona o izmjenama zakona o gradnji, prvo čitanje, p.z. br. 9 - predlagateljica: zastupnica marija selak raspudić",
+          "title": "Predlog za izvolitev predsednika Vlade Republike Slovenije  - Glasovanje o sestavi komisije za tajno glasovanje",
           "session": {
-            "name": "2. sjednica",
-            "id": 1751,
-            "start_time": "2024-06-12T09:00:00",
-            "end_time": "2024-07-12T13:00:00",
+            "name": "2. izredna seja",
+            "id": 2317,
+            "start_time": "2022-05-25T15:01:00",
+            "end_time": null,
             "organizations": [
               {
-                "name": "Sabor",
-                "acronym": null,
-                "slug": "1127-sabor",
+                "name": "Državni zbor",
+                "acronym": "DZ IX",
+                "slug": "137-drzavni-zbor",
                 "color": "#09A2CC",
                 "classification": "root",
                 "is_in_coalition": false
               }
             ],
-            "classification": "regular",
+            "classification": "irregular",
             "in_review": false,
             "has_transcript": true,
-            "has_agenda_items": true,
+            "has_agenda_items": false,
             "has_minutes": false,
             "has_legislation": true,
             "has_votes": true
           },
-          "vote_id": 136402,
-          "value": 52.317880794701985,
+          "vote_id": 6035,
+          "value": 100.0,
           "passed": true,
-          "timestamp": "2024-07-12T12:23:00"
+          "timestamp": "2022-05-25T19:44:49"
         }
       ],
-      "organizations": [
+      "groups": [
         {
-          "name": "Klub zastupnika Domovinskog pokreta",
-          "acronym": "Domovinski pokret",
-          "slug": "957-klub-zastupnika-domovinskog-pokreta",
-          "color": "#06637D",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub zastupnika Samostalne demokratske srpske stranke",
-          "acronym": "SDSS",
-          "slug": "969-klub-zastupnika-samostalne-demokratske-srpske-stranke",
-          "color": "#9D26CC",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub zastupnika Možemo!",
-          "acronym": "Možemo!",
-          "slug": "972-klub-zastupnika-mozemo",
-          "color": "#1DE900",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub zastupnika Hrvatske demokratske zajednice",
-          "acronym": "HDZ",
-          "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
-          "color": "#1523FF",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
-          "acronym": "SDP",
-          "slug": "1009-klub-zastupnika-socijaldemokratske-partije-hrvatske",
-          "color": "#F04118",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub zastupnika Mosta",
-          "acronym": "Most",
-          "slug": "1043-klub-zastupnika-mosta",
-          "color": "#00E1E7",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka",
-          "acronym": "HSLS i V. Bilek",
-          "slug": "1049-klub-zastupnika-hrvatske-socijalno-liberalne-stranke-i-nezavisnog-zastupnika-vladimira-bileka",
-          "color": "#9F9E54",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Hrvatskih Suverenista, Stranke Pravo I Pravda I Nezavisnog Zastupnika Josipa Jurčevića",
-          "acronym": "H. suverenisti, PiP i NZ",
-          "slug": "1129-klub-zastupnika-hrvatskih-suverenista-stranke-pravo-i-pravda-i-nezavisnog-zastupnika-josipa-jurcevica",
-          "color": "#000000",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Centra I Nezavisne Platforme Sjevera",
-          "acronym": "Centar i NP Sjever",
-          "slug": "1130-klub-zastupnika-centra-i-nezavisne-platforme-sjevera",
-          "color": "#FFF600",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Hrvatske Seljačke Stranke, Građansko-Liberalnog Saveza I Dalije Orešković I Stranke S Imenom I Prezimenom",
-          "acronym": "HSS, GLAS, DOSIP",
-          "slug": "1134-klub-zastupnika-hrvatske-seljacke-stranke-graansko-liberalnog-saveza-i-dalije-oreskovic-i-stranke-s-imenom-i-prezimenom",
-          "color": "#FFA500",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Nezavisni I Fokus",
-          "acronym": "NZ i Fokus",
-          "slug": "1135-klub-zastupnika-nezavisni-i-fokus",
-          "color": "#E890FF",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Istarskog Demokratskog Sabora (Ids), Primorsko-Goranskog Saveza (Pgs), Unije Kvarnera (Unija) I Istarske Stranke Umirovljenika - Partito Istriano Dei Pensionati (Isu - Pip)",
-          "acronym": "IDS, PGU, UK i ISU",
-          "slug": "1136-klub-zastupnika-istarskog-demokratskog-sabora-ids-primorsko-goranskog-saveza-pgs-unije-kvarnera-unija-i-istarske-stranke-umirovljenika-partito-istriano-dei-pensionati-isu-pip",
-          "color": "#49A343",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Hrvatske Narodne Stranke I Nezavisnih Zastupnika",
-          "acronym": "HNS i NZ",
-          "slug": "1137-klub-zastupnika-hrvatske-narodne-stranke-i-nezavisnih-zastupnika",
-          "color": "#CCB899",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Sabor",
-          "acronym": null,
-          "slug": "1127-sabor",
+          "name": "Državni zbor",
+          "acronym": "DZ IX",
+          "slug": "137-drzavni-zbor",
           "color": "#09A2CC",
           "classification": "root",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Koalicija Golob",
+          "acronym": null,
+          "slug": "218-koalicija-golob",
+          "color": "#09A2CC",
+          "classification": "coalition",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Slovenska demokratska stranka",
+          "acronym": "SDS",
+          "slug": "2-slovenska-demokratska-stranka",
+          "color": "#679BBB",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Socialni demokrati",
+          "acronym": "SD",
+          "slug": "4-socialni-demokrati",
+          "color": "#B3422E",
+          "classification": "pg",
+          "is_in_coalition": true
+        },
+        {
+          "name": "Levica",
+          "acronym": "Levica",
+          "slug": "6-levica",
+          "color": "#FFAFA1",
+          "classification": "pg",
+          "is_in_coalition": true
+        },
+        {
+          "name": "Nova Slovenija - Krščanski demokrati",
+          "acronym": "NSi",
+          "slug": "7-nova-slovenija-krscanski-demokrati",
+          "color": "#8E7A86",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Italijanska in madžarska narodna skupnost",
+          "acronym": "IMNS",
+          "slug": "10-italijanska-in-madzarska-narodna-skupnost",
+          "color": "#C3CB2C",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Svoboda",
+          "acronym": "Svoboda",
+          "slug": "138-svoboda",
+          "color": "#002F42",
+          "classification": "pg",
+          "is_in_coalition": true
+        }
+      ],
+      "bodies": [
+        {
+          "name": "Državni zbor",
+          "acronym": "DZ IX",
+          "slug": "137-drzavni-zbor",
+          "color": "#09A2CC",
+          "classification": "root",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za gospodarstvo",
+          "acronym": "Odbor za gospodarstvo",
+          "slug": "24-odbor-za-gospodarstvo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Skupni odbor",
+          "acronym": null,
+          "slug": "104-skupni-odbor",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za finance",
+          "acronym": "Odbor za finance",
+          "slug": "23-odbor-za-finance",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za pravosodje",
+          "acronym": "Odbor za pravosodje",
+          "slug": "31-odbor-za-pravosodje",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za obrambo",
+          "acronym": "Odbor za obrambo",
+          "slug": "30-odbor-za-obrambo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za zadeve Evropske unije",
+          "acronym": "Odbor za zadeve Evropske unije",
+          "slug": "32-odbor-za-zadeve-evropske-unije",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za kulturo",
+          "acronym": "Odbor za kulturo",
+          "slug": "28-odbor-za-kulturo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Mandatno-volilna komisija",
+          "acronym": "Mandatno-volilna komisija",
+          "slug": "35-mandatno-volilna-komisija",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za delo, družino, socialne zadeve in invalide",
+          "acronym": null,
+          "slug": "93-odbor-za-delo-druzino-socialne-zadeve-in-invalide",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+          "acronym": null,
+          "slug": "97-odbor-za-notranje-zadeve-javno-upravo-in-lokalno-samoupravo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za infrastrukturo, okolje in prostor",
+          "acronym": null,
+          "slug": "94-odbor-za-infrastrukturo-okolje-in-prostor",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+          "acronym": null,
+          "slug": "95-odbor-za-kmetijstvo-gozdarstvo-in-prehrano",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za izobraževanje, znanost in mladino",
+          "acronym": "Odbor Za Izobraževanje, Znanost In Mladino Ix",
+          "slug": "223-odbor-za-izobrazevanje-znanost-in-mladino",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Komisija za nadzor javnih financ",
+          "acronym": "Komisija za nadzor javnih financ",
+          "slug": "16-komisija-za-nadzor-javnih-financ",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za zdravstvo",
+          "acronym": "Odbor za zdravstvo",
+          "slug": "33-odbor-za-zdravstvo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
+          "acronym": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
+          "slug": "402-preiskovalna-komisija-o-ugotavljanju-domnevnega-financnega-izcrpavanja-podjetja-gen-i-domnevno-spornih-praks-v-zvezi-s-podjetjem-star-solar-doo-domnevnega-nezakonitega-financiranja-politicne-stranke-gibanje-svoboda-in-domnevnega-nezakonitega-financiranja-volilne-kampanje-gibanja-svoboda-za-redne-volitve-poslancev-v-drzavni-zbor-republike-slovenije-leta-2022",
+          "color": "#09A2CC",
+          "classification": "investigative_commission",
           "is_in_coalition": false
         }
       ]
     },
     "mandate": {
-      "id": 14,
-      "description": "Sabor, XI saziv",
-      "beginning": "2024-05-15T00:00:00"
+      "id": 2,
+      "description": "IX",
+      "beginning": "2022-05-13T00:00:01"
     },
-    "count": 48,
-    "pages": 5,
-    "page": 1,
-    "per_page": 10
+    "votes:count": 36293,
+    "votes:pages": 3630,
+    "votes:page": 1,
+    "votes:per_page": 10
   }
 }

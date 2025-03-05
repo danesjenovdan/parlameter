@@ -1,45 +1,62 @@
 <template>
   <card-wrapper :header-config="headerConfig">
     <template #generator>
-      <tools-tabs current-tool="discord" />
+      <tools-tabs current-tool="unity" />
     </template>
 
-    <div class="filters">
-      <!-- <div class="filter text-filter">
-        <div v-t="'title-search'" class="filter-label"></div>
-        <search-field v-model="textFilter" />
-      </div> -->
-      <div class="filter type-dropdown">
-        <div v-t="'parties'" class="filter-label"></div>
-        <p-search-dropdown v-model="groups" :single="true" hide-clear @update:model-value="fetchVotesForGroup" />
+    <div class="votes-list">
+      <div class="filters">
+        <div class="filter text-filter">
+          <div v-t="'title-search'" class="filter-label"></div>
+          <SearchField v-model="textFilter" @update:model-value="searchVotes" />
+        </div>
+        <div class="filter dropdown-filter">
+          <div v-t="'party'" class="filter-label"></div>
+          <PSearchDropdown
+            v-model="groups"
+            single
+            @update:model-value="searchVotesImmediate"
+          />
+        </div>
+        <div class="filter dropdown-filter">
+          <div v-t="'working-body'" class="filter-label"></div>
+          <PSearchDropdown
+            v-model="bodies"
+            single
+            @update:model-value="searchVotesImmediate"
+          />
+        </div>
+        <div class="filter toggle-filter">
+          <div v-t="'sort-by'" class="filter-label"></div>
+          <Toggle v-model="selectedSort" :options="sortOptions" />
+        </div>
       </div>
-      <!-- <div class="filter tag-dropdown">
-        <div v-t="'working-body'" class="filter-label"></div>
-        <p-search-dropdown v-model="allTags" />
-      </div> -->
-      <div class="filter text-filter">
-        <div v-t="'sort-by'" class="filter-label"></div>
-        <toggle v-model="selectedSort" :options="sortOptions" />
-      </div>
-    </div>
 
-    <scroll-shadow ref="shadow">
-      <div v-infinite-scroll="loadMore" class="votes-list-shadow has-filters date-list"
-        @scroll="$refs.shadow.check($event.currentTarget)">
-        <empty-state v-if="!card.isLoading && !votes?.length" />
-        <template v-for="(dayBallots, key) in votingDays" :key="key">
-          <div v-if="selectedSort === 'date'" class="date">
-            {{ formatDate(dayBallots[0].timestamp) }},
-            {{ formatSessionInfo(dayBallots[0].session) }}
-          </div>
-          <a v-for="vote in dayBallots" :key="vote.vote_id" :href="getVoteLink(vote.vote_id, vote.session)
-            " :target="voteLinkTarget" class="ballot">
-            <div class="disunion">
-              <div class="percentage">{{ Math.round(100 - vote.value) }} %</div>
-              <div v-t="'inequality'" class="text"></div>
+      <scroll-shadow ref="shadow">
+        <div
+          v-infinite-scroll="loadMore"
+          class="votes-list-shadow has-filters date-list"
+          @scroll="$refs.shadow.check($event.currentTarget)"
+        >
+          <EmptyState v-if="!card.isLoading && !votes?.length" />
+          <a
+            v-for="vote in votes"
+            :key="vote.vote_id"
+            :href="getVoteLink(vote.vote_id, vote.session)"
+            :target="voteLinkTarget"
+            class="vote"
+          >
+            <div class="unity">
+              <div class="percentage">{{ Math.round(vote.value) }} %</div>
+              <div v-t="'unity'" class="text"></div>
             </div>
             <div class="name">
               {{ vote.title }}
+              <br />
+              <strong>
+                {{ formatDate(vote.timestamp) }},
+                {{ formatSessionInfo(vote.session) }}
+              </strong>
             </div>
             <div class="result">
               <template v-if="vote.passed">
@@ -52,128 +69,97 @@
               </template>
             </div>
           </a>
-        </template>
-      </div>
-      <div v-if="card.isLoading" class="nalagalnik__wrapper">
-        <div class="nalagalnik"></div>
-      </div>
-    </scroll-shadow>
+        </div>
+        <div v-if="card.isLoading" class="nalagalnik__wrapper">
+          <div class="nalagalnik"></div>
+        </div>
+      </scroll-shadow>
+    </div>
   </card-wrapper>
 </template>
 
 <script>
-import { parseISO } from 'date-fns';
-import { groupBy } from 'lodash-es';
+import { debounce } from 'lodash-es';
 import ToolsTabs from '@/_components/ToolsTabs.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import StripedButton from '@/_components/StripedButton.vue';
 import Toggle from '@/_components/Toggle.vue';
+import SearchField from '@/_components/SearchField.vue';
 import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
-import SearchField from '@/_components/SearchField.vue';
-import { parseVoteTitle, shortenVoteTitle } from '@/_helpers/voteTitle.js';
-import axios from 'axios';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 
 export default {
-  name: 'CardToolsDiscord',
+  name: 'CardToolsUnity',
   directives: {
     infiniteScroll,
   },
   components: {
     ToolsTabs,
+    EmptyState,
     PSearchDropdown,
-    StripedButton,
     Toggle,
-    ScrollShadow,
     SearchField,
+    ScrollShadow,
   },
-  mixins: [common, links],
+  mixins: [common, cancelableRequest, links],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
-    const initialGroups = cardData?.data?.results?.organizations ?? [];
-    const groups = initialGroups.map((g) => {
+    const textFilter = cardState?.text || '';
+
+    const groups = (cardData?.data?.results?.groups || []).map((g) => {
       return {
         id: (g.slug || '').split('-')[0],
         slug: g.slug,
         label: g.name,
-        selected: initialGroups.includes(g.slug),
+        selected: false,
         color: g.color,
       };
     });
 
+    const bodies = (cardData?.data?.results?.bodies || []).map((b) => {
+      return {
+        id: (b.slug || '').split('-')[0],
+        slug: b.slug,
+        label: b.name,
+        selected: false,
+        color: b.color,
+      };
+    });
+
     return {
-      type: "vote",
+      headerConfig: defaultHeaderConfig(this),
       card: {
-        objectCount: cardData?.data?.['results:count'] ?? 0,
+        objectCount: cardData?.data?.['votes:count'] ?? 0,
         currentPage: 1,
         isLoading: false,
       },
       votes: cardData?.data?.results?.votes ?? [],
-      selectedSort: 'date',
+      groups,
+      bodies,
+      textFilter,
+      selectedSort: 'unity',
       sortOptions: {
-        inequality: this.$t('sort-by--inequality'),
-        date: this.$t('sort-by--date'),
+        unity: this.$t('sort-by--unity'),
+        disunity: this.$t('sort-by--disunity'),
       },
-      groups: groups,
-      // selectedGroup: groups[0]?.id,
-
-
-      textFilter: '',
-      allTags: [],
-
-      allClassifications: [],
     };
   },
   computed: {
-    // allItems() {
-    //   return this.groups.map((group) => ({
-    //     id: group.acronym,
-    //     label: group.acronym,
-    //     selected: group.acronym === this.selectedGroup,
-    //     // colorClass: `${group.acronym
-    //     //   .toLowerCase()
-    //     //   .replace(/[ +,]/g, '_')}-background`,
-    //   }));
-    // },
-    // selectedTags() {
-    //   return this.allTags.filter((tag) => tag.selected).map((tag) => tag.id);
-    // },
     selectedGroup() {
-      return 137;
-      // const selectedGroup = this.groups.filter((g) => g.selected).map((g) => g.id);
-      // if (selectedGroup.length > 0) {
-      //   return selectedGroup[0];
-      // } else {
-      //   return this.groups[0].id;
-      // }
+      return this.groups.find((g) => g.selected);
     },
-    selectedClassifications() {
-      return this.allClassifications
-        .filter((classification) => classification.selected)
-        .map((classification) => classification.id);
-    },
-    headerConfig() {
-      return defaultHeaderConfig(this, {
-        circleIcon: 'seznam-glasovanj',
-        title: this.dynamicTitle,
-      });
-    },
-    dynamicTitle() {
-      return (
-        this.$t('card.title') +
-        (this.selectedSort === 'date'
-          ? this.$t('sort-by--date').toLowerCase()
-          : this.$t('sort-by--inequality').toLowerCase())
-      );
+    selectedBody() {
+      return this.bodies.find((b) => b.selected);
     },
     voteLinkTarget() {
       if (typeof window !== 'undefined') {
@@ -183,85 +169,53 @@ export default {
       }
       return '_blank';
     },
-    votingDays() {
-      if (this.selectedSort === 'date') {
-        return groupBy(this.votes, (vote) => {
-          const dateTime = vote.timestamp || '';
-          const date = dateTime.split('T')[0];
-          return `${date}__${vote.session?.id}`;
-        });
-      } else {
-        return {"all": this.votes};
-      }
-
-    },
     searchUrl() {
       const url = new URL(this.cardData.url);
-      url.searchParams.set('id', this.selectedGroup);
-      url.searchParams.set('page', this.card.currentPage);
-      url.searchParams.set('order_by', `${this.selectedSort}`);
+      url.searchParams.set('votes:page', this.card.currentPage);
+      url.searchParams.set('text', this.textFilter);
+      if (this.selectedGroup) {
+        url.searchParams.set('group', this.selectedGroup.id);
+      } else {
+        url.searchParams.delete('group');
+      }
+      if (this.selectedBody) {
+        url.searchParams.set('body', this.selectedBody.id);
+      } else {
+        url.searchParams.delete('body');
+      }
+      url.searchParams.set(
+        'order_by',
+        this.selectedSort === 'unity' ? '-value' : 'value',
+      );
       return url.toString();
-
-      // url.searchParams.set('text', this.textFilter);
-      // if (this.selectedVoteOptions.length) {
-      //   const voteOptions = this.selectedVoteOptions
-      //     .map((vo) => vo.id)
-      //     .join(',');
-      //   url.searchParams.set('options', voteOptions);
-      // } else {
-      //   url.searchParams.delete('options');
-      // }
-      // return url.toString();
     },
   },
   watch: {
-    // selectedGroup(newValue) {
-    //   this.fetchVotesForGroup();
-    // },
-    selectedSort(newValue) {
-      this.fetchVotesForGroup();
+    selectedSort() {
+      this.searchVotesImmediate();
     },
   },
-  beforeMount() {
-    this.fetchVotesForGroup();
-  },
   methods: {
-    // selectCallback(id) {
-    //   this.selectGroup(id);
-    // },
-    // clearCallback() {
-    //   this.selectGroup(this.groups[0].acronym);
-    // },
-    // selectGroup(id) {
-    //   this.selectedGroup =
-    //     this.selectedGroup !== id ? id : this.groups[0].id;
-    // },
-    fetchVotesForGroup() {
-      // eslint-disable-next-line no-console
-      console.log('fetch votes for group ', this.selectedGroup);
-
+    searchVotesImmediate() {
       this.card.isLoading = true;
+      this.votes = [];
+      this.card.objectCount = 0;
       this.card.currentPage = 1;
-
-      this.votes = []
-
-      // const groupId = find(this.groups, { id })?.id;
-
-      const requestedPage = this.card.currentPage;
-      axios.get(this.searchUrl).then((response) => {
-        if (response?.data?.page === requestedPage) {
-          const newVotes = response?.data?.results?.votes || [];
-          this.votes.push(...newVotes);
-        }
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.votes = response?.data?.results?.votes || [];
+        this.card.objectCount = response?.data?.['votes:count'];
+        this.card.currentPage = 1;
         this.card.isLoading = false;
       });
     },
+    searchVotes: debounce(function searchVotes() {
+      this.searchVotesImmediate();
+    }, 750),
     loadMore() {
-      console.log("Load more")
       if (this.card.isLoading) {
         return;
       }
-      if (this.votes.length >= this.cardData.data?.count) {
+      if (this.votes.length >= this.card.objectCount) {
         return;
       }
 
@@ -269,8 +223,8 @@ export default {
       this.card.currentPage += 1;
 
       const requestedPage = this.card.currentPage;
-      axios.get(this.searchUrl).then((response) => {
-        if (response?.data?.page === requestedPage) {
+      this.makeRequest(this.searchUrl).then((response) => {
+        if (response?.data?.['votes:page'] === requestedPage) {
           const newVotes = response?.data?.results?.votes || [];
           this.votes.push(...newVotes);
         }
@@ -287,222 +241,184 @@ export default {
 @use 'parlassets/scss/breakpoints';
 @use 'parlassets/scss/colors';
 
-.votes-list-shadow {
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: breakpoints.$full-card-height - 89;
-}
+.votes-list {
+  .filters {
+    display: flex;
+    padding-bottom: 12px;
 
-.groups {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 16px;
+    .filter {
+      @include breakpoints.respond-to(desktop) {
+        margin-right: 10px;
+      }
 
-  .striped-button {
-    width: calc(33.33% - 3.33px);
-    margin-bottom: 5px;
+      @include breakpoints.respond-to(mobile) {
+        width: 100%;
+      }
 
-    @include breakpoints.respond-to(desktop) {
-      flex: 1;
-      margin-bottom: 0;
-
-      &:not(:first-child) {
-        margin-left: 5px;
+      &:last-child {
+        margin-right: 0;
       }
     }
-  }
-}
 
-.filters {
-  $label-height: 26px;
+    .filter-label {
+      overflow: hidden;
+      height: 20px;
+      margin-top: 6px;
+    }
 
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+    .text-filter {
+      flex-basis: 100%;
+    }
 
-  @include breakpoints.respond-to(mobile) {
-    flex-wrap: wrap;
-    min-height: 154px;
-  }
+    .dropdown-filter {
+      flex-basis: 50%;
+    }
 
-  .filter-label {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: $label-height;
-  }
-
-  .text-filter {
-    width: 100%;
-
-    @include breakpoints.respond-to(desktop) {
-      width: 26%;
+    .toggle-filter {
+      flex-basis: 25%;
     }
   }
 
-  .tag-dropdown {
-    width: 100%;
-
-    @include breakpoints.respond-to(desktop) {
-      width: 26%;
-    }
-  }
-
-  .type-dropdown {
-    width: 100%;
-
-    @include breakpoints.respond-to(desktop) {
-      width: 17.5%;
-    }
-  }
-}
-
-.results {
-  height: 447px;
-  overflow-y: auto;
-
-  /*
-  &.is-loading {
-    overflow-y: hidden;
+  .vote {
+    $section-border: 1px solid colors.$font-placeholder;
+    background: colors.$background;
+    color: colors.$font-default;
+    display: block;
+    margin: 7px 0 8px 0;
+    min-height: 90px;
+    padding: 10px 14px;
     position: relative;
-    &::before {
-      background: colors.$white url('#{get-parlassets-url()}/img/loader.gif') no-repeat
-        center center;
-      content: '';
-      height: 100%;
-      position: absolute;
-      width: 100%;
-      z-index: 1;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+      background: colors.$link-hover-background;
+      color: colors.$link;
     }
-  }
-  */
-}
-
-.date-row {
-  &:not(:first-child) {
-    margin-top: 20px;
-  }
-}
-
-.ballot {
-  $section-border: 1px solid colors.$font-placeholder;
-  background: colors.$background;
-  color: colors.$font-default;
-  display: block;
-  margin: 7px 0 8px 0;
-  min-height: 90px;
-  padding: 10px 14px;
-  position: relative;
-
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: none;
-    background: colors.$link-hover-background;
-    color: colors.$link;
-  }
-
-  @include breakpoints.respond-to(desktop) {
-    display: flex;
-    margin: 10px 0;
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-
-  .disunion {
-    display: flex;
-    justify-content: center;
-    text-align: center;
 
     @include breakpoints.respond-to(desktop) {
-      flex-direction: column;
-      padding-right: 16px;
-    }
-
-    .percentage {
-      font-size: 24px;
-
-      @include breakpoints.respond-to(desktop) {
-        font-size: 30px;
-      }
-    }
-
-    .text {
-      font-size: 13px;
-      line-height: 34px;
-      margin-left: 10px;
-      text-transform: uppercase;
-
-      @include breakpoints.respond-to(desktop) {
-        font-size: 16px;
-        line-height: 23px;
-        margin-left: 0;
-      }
-    }
-  }
-
-  .name {
-    border-bottom: $section-border;
-    border-top: $section-border;
-    font-family: 'Roboto Slab', 'Times New Roman', serif;
-    font-size: 11px;
-    font-weight: 300;
-    line-height: 1.45em;
-    padding: 10px 0;
-
-    @include breakpoints.respond-to(desktop) {
-      border-bottom: none;
-      border-top: none;
-      border-left: $section-border;
       display: flex;
-      flex: 4;
-      font-size: 14px;
-      padding: 5px 20px;
-      flex-direction: column;
+      margin: 10px 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .unity {
+      display: flex;
       justify-content: center;
+      text-align: center;
+
+      @include breakpoints.respond-to(desktop) {
+        flex-direction: column;
+        padding-right: 16px;
+      }
+
+      .percentage {
+        font-size: 24px;
+
+        @include breakpoints.respond-to(desktop) {
+          font-size: 30px;
+        }
+      }
+
+      .text {
+        font-size: 13px;
+        line-height: 34px;
+        margin-left: 10px;
+        text-transform: uppercase;
+
+        @include breakpoints.respond-to(desktop) {
+          font-size: 16px;
+          line-height: 23px;
+          margin-left: 0;
+        }
+      }
+    }
+
+    .name {
+      border-bottom: $section-border;
+      border-top: $section-border;
+      font-family: 'Roboto Slab', 'Times New Roman', serif;
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 1.45em;
+      padding: 10px 0;
+
+      @include breakpoints.respond-to(desktop) {
+        border-bottom: none;
+        border-top: none;
+        border-left: $section-border;
+        display: flex;
+        flex: 4;
+        font-size: 14px;
+        padding: 5px 20px;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    .result {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0 0 0;
+
+      @include breakpoints.respond-to(desktop) {
+        border-left: $section-border;
+        justify-content: left;
+        padding: 0 0 0 16px;
+        width: 136px;
+      }
+
+      .glyphicon {
+        font-size: 24px;
+        margin-bottom: 4px;
+
+        &.accepted {
+          color: colors.$icon-accepted;
+        }
+
+        &.not-accepted {
+          color: colors.$icon-rejected;
+        }
+
+        @include breakpoints.respond-to(desktop) {
+          font-size: 29px;
+        }
+      }
+
+      .text {
+        color: colors.$font-default;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-left: 12px;
+      }
     }
   }
 
-  .result {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding: 10px 0 0 0;
+  .votes-list-shadow {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: breakpoints.$full-card-height - 89;
+  }
 
-    @include breakpoints.respond-to(desktop) {
-      border-left: $section-border;
-      justify-content: left;
-      padding: 0 0 0 16px;
-      width: 136px;
-    }
+  .nalagalnik__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: colors.$white-hover;
+    z-index: 4;
 
-    .glyphicon {
-      font-size: 24px;
-      margin-bottom: 4px;
-
-      &.accepted {
-        color: colors.$icon-accepted;
-      }
-
-      &.not-accepted {
-        color: colors.$icon-rejected;
-      }
-
-      @include breakpoints.respond-to(desktop) {
-        font-size: 29px;
-      }
-    }
-
-    .text {
-      color: colors.$font-default;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-left: 12px;
+    .nalagalnik {
+      position: absolute;
+      top: calc(50% - 50px);
     }
   }
 }
-
 </style>
