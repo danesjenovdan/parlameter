@@ -172,6 +172,8 @@ anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
+sort-by--unity: Enotnosti
+sort-by--disunity: Neenotnosti
 filtered-to-none: Brez zadetkov
 mps: Svetniki
 party: Svetniška skupina

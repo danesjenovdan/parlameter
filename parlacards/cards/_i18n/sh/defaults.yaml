@@ -154,6 +154,8 @@ voted-absent--plural: Niso glasovali o
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
+sort-by--unity: Enotnosti
+sort-by--disunity: Neenotnosti
 filtered-to-none: Brez zadetkov
 mps: Poslanci
 party: Poslanska skupina
