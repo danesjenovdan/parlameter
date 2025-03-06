@@ -1228,7 +1228,7 @@ class ToolsUnityCardSerializer(CardSerializer):
         if ranges:
             Q_object = Q()
             for range in ranges:
-                Q_object |= Q(timestamp__range=range)
+                Q_object |= Q(vote__timestamp__range=range)
             vote_scores = vote_scores.filter(Q_object)
         ###
 

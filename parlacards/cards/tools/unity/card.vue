@@ -28,6 +28,15 @@
             @update:model-value="searchVotesImmediate"
           />
         </div>
+        <div class="filter dropdown-filter">
+          <div v-t="'time-period'" class="filter-label"></div>
+          <PSearchDropdown
+            v-model="allMonths"
+            :alphabetise="false"
+            @update:model-value="searchVotesImmediate"
+            @clear="searchVotesImmediate"
+          />
+        </div>
         <div class="filter toggle-filter">
           <div v-t="'sort-by'" class="filter-label"></div>
           <Toggle v-model="selectedSort" :options="sortOptions" />
@@ -95,6 +104,8 @@ import ScrollShadow from '@/_components/ScrollShadow.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
+import getD3Locale from '@/_i18n/d3locales.js';
+import generateMonths from '@/_helpers/generateMonths.js';
 
 export default {
   name: 'CardToolsUnity',
@@ -121,6 +132,7 @@ export default {
     const textFilter = cardState?.text || '';
     const groupFilter = String(cardState?.group || defaultGroupId);
     const bodyFilter = String(cardState?.body || defaultGroupId);
+    const monthsFilter = String(cardState?.months || '').split(',');
 
     const groups = (cardData?.data?.results?.groups || []).map((g) => {
       const gid = (g.slug || '').split('-')[0];
@@ -144,6 +156,13 @@ export default {
       };
     });
 
+    const { months } = getD3Locale(this.$i18n.locale);
+    const start = cardData?.data?.mandate?.beginning;
+    const allMonths = generateMonths(months, start);
+    allMonths.forEach((month) => {
+      month.selected = monthsFilter.includes(month.id);
+    });
+
     return {
       headerConfig: defaultHeaderConfig(this),
       card: {
@@ -154,6 +173,7 @@ export default {
       votes: cardData?.data?.results?.votes ?? [],
       groups,
       bodies,
+      allMonths,
       textFilter,
       selectedSort: 'unity',
       sortOptions: {
@@ -168,6 +188,9 @@ export default {
     },
     selectedBody() {
       return this.bodies.find((b) => b.selected);
+    },
+    selectedMonths() {
+      return this.allMonths.filter((month) => month.selected);
     },
     voteLinkTarget() {
       if (typeof window !== 'undefined') {
@@ -191,6 +214,14 @@ export default {
       } else {
         url.searchParams.delete('body');
       }
+      if (this.selectedMonths.length) {
+        url.searchParams.set(
+          'months',
+          this.selectedMonths.map((m) => m.id).join(','),
+        );
+      } else {
+        url.searchParams.delete('months');
+      }
       url.searchParams.set(
         'order_by',
         this.selectedSort === 'unity' ? '-value' : 'value',
@@ -207,7 +238,8 @@ export default {
     if (
       this.textFilter ||
       this.selectedGroup?.id !== String(this.cardData.id) ||
-      this.selectedBody?.id !== String(this.cardData.id)
+      this.selectedBody?.id !== String(this.cardData.id) ||
+      this.selectedMonths.length
     ) {
       this.searchVotesImmediate();
     }
@@ -284,7 +316,7 @@ export default {
     }
 
     .text-filter {
-      flex-basis: 100%;
+      flex-basis: 50%;
     }
 
     .dropdown-filter {
