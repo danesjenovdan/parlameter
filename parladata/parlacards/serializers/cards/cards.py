@@ -1206,7 +1206,7 @@ class ToolsUnityCardSerializer(CardSerializer):
 
         ### filter vote scores by group (organization)
         group_id = self.context.get("GET", {}).get("group", None)
-        if Organization.objects.filter(id=group_id).exists():
+        if group_id and Organization.objects.filter(id=group_id).exists():
             vote_scores = vote_scores.filter(organization_id=group_id)
         else:
             # TODO(unity)
@@ -1216,7 +1216,7 @@ class ToolsUnityCardSerializer(CardSerializer):
 
         ### filter vote scores by body (playing field)
         body_id = self.context.get("GET", {}).get("body", None)
-        if Organization.objects.filter(id=body_id).exists():
+        if body_id and Organization.objects.filter(id=body_id).exists():
             vote_scores = vote_scores.filter(playing_field_id=body_id)
         else:
             # TODO(unity)
