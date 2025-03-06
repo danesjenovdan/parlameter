@@ -1,0 +1,12 @@
+card:
+  title: Glasanja
+  info: >-
+    # Pregled svih glasanja na sjednici.
+
+
+    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
+    SUZDRŽANA) i broj zastupnica koje nisu glasale i ispišu rezultati.
+
+
+    Zbirka glasanja preuzima se s web stranica Hrvatskog sabora
+    [HS](http://www.sabor.hr/sjednica-sabora).

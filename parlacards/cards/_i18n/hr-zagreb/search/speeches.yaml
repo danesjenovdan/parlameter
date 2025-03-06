@@ -1,0 +1,11 @@
+card:
+  title: Nastupi u kojima je pretraživani niz izgovoren
+  info: >-
+    # Lista poveznica do svih govora koji sadrže pretraživani niz.
+
+
+    Prema transkriptima svih sjednica pretražuju se i prikazuju poveznice na sve
+    govore u kojima se pojavljuje pretraživani niz, razvrstani po datumu od
+    najnovijeg do najstarijeg. Obuhvaćenu skupinu zastupnica određuje korisnički
+    izbor filtera, prema vremenskom razdoblju, izabranoj zastupnici, klubu ili
+    sjednici.
