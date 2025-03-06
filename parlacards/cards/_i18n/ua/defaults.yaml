@@ -203,6 +203,7 @@ absent--m: Відсутній
 absent--plural: Відсутні
 no-term: Позафракційні
 inequality: Розбіжність
+unity: Єдність
 everybody: Усі
 show: Показати
 full-speech: Уся промова
@@ -282,7 +283,7 @@ vote_types:
 tools:
   notifications: Сповіщення Парламетру
   vote-comparator: Порівняння голосувань
-  discord: Аналіз розбіжностей
+  unity: Enotnost
   compass: Парламентський компас
   word-groups: Групи слів
 frame:

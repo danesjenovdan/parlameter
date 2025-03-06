@@ -1,5 +1,5 @@
 card:
-  title: 'Seznam glasovanj po '
+  title: 'Enotnost'
   info: >-
     # Seznam vseh glasovanj, ki ustrezajo uporabniškemu vnosu ({text}), za izbrana
     matična delovna telesa ({wbs}), razvrščenih po {sortBy}.

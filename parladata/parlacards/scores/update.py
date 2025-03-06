@@ -91,6 +91,8 @@ def force_run_analyses(timestamp=None, print_method=print):
     for playing_field in get_playing_fields(timestamp):
         print(f"Runing analyses for: {playing_field.name}")
         print_method("start vote analyses")
+        # TODO(unity): this only runs for root organizations, we need to run it for
+        # working bodies as well
         run_vote_analyses_on_date(playing_field, timestamp)
         print_method("start speech analyses")
         run_speech_analyses_on_date(playing_field, timestamp)
