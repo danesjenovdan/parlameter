@@ -1,0 +1,54 @@
+card:
+  title: Stilske analize
+  info: >-
+    # Učestalost korištenja stilski obilježenih riječi u govorima.
+
+
+    Kombiniranjem kvalifikatora
+    [SSKJ](http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika) I
+    [SNB](http://www.fran.si/131/snb-slovar-novejsega-besedja) definirali smo
+    ekscesni, uzvišeni i jednostavni rječnik u govorima zastupnica.
+
+
+    U obzir su uzeti samo kvalifikatori koji se u oba rječnika nalaze tik iza
+    natuknice i sežu do kraja definicije (ali ne i kvalifikatori za posebna
+    značenja odnosno uporabe).
+
+
+    Poduzeće [Amebis](http://www.amebis.si/) je iz transkripata zastupničkih
+    govora pripremilo popise riječi koje imaju neki od izabranih kvalifikatora.
+
+
+    Linijski grafikon prikazuje udio pojedinog tipa rječnika u govorima
+    zastupnica u odnosu na prosjek izračunat za cijeli saziv. Udio se izračunava
+    prema algoritmu: uzmu se svi govori zastupnice, prebroji se broj riječi (i
+    njihovih ponavljanja) u svakoj kategoriji leksema. To se ponovi za sve
+    zastupnice, a zatim se podijeli vrijednost kategorije za zastupnicu s
+    prosječnom vrijednošću (zbroj vrijednosti svih zastupnica podijeljen s
+    brojem zastupnica). Vrijednost svake kategorije za zastupnicu se normalizira
+    (min. 1 - max. 100).
+
+
+    Uzvišeni rječnik
+
+
+    * Kvalifikatorji iz SSKJ: evfemistično (evfem.), mitološko (mitol.),
+    pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)
+
+
+    Jednostavan rječnik
+
+
+    * Kvalifikatorji iz SSKJ: narečno (nar.), pogovorno (pog.), nižje pogovorno
+    (nižje pog.)
+
+    * Kvalifikatorji iz SNB: pogovorno (pog.)
+
+
+    Ekscesni rječnik
+
+
+    * Kvalifikatorji iz SSKJ: vulgarno (vulg.), slabšalno (slabš.), ekspresivno
+    (ekspr.), ironično (iron.), otroško (otr.)
+
+    * Kvalifikatorji iz SNB: slabšalno (slabš.), vulgarno (vulg.)

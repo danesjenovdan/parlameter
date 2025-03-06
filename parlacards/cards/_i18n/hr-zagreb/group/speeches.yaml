@@ -1,0 +1,11 @@
+card:
+  title: Govori
+  info: >-
+    # Ispis poveznica na sve govore zastupnica u jednom sazivu, a koji
+    odgovaraju korisničkom izboru, razvrstani prema datumu.
+
+
+    Učitavaju se poveznice na sve govore odabranog kluba koji se mogu naći u
+    transkriptima objavljenim na web stranicama Hrvatskog sabora, i prikazuju
+    oni koji odgovaraju korisničkom izboru (zastupnice, vremensko razdoblje,
+    vrsta sjednice).

@@ -136,9 +136,9 @@
       "title": "Komparator głosowań",
       "text": "Komparator głosowań pozwala odpowiedzieć na pytania takie jak: Kiedy członkowie jednej partii głosowali tak samo, jak ich najwięksi rywale polityczni?"
     },
-    "discord": {
-      "title": "Analiza niezgodności",
-      "text": "Zbadaj niezgodność w klubach parlamentarnych w oparciu o to, jak bardzo nie zgadzali się co do konkretnych aktów prawnych."
+    "unity": {
+      "title": "Enotnost",
+      "text": "Raziskuj enotnost v parlamentarnih skupinah glede na to, koliko strinjanja je bilo pri glasovanjih v poslanskih skupinah."
     },
     "compass": {
       "title": "Parlamentarny kompas",

@@ -1,0 +1,29 @@
+card:
+  title: Saborski kompas
+  info: >-
+    # Pregled zastupnica u sustavu koordinata s obzirom na sličnost njihovog
+    glasanja. Što su više udaljene zastupnice na političkom kompasu, to se
+    povijest njihovog glasanja više razlikuje.
+
+
+    Za svaku zastupnicu posebno izvlači se povijest glasanja (ili odsutnosti).
+    Povijest glasanja svake zastupnice uspoređuje se s poviješću glasanja svih
+    ostalih zastupnica i prebroji se koliko su puta glasale na isti način.
+    Rezultati se postave u dvodimenzionalnu matricu (redci i stupci su
+    zastupnice, vrijednosti na Xi,j odnose se na to koliko puta su dvije
+    zastupnice glasale jednako (zastupnice su i i j). Potom se matrica razbija
+    na vlastite vrijednosti.
+
+
+    Algoritam vraća tri matrice - u, s, I V-transponse. Matrica V-transponse
+    može se smatrati novim skupom koordinata zastupnica. Iz V-transpose uzimaju
+    se ona dva retka koji objašnjavaju najveći dio prethodne matrice i
+    vizualiziraju se u dvodimenzionalnom koordinatnom sustavu.
+
+
+    Prva matrica može se smatrati zastupnicama koje se nalaze u N-dimenzionalnom
+    prostoru. (N je broj glasanja koja se međusobno uspoređuju odnosno
+    najudaljenija povijest glasanja jedne zastupnice). Algoritam stvara
+    mapiranje iz N dimenzije na 2, pri čemu pokušava održati udaljenost između
+    zastupnica. Što su zastupnice udaljenije na političkom kompasu to se više
+    razlikuje njihova povijest glasanja.

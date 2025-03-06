@@ -1,0 +1,6 @@
+card:
+  title: Citat
+  info: >-
+    Transkripti sjednica koji se u obliku HTML dokumenata objavljuju na stranici
+    [HS](http://www.sabor.hr/hr), strojno se raščlanjuju u pojedinačne govorne
+    nastupe. Ovo je kartica koja predstavlja jedan govor.

@@ -36,6 +36,7 @@ services:
       DRF_RECAPTCHA_SECRET_KEY: ""
     volumes:
       - ./parladata:/app
+      - ./parladata/ipython_config.py:/root/.ipython/profile_default/ipython_config.py
 
   db:
     image: postgres:latest
@@ -116,11 +117,11 @@ services:
       - PARLASITE_CDN_URL=http://localhost:8080
       - PARLASITE_CARDS_URL=http://host.docker.internal:3000
       - PARLASITE_DATA_URL=http://host.docker.internal:8000/v3
-      - PARLASITE_LEADER_ID=0
-      - PARLASITE_ROOT_ORG_ID=1127
-      - PARLASITE_MANDATE_ID=14
+      - PARLASITE_LEADER_ID=4434
+      - PARLASITE_ROOT_ORG_ID=137
+      - PARLASITE_MANDATE_ID=2
       - PARLASITE_DEFAULT_CARD_DATE=
-      - PARLASITE_NEWSLETTER_SEGMENT_ID=2
+      - PARLASITE_NEWSLETTER_SEGMENT_ID=
     volumes:
       - ./parlasite/config/:/app/config
       - ./parlasite/i18n/:/app/i18n

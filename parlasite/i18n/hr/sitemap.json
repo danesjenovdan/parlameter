@@ -1,48 +1,48 @@
 {
-    "landing": {
-        "legislation": "zakonodaja",
-        "sessions": "seje",
-        "members": "poslanci",
-        "parties": "poslanske-skupine",
-        "tools": "orodja",
-        "about": "https://parlameter.org/sl/",
-        "media": "za-medije",
-        "legal": "pravno-obvestilo",
-        "thankYou": "hvala",
-        "error": "ups"
-    },
-    "sessions": {
-        "search": {
-            "base": "isci",
-            "filter": "filter"
-        }
-    },
-    "tools": {
-        "notifications": "obvestila",
-        "voteComparator": "primerjalnik-glasovanj",
-        "discord": "raziskovalec-neenotnosti",
-        "compass": "parlamentarni-kompas",
-        "wordGroups": "skupine-besed"
-    },
-    "member": {
-        "leaderBase": "zupan",
-        "base": "p",
-        "overview": "pregled",
-        "votings": "glasovanja",
-        "speeches": "govori"
-    },
-    "party": {
-        "base": "ps",
-        "overview": "pregled",
-        "votings": "glasovanja",
-        "speeches": "govori"
-    },
-    "session": {
-        "base": "seja",
-        "legislation": "zakonodaja",
-        "otherVotings": "glasovanja",
-        "transcript": "transkript",
-        "agenda": "dnevni-red",
-        "vote": "glasovanje"
+  "landing": {
+    "legislation": "zakonodavstvo",
+    "sessions": "sjednice",
+    "members": "zastupnice",
+    "parties": "klubovi",
+    "tools": "alati",
+    "about": "https://parlameter.org/",
+    "media": "za-medije",
+    "legal": "pravne-napomene",
+    "thankYou": "hvala",
+    "error": "ups"
+  },
+  "sessions": {
+    "search": {
+      "base": "trazi",
+      "filter": "filter"
     }
+  },
+  "tools": {
+    "notifications": "obavijesti",
+    "voteComparator": "komparator-glasanja",
+    "discord": "pretrazivac-razjedinjenosti",
+    "compass": "saborski-kompas",
+    "wordGroups": "grupe-rijeci"
+  },
+  "member": {
+    "leaderBase": "TODO-leaderBase",
+    "base": "zastupnica",
+    "overview": "pregled",
+    "votings": "glasanja",
+    "speeches": "govori"
+  },
+  "party": {
+    "base": "klub",
+    "overview": "pregled",
+    "votings": "glasanja",
+    "speeches": "govori"
+  },
+  "session": {
+    "base": "sjednica",
+    "legislation": "pregled",
+    "otherVotings": "glasanja",
+    "transcript": "transkript",
+    "agenda": "dnevni-red",
+    "vote": "glasanje"
+  }
 }
