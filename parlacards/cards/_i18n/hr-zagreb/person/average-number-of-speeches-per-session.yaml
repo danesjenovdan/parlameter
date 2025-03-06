@@ -1,0 +1,13 @@
+card:
+  title: Prosječan broj govora po sjednici
+  info: >-
+    # Prosječan broj govora zastupnice po sjednici u odnosu na prosječnu i
+    maksimalnu vrijednost.
+
+
+    Prebroje se govori zastupnice, preuzeti iz transkripata
+    [HS](http://edoc.sabor.hr/Fonogrami.aspx), i broj se podijeli s brojem
+    sjednica na kojima je zastupnica bila prisutna. Broj svih govora najprije se
+    dijeli s brojem zastupnica, a zatim s brojem svih sjednica (na kojima se
+    raspravljalo). Individualni rezultat uspoređujemo s prosječnim i maksimalnim
+    vrijednostima.

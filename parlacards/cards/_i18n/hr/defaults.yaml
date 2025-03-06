@@ -157,6 +157,8 @@ voted-absent--plural: Nisu glasali o
 sort-by: Razvrstaj prema
 sort-by--inequality: Razjedinjenosti
 sort-by--date: Datumu
+sort-by--unity: Enotnosti
+sort-by--disunity: Neenotnosti
 filtered-to-none: Bez rezultata
 mps: Zastupnice
 party: Klubovi
@@ -175,6 +177,7 @@ absent--plural: Odsutni
 no-term: Bez mandata
 no-data: Bez podataka
 inequality: Nejedinstvenost
+unity: Jedinstvenost
 everybody: Svi
 show: Prikaži
 full-speech: Cijeli govor
@@ -271,7 +274,7 @@ vote_types:
 tools:
   notifications: Parlametar obavijesti
   vote-comparator: Komparator glasanja
-  discord: Pretraživač razjedinjenosti
+  unity: Jedinstvo
   compass: Saborski kompas
   word-groups: Grupe riječi
 frame:
@@ -357,8 +360,8 @@ deputy--m: Potpredsjednik
 deputy--f: Potpredsjednica
 member--m: Član
 member--f: Članica
-number-of-seats: 'Broj zastupničkih mjesta:'
-contact: 'Kontakt:'
+number-of-seats: 'Broj zastupničkih mjesta'
+contact: 'Kontakt'
 mp: Zastupnica
 addressee: Primateljica
 analysis-texts--party:
