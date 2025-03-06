@@ -78,6 +78,7 @@ from parlacards.serializers.voting_distance import (
     VotingDistanceSerializer,
 )
 from parlacards.solr import parse_search_query_params, solr_select
+from parlacards.utils import process_months_string
 from parladata.exceptions import NoMembershipException
 from parladata.models.agenda_item import AgendaItem
 from parladata.models.ballot import Ballot
@@ -85,6 +86,7 @@ from parladata.models.common import Mandate
 from parladata.models.legislation import Law
 from parladata.models.media import MediaReport
 from parladata.models.memberships import PersonMembership
+from parladata.models.motion import Motion
 from parladata.models.organization import (
     CLASSIFICATIONS as ORGANIZATION_CLASSIFICATIONS,
 )
@@ -1124,10 +1126,7 @@ class GroupMediaReportsCardSerializer(GroupScoreCardSerializer):
 #
 # TOOLS
 #
-
-
-class ToolsDiscordCardSerializer(CardSerializer):
-
+class ToolsUnityCardSerializer(CardSerializer):
     def get_results(self, organization):
         # this is implemented in to_representation for pagination
         return None
@@ -1138,52 +1137,132 @@ class ToolsDiscordCardSerializer(CardSerializer):
         return serializer.data
 
     def to_representation(self, organization):
+        parent_data = super().to_representation(organization)
+
         mandate = Mandate.get_active_mandate_at(self.context["request_date"])
-        parent_data = super().to_representation(mandate)
-
-        root_organization, playing_field = mandate.query_root_organizations()
-
-        self.context["organization"] = organization
-
-        order_by = self.context.get("GET", {}).get("order_by", "date")
-        if order_by == "date":
-            order_by = "-vote__timestamp"
-        else:
-            order_by = "value"
-
-        discords = (
-            OrganizationVoteDiscord.objects.filter(
-                organization=organization, playing_field=playing_field
-            )
-            .prefetch_related("vote")
-            .order_by(order_by)
+        from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(
+            self.context["request_date"]
         )
+
+        organization_serializer = CommonOrganizationSerializer(
+            organization, context=self.context
+        )
+
+        ### groups = dz + coalition + all pgs
+        groups = [organization_serializer.data]
+
+        coalition_organization_membership = (
+            organization.organizationmemberships_children.active_at(
+                self.context["request_date"]
+            )
+            .filter(member__classification="coalition")
+            .first()
+        )
+        if coalition_organization_membership:
+            coalition = coalition_organization_membership.member
+            coalition_serializer = CommonOrganizationSerializer(
+                coalition, context=self.context
+            )
+            groups.append(coalition_serializer.data)
+
+        parliamentary_groups = organization.query_parliamentary_groups()
+        parliamentary_groups_serializer = CommonOrganizationSerializer(
+            parliamentary_groups, context=self.context, many=True
+        )
+        groups.extend(parliamentary_groups_serializer.data)
+        ###
+
+        ### bodies = dz + all working bodies
+        bodies = [organization_serializer.data]
+
+        filtered_classifications = [
+            c[0]
+            for c in ORGANIZATION_CLASSIFICATIONS
+            if c[0] != "root" and c[0] != "pg"
+        ]
+
+        motion_organizations__ids = (
+            Motion.objects.filter(datetime__range=(from_timestamp, to_timestamp))
+            .filter(session__organizations__classification__in=filtered_classifications)
+            .values_list("session__organizations__id", flat=True)
+            .distinct()
+        )
+        working_bodies = Organization.objects.filter(id__in=motion_organizations__ids)
+        working_bodies_serializer = CommonOrganizationSerializer(
+            working_bodies, context=self.context, many=True
+        )
+        bodies.extend(working_bodies_serializer.data)
+        ###
+
+        ### get vote scores
+        vote_scores = OrganizationVoteDiscord.objects.filter(
+            # organization=organization,
+            # playing_field=organization,
+            timestamp__range=(from_timestamp, to_timestamp),
+        ).prefetch_related("vote")
+        ###
+
+        ### filter vote scores by group (organization)
+        group_id = self.context.get("GET", {}).get("group", None)
+        if group_id and Organization.objects.filter(id=group_id).exists():
+            vote_scores = vote_scores.filter(organization_id=group_id)
+        else:
+            # TODO(unity)
+            # vote_scores = vote_scores.filter(organization=organization)
+            pass
+        ###
+
+        ### filter vote scores by body (playing field)
+        body_id = self.context.get("GET", {}).get("body", None)
+        if body_id and Organization.objects.filter(id=body_id).exists():
+            vote_scores = vote_scores.filter(playing_field_id=body_id)
+        else:
+            # TODO(unity)
+            # vote_scores = vote_scores.filter(playing_field=organization)
+            pass
+        ###
+
+        ### filter by months
+        months_filter = self.context.get("GET", {}).get("months", None)
+        ranges = process_months_string(months_filter, min_year=from_timestamp.year)
+        if ranges:
+            Q_object = Q()
+            for range in ranges:
+                Q_object |= Q(vote__timestamp__range=range)
+            vote_scores = vote_scores.filter(Q_object)
+        ###
+
+        ### filter votes by name
+        vote_name_filter = self.context.get("GET", {}).get("text", None)
+        if vote_name_filter:
+            vote_scores = vote_scores.filter(vote__name__icontains=vote_name_filter)
+        ###
+
+        ### sort votes
+        order_by = self.context.get("GET", {}).get("order_by", "-value")
+        if order_by not in ["value", "-value"]:
+            order_by = "-value"
+        vote_scores = vote_scores.order_by(order_by, "-vote__timestamp", "-id")
+        ###
 
         paged_object_list, pagination_metadata = create_paginator(
-            self.context.get("GET", {}), discords
+            self.context.get("GET", {}),
+            vote_scores,
+            prefix="votes:",
         )
 
-        discord_serializer = ToolsDiscordSerializer(
+        votes_serializer = ToolsDiscordSerializer(
             paged_object_list,
             many=True,
             context=self.context,
-        )
-
-        playing_field_serializer = CommonOrganizationSerializer(
-            playing_field, context=self.context
-        )
-
-        organizations = playing_field.query_parliamentary_groups()
-        organizations_serializer = CommonOrganizationSerializer(
-            organizations, context=self.context, many=True
         )
 
         return {
             **parent_data,
             **pagination_metadata,
             "results": {
-                "votes": discord_serializer.data,
-                "organizations": organizations_serializer.data
-                + [playing_field_serializer.data],
+                "votes": votes_serializer.data,
+                "groups": groups,
+                "bodies": bodies,
             },
         }

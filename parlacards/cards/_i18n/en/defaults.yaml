@@ -166,6 +166,8 @@ voted-did-not-vote--m: Did not vote
 sort-by: Order by
 sort-by--inequality: Discord
 sort-by--date: Date
+sort-by--unity: Unity
+sort-by--disunity: Disunity
 filtered-to-none: Brez zadetkov
 mps: MPs
 party: Parliamentary group
@@ -187,6 +189,7 @@ absent--plural: Absent
 no-term: No mandate
 no-data: No data
 inequality: Discord
+unity: Unity
 everybody: All
 show: Show
 full-speech: Whole speech
@@ -288,7 +291,7 @@ vote_types:
 tools:
   notifications: Parlameter notifications
   vote-comparator: Vote comparator
-  discord: Discord analysis
+  unity: Unity
   compass: Parliamentary compass
   word-groups: Word groups
 frame:
@@ -376,8 +379,8 @@ deputy--m: Deputy
 deputy--f: Deputy
 member--m: Member
 member--f: Member
-number-of-seats: 'Number of seats in the parliament:'
-contact: 'Contact:'
+number-of-seats: 'Number of seats in the parliament'
+contact: 'Contact'
 mp: MP
 addressee: Addressed to
 analysis-texts--party:

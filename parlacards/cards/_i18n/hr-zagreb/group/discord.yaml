@@ -1,0 +1,12 @@
+card:
+  title: Razjedinjenost glasanja
+  info: >-
+    # Razjedinjenost odabranog kluba na glasanju na sjednicama Hrvatskog sabora
+    u odnosu na prosječnu i najvišu stopu razjedinjenosti među svim klubovima.
+
+
+    Za svako glasanje za klub se prebroji koliko je zastupnica glasalo i kako
+    (ZA, PROTIV, SUZDRŽANE, ODSUTNE). Izračunava se postotak onih koje su
+    glasale za najpopularniju opciju. Taj postotak oduzima se od 100 I tako
+    dobiva stupanj razjedinjenosti odnosno postotak zastupnica koje se nisu
+    priklonile većinskom glasu kluba.

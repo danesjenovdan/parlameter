@@ -1,0 +1,12 @@
+card:
+  title: Riječi koje označavaju sjednicu
+  info: >-
+    # Ispis 10 riječi i fraza koje su na sjednici korištene češće nego na svim
+    drugim sjednicama.
+
+
+    Analiza se provodi prema statistici
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
+
+
+    Korpus čine svi govori, a dokument svi govori na sjednici.
