@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div v-if="results.previous_occupation" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-status" aria-hidden="true"></span>
         </div>
@@ -87,19 +87,22 @@
         </div>
       </div>
 
-      <div v-if="results.email" class="row">
+      <div v-if="emails.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
         </div>
         <div class="bordertop0 contact-container">
           <span class="key">
             <span v-t="'contact'"></span>:
-            <a
-              :href="`mailto:${results.email}`"
-              target="_blank"
-              class="funblue-light-hover"
-              >{{ shortEmail }}</a
-            >
+            <template v-for="(email, i) in emails" :key="email">
+              <a
+                :href="`mailto:${email}`"
+                target="_blank"
+                class="funblue-light-hover"
+                >{{ shortenEmail(email) }}</a
+              >
+              <template v-if="i < emails.length - 1">, </template>
+            </template>
           </span>
         </div>
       </div>
@@ -145,6 +148,7 @@ import { personHeader } from '@/_mixins/altHeaders.js';
 import { personOgImage } from '@/_mixins/ogImages.js';
 import links from '@/_mixins/links.js';
 import age from '@/_helpers/age.js';
+import emailShortener from '@/_helpers/emailShortener.js';
 
 export default {
   name: 'CardPersonBasicInformation',
@@ -184,19 +188,15 @@ export default {
       if (this.person.preferred_pronoun === 'he') suffix = '--m';
       return `unaffiliated${suffix}`;
     },
-    shortEmail() {
-      if (this.results.email?.length) {
-        if (this.results.email.length < 26) {
-          return this.results.email;
-        }
-        const [addr, domain] = this.results.email.split('@');
-        if (addr.length < 18) {
-          return this.results.email;
-        }
-        return `${addr.slice(0, 17)}…@${domain}`;
-      }
-      return '';
+    emails() {
+      return (this.results.email || '')
+        .split(';')
+        .map((email) => email.trim())
+        .filter(Boolean);
     },
+  },
+  methods: {
+    shortenEmail: emailShortener,
   },
 };
 </script>

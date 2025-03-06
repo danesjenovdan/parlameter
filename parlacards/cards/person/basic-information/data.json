@@ -3,28 +3,41 @@
   "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/basic-information/?id=91",
   "data": {
     "results": {
-      "education": null,
-      "education_level": null,
-      "previous_occupation": null,
-      "number_of_mandates": null,
+      "education": "diplomirana ekonomistka",
+      "education_level": "7",
+      "previous_occupation": "računovodja na Ministrstvu za notranje zadeve",
+      "number_of_mandates": 1,
       "date_of_birth": "1974-09-30",
       "date_of_death": null,
-      "number_of_voters": null,
-      "districts": [],
-      "social_networks": []
+      "number_of_voters": 994,
+      "districts": [
+        {
+          "name": "Kranj II",
+          "classification": "district",
+          "slug": "23-kranj-ii"
+        }
+      ],
+      "social_networks": [
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/udovcmateja"
+        }
+      ],
+      "email": "test@example.com; test2zelodolgemailnaslov@example.com; "
     },
     "mandate": {
+      "id": 1,
       "description": "VIII",
-      "beginning": null
+      "beginning": "2018-06-22T00:00:00"
     },
     "person": {
-      "slug": "91-mateja-udovc",
+      "slug": null,
       "name": "Mateja Udovč",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": "",
+      "preferred_pronoun": "she",
       "group": null,
-      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P312.png"
+      "image": "/media/nep-mu-mateja-udovc.jpg"
     }
   }
 }

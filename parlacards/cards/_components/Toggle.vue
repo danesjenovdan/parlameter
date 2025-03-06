@@ -51,6 +51,7 @@ export default {
     flex: 1;
     text-align: center;
     padding: 0 10px;
+    white-space: nowrap;
 
     &:hover {
       background: colors.$tab-hover;

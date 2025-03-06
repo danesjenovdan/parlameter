@@ -1,0 +1,25 @@
+card:
+  title: Najčešće glasaju jednako
+  info: >-
+    # Popis pet zastupnica koje najčešće glasaju istovjetno 'većinskom glasu
+    kluba'. Klasificirane su prema vrijednostima od najmanje do najveće. Što je
+    vrijednost manja, veće je slaganje u glasanju.
+
+
+    Izračunava se euklidska udaljenost između rezultata glasanja kluba i
+    rezultata svih ostalih zastupnica (pri čemu se vrijednost glasa pretvori u
+    brojčane vrijednosti između -1 i 1).
+
+
+    Kad se izračuna 'udaljenosti' između svih zastupnica, razvrstava ih se prema
+    rezultatu i prikazuje se prvih pet.
+
+
+    Brojčane vrijednosti glasova
+
+
+    * -1: protiv
+
+    * 0: suzdržana ili nije prisutana
+
+    * 1: za
