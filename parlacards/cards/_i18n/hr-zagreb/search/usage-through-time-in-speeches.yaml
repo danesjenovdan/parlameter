@@ -1,0 +1,10 @@
+card:
+  title: Ponavljanje tijekom vremena
+  info: >-
+    # Pregled učestalosti ponavljanja pretraživanog niza u govorima tijekom
+    vremena.
+
+
+    Prebroji se pojavljivanje pretraživanog niza kroz cijeli mandat i rezultat
+    zbraja po mjesecima. Rezultati se potom prikazuju bilo za cijeli mandat,
+    bilo za posljednjih godinu dana.

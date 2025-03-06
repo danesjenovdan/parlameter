@@ -1,0 +1,9 @@
+card:
+  title: Zakon
+  info: >-
+    # Sažetak zakona/akata i rezultati svih s njim povezanih glasanja.
+
+
+    Sa stranice [www.sabor.hr](http://www.sabor.hr/hr) preuzimaju se sva
+    glasanja vezana za istu PZ/PZE oznaku. Glasanja s istom PZ/PZE oznakom
+    spajamo sa zakonom ili aktom kojem oznaka pripada.

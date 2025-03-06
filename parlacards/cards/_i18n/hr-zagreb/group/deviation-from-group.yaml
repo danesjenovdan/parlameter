@@ -1,0 +1,18 @@
+card:
+  title: Neslaganje s klubom
+  info: >-
+    # Popis svih zastupnica iz kluba koje su svrstane prema vrijednosti slaganja
+    s većinskim glasom kluba. Što je veća vrijednost, manje je slaganje.
+
+
+    Za svako glasanje izračuna se 'većinski glas kluba' kojem pojedina
+    zastupnica pripada. Zatim se za svaku članicu izračunava postotak glasanja
+    kada je zastupnica glasala drugačije od većinskog glasa kluba kojem pripada.
+    Rezultati su razvrstani od najvećeg odstupanja prema najmanjem.
+
+
+    Izuzimaju se zastupnice s vrijednošću "NISU", što znači da ako je većinski
+    glas kluba "NISU" (većina zastupnica kluba nije bila na glasanju) to
+    glasanje je isključeno iz analize. Ako klub ima više 'većinskih glasova
+    kluba' (dvije opcije imaju jednak najveći broj glasova unutar kluba),
+    uzimaju se obje opcije i uspoređuju s individualnim zastupnicama.

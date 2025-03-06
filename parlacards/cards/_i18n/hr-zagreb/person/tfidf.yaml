@@ -1,0 +1,12 @@
+card:
+  title: Riječi koje označavaju zastupnicu
+  info: >-
+    # Ispis 10 riječi i fraza koje je odabrana zastupnica koristila češće od
+    ostalih zastupnica u Hrvatskom saboru HS-u.
+
+
+    Analiza se provodi prema statistici
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+
+
+    Korpus čine svi govori, a dokument svi govori odabrane zastupnice.

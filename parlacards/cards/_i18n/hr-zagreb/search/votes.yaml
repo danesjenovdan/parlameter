@@ -1,0 +1,9 @@
+card:
+  title: Glasanja koja sadrže pretraživani niz
+  info: >-
+    # Pregled svih glasanja koja sadrže pretraživani niz, razvrstana vremenski.
+
+
+    Nakon glasanja na svim sjednicama pretraži se i ispiše poveznice na sva
+    glasanja u kojima se pojavljuje pretraživani niz i razvrsta ih se prema
+    datumu (od najnovijeg do najstarijeg) i u skladu s pretraživanim nizom.
