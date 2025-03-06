@@ -15,6 +15,7 @@
           <PSearchDropdown
             v-model="groups"
             single
+            hide-clear
             @update:model-value="searchVotesImmediate"
           />
         </div>
@@ -23,6 +24,7 @@
           <PSearchDropdown
             v-model="bodies"
             single
+            hide-clear
             @update:model-value="searchVotesImmediate"
           />
         </div>
@@ -114,24 +116,30 @@ export default {
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
+    const defaultGroupId = cardData.id;
+
     const textFilter = cardState?.text || '';
+    const groupFilter = String(cardState?.group || defaultGroupId);
+    const bodyFilter = String(cardState?.body || defaultGroupId);
 
     const groups = (cardData?.data?.results?.groups || []).map((g) => {
+      const gid = (g.slug || '').split('-')[0];
       return {
-        id: (g.slug || '').split('-')[0],
+        id: gid,
         slug: g.slug,
         label: g.name,
-        selected: false,
+        selected: gid === groupFilter,
         color: g.color,
       };
     });
 
     const bodies = (cardData?.data?.results?.bodies || []).map((b) => {
+      const bid = (b.slug || '').split('-')[0];
       return {
-        id: (b.slug || '').split('-')[0],
+        id: bid,
         slug: b.slug,
         label: b.name,
-        selected: false,
+        selected: bid === bodyFilter,
         color: b.color,
       };
     });
@@ -194,6 +202,15 @@ export default {
     selectedSort() {
       this.searchVotesImmediate();
     },
+  },
+  mounted() {
+    if (
+      this.textFilter ||
+      this.selectedGroup?.id !== String(this.cardData.id) ||
+      this.selectedBody?.id !== String(this.cardData.id)
+    ) {
+      this.searchVotesImmediate();
+    }
   },
   methods: {
     searchVotesImmediate() {
