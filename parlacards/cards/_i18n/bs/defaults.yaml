@@ -153,6 +153,8 @@ voted-absent--plural: Nisu glasali o
 sort-by: Razvrstaj prema
 sort-by--inequality: Razjedinjenosti
 sort-by--date: Datumu
+sort-by--unity: Enotnosti
+sort-by--disunity: Neenotnosti
 filtered-to-none: Bez rezultata
 mps: Zastupnici
 party: Klubovi
@@ -174,6 +176,7 @@ absent--plural: Odsutni
 no-term: Bez mandata
 no-data: Bez podataka
 inequality: Nejedinstvenost
+unity: Jedinstvenost
 everybody: Svi
 show: Prikaži
 full-speech: Cijeli govor
@@ -264,7 +267,7 @@ vote_types:
 tools:
   notifications: Parlameter obavještenja
   vote-comparator: Komparator glasanja
-  discord: Pretraživač razjedinjenosti
+  unity: Jedinstvo
   compass: Parlamentarni kompas
   word-groups: Grupe riječi
 frame:

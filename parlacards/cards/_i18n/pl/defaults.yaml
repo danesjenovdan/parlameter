@@ -171,6 +171,7 @@ absent--m: Nieobecny
 absent--plural: Nieobecni
 no-term: Bez mandatu
 inequality: Niezgodność
+unity: Enotnost
 everybody: Wszystko
 show: Pokaż
 full-speech: Całe wystąpienie
@@ -261,7 +262,7 @@ vote_types:
 tools:
   notifications: Parlametr powiadomienia
   vote-comparator: Komparator głosowań
-  discord: Analiza niezgodności
+  unity: Enotnost
   compass: Sejmowy kompas
   word-groups: Grupy słów
 frame:

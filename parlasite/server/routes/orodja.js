@@ -33,11 +33,11 @@ router.get(`/${sm.tools.voteComparator}`, ar((render) => {
   });
 }));
 
-router.get(`/${sm.tools.discord}`, ar((render) => {
-  render('orodja/raziskovalec-neenotnosti', {
+router.get(`/${sm.tools.unity}`, ar((render) => {
+  render('orodja/enotnost', {
     activeMenu: 'tool',
-    pageTitle: i18n('tools.discord.title'),
-    currentTool: 'raziskovalec-neenotnosti',
+    pageTitle: i18n('tools.unity.title'),
+    currentTool: 'enotnost',
   });
 }));
 

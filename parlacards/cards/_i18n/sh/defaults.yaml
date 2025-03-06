@@ -154,6 +154,8 @@ voted-absent--plural: Niso glasovali o
 sort-by: Razvrsti po
 sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
+sort-by--unity: Enotnosti
+sort-by--disunity: Neenotnosti
 filtered-to-none: Brez zadetkov
 mps: Poslanci
 party: Poslanska skupina
@@ -171,6 +173,7 @@ absent--m: Odsoten
 absent--plural: Odsotni
 no-term: Brez mandata
 inequality: Neenotnost
+unity: Enotnost
 everybody: Vsi
 show: Prikaži
 full-speech: Cel govor
@@ -261,7 +264,7 @@ vote_types:
 tools:
   notifications: Parlameter obvestila
   vote-comparator: Primerjalnik glasovanj
-  discord: Raziskovalec neenotnosti
+  unity: Enotnost
   compass: Parlamentarni kompas
   word-groups: Skupine besed
 frame:
