@@ -1,0 +1,11 @@
+card:
+  title: Grupe riječi
+  info: >-
+    # Kartica prikazuje koje govornice ili klubovi apsolutno i relativno najviše
+    govore o određenoj temi ili upotrebljavaju određenu grupu riječi.
+
+
+    Prebroji se koliko puta je pojedina govornica izrekla najmanje dva
+    pretraživana niza i one koje su ih barem jednom upotrijebile rangirane su
+    prema broju ponavljanja, podijeljeno s frakcijskim brojem svih govora te
+    zastupnice, njezinog kluba i ukupnog broja svih govora.

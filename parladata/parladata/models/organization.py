@@ -253,6 +253,19 @@ class Organization(
             id__in=ids_of_groups_with_voters
         )
 
+    def query_voter_groups(self, timestamp=None):
+        if not timestamp:
+            timestamp = datetime.now()
+
+        # sometimes we need a list of all parliamentary groups that have voters
+        # in a working body, f.e. when calculating unity
+
+        voters = self.query_voters(timestamp)
+        groups = [v.parliamentary_group_on_date(timestamp) for v in voters]
+        group_ids = [g.id for g in groups if g]
+
+        return Organization.objects.filter(id__in=group_ids)
+
     def query_voters(self, timestamp=None):
         if not timestamp:
             timestamp = datetime.now()

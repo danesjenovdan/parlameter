@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # EDIT DATABASE NAME TO CHOOSE WHICH ONE YOU WANT
-DATABASE_NAME="parlameter_hrvaska"
-K8S_NAMESPACE="parlameter-hrvaska"
-SECRETS_NAME="parladata-credentials"
+DATABASE_NAME="parlameter_slovenija"
+K8S_NAMESPACE="parlameter-slovenija"
+SECRETS_NAME="parladata-slovenija-credentials"
 
 # DATABASE PASSWORD IS DYNAMICALLY RETRIEVED FROM THE CLUSTER
 DATABASE_USER=$(kubectl get secret $SECRETS_NAME -n $K8S_NAMESPACE -o jsonpath="{.data.DJANGO_DATABASE_USERNAME}" | base64 --decode)

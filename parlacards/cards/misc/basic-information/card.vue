@@ -34,19 +34,22 @@
         </div>
       </div>
 
-      <div v-if="results.email" class="row">
+      <div v-if="emails.length" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
         </div>
         <div class="bordertop0 contact-container">
           <span class="key">
             <span v-t="'contact'"></span>:
-            <a
-              :href="`mailto:${results.email}`"
-              target="_blank"
-              class="funblue-light-hover"
-              >{{ shortEmail }}</a
-            >
+            <template v-for="(email, i) in emails" :key="email">
+              <a
+                :href="`mailto:${email}`"
+                target="_blank"
+                class="funblue-light-hover"
+                >{{ shortenEmail(email) }}</a
+              >
+              <template v-if="i < emails.length - 1">, </template>
+            </template>
           </span>
         </div>
       </div>
@@ -77,6 +80,7 @@
 import common from '@/_mixins/common.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import links from '@/_mixins/links.js';
+import emailShortener from '@/_helpers/emailShortener.js';
 
 export default {
   name: 'CardMiscBasicInformation',
@@ -92,19 +96,15 @@ export default {
     };
   },
   computed: {
-    shortEmail() {
-      if (this.results.email?.length) {
-        if (this.results.email.length < 26) {
-          return this.results.email;
-        }
-        const [addr, domain] = this.results.email.split('@');
-        if (addr.length < 18) {
-          return this.results.email;
-        }
-        return `${addr.slice(0, 17)}…@${domain}`;
-      }
-      return '';
+    emails() {
+      return (this.results.email || '')
+        .split(';')
+        .map((email) => email.trim())
+        .filter(Boolean);
     },
+  },
+  methods: {
+    shortenEmail: emailShortener,
   },
 };
 </script>
