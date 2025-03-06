@@ -101,23 +101,43 @@ def save_sparse_groups_discords_between(
 
 
 def calculate_organization_vote_discord(
-    vote, organization, playing_field, timestamp=None
+    vote,
+    organization,
+    playing_field,
+    main_playing_field,
+    coalition,
 ):
-    if not timestamp:
-        timestamp = datetime.now()
-
     # get relevant voters
-    if organization == playing_field:
-        voters = PersonMembership.valid_at(vote.timestamp).filter(
-            organization=organization, role="voter"
+    if organization == main_playing_field:
+        # if organization is parliament/municipality then get all voters
+        voter_memberships = PersonMembership.valid_at(vote.timestamp).filter(
+            role="voter",
+            organization=main_playing_field,
+        )
+    elif organization == coalition:
+        # if organization is coalition then get all voters from coalition
+        organizations = get_coalition_member_organizations(coalition, vote.timestamp)
+        voter_memberships = PersonMembership.valid_at(vote.timestamp).filter(
+            role="voter",
+            organization=main_playing_field,
+            on_behalf_of__in=organizations,
         )
     else:
-        voters = PersonMembership.valid_at(vote.timestamp).filter(
-            on_behalf_of=organization, role="voter"
+        # in this case organization is a parliamentary group, but because
+        # on_behalf_of is not always set on other voter memberships we use
+        # main_playing_field to get voters from specific groups, they will be
+        # filtered by ballots later anyway
+        voter_memberships = PersonMembership.valid_at(vote.timestamp).filter(
+            role="voter",
+            organization=main_playing_field,
+            on_behalf_of=organization,
         )
 
+    voters = voter_memberships.values_list("member_id", flat=True)
+
     ballots = Ballot.objects.filter(
-        vote=vote, personvoter__in=voters.values_list("member_id", flat=True)
+        vote=vote,
+        personvoter__in=voters,
     )
 
     options_aggregated = (
@@ -130,6 +150,7 @@ def calculate_organization_vote_discord(
     ballots_count = ballots.count()
     if ballots_count == 0:
         return None
+
     discord = (
         ballots.filter(option=options_aggregated["option"]).count()
         / ballots_count
@@ -139,29 +160,39 @@ def calculate_organization_vote_discord(
     return discord
 
 
-def save_organization_vote_discord(vote, playing_field, timestamp=None):
+def save_organization_vote_discord(
+    vote,
+    playing_field,
+    main_playing_field,
+    coalition,
+    timestamp=None,
+):
     if not timestamp:
         timestamp = datetime.now()
 
+    organizations = [main_playing_field]
+
+    if coalition:
+        organizations.append(coalition)
+
     if playing_field.classification == "root":
-        organizations = playing_field.query_parliamentary_groups(vote.timestamp)
+        organizations += list(playing_field.query_parliamentary_groups(vote.timestamp))
     else:
-        # TODO(unity): calculate for pgs too; get pgs from members?
-        organizations = Organization.objects.none()
+        organizations += list(playing_field.query_voter_groups(vote.timestamp))
 
-    organizations = organizations.union(
-        Organization.objects.filter(id=playing_field.id)
-    )
-
-    # TODO(unity): calc for coalition too?
-
-    for party in organizations:
-        discord = calculate_organization_vote_discord(vote, party, playing_field)
+    for organization in organizations:
+        discord = calculate_organization_vote_discord(
+            vote,
+            organization,
+            playing_field,
+            main_playing_field,
+            coalition,
+        )
         if discord is None:
             continue
 
         OrganizationVoteDiscord(
-            organization=party,
+            organization=organization,
             vote=vote,
             value=discord,
             timestamp=timestamp,
@@ -169,11 +200,42 @@ def save_organization_vote_discord(vote, playing_field, timestamp=None):
         ).save()
 
 
+def get_coalition_member_organizations(coalition, timestamp=None):
+    if not timestamp:
+        timestamp = datetime.now()
+
+    coalition_members = (
+        coalition.organizationmemberships_children.active_at(timestamp)
+        .filter(member__classification="pg")
+        .values_list("member", flat=True)
+    )
+
+    return coalition_members
+
+
+def get_coalition(main_playing_field, timestamp=None):
+    if not timestamp:
+        timestamp = datetime.now()
+
+    coalition_organization_membership = (
+        main_playing_field.organizationmemberships_children.active_at(timestamp)
+        .filter(member__classification="coalition")
+        .first()
+    )
+
+    if not coalition_organization_membership:
+        return None
+
+    return coalition_organization_membership.member
+
+
 def save_organizations_vote_discords(playing_field, timestamp=None):
     if not timestamp:
         timestamp = datetime.now()
 
     mandate = Mandate.get_active_mandate_at(timestamp)
+    root_organization, main_playing_field = mandate.query_root_organizations(timestamp)
+    coalition = get_coalition(main_playing_field, timestamp)
 
     votes_already_calculated = (
         OrganizationVoteDiscord.objects.filter(playing_field=playing_field)
@@ -193,5 +255,20 @@ def save_organizations_vote_discords(playing_field, timestamp=None):
         .distinct("id")
     )
 
+    i = 0
+    num = len(votes)
+
     for vote in votes:
-        save_organization_vote_discord(vote, playing_field, timestamp)
+        i += 1
+        if i % 100 == 0:
+            print(f"Progress: {i}/{num}")
+
+        save_organization_vote_discord(
+            vote,
+            playing_field,
+            main_playing_field,
+            coalition,
+            timestamp,
+        )
+
+    print(f"Done: {num}/{num}")

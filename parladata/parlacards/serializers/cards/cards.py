@@ -1158,8 +1158,6 @@ class ToolsUnityCardSerializer(CardSerializer):
             .filter(member__classification="coalition")
             .first()
         )
-        coalition = None
-        coalition_serializer = None
         if coalition_organization_membership:
             coalition = coalition_organization_membership.member
             coalition_serializer = CommonOrganizationSerializer(
