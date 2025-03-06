@@ -1,0 +1,36 @@
+card:
+  title: Glasanje
+  info: >-
+    Zbirka glasanja preuzima se s web stranica HS-a.
+
+
+    Rezultati svakog glasanja prikazuju se na tri razine: na razini zastupnika,
+    na razini klubova i prema politici vlade.
+
+
+    Prva kartica omogućuje pregled glasova zastupnica i pretraživanje prema
+    vrijednosti glasa (ZA, PROTIV, SUZDRŽANA, ODSUTNA) i imenu zastupnice. Pored
+    kružnog grafikona prikazana je većina glasova na jednom glasanju u HS. "60%
+    ZA" tako znači da je 60% zastupnica glasalo ZA.
+
+
+    Druga kartica prikazuje glasove klubova. Na kraju svake linije prikazan je
+    većinski glas kluba, a gumbi s rezultatima glasanja otvaraju liste
+    zastupnica koje su tako glasale. Simbol munje upozorava na podjele u
+    klubovima - stavlja se iznad onih glasova koji se razlikuju od većine, a
+    odsutni su izuzeti. Tako da, ako je većina zastupnica kluba odsutna, ne
+    postoji ni većinski glas kluba.
+
+
+    Treća kartica prikazuje rezultat prema politici Vlade. Ovdje također simbol
+    munje upozorava na neočekivane glasove - odnosno odstupanja od većinskog
+    glasa koalicije.
+
+
+    SIMBOL MUNJE
+
+
+    Simbol munje upozorava na raskole u klubovima ili u koaliciji - stavlja se
+    iznad onih glasova koji se razlikuju od većinskog glasa kluba ili koalicije,
+    a odsutni su izuzeti. Tako da, ako je većina kluba odsutna, ne postoji ni
+    većinski glas kluba.

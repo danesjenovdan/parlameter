@@ -203,6 +203,7 @@ absent--m: Відсутній
 absent--plural: Відсутні
 no-term: Позафракційні
 inequality: Розбіжність
+unity: Єдність
 everybody: Усі
 show: Показати
 full-speech: Уся промова
@@ -282,7 +283,7 @@ vote_types:
 tools:
   notifications: Сповіщення Парламетру
   vote-comparator: Порівняння голосувань
-  discord: Аналіз розбіжностей
+  unity: Enotnost
   compass: Парламентський компас
   word-groups: Групи слів
 frame:
@@ -348,7 +349,7 @@ party-leader--m: Голова
 party-leader--f: Голова
 deputy-leader--m: Народний депутат
 deputy-leader--f: Народна депутатка
-contact: 'Контакти:'
+contact: 'Контакти'
 mp: Народний депутат
 addressee: Звертається до
 accepted: прийнято
@@ -393,7 +394,7 @@ investigative_comissions: Слідчі комісії
 elected-to-district--f: Набрала {numVotes} голосів у {окрузі}
 missing-district: округ не обраний
 sort-by--change: оновлення результатів аналізу {аналіз}
-number-of-seats: 'Кількість місць у парламентській залі:'
+number-of-seats: 'Кількість місць у парламентській залі'
 organization-classifications:
   root: Parliament
   committee: Committees

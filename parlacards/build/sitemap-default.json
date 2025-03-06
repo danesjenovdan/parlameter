@@ -20,7 +20,7 @@
   "tools": {
     "notifications": "obvestila",
     "voteComparator": "primerjalnik-glasovanj",
-    "discord": "raziskovalec-neenotnosti",
+    "unity": "enotnost",
     "compass": "parlamentarni-kompas",
     "wordGroups": "skupine-besed"
   },
