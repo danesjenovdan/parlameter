@@ -1,0 +1,9 @@
+card:
+  title: Prisutnost na glasanjima
+  info: >-
+    # Prisutnost kluba na glasanjima na sjednicama HS-a u odnosu na prosječnu i
+    maksimalnu vrijednost.
+
+
+    Broj glasanja, ako je klub prisutan na sjednici, podijeli se s brojem svih
+    glasanja na sjednici i normalizira (min 1 - max 100).

@@ -1,0 +1,48 @@
+{
+  "landing": {
+    "legislation": "odluke",
+    "sessions": "sjednice",
+    "members": "zastupnice",
+    "parties": "klubovi",
+    "tools": "alati",
+    "about": "https://parlameter.org/",
+    "media": "za-medije",
+    "legal": "pravne-napomene",
+    "thankYou": "hvala",
+    "error": "ups"
+  },
+  "sessions": {
+    "search": {
+      "base": "trazi",
+      "filter": "filter"
+    }
+  },
+  "tools": {
+    "notifications": "obavijesti",
+    "voteComparator": "komparator-glasanja",
+    "discord": "pretrazivac-razjedinjenosti",
+    "compass": "saborski-kompas",
+    "wordGroups": "grupe-rijeci"
+  },
+  "member": {
+    "leaderBase": "gradonacelnik",
+    "base": "zastupnik",
+    "overview": "pregled",
+    "votings": "glasanja",
+    "speeches": "govori"
+  },
+  "party": {
+    "base": "klub",
+    "overview": "pregled",
+    "votings": "glasanja",
+    "speeches": "govori"
+  },
+  "session": {
+    "base": "sjednica",
+    "legislation": "pregled",
+    "otherVotings": "glasanja",
+    "transcript": "transkript",
+    "agenda": "dnevni-red",
+    "vote": "glasanje"
+  }
+}

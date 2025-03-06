@@ -1,0 +1,26 @@
+card:
+  title: Najrjeđe glasaju jednako
+  info: >-
+    # Popis pet zastupnica koje najrjeđe glasaju jednako kao izabrana
+    zastupnica. Zastupnice se klasificiraju prema vrijednostima od najveće do
+    najmanje. Što je vrijednost veća, manje je slaganje u glasanju.
+
+
+    Izračunava se [euklidska
+    udaljenost](https://en.wikipedia.org/wiki/Euclidean_distance) između
+    rezultata glasanja zastupnice i rezultata svih ostalih zastupnica (pri čemu
+    se vrijednost glasa pretvori u brojčane vrijednosti između -1 i 1).
+
+
+    Kad se izračuna 'udaljenosti' između svih zastupnica, razvrstava ih se prema
+    rezultatu i prikazuje se zadnjih odnosno najudaljenijih pet.
+
+
+    Brojčane vrijednosti glasova
+
+
+    * -1: protiv
+
+    * 0: suzdržana ili nije prisutana
+
+    * 1: za

@@ -137,9 +137,9 @@
       "title": "Primerjalnik glasovanj",
       "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?"
     },
-    "discord": {
-      "title": "Raziskovalec neenotnosti",
-      "text": "Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah."
+    "unity": {
+      "title": "Enotnost",
+      "text": "Raziskuj enotnost v parlamentarnih skupinah glede na to, koliko strinjanja je bilo pri glasovanjih v poslanskih skupinah."
     },
     "compass": {
       "title": "Parlamentarni kompas",

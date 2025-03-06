@@ -1,0 +1,9 @@
+card:
+  title: Prisutnost na glasanjima
+  info: >-
+    # Prisutnost na glasanjima u odnosu na prosječnu i maksimalnu vrijednost.
+
+
+    Prebroje se svi glasovi zastupnice i taj broj se podijeli sa zbrojem svih
+    glasanja sa sjednica na kojima se moralo glasati. Rezultat se ispiše skupa s
+    prosječnom i maksimalnom vrijednošću.

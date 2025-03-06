@@ -77,5 +77,5 @@ urlpatterns = [
         "search/usage-through-time-in-agenda-items/",
         MandateUsageThroughTimeInAgendaItems.as_view(),
     ),
-    path("tools/discord/", ToolsDiscord.as_view()),
+    path("tools/unity/", ToolsUnity.as_view()),
 ]
