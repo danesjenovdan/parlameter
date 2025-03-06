@@ -1,0 +1,20 @@
+card:
+  title: Raznolikost vokabulara
+  info: >-
+    # Bogatstvo vokabulara koji koriste zastupnice odabranog kluba u svojim
+    govorima u usporedbi s prosječnim i maksimalnim vrijednostima drugih
+    klubova.
+
+
+    Iz svih govora prebroje se jedinstvene riječi i broj svih izgovorenih
+    riječi. Potom se prebroji koliko se puta svaka jedinstvena riječ pojavljuje.
+    Jedinstvene riječi podjele se u kategorije na način da su u istom skupu
+    riječi koje se ponavljaju jednom, dvaput, triput itd. Na koncu se izračuna
+    koeficijent gdje je broj svih jedinstvenih izgovorenih riječi iznad
+    razlomačke crte, a ispod je broj riječi koje se ponavljaju s određenom
+    učestalošću (jednom, dvaput, triput …) i pomnoži se s brojem ponavljanja na
+    kvadrat (jedan na kvadrat, dva na kvadrat, tri na kvadrat …).
+
+
+    Rečenica „Danas je novi dan i danas je dan za Parlametar“ daje rezultat 7/
+    ((3*2^2) + (4*1^2)) = 0,4375

@@ -1,0 +1,12 @@
+card:
+  title: Zakoni koji sadrže pretraživani niz
+  info: >-
+    # Popis svih zakona i akata koji u naslovu sadrže pretraživani niz, i o
+    kojima se glasalo na sjednici HS-a u aktualnom sazivu.
+
+
+    Prema naslovima i sažecima svih zakona i akata o kojima se raspravljalo u
+    jednom sazivu, pretražuju se pojavljivanja pretraživanog niza i ispisuju
+    poveznice do tih zakona ili akata u kojima se niz pojavljuje. Zakoni odnosno
+    akti na kraju su razvrstani prema tome u kojoj mjeri odgovaraju
+    pretraživanom nizu.
