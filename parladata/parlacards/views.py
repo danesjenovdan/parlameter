@@ -66,7 +66,7 @@ from parlacards.serializers.cards import (
     SingleSessionCardSerializer,
     SpeechCardSerializer,
     StyleScoresCardSerializer,
-    ToolsDiscordCardSerializer,
+    ToolsUnityCardSerializer,
     VoteCardSerializer,
 )
 from parlacards.serializers.cards.misc.sessions import SessionsCardSerializer
@@ -700,10 +700,10 @@ class GroupMediaReportsView(CachedCardView):
     card_serializer = GroupMediaReportsCardSerializer
 
 
-class ToolsDiscord(CardView):
+class ToolsUnity(CardView):
     """
-    Discord for organizations
+    Unity for all organizations
     """
 
     thing = Organization
-    card_serializer = ToolsDiscordCardSerializer
+    card_serializer = ToolsUnityCardSerializer

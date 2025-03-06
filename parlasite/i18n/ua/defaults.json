@@ -138,9 +138,9 @@
       "title": "Vote comparator",
       "text": "The vote comparator allows you to answer questions such as: When did members of one party vote the same as member of their biggest rival party?"
     },
-    "discord": {
-      "title": "Discord analysis",
-      "text": "Explore the discord within parliamentary parties based on how much they disagreed on specific pieces of legislation."
+    "unity": {
+      "title": "Unity",
+      "text": "Explore the unity within parliamentary parties based on how much they agreed on specific pieces of legislation."
     },
     "compass": {
       "title": "Parliamentary compass",

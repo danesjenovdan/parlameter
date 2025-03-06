@@ -28,19 +28,22 @@
           </div>
         </div>
 
-        <div v-if="results.email" class="row">
+        <div v-if="emails.length" class="row">
           <div class="parlaicon-container">
-            <span class="parlaicon parlaicon-kontakt" aria-hidden="true" />
+            <span class="parlaicon parlaicon-kontakt" aria-hidden="true"></span>
           </div>
-          <div class="bordertop contact-container">
+          <div class="bordertop0 contact-container">
             <span class="key">
               <span v-t="'contact'"></span>:
-              <a
-                :href="`mailto:${results.email}`"
-                target="_blank"
-                class="funblue-light-hover"
-                >{{ shortEmail }}</a
-              >
+              <template v-for="(email, i) in emails" :key="email">
+                <a
+                  :href="`mailto:${email}`"
+                  target="_blank"
+                  class="funblue-light-hover"
+                  >{{ shortenEmail(email) }}</a
+                >
+                <template v-if="i < emails.length - 1">, </template>
+              </template>
             </span>
           </div>
         </div>
@@ -119,6 +122,7 @@ import links from '@/_mixins/links.js';
 import PersonWithPosition from '@/_components/PersonWithPosition.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
+import emailShortener from '@/_helpers/emailShortener.js';
 
 export default {
   name: 'CardGroupBasicInformation',
@@ -151,18 +155,11 @@ export default {
     };
   },
   computed: {
-    shortEmail() {
-      if (this.results.email?.length) {
-        if (this.results.email.length < 26) {
-          return this.results.email;
-        }
-        const [addr, domain] = this.results.email.split('@');
-        if (addr.length < 18) {
-          return this.results.email;
-        }
-        return `${addr.slice(0, 17)}…@${domain}`;
-      }
-      return '';
+    emails() {
+      return (this.results.email || '')
+        .split(';')
+        .map((email) => email.trim())
+        .filter(Boolean);
     },
     searchUrl() {
       const url = new URL(this.cardData.url);
@@ -191,6 +188,7 @@ export default {
         this.card.isLoading = false;
       });
     },
+    shortenEmail: emailShortener,
   },
 };
 </script>

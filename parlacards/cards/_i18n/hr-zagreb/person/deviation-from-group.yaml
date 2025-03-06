@@ -1,0 +1,14 @@
+card:
+  title: Neslaganje s klubom
+  info: >-
+    # Odstupanje od većinskog glasa vlastitog kluba u odnosu na prosječnu i
+    najveću vrijednost.
+
+
+    Za sva glasanja izračuna se većinski glas za svaki klub. Većinski glas je
+    opcija za koju se odlučio najveći broj zastupnica jednog kluba.
+
+
+    Za svaku zastupnicu traži se klub kojem pripada i izračuna se postotak
+    slaganja glasova u razdoblju članstva u klubu. Iz svih izračuna su
+    izostavljene zastupnice koje nisu bile prisutne na glasanju.
