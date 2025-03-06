@@ -1244,7 +1244,7 @@ class ToolsUnityCardSerializer(CardSerializer):
         order_by = self.context.get("GET", {}).get("order_by", "-value")
         if order_by not in ["value", "-value"]:
             order_by = "-value"
-        vote_scores = vote_scores.order_by(order_by)
+        vote_scores = vote_scores.order_by(order_by, "-vote__timestamp", "-id")
         ###
 
         paged_object_list, pagination_metadata = create_paginator(
