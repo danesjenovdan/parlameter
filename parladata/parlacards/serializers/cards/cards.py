@@ -588,10 +588,11 @@ class GroupMostVotesInCommonCardSerializer(GroupScoreCardSerializer):
     def get_results(self, obj):
         # obj is the group
         voters = self.playing_field.query_voters(self.context["card_date"])
+        voters = list(voters.values_list("id", flat=True))
         most_in_common = (
             GroupVotingDistance.objects.filter(
                 group=obj,
-                target__in=voters,
+                target_id__in=voters,
                 timestamp__range=(self.from_timestamp, self.to_timestamp),
             )
             .order_by(
@@ -617,10 +618,11 @@ class GroupLeastVotesInCommonCardSerializer(GroupScoreCardSerializer):
     def get_results(self, group):
         # obj is the group
         voters = self.playing_field.query_voters(self.context["request_date"])
+        voters = list(voters.values_list("id", flat=True))
         least_in_common = (
             GroupVotingDistance.objects.filter(
                 group=group,
-                target__in=voters,
+                target_id__in=voters,
                 timestamp__range=(self.from_timestamp, self.to_timestamp),
             )
             .order_by(
