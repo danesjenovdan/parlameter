@@ -53,7 +53,7 @@
           <a
             v-for="vote in votes"
             :key="vote.vote_id"
-            :href="getVoteLink(vote.vote_id, vote.session)"
+            :href="getVoteLink({ id: vote.vote_id }, vote.session)"
             :target="voteLinkTarget"
             class="vote"
           >
