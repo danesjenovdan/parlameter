@@ -148,11 +148,13 @@ class PersonBallotCardSerializer(PersonScoreCardSerializer):
     def to_representation(self, person):
         parent_data = super().to_representation(person)
 
-        ballots = Ballot.objects.filter(
-            personvoter=person,
-            vote__timestamp__range=(self.from_timestamp, self.to_timestamp),
-        ).order_by(
-            "-vote__timestamp", "-id"  # fallback ordering
+        ballots = (
+            Ballot.objects.filter(
+                personvoter=person,
+                vote__timestamp__range=(self.from_timestamp, self.to_timestamp),
+            )
+            .order_by("-vote__timestamp", "-id")  # fallback ordering
+            .prefetch_related("vote", "vote__motion", "vote__motion__session")
         )
 
         option_counts = (
@@ -214,10 +216,11 @@ class PersonMembershipCardSerializer(PersonScoreCardSerializer):
 class MostVotesInCommonCardSerializer(PersonScoreCardSerializer):
     def get_results(self, person):
         voters = self.playing_field.query_voters(self.context["card_date"])
+        voters = list(voters.values_list("id", flat=True))
         most_in_common = (
             VotingDistance.objects.filter(
                 person=person,
-                target__in=voters,
+                target_id__in=voters,
                 timestamp__range=(self.from_timestamp, self.to_timestamp),
             )
             .exclude(target=person)
@@ -226,6 +229,7 @@ class MostVotesInCommonCardSerializer(PersonScoreCardSerializer):
                 "-timestamp",
                 "value",
             )
+            .prefetch_related("target")
             .distinct("target")
         )
 
@@ -245,11 +249,11 @@ class MostVotesInCommonCardSerializer(PersonScoreCardSerializer):
 class LeastVotesInCommonCardSerializer(PersonScoreCardSerializer):
     def get_results(self, person):
         voters = self.playing_field.query_voters(self.context["card_date"])
-
+        voters = list(voters.values_list("id", flat=True))
         least_in_common = (
             VotingDistance.objects.filter(
                 person=person,
-                target__in=voters,
+                target_id__in=voters,
                 timestamp__range=(self.from_timestamp, self.to_timestamp),
             )
             .exclude(target=person)
@@ -587,10 +591,11 @@ class GroupMostVotesInCommonCardSerializer(GroupScoreCardSerializer):
     def get_results(self, obj):
         # obj is the group
         voters = self.playing_field.query_voters(self.context["card_date"])
+        voters = list(voters.values_list("id", flat=True))
         most_in_common = (
             GroupVotingDistance.objects.filter(
                 group=obj,
-                target__in=voters,
+                target_id__in=voters,
                 timestamp__range=(self.from_timestamp, self.to_timestamp),
             )
             .order_by(
@@ -616,10 +621,11 @@ class GroupLeastVotesInCommonCardSerializer(GroupScoreCardSerializer):
     def get_results(self, group):
         # obj is the group
         voters = self.playing_field.query_voters(self.context["request_date"])
+        voters = list(voters.values_list("id", flat=True))
         least_in_common = (
             GroupVotingDistance.objects.filter(
                 group=group,
-                target__in=voters,
+                target_id__in=voters,
                 timestamp__range=(self.from_timestamp, self.to_timestamp),
             )
             .order_by(
