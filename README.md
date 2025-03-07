@@ -1,20 +1,4 @@
-# Parlameter frontend
-
-
-## Notes on translations
-
-Integration with our weblate instance for translations is enabled on this repo.
-
-The base language for translations is `en`.
-
-The following components are added:
-- parlasite - `defaults.json`, `sitemap.json`
-- parlacards - `defaults.yaml`
-- parlacards - card specific `.yaml` files are automatically picked up when pushed to the `dev` branch
-
-## Adding new translation files or keys
-
-**When adding new translation keys/files only add them for `en`. Weblate will create a PR when translations for other languages are created.**
+# Parlameter
 
 ## Developing with docker-compose
 
@@ -70,18 +54,29 @@ yarn start
 
 ---
 
-## Developing parladata
+### More development instructions for each part of Parlameter
 
-See [parladata/README.md](./parladata/README.md)
+For parladata see [parladata/README.md](./parladata/README.md)
 
-## Developing parlacards
+For parlacards see [parlacards/README.md](./parlacards/README.md)
 
-See [parlacards/README.md](./parlacards/README.md)
+For parlasite see [parlasite/README.md](./parlasite/README.md)
 
-## Developing parlasite
+For parlassets see [parlassets/README.md](./parlassets/README.md)
 
-See [parlasite/README.md](./parlasite/README.md)
+---
 
-## Developing parlassets
+## Notes on translations
 
-See [parlassets/README.md](./parlassets/README.md)
+Integration with our weblate instance for translations is enabled on this repo.
+
+The base language for translations is `en`.
+
+The following components are added:
+- parlasite - `defaults.json`, `sitemap.json`
+- parlacards - `defaults.yaml`
+- parlacards - card specific `.yaml` files are automatically picked up when pushed to the `dev` branch
+
+## Adding new translation files or keys
+
+**When adding new translation keys/files only add them for `en`. Weblate will create a PR when translations for other languages are created.**
