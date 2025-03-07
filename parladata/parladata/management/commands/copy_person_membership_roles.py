@@ -9,6 +9,31 @@ class Command(BaseCommand):
     Examples:
         - manage.py copy_person_membership_roles 402 voter --copy_from_roles all
         - manage.py copy_person_membership_roles 402 voter --copy_from_roles member deputy
+
+    First time usage example, when you dont have any voter roles in working bodies yet:
+    ```
+    from parladata.models.common import Mandate
+    from parladata.models.organization import (
+        CLASSIFICATIONS as ORGANIZATION_CLASSIFICATIONS,
+    )
+    from parladata.models.organization import (
+        Organization,
+    )
+    from parladata.models.session import Session
+    from django.core.management import call_command
+
+    mandate = Mandate.objects.get(id=2)
+    from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(None)
+    filtered_classifications = [
+        c[0] for c in ORGANIZATION_CLASSIFICATIONS if c[0] != "pg" and c[0] != "root"
+    ]
+
+    sids = Session.objects.filter(mandate=mandate).values_list("organizations", flat=True).distinct()
+    orgs = Organization.objects.filter(classification__in=filtered_classifications).filter(id__in=sids)
+
+    for org in orgs:
+        call_command('copy_person_membership_roles', org.id, "voter", copy_from_roles=["all"])
+    ```
     """
 
     help = (
