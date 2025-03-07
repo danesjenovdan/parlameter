@@ -148,12 +148,14 @@ class PersonBallotCardSerializer(PersonScoreCardSerializer):
     def to_representation(self, person):
         parent_data = super().to_representation(person)
 
-        ballots = Ballot.objects.filter(
-            personvoter=person,
-            vote__timestamp__range=(self.from_timestamp, self.to_timestamp),
-        ).order_by(
-            "-vote__timestamp", "-id"  # fallback ordering
-        ).prefetch_related("vote", "vote__motion", "vote__motion__session")
+        ballots = (
+            Ballot.objects.filter(
+                personvoter=person,
+                vote__timestamp__range=(self.from_timestamp, self.to_timestamp),
+            )
+            .order_by("-vote__timestamp", "-id")  # fallback ordering
+            .prefetch_related("vote", "vote__motion", "vote__motion__session")
+        )
 
         option_counts = (
             ballots.values("option").order_by("option").annotate(count=Count("option"))
@@ -226,7 +228,8 @@ class MostVotesInCommonCardSerializer(PersonScoreCardSerializer):
                 "target",
                 "-timestamp",
                 "value",
-            ).prefetch_related("target")
+            )
+            .prefetch_related("target")
             .distinct("target")
         )
 
