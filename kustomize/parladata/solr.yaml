@@ -43,10 +43,10 @@ spec:
         resources:
           requests:
             memory: 1Gi
-            cpu: 200m
+            cpu: 400m
           limits:
             memory: 1Gi
-            cpu: 200m
+            cpu: 400m
       initContainers:
       - name: create-core
         image: parlasolr-slovenija
