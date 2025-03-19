@@ -1,5 +1,5 @@
 card:
-  title: Popis zastupnica
+  title: Popis zastupnika i zastupnica
   info: >-
     # Skup svih trenutno aktivnih zastupnica koje odgovaraju korisničkom izboru
     ({parties}; {districts}). Pregled je sortiran po {sortBy}.
