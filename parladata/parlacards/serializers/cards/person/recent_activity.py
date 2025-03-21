@@ -1,4 +1,4 @@
-from django.db.models import Value, Q, F
+from django.db.models import F, Q, Value
 
 from parlacards.pagination import create_paginator
 from parlacards.serializers.common import PersonScoreCardSerializer
