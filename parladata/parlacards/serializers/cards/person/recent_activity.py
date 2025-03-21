@@ -1,4 +1,4 @@
-from django.db.models import Value
+from django.db.models import Value, Q, F
 
 from parlacards.pagination import create_paginator
 from parlacards.serializers.common import PersonScoreCardSerializer
@@ -28,7 +28,11 @@ class RecentActivityCardSerializer(PersonScoreCardSerializer):
         questions = (
             Question.objects.filter(
                 person_authors=person,
-                timestamp__range=(from_timestamp, to_timestamp),
+                mandate=mandate,
+            )
+            .filter(
+                Q(timestamp__range=(from_timestamp, to_timestamp))
+                | Q(timestamp__isnull=True),
             )
             .values("id", "timestamp")
             .annotate(type=Value("question"))
@@ -54,7 +58,9 @@ class RecentActivityCardSerializer(PersonScoreCardSerializer):
         # create a union of all events and sort them by timestamp (unions get
         # column names from first queryset, e.g. `timestamp` is from questions)
         ordered_event_ids = (
-            questions.union(ballots).union(speeches).order_by("-timestamp", "id")
+            questions.union(ballots)
+            .union(speeches)
+            .order_by(F("timestamp").desc(nulls_last=True), "id")
         )
 
         paged_event_ids, pagination_metadata = create_paginator(
