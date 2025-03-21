@@ -187,6 +187,7 @@ start: Početak
 date: Datum
 start-date: Datum početka
 end-date: Datum završetka
+missing-date: Bez datuma
 legislation: Zakonodavstvo
 laws: Zakoni
 acts: Akti
