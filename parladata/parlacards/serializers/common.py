@@ -337,18 +337,25 @@ class CommonPersonSerializer(CommonCachableSerializer):
         return serializer.data
 
     def get_slug(self, person):
-        memberships_count = PersonMembership.objects.filter(
+        mandate = Mandate.get_active_mandate_at(self.context["request_date"])
+
+        if PersonMembership.objects.filter(
+            member=person,
+            role__in=["voter", "leader"],
+            mandate=mandate,
+        ).exists():
+            return person.slug
+
+        return None
+
+    def get_is_active(self, person):
+        return PersonMembership.objects.filter(
             Q(member=person),
             Q(start_time__lte=self.context["request_date"])
             | Q(start_time__isnull=True),
             Q(end_time__gte=self.context["request_date"]) | Q(end_time__isnull=True),
             Q(role__in=["voter", "leader"]),
-        ).count()
-
-        if memberships_count != 0:
-            return person.slug
-
-        return None
+        ).exists()
 
     slug = serializers.SerializerMethodField()
     name = VersionableSerializerField(property_model_name="PersonName")
@@ -363,6 +370,7 @@ class CommonPersonSerializer(CommonCachableSerializer):
     )
     group = serializers.SerializerMethodField()
     image = serializers.ImageField()
+    is_active = serializers.SerializerMethodField()
 
 
 class CommonOrganizationSerializer(CommonCachableSerializer):
