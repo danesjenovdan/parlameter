@@ -2,7 +2,7 @@
     "url": "https://parladata.lb.djnd.si/v3/cards/group/questions/?id=21",
     "data": {
         "results": [{
-                "timestamp": "2021-12-13T15:30:00",
+                "timestamp": null,
                 "answer_timestamp": null,
                 "title": "kolesarski promet v ČS Šentvid",
                 "authors": [{
