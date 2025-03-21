@@ -80,7 +80,9 @@ export default {
     },
   },
   methods: {
-    formatDate: dateFormatter,
+    formatDate(date) {
+      return dateFormatter(date, this.$t('missing-date'));
+    },
   },
 };
 </script>

@@ -13,14 +13,23 @@ Running docker compose will:
 - start `parladata` on port `8000` (backend)
 - start `parlassets` on port `8080` (static files)
 - start `parlasite` on port `3066` (frontend)
-<!-- - start a `parlacards` dev server on port `3000` -->
+- start a `parlacards` <!-- dev --> server on port `3000`
+
+You should now be able to access the Parlameter website on http://localhost:3066 and the admin interface at http://localhost:8000/admin.
 
 > [!NOTE]
-> This will not start `parlacards` inside docker because of some underlying issues with how it is run, you will need to run it separately!
+> This will start the `parlacards` "production" server inside docker. The cards will build and then be statically served on every restart. Because of some underlying issues with how the dev mode differs from production, you will need to run parlacards separately if you want to work on a single card!
 
-**If something (other than `parlacards`) doesn't load you may need to change evironment variables in docker-compose.yaml with correct urls!**
+**If something doesn't load you may need to change evironment variables in docker-compose.yaml with correct urls.**
 
-### 2. Start parlacards
+### 2. Get some data
+
+You should set up Parladata minimally. Run:
+- `docker-compose exec parladata python manage.py migrate` to make sure the database schema is up to date,
+- `docker-compose exec parladata python manage.py createsuperuser` to make yourself a superuser,
+- import a database. For now, please check [parladata/README.md](./parladata/README.md) for more instructions on this step, but a "simplest version" should appear here shortly after this TODO is resolved.
+
+## Developing individual cards
 
 First open a separate terminal and go to the parlacards folder:
 ```sh
