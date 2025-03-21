@@ -203,6 +203,7 @@ session-processing: Seja v obdelavi.
 organization: Organizacija
 start: Začetek
 date: Datum
+missing-date: Brez datuma
 legislation: Zakonodaja
 laws: Zakoni
 acts: Akti
