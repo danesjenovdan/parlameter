@@ -1,11 +1,8 @@
 card:
   title: Popis sjednica
   info: >-
-    # Popis svih sjednica HS-a koji odgovara korisničkom unosu ({filter}). Popis
-    je sortiran prema {sortBy}{justLastFive}.
+    # Popis svih sjednica aktualnog saziva Gradske skupštine koji odgovaraju korisničkom
+    izboru.
 
 
-    Podaci o sjednicama preuzimaju se sa stranice HS-a, točnije
-    [ovjde](http://www.sabor.hr/arhiva-dnevnih-redova-9),
-    [ovjde](http://www.sabor.hr/kronologija-rasprava0001) i
-    [ovdje](http://www.sabor.hr/sjednica-sabora).
+    Podatke o sjednicama dobivamo na službenim stranicama [Grada Zagreba](https://zagreb.hr/).
