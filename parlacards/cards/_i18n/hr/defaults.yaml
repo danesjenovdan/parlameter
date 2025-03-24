@@ -148,9 +148,9 @@ voted-for--plural: Glasali ZA
 voted-against--f: Glasala PROTIV
 voted-against--m: Glasao PROTIV
 voted-against--plural: Glasali PROTIV
-voted-abstain--f: Glasala KVORUM
-voted-abstain--m: Glasao KVORUM
-voted-abstain--plural: Glasali KVORUM
+voted-abstain--f: Suzdržana
+voted-abstain--m: Suzdržan
+voted-abstain--plural: Suzdržani
 voted-absent--f: Nije glasala
 voted-absent--m: Nije glasao
 voted-absent--plural: Nisu glasali
