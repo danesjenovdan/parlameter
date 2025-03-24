@@ -2,6 +2,7 @@
     "landing": {
         "title": "Parlametar Zagreb",
         "lead": "Parlametar Zagreb je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Gradske skupštine Grada Zagreba.",
+        "description": "Saznajte tko su zastupnici u Gradskoj skupštini Grada Zagreba i kako glasaju, o čemu raspravljaju na sjednicama, tko zastupa vaše interese i koje je uredbe i akte Gradska skupština donijela u ovom mandatu.",
         "search": {
             "part_one": "Traži",
             "part_two": "gradski zastupnici i zastupnice, glasanja ili prisutnost na glasanjima"
