@@ -1,10 +1,21 @@
 card:
-  title: Popis zastupnica
+  title: Popis zastupnika i zastupnica
   info: >-
-    # Skup svih trenutno aktivnih zastupnica koje odgovaraju korisničkom izboru
-    ({parties}; {districts}). Pregled je sortiran po {sortBy}.
+    # Popis svih trenutno aktivnih gradskih zastupnika i zastupnica koji odgovaraju
+    korisničkom izboru.
 
 
-    Stupac analiza izražava zajednički rezultat, a stupac Promjena razliku u
-    odnosu na prethodni mjesec. Stupac Promjena ažurira se svaki 1. dan u
-    mjesecu.
+    Popis se može uređivati tako da se kreće silazno ili uzlazno klikom na kategorije:
+    ime, dob, obrazovanje, broj mandata ili klubovi.
+
+
+    Popis se može filtrirati unosom imena i/ili prezimena u tražilicu.
+
+
+    Popis se može filtrirati i odabirom pripadnosti kluba, radnog tijela, kao i odabirom
+    simbola za muški ili ženski spol.
+
+
+    Osim početnog stanja označenog kao "demografija", popis se može prilagođavati
+    i odabirom analitičkih funkcija: prisutnost na glasanjima, br. zastupničkih pitanja
+    i inicijativa ili neslaganje s klubom.

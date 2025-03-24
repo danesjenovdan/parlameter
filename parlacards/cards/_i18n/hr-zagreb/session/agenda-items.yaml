@@ -1,2 +1,5 @@
 card:
   title: Točke dnevnog reda
+  info: "# Dnevni red odabrane sjednice.\n\nPrikazujemo točke dnevnog reda odabrane
+    sjednice s poveznicama na dokumente o kojima se raspravljalo i na zapisnik sa
+    sjednice. Podaci se preuzimaju s mrežnih stranica [Grada Zagreba] (https://zagreb.hr/)."

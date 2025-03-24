@@ -151,9 +151,9 @@ voted-against--plural: Glasali PROTIV
 voted-abstain--f: Suzdržana
 voted-abstain--m: Suzdržan
 voted-abstain--plural: Suzdržani
-voted-absent--f: Nije glasala o
-voted-absent--m: Nije glasao o
-voted-absent--plural: Nisu glasali o
+voted-absent--f: Nije glasala
+voted-absent--m: Nije glasao
+voted-absent--plural: Nisu glasali
 sort-by: Razvrstaj prema
 sort-by--inequality: Razjedinjenosti
 sort-by--date: Datumu
@@ -204,7 +204,7 @@ info:
   title: Info
   methodology: METODOLOGIJA
 share:
-  title: Dijelovi
+  title: Dijeljenje kartice
   direct-link: Izravna poveznica na karticu
 embed:
   title: Ugradi
@@ -513,3 +513,6 @@ ask-person-a-question: Napišite Vaše pitanje za zastupnika/zastupnicu.
 thank-you-for-the-question: Hvala za Vaše pitanje!
 send: Pošalji
 error-message: Ups, nešto se dogodilo.
+agenda-items: Naziv točke dnevnog reda
+material: Priloženi akti
+documents: Dokumenti
