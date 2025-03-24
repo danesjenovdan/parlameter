@@ -1,36 +1,24 @@
 card:
   title: Glasanje
   info: >-
-    Zbirka glasanja preuzima se s web stranica HS-a.
+    # Detaljni prikaz rezultata glasanja po pojedinoj točki sjednice.
 
 
-    Rezultati svakog glasanja prikazuju se na tri razine: na razini zastupnika,
-    na razini klubova i prema politici vlade.
+    Rezultati glasanja po svakoj točki prikazuju se na dvije razine: po svakom gradskom
+    zastupniku i zastupnici, te po pripadnosti glasova zastupničkim klubovima.
 
 
-    Prva kartica omogućuje pregled glasova zastupnica i pretraživanje prema
-    vrijednosti glasa (ZA, PROTIV, SUZDRŽANA, ODSUTNA) i imenu zastupnice. Pored
-    kružnog grafikona prikazana je većina glasova na jednom glasanju u HS. "60%
-    ZA" tako znači da je 60% zastupnica glasalo ZA.
+    Odabirom "ZASTUPNICI" dobiva se pregled glasova gradskih zastupnika i zastupnica,
+    te pretraživanje po vrijednosti glasova (ZA, PROTIV, SUZDRŽANI, NEMA) i imenu
+    gradskog zastupnika ili zastupnice. 
 
 
-    Druga kartica prikazuje glasove klubova. Na kraju svake linije prikazan je
-    većinski glas kluba, a gumbi s rezultatima glasanja otvaraju liste
-    zastupnica koje su tako glasale. Simbol munje upozorava na podjele u
-    klubovima - stavlja se iznad onih glasova koji se razlikuju od većine, a
-    odsutni su izuzeti. Tako da, ako je većina zastupnica kluba odsutna, ne
-    postoji ni većinski glas kluba.
+    Uz rezultate glasanja po zastupničkim klubovima pridružen je kružni grafikon koji
+    prikazuje stanje glasova u glasanju članica i članova zastupničkog kluba. Primjerice,
+    "60% ZA" znači da je ZA glasalo 60% zastupnika i zastupnica.
 
 
-    Treća kartica prikazuje rezultat prema politici Vlade. Ovdje također simbol
-    munje upozorava na neočekivane glasove - odnosno odstupanja od većinskog
-    glasa koalicije.
+    Treća kartica prikazuje dokumente i linkove koji su povezani s pojedinim glasanjem.
 
-
-    SIMBOL MUNJE
-
-
-    Simbol munje upozorava na raskole u klubovima ili u koaliciji - stavlja se
-    iznad onih glasova koji se razlikuju od većinskog glasa kluba ili koalicije,
-    a odsutni su izuzeti. Tako da, ako je većina kluba odsutna, ne postoji ni
-    većinski glas kluba.
+    Točnost prikazanih rezultata glasanja direktno ovisi o točnosti podataka koji
+    se preuzimaju sa službenih stranica [Grada Zagreba] (https://zagreb.hr/).
