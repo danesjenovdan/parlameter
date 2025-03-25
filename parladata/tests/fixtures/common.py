@@ -83,9 +83,7 @@ def last_group(main_organization, ending_date_of_first_mandate):
 
 @pytest.fixture
 def first_vote():
-    return (
-        Vote.objects.first()
-    )
+    return Vote.objects.first()
 
 
 @pytest.fixture
