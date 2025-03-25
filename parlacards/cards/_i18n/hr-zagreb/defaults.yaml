@@ -222,15 +222,12 @@ style-scores:
   simple-vocabulary: Jednostavan rječnik
   excessive-vocabulary: Ekscesni rječnik
 question:
-  asked--m: Postavio je pitanje {title} na koje mora odgovoriti {recipient}.
-  asked--f: Postavila je pitanje {title} na koje mora odgovoriti {recipient}.
-  asked--plural: Postavio je pitanje {title} na koje mora odgovoriti {recipient}.
-  asked--with-name--m: '{name} je postavio pitanje {title} na koje mora odgovoriti
-    {recipient}.'
-  asked--with-name--f: '{name} je postavila pitanje {title} na koje mora odgovoriti
-    {recipient}.'
-  asked--with-name--plural: '{name} je postavio pitanje {title} na koje mora odgovoriti
-    {recipient}.'
+  asked--m: Postavio je pitanje {title} {recipient}.
+  asked--f: Postavila je pitanje {title} {recipient}.
+  asked--plural: Postavili su pitanje {title} {recipient}.
+  asked--with-name--m: '{name} je postavio pitanje {title} {recipient}.'
+  asked--with-name--f: '{name} je postavila pitanje {title} {recipient}.'
+  asked--with-name--plural: '{name} postavili su pitanje {title} {recipient}.'
 event:
   ballot--for--m: Glasao je ZA {title}
   ballot--for--f: Glasala je ZA {title}
