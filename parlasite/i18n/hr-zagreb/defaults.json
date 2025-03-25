@@ -166,7 +166,7 @@
         "vote-result--adopted": "Prihvaćen",
         "vote-result--received": "Prima se na znanje",
         "vote-result--in_procedure": "U proceduri",
-        "legislation": "Zakonodavstvo",
+        "legislation": "Odluke",
         "other_votings": "Glasanja",
         "agenda": "Dnevni red",
         "transcripts": "Transkripti",
@@ -183,7 +183,7 @@
     },
     "titles": {
         "session": "Sjednica",
-        "legislation": "Zakonodavstvo",
+        "legislation": "Odluka",
         "other-votings": "Glasanja",
         "agenda": "Dnevni red",
         "transcript": "Transkript",
@@ -194,7 +194,7 @@
         "ups": ":("
     },
     "legislation": {
-        "decree": "U",
+        "decree": "O",
         "act": "A",
         "law": "Z"
     }
