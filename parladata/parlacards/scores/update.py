@@ -9,8 +9,8 @@ from parlacards.scores.avg_number_of_speeches_per_session import (
 )
 from parlacards.scores.deviation_from_group import save_people_deviations_from_group
 from parlacards.scores.discord import (
-    save_groups_discords,
     save_all_organizations_vote_discords,
+    save_groups_discords,
 )
 from parlacards.scores.monthly_attendance import (
     save_groups_monthly_vote_attendance,
