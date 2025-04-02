@@ -145,7 +145,7 @@ def calculate_groups_tfidf(playing_field, timestamp=None):
 
     # TODO this is very similar to calculate_people_tfidf
     # consider refactoring
-    groups = playing_field.query_organization_members(timestamp).order_by("id")
+    groups = playing_field.query_parliamentary_groups(timestamp).order_by("id")
 
     group_speeches = [
         " ".join(

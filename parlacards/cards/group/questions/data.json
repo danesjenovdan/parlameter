@@ -1,277 +1,377 @@
 {
-    "url": "https://parladata.lb.djnd.si/v3/cards/group/questions/?id=21",
-    "data": {
-        "results": [{
-                "timestamp": null,
-                "answer_timestamp": null,
-                "title": "kolesarski promet v ČS Šentvid",
-                "authors": [{
-                    "name": "Levica",
-                    "acronym": null,
-                    "slug": "20-levica",
-                    "color": "#035166",
-                    "classification": "pg"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-Svetniskega-kluba-Levica-kolesarski-promet-v-CS-Sentvid.pdf",
-                "type": "initiative"
+  "id": 63,
+  "url": "https://parladata-zagreb.lb.djnd.si/v3/cards/group/questions/?id=63",
+  "data": {
+    "results": [
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Zastupnicu zanimaju informacije o upisu u dječje vrtiće.",
+        "authors": [
+          {
+            "slug": "41-marija-krnic",
+            "name": "Marija Krnić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
             },
-            {
-                "timestamp": "2021-11-15T15:30:00",
-                "answer_timestamp": null,
-                "title": "širitev pokopališča v Šentvidu",
-                "authors": [{
-                    "slug": "231-ksenija-sever",
-                    "name": "Ksenija Sever",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ksenija-sever.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Ksenije-Sever-siritev-pokopalisca-v-Sentvidu.pdf",
-                "type": "question"
-            },
-            {
-                "timestamp": "2021-10-18T15:30:00",
-                "answer_timestamp": null,
-                "title": "ureditev Medvedove ceste",
-                "authors": [{
-                    "slug": "233-mojca-skrinjar",
-                    "name": "Mojca Škrinjar",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-skrinjar.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Mojce-Skrinjar-ureditev-Medvedove-ceste.pdf",
-                "type": "initiative"
-            },
-            {
-                "timestamp": "2021-09-27T15:30:00",
-                "answer_timestamp": null,
-                "title": "zavarovanje otroškega igrišča",
-                "authors": [{
-                    "slug": "235-igor-horvat",
-                    "name": "Igor Horvat",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "he",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/igor-horvat.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnika-Igorja-Horvata-zavarovanje-otroskega-igrisca.pdf",
-                "type": "initiative"
-            },
-            {
-                "timestamp": "2021-09-27T15:30:00",
-                "answer_timestamp": null,
-                "title": "parkomati",
-                "authors": [{
-                    "slug": "233-mojca-skrinjar",
-                    "name": "Mojca Škrinjar",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-skrinjar.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Mojce-Skrinjar-parkomati.pdf",
-                "type": "question"
-            },
-            {
-                "timestamp": "2021-09-27T15:30:00",
-                "answer_timestamp": null,
-                "title": "Šmartinska cesta",
-                "authors": [{
-                    "slug": "228-ida-medved",
-                    "name": "Ida Medved",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ida-medved.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ide-Medved-Smartinska-cesta.pdf",
-                "type": "initiative"
-            },
-            {
-                "timestamp": "2021-09-27T15:30:00",
-                "answer_timestamp": null,
-                "title": "stolnica",
-                "authors": [{
-                    "slug": "233-mojca-skrinjar",
-                    "name": "Mojca Škrinjar",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-skrinjar.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Mojce-Skrinjar-stolnica.pdf",
-                "type": "question"
-            },
-            {
-                "timestamp": "2021-07-05T15:30:00",
-                "answer_timestamp": null,
-                "title": "turistična taksa",
-                "authors": [{
-                    "slug": "230-ana-zagozen",
-                    "name": "Ana Zagožen",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-turisticna-taksa.pdf",
-                "type": "initiative"
-            },
-            {
-                "timestamp": "2021-07-05T15:30:00",
-                "answer_timestamp": null,
-                "title": "polnjenje vozila na ulične svetilke",
-                "authors": [{
-                    "slug": "230-ana-zagozen",
-                    "name": "Ana Zagožen",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/ana-zagozen.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Pobuda-svetnice-Ane-Zagozen-polnjenje-vozila-na-ulicne-svetilke.pdf",
-                "type": "initiative"
-            },
-            {
-                "timestamp": "2021-05-31T15:30:00",
-                "answer_timestamp": null,
-                "title": "cepljenje v Ljubljani",
-                "authors": [{
-                    "slug": "233-mojca-skrinjar",
-                    "name": "Mojca Škrinjar",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-skrinjar.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Mojce-Skrinjar-cepljenje-v-Ljubljani.pdf",
-                "type": "question"
-            },
-            {
-                "timestamp": "2021-05-31T15:30:00",
-                "answer_timestamp": null,
-                "title": "bazen Ilirija",
-                "authors": [{
-                    "slug": "233-mojca-skrinjar",
-                    "name": "Mojca Škrinjar",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "she",
-                    "group": {
-                        "name": "Slovenska demokratska stranka ",
-                        "acronym": "",
-                        "slug": "21-slovenska-demokratska-stranka",
-                        "color": "#09a2cc",
-                        "classification": "pg"
-                    },
-                    "image": "https://s3.fr-par.scw.cloud/parlameter/ljubljana/mojca-skrinjar.png"
-                }],
-                "recipient_people": [],
-                "recipient_text": null,
-                "url": "https://www.ljubljana.si/assets/Uploads/2.-tocka-Vprasanje-svetnice-Mojce-Skrinjar-bazen-Ilirija.pdf",
-                "type": "unknown"
-            }
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/41-marija-krnic.jpg"
+          }
         ],
-        "mandate": {
-            "description": "MOL mandat ta naš, kaj je že",
-            "beginning": "2018-12-17T12:00:00"
-        },
-        "group": {
-            "name": "Slovenska demokratska stranka ",
-            "acronym": "",
-            "slug": "21-slovenska-demokratska-stranka",
-            "color": "#09a2cc",
-            "classification": "pg"
-        },
-        "count": 119,
-        "pages": 12,
-        "page": 1,
-        "per_page": 10
-    }
+        "recipient_people": [],
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/5D81F88FA1CA66EFC1258BB3002814FD/$FILE/3924E.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Pitanje se odnosi na izgradnju garaže u Klaićevoj ulici i korištenju školskog igrališta za rekreaciju građana.",
+        "authors": [
+          {
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg"
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Gradonačelniku Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/D1410A73CD50224BC1258AD30033224B/$FILE/2E05A.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Pitanje se odnosi na projekt rekonstrukcije i obnove okretišta Mihaljevac.",
+        "authors": [
+          {
+            "slug": "25-mauro-sirotnjak",
+            "name": "Mauro Sirotnjak",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/25-mauro-sirotnjak.jpg"
+          },
+          {
+            "name": "Nova ljevica",
+            "acronym": "Nova ljevica",
+            "slug": "41-nova-ljevica",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/B700CB41826C6F67C1258AD30038B3F8/$FILE/2E07E.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Pitanje se odnosi na usklađivanje zemljišnih knjiga i katastra. Zastupnicu zanima vremenski okvir odnosno kakva se realizacija očekuje u idućih par godina i da li ima saznanja kada bi se usklađivanje u potpunosti dovršilo.",
+        "authors": [
+          {
+            "slug": "22-marijana-rimanic",
+            "name": "Marijana Rimanić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/22-marijana-rimanic.jpg"
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/DB88C42A7B2043EBC1258AD30038514C/$FILE/2E07A.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Zastupnik pita u kojoj je fazi projekt Doma zdravlja Špansko i kada stanovnici toga kvarta mogu očekivati novu ustanovu.",
+        "authors": [
+          {
+            "slug": "20-marin-zivkovic",
+            "name": "Marin Živković",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/20-marin-zivkovic.jpg"
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/8EF8C9927478EA42C1258AD300394BC4/$FILE/2E082.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Zastupnicu zanima trenutačno stanje kina Europa i njegova perspektiva.",
+        "authors": [
+          {
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg"
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Pročelniku Gradskog ureda za kulturu, međugradsku i međunarodnu suradnju i civilno društvo",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/812B64CACAC28ADEC12589870035F699/$FILE/1DE66.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Zastupnika zanima da li je porasla potražnja učenika i studenta za stipendijama za deficitarna zanimanja.",
+        "authors": [
+          {
+            "slug": "20-marin-zivkovic",
+            "name": "Marin Živković",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/20-marin-zivkovic.jpg"
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Pročelniku Gradskog ureda za socijalnu zaštitu, zdravstvo, branitelje i osobe s invaliditetom",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/4670E021AF56B84CC12589870041C37B/$FILE/1DE7A.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Zastupnica pita koja su unapređenja u radu Podružnice Čistoće postignuta u posljednjih mjesec dana, točnije koliko je novih operativnih radnika zaposleno, kakvo je stanje voznog parka, tj. koliko je kamiona u kvaru, koliko ih je popravljeno te koliko je dodatnih kamiona stavljeno u funkciju, rade li se modifikacije i optimizacije ruta i odvoza otpada s obzirom na stanje na terenu, odnosno u vezi promjena navika građana u pogledu odvajanje otpada, što će biti napravljeno u narednim mjesecima kako bi se Čistoća pripremila za provedbu nove Odluke o načinu pružanja javne usluge sakupljanja komunalnog otpada na području Grada Zagreba, koja će se primjenjivati od 1. listopada 2022. te je li odgovoreno na dosadašnje reklamacije građana, jesu li smanjeni računi, odnosno jesu li građani tražili smanjenje računa.",
+        "authors": [
+          {
+            "slug": "22-marijana-rimanic",
+            "name": "Marijana Rimanić",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/22-marijana-rimanic.jpg"
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Gradonačelniku Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/627A42F5AA37DD53C125887E0032E250/$FILE/1314E.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Zastupnik pita kada će započeti izgradnja prijelaza Medpotoki i kada će taj projekt biti dovršen.",
+        "authors": [
+          {
+            "slug": "20-marin-zivkovic",
+            "name": "Marin Živković",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/20-marin-zivkovic.jpg"
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Pročelniku Gradskog ureda za obnovu, izgradnju, prostorno uređenje, graditeljstvo, komunalne poslove i promet",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/9109AF02E6ABB05BC125887E00314C9D/$FILE/1314A.pdf",
+        "type": "question",
+        "answer": null
+      },
+      {
+        "timestamp": null,
+        "answer_timestamp": null,
+        "title": "Zastupnika zanima kako je prošao program \"Zagrebački kvartovi kulture\" i da li se može očekivati nastavak programa.",
+        "authors": [
+          {
+            "slug": "61-tomislav-domes",
+            "name": "Tomislav Domes",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "he",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/61-tomislav-domes.jpg"
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
+        ],
+        "recipient_people": [],
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/F5B8B3151C21A44FC1258BB300255DE1/$FILE/3923E.pdf",
+        "type": "question",
+        "answer": null
+      }
+    ],
+    "mandate": {
+      "id": 1,
+      "description": "Mandat 2021-2025",
+      "beginning": null
+    },
+    "group": {
+      "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+      "acronym": "Možemo, ZG je naš, NL",
+      "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+      "color": "#3CD80D",
+      "classification": "pg",
+      "is_in_coalition": false
+    },
+    "count": 100,
+    "pages": 10,
+    "page": 1,
+    "per_page": 10
+  }
 }
