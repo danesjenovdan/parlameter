@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlacards-zagreb.lb.djnd.si
+        - gledaj.zagreb.parlametar.hr
       secretName: parlacards-tls
   rules:
-    - host: parlacards-zagreb.lb.djnd.si
+    - host: gledaj.zagreb.parlametar.hr
       http:
         paths:
           - path: /

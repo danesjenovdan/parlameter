@@ -48,7 +48,7 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlassets
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-zagreb.lb.djnd.si
+            VITE_PARLASSETS_URL=https://cdn.zagreb.parlametar.hr
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlassets-zagreb:${{ github.sha }}
@@ -61,7 +61,7 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlacards
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-zagreb.lb.djnd.si
+            VITE_PARLASSETS_URL=https://cdn.zagreb.parlametar.hr
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-zagreb:${{ github.sha }}

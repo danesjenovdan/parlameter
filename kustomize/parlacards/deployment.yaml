@@ -28,12 +28,12 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-zagreb.lb.djnd.si
+              value: https://cdn.zagreb.parlametar.hr
             - name: VITE_PARLADATA_URL
               value: https://parladata-zagreb.lb.djnd.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards-zagreb.lb.djnd.si
+              value: https://gledaj.zagreb.parlametar.hr
             - name: VITE_PARLASITE_URL
-              value: https://zagreb.parlameter.lb.djnd.si
+              value: https://zagreb.parlametar.hr
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter

@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - zagreb.parlameter.lb.djnd.si
+        - zagreb.parlametar.hr
       secretName: parlasite-tls
   rules:
-    - host: zagreb.parlameter.lb.djnd.si
+    - host: zagreb.parlametar.hr
       http:
         paths:
           - path: /
