@@ -1,10 +1,13 @@
 card:
   title: Govori
   info: >-
-    # Ispis poveznica na sve govore zastupnica u jednom sazivu, a koji
-    odgovaraju korisničkom izboru, razvrstani prema datumu.
+    # Ispis poveznica na sve govore gradskog zastupnika ili zastupnice u aktualnom
+    sazivu Gradske skupštine. 
 
 
-    Učitavaju se poveznice na sve govore odabrane zastupnice koji se mogu naći u
-    transkriptima objavljenim na web stranicama Hrvatskog sabora, i koji
-    odgovaraju korisničkom izboru (vremensko razdoblje; vrsta sjednice).
+    Prikaz i odabir može se prilagođavati unosom željenih izraza u tražilicu i prema
+    datumu.
+
+
+    Učitavaju se poveznice na sve govore po ovim kriterijima koji se mogu naći u dostupnim
+    transkriptima sjednica Gradske skupštine.
