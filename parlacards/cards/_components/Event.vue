@@ -11,7 +11,7 @@
       <i18n-t :keypath="translationKey" tag="div" class="motion">
         <template #name>
           <span v-if="showAuthor">
-            <span v-for="(author, index) in authors" :key="author.id">
+            <span v-for="(author, index) in authors" :key="author.slug">
               <a
                 :href="getPersonOrPartyLink(author)"
                 class="funblue-light-hover"
@@ -115,7 +115,10 @@ export default {
       if (this.$root.cardData.data?.person) {
         return [this.$root.cardData.data?.person];
       }
-      return this.event.authors || [];
+      const onlyPeopleAndPGs = (this.event.authors || []).filter(
+        (author) => author.group || author.classification === 'pg',
+      );
+      return onlyPeopleAndPGs;
     },
     translationKey() {
       if (this.authors.length > 0) {
@@ -133,9 +136,7 @@ export default {
         if (this.event.type === 'speech') {
           return `event.speech--${gender}`;
         }
-        return `${this.event.type}.asked${
-          this.showAuthor ? '--with-name' : ''
-        }--${gender}`;
+        return `${this.event.type}.asked${this.showAuthor ? '--with-name' : ''}--${gender}`;
       }
       return '';
     },
