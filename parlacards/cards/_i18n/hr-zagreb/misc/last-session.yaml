@@ -4,29 +4,20 @@ card:
   attendance-title: Prisutnost klubova na sjednici na glasanju
   votes-title: Glasanja
   info: >-
-    # Pregled statistika posljednje sjednice za koju su podaci objavljeni na web
-    stranicama Hrvatskog sabora [HS](http://www.sabor.hr/sjednica-sabora).
-
-
-    # Riječi koje označavaju sjednicu
-
-
-    Statistike se izračunavaju pomoću modela
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf). Korpus čine svi govori, a
-    dokument svi govori na sjednici.
+    # Pregled statistika posljednje sjednice za koju su podaci objavljeni na mrežnim
+    stranicama [Grada Zagreba](https://zagreb.hr/).
 
 
     # Prisutnost klubova na sjednici na glasanju
 
 
-    Klubovi su razvrstavani prema postocima, na koliko su glasanja odabrane
-    sjednice bile njihove zastupnice.
+    Klubovi su razvrstani prema postocima, na koliko su glasanja odabrane sjednice
+    bili prisutni gradski zastupnici i zastupnice pojedinog zastupničkog kluba.
 
 
     # Glasanja
 
 
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
-    SUZDRŽANA) i broj zastupnica koje nisu glasale, te ispišu rezultati. Ruka
-    gore označava glasanja na kojima se nije glasalo individualno nego
-    podizanjem ruke.
+    Za sva glasanja na pojedinoj sjednici brojimo sve glasove (ZA, PROTIV, SUZDRŽANI)
+    i broj gradskih zastupnika i zastupnica koji nisu glasali (NEMA), te u skladu
+    s time prikazujemo rezultate.
