@@ -272,3 +272,22 @@ def save_organizations_vote_discords(playing_field, timestamp=None):
         )
 
     print(f"Done: {num}/{num}")
+
+
+def save_all_organizations_vote_discords(timestamp=None):
+    if not timestamp:
+        timestamp = datetime.now()
+
+    mandate = Mandate.get_active_mandate_at(timestamp)
+    playing_fields = (
+        Vote.objects.filter(
+            timestamp__lte=timestamp,
+            motion__session__mandate=mandate,
+        )
+        .distinct("motion__session__organizations")
+        .values_list("motion__session__organizations", flat=True)
+    )
+    for playing_field in playing_fields:
+        playing_field = Organization.objects.get(id=playing_field)
+        print(f"Running votes analyses for: {playing_field.name}")
+        save_organizations_vote_discords(playing_field, timestamp)

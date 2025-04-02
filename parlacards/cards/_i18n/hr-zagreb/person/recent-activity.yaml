@@ -1,10 +1,8 @@
 card:
   title: Nedavne aktivnosti
   info: >-
-    # Poveznice na sva glasanja i govore posljednjih deset dana aktivnog
-    zastupničkog mandata.
+    # Poveznice na najnovija glasanja i govore aktivnog gradskog zastupnika ili zastupnice.
 
 
-    Podaci su preuzeti s web stranice Hrvatskog sabora. Na kartici su prikazane
-    poveznice na sva glasanja i govore u posljednjih deset dana aktivnog
-    zastupničkog mandata.
+    Podaci se preuzimaju s mrežnih stranica [Grada Zagreba] (https://zagreb.hr/).
+    Poveznice na kartici razvrstane su od najnovijih prema najstarijima.
