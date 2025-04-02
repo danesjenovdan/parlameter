@@ -1,9 +1,9 @@
 card:
   title: Prisutnost na glasanjima
   info: >-
-    # Prisutnost kluba na glasanjima na sjednicama HS-a u odnosu na prosječnu i
-    maksimalnu vrijednost.
+    # Prisutnost članica i članova zastupničkog kluba glasanjima na sjednicama Gradske
+    skupštine.
 
 
-    Broj glasanja, ako je klub prisutan na sjednici, podijeli se s brojem svih
-    glasanja na sjednici i normalizira (min 1 - max 100).
+    Rezultati se prikazuju u postocima. Podaci se preuzimaju s mrežnih stranica [Grada
+    Zagreba] (https://zagreb.hr/).

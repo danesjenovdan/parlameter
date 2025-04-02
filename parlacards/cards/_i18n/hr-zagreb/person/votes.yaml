@@ -1,12 +1,15 @@
 card:
   title: Glasanja
   info: >-
-    # Pregled svih glasanja na sjednici.
+    # Pregled rezultata svih glasanja odabranog gradskog zastupnika ili zastupnice
+    tijekom sjednice Gradske skupštine.
 
 
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
-    SUZDRŽANA) i broj zastupnica koje nisu glasale i ispišu rezultati.
+    Kako je glasao ili glasala zastupnica ili zastupnik vidi se u krajnjem lijevom
+    stupcu po svakoj pojedinoj točki. Rezultate svih glasanja prikazujemo u kategorijama
+    "ZA", "PROTIV" i "SUZDRŽANI", a glasove gradskih zastupnica i zastupnika koji
+    nisu glasali ili su bili odsutni, vodimo u kategoriji "NEMA". 
 
 
-    Zbirka glasanja preuzima se s web stranica Hrvatskog sabora
-    [HS](http://www.sabor.hr/sjednica-sabora).
+    Točnost prikazanih rezultata glasanja ovisi o točnosti podataka koji se preuzimaju
+    sa službenih stranica [Grada Zagreba] (https://zagreb.hr/).
