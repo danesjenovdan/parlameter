@@ -180,7 +180,7 @@ class GroupsResource(ExportModelResource):
                 root_organization, playing_field = mandate.query_root_organizations(
                     before_end
                 )
-                organizations = playing_field.query_organization_members(before_end)
+                organizations = playing_field.query_parliamentary_groups(before_end)
                 self.playing_field = playing_field
                 return organizations
             # if mandate does not exist return empty queryset

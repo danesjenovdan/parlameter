@@ -1,409 +1,395 @@
 {
-  "id": 81,
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/questions/?id=81",
+  "id": 44,
+  "url": "https://parladata-zagreb.lb.djnd.si/v3/cards/person/questions/?id=44",
   "data": {
     "results": [
       {
         "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi z zagotavljanjem varnosti državljank in državljanov Republike Slovenije in njihovega premoženja",
+        "title": "Pitanje se odnosi na izgradnju garaže u Klaićevoj ulici i korištenju školskog igrališta za rekreaciju građana.",
         "authors": [
-            {
-                "slug": "5971-anton-sturbej",
-                "name": "Anton Šturbej",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                    "name": "Slovenska demokratska stranka",
-                    "acronym": "SDS",
-                    "slug": "2-slovenska-demokratska-stranka",
-                    "color": "#679BBB",
-                    "classification": "pg",
-                    "is_in_coalition": false
-                },
-                "image": "/media/P409.png"
-            }
+          {
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          }
         ],
         "recipient_people": [],
-        "recipient_text": "minister za notranje zadeve",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/51da42c4ec8b6c5dc0b701d979d06873768193ab5b64d116d3b85794c1a56ff0",
+        "recipient_text": "Gradonačelniku Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/D1410A73CD50224BC1258AD30033224B/$FILE/2E05A.pdf",
         "type": "question",
-        "answer": {
-            "person_authors": [
-                {
-                    "slug": null,
-                    "name": "Tadej Ostrc",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "",
-                    "group": null,
-                    "image": null
-                },
-                {
-                    "slug": null,
-                    "name": "Ana Banana",
-                    "honorific_prefix": null,
-                    "honorific_suffix": null,
-                    "preferred_pronoun": "",
-                    "group": null,
-                    "image": null
-                }
-            ],
-            "organization_authors": [],
-            "text": "Bla bla to je odgovor",
-            "timestamp": "2023-11-10T10:30:22"
-        }
+        "answer": null
       },
       {
-        "timestamp": "2023-11-03T00:00:00",
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi z izvajanjem mejne kontrole",
+        "title": "Zastupnicu zanima trenutačno stanje kina Europa i njegova perspektiva.",
         "authors": [
-            {
-                "slug": "5971-anton-sturbej",
-                "name": "Anton Šturbej",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                    "name": "Slovenska demokratska stranka",
-                    "acronym": "SDS",
-                    "slug": "2-slovenska-demokratska-stranka",
-                    "color": "#679BBB",
-                    "classification": "pg",
-                    "is_in_coalition": false
-                },
-                "image": "/media/P409.png"
-            }
+          {
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
         ],
         "recipient_people": [],
-        "recipient_text": "minister za notranje zadeve",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/6968e94110795dcf53c14d33bcfe888008e0e9208efdf2c937cd085657947e06",
+        "recipient_text": "Pročelniku Gradskog ureda za kulturu, međugradsku i međunarodnu suradnju i civilno društvo",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/812B64CACAC28ADEC12589870035F699/$FILE/1DE66.pdf",
         "type": "question",
-        "answer": {}
-    },
-    {
-        "timestamp": "2023-11-02T00:00:00",
+        "answer": null
+      },
+      {
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi s predlogom Zakona o sodiščih",
+        "title": "Zastupnica pita kakav je plan čišćenja ilegalno odloženog glomaznog otpada na području Struga.",
         "authors": [
-            {
-                "slug": "5971-anton-sturbej",
-                "name": "Anton Šturbej",
-                "honorific_prefix": null,
-                "honorific_suffix": null,
-                "preferred_pronoun": "he",
-                "group": {
-                    "name": "Slovenska demokratska stranka",
-                    "acronym": "SDS",
-                    "slug": "2-slovenska-demokratska-stranka",
-                    "color": "#679BBB",
-                    "classification": "pg",
-                    "is_in_coalition": false
-                },
-                "image": "/media/P409.png"
-            }
+          {
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
+            "honorific_prefix": null,
+            "honorific_suffix": null,
+            "preferred_pronoun": "she",
+            "group": {
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
+              "classification": "pg",
+              "is_in_coalition": false
+            },
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
+          }
         ],
         "recipient_people": [],
-        "recipient_text": "ministrica za pravosodje",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/33e78083b90018f3b9713a45e6a812ff1cc9e387d3a3afa9ea009c849405c974",
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/ADD9F18CC09FB611C125887E00360586/$FILE/13152.pdf",
         "type": "question",
-        "answer": {}
+        "answer": null
       },
       {
-        "timestamp": "2021-12-10T00:00:00",
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi z uvedbo kavcijskega sistema za zbiranje embalaže za pijače",
+        "title": "Zastupnica traži cjeloviti pregled projekata Zajednica aktivnih građana i Škola i zajednica koji se provodi u školama i što se s tim projektima planira u budućnosti.",
         "authors": [
           {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
             "honorific_prefix": null,
             "honorific_suffix": null,
-            "preferred_pronoun": "he",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
               "classification": "pg",
-              "is_in_coalition": true
+              "is_in_coalition": false
             },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
           }
         ],
         "recipient_people": [],
-        "recipient_text": "minister za okolje in prostor",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/d30244c4dc909f5ef9e590dfdca5a229325007cbec760d6e9be164c65650bf88",
-        "type": "question"
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/5AE7FC48F4874BEEC12589D0003F9AC1/$FILE/21EBA.pdf",
+        "type": "question",
+        "answer": null
       },
       {
-        "timestamp": "2021-11-10T00:00:00",
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi s spodbudami za proizvajalce embalaže za shranjevanje živil, ki je skladna z regulacijo dajanja plastičnih proizvodov za enkratno uporabo na trg",
+        "title": "Zastupnicu zanima kada će Zagreb dobiti pravi betonski skate park.",
         "authors": [
           {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
             "honorific_prefix": null,
             "honorific_suffix": null,
-            "preferred_pronoun": "he",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
               "classification": "pg",
-              "is_in_coalition": true
+              "is_in_coalition": false
             },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
           }
         ],
         "recipient_people": [],
-        "recipient_text": "minister za gospodarski razvoj in tehnologijo",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/49f2cc319bbf88b5bc418e54e58955d1e8db213381f3bda4e63b1d6cc28796fb",
-        "type": "question"
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/3B3E111017C79E0BC12589B9002B2EA4/$FILE/20DAE.pdf",
+        "type": "question",
+        "answer": null
       },
       {
-        "timestamp": "2021-11-02T00:00:00",
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi s projektno dokumentacijo za traso Velenje jug–Šentrupert v okviru tretje razvojne osi",
+        "title": "Zastupnicu zanima u kojoj je fazi proces uređenja Paromlina i kako će se riješiti problem nedostatka parkirnih mjesta.",
         "authors": [
           {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
             "honorific_prefix": null,
             "honorific_suffix": null,
-            "preferred_pronoun": "he",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
               "classification": "pg",
-              "is_in_coalition": true
+              "is_in_coalition": false
             },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
           }
         ],
         "recipient_people": [],
-        "recipient_text": "minister za infrastrukturo",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/9ef17174846b81c61ff40d651cd33a603d90c252d335ad23f038a9daf6b7957e",
-        "type": "question"
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/84D447836BB9BDC9C1258A630037EB66/$FILE/28136.pdf",
+        "type": "question",
+        "answer": null
       },
       {
-        "timestamp": "2021-10-20T00:00:00",
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi z uvedbo kavcijskega sistema za zbiranje embalaže za pijače",
+        "title": "Zastupnicu zanima kako teče obnova nakon potresa koju organizira Grad Zagreb u odnosu na onu na Baniji, gdje niti četiri godine nakon potresa nije mnogo napravljeno, a mnoge kuće još nisu niti srušene.",
         "authors": [
           {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
             "honorific_prefix": null,
             "honorific_suffix": null,
-            "preferred_pronoun": "he",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
               "classification": "pg",
-              "is_in_coalition": true
+              "is_in_coalition": false
             },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
           }
         ],
         "recipient_people": [],
-        "recipient_text": "Vlada",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/38fb9a9215dc5e5c11f5dc6e75df12c565810a601e1670b7097e210290c92565",
-        "type": "initiative"
+        "recipient_text": "Gradonačelniku Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/D203667FB9B8DA11C1258AE8003193D3/$FILE/2FDCA.pdf",
+        "type": "question",
+        "answer": null
       },
       {
-        "timestamp": "2021-10-08T00:00:00",
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi z izgradnjo kolesarske steze od križišča Pondor proti Prekopi",
+        "title": "Zastupnicu zanima postoji li mogućnost da se na lokalnoj razini ukine ili smanji korištenje mobitela u školama, budući da se na nacionalnoj razini to nije uspjelo riješiti.",
         "authors": [
           {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
             "honorific_prefix": null,
             "honorific_suffix": null,
-            "preferred_pronoun": "he",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
               "classification": "pg",
-              "is_in_coalition": true
+              "is_in_coalition": false
             },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
           }
         ],
         "recipient_people": [],
-        "recipient_text": "minister za infrastrukturo",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/17555a60b62c7755d693c0d2912a4616633a54aeb43282e78534bbbe5d586875",
-        "type": "initiative"
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/AED7EBF1ACAA1DE4C1258A840039CDA0/$FILE/29C42.pdf",
+        "type": "question",
+        "answer": null
       },
       {
-        "timestamp": "2021-09-20T00:00:00",
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi z nadzorom prodaje kmetijskih pridelkov na obcestnih stojnicah",
+        "title": "Zastupnicu zanima na koji se način mogu pratiti događanja u sklopu plana potreba za aktivnostima, programima i projektima unapređenja kvalitete života građana, koji je ove godine prvi put uveden u vijeća gradskih četvrti i mjesnih odbora, što se sve u kvartovima zbiva ovih dana i što se planira sljedeće godine.",
         "authors": [
           {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
             "honorific_prefix": null,
             "honorific_suffix": null,
-            "preferred_pronoun": "he",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
               "classification": "pg",
-              "is_in_coalition": true
+              "is_in_coalition": false
             },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
           }
         ],
         "recipient_people": [],
-        "recipient_text": "minister za kmetijstvo gozdarstvo in prehrano",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/3949244b8e8cd90ac9eab726f802dd0b1ed2a044d458c2967408ef39df5523fe",
-        "type": "question"
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/549FA685A8C23B5DC1258B2C0028901A/$FILE/32166.pdf",
+        "type": "question",
+        "answer": null
       },
       {
-        "timestamp": "2021-07-14T00:00:00",
+        "timestamp": null,
         "answer_timestamp": null,
-        "title": "v zvezi z zagotovitvijo notarskih storitev v Žalcu",
+        "title": "Zastupnicu zanima kada će se učenici vratiti na nastavu u Gornjogradsku gimnaziju.",
         "authors": [
           {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
+            "slug": "44-marta-kis",
+            "name": "Marta Kiš",
             "honorific_prefix": null,
             "honorific_suffix": null,
-            "preferred_pronoun": "he",
+            "preferred_pronoun": "she",
             "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
+              "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+              "acronym": "Možemo, ZG je naš, NL",
+              "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+              "color": "#3CD80D",
               "classification": "pg",
-              "is_in_coalition": true
+              "is_in_coalition": false
             },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+            "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+            "is_active": true
+          },
+          {
+            "name": "Zagreb je naš!",
+            "acronym": "Zagreb je naš!",
+            "slug": "33-zagreb-je-nas",
+            "color": "#09A2CC",
+            "classification": "other",
+            "is_in_coalition": false
           }
         ],
         "recipient_people": [],
-        "recipient_text": "minister za pravosodje",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/6aa9288e5180b984c8573cb7e5275ccfb0cdeb285588b796d8aed679eb0c27f6",
-        "type": "initiative"
-      },
-      {
-        "timestamp": "2021-07-02T00:00:00",
-        "answer_timestamp": null,
-        "title": "v zvezi s sistemskim reševanjem problematike otrok s posebnimi potrebami",
-        "authors": [
-          {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": "he",
-            "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
-              "classification": "pg",
-              "is_in_coalition": true
-            },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
-          }
-        ],
-        "recipient_people": [],
-        "recipient_text": "minister za delo družino socialne zadeve in enake možnosti",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/75f127e3027bd572e5e247181b8e7f0c44b6ddf344823486d8e8602bc4056b8e",
-        "type": "question"
-      },
-      {
-        "timestamp": "2021-06-02T00:00:00",
-        "answer_timestamp": null,
-        "title": "v zvezi s Pravilnikom o merilih sorazmernosti pri pogoju ugotavljanja znižanja prihodkov",
-        "authors": [
-          {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": "he",
-            "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
-              "classification": "pg",
-              "is_in_coalition": true
-            },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
-          }
-        ],
-        "recipient_people": [],
-        "recipient_text": "minister za finance",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/f35dfc288b57857aae0458ff17de522458b08ae565e4932958833f5ea5112d18",
-        "type": "question"
-      },
-      {
-        "timestamp": "2021-05-26T00:00:00",
-        "answer_timestamp": null,
-        "title": "v zvezi z umestitvijo gostinskih poklicev na seznam deficitarnih poklicev",
-        "authors": [
-          {
-            "slug": "81-aleksander-rebersek",
-            "name": "Aleksander Reberšek",
-            "honorific_prefix": null,
-            "honorific_suffix": null,
-            "preferred_pronoun": "he",
-            "group": {
-              "name": "Nova Slovenija - Krščanski demokrati",
-              "acronym": "NSi",
-              "slug": "7-nova-slovenija-krscanski-demokrati",
-              "color": "#31A8B1",
-              "classification": "pg",
-              "is_in_coalition": true
-            },
-            "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
-          }
-        ],
-        "recipient_people": [],
-        "recipient_text": "minister za delo družino socialne zadeve in enake možnosti",
-        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/9583c020f40a032cb8f7bf3bd5c841dcbe23d6f16fe5d41c4b20d70efdba0b82",
-        "type": "initiative"
+        "recipient_text": "Gradonačelniku  Grada Zagreba",
+        "url": "https://web.zagreb.hr/Sjednice/2021/SkupstinaZapisi_2021.nsf/0/84761F6F86873FB7C1258C1C0037BB83/$FILE/3E372.pdf",
+        "type": "question",
+        "answer": null
       }
     ],
     "mandate": {
-      "description": "VIII",
+      "id": 1,
+      "description": "Mandat 2021-2025",
       "beginning": null
     },
     "person": {
-      "slug": "81-aleksander-rebersek",
-      "name": "Aleksander Reberšek",
+      "slug": "44-marta-kis",
+      "name": "Marta Kiš",
       "honorific_prefix": null,
       "honorific_suffix": null,
-      "preferred_pronoun": "he",
+      "preferred_pronoun": "she",
       "group": {
-        "name": "Nova Slovenija - Krščanski demokrati",
-        "acronym": "NSi",
-        "slug": "7-nova-slovenija-krscanski-demokrati",
-        "color": "#31A8B1",
+        "name": "Klub gradskih zastupnika i zastupnica Možemo! - Zagreb je naš! - Nova ljevica",
+        "acronym": "Možemo, ZG je naš, NL",
+        "slug": "63-klub-gradskih-zastupnika-i-zastupnica-mozemo-zagreb-je-nas-nova-ljevica",
+        "color": "#3CD80D",
         "classification": "pg",
-        "is_in_coalition": true
+        "is_in_coalition": false
       },
-      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/nsi-aleksander-rebersek.jpg"
+      "image": "https://s3.fr-par.scw.cloud/parlameter/zagreb/44-marta-kis.jpg",
+      "is_active": true
     },
-    "count": 82,
-    "pages": 9,
+    "count": 13,
+    "pages": 2,
     "page": 1,
     "per_page": 10
   }

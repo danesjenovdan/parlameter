@@ -1,11 +1,9 @@
 card:
   title: Riječi koje označavaju klub
   info: >-
-    # Ispis 10 riječi i fraza koje klub koristi češće od ostalih klubova u HS-u.
+    # Ispis 10 riječi i fraza koje članice i članovi odabranog zastupničkog kluba
+    koriste češće od kolegica i kolega iz ostalih zastupničkih klubova u Gradskoj
+    skupštini.
 
 
-    Analiza se provodi prema statistici
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
-
-
-    Korpus čine svi govori, a dokument svi govori svih zastupnica u klubu.
+    Analiza se provodi prema statistici [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).

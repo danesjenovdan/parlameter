@@ -60,13 +60,13 @@ const renderLegislation = async (render, req, res, next) => {
   if (sesData) {
     render('seja/zakonodaja', {
       ogImageUrl: getOgImageUrl('circle', {
-        title: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+        title: `${i18n('titles.session')} - ${i18n('general.legislation')}`,
         h1: sesData.session.name,
         h2: slovenianDate(sesData.session.start_time),
         icon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
       }),
       activeMenu: 'session',
-      pageTitle: `${i18n('titles.session')} - ${i18n('titles.legislation')}`,
+      pageTitle: `${i18n('titles.session')} - ${i18n('general.legislation')}`,
       activeTab: 'zakonodaja',
       ...sesData,
     });
