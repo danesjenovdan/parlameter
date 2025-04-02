@@ -1,9 +1,8 @@
 card:
   title: Broj izgovorenih riječi
   info: >-
-    # Broj riječi koje je zastupnica izgovorila u svim svojim govorima u HS-u u
-    odnosu na prosječnu i maksimalnu vrijednost.
+    # Broj riječi koje je gradski zastupnik ili zastupnica izgovorila ili izgovorio
+    u Gradskoj skupštini u odnosu na prosječnu i maksimalnu vrijednost.
 
 
-    Zbrajaju se riječi u govorima zastupnice preuzetima iz transkripata
-    objavljenih na [HS](http://edoc.sabor.hr/Fonogrami.aspx).
+    Zbrajaju se riječi u govorima iz dostupnih transkripata sjednica Gradske skupštine.

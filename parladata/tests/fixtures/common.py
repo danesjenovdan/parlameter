@@ -4,7 +4,7 @@ import pytest
 
 from parladata.models.common import Mandate
 from parladata.models.organization import Organization
-from parladata.models.person import Person
+from parladata.models.vote import Vote
 
 
 @pytest.fixture
@@ -15,6 +15,15 @@ def main_organization():
 @pytest.fixture
 def first_mandate():
     return Mandate.objects.order_by("id").first()
+
+
+@pytest.fixture
+def coalition(main_organization):
+    return (
+        main_organization.query_organization_members()
+        .filter(classification="coalition")
+        .first()
+    )
 
 
 @pytest.fixture
@@ -70,6 +79,11 @@ def last_group(main_organization, ending_date_of_first_mandate):
         .order_by("id")
         .last()
     )
+
+
+@pytest.fixture
+def first_vote():
+    return Vote.objects.first()
 
 
 @pytest.fixture
