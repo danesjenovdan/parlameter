@@ -66,17 +66,21 @@ const createError = (statusCode, error, message, code) => {
   return obj;
 };
 
+const moduleCache = {};
+
 const loadCardModule = async (cardName) => {
-  let module;
-  try {
-    module = await import(`../dist/server/${cardName}.js`);
-  } catch (error) {
-    if (error.code !== 'ERR_MODULE_NOT_FOUND') {
-      throw error;
+  if (!(cardName in moduleCache)) {
+    try {
+      moduleCache[cardName] = await import(`../dist/server/${cardName}.js`);
+    } catch (error) {
+      if (error.code !== 'ERR_MODULE_NOT_FOUND') {
+        throw error;
+      }
+      moduleCache[cardName] = null;
     }
   }
   return {
-    render: module?.default,
+    render: moduleCache[cardName]?.default,
   };
 };
 
