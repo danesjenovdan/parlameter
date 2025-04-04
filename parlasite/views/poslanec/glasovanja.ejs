@@ -4,16 +4,16 @@
 
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/person/votes/', mp.id, { "showExportButton": true }) %>
+    <%- fetchCard('/person/votes/', mp.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/person/most-votes-in-common/', mp.id, { "showExportButton": true }) %>
+    <%- fetchCard('/person/most-votes-in-common/', mp.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/person/least-votes-in-common/', mp.id, { "showExportButton": true }) %>
+    <%- fetchCard('/person/least-votes-in-common/', mp.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/person/deviation-from-group/', mp.id, { "showExportButton": true }) %>
+    <%- fetchCard('/person/deviation-from-group/', mp.id, { "showExportButton": true }) %>
   </div>
 </div>
 

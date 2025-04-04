@@ -5,22 +5,22 @@
 <div class="row">
   <div class="col-md-12">
     <!-- TODO -->
-    <%- await fetchCard('/person/speeches/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
+    <%- fetchCard('/person/speeches/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/person/tfidf/', mp.id, { "showExportButton": true }) %>
+    <%- fetchCard('/person/tfidf/', mp.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/person/number-of-spoken-words/', mp.id, { "showExportButton": true }) %>
+    <%- fetchCard('/person/number-of-spoken-words/', mp.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/person/average-number-of-speeches-per-session/', mp.id, { "showExportButton": true }) %>
+    <%- fetchCard('/person/average-number-of-speeches-per-session/', mp.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%- await fetchCard('/person/vocabulary-size/', mp.id, { "showExportButton": true }) %>
+    <%- fetchCard('/person/vocabulary-size/', mp.id, { "showExportButton": true }) %>
   </div>
   <!-- <div class="col-md-6">
-    <%# await fetchCard('/person/style-scores/', mp.id, { "showExportButton": true }) %>
+    <%# fetchCard('/person/style-scores/', mp.id, { "showExportButton": true }) %>
   </div> -->
 </div>
 

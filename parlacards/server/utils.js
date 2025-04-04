@@ -1,6 +1,22 @@
 import fs from 'fs-extra';
 import axios from 'axios';
 
+class ResponseTimings {
+  constructor() {
+    this.timings = [];
+  }
+
+  push(name, time) {
+    this.timings.push([name, time]);
+  }
+
+  toString() {
+    return this.timings
+      .map(([name, time]) => `${name}:${time.toFixed(2)}`)
+      .join(',');
+  }
+}
+
 const parseISOLikeDate = (date) => {
   // parses iso like string (2022-12-31, 2022_12_31, 20221231)
   if (typeof date === 'string') {
@@ -227,6 +243,7 @@ const getParlaHeaders = (headers) => {
 };
 
 export {
+  ResponseTimings,
   getUrls,
   createError,
   loadCardModule,
