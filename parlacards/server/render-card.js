@@ -112,6 +112,8 @@ const renderCard = async ({
   state,
   currentUrl,
   parlaHeaders,
+  responseTimings,
+  reply,
 }) => {
   if (!id) {
     throw new HTTPError(400, `Query parameter 'id' missing`);
@@ -122,10 +124,12 @@ const renderCard = async ({
 
   const renderTemplate = getTemplate(template);
 
+  responseTimings.push(`beforeModuleLoad:${reply.elapsedTime}`);
   const [{ render }, localeData] = await Promise.all([
-    await loadCardModule(cardName),
-    await loadLocale(locale),
+    await loadCardModule(cardName, reply),
+    await loadLocale(locale, reply),
   ]);
+  responseTimings.push(`afterModuleLoad:${reply.elapsedTime}`);
 
   if (!render) {
     throw new HTTPError(404, `Card '${cardName}' not found`);
@@ -137,6 +141,7 @@ const renderCard = async ({
   const defaultMessages = localeData.defaults ?? {};
   const cardMessages = localeData[cardName] ?? {};
 
+  responseTimings.push(`beforeDataFetch:${reply.elapsedTime}`);
   let cardData = {};
   if (cardName !== 'misc/error' && !state.no_card_data) {
     const dataUrl = getCardDataUrl(cardName, id, date, state);
@@ -148,6 +153,7 @@ const renderCard = async ({
       parlaHeaders,
     });
   }
+  responseTimings.push(`afterDataFetch:${reply.elapsedTime}`);
 
   const cardState = { ...state };
   // force altHeader if card is shared or embedded
