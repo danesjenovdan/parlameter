@@ -23,7 +23,7 @@
   </div>
   <% if (showInfoCard) { %>
   <div class="col-md-6">
-    <%- await fetchCard('/misc/basic-information/', mandateId); %>
+    <%- fetchCard('/misc/basic-information/', mandateId); %>
   </div>
   <% } %>
 </div>
@@ -49,7 +49,7 @@
           }
           </style>
           <div class="search-container">
-            <%- await fetchCard('/misc/search/', mandateId); %>
+            <%- fetchCard('/misc/search/', mandateId); %>
           </div>
           <div class="searchinfo" data-mc="search" data-ma="infobox" data-mn="" data-mv="" data-toggle="modal" data-target="#modal-search-how">i</div>
         </div>
@@ -75,10 +75,10 @@
 <!-- REMOVE LATEST SESSION
 <div class="row">
   <div class="col-md-12">
-    <%# await fetchCard('/misc/promoted-legislation/', rootOrgId) %>
+    <%# fetchCard('/misc/promoted-legislation/', rootOrgId) %>
   </div>
   <div class="col-md-12">
-    <%# await fetchCard('/misc/last-session/', rootOrgId) %>
+    <%# fetchCard('/misc/last-session/', rootOrgId) %>
   </div>
 </div>
 -->

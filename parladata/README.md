@@ -14,6 +14,15 @@ parladata
 
 user for login: parlauser:password
 
+# using a backup to simulate production
+* download backup file from backup place
+* decrypt backup
+* unzip backup
+* run `docker-compose down -v` in bash to lose the database
+* run `docker-compose up`, in bash the database should be accessible at port 5432
+* connect to the database and execute `CREATE USER <user_name_from_backup> WITH PASSWORD '<some_password>';` then execute `GRANT ALL ON SCHEMA public TO <user_name_from_backup>;`
+* restore database with psql `</path/to/>psql --file=</path/to/backup/file> --username=postgres --host=localhost --port=5432 parladata`
+
 # Editing the test database
 
 *   load fresh data with

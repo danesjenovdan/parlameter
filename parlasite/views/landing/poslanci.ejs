@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/members/', rootOrgId, { generator: true, showExportButton: true, hiddenAnalyses: "spoken_words|mismatch_of_pg|working_bodies", showDemographicsAge: false, showDemographicsEducation: false, showDemographicsMandates: false, showGendersFilter: false, showWorkingBodiesFilter: false }) %>
+<%- fetchCard('/misc/members/', rootOrgId, { generator: true, showExportButton: true, hiddenAnalyses: "spoken_words|mismatch_of_pg|working_bodies", showDemographicsAge: false, showDemographicsEducation: false, showDemographicsMandates: false, showGendersFilter: false, showWorkingBodiesFilter: false }) %>
 
 <%- await include('../_partials/footer.ejs') %>
