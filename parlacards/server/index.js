@@ -34,12 +34,17 @@ fastify.register(fastifyCors, {
 });
 
 const renderCardHandler = async (request, reply) => {
+  const responseTimings = [];
+  responseTimings.push(`requestStart:${reply.elapsedTime}`);
+
   const { group, method } = request.params;
   const { id, date, locale, template, ...state } = request.query;
   const cardName = `${group}/${method}`;
   const currentUrl = `${request.protocol}://${request.hostname}${request.originalUrl}`;
   const parlaHeaders = getParlaHeaders(request.headers);
+
   try {
+    responseTimings.push(`beforeRender:${reply.elapsedTime}`);
     const html = await renderCard({
       cardName,
       id,
@@ -49,7 +54,13 @@ const renderCardHandler = async (request, reply) => {
       state,
       currentUrl,
       parlaHeaders,
+      responseTimings,
+      reply,
     });
+    responseTimings.push(`afterRender:${reply.elapsedTime}`);
+
+    responseTimings.push(`requestEnd:${reply.elapsedTime}`);
+    reply.header('x-parlacards-response-timings', responseTimings.join(','));
     return reply.type('text/html').send(html);
   } catch (error) {
     if (error instanceof HTTPError) {
