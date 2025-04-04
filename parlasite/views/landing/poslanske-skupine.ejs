@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/groups/', rootOrgId, { generator: true, hiddenAnalyses: 'number_of_amendments', "showExportButton": true }) %>
+<%- fetchCard('/misc/groups/', rootOrgId, { generator: true, hiddenAnalyses: 'number_of_amendments', "showExportButton": true }) %>
 
 <%- await include('../_partials/footer.ejs') %>

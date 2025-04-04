@@ -4,12 +4,12 @@
 
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/session/tfidf/', session.id) %>
+    <%- fetchCard('/session/tfidf/', session.id) %>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
-    <%- await fetchCard('/session/speeches/', session.id, { page: page, "showExportButton": true }) %>
+    <%- fetchCard('/session/speeches/', session.id, { page: page, "showExportButton": true }) %>
   </div>
 </div>
 
