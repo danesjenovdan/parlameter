@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/members/', rootOrgId, { generator: true, "showExportButton": true }) %>
+<%- fetchCard('/misc/members/', rootOrgId, { generator: true, "showExportButton": true }) %>
 
 <%- await include('../_partials/footer.ejs') %>
