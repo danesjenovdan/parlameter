@@ -310,7 +310,7 @@ sort-by--education: stupanju obrazovanja
 sort-by--terms: broju mandata
 analysis-texts:
   demographics:
-    label: Demografija
+    label: Osnovni osobni podaci
   presence_votes:
     label: Prisutnost na glasanjima
     titleSuffix: ' prema prisutnosti na glasanjima'

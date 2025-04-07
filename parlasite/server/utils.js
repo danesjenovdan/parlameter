@@ -113,11 +113,20 @@ async function fetchCardAsync(req, cardPath, params, uid, responseTimings) {
   }
 }
 
+// This function is called from the template and synchronously returns a placeholder
+// string that will be replaced with the card content later. This is done so that
+// all the fetchCard calls can be made in parallel and the HTML can be generated faster.
+//
+// It has a bound `this` object with {req, res, outPromises, responseTimings}
 function fetchCard(cardPath, id, params = {}) {
+  // due to historical reasons, fix different ways of calling this function
   ({ cardPath, params } = fixFetchCardArgs(cardPath, id, params));
 
+  // generate a unique ID for this async call
+  // this is used to replace the placeholder in the HTML later
   const uid = Math.random().toString(36).slice(2);
 
+  // save the promise to be resolved later
   this.outPromises.push(
     [uid, cardPath, fetchCardAsync(this.req, cardPath, params, uid, this.responseTimings)],
   );
@@ -125,6 +134,8 @@ function fetchCard(cardPath, id, params = {}) {
   return `<!--asyncReplace(${uid})-->`;
 }
 
+// This function replaces the placeholders in the HTML with the actual card content
+// after all async calls have been resolved.
 async function replaceAsyncPlaceholders(res, rawHtml, outPromises) {
   const promises = outPromises.map(([uid, cardPath, promise]) => promise.then(([headers, html]) => {
     rawHtml = rawHtml.replace(`<!--asyncReplace(${uid})-->`, `<!--async(${uid})-->${html}`);
@@ -149,6 +160,8 @@ const asyncRender = (fn) => (req, res, next) => {
     const options = {
       ...opts,
       slovenianDate,
+      // bind the `this` object to the fetchCard function so we can access the
+      // req, res and outPromises in the function when called from the template
       fetchCard: fetchCard.bind({ req, res, outPromises, responseTimings }),
       async: true,
     };
@@ -157,6 +170,9 @@ const asyncRender = (fn) => (req, res, next) => {
         next(error);
       } else {
         promise
+          // rawHtml is filled with placeholders for async fetchCard calls
+          // replaceAsyncPlaceholders will await them in parallel and replace
+          // the placeholders with the actual card HTML
           .then((rawHtml) => replaceAsyncPlaceholders(res, rawHtml, outPromises))
           .then((html) => {
             responseTimings.push('requestEnd', performance.now());
