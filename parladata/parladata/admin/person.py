@@ -96,7 +96,7 @@ class PersonAdmin(admin.ModelAdmin):
     autocomplete_fields = ["districts"]
     search_fields = ("id", "personname__value", "parser_names")
     list_display = ("id", "get_name")
-    readonly_fields = ["created_at", "updated_at", "parser_names"]
+    readonly_fields = ["created_at", "updated_at"]
 
     # workaround made field name orderable because the name @property and is annotated
     def get_name(self, obj):

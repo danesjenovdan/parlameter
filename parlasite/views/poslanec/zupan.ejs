@@ -4,16 +4,16 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%- await fetchCard('/person/basic-information/', mp.id, { showGroup: false }) %>
+    <%- fetchCard('/person/basic-information/', mp.id, { showGroup: false }) %>
   </div>
   <!-- <div class="col-md-6">
-    <%# await fetchCard('/person/recent-activity/', mp.id) %>
+    <%# fetchCard('/person/recent-activity/', mp.id) %>
   </div>
   <div class="col-md-12">
-    <%# await fetchCard('/person/speeches/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
+    <%# fetchCard('/person/speeches/', mp.id, { customUrl: `{isci}/search/speeches?people=${mp.id}`, state: { person: mp.id } }) %>
   </div>
   <div class="col-md-6">
-    <%# await fetchCard('/person/tfidf/', mp.id) %>
+    <%# fetchCard('/person/tfidf/', mp.id) %>
   </div> -->
 </div>
 

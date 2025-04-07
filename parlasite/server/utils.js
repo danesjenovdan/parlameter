@@ -4,6 +4,23 @@ const _ = require('lodash');
 const fetch = require('node-fetch');
 const { urls, locale, defaultCardDate } = require('../config');
 
+class ResponseTimings {
+  constructor() {
+    this.start = performance.now();
+    this.timings = [];
+  }
+
+  push(name, time) {
+    this.timings.push([name, time]);
+  }
+
+  toString() {
+    return this.timings
+      .map(([name, time]) => `${name}:${(time - this.start).toFixed(2)}`)
+      .join(',');
+  }
+}
+
 function stringifyParams(params) {
   if (Object.keys(params).length > 0) {
     const query = Object.keys(params)
@@ -31,13 +48,17 @@ function slovenianDate(isoDate) {
   return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
 }
 
-async function fetchCard(cardPath, id, params = {}) {
+function fixFetchCardArgs(cardPath, id, params = {}) {
   // optional second argument
   if (typeof id === 'object') {
     params = id;
     id = undefined;
   }
 
+  // remove leading and trailing slashes
+  cardPath = cardPath.trim().replace(/^\/+/, '').replace(/\/+$/, '').toLowerCase();
+
+  // set params
   if (id) {
     params.id = id;
   }
@@ -49,8 +70,12 @@ async function fetchCard(cardPath, id, params = {}) {
     params.date = defaultCardDate;
   }
 
-  const cardUrl = `${urls.cards}${cardPath}${stringifyParams(params)}`;
-  const currentUrl = `${this.req.protocol}://${this.req.hostname}${this.req.originalUrl}`;
+  return { cardPath, params };
+}
+
+async function fetchCardAsync(req, cardPath, params, uid, responseTimings) {
+  const cardUrl = `${urls.cards}/${cardPath}${stringifyParams(params)}`;
+  const currentUrl = `${req.protocol}://${req.hostname}${req.originalUrl}`;
 
   // eslint-disable-next-line no-console
   console.log('Fetching:', cardUrl);
@@ -58,42 +83,86 @@ async function fetchCard(cardPath, id, params = {}) {
   console.log('  > from:', currentUrl);
 
   try {
+    responseTimings.push(`beforeFetch/${uid}`, performance.now());
     const res = await fetch(cardUrl, {
       headers: {
         'x-parlasite-request-url': cardUrl,
         'x-parlasite-request-from': currentUrl,
-        'x-parlasite-request-user-agent': this.req.headers['user-agent'],
+        'x-parlasite-request-user-agent': req.headers['user-agent'],
       },
     });
     if (res.ok) {
       const text = await res.text();
-      return text;
+      responseTimings.push(`afterFetch/${uid}`, performance.now());
+      return [res.headers, text];
     }
     const text = await res.text();
     // eslint-disable-next-line no-console
     console.error(`Failed to fetch card: status=${res.status} text=${text}`);
-    if (cardPath === '/misc/error') {
-      return `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>Status: ${res.status}</pre><pre>${text}</pre></div>`;
+    if (cardPath === 'misc/error') {
+      return [null, `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>Status: ${res.status}</pre><pre>${text}</pre></div>`];
     }
-    return fetchCard.call(this, '/misc/error', id, { message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` });
+    return fetchCardAsync(req, 'misc/error', { ...params, message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` }, uid, responseTimings);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Failed to fetch card:', error);
-    if (cardPath === '/misc/error') {
-      return `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${error}</pre><pre>${error.stack}</pre></div>`;
+    if (cardPath === 'misc/error') {
+      return [null, `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${error}</pre><pre>${error.stack}</pre></div>`];
     }
-    return fetchCard.call(this, '/misc/error', id, { message: `Failed to fetch card: ${cardPath}` });
+    return fetchCardAsync(req, 'misc/error', { ...params, message: `Failed to fetch card: ${cardPath}` }, uid, responseTimings);
   }
+}
+
+// This function is called from the template and synchronously returns a placeholder
+// string that will be replaced with the card content later. This is done so that
+// all the fetchCard calls can be made in parallel and the HTML can be generated faster.
+//
+// It has a bound `this` object with {req, res, outPromises, responseTimings}
+function fetchCard(cardPath, id, params = {}) {
+  // due to historical reasons, fix different ways of calling this function
+  ({ cardPath, params } = fixFetchCardArgs(cardPath, id, params));
+
+  // generate a unique ID for this async call
+  // this is used to replace the placeholder in the HTML later
+  const uid = Math.random().toString(36).slice(2);
+
+  // save the promise to be resolved later
+  this.outPromises.push(
+    [uid, cardPath, fetchCardAsync(this.req, cardPath, params, uid, this.responseTimings)],
+  );
+
+  return `<!--asyncReplace(${uid})-->`;
+}
+
+// This function replaces the placeholders in the HTML with the actual card content
+// after all async calls have been resolved.
+async function replaceAsyncPlaceholders(res, rawHtml, outPromises) {
+  const promises = outPromises.map(([uid, cardPath, promise]) => promise.then(([headers, html]) => {
+    rawHtml = rawHtml.replace(`<!--asyncReplace(${uid})-->`, `<!--async(${uid})-->${html}`);
+    if (headers) {
+      const timingHeader = headers.get('x-parlacards-timings');
+      if (timingHeader) {
+        res.setHeader(`x-parlacards-timings-${uid}-${cardPath.replaceAll('/', '-')}`, timingHeader);
+      }
+    }
+  }));
+  return Promise.all(promises).then(() => rawHtml);
 }
 
 const asyncRoute = (fn) => (...args) => fn(...args).catch(args[2]);
 
 const asyncRender = (fn) => (req, res, next) => {
+  const responseTimings = new ResponseTimings();
+  responseTimings.push('requestStart', performance.now());
+
+  const outPromises = [];
   const render = (view, opts) => {
     const options = {
       ...opts,
       slovenianDate,
-      fetchCard: fetchCard.bind({ req, res }),
+      // bind the `this` object to the fetchCard function so we can access the
+      // req, res and outPromises in the function when called from the template
+      fetchCard: fetchCard.bind({ req, res, outPromises, responseTimings }),
       async: true,
     };
     res.render(view, options, (error, promise) => {
@@ -101,11 +170,20 @@ const asyncRender = (fn) => (req, res, next) => {
         next(error);
       } else {
         promise
-          .then((html) => res.send(html))
+          // rawHtml is filled with placeholders for async fetchCard calls
+          // replaceAsyncPlaceholders will await them in parallel and replace
+          // the placeholders with the actual card HTML
+          .then((rawHtml) => replaceAsyncPlaceholders(res, rawHtml, outPromises))
+          .then((html) => {
+            responseTimings.push('requestEnd', performance.now());
+            res.setHeader('x-parlasite-timings', responseTimings.toString());
+            return res.send(html);
+          })
           .catch((pError) => next(pError));
       }
     });
   };
+
   try {
     const ret = fn(render, req, res, next);
     // if return value is a promise (also true with async functions)
@@ -168,7 +246,6 @@ function getOgImageUrl(type, params = {}) {
 module.exports = {
   stringifyParams,
   slovenianDate,
-  fetchCard,
   asyncRoute,
   asyncRender,
   i18n,
