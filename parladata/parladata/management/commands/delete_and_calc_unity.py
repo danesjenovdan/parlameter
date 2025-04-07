@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError
 
-from parlacards.models import OrganizationVoteDiscord
-from parlacards.scores.discord import save_organizations_vote_discords
+from parlacards.models import OrganizationVoteUnity
+from parlacards.scores.unity import save_organizations_vote_unities
 from parladata.models.common import Mandate
 from parladata.models.motion import Motion
 from parladata.models.organization import (
@@ -19,7 +19,7 @@ class Command(BaseCommand):
         parser.add_argument("mandate_id", type=int)
 
     def handle(self, *args, **options):
-        OrganizationVoteDiscord.objects.all().delete()
+        OrganizationVoteUnity.objects.all().delete()
         self.stdout.write("Deleted all unity scores")
 
         mandate = Mandate.objects.get(id=options["mandate_id"])
@@ -48,4 +48,4 @@ class Command(BaseCommand):
             i += 1
             body_p = self.style.SUCCESS(f"{body.id} ({body.name[:32]}...)")
             self.stdout.write(f"{i}/{num} | Calculating unity score for {body_p}")
-            save_organizations_vote_discords(body)
+            save_organizations_vote_unities(body)

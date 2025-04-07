@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/members/', rootOrgId, { generator: true, showExportButton: true, hiddenAnalyses: "spoken_words|mismatch_of_pg" }) %>
+<%- fetchCard('/misc/members/', rootOrgId, { generator: true, showExportButton: true, hiddenAnalyses: "spoken_words|mismatch_of_pg" }) %>
 
 <%- await include('../_partials/footer.ejs') %>
