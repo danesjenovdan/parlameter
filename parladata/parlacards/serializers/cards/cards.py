@@ -14,7 +14,7 @@ from parlacards.models import (
     GroupMonthlyVoteAttendance,
     GroupTfidf,
     GroupVotingDistance,
-    OrganizationVoteDiscord,
+    OrganizationVoteUnity,
     PersonMonthlyVoteAttendance,
     PersonTfidf,
     SessionGroupAttendance,
@@ -70,7 +70,7 @@ from parlacards.serializers.style_scores import StyleScoresSerializer
 from parlacards.serializers.tfidf import TfidfSerializer
 from parlacards.serializers.vote import (
     SessionVoteSerializer,
-    ToolsDiscordSerializer,
+    ToolsUnitySerializer,
     VoteSerializer,
 )
 from parlacards.serializers.voting_distance import (
@@ -1201,7 +1201,7 @@ class ToolsUnityCardSerializer(CardSerializer):
         ###
 
         ### get vote scores
-        vote_scores = OrganizationVoteDiscord.objects.filter(
+        vote_scores = OrganizationVoteUnity.objects.filter(
             # organization=organization,
             # playing_field=organization,
             timestamp__range=(from_timestamp, to_timestamp),
@@ -1257,7 +1257,7 @@ class ToolsUnityCardSerializer(CardSerializer):
             prefix="votes:",
         )
 
-        votes_serializer = ToolsDiscordSerializer(
+        votes_serializer = ToolsUnitySerializer(
             paged_object_list,
             many=True,
             context=self.context,
