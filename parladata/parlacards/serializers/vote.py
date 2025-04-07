@@ -1,10 +1,7 @@
-from collections import Counter
-
 from django.core.cache import cache
 from django.db.models import Count
 from rest_framework import serializers
 
-from parlacards.models import OrganizationVoteDiscord
 from parlacards.serializers.common import (
     CommonCachableSerializer,
     CommonOrganizationSerializer,
@@ -503,7 +500,7 @@ class SpeechVoteSerializer(CommonSerializer):
         return serializer.data
 
 
-class ToolsDiscordSerializer(CommonSerializer):
+class ToolsUnitySerializer(CommonSerializer):
     title = serializers.CharField(source="vote.name")
     session = serializers.SerializerMethodField()
     vote_id = serializers.IntegerField(source="vote.id")
@@ -511,8 +508,6 @@ class ToolsDiscordSerializer(CommonSerializer):
     passed = serializers.BooleanField(source="vote.result")
     timestamp = serializers.DateTimeField(source="vote.timestamp")
 
-    def get_session(self, discord):
-        serializer = SessionSerializer(
-            discord.vote.motion.session, context=self.context
-        )
+    def get_session(self, obj):
+        serializer = SessionSerializer(obj.vote.motion.session, context=self.context)
         return serializer.data
