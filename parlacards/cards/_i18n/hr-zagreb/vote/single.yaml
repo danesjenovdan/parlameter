@@ -10,7 +10,7 @@ card:
 
     Odabirom "ZASTUPNICI" dobiva se pregled glasova gradskih zastupnika i zastupnica,
     te pretraživanje po vrijednosti glasova (ZA, PROTIV, SUZDRŽANI, NEMA) i imenu
-    gradskog zastupnika ili zastupnice. 
+    gradskog zastupnika ili zastupnice.
 
 
     Uz rezultate glasanja po zastupničkim klubovima pridružen je kružni grafikon koji
@@ -21,4 +21,4 @@ card:
     Treća kartica prikazuje dokumente i linkove koji su povezani s pojedinim glasanjem.
 
     Točnost prikazanih rezultata glasanja direktno ovisi o točnosti podataka koji
-    se preuzimaju sa službenih stranica [Grada Zagreba] (https://zagreb.hr/).
+    se preuzimaju sa službenih stranica [Grada Zagreba](https://zagreb.hr/).
