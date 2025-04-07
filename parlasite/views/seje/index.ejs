@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/sessions/', mandateId, { generator: true, showOrganizationColumn: "secondary-only", "showExportButton": true }) %>
+<%- fetchCard('/misc/sessions/', mandateId, { generator: true, showOrganizationColumn: "secondary-only", "showExportButton": true }) %>
 
 <%- await include('../_partials/footer.ejs') %>

@@ -2,7 +2,7 @@ import createFastify from 'fastify';
 import fastifyCors from '@fastify/cors';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import { HTTPError, renderCard } from './render-card.js';
-import { getParlaHeaders } from './utils.js';
+import { ResponseTimings, getParlaHeaders } from './utils.js';
 
 const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
 
@@ -34,12 +34,17 @@ fastify.register(fastifyCors, {
 });
 
 const renderCardHandler = async (request, reply) => {
+  const responseTimings = new ResponseTimings();
+  responseTimings.push('requestStart', reply.elapsedTime);
+
   const { group, method } = request.params;
   const { id, date, locale, template, ...state } = request.query;
   const cardName = `${group}/${method}`;
   const currentUrl = `${request.protocol}://${request.hostname}${request.originalUrl}`;
   const parlaHeaders = getParlaHeaders(request.headers);
+
   try {
+    responseTimings.push('beforeRender', reply.elapsedTime);
     const html = await renderCard({
       cardName,
       id,
@@ -49,7 +54,13 @@ const renderCardHandler = async (request, reply) => {
       state,
       currentUrl,
       parlaHeaders,
+      responseTimings,
+      reply,
     });
+    responseTimings.push('afterRender', reply.elapsedTime);
+
+    responseTimings.push('requestEnd', reply.elapsedTime);
+    reply.header('x-parlacards-timings', responseTimings.toString());
     return reply.type('text/html').send(html);
   } catch (error) {
     if (error instanceof HTTPError) {
