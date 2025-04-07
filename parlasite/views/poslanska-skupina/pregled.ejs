@@ -4,22 +4,22 @@
 
 <div class="row">
   <div class="col-md-6">
-    <%- await fetchCard('/group/basic-information/', group.id, { "showExportButton": true }) %>
+    <%- fetchCard('/group/basic-information/', group.id, { "showExportButton": true }) %>
   </div>
   <!-- <div class="col-md-12">
-    <%# await fetchCard('/group/monthly-vote-attendance/', group.id, { "showExportButton": true }) %>
+    <%# fetchCard('/group/monthly-vote-attendance/', group.id, { "showExportButton": true }) %>
   </div> -->
   <!-- <div class="col-md-6">
-    <%# await fetchCard('/group/number-of-introduced-amendments/', group.id) %>
+    <%# fetchCard('/group/number-of-introduced-amendments/', group.id) %>
   </div> -->
   <!-- <div class="col-md-6">
-    <%# await fetchCard('/group/number-of-questions/', group.id, { "showExportButton": true }) %>
+    <%# fetchCard('/group/number-of-questions/', group.id, { "showExportButton": true }) %>
   </div> -->
   <div class="col-md-6">
-    <%- await fetchCard('/group/vote-attendance/', group.id, { "showExportButton": true }) %>
+    <%- fetchCard('/group/vote-attendance/', group.id, { "showExportButton": true }) %>
   </div>
   <!-- <div class="col-md-12">
-    <%# await fetchCard('/group/questions/', group.id) %>
+    <%# fetchCard('/group/questions/', group.id) %>
   </div> -->
 </div>
 

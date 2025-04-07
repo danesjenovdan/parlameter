@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/groups/', rootOrgId, { generator: true, "showExportButton": true, "hiddenAnalyses": "vocabulary_size|number_of_questions|number_of_amendments" }) %>
+<%- fetchCard('/misc/groups/', rootOrgId, { generator: true, "showExportButton": true, "hiddenAnalyses": "vocabulary_size|number_of_questions|number_of_amendments" }) %>
 
 <%- await include('../_partials/footer.ejs') %>

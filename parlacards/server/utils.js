@@ -1,6 +1,22 @@
 import fs from 'fs-extra';
 import axios from 'axios';
 
+class ResponseTimings {
+  constructor() {
+    this.timings = [];
+  }
+
+  push(name, time) {
+    this.timings.push([name, time]);
+  }
+
+  toString() {
+    return this.timings
+      .map(([name, time]) => `${name}:${time.toFixed(2)}`)
+      .join(',');
+  }
+}
+
 const parseISOLikeDate = (date) => {
   // parses iso like string (2022-12-31, 2022_12_31, 20221231)
   if (typeof date === 'string') {
@@ -66,17 +82,21 @@ const createError = (statusCode, error, message, code) => {
   return obj;
 };
 
+const moduleCache = {};
+
 const loadCardModule = async (cardName) => {
-  let module;
-  try {
-    module = await import(`../dist/server/${cardName}.js`);
-  } catch (error) {
-    if (error.code !== 'ERR_MODULE_NOT_FOUND') {
-      throw error;
+  if (!(cardName in moduleCache)) {
+    try {
+      moduleCache[cardName] = await import(`../dist/server/${cardName}.js`);
+    } catch (error) {
+      if (error.code !== 'ERR_MODULE_NOT_FOUND') {
+        throw error;
+      }
+      moduleCache[cardName] = null;
     }
   }
   return {
-    render: module?.default,
+    render: moduleCache[cardName]?.default,
   };
 };
 
@@ -223,6 +243,7 @@ const getParlaHeaders = (headers) => {
 };
 
 export {
+  ResponseTimings,
   getUrls,
   createError,
   loadCardModule,
