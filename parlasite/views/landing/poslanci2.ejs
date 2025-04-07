@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/members/', rootOrgId2, { generator: true, hiddenAnalyses: "working_bodies|spoken_words|speeches_per_session", showWorkingBodiesFilter: "false", showDistrictsFilter: "true", cardTitle: "Popis delegata/kinja", cardInfoKey: "card.info2" }) %>
+<%- fetchCard('/misc/members/', rootOrgId2, { generator: true, hiddenAnalyses: "working_bodies|spoken_words|speeches_per_session", showWorkingBodiesFilter: "false", showDistrictsFilter: "true", cardTitle: "Popis delegata/kinja", cardInfoKey: "card.info2" }) %>
 
 <%- await include('../_partials/footer.ejs') %>

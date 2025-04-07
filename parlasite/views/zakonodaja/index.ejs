@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/legislation/', mandateId, { generator: true, showEpaColumn: true, organizationTabs: "33;Predstavnički dom|34;Dom naroda", filterByStatus: true, "showExportButton": true }) %>
+<%- fetchCard('/misc/legislation/', mandateId, { generator: true, showEpaColumn: true, organizationTabs: "33;Predstavnički dom|34;Dom naroda", filterByStatus: true, "showExportButton": true }) %>
 
 <%- await include('../_partials/footer.ejs') %>

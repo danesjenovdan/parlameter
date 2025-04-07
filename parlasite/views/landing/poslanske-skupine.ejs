@@ -1,9 +1,9 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- await fetchCard('/misc/groups/', rootOrgId, { generator: true, hiddenAnalyses: "vocabulary_size", "showExportButton": true }) %>
+<%- fetchCard('/misc/groups/', rootOrgId, { generator: true, hiddenAnalyses: "vocabulary_size", "showExportButton": true }) %>
 
 <div style="height:25px"></div>
 
-<%- await fetchCard('/misc/groups/', rootOrgId2, { generator: true, hiddenAnalyses: "vocabulary_size", cardInfoKey: "card.info2" }) %>
+<%- fetchCard('/misc/groups/', rootOrgId2, { generator: true, hiddenAnalyses: "vocabulary_size", cardInfoKey: "card.info2" }) %>
 
 <%- await include('../_partials/footer.ejs') %>
