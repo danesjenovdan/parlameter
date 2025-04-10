@@ -20,7 +20,7 @@ def calculate_number_of_questions_from_person(person, timestamp=None):
     return Question.objects.filter(
         person_authors=person,
         mandate=mandate,
-        #timestamp__lt=to_timestamp,
+        # timestamp__lt=to_timestamp,
     ).count()
 
 
@@ -80,7 +80,7 @@ def calculate_group_number_of_question(group, playing_field, timestamp=None):
 
     mandate = Mandate.get_active_mandate_at(timestamp)
 
-    from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(timestamp)
+    # from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(timestamp)
 
     memberships = group.query_memberships_before(timestamp)
     member_ids = memberships.values_list("member_id", flat=True).distinct("member_id")
