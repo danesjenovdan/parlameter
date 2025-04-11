@@ -107,6 +107,7 @@ def calculate_group_number_of_question(group, playing_field, timestamp=None):
 
         organization_questions = Question.objects.filter(
             mandate=mandate,
+            organization_authors=group,
         )
 
         questions = questions.union(organization_questions)
