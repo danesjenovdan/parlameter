@@ -308,13 +308,16 @@ input.form-control, textarea.form-control {
 }
 
 .btn-parlameter {
-    background-color: colors.$first;
+    background-color: colors.$card-footer-button-passive-background;
     border: none;
     color: colors.$white;
     height: 34px;
     line-height: 30px;
     padding: 0 10px;;
     margin-top: 5px;
+    &:hover {
+        background-color: colors.$card-footer-button-hover-background;
+    }
 }
 .btn-full-width {
     width: 100%;
@@ -366,7 +369,7 @@ input.form-control, textarea.form-control {
             float: left;
             width: 50%;
             text-align: left;
-            background-color: colors.$tab-passive;
+            background-color: colors.$tab-active;
             padding-left: 10px;
             color: colors.$white;
         }
@@ -387,12 +390,15 @@ input.form-control, textarea.form-control {
     width: 26px;
     height: 26px;
     border-radius: 13px;
-    background-color: colors.$first;
+    background-color: colors.$card-footer-button-passive-background;
     position: absolute;
     top: 3px;
     right: 10px;
-    transition: all 0.5s;
+    transition: right 0.5s;
     box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+    &:hover {
+        background-color: colors.$card-footer-button-hover-background;
+    }
 }
 
 .embed-switch-box.off {
