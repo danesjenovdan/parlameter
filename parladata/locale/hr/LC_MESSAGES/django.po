@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-25 14:41+0100\n"
+"POT-Creation-Date: 2025-04-08 17:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: parlacards/admin_views.py:31
+#: parlacards/admin_views.py:29
 msgid "Calculation of TFIDF for members is completed"
 msgstr ""
 
-#: parlacards/admin_views.py:37
+#: parlacards/admin_views.py:35
 msgid "Calculation of TFIDF for organizations is completed"
 msgstr ""
 
-#: parlacards/admin_views.py:45
+#: parlacards/admin_views.py:44
 msgid "Calculation of TFIDF for session is completed: "
 msgstr ""
 
-#: parladata/behaviors/models.py:64
+#: parladata/behaviors/models.py:65
 msgid "row valid from"
 msgstr ""
 
-#: parladata/behaviors/models.py:70
+#: parladata/behaviors/models.py:68
 msgid "row valid to"
 msgstr ""
 
-#: parladata/forms.py:115
+#: parladata/forms.py:130
 msgid "Time intervals are in intersection"
 msgstr ""
 
-#: parladata/management/commands/import_sentio_data.py:143
+#: parladata/management/commands/import_sentio_data.py:154
 msgid "Pri parsanju sentio datoteke smo naleteli na potencialne napake"
 msgstr ""
 
-#: parladata/management/commands/public_questions_notifications.py:25
+#: parladata/management/commands/public_questions_notifications.py:27
 msgid "New public questions for approval in parameter "
 msgstr ""
 
-#: parladata/management/commands/public_questions_notifications.py:45
+#: parladata/management/commands/public_questions_notifications.py:46
 msgid "Question from Parlameter"
 msgstr "Pitanje Parlametra"
 
-#: parladata/management/commands/run_tasks.py:46
+#: parladata/management/commands/run_tasks.py:45
 msgid "Completed tasks at the Parlameter "
 msgstr ""
 
-#: parladata/models/area.py:9 parladata/models/media.py:9
+#: parladata/models/area.py:10 parladata/models/media.py:9
 msgid "name"
 msgstr ""
 
@@ -67,20 +67,20 @@ msgstr ""
 msgid "Area name"
 msgstr ""
 
-#: parladata/models/area.py:12
+#: parladata/models/area.py:13
 msgid "identifier"
 msgstr ""
 
-#: parladata/models/area.py:21 parladata/models/organization.py:68
+#: parladata/models/area.py:21 parladata/models/organization.py:86
 msgid "classification"
 msgstr ""
 
-#: parladata/models/link.py:13 parladata/models/media.py:15
+#: parladata/models/link.py:14 parladata/models/media.py:15
 #: parladata/models/media.py:47
 msgid "url"
 msgstr ""
 
-#: parladata/models/link.py:15
+#: parladata/models/link.py:14
 msgid "A URL"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "note"
 msgstr ""
 
-#: parladata/models/link.py:20
+#: parladata/models/link.py:21
 msgid "A note, e.g. 'Wikipedia page'"
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Medium URI"
 msgstr ""
 
-#: parladata/models/media.py:26 parladata/models/person.py:55
+#: parladata/models/media.py:26 parladata/models/person.py:67
 msgid "active"
 msgstr ""
 
@@ -128,72 +128,72 @@ msgstr ""
 msgid "Article URI"
 msgstr ""
 
-#: parladata/models/memberships.py:36
+#: parladata/models/memberships.py:32
 msgid "The organization that the member belongs to."
 msgstr ""
 
-#: parladata/models/memberships.py:42
+#: parladata/models/memberships.py:39
 msgid "Mandate"
 msgstr ""
 
-#: parladata/models/memberships.py:70
+#: parladata/models/memberships.py:71
 msgid "The person who is a party to the relationship"
 msgstr ""
 
-#: parladata/models/memberships.py:72
+#: parladata/models/memberships.py:75
 msgid "role"
 msgstr ""
 
-#: parladata/models/memberships.py:76
+#: parladata/models/memberships.py:80
 msgid "The role that the person fulfills in the organization"
 msgstr ""
 
-#: parladata/models/memberships.py:82
+#: parladata/models/memberships.py:90
 msgid ""
 "The organization on whose behalf the person is a party to the relationship"
 msgstr ""
 
-#: parladata/models/memberships.py:117
+#: parladata/models/memberships.py:129
 msgid "The organization that is a party to the relationship"
 msgstr ""
 
-#: parladata/models/organization.py:64 parladata/models/organization.py:66
+#: parladata/models/organization.py:82
 msgid "Gov website ID"
 msgstr ""
 
-#: parladata/models/organization.py:78
+#: parladata/models/organization.py:100
 msgid "The organization that contains this organization"
 msgstr ""
 
-#: parladata/models/organization.py:81
+#: parladata/models/organization.py:104
 msgid "A date of founding"
 msgstr ""
 
-#: parladata/models/organization.py:84
+#: parladata/models/organization.py:108
 msgid "A date of dissolution"
 msgstr ""
 
-#: parladata/models/person.py:34
+#: parladata/models/person.py:50
 msgid "date of birth"
 msgstr ""
 
-#: parladata/models/person.py:37
+#: parladata/models/person.py:50
 msgid "A date of birth"
 msgstr ""
 
-#: parladata/models/person.py:39
+#: parladata/models/person.py:54
 msgid "date of death"
 msgstr ""
 
-#: parladata/models/person.py:42
+#: parladata/models/person.py:54
 msgid "A date of death"
 msgstr ""
 
-#: parladata/models/person.py:44
+#: parladata/models/person.py:58
 msgid "image (url)"
 msgstr ""
 
-#: parladata/models/person.py:47
+#: parladata/models/person.py:58
 msgid "A image of a head shot"
 msgstr ""
 
@@ -243,19 +243,19 @@ msgstr "Srdačno hvala,"
 msgid "Team Parlameter"
 msgstr "Tim Parlametra"
 
-#: parladata/update_utils.py:102
+#: parladata/update_utils.py:128
 msgid "New data for edit in parlameter "
 msgstr ""
 
-#: parladata/views.py:29
+#: parladata/views.py:37
 msgid "Merge people to person with ID: "
 msgstr ""
 
-#: parladata/views.py:104
+#: parladata/views.py:121
 msgid "Merge organizations"
 msgstr ""
 
-#: parlanotifications/management/commands/send_utils.py:80
+#: parlanotifications/management/commands/send_utils.py:78
 msgid "Parlameter notification"
 msgstr ""
 
@@ -306,23 +306,23 @@ msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:19
 #: parlanotifications/templates/notification.html:33
-msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter.svg"
+msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:22
-#: parlanotifications/templates/notification.html:36
+#: parlanotifications/templates/notification.html:38
 msgid "Uredi svoje nastavitve"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:22
-#: parlanotifications/templates/notification.html:36
+#: parlanotifications/templates/notification.html:38
 msgid ""
 "https://parlacards-slovenija.lb.djnd.si/tools/notifications/?"
 "id=undefined&no_card_data=true&locale=sl&template=share&action=list"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:22
-#: parlanotifications/templates/notification.html:36
+#: parlanotifications/templates/notification.html:38
 msgid "tukaj"
 msgstr ""
 
@@ -338,6 +338,6 @@ msgstr ""
 msgid "transkript-url"
 msgstr ""
 
-#: parlanotifications/views.py:25
+#: parlanotifications/views.py:24
 msgid "Parlameter obvestila - potrditev"
 msgstr ""
