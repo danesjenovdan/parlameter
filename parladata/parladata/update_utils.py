@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib.auth.models import Group
 from django.core.mail import EmailMultiAlternatives
 from django.db import transaction
-from django.db.models import Q, OuterRef, Subquery
+from django.db.models import OuterRef, Q, Subquery
 from django.template.loader import render_to_string
 from django.utils import translation
 from django.utils.html import strip_tags
