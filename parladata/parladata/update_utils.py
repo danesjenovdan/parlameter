@@ -5,13 +5,14 @@ from django.conf import settings
 from django.contrib.auth.models import Group
 from django.core.mail import EmailMultiAlternatives
 from django.db import transaction
-from django.db.models import Q
+from django.db.models import Q, OuterRef, Subquery
 from django.template.loader import render_to_string
 from django.utils import translation
 from django.utils.html import strip_tags
 from django.utils.translation import gettext as _
 
 from parlacards.models import SessionTfidf
+from parladata.models.agenda_item import AgendaItem
 from parladata.models.legislation import LegislationConsideration
 from parladata.models.motion import Motion
 from parladata.models.person import Person
@@ -186,15 +187,26 @@ def set_vote_session(print_method=print):
 
 
 def reset_order_on_speech():
+    agenda_item_order = Subquery(
+        AgendaItem.objects.filter(
+            speeches=OuterRef("id"),
+        )
+        .order_by("order")
+        .values("order")[:1]
+    )
     now = datetime.now()
     previous_parse = now - timedelta(hours=settings.PARSER_INTERVAL_HOURS)
     with transaction.atomic():
         new_speeches = Speech.objects.filter(updated_at__gte=previous_parse)
-        sessions = [s.session for s in new_speeches.distinct("session")]
-        for session in sessions:
-            print("update session: ", session)
-            speeches = Speech.objects.filter(session=session).order_by(
-                "agenda_items__gov_id", "agenda_items__order", "order", "id"
-            )
-            for i, speech in enumerate(speeches):
-                Speech.objects.filter(pk=speech.pk).update(order=i + 1)
+    sessions = [s.session for s in new_speeches.distinct("session")]
+    for session in sessions:
+        print("update session: ", session)
+        speeches = speeches.annotate(ai_order=agenda_item_order)
+        speeches = (
+            Speech.objects.filter(session=session)
+            .annotate(ai_order=agenda_item_order)
+            .order_by("ai_order", "id", "order", "id")
+        )
+        for i, speech in enumerate(speeches):
+            speech.order = i + 1
+            speech.save()
