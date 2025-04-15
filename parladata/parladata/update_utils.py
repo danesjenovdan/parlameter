@@ -199,13 +199,13 @@ def reset_order_on_speech():
     with transaction.atomic():
         new_speeches = Speech.objects.filter(updated_at__gte=previous_parse)
     sessions = [s.session for s in new_speeches.distinct("session")]
+
     for session in sessions:
         print("update session: ", session)
-        speeches = speeches.annotate(ai_order=agenda_item_order)
         speeches = (
             Speech.objects.filter(session=session)
             .annotate(ai_order=agenda_item_order)
-            .order_by("ai_order", "id", "order", "id")
+            .order_by("ai_order", "id")
         )
         for i, speech in enumerate(speeches):
             speech.order = i + 1
