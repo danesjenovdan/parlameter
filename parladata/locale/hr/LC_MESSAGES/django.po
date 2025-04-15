@@ -295,12 +295,10 @@ msgstr "kliknite ovdje"
 #: parlanotifications/templates/add_keyword.html:14
 #: parlanotifications/templates/notification.html:13
 msgid "Srečno"
-msgstr ""
+msgstr "Srdačan pozdrav"
 
 #: parlanotifications/templates/add_keyword.html:15
 #: parlanotifications/templates/notification.html:14
-#, fuzzy
-#| msgid "Team Parlameter"
 msgid "ekipa Parlametra"
 msgstr "Tim Parlametra"
 
