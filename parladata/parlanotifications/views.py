@@ -1,8 +1,7 @@
+from django.conf import settings
 from django.shortcuts import get_object_or_404
 from django.utils import timezone, translation
 from django.utils.translation import gettext as _
-from django.conf import settings
-
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
