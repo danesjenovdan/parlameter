@@ -310,7 +310,7 @@ msgstr "https://parlametar.hr/"
 #: parlanotifications/templates/add_keyword.html:19
 #: parlanotifications/templates/notification.html:33
 msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png"
-msgstr ""
+msgstr "https://cdn.10.parlametar.hr/img/logo-parlameter-mejl.png"
 
 #: parlanotifications/templates/add_keyword.html:22
 #: parlanotifications/templates/notification.html:38
