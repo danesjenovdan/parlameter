@@ -11,7 +11,9 @@ trigger: Okidač
 input-trigger: Unesite okidač
 match: Podudaranje
 interval: Učestalost
-email: E-pošta
+email: E-mail
+input-email: Unesite svoju e-mail adresu
+email-address: E-mail
 notification-steps:
 - textfirst: >-
     Odaberite riječ ili frazu koju želite pratiti.
@@ -34,13 +36,13 @@ notification-steps:
     Link za potvrdu registracije i uređivanje ostalih postavki čeka vas u
     vašem e-mail pretincu.
 - textfirst: Potvrđeno!
-  textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo "{keyword}".
+  textsecond: Na e-mail {email} ćete primiti obavijesti za riječ ili izraz "{keyword}".
 - textfirst: Napaka!
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
 add-new-trigger: Dodaj novi okidač
-to-notification-list: Na seznam obvestil
+to-notification-list: Na popis obavijesti
 remove: Odstrani
-confirm-delete-notification: Ali si prepričan_a, da želiš odstraniti to obvestilo?
+confirm-delete-notification: Jeste li sigurni da želite ukloniti ovu obavijest?
 comparator-text: >-
   Zanima me, na kojim glasanjima su {same} glasali jednako, a {different}
   različito od njih. {load}
