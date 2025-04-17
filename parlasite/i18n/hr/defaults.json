@@ -129,8 +129,8 @@
     },
     "tools": {
         "notifications": {
-            "title": "Parlametar obavijesti",
-            "text": "Isječci sa sjednica Sabora! Primite obavijest na mail svaki puta kad netko u Saboru izgovori riječ (ili više njih) koje ste odabrali."
+            "title": "Obavijesti Parlametra",
+            "text": "Prijavite se za obavijesti. Možete odabrati riječ ili frazu i e-mailom primati obavijesti kada ih netko izgovori u Hrvatskom saboru."
         },
         "voteComparator": {
             "title": "Komparator glasanja",
@@ -169,7 +169,7 @@
         "other_votings": "Glasanja",
         "agenda": "Dnevni red",
         "transcripts": "Transkripti",
-        "tools_intro": "Demokracija je kontinuirani proces koji ovisi o našem sudjelovanju u njemu. Pomoći će sljedeći alati!",
+        "tools_intro": "Demokracija je proces koji traje i ovisi o sudjelovanju svih nas. U tome vam mogu pomoći sljedeći alati!",
         "page-not-found-text": "Ovdje nema ništa. Što tražiš?",
         "info_email": "info@parlametar.hr",
         "unaffiliated": "nepovezana",
