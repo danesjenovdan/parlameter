@@ -208,8 +208,13 @@ function expandProps(msg, props) {
 function i18n(lang) {
   const messages = fs.readJsonSync(`./i18n/${lang}/defaults.json`);
   const siteMap = fs.readJsonSync(`./i18n/${lang}/sitemap.json`);
+  const legalBody = fs.existsSync(`./i18n/${lang}/legal.html`) ? fs.readFileSync(`./i18n/${lang}/legal.html`, 'utf-8') : null;
 
   const get = (path, props = {}) => {
+    if (path === 'legal.body' && legalBody) {
+      return legalBody;
+    }
+
     const msg = messages[path] || _.get(messages, path);
     if (msg == null || msg === '[empty]' || msg === '') {
       // eslint-disable-next-line no-console
