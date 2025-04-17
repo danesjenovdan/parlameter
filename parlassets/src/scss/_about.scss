@@ -179,12 +179,38 @@
 }
 
 #about .legal-text-container {
+    max-width: 645px;
+    margin: 0 auto;
+
     a {
         @include color_classes.link-hover;
     }
 
+    h2,
     h3 {
         text-align: left;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    hr {
+        border-top-color: colors.$font-default;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    p,
+    ul,
+    ol,
+    blockquote {
+        font-size: 16px;
+        line-height: 1.5;
     }
 }
 
