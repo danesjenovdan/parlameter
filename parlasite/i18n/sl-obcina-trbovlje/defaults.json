@@ -1,0 +1,202 @@
+{
+  "landing": {
+    "title": "Parlameter",
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v občinskem svetu Občine Trbovlje.",
+    "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
+    "search": {
+      "part_one": "Išči",
+      "part_two": "odloke, glasovanja, svetnike ali svetniške skupine"
+    }
+  },
+  "about": {
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
+    "afterlead": "Uporabnikom prijazna vizualna zasnova in tehnološko napredna modularna zasnova povečujeta transparentnost delovanja najpomembnejše demokratične institucije in omogočata učinkovit vpogled v odločevalski proces.",
+    "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
+    "columns": {
+      "first": {
+        "title": "Splošna javnost",
+        "paragraph": "Delovanje demokracije je odvisno od budnega in odgovornega nadzora nad delovanjem oblasti, za kar pa je predpogoj dobro informirana javnost. Hvala, ker ti ni vseeno."
+      },
+      "second": {
+        "title": "Medijska javnost",
+        "paragraph": "Vse obstoječe kartice je mogoče brezplačno vdelati na katero koli spletno mesto. Podatke obdelamo mi, da se lahko mediji posvetijo interpretaciji."
+      },
+      "third": {
+        "title": "Razvijalska javnost",
+        "paragraph": "Vsi podatki so brezplačno na voljo preko dveh API vmesnikov, na Githubu pa je objavljena tudi vsa koda. Vse potrebno najdeš na <a href=\"https://dev.parlameter.si\">strani za razvijalce</a>, če potrebuješ še kakšno pomoč, pa se nam javi po e-pošti!"
+      }
+    },
+    "thanks": "Parlameter nastaja v okviru inštituta <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, ki se osredotoča na digitalno politično participacijo, transparentnost in nadzor. Hvala Google DNI, Amebisu, Ameriški ambasadi, NED in vsem posameznicam in posameznikom, ki so nam nesebično pomagali pri razvoju."
+  },
+  "legal": {
+    "title": "Pravno obvestilo",
+    "body": "<h3>1. O PARLAMETRU</h3><p>Parlameter je spletno orodje, ki z raznolikimi analizami glasovanj in transkriptov lajša spremljanje dela v Državnem zboru, občinskem svetu ali kateri koli drugi instituciji, ki verjame v transparentnost in digitalizacijo. Parlameter skrbi za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave ter prek učinkovitega vpogleda v odločevalski proces veča transparentnost delovanja institucij. V primeru, da transkripti sej niso na voljo, spletna aplikacija ne prikazuje transkriptov in različnih analiz govorov.</p><p>Arhitekturo spletne aplikacije sestavljajo trije glavni deli: Parla-data, kjer se nabirajo surovi podatki, Parla-lize, kjer se izračunavajo statistične vrednosti analiz, ter Parla-meter, kjer vsebine zaživijo v spletni obliki.</p><p>Parlameter vsebine obstajajo na dva načina: dostopne so bodisi na domačem spletnem mestu bodisi kot samostojne kartice, vdelane v druga spletna mesta. Kartica je osnovna enota Parlametra, ki ima svoj URL naslov, svojo kodo za vdelavo in svoje “informacijsko besedilo”, v katerem je razložena metodologija, s katero je kartica nastala. Metodologije analiz so javno dostopne v “informacijskem predelu” vsake posamezne kartice.</p><p>Parlameter razvijamo in vzdržujemo na inštitutu Danes je nov dan.</p><h3>2. VIRI PODATKOV</h3><h4>2.1 Državni zbor</h4><p>Zaradi neobstoja javnosti dostopnih strojno berljivih parlamentarnih podatkov, se baza aplikacije Parlameter polni z metodo sintaktičnega razčlenjevalnika HTML dokumentov spletnih mest dz-rs.si in dvk-rs.si.</p><p>Podatke o poslanskih skupinah in poslancih pridobivamo na spletnem mestu Državnega zbora, neposredno od poslanskih skupin, poslancev, političnih strank ali na njihovih spletnih mestih. Enako velja za fotografije poslancev.</p><h4>2.2 Občinski sveti</h4><p>Glasovanja in transkripte ali zapisnike sej občinskih svetov in/ali delovnih teles občinskih svetov pridobivamo strojno in/ali ročno, odvisno od dostopnosti podatkov na spletnem mestu občine in nivoja sodelovanja z občino.</p><ol type='a'><li>Če so na spletnem mestu občine objavljena glasovanja in/ali transkripti sej občinskih svetov in/ali delovnih teles, se baza aplikacije polni z metodo sintaktičnega razčlenjevalnika HTML dokumentov.</li><li>Če občina teh podatkov ne objavlja, a imajo avtorji aplikacije z občino vzpostavljeno sodelovanje, ki omogoča pridobivanje teh podatkov na druge načine, se podatki o glasovanjih in/ali govorih ročno vnašajo prek sistema za vnašanje vsebin.</li><li>Če na spletnem mestu ni objavljenih transkriptov sej občinskih svetov in/ali delovnih teles, sodelovanje z občino pa ni vzpostavljeno, je delovanje aplikacije omejeno. V tem primeru aplikacija ne prikazuje transkriptov in različnih analiz, ki temeljijo na govorih.</li><li>Uporablja se lahko tudi kombinacija zgoraj navedenih načinov.</li></ol><p>Podatke o svetniških skupinah in svetnikih pridobivamo na spletnih mestih občin, neposredno od občine, svetniških skupin, svetnikov, političnih strank in list ali na njihovih spletnih mestih. Enako velja za fotografije svetnikov.</p><h3>3. INTELEKTUALNA LASTNINA</h3><p>Vsa koda, ki poganja Parlameter, je objavljena na <a href='https://github.com/danesjenovdan/'>https://github.com/danesjenovdan/</a> in je izdana pod licenco <a href='https://creativecommons.org/publicdomain/zero/1.0/deed.sl'>CC0</a> ter predana v javno domeno, tako da jo lahko kdorkoli uporablja brez omejitev. Parlameter kartice lahko vsakdo uporablja brezplačno, brez vnaprejšnje privolitve avtorjev aplikacije.</p><h3>4. OMEJITEV ODGOVORNOSTI</h3><p>Vse informacije spletne aplikacije Parlameter niso nujno celovite, popolne, točne in posodobljene, so splošne in ne upoštevajo morebitnih posebnih okoliščin posameznikov ali posameznih skupin, ki jih zadevajo.</p><p>Avtorji aplikacije si bomo prizadevali za zagotavljanje ažurnih in točnih podatkov ter informacij, vendar za morebitne netočnosti ali necelovitosti ne prevzemamo nikakršne zakonske ali druge odgovornosti. Pri pridobivanju podatkov in informacij iz drugih virov (glej točko 2) lahko pride do napak ali razhajanj v podatkih, za katere ne sprejemamo nikakršne odgovornosti ali jamstev. Pravna obvestila virov, iz katerih zbiramo podatke, so dostopna na njihovih spletnih mestih.</p><p>Pridržujemo si pravico do prerazporejanja kartic na spletni aplikaciji Parlameter. Vsi seznami so ali razporejeni po abecednem vrstnem redu ali pa glede na vrednosti v izbranih analizah. Vrstni redi kartic na posameznih podstraneh so naključni in ne vsebujejo nikakršne vsebinske ali kakršne koli druge vrednostne sodbe.</p><p>Avtorji aplikacije ne odgovarjamo za nadomestilo</p><ol><li>morebitne neposredne, posredne, naključne, posebne, kaznovalne, posledične škode, ali druge kakršne koli druge oblike škode, ki posredno, neposredno ali na kakršenkoli drug način izhaja iz napak, pomot ali netočnosti vsebine spletne aplikacije, rabe neoptimalnih statističnih metod, interpretacije vsebine spletne aplikacije s strani tretjih oseb ali iz kakršnih koli drugih dejstev povezanih z aplikacijo ali njeno uporabo,</li><li>kakršnekoli škode, ki nastane zaradi nepooblaščenega dostopa do, ali uporabe, naših strežnikov in/ali katerihkoli in vseh v njih shranjenih podatkov.</li></ol><p>Pridržujemo si pravico do dodajanja, odstranjevanja, spreminjanja ali nadgradnje podatkov kadarkoli, na kakršenkoli način, delno ali v celoti, ne glede na razlog ter brez predhodnega obvestila.</p><p>Navkljub trudu, da bi na spletni platformi v vsakem trenutku zagotovili točnost vseh podatkov in informacij, se lahko pojavijo napake. Prizadevamo si, da bi jih kar najprej odkrili in odpravili, prav tako pa bomo hvaležni, če nas boste o njih obvestili tudi vi. Zavezujemo se k prizadevanju, da bomo v največ 7 delovnih dneh od odkritja popravili vse morebitne napake, ki nam jih bodo sporočili in dokazali uporabniki.</p><p>Kartice so za brezplačno vdelavo na voljo vsakomur, vendar objaviteljem avtorji orodja ne jamčimo pravilnega delovanja. Prizadevali si bomo za minimalizacijo tehničnih napak, vendar za morebitno nedosegljivost strežnikov, nepravilno prikazovanje kartice oziroma spletnega mesta, na katerem je vdelana, ne odgovarjamo. Enako velja za API-ja Parladata in Parlalize.</p><h3>5. ZASEBNOST PODATKOV</h3><p>Vaših podatkov ne zbiramo ali shranjujemo, razen v primeru, če ste se prijavili na obvestila. V tem primeru shranimo vaš e-naslov, ki ga uporabljamo le za namene pošiljanja obvestil. Vaših osebnih podatkov, pridobljenih s privolitvijo, ne delimo s tretjimi osebami in jih ne izvažamo v tretje države. V kolikor želite, da izbrišemo vaš e-naslov, lahko svoje nastavitve naročnine za vse storitve, ki jih izvaja Danes je nov dan, uredite na spletni strani <a href='danesjenovdan.si/jaz'>danesjenovdan.si/jaz</a>.</p><h3>6. O DANES JE NOV DAN</h3><p><a href='https://danesjenovdan.si/'>Danes je nov dan</a>, Inštitut za druga vprašanja je neprofiten zavod, ki uporablja digitalne tehnologije in internet za izboljšanje dialoga o javnih vprašanjih, spodbuja sodelovanje in zagovarja transparentnost, promovira odprte podatke ter vključujoče postopke odločanja na spletu z razvojem in implementacijo odprtokodnih spletnih orodij in platform. Zavod v svojem delovanju in znanju združuje edinstveno kombinacijo marketinških in tehnoloških veščin, akademskega raziskovanja in vpogleda v družbena gibanja.</p><p>Dejavnosti zavoda so doslej financirali Google DNI, NED, U.S. Embassy, MJU in projekti Erasmus+. DJND je prejel že več nagrad znotraj oblikovalske in razvijalske skupnosti, naši projekti so velikokrat predstavljeni v medijih, sodelavce inštituta pa redno vabijo, da kot strokovnjaki komentirajo dogodke v medijih in kot predavatelji sodelujejo na javnih dogodkih doma ali v tujini. Od leta 2019 ima zavod status organizacije v javnem interesu na področju razvoja informacijske družbe.</p>"
+  },
+  "press": {
+    "todo": true,
+    "title": "Za boljšo in lepšo zgodbo",
+    "body": "Na tej strani so zbrane informacije o Parlametru, objave za medije ter vizualni materiali. Vse je ponujeno v prosto rabo. Neposredna vprašanja in/ali povabila k izjavam oz. intervjujem naslovite na <a href=\"mailto:info@parlameter.si\">info@parlameter.si</a>, odzvali se bomo hitro in z veseljem.",
+    "photos": {
+      "title": "Slikovno gradivo"
+    },
+    "releases": {
+      "title": "Objave za medije"
+    },
+    "video": {
+      "title": "Video gradivo"
+    }
+  },
+  "menu": {
+    "legislation": "Odloki",
+    "sessions": "Seje",
+    "mps": "Svetniki",
+    "pgs": "Svetniške skupine",
+    "tools": "Orodja"
+  },
+  "footer": {
+    "heading": "Parlameter",
+    "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
+    "contact_mail": "info@parlameter.si",
+    "about_heading": "O projektu",
+    "about": "Predstavitev Parlametra",
+    "about_municipality": "O projektu Tvoja občina",
+    "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
+    "partners_heading": "Partnerji",
+    "legal": "Pravno obvestilo",
+    "support_heading": "Projekt podpira"
+  },
+  "search_popup": {
+    "title": "Kako iskati?",
+    "first_paragraph": "Za privzet način iskanja je nastavljeno široko ujemanje (med zadetki se znajdejo vsi govori, ki vsebujejo katero koli od besed v iskalnem nizu). Med rezultati zadetkov se zaradi pregibanja pojavljajo vse slovnične oblike znotraj iste besedne vrste. To ne velja zgolj za iskanje z natančnim ujemanjem (\"narekovaji\").",
+    "second_paragraph": "Če želiš svoj iskalni niz dodatno modificirati, lahko uporabiš naslednje operatorje:",
+    "operators": [
+      {
+        "name": "IN",
+        "description": "med rezultati iskanja bodo zgolj zadetki, ki vključujejo vse besede v iskalnem nizu (a ne glede na njihov vrstni red)",
+        "example_title": "Primer iskanja:",
+        "example_text": "Ivan IN Cankar",
+        "example_result_title": "Rezultati iskanja:",
+        "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "\"NAREKOVAJI\"",
+        "description": "med rezultati iskanja bodo samo zadetki, ki vključujejo točen nabor znakov",
+        "example_title": "Primer iskanja:",
+        "example_text": "Humanitarna kriza",
+        "example_result_title": "",
+        "example_result_text": "",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "! (KLICAJ)",
+        "description": "rezultati iskanja nujno vključujejo s klicajem označeno besedo v iskalnem nizu, druge besede iskalnega niza pa služijo zgolj za rangiranje rezultatov",
+        "example_title": "Primer iskanja:",
+        "example_text": "Poslanska !skupina",
+        "example_result_title": "Rezultati iskanja:",
+        "example_result_text": "Poslanska skupina,<br> skupina poslancev,<br> mednarodna skupina",
+        "example_excluded_result_title": "Ni rezultat iskanja",
+        "example_excluded_result_text": "Poslanska služba"
+      },
+      {
+        "name": "- (MINUS)",
+        "description": "rezultati iskanja izključujejo zadetke s posamezno besedo v iskalnem nizu, če to besedo predhaja minus (-)",
+        "example_title": "Primer iskanja:",
+        "example_text": "-Poslanska skupina",
+        "example_result_title": "Rezultati iskanja:",
+        "example_result_text": "skupina poslancev,<br> mednarodna skupina",
+        "example_excluded_result_title": "Ni rezultat iskanja",
+        "example_excluded_result_text": "Poslanska skupina"
+      }
+    ]
+  },
+  "donation": {
+    "intro": "Tvoja donacija bo pomagala zagotoviti nadaljnji razvoj in omogočiti dolgoročno delovanje Parlametra.",
+    "personal": "OSEBNA<br>DONACIJA",
+    "business": "CORPORATE<br>DONACIJA",
+    "bitcoin": "BITCOIN DONACIJA",
+    "business_success": "Najlažje, da se o podrobnostih pogovorimo po e-pošti.",
+    "business_success_email": "e-pošta",
+    "business_success_message": "sporočilo",
+    "business_success_send": "POŠLJI",
+    "thank_you": "HVALA!",
+    "error": "Ups, nekaj je šlo narobe. :(",
+    "choice": "DONACIJA PO IZBIRI",
+    "amount": "količina",
+    "card": "S KARTICO",
+    "monthly": "mesečna donacija"
+  },
+  "tools": {
+    "notifications": {
+      "title": "Parlameter obvestila",
+      "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več)."
+    },
+    "voteComparator": {
+      "title": "Primerjalnik glasovanj",
+      "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?"
+    },
+    "discord": {
+      "title": "Raziskovalec neenotnosti",
+      "text": "Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah."
+    },
+    "compass": {
+      "title": "Parlamentarni kompas",
+      "text": "Vizualizacija vseh poslank in poslancev v virtualnem \"prostoru\". Dlje ko sta poslanca narazen, bolj različno glasujeta."
+    },
+    "wordGroups": {
+      "title": "Skupine besed",
+      "text": "Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>"
+    }
+  },
+  "general": {
+    "coalition": "koalicija",
+    "opposition": "opozicija",
+    "inactive": "NEAKTIVEN",
+    "overview": "Pregled",
+    "voting": "Glasovanja",
+    "speeches": "Govori",
+    "data_published": "podatki objavljeni",
+    "in_review": "v pregledu",
+    "vote-result--enacted": "Sprejet",
+    "vote-result--submitted": "Oddan",
+    "vote-result--rejected": "Zavrnjen",
+    "vote-result--retracted": "Umaknjen",
+    "vote-result--adopted": "Sprejet",
+    "vote-result--received": "Prejet",
+    "vote-result--in_procedure": "V obravnavi",
+    "legislation": "Odloki",
+    "other_votings": "Glasovanja",
+    "agenda": "Dnevni red",
+    "transcripts": "Transkript",
+    "minutes": "Zapisnik",
+    "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!",
+    "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
+    "info_email": "info@parlameter.si",
+    "unaffiliated": "nepovezan/a",
+    "no-session-data": "Za to sejo (še) nimamo podatkov."
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/parlameter",
+    "twitter": "https://twitter.com/Parlameter_si",
+    "instagram": "[empty]"
+  },
+  "titles": {
+    "session": "Seja",
+    "legislation": "Odloki",
+    "other-votings": "Glasovanja",
+    "agenda": "Dnevni red",
+    "transcript": "Transkript",
+    "minutes": "Zapisnik",
+    "voting": "Glasovanje",
+    "session-list": "Seznam sej",
+    "sessions-search": "Išči seje",
+    "thank-you": "Hvala!",
+    "ups": ":(",
+    "leader": "Župan"
+  },
+  "legislation": {
+    "decree": "O"
+  }
+}
