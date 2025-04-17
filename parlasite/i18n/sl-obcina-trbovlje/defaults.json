@@ -1,11 +1,11 @@
 {
   "landing": {
     "title": "Parlameter",
-    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
-    "description": "Razišči, kdo so poslanci in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je Državni zbor sprejel v tem mandatu.",
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v občinskem svetu Občine Trbovlje.",
+    "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
     "search": {
       "part_one": "Išči",
-      "part_two": "odloke in akte, glasovanja, poslance, poslanske skupine ali njihove govore"
+      "part_two": "odloke, glasovanja, svetnike ali svetniške skupine"
     }
   },
   "about": {
@@ -46,10 +46,10 @@
     }
   },
   "menu": {
-    "legislation": "Zakonodaja",
+    "legislation": "Odloki",
     "sessions": "Seje",
-    "mps": "Poslanci",
-    "pgs": "Poslanske skupine",
+    "mps": "Svetniki",
+    "pgs": "Svetniške skupine",
     "tools": "Orodja"
   },
   "footer": {
@@ -130,15 +130,15 @@
   "tools": {
     "notifications": {
       "title": "Parlameter obvestila",
-      "text": "Prijavi se na obvestila. Izberi besedo ali besedno zvezo in prejmi e-pošto, ko jo nekdo izgovori v državnem zboru."
+      "text": "Kliping iz parlamentarnih sej! Prejmi obvestilo na mail kadar koli kdo v Državnem zboru izreče izbrano besedo (ali več)."
     },
     "voteComparator": {
       "title": "Primerjalnik glasovanj",
       "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?"
     },
-    "unity": {
-      "title": "Enotnost",
-      "text": "Raziskuj enotnost v parlamentarnih skupinah glede na to, koliko strinjanja je bilo pri glasovanjih v poslanskih skupinah."
+    "discord": {
+      "title": "Raziskovalec neenotnosti",
+      "text": "Raziskuj neenotnost v parlamentarnih skupinah glede na to, koliko nestrinjanja je bilo pri glasovanjih v poslanskih skupinah."
     },
     "compass": {
       "title": "Parlamentarni kompas",
@@ -165,12 +165,12 @@
     "vote-result--adopted": "Sprejet",
     "vote-result--received": "Prejet",
     "vote-result--in_procedure": "V obravnavi",
-    "legislation": "Zakonodaja",
+    "legislation": "Odloki",
     "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkript",
     "minutes": "Zapisnik",
-    "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja. Pri tem ti lahko pomagajo spodnja orodja!",
+    "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja v njem. Pri tem si lahko pomagaš s spodnjimi orodji!",
     "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
     "info_email": "info@parlameter.si",
     "unaffiliated": "nepovezan/a",
@@ -183,7 +183,7 @@
   },
   "titles": {
     "session": "Seja",
-    "legislation": "Zakonodaja",
+    "legislation": "Odloki",
     "other-votings": "Glasovanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",
@@ -193,11 +193,9 @@
     "sessions-search": "Išči seje",
     "thank-you": "Hvala!",
     "ups": ":(",
-    "leader": "Predsednik DZ"
+    "leader": "Župan"
   },
   "legislation": {
-    "act": "A",
-    "decree": "O",
-    "law": "Z"
+    "decree": "O"
   }
 }
