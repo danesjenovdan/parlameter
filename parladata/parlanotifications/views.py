@@ -1,5 +1,6 @@
+from django.conf import settings
 from django.shortcuts import get_object_or_404
-from django.utils import timezone
+from django.utils import timezone, translation
 from django.utils.translation import gettext as _
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
@@ -20,8 +21,13 @@ class KeywordView(viewsets.ModelViewSet):
         if serializer.is_valid():
             keyword = serializer.save()
             if not keyword.accepted_at:
+                cur_language = translation.get_language()
+                if settings.EMAIL_LANGUAGE_CODE:
+                    translation.activate(settings.EMAIL_LANGUAGE_CODE)
+                title = _("Parlameter obvestila - potrditev")
+                translation.activate(cur_language)
                 send_email(
-                    _("Parlameter obvestila - potrditev"),
+                    title,
                     keyword.user.email,
                     "add_keyword.html",
                     {

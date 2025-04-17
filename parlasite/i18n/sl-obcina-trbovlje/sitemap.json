@@ -1,0 +1,49 @@
+{
+    "landing": {
+        "legislation": "odloki",
+        "sessions": "seje",
+        "members": "svetniki",
+        "parties": "svetniske-skupine",
+        "tools": "orodja",
+        "about": "https://parlameter.org/sl/",
+        "media": "za-medije",
+        "legal": "pravno-obvestilo",
+        "thankYou": "hvala",
+        "error": "ups"
+    },
+    "sessions": {
+        "search": {
+            "base": "isci",
+            "filter": "filter"
+        }
+    },
+    "tools": {
+        "notifications": "obvestila",
+        "voteComparator": "primerjalnik-glasovanj",
+        "discord": "raziskovalec-neenotnosti",
+        "compass": "parlamentarni-kompas",
+        "wordGroups": "skupine-besed"
+    },
+    "member": {
+        "leaderBase": "zupan",
+        "base": "svetnik",
+        "overview": "pregled",
+        "votings": "glasovanja",
+        "speeches": "govori"
+    },
+    "party": {
+        "base": "svetniska-skupina",
+        "overview": "pregled",
+        "votings": "glasovanja",
+        "speeches": "govori"
+    },
+    "session": {
+        "base": "seja",
+        "legislation": "odloki",
+        "otherVotings": "glasovanja",
+        "transcript": "transkript",
+        "agenda": "dnevni-red",
+        "vote": "glasovanje",
+        "minutes": "zapisnik"
+    }
+}
