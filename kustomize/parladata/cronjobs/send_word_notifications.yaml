@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: parlameter-send-word-notifications
+spec:
+  schedule: "0 5 * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      template:
+        spec:
+          containers:
+          - name: parlameter-send-word-notifications
+            image: parladata
+            env:
+              - name: DJANGO_SETTINGS_MODULE
+                value: parladata_project.settings.k8s
+            envFrom:
+              - secretRef:
+                  name: parladata-credentials
+            command:
+              - python
+              - manage.py
+              - send_speech_notifications
+          restartPolicy: Never
