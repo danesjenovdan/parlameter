@@ -81,17 +81,14 @@ load: Učitaj
 confirm: Potvrdi
 data-currently-unavailable: Podaci trenutno nisu dostupni.
 data-not-published:
-  link-text: Kliknite za otvaranje Sabora.
-  link-url: https://parlametar.hr/otvaranje-sabora/
+  link-text: ""
+  link-url: ""
   data-not-available: >-
-    Hrvatski sabor prestao je s 18.3.2020. objavljivati kako je glasao koji
-    zastupnik i tko je bio na glasanju
+    Ispričavamo se na tome što za ovo pretraživanje nema rezultata. Radimo na tome da problem otklonimo.
   show-of-hands: >-
-    Vaše pretraživanje nema rezultata jer Hrvatski sabor nije otvorio podatke
-    koje tražite. Želite to promijeniti?
+    Ispričavamo se na tome što za ovo pretraživanje nema rezultata. Radimo na tome da problem otklonimo.
   parlamentary-questions: >-
-    Vaše pretraživanje nema rezultata jer Hrvatski sabor nije otvorio podatke
-    koje tražite. Želite to promijeniti?
+    Ispričavamo se na tome što za ovo pretraživanje nema rezultata. Radimo na tome da problem otklonimo.
 search: Traži
 title-search: Pretraži prema naslovu
 contents-search: Pretraži prema sadržaju govora
