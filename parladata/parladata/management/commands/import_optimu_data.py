@@ -258,7 +258,7 @@ class Command(BaseCommand):
                 continue
             start_time = datetime.fromisoformat(
                 xml_session["SessionVoteStartTime"].split(".")[0]
-            ).date()
+            )
             agenda_item = self.conclusions[xml_session["ConclusionID"]]
             motion = Motion(
                 datetime=start_time,
