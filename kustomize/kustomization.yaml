@@ -9,6 +9,7 @@ resources:
   - parladata/solr.yaml
   # uncomment cronjob to enable it
   - parladata/cronjobs/task_runner_cronjob.yaml
+  - parladata/cronjobs/send_word_notifications.yaml
 
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
