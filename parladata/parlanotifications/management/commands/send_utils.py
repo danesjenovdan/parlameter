@@ -108,17 +108,17 @@ def send_emails():
     for user, keywords in user_keywords:
         users_docs = {}
         keyword_ids = []
-        date_from = (
-            user.latest_notification_sent_at
-            if user.latest_notification_sent_at
-            else datetime.now() - timedelta(days=30)
-        )
         for keyword in keywords:
             # narrow and wide search
             search_string = (
                 keyword.keyword
                 if keyword.matching_method == "WIDE"
                 else f'"{keyword.keyword}"'
+            )
+            date_from = (
+                keyword.latest_notification_sent_at
+                if keyword.latest_notification_sent_at
+                else datetime.now() - timedelta(days=30)
             )
             data = solr_select(text_query=search_string, date_from=date_from)
             if data["response"]["numFound"] > 0:
