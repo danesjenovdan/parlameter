@@ -107,6 +107,7 @@ working-bodies: Delovna telesa
 vote-types: Tipi glasovanja
 select-placeholder: Izberi
 selected-placeholder: 'Izbranih: {num}'
+selected-placeholder--short: '{num} izbr.'
 data: Podatki
 name: Ime
 epa: EPA
@@ -174,6 +175,11 @@ sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
 sort-by--unity: Enotnosti
 sort-by--disunity: Neenotnosti
+filter-by: Filtriraj po
+filter-by--vote-title: Naslovu glasovanja
+filter-by--group: Skupini
+filter-by--working-body: Delovnem telesu
+filter-by--timespan: Obdobju
 filtered-to-none: Brez zadetkov
 mps: Poslanci
 party: Poslanska skupina

@@ -6,40 +6,49 @@
 
     <div class="votes-list">
       <div class="filters">
-        <div class="filter text-filter">
-          <div v-t="'title-search'" class="filter-label"></div>
-          <SearchField v-model="textFilter" @update:model-value="searchVotes" />
+        <div class="left-filters">
+          <div class="filter text-filter">
+            <div v-t="'filter-by'" class="filter-label"></div>
+            <SearchField
+              v-model="textFilter"
+              :placeholder="$t('filter-by--vote-title')"
+              @update:model-value="searchVotes"
+            />
+          </div>
+          <div class="filter group-filter">
+            <div v-t="'filter-by--group'" class="filter-label"></div>
+            <PSearchDropdown
+              v-model="groups"
+              single
+              hide-clear
+              @update:model-value="searchVotesImmediate"
+            />
+          </div>
+          <div class="filter body-filter">
+            <div v-t="'filter-by--working-body'" class="filter-label"></div>
+            <PSearchDropdown
+              v-model="bodies"
+              single
+              hide-clear
+              @update:model-value="searchVotesImmediate"
+            />
+          </div>
+          <div class="filter month-filter">
+            <div v-t="'filter-by--timespan'" class="filter-label"></div>
+            <PSearchDropdown
+              v-model="allMonths"
+              :alphabetise="false"
+              :placeholder-key="'selected-placeholder--short'"
+              @update:model-value="searchVotesImmediate"
+              @clear="searchVotesImmediate"
+            />
+          </div>
         </div>
-        <div class="filter dropdown-filter">
-          <div v-t="'party'" class="filter-label"></div>
-          <PSearchDropdown
-            v-model="groups"
-            single
-            hide-clear
-            @update:model-value="searchVotesImmediate"
-          />
-        </div>
-        <div class="filter dropdown-filter">
-          <div v-t="'working-body'" class="filter-label"></div>
-          <PSearchDropdown
-            v-model="bodies"
-            single
-            hide-clear
-            @update:model-value="searchVotesImmediate"
-          />
-        </div>
-        <div class="filter dropdown-filter">
-          <div v-t="'time-period'" class="filter-label"></div>
-          <PSearchDropdown
-            v-model="allMonths"
-            :alphabetise="false"
-            @update:model-value="searchVotesImmediate"
-            @clear="searchVotesImmediate"
-          />
-        </div>
-        <div class="filter toggle-filter">
-          <div v-t="'sort-by'" class="filter-label"></div>
-          <Toggle v-model="selectedSort" :options="sortOptions" />
+        <div class="right-filters">
+          <div class="filter toggle-filter">
+            <div v-t="'sort-by'" class="filter-label"></div>
+            <Toggle v-model="selectedSort" :options="sortOptions" />
+          </div>
         </div>
       </div>
 
@@ -294,6 +303,16 @@ export default {
   .filters {
     display: flex;
     padding-bottom: 12px;
+    justify-content: space-between;
+
+    .left-filters,
+    .right-filters {
+      display: flex;
+    }
+
+    .left-filters {
+      max-width: 600px;
+    }
 
     .filter {
       @include breakpoints.respond-to(desktop) {
@@ -312,19 +331,22 @@ export default {
     .filter-label {
       overflow: hidden;
       height: 20px;
-      margin-top: 6px;
     }
 
     .text-filter {
-      flex-basis: 50%;
+      flex: 1;
     }
 
-    .dropdown-filter {
-      flex-basis: 50%;
+    .group-filter {
+      flex: 0.66;
     }
 
-    .toggle-filter {
-      flex-basis: 25%;
+    .body-filter {
+      flex: 0.66;
+    }
+
+    .month-filter {
+      flex: 0.5;
     }
   }
 

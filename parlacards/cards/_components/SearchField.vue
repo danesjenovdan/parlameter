@@ -39,9 +39,10 @@ export default {
 @use 'parlassets/scss/colors';
 
 .search-field {
-  border: 1px solid colors.$font-placeholder;
-  font-size: 16px;
-  height: 51px;
+  background-color: colors.$white;
+  border: 1px solid colors.$font-default;
+  font-size: 14px;
+  height: 40px;
   line-height: 27px;
   outline: none;
   padding: 12px 14px;
@@ -49,10 +50,14 @@ export default {
 
   &.search-field--has-icon {
     background-image: url('#{get-parlassets-url()}/icons/search.svg');
-    background-size: 24px 24px;
+    background-size: 18px 18px;
     background-repeat: no-repeat;
     background-position: right 9px center;
-    padding: 12px 42px 12px 14px;
+    padding: 6px 30px 6px 9px;
+  }
+
+  &::placeholder {
+    color: colors.$font-default-light;
   }
 }
 </style>

@@ -130,6 +130,10 @@ export default {
       type: String,
       default: null,
     },
+    placeholderKey: {
+      type: String,
+      default: null,
+    },
     single: {
       type: Boolean,
       default: false,
@@ -269,6 +273,10 @@ export default {
         return selectedItem
           ? selectedItem.label
           : this.$t('select-placeholder');
+      }
+
+      if (this.placeholderKey && this.$te(this.placeholderKey)) {
+        return this.$t(this.placeholderKey, { num: this.selectedIds.length });
       }
 
       if (this.placeholder) {
@@ -424,7 +432,7 @@ export default {
     margin-right: 0;
     min-height: 24px;
     height: auto;
-    padding: 0 5px;
+    padding: 0 8px;
 
     .search-dropdown-label {
       display: flex;
@@ -439,11 +447,11 @@ export default {
         margin-top: 1px;
         line-height: 1.2;
         padding-block: 6px;
-        margin-inline: 10px 5px;
 
         .clamp-lines {
           display: -webkit-box;
           -webkit-line-clamp: 3;
+          line-clamp: 3;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
@@ -453,7 +461,6 @@ export default {
     &.large {
       min-height: 46px;
       height: auto;
-      padding: 0 5px;
 
       .image {
         width: 36px;
@@ -465,10 +472,10 @@ export default {
 
       .color {
         display: inline-block;
-        width: 16px;
-        height: 16px;
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
-        margin-inline: 10px 15px;
+        margin-right: 8px;
       }
 
       .label-text {
@@ -491,6 +498,7 @@ export default {
 
         display: -webkit-box;
         -webkit-line-clamp: 3;
+        line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
