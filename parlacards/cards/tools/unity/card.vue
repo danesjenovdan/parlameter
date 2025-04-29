@@ -74,8 +74,12 @@
               {{ vote.title }}
               <br />
               <strong>
-                {{ formatDate(vote.timestamp) }},
-                {{ formatSessionInfo(vote.session) }}
+                <a
+                  :href="getSessionLink(vote.session)"
+                  class="funblue-light-hover"
+                  >{{ formatSessionInfo(vote.session) }}</a
+                >,
+                {{ formatDate(vote.timestamp) }}
               </strong>
             </div>
             <div class="result">
@@ -410,14 +414,16 @@ export default {
       display: flex;
       justify-content: center;
       text-align: center;
+      min-width: 95px;
 
       @include breakpoints.respond-to(desktop) {
         flex-direction: column;
-        padding-right: 16px;
+        padding-right: 14px;
       }
 
       .percentage {
         font-size: 24px;
+        line-height: 1;
 
         @include breakpoints.respond-to(desktop) {
           font-size: 30px;
@@ -425,13 +431,14 @@ export default {
       }
 
       .text {
-        font-size: 13px;
+        font-size: 12px;
         line-height: 34px;
+        font-weight: 600;
         margin-left: 10px;
         text-transform: uppercase;
 
         @include breakpoints.respond-to(desktop) {
-          font-size: 16px;
+          font-size: 14px;
           line-height: 23px;
           margin-left: 0;
         }
@@ -457,6 +464,10 @@ export default {
         padding: 5px 20px;
         flex-direction: column;
         justify-content: center;
+      }
+
+      strong {
+        font-weight: 400;
       }
     }
 
