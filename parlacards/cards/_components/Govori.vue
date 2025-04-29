@@ -277,7 +277,6 @@ export default {
 
     .filter-label {
       height: 20px;
-      margin-top: 6px;
     }
   }
 
@@ -298,7 +297,7 @@ export default {
     height: breakpoints.$full-card-height;
 
     &.has-filters {
-      height: breakpoints.$full-card-height - 89;
+      height: breakpoints.$full-card-height - 72;
     }
   }
 

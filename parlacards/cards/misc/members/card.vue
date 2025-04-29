@@ -9,30 +9,35 @@
         </div>
         <div class="row">
           <div class="col-md-12 filters">
-            <search-field
-              v-model="textFilter"
-              @update:model-value="searchPeople"
-            />
-            <p-search-dropdown
-              v-model="groups"
-              :placeholder="partiesPlaceholder"
-              class="filter parties"
-              @update:model-value="searchPeopleImmediate"
-            />
-            <p-search-dropdown
-              v-if="showWorkingBodiesFilter"
-              v-model="workingBodies"
-              :placeholder="workingBodyPlaceholder"
-              class="filter working-bodies"
-              @update:model-value="searchPeopleImmediate"
-            />
-            <p-search-dropdown
-              v-if="showDistrictsFilter"
-              v-model="districts"
-              :placeholder="districtsPlaceholder"
-              class="filter districts"
-              @update:model-value="searchPeopleImmediate"
-            />
+            <div class="filter text-filter">
+              <search-field
+                v-model="textFilter"
+                @update:model-value="searchPeople"
+              />
+            </div>
+            <div class="filter parties">
+              <p-search-dropdown
+                v-model="groups"
+                :placeholder="partiesPlaceholder"
+                @update:model-value="searchPeopleImmediate"
+              />
+            </div>
+            <div class="filter working-bodies">
+              <p-search-dropdown
+                v-if="showWorkingBodiesFilter"
+                v-model="workingBodies"
+                :placeholder="workingBodyPlaceholder"
+                @update:model-value="searchPeopleImmediate"
+              />
+            </div>
+            <div class="filter districts">
+              <p-search-dropdown
+                v-if="showDistrictsFilter"
+                v-model="districts"
+                :placeholder="districtsPlaceholder"
+                @update:model-value="searchPeopleImmediate"
+              />
+            </div>
             <div v-if="showGendersFilter" class="genders filter">
               <striped-button
                 v-for="gender in genders"
@@ -578,14 +583,17 @@ export default {
 
 .filters {
   display: flex;
+  align-items: flex-end;
   margin-top: 14px;
 
-  .filter:not(:first-child) {
-    margin-left: 3px;
+  .filter:not(:last-child) {
+    margin-right: 10px;
   }
 
   .filter {
     flex: 1;
+    display: block;
+    margin-left: 0;
   }
 
   .search-field {

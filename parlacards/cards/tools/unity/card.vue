@@ -305,28 +305,34 @@ export default {
     padding-bottom: 12px;
     justify-content: space-between;
 
+    @include breakpoints.respond-to(up-to-limbo) {
+      flex-wrap: wrap;
+    }
+
     .left-filters,
     .right-filters {
       display: flex;
+      gap: 6px 10px;
     }
 
     .left-filters {
       max-width: 600px;
-    }
 
-    .filter {
-      @include breakpoints.respond-to(desktop) {
-        margin-right: 10px;
+      @include breakpoints.respond-to(up-to-limbo) {
+        max-width: 100%;
       }
 
       @include breakpoints.respond-to(mobile) {
-        width: 100%;
-      }
-
-      &:last-child {
-        margin-right: 0;
+        flex-wrap: wrap;
       }
     }
+
+    // .right-filters {
+    //   @include breakpoints.respond-to(up-to-limbo) {
+    //     width: 100%;
+    //     justify-content: flex-end;
+    //   }
+    // }
 
     .filter-label {
       overflow: hidden;
@@ -335,18 +341,41 @@ export default {
 
     .text-filter {
       flex: 1;
+
+      @include breakpoints.respond-to(mobile) {
+        flex: 40% 1 0;
+      }
     }
 
     .group-filter {
       flex: 0.66;
+
+      @include breakpoints.respond-to(mobile) {
+        flex: 40% 1 0;
+      }
     }
 
     .body-filter {
       flex: 0.66;
+
+      @include breakpoints.respond-to(mobile) {
+        flex: 40% 1 0;
+      }
     }
 
     .month-filter {
       flex: 0.5;
+
+      @include breakpoints.respond-to(mobile) {
+        flex: 40% 1 0;
+      }
+    }
+
+    .toggle-filter {
+      @include breakpoints.respond-to(up-to-limbo) {
+        margin-top: 6px;
+        flex: 100% 1 0;
+      }
     }
   }
 
@@ -474,7 +503,7 @@ export default {
   .votes-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
-    height: breakpoints.$full-card-height - 89;
+    height: breakpoints.$full-card-height - 72;
   }
 
   .nalagalnik__wrapper {

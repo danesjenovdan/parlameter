@@ -459,7 +459,6 @@ export default {
     .filter-label {
       overflow: hidden;
       height: 20px;
-      margin-top: 6px;
     }
 
     .text-filter {
