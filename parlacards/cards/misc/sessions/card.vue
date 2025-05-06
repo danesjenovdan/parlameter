@@ -397,6 +397,8 @@ export default {
 }
 
 :deep(.session-list) {
+  flex-wrap: nowrap; // make sure we don't wrap, works around a bug in firefox that causes rows to be too high
+
   .item,
   .headers {
     .column {
