@@ -109,6 +109,7 @@ select-placeholder: Izberi
 selected-placeholder: 'Izbranih: {num}'
 data: Podatki
 name: Ime
+name--for-legislation: Ime
 epa: EPA
 change: Sprememba
 status: Status
@@ -136,6 +137,7 @@ vote-result--retracted: Umaknjen
 vote-result--adopted: Sprejet
 vote-result--received: Prejet
 vote-result--in_procedure: V obravnavi
+vote-result--suspended: Suspended
 average: Povprečje
 maximum: Največ
 coalition: koalicija
@@ -203,6 +205,8 @@ session-processing: Seja v obdelavi.
 organization: Organizacija
 start: Začetek
 date: Datum
+start-date: Datum začetka
+end-date: Datum konca
 missing-date: Brez datuma
 legislation: Odloki in akti
 laws: Odloki
@@ -227,6 +231,10 @@ embed:
   always-refresh: Podatki naj se vedno osvežujejo
 previous:
   title: Prejšnje verzije
+export:
+  title: Izvozi podatke
+  csv: Izvozi v .csv
+  json: Izvozi v .json
 membership-list:
   no-memberships: Brez članstev.
 style-scores:
@@ -525,12 +533,14 @@ agenda-items: Točke dnevnega reda
 agenda-item-point: '{num}. točka'
 material: Gradivo
 documents: Dokumenti
+external_analysis: Analize
 other: Drugo
 organization-classifications:
   root: Mestni svet
   committee: Odbori
   other: Drugo
   commission: Komisije
+  council: Council
 legislation-classifications:
   act: Akt
   decree: Odlok

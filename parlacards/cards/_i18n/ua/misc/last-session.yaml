@@ -1,5 +1,8 @@
 card:
   title: Останнє засідання
+  tfidf-title: Besede, ki so zaznamovale sejo
+  attendance-title: Prisotnost poslanskih skupin na glasovanjih seje
+  votes-title: Glasovanja
   info: >-
     #Огляд аналізу останнього засідання доступний на порталі [Портал відкритих даних
     ВРУ](https://data.rada.gov.ua/open/main/index).
