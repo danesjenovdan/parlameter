@@ -74,6 +74,7 @@ edit-membership: Uredi članstvo
 save-membership: Shrani članstvo
 member: Član
 add-membership: Dodaj članstvo
+members: Članice in člani
 only-mps: Samo zastupnice
 display-name: Ime za prikaz
 update-session: Ažuriranje sjednice
@@ -103,6 +104,7 @@ search: Traži
 title-search: Pretraži prema naslovu
 contents-search: Pretraži prema sadržaju govora
 working-body: Matično radno tijelo
+working-bodies: Matična radna tijela
 vote-types: Vrste glasanja
 select-placeholder: Odaberi
 selected-placeholder: 'Odabranih: {num}'
@@ -136,18 +138,23 @@ vote-result--retracted: Povučen
 vote-result--adopted: Prihvaćen
 vote-result--received: Prima se na znanje
 vote-result--in_procedure: U proceduri
+vote-result--suspended: Suspended
 average: Prosjek
 maximum: Najviše
 coalition: koalicija
 opposition: opozicija
 vote-for: Za
+vote-for-plural: Za
 vote-against: Protiv
+vote-against-plural: Protiv
 vote-abstain: Suzdržana
 vote-abstain--m: Suzdržan
 vote-abstain--f: Suzdržana
 vote-abstain-plural: Suzdržani
 vote-absent: Nema
 vote-absent-plural: Nema
+vote-did-not-vote: Bez glasa
+vote-did-not-vote-plural: Bez glasa
 vote-no-majority: Većinski glas ne postoji
 voted-for--f: Glasala ZA
 voted-for--m: Glasao ZA
@@ -161,6 +168,10 @@ voted-abstain--plural: Suzdržani
 voted-absent--f: Nije glasala
 voted-absent--m: Nije glasao
 voted-absent--plural: Nisu glasali
+voted-did-not-vote--f: Brez glasu
+voted-did-not-vote--m: Brez glasu
+voted-did-not-vote--plural: Brez glasu
+anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Razvrstaj prema
 sort-by--inequality: Razjedinjenosti
 sort-by--date: Datumu
@@ -170,6 +181,9 @@ filtered-to-none: Bez rezultata
 mps: Zastupnice
 party: Klubovi
 parties: Klubovi
+unaffiliated--f: nepovezana
+unaffiliated--m: nepovezan
+unaffiliated--plural: nepovezani
 time-period: Vremensko razdoblje
 session-type: Vrsta sjednice
 no-results: Bez rezultata.
@@ -235,6 +249,22 @@ question:
   asked--with-name--m: '{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.'
   asked--with-name--f: '{name} je postavila pitanje {title} na koje mora odgovoriti {recipient}.'
   asked--with-name--plural: '{name} postavili su pitanje {title} na koje mora odgovoriti {recipient}.'
+initiative:
+  asked--m: "Podal pobudo na temo: {title}"
+  asked--f: "Podala pobudo na temo: {title}"
+  asked--plural: "Podali pobudo na temo: {title}"
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}"
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}"
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}"
+  asked--group: "Poslanska skupina {name} je podala pobudo na temo: {title}"
+unknown:
+  asked--m: "Odprl temo: {title}"
+  asked--f: "Odprla temo: {title}"
+  asked--plural: "Odprli temo: {title}"
+  asked--with-name--m: "{name} je odprl temo: {title}"
+  asked--with-name--f: "{name} je odprla temo: {title}"
+  asked--with-name--plural: "{name} so odprli temo: {title}"
+  asked--group: "Poslanska skupina {name} je odprla temo: {title}"
 event:
   ballot--for--m: Glasao je ZA {title}
   ballot--for--f: Glasala je ZA {title}
@@ -483,6 +513,20 @@ sort-by--updated: datumu zadnje izmjene podataka o sjednici
 sort-by--workingBody: nazivu tijela
 title: Naslov
 other-procedures: Drugi postupci
+speech-link: Povezava do govora v transkriptu
+speech-card-link: Povezava do kartice govora
+minutes-agenda-link: Povezava do dnevnega reda
+minutes-item-card-link: Povezava do kartice točke zapisnika
+vote-roll-results: Poimensko glasovanje
+mayor: Gradonačelnik
+website: Mrežna stranica
+budget: Proračun
+agenda-items: Naziv točke dnevnog reda
+agenda-item-point: '{num}. točka'
+material: Priloženi akti
+documents: Dokumenti
+external_analysis: Analize
+other: Drugo
 organization-classifications:
   root: Sabor
   committee: Saborski odbori
@@ -492,6 +536,12 @@ legislation-classifications:
   act: Akt
   decree: Uredba
   law: Zakon
+anonymous:
+  person:
+    name: Unknown person
+  group:
+    name: Unknown party
+    acronym: N/A
 newsletter-signup-title: Registracija za Parlametar bilten!
 newsletter-signup-description: Želite li primati podatke o radu Sabora pravovremeno
   i pregledno, predbilježite se na Parlametar bilten i stizat će vam svaki tjedan.
@@ -508,15 +558,7 @@ newsletter-signup-checkbox-text: Vaši podaci čuvaju se dok traje potreba za nj
 newsletter-signup-button-text: Registracija
 newsletter-signup-unsubscribe-button-text: Prestanak registracije!
 newsletter-signup-success-text: Registracija potvrđena!
-vote-for-plural: Za
-vote-against-plural: Protiv
-unaffiliated--f: nepovezana
-unaffiliated--m: nepovezan
-unaffiliated--plural: nepovezani
 ask-person-a-question: Napišite Vaše pitanje za zastupnika/zastupnicu.
 thank-you-for-the-question: Hvala za Vaše pitanje!
 send: Pošalji
 error-message: Ups, nešto se dogodilo.
-agenda-items: Naziv točke dnevnog reda
-material: Priloženi akti
-documents: Dokumenti

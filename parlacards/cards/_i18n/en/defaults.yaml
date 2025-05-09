@@ -13,6 +13,7 @@ match: Match
 interval: Interval
 email: Email
 input-email: Enter email
+email-address: Email
 notification-steps:
 - textfirst: >-
     Izberi besedo ali besedno zvezo, ki jo želiš spremljati.
@@ -78,6 +79,7 @@ edit-membership: Edit membership
 save-membership: Save membership
 member: Member
 add-membership: Add membership
+members: Članice in člani
 only-mps: MPs only
 display-name: Name to display
 update-session: Update session
@@ -101,11 +103,13 @@ search: Išči
 title-search: Search by title
 contents-search: Search by content
 working-body: Working body responsible
+working-bodies: Working bodies responsible
 vote-types: Vote types
 select-placeholder: Choose
 selected-placeholder: 'Chosen: {num}'
 data: Podatki
 name: Name
+name--for-legislation: Title
 epa: Government ID
 change: Change
 status: Status
@@ -148,6 +152,8 @@ vote-abstain--f: Abstained
 vote-abstain-plural: Abstained
 vote-absent: Absent
 vote-absent-plural: Absent
+vote-did-not-vote: Did not vote
+vote-did-not-vote-plural: Did not vote
 vote-no-majority: No majority vote
 voted-for--f: Voted FOR
 voted-for--m: Voted FOR
@@ -163,6 +169,8 @@ voted-absent--m: Was absent at
 voted-absent--plural: Didn't vote on
 voted-did-not-vote--f: Did not vote
 voted-did-not-vote--m: Did not vote
+voted-did-not-vote--plural: Did not vote
+anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Order by
 sort-by--inequality: Discord
 sort-by--date: Date
@@ -246,6 +254,22 @@ question:
   asked--with-name--plural: >-
     {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
     {recipient}.
+initiative:
+  asked--m: "Podal pobudo na temo: {title}"
+  asked--f: "Podala pobudo na temo: {title}"
+  asked--plural: "Podali pobudo na temo: {title}"
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}"
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}"
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}"
+  asked--group: "Poslanska skupina {name} je podala pobudo na temo: {title}"
+unknown:
+  asked--m: "Odprl temo: {title}"
+  asked--f: "Odprla temo: {title}"
+  asked--plural: "Odprli temo: {title}"
+  asked--with-name--m: "{name} je odprl temo: {title}"
+  asked--with-name--f: "{name} je odprla temo: {title}"
+  asked--with-name--plural: "{name} so odprli temo: {title}"
+  asked--group: "Poslanska skupina {name} je odprla temo: {title}"
 event:
   ballot--for--m: Voted FOR {title}
   ballot--for--f: Voted FOR {title}

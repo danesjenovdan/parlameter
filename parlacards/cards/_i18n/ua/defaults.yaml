@@ -60,9 +60,12 @@ select-mps: Оберіть народного депутата
 selected-mps: 'Обрані: {кількість}'
 search_placeholder: Пошук
 trigger: активатор
+input-trigger: Vpiši sprožilec
 match: збіг
 interval: проміжок часу
 email: електронна адреса
+input-email: Enter email
+email-address: електронна адреса
 notification-steps:
 - textfirst: >-
     Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
@@ -90,7 +93,9 @@ notification-steps:
   textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
 - textfirst: Napaka!
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
-submit: Oddaj
+add-new-trigger: Dodaj nov sprožilec
+to-notification-list: Na seznam obvestil
+remove: Odstrani
 confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
 ignore-absent: Не враховувати «відсутні» голоси
 tabs:
@@ -135,11 +140,13 @@ search: Пошук
 title-search: Пошук за назвою
 contents-search: Пошук за змістом
 working-body: Відповідальний робочий орган
+working-bodies: Delovna telesa
 vote-types: Типи голосів
 select-placeholder: Виберіть
 selected-placeholder: 'Обрані: {num}'
 data: Дата
 name: Ім'я
+name--for-legislation: Title
 epa: Урядовий персональний номер
 change: Змінити
 status: Статус
@@ -171,25 +178,38 @@ maximum: Більшість
 coalition: коаліція
 opposition: опозиція
 vote-for: За
+vote-for-plural: За
 vote-against: Проти
+vote-against-plural: Proti
 vote-abstain--m: Утримався
 vote-abstain--f: Утрималась
 vote-abstain-plural: Утримались
 vote-absent: Відсутній
 vote-absent-plural: Відсутні
+vote-did-not-vote: Did not vote
+vote-did-not-vote-plural: Did not vote
 vote-no-majority: Немає більшості голосів
 voted-for--m: Голосував ЗА
 voted-for--plural: Голосували ЗА
 voted-against--f: Голосувала ПРОТИ
 voted-against--m: Голосував ПРОТИ
 parties: Парламентські фракції/групи
+unaffiliated--f: nepovezana
+unaffiliated--m: nepovezan
+unaffiliated--plural: nepovezani
 voted-abstain--f: Утрималась від голосування
 voted-abstain--plural: Утримались від голосування
 voted-absent--f: Була відсутня на
 voted-absent--m: Був відсутній на
 voted-absent--plural: Не голосували за
+voted-did-not-vote--f: Brez glasu
+voted-did-not-vote--m: Brez glasu
+voted-did-not-vote--plural: Brez glasu
+anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Сортувати за
 sort-by--date: Дата
+sort-by--unity: Enotnosti
+sort-by--disunity: Neenotnosti
 filtered-to-none: Без фільтрів
 mps: Народний депутат
 time-period: Часові рамки
@@ -202,6 +222,7 @@ absent--f: Відсутня
 absent--m: Відсутній
 absent--plural: Відсутні
 no-term: Позафракційні
+no-data: Brez podatka
 inequality: Розбіжність
 unity: Єдність
 everybody: Усі
@@ -209,6 +230,10 @@ show: Показати
 full-speech: Уся промова
 organization: Організація
 start: Початок
+date: Date
+start-date: Start date
+end-date: End date
+missing-date: Missing date
 laws: Закони
 acts: Акти
 votings: Голосування
@@ -230,6 +255,10 @@ embed:
   always-refresh: Дані повинні продовжувати оновлюватись
 previous:
   title: Попередні версії
+export:
+  title: Export data
+  csv: Export .csv
+  json: Export .json
 style-scores:
   elevated-vocabulary: Піднесена промова
   simple-vocabulary: Проста промова
@@ -241,6 +270,22 @@ question:
   asked--m: 'Поставив запитання: «{Назва}» Потребує відповіді від: {адресат}.'
   asked--plural: 'Поставили запитання: «{Назва}» Потребує відповіді від: {адресат}.'
   asked--with-name--plural: '{імена} поставили запитання «{назва}» до {адресат}.'
+initiative:
+  asked--m: "Podal pobudo na temo: {title}"
+  asked--f: "Podala pobudo na temo: {title}"
+  asked--plural: "Podali pobudo na temo: {title}"
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}"
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}"
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}"
+  asked--group: "Poslanska skupina {name} je podala pobudo na temo: {title}"
+unknown:
+  asked--m: "Odprl temo: {title}"
+  asked--f: "Odprla temo: {title}"
+  asked--plural: "Odprli temo: {title}"
+  asked--with-name--m: "{name} je odprl temo: {title}"
+  asked--with-name--f: "{name} je odprla temo: {title}"
+  asked--with-name--plural: "{name} so odprli temo: {title}"
+  asked--group: "Poslanska skupina {name} je odprla temo: {title}"
 event:
   ballot--for--m: Проголосував ЗА {назва}
   ballot--for--f: Проголосувала ЗА {назва}
@@ -295,7 +340,6 @@ councils: Ради
 commissions: Комісії
 delegations: Інші членства
 friendship_groups: Інші членства
-elected-to-district--m: Набрав {numVotes} голосів у {окрузі}
 age--years: '{вік} роки/ів'
 no-social-media: немає соціальних мереж.
 select-district-placeholder: Оберіть округ
@@ -349,6 +393,14 @@ party-leader--m: Голова
 party-leader--f: Голова
 deputy-leader--m: Народний депутат
 deputy-leader--f: Народна депутатка
+leader--m: Vodja
+leader--f: Vodja
+president--m: Predsednik
+president--f: Predsednica
+deputy--m: Podpredsednik
+deputy--f: Podpredsednica
+member--m: Član
+member--f: Članica
 contact: 'Контакти'
 mp: Народний депутат
 addressee: Звертається до
@@ -365,6 +417,20 @@ sort-by--updated: дата останнього оновлення
 sort-by--workingBody: назва організації
 title: Назва
 other-procedures: Інші процедури
+speech-link: Povezava do govora v transkriptu
+speech-card-link: Povezava do kartice govora
+minutes-agenda-link: Povezava do dnevnega reda
+minutes-item-card-link: Povezava do kartice točke zapisnika
+vote-roll-results: Poimensko glasovanje
+mayor: Župan
+website: Spletno mesto
+budget: Proračun
+agenda-items: Točke dnevnega reda
+agenda-item-point: '{num}. točka'
+material: Gradivo
+documents: Dokumenti
+external_analysis: Analize
+other: Drugo
 comparator-text: Я хочу знати, коли {той самий} проголосував таким же чином, але {інший}
   проголосував інакше. {завантажити}
 comparator-vote-percent: '{кількість} відфільтрованих голосувань становить {відсоток}
@@ -375,9 +441,11 @@ only-with-votes: Лише з голосами
 create-commentality: Створити коментар
 only-current: Тільки діючі
 add-membership: Додати членство
+members: Članice in člani
 copy: Копія
 data-currently-unavailable: Дані тимчасово недоступні.
 vote-result--in_procedure: У розгляді
+vote-result--suspended: Suspended
 vote-abstain: Утриматись
 voted-for--f: Голосувала ЗА
 voted-against--plural: Голосували ПРОТИ
@@ -391,7 +459,12 @@ abstract: Теза
 membership-list:
   no-memberships: Без участі.
 investigative_comissions: Слідчі комісії
+elected-to-district: 'Št. glasov: {numVotes}, {district}'
+elected-to-district--m: Набрав {numVotes} голосів у {окрузі}
 elected-to-district--f: Набрала {numVotes} голосів у {окрузі}
+elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
+elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
 missing-district: округ не обраний
 sort-by--change: оновлення результатів аналізу {аналіз}
 number-of-seats: 'Кількість місць у парламентській залі'
@@ -403,6 +476,12 @@ organization-classifications:
 legislation-classifications:
   act: Act
   decree: Decree
+anonymous:
+  person:
+    name: Unknown person
+  group:
+    name: Unknown party
+    acronym: N/A
 newsletter-signup-title: Sign up to our newsletter!
 newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter, sign up to our newsletter, sign up to our newsletter.
 newsletter-signup-input-placeholder: Email
