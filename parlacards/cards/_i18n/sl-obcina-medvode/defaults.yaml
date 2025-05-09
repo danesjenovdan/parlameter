@@ -540,6 +540,7 @@ organization-classifications:
   committee: Odbori
   other: Drugo
   commission: Komisije
+  council: Council
 legislation-classifications:
   act: Akt
   decree: Odlok

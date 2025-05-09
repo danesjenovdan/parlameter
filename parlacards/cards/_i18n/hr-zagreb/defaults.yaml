@@ -16,25 +16,27 @@ input-email: Unesite svoju e-mail adresu
 email-address: email
 notification-steps:
 - textfirst: >-
-    Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti
-    obavijest.
+    Odaberite riječ ili frazu koju želite pratiti.
   textsecond: >-
-    Dobit ćete e-mail obavijest nedugo nakon što o tome progovore na sjednici
-    HS-a.
-- textfirst: Odaberite način podudaranja
-  firstbullet: 'točno podudaranje'
-  secondbullet: 'široko podudaranje'
-- textfirst: Koliko često želite primati obavijesti?
-  firstbullet: najviše jednom dnevno
-  secondbullet: najviše jednom tjedno
-  thirdbullet: najviše jednom mjesečno
-- textfirst: Još samo email adresa
+    Nedugo nakon što željeni izraz netko izgovori na sjednici Hrvatskog sabora ili nekog od njegovih radnih tijela, obavijestit ćemo vas putem e-maila.
+- textfirst: Odaberite metodu podudaranja okidača. Uz točno podudaranje, o riječima ili izrazima obavještavat će se samo u obliku u kojem su napisani. Uz široko podudaranje uzet će se u obzir i neke varijacije odabranih riječi ili izraza, kao što su deklinacije, konjugacije ili srodni izrazi.
+  firstbullet: 'Točno podudaranje'
+  secondbullet: 'Široko podudaranje'
+- textfirst: Koliko često vas trebamo obavještavati?
+  firstbullet: Najviše jednom dnevno
+  secondbullet: Najviše jednom tjedno
+  thirdbullet: Najviše jednom mjesečno
+- textfirst: Dajte nam e-mail adresu na koju želite da vam šaljemo obavijesti.
+  textsecond: >-
+    Slažem se da mi Danas je novi dan u ime Gonga šalje obavijesti e-mailom kada
+    se odabrane riječi ili fraze spomenu u Gradskoj skupštini.
+  submit: Prijavi me
 - textfirst: Zabilježeno!
   textsecond: >-
-    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
-    mejlu.
-- textfirst: Potrjeno!
-  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+    Link za potvrdu registracije i uređivanje ostalih postavki čeka vas u
+    vašem e-mail pretincu.
+- textfirst: Potvrđeno!
+  textsecond: Na e-mail {email} ćete primiti obavijesti za riječ ili izraz "{keyword}".
 - textfirst: Napaka!
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
 add-new-trigger: Dodaj novi okidač
@@ -243,6 +245,7 @@ question:
   asked--with-name--m: '{name} je postavio pitanje {title} {recipient}.'
   asked--with-name--f: '{name} je postavila pitanje {title} {recipient}.'
   asked--with-name--plural: '{name} postavili su pitanje {title} {recipient}.'
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
 initiative:
   asked--m: "Podal pobudo na temo: {title}"
   asked--f: "Podala pobudo na temo: {title}"
@@ -268,6 +271,8 @@ event:
   ballot--absent--f: NIJE glasala za {title}
   ballot--abstain--m: SUZDRŽAO se od glasanja o {title}
   ballot--abstain--f: SUZDRŽALA se od glasanja o {title}
+  ballot--did-not-vote--m: "BREZ GLASU na glasovanju o {title}"
+  ballot--did-not-vote--f: "BREZ GLASU na glasovanju o {title}"
   speech--m: 'Govorio na: {session}'
   speech--f: 'Govorila na: {session}'
   show-answer: Prikaži odgovor
@@ -303,7 +308,7 @@ vote_types:
 tools:
   notifications: Parlametar obavijesti
   vote-comparator: Komparator glasanja
-  discord: Pretraživač razjedinjenosti
+  unity: Unity
   compass: Saborski kompas
   word-groups: Grupe riječi
 frame:
@@ -372,6 +377,10 @@ analysis-texts:
     label: Neslaganje s klubom
     titleSuffix: ' prema neslaganju s klubom'
     explanation: Odstupanje od većinskog glasa kluba na glasanjima u HS.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
 all-votes: sva glasanja
 all-working-bodies: sva matična radna tijela
 everyone: Svi
@@ -526,6 +535,7 @@ organization-classifications:
   committee: Saborski odbori
   other: Other working bodies
   commission: Commission
+  council: Council
 legislation-classifications:
   act: Akt
   decree: Odluka

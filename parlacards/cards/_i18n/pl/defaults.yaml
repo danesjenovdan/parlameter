@@ -16,29 +16,32 @@ input-email: Enter email
 email-address: e-mail
 notification-steps:
 - textfirst: >-
-    Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
-    obvestimo.
+    Izberi besedo ali besedno zvezo, ki jo želiš spremljati.
   textsecond: >-
-    Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
-    teles, ti to sporočimo po e-pošti.
+    Kmalu za tem, ko jo nekdo izgovori na seji državnega zbora ali enega od
+    delovnih teles, ti to sporočimo po e-pošti.
 - textfirst: >-
     Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
     besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
     ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
     zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
-  firstbullet: 'natančno ujemanje'
-  secondbullet: 'široko ujemanje'
+  firstbullet: 'Natančno ujemanje'
+  secondbullet: 'Široko ujemanje'
 - textfirst: Kako pogosto naj ti pišemo?
-  firstbullet: največ enkrat na dan
-  secondbullet: največ enkrat na teden
-  thirdbullet: največ enkrat na mesec
-- textfirst: Samo še tvoj e-naslov
+  firstbullet: Največ enkrat na dan
+  secondbullet: Največ enkrat na teden
+  thirdbullet: Največ enkrat na mesec
+- textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
+  textsecond: >-
+    Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila ob omembi
+    izbranih besed ali besednih zvez v državnem zboru.
+  submit: Prijavi me
 - textfirst: Zabeleženo!
   textsecond: >-
-    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
-    mejlu.
+    Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
+    e-poštnem predalu.
 - textfirst: Potrjeno!
-  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+  textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
 - textfirst: Napaka!
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
 add-new-trigger: Dodaj nov sprožilec
@@ -251,6 +254,7 @@ question:
   asked--with-name--plural: >-
     {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
     {recipient}.
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
 initiative:
   asked--m: "Podal pobudo na temo: {title}"
   asked--f: "Podala pobudo na temo: {title}"
@@ -276,8 +280,12 @@ event:
   ballot--absent--f: Nie głosowała za {title}
   ballot--abstain--m: WSTRZYMAŁ się od głosowania na {title}
   ballot--abstain--f: WSTRZYMAŁA się od głosowania na {title}
+  ballot--did-not-vote--m: "BREZ GLASU na glasovanju o {title}"
+  ballot--did-not-vote--f: "BREZ GLASU na glasovanju o {title}"
   speech--m: Przemawiał na {session} {org}
   speech--f: Przemawiała na {session} {org}
+  show-answer: Prikaži odgovor
+  hide-answer: Skrij odgovor
 months:
   - styczeń
   - luty
@@ -381,6 +389,10 @@ analysis-texts:
     explanation: >-
       Odstępstwo od głosu większości klubu parlamentarnego na głosowaniach Sejmu
       RP.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
 all-votes: wszystkie głosowania
 all-working-bodies: wszystkie odpowiedzialne komisje
 everyone: Wszystko
@@ -539,9 +551,11 @@ organization-classifications:
   committee: Committees
   other: Other working bodies
   commission: Commission
+  council: Council
 legislation-classifications:
   act: Act
   decree: Decree
+  law: Law
 anonymous:
   person:
     name: Unknown person

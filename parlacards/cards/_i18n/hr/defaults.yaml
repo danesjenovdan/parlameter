@@ -249,6 +249,7 @@ question:
   asked--with-name--m: '{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.'
   asked--with-name--f: '{name} je postavila pitanje {title} na koje mora odgovoriti {recipient}.'
   asked--with-name--plural: '{name} postavili su pitanje {title} na koje mora odgovoriti {recipient}.'
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
 initiative:
   asked--m: "Podal pobudo na temo: {title}"
   asked--f: "Podala pobudo na temo: {title}"
@@ -274,6 +275,8 @@ event:
   ballot--absent--f: NIJE glasala za {title}
   ballot--abstain--m: SUZDRŽAO se od glasanja o {title}
   ballot--abstain--f: SUZDRŽALA se od glasanja o {title}
+  ballot--did-not-vote--m: "BREZ GLASU na glasovanju o {title}"
+  ballot--did-not-vote--f: "BREZ GLASU na glasovanju o {title}"
   speech--m: 'Govorio na: {session}'
   speech--f: 'Govorila na: {session}'
   show-answer: Prikaži odgovor
@@ -378,6 +381,10 @@ analysis-texts:
     label: Neslaganje s klubom
     titleSuffix: ' prema neslaganju s klubom'
     explanation: Odstupanje od većinskog glasa kluba na glasanjima u HS.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
 all-votes: sva glasanja
 all-working-bodies: sva matična radna tijela
 everyone: Svi
@@ -532,6 +539,7 @@ organization-classifications:
   committee: Saborski odbori
   other: Other working bodies
   commission: Commission
+  council: Council
 legislation-classifications:
   act: Akt
   decree: Uredba

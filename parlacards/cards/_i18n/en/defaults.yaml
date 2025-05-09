@@ -254,6 +254,7 @@ question:
   asked--with-name--plural: >-
     {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
     {recipient}.
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
 initiative:
   asked--m: "Podal pobudo na temo: {title}"
   asked--f: "Podala pobudo na temo: {title}"
@@ -387,6 +388,10 @@ analysis-texts:
     label: Deviation from the parliamentary group
     titleSuffix: ' deviation from the parliamentary group'
     explanation: Derogation from the majority voice of ballots group in the DZ.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
 all-votes: all voting events
 all-working-bodies: all committees responsible
 everyone: All
@@ -539,6 +544,7 @@ organization-classifications:
   committee: Committees
   other: Other working bodies
   commission: Commission
+  council: Council
 legislation-classifications:
   act: Act
   decree: Decree
