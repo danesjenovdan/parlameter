@@ -82,6 +82,9 @@ def report_missing_keys(locales):
                 all_keys_by_file[locale_file_path].update(
                     get_yaml_keys(f"parlacards/cards/_i18n/{locale}/{locale_file_path}")
                 )
+            # remove card.info2 key from the locale keys (only used for BiH)
+            if "card.info2" in all_keys_by_file[locale_file_path]:
+                all_keys_by_file[locale_file_path].remove("card.info2")
 
     ret = False
     missing_keys_count = Counter()
@@ -92,6 +95,10 @@ def report_missing_keys(locales):
             locale_keys = get_yaml_keys(
                 f"parlacards/cards/_i18n/{locale}/{locale_file_path}"
             )
+            # remove card.info2 key from the locale keys (only used for BiH)
+            if "card.info2" in locale_keys:
+                locale_keys.remove("card.info2")
+
             if set(locale_keys) != all_keys_by_file[locale_file_path]:
                 # print the locale title box only once on first occurrence
                 if not box_printed:
