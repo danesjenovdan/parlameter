@@ -109,6 +109,7 @@ select-placeholder: Izberi
 selected-placeholder: 'Izbranih: {num}'
 data: Podatki
 name: Ime
+name--for-legislation: Ime
 epa: EPA
 change: Sprememba
 status: Status
@@ -136,6 +137,7 @@ vote-result--retracted: Umaknjen
 vote-result--adopted: Sprejet
 vote-result--received: Prejet
 vote-result--in_procedure: V obravnavi
+vote-result--suspended: Suspended
 average: Povprečje
 maximum: Največ
 coalition: koalicija
@@ -203,6 +205,8 @@ session-processing: Seja v obdelavi.
 organization: Organizacija
 start: Začetek
 date: Datum
+start-date: Datum začetka
+end-date: Datum konca
 missing-date: Brez datuma
 legislation: Zakonodaja
 laws: Zakoni
