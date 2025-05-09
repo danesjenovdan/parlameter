@@ -90,6 +90,12 @@ body {
   text-decoration: none;
 }
 
+.menu-container .open-search a {
+  color: colors.$font-default;
+  text-decoration: none;
+  line-height: 1;
+}
+
 .open-search,
 .close-search {
   font-size: 16px;

@@ -1,5 +1,8 @@
 card:
   title: Zadnja seja
+  tfidf-title: Besede, ki so zaznamovale sejo
+  attendance-title: Prisotnost poslanskih skupin na glasovanjih seje
+  votes-title: Glasovanja
   info: >-
     # Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem
     mestu [DZ
