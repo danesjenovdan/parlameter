@@ -1,5 +1,8 @@
 card:
   title: Ostatnie posiedzenie
+  tfidf-title: Besede, ki so zaznamovale sejo
+  attendance-title: Prisotnost poslanskih skupin na glasovanjih seje
+  votes-title: Glasovanja
   info: >-
     # Przegląd analizy ostatniego posiedzenia, którego dane dostępne są na
     stronie internetowej: [Sejm Rzeczypospolitej
