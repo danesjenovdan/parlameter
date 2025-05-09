@@ -27,3 +27,7 @@ jobs:
       - name: Check formatting with isort
         run: |
           (cd ./parladata && isort . --check --diff --profile black)
+
+      - name: Check parlacards i18n files for missing files or translation keys
+        run: |
+          python3 scripts/check_parlacards_i18n.py
