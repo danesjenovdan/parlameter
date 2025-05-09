@@ -34,11 +34,9 @@
           <!-- <a class="<%- isActiveMenu('legislation') %>" href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
           <a class="<%- isActiveMenu('tools')       %>" href="/<%- sm.landing.tools       %>"><%- i18n('menu.tools')       %></a> -->
         </div>
-        <div class="open-search"><span class="glyphicon glyphicon-search"></span></div>
-        <div class="menu-search hidden">
-          <%- fetchCard('/misc/menu-search/', mandateId) %>
+        <div class="open-search">
+          <a href="/<%- sm.landing.sessions %>/<%- sm.sessions.search.base %>/"><span class="glyphicon glyphicon-search"></span></a>
         </div>
-        <div class="close-search hidden"><span class="glyphicon glyphicon-remove"></span></div>
         <div class="mobile-menu__button">
           <span class="mobile-menu__bg"></span>
           <a href="#" class="mobile-menu__hambuger">

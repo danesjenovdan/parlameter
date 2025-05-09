@@ -8,37 +8,45 @@ select-mps: Wybierz posła
 selected-mps: 'Wybrano: {num}'
 search_placeholder: Szukaj
 trigger: wyzwalacz
+input-trigger: Vpiši sprožilec
 match: dopasowanie
 interval: interwał
 email: e-mail
+input-email: Enter email
+email-address: e-mail
 notification-steps:
 - textfirst: >-
-    Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
-    obvestimo.
+    Izberi besedo ali besedno zvezo, ki jo želiš spremljati.
   textsecond: >-
-    Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
-    teles, ti to sporočimo po e-pošti.
+    Kmalu za tem, ko jo nekdo izgovori na seji državnega zbora ali enega od
+    delovnih teles, ti to sporočimo po e-pošti.
 - textfirst: >-
     Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
     besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
     ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
     zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
-  firstbullet: 'natančno ujemanje'
-  secondbullet: 'široko ujemanje'
+  firstbullet: 'Natančno ujemanje'
+  secondbullet: 'Široko ujemanje'
 - textfirst: Kako pogosto naj ti pišemo?
-  firstbullet: največ enkrat na dan
-  secondbullet: največ enkrat na teden
-  thirdbullet: največ enkrat na mesec
-- textfirst: Samo še tvoj e-naslov
+  firstbullet: Največ enkrat na dan
+  secondbullet: Največ enkrat na teden
+  thirdbullet: Največ enkrat na mesec
+- textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
+  textsecond: >-
+    Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila ob omembi
+    izbranih besed ali besednih zvez v državnem zboru.
+  submit: Prijavi me
 - textfirst: Zabeleženo!
   textsecond: >-
-    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
-    mejlu.
+    Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
+    e-poštnem predalu.
 - textfirst: Potrjeno!
-  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+  textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
 - textfirst: Napaka!
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
-submit: Oddaj
+add-new-trigger: Dodaj nov sprožilec
+to-notification-list: Na seznam obvestil
+remove: Odstrani
 confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
 comparator-text: >-
   Chcę wiedzieć, na których głosowaniach {same} głosowali jednakowo, a
@@ -71,6 +79,7 @@ edit-membership: Uredi članstvo
 save-membership: Shrani članstvo
 member: Član
 add-membership: Dodaj članstvo
+members: Članice in člani
 only-mps: Tylko posłowie
 display-name: Ime za prikaz
 update-session: Zaktualizuj posiedzenie
@@ -94,11 +103,13 @@ search: Išči
 title-search: Szukaj według tytułu
 contents-search: Szukaj według treści wystąpień
 working-body: Odpowiedzialna komisja
+working-bodies: Odpowiedzialne komisje
 vote-types: Typy głosowania
 select-placeholder: Wybierz
 selected-placeholder: 'Wybrano: {num}'
 data: Podatki
 name: Imię
+name--for-legislation: Title
 epa: EPA
 change: Zmień
 status: Status
@@ -126,18 +137,23 @@ vote-result--retracted: Wycofano
 vote-result--adopted: Przyjęto
 vote-result--received: Otrzymano
 vote-result--in_procedure: W czytaniu
+vote-result--suspended: Suspended
 average: Średnia
 maximum: Większość
 coalition: koalicja
 opposition: opozycja
 vote-for: Za
+vote-for-plural: Za
 vote-against: Przeciw
+vote-against-plural: Proti
 vote-abstain: Wstrzymano
 vote-abstain--m: Wstrzymano
 vote-abstain--f: Wstrzymano
 vote-abstain-plural: Wstrzymano
 vote-absent: Nieobecny
 vote-absent-plural: Nieobecni
+vote-did-not-vote: Did not vote
+vote-did-not-vote-plural: Did not vote
 vote-no-majority: Brak głosu większości
 voted-for--f: Głosowała ZA
 voted-for--m: Głosował ZA
@@ -151,13 +167,22 @@ voted-abstain--plural: Głosowali KWORUM
 voted-absent--f: Nie głosowała na
 voted-absent--m: Nie głosował na
 voted-absent--plural: Nie głosowali na
+voted-did-not-vote--f: Brez glasu
+voted-did-not-vote--m: Brez glasu
+voted-did-not-vote--plural: Brez glasu
+anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Uporządkuj według
 sort-by--inequality: Niezgodności
 sort-by--date: Daty
+sort-by--unity: Enotnosti
+sort-by--disunity: Neenotnosti
 filtered-to-none: Brez zadetkov
 mps: Posłowie
 party: Klub poselski
 parties: Kluby poselskie
+unaffiliated--f: nepovezana
+unaffiliated--m: nepovezan
+unaffiliated--plural: nepovezani
 time-period: Okres czasu
 session-type: Typu posiedzenia
 no-results: Bez trafień.
@@ -170,6 +195,7 @@ absent--f: Nieobecna
 absent--m: Nieobecny
 absent--plural: Nieobecni
 no-term: Bez mandatu
+no-data: Brez podatka
 inequality: Niezgodność
 unity: Enotnost
 everybody: Wszystko
@@ -178,6 +204,10 @@ full-speech: Całe wystąpienie
 session-processing: Posiedzenie w toku.
 organization: Organizacja
 start: Start
+date: Date
+start-date: Start date
+end-date: End date
+missing-date: Missing date
 legislation: Ustawodawstwo
 laws: Ustawy
 acts: Akty
@@ -201,6 +231,10 @@ embed:
   always-refresh: Dane powinny być zawsze odświeżane
 previous:
   title: Poprzednia wersja
+export:
+  title: Export data
+  csv: Export .csv
+  json: Export .json
 membership-list:
   no-memberships: Bez członkostwa.
 style-scores:
@@ -220,6 +254,23 @@ question:
   asked--with-name--plural: >-
     {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
     {recipient}.
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
+initiative:
+  asked--m: "Podal pobudo na temo: {title}"
+  asked--f: "Podala pobudo na temo: {title}"
+  asked--plural: "Podali pobudo na temo: {title}"
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}"
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}"
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}"
+  asked--group: "Poslanska skupina {name} je podala pobudo na temo: {title}"
+unknown:
+  asked--m: "Odprl temo: {title}"
+  asked--f: "Odprla temo: {title}"
+  asked--plural: "Odprli temo: {title}"
+  asked--with-name--m: "{name} je odprl temo: {title}"
+  asked--with-name--f: "{name} je odprla temo: {title}"
+  asked--with-name--plural: "{name} so odprli temo: {title}"
+  asked--group: "Poslanska skupina {name} je odprla temo: {title}"
 event:
   ballot--for--m: Głosował ZA {title}
   ballot--for--f: Głosowała ZA {title}
@@ -229,8 +280,12 @@ event:
   ballot--absent--f: Nie głosowała za {title}
   ballot--abstain--m: WSTRZYMAŁ się od głosowania na {title}
   ballot--abstain--f: WSTRZYMAŁA się od głosowania na {title}
+  ballot--did-not-vote--m: "BREZ GLASU na glasovanju o {title}"
+  ballot--did-not-vote--f: "BREZ GLASU na glasovanju o {title}"
   speech--m: Przemawiał na {session} {org}
   speech--f: Przemawiała na {session} {org}
+  show-answer: Prikaži odgovor
+  hide-answer: Skrij odgovor
 months:
   - styczeń
   - luty
@@ -334,6 +389,10 @@ analysis-texts:
     explanation: >-
       Odstępstwo od głosu większości klubu parlamentarnego na głosowaniach Sejmu
       RP.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
 all-votes: wszystkie głosowania
 all-working-bodies: wszystkie odpowiedzialne komisje
 everyone: Wszystko
@@ -343,6 +402,14 @@ party-leader--m: Lider klubu
 party-leader--f: Lider klubu
 deputy-leader--m: Zastępca
 deputy-leader--f: Zastępczyni
+leader--m: Vodja
+leader--f: Vodja
+president--m: Predsednik
+president--f: Predsednica
+deputy--m: Podpredsednik
+deputy--f: Podpredsednica
+member--m: Član
+member--f: Članica
 number-of-seats: 'Liczba miejsc w parlamencie'
 contact: 'Kontakt'
 mp: Poseł/Posłanka
@@ -465,14 +532,36 @@ sort-by--updated: data ostatniej aktualizacji danych o posiedzeniu
 sort-by--workingBody: nazwa organizacji
 title: Nazwa
 other-procedures: Drugi postopki
+speech-link: Povezava do govora v transkriptu
+speech-card-link: Povezava do kartice govora
+minutes-agenda-link: Povezava do dnevnega reda
+minutes-item-card-link: Povezava do kartice točke zapisnika
+vote-roll-results: Poimensko glasovanje
+mayor: Župan
+website: Spletno mesto
+budget: Proračun
+agenda-items: Točke dnevnega reda
+agenda-item-point: '{num}. točka'
+material: Gradivo
+documents: Dokumenti
+external_analysis: Analize
+other: Drugo
 organization-classifications:
   root: Parliament
   committee: Committees
   other: Other working bodies
   commission: Commission
+  council: Council
 legislation-classifications:
   act: Act
   decree: Decree
+  law: Law
+anonymous:
+  person:
+    name: Unknown person
+  group:
+    name: Unknown party
+    acronym: N/A
 newsletter-signup-title: Sign up to our newsletter!
 newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter, sign up to our newsletter, sign up to our newsletter.
 newsletter-signup-input-placeholder: Email
