@@ -8,33 +8,40 @@ select-mps: Odaberite zastupnike
 selected-mps: 'Odabranih: {num}'
 search_placeholder: Traži
 trigger: okidač
+input-trigger: Unesite okidač
 match: podudaranje
 interval: interval
 email: email
+input-email: Unesite svoju e-mail adresu
+email-address: email
 notification-steps:
 - textfirst: >-
-    Postavite okidač za riječ ili frazu o čijem spominjanju želite primiti
-    obavještenje.
+    Odaberite riječ ili frazu koju želite pratiti.
   textsecond: >-
-    Dobit ćete e-mail nedugo nakon što o tome progovore na sjednici
-    Parlamenta.
-- textfirst: Odaberite način podudaranja
-  firstbullet: 'tačno podudaranje'
-  secondbullet: 'široko podudaranje'
-- textfirst: Koliko često želite primati obavještenja?
-  firstbullet: najviše jednom dnevno
-  secondbullet: najviše jednom sedmično
-  thirdbullet: najviše jednom mjesečno
-- textfirst: Još samo email adresa
+    Nedugo nakon što željeni izraz netko izgovori na sjednici Hrvatskog sabora ili nekog od njegovih radnih tijela, obavijestit ćemo vas putem e-maila.
+- textfirst: Odaberite metodu podudaranja okidača. Uz točno podudaranje, o riječima ili izrazima obavještavat će se samo u obliku u kojem su napisani. Uz široko podudaranje uzet će se u obzir i neke varijacije odabranih riječi ili izraza, kao što su deklinacije, konjugacije ili srodni izrazi.
+  firstbullet: 'Točno podudaranje'
+  secondbullet: 'Široko podudaranje'
+- textfirst: Koliko često vas trebamo obavještavati?
+  firstbullet: Najviše jednom dnevno
+  secondbullet: Najviše jednom tjedno
+  thirdbullet: Najviše jednom mjesečno
+- textfirst: Dajte nam e-mail adresu na koju želite da vam šaljemo obavijesti.
+  textsecond: >-
+    Slažem se da mi Danas je novi dan u ime Gonga šalje obavijesti e-mailom kada
+    se odabrane riječi ili fraze spomenu u Gradskoj skupštini.
+  submit: Prijavi me
 - textfirst: Zabilježeno!
   textsecond: >-
-    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
-    mejlu.
-- textfirst: Potrjeno!
-  textsecond: Na e-naslov {email} si vklopil_a obvestila za iskalni niz {keyword}.
+    Link za potvrdu registracije i uređivanje ostalih postavki čeka vas u
+    vašem e-mail pretincu.
+- textfirst: Potvrđeno!
+  textsecond: Na e-mail {email} ćete primiti obavijesti za riječ ili izraz "{keyword}".
 - textfirst: Napaka!
   textsecond: Prišlo je do napake pri shranjevanju obvestil.
-submit: Oddaj
+add-new-trigger: Dodaj novi okidač
+to-notification-list: Na popis obavijesti
+remove: Odstrani
 confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
 comparator-text: >-
   Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili
@@ -67,6 +74,7 @@ edit-membership: Uredi članstvo
 save-membership: Spremi članstvo
 member: Član
 add-membership: Dodaj članstvo
+members: Članice in člani
 only-mps: Samo poslanici
 display-name: Ime za prikaz
 update-session: Ažuriranje sjednice
@@ -90,11 +98,13 @@ search: Traži
 title-search: Pretraži prema naslovu
 contents-search: Pretraži prema sadržaju govora
 working-body: Matično radno tijelo
+working-bodies: Matično radna tijela
 vote-types: Vrste glasanja
 select-placeholder: Odaberi
 selected-placeholder: 'Odabranih: {num}'
 data: Podaci
 name: Ime
+name--for-legislation: Naziv
 epa: Broj
 change: Promjena
 status: Status
@@ -137,6 +147,8 @@ vote-abstain--f: Suzdržana
 vote-abstain-plural: Suzdržani
 vote-absent: Nema
 vote-absent-plural: Nema
+vote-did-not-vote: Bez glasa
+vote-did-not-vote-plural: Bez glasa
 vote-no-majority: Većinski glas ne postoji
 voted-for--f: Glasala ZA
 voted-for--m: Glasao ZA
@@ -150,6 +162,10 @@ voted-abstain--plural: Suzdržani
 voted-absent--f: Nije glasala o
 voted-absent--m: Nije glasao o
 voted-absent--plural: Nisu glasali o
+voted-did-not-vote--f: Brez glasu
+voted-did-not-vote--m: Brez glasu
+voted-did-not-vote--plural: Brez glasu
+anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Razvrstaj prema
 sort-by--inequality: Razjedinjenosti
 sort-by--date: Datumu
@@ -183,6 +199,10 @@ full-speech: Cijeli govor
 session-processing: Sjednica je u toku.
 organization: Tijelo
 start: Početak
+date: Datum
+start-date: Datum početka
+end-date: Datum završetka
+missing-date: Bez datuma
 legislation: Zakonodavstvo
 laws: Zakoni
 acts: Akti
@@ -223,6 +243,23 @@ question:
   asked--with-name--m: '{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.'
   asked--with-name--f: '{name} je postavila pitanje {title} na koje mora odgovoriti {recipient}.'
   asked--with-name--plural: '{name} je postavio pitanje {title} na koje mora odgovoriti {recipient}.'
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
+initiative:
+  asked--m: "Podal pobudo na temo: {title}"
+  asked--f: "Podala pobudo na temo: {title}"
+  asked--plural: "Podali pobudo na temo: {title}"
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}"
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}"
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}"
+  asked--group: "Poslanska skupina {name} je podala pobudo na temo: {title}"
+unknown:
+  asked--m: "Odprl temo: {title}"
+  asked--f: "Odprla temo: {title}"
+  asked--plural: "Odprli temo: {title}"
+  asked--with-name--m: "{name} je odprl temo: {title}"
+  asked--with-name--f: "{name} je odprla temo: {title}"
+  asked--with-name--plural: "{name} so odprli temo: {title}"
+  asked--group: "Poslanska skupina {name} je odprla temo: {title}"
 event:
   ballot--for--m: Glasao je ZA {title}
   ballot--for--f: Glasala je ZA {title}
@@ -232,6 +269,8 @@ event:
   ballot--absent--f: NIje glasala za {title}
   ballot--abstain--m: SUZDRŽAO se od glasanja o {title}
   ballot--abstain--f: SUZDRŽALA se od glasanja o {title}
+  ballot--did-not-vote--m: "BREZ GLASU na glasovanju o {title}"
+  ballot--did-not-vote--f: "BREZ GLASU na glasovanju o {title}"
   speech--m: 'Govorio na: {session}'
   speech--f: 'Govorila na: {session}'
   show-answer: Prikaži odgovor
@@ -336,6 +375,10 @@ analysis-texts:
     label: Neslaganje s klubom
     titleSuffix: ' prema neslaganju s klubom'
     explanation: Odstupanje od većinskog glasa kluba na glasanjima u Parlamentu.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
 all-votes: sva glasanja
 all-working-bodies: sva matična radna tijela
 everyone: Svi
@@ -471,16 +514,36 @@ sort-by--updated: datumu zadnje izmjene podataka o sjednici
 sort-by--workingBody: nazivu tijela
 title: Naslov
 other-procedures: Drugi postopki
+speech-link: Povezava do govora v transkriptu
+speech-card-link: Povezava do kartice govora
+minutes-agenda-link: Povezava do dnevnega reda
+minutes-item-card-link: Povezava do kartice točke zapisnika
+vote-roll-results: Poimensko glasovanje
+mayor: Gradonačelnik
+website: Mrežna stranica
+budget: Proračun
+agenda-items: Naziv tačke dnevnog reda
+agenda-item-point: '{num}. tačka'
+material: Priloženi dokumenti
+documents: Dokumenti
 external_analysis: Analize
+other: Drugo
 organization-classifications:
   root: Parliament
   committee: Committees
   other: Other working bodies
   commission: Commission
+  council: Council
 legislation-classifications:
   act: Drugi akt
   decree: Decree
   law: Zakon
+anonymous:
+  person:
+    name: Unknown person
+  group:
+    name: Unknown party
+    acronym: N/A
 newsletter-signup-title: Registrujte se za newsletter Parlametar!
 newsletter-signup-description: Ako želite primati pravovremene i pregledne podatke o radu Parlamentarne skupštine BiH, registrujte se na newsletter Parlametar, i bilten će Vam stizati jednom mjesečno.
 newsletter-signup-input-placeholder: Email
@@ -492,6 +555,3 @@ ask-person-a-question: Napišite Vaše pitanje za zastupnika/zastupnicu.
 thank-you-for-the-question: Hvala za Vaše pitanje!
 send: Pošalji
 error-message: Ups, nešto se dogodilo.
-agenda-items: Naziv tačke dnevnog reda
-material: Priloženi dokumenti
-documents: Dokumenti
