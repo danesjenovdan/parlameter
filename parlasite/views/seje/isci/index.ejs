@@ -42,6 +42,7 @@
   }
 </style>
 
+<% if ((query || '').trim().length) { %>
 <div id="session-search-results">
   <div class="row">
     <!-- <div class="col-md-12">
@@ -67,5 +68,6 @@
     </div> -->
   </div>
 </div>
+<% } %>
 
 <%- await include('../../_partials/footer.ejs') %>

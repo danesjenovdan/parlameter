@@ -1,3 +1,7 @@
 .vscode
 
 kustomize/**/secrets*.yaml
+
+# compiled python files
+__pycache__/
+*.py[cod]
