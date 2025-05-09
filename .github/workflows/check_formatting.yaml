@@ -18,7 +18,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install black isort
+          pip install black isort pyyaml
 
       - name: Check formatting with black
         run: |
