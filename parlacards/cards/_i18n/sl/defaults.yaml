@@ -6,6 +6,9 @@ most-discussed: Največ reakcij
 all-legislation: Vsa zakonodaja
 select-mps: Izberi poslance
 selected-mps: 'Izbranih: {num}'
+select-group: Izberi skupino
+select-body: Izberi telo
+select-time-period: Izberi časovno obdobje
 search_placeholder: Išči
 trigger: Sprožilec
 input-trigger: Vpiši sprožilec
@@ -175,11 +178,6 @@ sort-by--inequality: Neenotnosti
 sort-by--date: Datumu
 sort-by--unity: Enotnosti
 sort-by--disunity: Neenotnosti
-filter-by: Filtriraj po
-filter-by--vote-title: Naslovu glasovanja
-filter-by--group: Skupini
-filter-by--working-body: Delovnem telesu
-filter-by--timespan: Obdobju
 filtered-to-none: Brez zadetkov
 mps: Poslanci
 party: Poslanska skupina

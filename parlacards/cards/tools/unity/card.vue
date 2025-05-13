@@ -8,15 +8,14 @@
       <div class="filters">
         <div class="left-filters">
           <div class="filter text-filter">
-            <div v-t="'filter-by'" class="filter-label"></div>
+            <div v-t="'title-search'" class="filter-label"></div>
             <SearchField
               v-model="textFilter"
-              :placeholder="$t('filter-by--vote-title')"
               @update:model-value="searchVotes"
             />
           </div>
           <div class="filter group-filter">
-            <div v-t="'filter-by--group'" class="filter-label"></div>
+            <div v-t="'select-group'" class="filter-label"></div>
             <PSearchDropdown
               v-model="groups"
               single
@@ -25,7 +24,7 @@
             />
           </div>
           <div class="filter body-filter">
-            <div v-t="'filter-by--body'" class="filter-label"></div>
+            <div v-t="'select-body'" class="filter-label"></div>
             <PSearchDropdown
               v-model="bodies"
               single
@@ -34,7 +33,7 @@
             />
           </div>
           <div class="filter month-filter">
-            <div v-t="'filter-by--timespan'" class="filter-label"></div>
+            <div v-t="'select-time-period'" class="filter-label"></div>
             <PSearchDropdown
               v-model="allMonths"
               :alphabetise="false"

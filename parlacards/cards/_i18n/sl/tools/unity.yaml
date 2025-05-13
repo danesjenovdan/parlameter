@@ -1,14 +1,30 @@
 card:
   title: 'Enotnost'
   info: >-
-    # Seznam vseh glasovanj DZ, ki ustrezajo uporabniškemu vnosu ({text}), za
-    izbrana matična delovna telesa ({wbs}), razvrščenih po {sortBy}.
+    # Analiza enotnosti glasovanj v državnem zboru.
 
 
-    Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila
-    objavljena na spletnem mestu [DZ RS](https://www.dz-rs.si/) ter ustrezajo
-    uporabniškemu vnosu.
+    V tej analizi prikažemo enotnost glasovanj v izbrani skupini (državni zbor,
+    koalicija, posamezna poslanska skupina). Odstotek izraža usklajenost
+    poslank_cev pri posameznih glasovanjih.
 
 
-    Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po
-    datumu.
+    Enotnost izračunamo tako, da pri posameznem glasovanju število glasovnic z
+    večinsko izbiro (tisto, za katero je glasovalo največ poslank_cev: za,
+    proti, vzdržani ali odsotni) v izbrani skupini delimo s skupnim številom
+    vseh poslank_cev v tej skupini in rezultat množimo s 100, da dobimo
+    odstotke. Tako dobimo delež poslank_cev v izbrani skupini, katerih glas ž
+    ustreza večinski izbiri. Če so torej pri posameznem glasovanju vsi glasovi
+    pripadali isti izbiri, je enotnost 100 %, če pa so bili glasovi razpršeni
+    med več možnosti, je enotnost ustrezno nižja.
+
+
+    Orodje omogoča filtriranje glede na telo, kjer je bilo glasovanje izvedeno
+    (državni zbor ali matična delovna telesa), in izbrano obdobje ter
+    razvrščanje rezultatov po enotnosti – bodisi od največje proti najmanjši
+    bodisi obratno.
+
+
+    Seznam vključuje vsa glasovanja, ki so se zgodila v tekočem sklicu državnega
+    zbora in so bila objavljena na uradnem
+    [spletnem mestu DZ RS](https://www.dz-rs.si/wps/portal/Home).
