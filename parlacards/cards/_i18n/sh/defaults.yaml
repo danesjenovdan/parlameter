@@ -6,6 +6,9 @@ most-discussed: Največ reakcij
 all-legislation: Vsa zakonodaja
 select-mps: Izberi poslance
 selected-mps: 'Izbranih: {num}'
+select-group: Izberi skupino
+select-body: Izberi telo
+select-time-period: Izberi časovno obdobje
 search_placeholder: Išči
 trigger: sprožilec
 input-trigger: Vpiši sprožilec

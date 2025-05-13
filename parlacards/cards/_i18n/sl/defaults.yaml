@@ -110,7 +110,6 @@ working-bodies: Delovna telesa
 vote-types: Tipi glasovanja
 select-placeholder: Izberi
 selected-placeholder: 'Izbranih: {num}'
-selected-placeholder--short: '{num} izbr.'
 data: Podatki
 name: Ime
 name--for-legislation: Ime
