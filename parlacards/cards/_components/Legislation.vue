@@ -482,7 +482,7 @@ export default {
       }
 
       .striped-button {
-        padding: 0 8px;
+        padding-inline: 8px;
 
         @include breakpoints.respond-to(mobile) {
           flex: 1;

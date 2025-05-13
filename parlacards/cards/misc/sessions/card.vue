@@ -3,8 +3,8 @@
     <template #generator>
       <div class="session-list-generator">
         <!-- only show filters if we have more than one classification to show -->
-        <div v-if="filters.length > 1" class="row">
-          <div class="col-md-6">
+        <div v-if="filters.length > 1" class="row filters-row">
+          <div class="col-md-7">
             <blue-button-list
               v-model="currentFilter"
               :items="filters"
@@ -12,7 +12,7 @@
             />
           </div>
           <!-- only show working bodies dropdown if we have more than one organization -->
-          <div v-if="workingBodies?.length > 1" class="col-md-6 filters">
+          <div v-if="workingBodies?.length > 1" class="col-md-5 filters">
             <p-search-dropdown
               v-model="workingBodies"
               :placeholder="inputPlaceholder"
@@ -387,12 +387,15 @@ export default {
 <style lang="scss" scoped>
 @use 'parlassets/scss/breakpoints';
 
-.filters {
+.filters-row {
+  display: flex;
   margin-top: 14px;
 
-  .dropdown-filter {
-    margin: 0;
-    flex: 1.5;
+  .filters {
+    .dropdown-filter {
+      margin: 0;
+      flex: 1.5;
+    }
   }
 }
 

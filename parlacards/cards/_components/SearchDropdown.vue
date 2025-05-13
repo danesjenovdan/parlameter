@@ -134,6 +134,10 @@ export default {
       type: String,
       default: null,
     },
+    placeholderFunc: {
+      type: Function,
+      default: null,
+    },
     single: {
       type: Boolean,
       default: false,
@@ -251,10 +255,11 @@ export default {
       }
       return filterAndSort(this.modelValue);
     },
+    selectedItems() {
+      return this.filteredItems.filter((item) => item.selected);
+    },
     selectedIds() {
-      return this.filteredItems
-        .filter((item) => item.selected)
-        .map((item) => item.id);
+      return this.selectedItems.map((item) => item.id);
     },
     adjustedPlaceholder() {
       const selectedItem = this.filteredItems.filter(
@@ -277,6 +282,13 @@ export default {
 
       if (this.placeholderKey && this.$te(this.placeholderKey)) {
         return this.$t(this.placeholderKey, { num: this.selectedIds.length });
+      }
+
+      if (this.placeholderFunc) {
+        const placeholderRet = this.placeholderFunc(this.selectedItems);
+        if (placeholderRet !== false) {
+          return placeholderRet;
+        }
       }
 
       if (this.placeholder) {
