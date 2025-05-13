@@ -340,3 +340,16 @@ class Organization(
                 raise NoMembershipException(
                     f"Organization {self.name} {self.id} has no membership in root organization"
                 )
+
+    def query_organizations_with_voters(self, timestamp=None):
+        if not timestamp:
+            timestamp = datetime.now()
+
+        # sometimes we need a list of all parliamentary groups that have voters
+        # in a working body, f.e. when calculating unity
+
+        voters_groups_ids = PersonMembership.valid_at(timestamp).filter(
+            organization=self, role="voter"
+        ).values_list("on_behalf_of", flat=True)
+
+        return Organization.objects.filter(id__in=voters_groups_ids)
