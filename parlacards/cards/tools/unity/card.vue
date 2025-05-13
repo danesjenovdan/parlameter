@@ -25,7 +25,7 @@
             />
           </div>
           <div class="filter body-filter">
-            <div v-t="'filter-by--working-body'" class="filter-label"></div>
+            <div v-t="'filter-by--body'" class="filter-label"></div>
             <PSearchDropdown
               v-model="bodies"
               single
@@ -38,7 +38,7 @@
             <PSearchDropdown
               v-model="allMonths"
               :alphabetise="false"
-              :placeholder-key="'selected-placeholder--short'"
+              :placeholder-func="getMonthsPlaceholder"
               @update:model-value="searchVotesImmediate"
               @clear="searchVotesImmediate"
             />
@@ -119,6 +119,7 @@ import dateFormatter from '@/_helpers/dateFormatter.js';
 import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 import getD3Locale from '@/_i18n/d3locales.js';
 import generateMonths from '@/_helpers/generateMonths.js';
+import { capitalizeFirst } from '@/_helpers/stringCasing.js';
 
 export default {
   name: 'CardToolsUnity',
@@ -147,25 +148,50 @@ export default {
     const bodyFilter = String(cardState?.body || defaultGroupId);
     const monthsFilter = String(cardState?.months || '').split(',');
 
-    const groups = (cardData?.data?.results?.groups || []).map((g) => {
+    const sortGroupsFunc = (a, b) => {
+      if (a.classification === 'root') {
+        return -1;
+      }
+      if (b.classification === 'root') {
+        return 1;
+      }
+      if (a.classification === 'coalition') {
+        return -1;
+      }
+      if (b.classification === 'coalition') {
+        return 1;
+      }
+      return a.name.localeCompare(b.name);
+    };
+
+    const coalitionName = capitalizeFirst(this.$t('coalition'));
+    const sortedGroups = (cardData?.data?.results?.groups || []).sort(
+      sortGroupsFunc,
+    );
+    const sortedBodies = (cardData?.data?.results?.bodies || []).sort(
+      sortGroupsFunc,
+    );
+
+    const groups = sortedGroups.map((g) => {
       const gid = (g.slug || '').split('-')[0];
+      const isCoalition = g.classification === 'coalition';
       return {
         id: gid,
         slug: g.slug,
-        label: g.name,
+        label: isCoalition ? coalitionName : g.name,
         selected: gid === groupFilter,
         color: g.color,
       };
     });
 
-    const bodies = (cardData?.data?.results?.bodies || []).map((b) => {
+    const bodies = sortedBodies.map((b) => {
       const bid = (b.slug || '').split('-')[0];
+      const isCoalition = b.classification === 'coalition';
       return {
         id: bid,
         slug: b.slug,
-        label: b.name,
+        label: isCoalition ? coalitionName : b.name,
         selected: bid === bodyFilter,
-        color: b.color,
       };
     });
 
@@ -258,6 +284,12 @@ export default {
     }
   },
   methods: {
+    getMonthsPlaceholder(selectedItems) {
+      if (!selectedItems?.length) {
+        return this.$t('whole-term');
+      }
+      return false;
+    },
     searchVotesImmediate() {
       this.card.isLoading = true;
       this.votes = [];
@@ -320,14 +352,17 @@ export default {
     }
 
     .left-filters {
-      max-width: 600px;
+      max-width: 700px;
+      margin-right: 10px;
 
       @include breakpoints.respond-to(up-to-limbo) {
         max-width: 100%;
+        margin-right: 0;
       }
 
       @include breakpoints.respond-to(mobile) {
         flex-wrap: wrap;
+        margin-right: 0;
       }
     }
 
@@ -352,7 +387,7 @@ export default {
     }
 
     .group-filter {
-      flex: 0.66;
+      flex: 1;
 
       @include breakpoints.respond-to(mobile) {
         flex: 40% 1 0;
@@ -360,7 +395,7 @@ export default {
     }
 
     .body-filter {
-      flex: 0.66;
+      flex: 1;
 
       @include breakpoints.respond-to(mobile) {
         flex: 40% 1 0;
@@ -368,7 +403,7 @@ export default {
     }
 
     .month-filter {
-      flex: 0.5;
+      flex: 1;
 
       @include breakpoints.respond-to(mobile) {
         flex: 40% 1 0;
@@ -412,12 +447,12 @@ export default {
 
     .unity {
       display: flex;
-      justify-content: center;
       text-align: center;
       min-width: 95px;
 
       @include breakpoints.respond-to(desktop) {
         flex-direction: column;
+        justify-content: center;
         padding-right: 14px;
       }
 
@@ -474,12 +509,12 @@ export default {
     .result {
       align-items: center;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 10px 0 0 0;
 
       @include breakpoints.respond-to(desktop) {
         border-left: $section-border;
-        justify-content: left;
+        justify-content: flex-start;
         padding: 0 0 0 16px;
         width: 136px;
       }

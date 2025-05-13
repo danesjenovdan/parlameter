@@ -462,8 +462,8 @@ export default {
 
         .clamp-lines {
           display: -webkit-box;
-          -webkit-line-clamp: 3;
-          line-clamp: 3;
+          -webkit-line-clamp: 4;
+          line-clamp: 4;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
@@ -509,8 +509,8 @@ export default {
         margin-top: 1px;
 
         display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
