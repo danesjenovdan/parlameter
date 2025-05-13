@@ -348,8 +348,10 @@ class Organization(
         # sometimes we need a list of all parliamentary groups that have voters
         # in a working body, f.e. when calculating unity
 
-        voters_groups_ids = PersonMembership.valid_at(timestamp).filter(
-            organization=self, role="voter"
-        ).values_list("on_behalf_of", flat=True)
+        voters_groups_ids = (
+            PersonMembership.valid_at(timestamp)
+            .filter(organization=self, role="voter")
+            .values_list("on_behalf_of", flat=True)
+        )
 
         return Organization.objects.filter(id__in=voters_groups_ids)
