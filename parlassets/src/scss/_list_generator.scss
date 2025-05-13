@@ -70,7 +70,10 @@
   }
 
   .parties-districts,
-  .filters { display: flex; }
+  .filters {
+    display: flex;
+    align-items: center;
+  }
 
   .parties,
   .button-filters {

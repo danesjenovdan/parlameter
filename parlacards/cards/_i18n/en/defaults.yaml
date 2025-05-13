@@ -6,6 +6,9 @@ most-discussed: Največ reakcij
 all-legislation: All legislation
 select-mps: Choose MPs
 selected-mps: 'Chosen: {num}'
+select-group: Izberi skupino
+select-body: Izberi telo
+select-time-period: Izberi časovno obdobje
 search_placeholder: Search
 trigger: Trigger
 input-trigger: Enter trigger phrase
@@ -13,6 +16,7 @@ match: Match
 interval: Interval
 email: Email
 input-email: Enter email
+email-address: Email
 notification-steps:
 - textfirst: >-
     Izberi besedo ali besedno zvezo, ki jo želiš spremljati.
@@ -78,6 +82,7 @@ edit-membership: Edit membership
 save-membership: Save membership
 member: Member
 add-membership: Add membership
+members: Članice in člani
 only-mps: MPs only
 display-name: Name to display
 update-session: Update session
@@ -101,11 +106,13 @@ search: Išči
 title-search: Search by title
 contents-search: Search by content
 working-body: Working body responsible
+working-bodies: Working bodies responsible
 vote-types: Vote types
 select-placeholder: Choose
 selected-placeholder: 'Chosen: {num}'
 data: Podatki
 name: Name
+name--for-legislation: Title
 epa: Government ID
 change: Change
 status: Status
@@ -148,6 +155,8 @@ vote-abstain--f: Abstained
 vote-abstain-plural: Abstained
 vote-absent: Absent
 vote-absent-plural: Absent
+vote-did-not-vote: Did not vote
+vote-did-not-vote-plural: Did not vote
 vote-no-majority: No majority vote
 voted-for--f: Voted FOR
 voted-for--m: Voted FOR
@@ -163,6 +172,8 @@ voted-absent--m: Was absent at
 voted-absent--plural: Didn't vote on
 voted-did-not-vote--f: Did not vote
 voted-did-not-vote--m: Did not vote
+voted-did-not-vote--plural: Did not vote
+anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Order by
 sort-by--inequality: Discord
 sort-by--date: Date
@@ -246,6 +257,23 @@ question:
   asked--with-name--plural: >-
     {name} so zastavili vprašanje {title}, na katerega mora odgovoriti
     {recipient}.
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
+initiative:
+  asked--m: "Podal pobudo na temo: {title}"
+  asked--f: "Podala pobudo na temo: {title}"
+  asked--plural: "Podali pobudo na temo: {title}"
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}"
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}"
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}"
+  asked--group: "Poslanska skupina {name} je podala pobudo na temo: {title}"
+unknown:
+  asked--m: "Odprl temo: {title}"
+  asked--f: "Odprla temo: {title}"
+  asked--plural: "Odprli temo: {title}"
+  asked--with-name--m: "{name} je odprl temo: {title}"
+  asked--with-name--f: "{name} je odprla temo: {title}"
+  asked--with-name--plural: "{name} so odprli temo: {title}"
+  asked--group: "Poslanska skupina {name} je odprla temo: {title}"
 event:
   ballot--for--m: Voted FOR {title}
   ballot--for--f: Voted FOR {title}
@@ -363,6 +391,10 @@ analysis-texts:
     label: Deviation from the parliamentary group
     titleSuffix: ' deviation from the parliamentary group'
     explanation: Derogation from the majority voice of ballots group in the DZ.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
 all-votes: all voting events
 all-working-bodies: all committees responsible
 everyone: All
@@ -515,6 +547,7 @@ organization-classifications:
   committee: Committees
   other: Other working bodies
   commission: Commission
+  council: Council
 legislation-classifications:
   act: Act
   decree: Decree

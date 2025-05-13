@@ -6,7 +6,14 @@
       :class="['option', { 'is-selected': optionValue === modelValue }]"
       @click="handleClick(optionValue)"
     >
-      {{ optionLabel }}
+      <div>
+        <i class="glyphicon glyphicon-ok"></i>
+        <span>{{ optionLabel }}</span>
+      </div>
+      <div class="width-spacer" aria-hidden="true">
+        <i class="glyphicon glyphicon-ok"></i>
+        <span>{{ optionLabel }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -37,30 +44,60 @@ export default {
 @use 'parlassets/scss/colors';
 
 .toggle {
-  $height: 51px;
+  $height: 40px;
+
+  position: relative;
   display: flex;
-  font-size: 15px;
   height: $height;
-  line-height: $height;
+  font-size: 14px;
 
   .option {
-    align-items: center;
-    background: colors.$tab-passive;
-    color: colors.$white;
-    cursor: pointer;
     flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 9px;
+    background: colors.$white;
+    border: 1px solid colors.$font-default;
+    color: colors.$font-default;
     text-align: center;
-    padding: 0 10px;
     white-space: nowrap;
+    cursor: pointer;
+    z-index: 1;
 
-    &:hover {
-      background: colors.$tab-hover;
+    &:not(:last-child) {
+      margin-right: -1px;
+    }
+
+    .glyphicon {
+      display: none;
+      margin-right: 6px;
+      color: colors.$dropdown-arrow;
     }
 
     &.is-selected {
-      background: colors.$tab-active;
-      color: colors.$white;
+      background-color: rgba(colors.$dropdown-arrow, 0.2);
+      border-color: colors.$dropdown-arrow;
+      font-weight: 500;
       cursor: default;
+      z-index: 2;
+
+      .glyphicon {
+        display: inline;
+      }
+    }
+
+    .width-spacer {
+      background: red;
+      font-weight: 500;
+      height: 0;
+      visibility: hidden;
+
+      .glyphicon {
+        display: inline;
+      }
     }
   }
 }

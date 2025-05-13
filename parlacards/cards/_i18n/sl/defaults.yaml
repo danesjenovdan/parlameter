@@ -6,6 +6,9 @@ most-discussed: Največ reakcij
 all-legislation: Vsa zakonodaja
 select-mps: Izberi poslance
 selected-mps: 'Izbranih: {num}'
+select-group: Izberi skupino
+select-body: Izberi telo
+select-time-period: Izberi časovno obdobje
 search_placeholder: Išči
 trigger: Sprožilec
 input-trigger: Vpiši sprožilec
@@ -109,6 +112,7 @@ select-placeholder: Izberi
 selected-placeholder: 'Izbranih: {num}'
 data: Podatki
 name: Ime
+name--for-legislation: Ime
 epa: EPA
 change: Sprememba
 status: Status
@@ -136,6 +140,7 @@ vote-result--retracted: Umaknjen
 vote-result--adopted: Sprejet
 vote-result--received: Prejet
 vote-result--in_procedure: V obravnavi
+vote-result--suspended: Suspended
 average: Povprečje
 maximum: Največ
 coalition: koalicija
@@ -203,6 +208,8 @@ session-processing: Seja v obdelavi.
 organization: Organizacija
 start: Začetek
 date: Datum
+start-date: Datum začetka
+end-date: Datum konca
 missing-date: Brez datuma
 legislation: Zakonodaja
 laws: Zakoni
@@ -509,7 +516,7 @@ rejected: zavrnjeni
 gov-side: Stran vlade
 summary: Povzetek
 all-mps: Vsi poslanci
-whole-term: Cel mandat
+whole-term: Celoten mandat
 last-year: Zadnje leto
 limited-to-last-five: ', izpis pa omejen samo na zgornjih pet sej'
 just-last-five: Samo zadnjih 5
