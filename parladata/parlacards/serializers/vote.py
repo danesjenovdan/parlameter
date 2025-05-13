@@ -53,7 +53,7 @@ class VoteGroupSerializer(CommonCachableSerializer):
 
     def get_group_ballots(self, group):
         vote_ballots = Ballot.objects.filter(vote=self.context["vote"])
-        
+
         group_ballots = vote_ballots.filter(
             personvoter__in=group.query_members(self.context["request_date"]),
         )
@@ -377,7 +377,6 @@ class VoteSerializer(CommonSerializer):
         # we want to get and serialize groups that were active on the day of the vote
         # this also includes new_context['vote'] that is needed by VoteGroupSerializer
         new_context = self._get_context_for_vote_date(vote)
-
 
         groups = vote.motion.session.organization.query_organizations_with_voters(
             new_context["date"]
