@@ -78,7 +78,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center center;
     height: 58px;
-    margin: 0 8px 0 30px;
+    margin: 0 0 0 15px;
     width: 58px;
 
     $icon-path: '#{get-parlassets-url()}/icons';
@@ -104,6 +104,7 @@ export default {
 
     .percentage {
       font-size: 24px;
+      line-height: 1.1;
       white-space: nowrap;
 
       @include breakpoints.respond-to(desktop) {
