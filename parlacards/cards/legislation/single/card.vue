@@ -158,11 +158,11 @@ export default {
   .votes-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
-    height: breakpoints.$full-card-height - 89;
+    height: breakpoints.$full-card-height - 72;
   }
 }
 
 .legislation-tabs :deep(.p-tabs-content) {
-  height: breakpoints.$full-card-height - 89;
+  height: breakpoints.$full-card-height - 72;
 }
 </style>
