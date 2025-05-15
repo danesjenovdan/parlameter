@@ -298,7 +298,6 @@ export default {
     .filter-label {
       overflow: hidden;
       height: 20px;
-      margin-top: 6px;
     }
 
     .text-filter {
@@ -328,7 +327,7 @@ export default {
   .votes-list-shadow {
     overflow-y: auto;
     overflow-x: hidden;
-    height: breakpoints.$full-card-height - 89;
+    height: breakpoints.$full-card-height - 72;
   }
 
   .nalagalnik__wrapper {
