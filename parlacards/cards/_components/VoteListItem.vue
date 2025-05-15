@@ -238,6 +238,10 @@ export default {
 .session_voting {
   padding: 0;
   margin: 12px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .single_voting {
@@ -344,6 +348,7 @@ export default {
 
       display: -webkit-box;
       -webkit-line-clamp: 4;
+      line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
