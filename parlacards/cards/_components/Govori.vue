@@ -20,6 +20,7 @@
         <p-search-dropdown
           v-model="allMonths"
           :alphabetise="false"
+          :placeholder-func="getMonthsPlaceholder"
           @update:model-value="searchSpeechesImmediate"
           @clear="searchSpeechesImmediate"
         />
@@ -207,6 +208,12 @@ export default {
     searchOgImage.created.call(this);
   },
   methods: {
+    getMonthsPlaceholder(selectedItems) {
+      if (!selectedItems?.length) {
+        return this.$t('whole-term');
+      }
+      return false;
+    },
     searchSpeechesImmediate() {
       this.card.isLoading = true;
       this.speeches = [];
@@ -277,7 +284,6 @@ export default {
 
     .filter-label {
       height: 20px;
-      margin-top: 6px;
     }
   }
 
@@ -298,7 +304,7 @@ export default {
     height: breakpoints.$full-card-height;
 
     &.has-filters {
-      height: breakpoints.$full-card-height - 89;
+      height: breakpoints.$full-card-height - 72;
     }
   }
 

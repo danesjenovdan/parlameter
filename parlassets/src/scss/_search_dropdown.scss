@@ -5,21 +5,19 @@
 @use "sass:color";
 
 .search-dropdown {
-  $height: 51px;
-  $padding-top-bottom: 12px;
-  $padding-left-right: 14px;
-  $arrow-width: 18px;
-  $arrow-height: 11px;
-  $clear-button-right: 36px;
-  $clear-button-size: 20px;
+  $height: 40px;
+  $padding-top-bottom: 6px;
+  $padding-left-right: 9px;
+  $clear-button-right: 24px;
+  $clear-button-size: 11px;
   $item-height: 23px;
   $border-width: 1px;
 
-  border: $border-width solid colors.$font-placeholder;
+  border: $border-width solid colors.$font-default;
   box-sizing: border-box;
   position: relative;
 
-  @include helper.arrow(18px, 11px, 20px, 14px);
+  @include helper.arrow(11px, 9px, 15px, 10px);
   @extend %scroller;
 
   &.disabled::before {
@@ -55,13 +53,13 @@
 
     color: colors.$first;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 21px;
     height: $clear-button-size;
     line-height: $clear-button-size;
     position: absolute;
     right: $clear-button-right;
     text-align: center;
-    top: 16px;
+    top: 13px;
     width: $clear-button-size;
   }
 
@@ -69,21 +67,25 @@
     background: colors.$background;
     border: none;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 14px;
     line-height: $height - (2 * $padding-top-bottom) - (2 * $border-width);
     outline: none;
     padding: $padding-top-bottom $clear-button-right + $clear-button-size
       $padding-top-bottom $padding-left-right;
     width: 100%;
+
+    &::placeholder {
+      color: colors.$font-default;
+    }
   }
 
   &-options {
     $normal-background: colors.$white;
     $selected-background: colors.$first;
     background: $normal-background;
-    border-left: $border-width solid colors.$font-placeholder;
-    border-bottom: $border-width solid colors.$font-placeholder;
-    border-right: $border-width solid colors.$font-placeholder;
+    border-left: $border-width solid colors.$font-default;
+    border-bottom: $border-width solid colors.$font-default;
+    border-right: $border-width solid colors.$font-default;
     display: none;
     max-height: $item-height * 10;
     left: -1px;
@@ -125,7 +127,6 @@
       }
       .search-dropdown-label {
         flex: 1;
-        margin-right: 5px;
       }
     }
   }

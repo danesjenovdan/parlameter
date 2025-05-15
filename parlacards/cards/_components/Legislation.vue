@@ -2,7 +2,7 @@
   <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <template #generator>
       <div v-if="organizationTabs?.length" class="party-list-generator">
-        <div class="row">
+        <div class="row buttons-row">
           <div class="col-md-12">
             <blue-button-list
               v-model="currentOrganizationTab"
@@ -431,6 +431,10 @@ export default {
 <style lang="scss" scoped>
 @use 'parlassets/scss/breakpoints';
 
+.buttons-row {
+  margin-top: 14px;
+}
+
 .legislation-list-container {
   .filters {
     display: flex;
@@ -459,7 +463,6 @@ export default {
     .filter-label {
       overflow: hidden;
       height: 20px;
-      margin-top: 6px;
     }
 
     .text-filter {
@@ -483,7 +486,7 @@ export default {
       }
 
       .striped-button {
-        padding: 0 8px;
+        padding-inline: 8px;
 
         @include breakpoints.respond-to(mobile) {
           flex: 1;

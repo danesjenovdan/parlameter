@@ -2,7 +2,7 @@
   <card-wrapper :header-config="headerConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
-        <div class="row">
+        <div class="row buttons-row">
           <div class="col-md-12">
             <blue-button-list v-model="currentAnalysis" :items="analyses" />
           </div>
@@ -185,6 +185,10 @@ export default {
 
 :deep(.card-content) {
   min-height: 265px;
+}
+
+.buttons-row {
+  margin-top: 14px;
 }
 
 .party-list .labeled-chart {
