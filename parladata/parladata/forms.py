@@ -2,7 +2,11 @@ from datetime import datetime
 
 from django import forms
 from django.contrib import admin
-from django.contrib.admin.widgets import AutocompleteSelect, AutocompleteSelectMultiple
+from django.contrib.admin.widgets import (
+    AutocompleteSelect,
+    AutocompleteSelectMultiple,
+    AdminDateWidget,
+)
 from django.core.exceptions import ValidationError
 from django.forms.widgets import HiddenInput
 from django.urls import reverse
@@ -129,3 +133,19 @@ class VersionableValidatorInlineFormset(forms.models.BaseInlineFormSet):
                 ).total_seconds() <= 0:
                     raise forms.ValidationError(_("Time intervals are in intersection"))
             dates.append((valid_from, valid_to))
+
+
+class EndMembershipsForm(forms.Form):
+    end_time = forms.DateTimeField(
+        label=_("End time"),
+        help_text=_("End time of the membership"),
+        required=True,
+        widget=forms.DateTimeInput(
+            attrs={
+                "type": "datetime-local",
+                "class": "vDateField",  # za stilizacijo v Django adminu (opcijsko)
+            },
+            format="%Y-%m-%dT%H:%M",
+        ),
+        input_formats=["%Y-%m-%dT%H:%M"],
+    )

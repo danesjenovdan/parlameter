@@ -10,12 +10,14 @@ from parladata.forms import (
     AddBallotsForm,
     MergeOrganizationsForm,
     MergePeopleForm,
+    EndMembershipsForm,
 )
 from parladata.models.ballot import Ballot
 from parladata.models.common import Mandate
 from parladata.models.person import Person
 from parladata.models.task import Task
 from parladata.models.vote import Vote
+from parladata.models.memberships import PersonMembership
 from parladata.utils import (
     make_organization_merge_statistics,
     make_person_merge_statistics,
@@ -421,3 +423,49 @@ def add_anonymous_ballots(request):
             "opts": {"app_label": "parladata", "app_config": {"verbose_name": "vote"}},
         },
     )
+
+
+from django.views.generic import TemplateView
+
+
+class EndUserMembershipsView(TemplateView):
+    def get(self, request, person_id, *args, **kwargs):
+        form = EndMembershipsForm()
+        app_list = admin.site.get_app_list(request)
+        if person_id:
+            person = Person.objects.get(id=person_id)
+            memberships = PersonMembership.objects.filter(
+                member=person,
+                end_time__isnull=True,
+            )
+        else:
+            memberships = []
+            person = None
+        return render(
+            request,
+            "end_person_memberships.html",
+            {
+                "form": form,
+                "memberships": memberships,
+                "person": person,
+                "app_list": app_list,
+                "opts": {
+                    "app_label": "parladata",
+                    "app_config": {"verbose_name": "person"},
+                },
+            },
+        )
+
+    def post(self, request, person_id, *args, **kwargs):
+        form = EndMembershipsForm(request.POST)
+        if form.is_valid():
+            memberships = PersonMembership.objects.filter(
+                member=person_id,
+                end_time__isnull=True,
+            )
+            memberships.update(
+                end_time=form.cleaned_data["end_time"],
+            )
+            return redirect(reverse("admin:parladata_person_changelist"))
+        else:
+            return self.get(request, *args, **kwargs)
