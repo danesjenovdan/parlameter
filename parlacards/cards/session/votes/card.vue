@@ -207,7 +207,6 @@ export default {
     .filter-label {
       overflow: hidden;
       height: 20px;
-      margin-top: 6px;
     }
 
     .text-filter {
@@ -239,7 +238,7 @@ export default {
     height: breakpoints.$full-card-height;
 
     &.has-filters {
-      height: breakpoints.$full-card-height - 89;
+      height: breakpoints.$full-card-height - 72;
     }
   }
 
