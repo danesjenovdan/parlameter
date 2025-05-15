@@ -57,7 +57,6 @@ export default {
 
 .blue-button-list {
   list-style: none;
-  margin-top: 14px;
   margin-bottom: 0;
   padding: 0;
 
@@ -72,7 +71,7 @@ export default {
     font-size: 13px;
     line-height: 16px;
     padding: 7px 10px;
-    min-height: 46px;
+    min-height: 40px;
 
     &:last-child {
       border-right: 1px solid colors.$font-placeholder;

@@ -100,6 +100,9 @@ most-discussed: Найбільш обговорюваний
 all-legislation: Усі законопроєкти
 select-mps: Оберіть народного депутата
 selected-mps: 'Обрані: {кількість}'
+select-group: Izberi skupino
+select-body: Izberi telo
+select-time-period: Izberi časovno obdobje
 search_placeholder: Пошук
 trigger: активатор
 input-trigger: Vpiši sprožilec
