@@ -6,6 +6,9 @@ most-discussed: Najviše diskutovan
 all-legislation: Svi zakoni
 select-mps: Odaberite zastupnike
 selected-mps: 'Odabranih: {num}'
+select-group: Izberi skupino
+select-body: Izberi telo
+select-time-period: Izberi časovno obdobje
 search_placeholder: Traži
 trigger: okidač
 input-trigger: Unesite okidač

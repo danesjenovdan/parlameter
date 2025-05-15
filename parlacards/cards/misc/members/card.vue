@@ -2,37 +2,40 @@
   <card-wrapper ref="card" :header-config="headerConfig" max-height>
     <template #generator>
       <div class="party-list-generator">
-        <div class="row">
+        <div class="row buttons-row">
           <div class="col-md-12">
             <blue-button-list v-model="currentAnalysis" :items="analyses" />
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 filters">
-            <search-field
-              v-model="textFilter"
-              @update:model-value="searchPeople"
-            />
-            <p-search-dropdown
-              v-model="groups"
-              :placeholder="partiesPlaceholder"
-              class="filter parties"
-              @update:model-value="searchPeopleImmediate"
-            />
-            <p-search-dropdown
-              v-if="showWorkingBodiesFilter"
-              v-model="workingBodies"
-              :placeholder="workingBodyPlaceholder"
-              class="filter working-bodies"
-              @update:model-value="searchPeopleImmediate"
-            />
-            <p-search-dropdown
-              v-if="showDistrictsFilter"
-              v-model="districts"
-              :placeholder="districtsPlaceholder"
-              class="filter districts"
-              @update:model-value="searchPeopleImmediate"
-            />
+            <div class="filter text-filter">
+              <search-field
+                v-model="textFilter"
+                @update:model-value="searchPeople"
+              />
+            </div>
+            <div class="filter parties">
+              <p-search-dropdown
+                v-model="groups"
+                :placeholder="partiesPlaceholder"
+                @update:model-value="searchPeopleImmediate"
+              />
+            </div>
+            <div v-if="showWorkingBodiesFilter" class="filter working-bodies">
+              <p-search-dropdown
+                v-model="workingBodies"
+                :placeholder="workingBodyPlaceholder"
+                @update:model-value="searchPeopleImmediate"
+              />
+            </div>
+            <div v-if="showDistrictsFilter" class="filter districts">
+              <p-search-dropdown
+                v-model="districts"
+                :placeholder="districtsPlaceholder"
+                @update:model-value="searchPeopleImmediate"
+              />
+            </div>
             <div v-if="showGendersFilter" class="genders filter">
               <striped-button
                 v-for="gender in genders"
@@ -572,20 +575,28 @@ export default {
 <style lang="scss" scoped>
 @use 'parlassets/scss/breakpoints';
 
+.buttons-row {
+  margin-top: 14px;
+}
+
 .blue-button-list-item {
   font-size: 12px;
 }
 
 .filters {
   display: flex;
+  align-items: flex-end;
   margin-top: 14px;
 
-  .filter:not(:first-child) {
-    margin-left: 3px;
+  .filter:not(:last-child) {
+    margin-right: 10px;
   }
 
   .filter {
     flex: 1;
+    display: block;
+    margin-left: 0;
+    max-width: 214px;
   }
 
   .search-field {
@@ -595,11 +606,12 @@ export default {
   .filter.genders {
     display: flex;
     flex: 0 1 auto;
+    margin-left: auto;
 
     .gender {
-      width: 40px;
+      width: 35px;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position: center 14px;
       background-size: 50%;
 
       &:not(:last-child) {
@@ -622,17 +634,6 @@ export default {
     .search-field {
       flex-basis: auto;
       order: 1;
-      margin-top: 5px;
-    }
-
-    .filter.parties {
-      margin: 0;
-    }
-
-    .genders {
-      .gender {
-        height: 100%;
-      }
     }
 
     .filter.working-bodies,

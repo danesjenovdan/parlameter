@@ -293,7 +293,7 @@ export default {
     display: flex;
     margin: 8px 0;
     @include breakpoints.respond-to(desktop) {
-      margin: 0 0 0 30px;
+      margin: 0 0 0 10px;
     }
     .striped-button {
       flex: 1;
@@ -301,7 +301,7 @@ export default {
         width: 97px;
       }
       &:not(:last-child) {
-        margin-right: 6px;
+        margin-right: 3px;
       }
     }
   }

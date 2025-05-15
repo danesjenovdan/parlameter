@@ -378,7 +378,7 @@ class VoteSerializer(CommonSerializer):
         # this also includes new_context['vote'] that is needed by VoteGroupSerializer
         new_context = self._get_context_for_vote_date(vote)
 
-        groups = vote.motion.session.organization.query_parliamentary_groups(
+        groups = vote.motion.session.organization.query_organizations_with_voters(
             new_context["date"]
         )
 
