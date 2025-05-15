@@ -6,6 +6,9 @@ most-discussed: Največ reakcij
 all-legislation: All legislation
 select-mps: Choose MPs
 selected-mps: 'Chosen: {num}'
+select-group: Izberi skupino
+select-body: Izberi telo
+select-time-period: Izberi časovno obdobje
 search_placeholder: Search
 trigger: Trigger
 input-trigger: Enter trigger phrase
