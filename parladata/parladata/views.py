@@ -8,16 +8,16 @@ from django.utils.translation import gettext as _
 from parladata.forms import (
     AddAnonymousBallotsForm,
     AddBallotsForm,
+    EndMembershipsForm,
     MergeOrganizationsForm,
     MergePeopleForm,
-    EndMembershipsForm,
 )
 from parladata.models.ballot import Ballot
 from parladata.models.common import Mandate
+from parladata.models.memberships import PersonMembership
 from parladata.models.person import Person
 from parladata.models.task import Task
 from parladata.models.vote import Vote
-from parladata.models.memberships import PersonMembership
 from parladata.utils import (
     make_organization_merge_statistics,
     make_person_merge_statistics,

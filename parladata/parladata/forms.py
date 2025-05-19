@@ -5,7 +5,6 @@ from django.contrib import admin
 from django.contrib.admin.widgets import (
     AutocompleteSelect,
     AutocompleteSelectMultiple,
-    AdminDateWidget,
 )
 from django.core.exceptions import ValidationError
 from django.forms.widgets import HiddenInput
