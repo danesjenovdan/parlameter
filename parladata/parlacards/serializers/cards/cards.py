@@ -1219,9 +1219,15 @@ class ToolsUnityCardSerializer(CardSerializer):
         ### filter vote scores by body (playing field)
         body_id = self.context.get("GET", {}).get("body", None)
         if body_id and Organization.objects.filter(id=body_id).exists():
-            vote_scores = vote_scores.filter(playing_field_id=body_id)
+            vote_scores = vote_scores.filter(
+                playing_field_id=body_id,
+                vote__motion__session__organizations__id=body_id,  # TODO: fix this! why is this needed? it should not have any vote_scores for other bodies
+            )
         else:
-            vote_scores = vote_scores.filter(playing_field=organization)
+            vote_scores = vote_scores.filter(
+                playing_field=organization,
+                vote__motion__session__organizations=organization,  # TODO: fix this! why is this needed? it should not have any vote_scores for other bodies
+            )
         ###
 
         ### filter by months
