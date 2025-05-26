@@ -385,9 +385,9 @@ analysis-texts:
     titleSuffix: ' prema neslaganju s klubom'
     explanation: Odstupanje od većinskog glasa kluba na glasanjima u HS.
   working_bodies:
-    label: Delovna telesa
-    titleSuffix: ' po delovnih telesih'
-    explanation: Članstva v delovnih telesih.
+    label: Radna tijela
+    titleSuffix: ' po radnim tijelima'
+    explanation: Članstva u radnim tijelima.
 all-votes: sva glasanja
 all-working-bodies: sva matična radna tijela
 everyone: Svi
