@@ -523,8 +523,8 @@ sort-by--updated: datumu zadnje izmjene podataka o sjednici
 sort-by--workingBody: nazivu tijela
 title: Naslov
 other-procedures: Drugi postupci
-speech-link: Povezava do govora v transkriptu
-speech-card-link: Povezava do kartice govora
+speech-link: Poveznica na govor u transkriptu
+speech-card-link: Poveznica na karticu govora
 minutes-agenda-link: Povezava do dnevnega reda
 minutes-item-card-link: Povezava do kartice točke zapisnika
 vote-roll-results: Poimensko glasovanje
