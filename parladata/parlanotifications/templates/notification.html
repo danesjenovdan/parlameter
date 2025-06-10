@@ -16,19 +16,60 @@
 	<br/>
 	<br/>
 	{% for key, value in data.items %}
-	<b style="color: #222222; font-family: Arial; font-size: 13px;">"{{key.keyword}}"</b><br/>
+	<h3><b style="color: #222222; font-family: Arial;">{% trans "Ključna beseda" %}: "{{key.keyword}}"</b></h3><br/>
 </br>
-		{% for speech in value %}
-		<div class="dndkeywordalert" style="padding-left: 0px; padding-bottom: 20px; max-width: 1000px;">
-			<div class="dndkeyworddate" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.timestamp|date:"d. m. Y"}}</div>
-			<div class="dndkeywordauthorsession" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.speaker_name }}, {{ speech.session_name }}</div>
-			<div style="color: #222222; font-family: Arial; font-size: 0.875rem; text-decoration: underline;">
-			<a href="{% trans 'https://parlameter.si/seja/' %}{{ speech.session_id }}/{% trans 'transkript-url' %}?page={{ speech.order }}#{{ speech.id }}">{{speech.content|safe}}</a>
-		</div><br/>
-		</div>
-		{% endfor %}
+		{% if value.agenda_items %}
+			<h4><b style="color: #222222; font-family: Arial;"></b>{% trans 'Agenda items:' %}</b></h4>
+			{% for agenda_item in value.agenda_items %}
+			<div class="dndkeywordalert" style="padding-left: 0px; padding-bottom: 20px; max-width: 1000px;">
+				<div class="dndkeyworddate" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ agenda_item.timestamp|date:"d. m. Y"}}</div>
+				<div class="dndkeywordauthorsession" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ agenda_item.session_name }}</div>
+				<div style="color: #222222; font-family: Arial; font-size: 0.875rem; text-decoration: underline;">
+				<a href="{% trans 'https://parlameter.si/seja/' %}{{ agenda_item.session_id }}/">{{agenda_item.content|safe}}</a>
+			</div><br/>
+			</div>
+			{% endfor %}
+			<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
+		{% endif %}	
+		{% if value.speeches %}
+			<h4><b style="color: #222222; font-family: Arial;"></b>{% trans 'Speeches:' %}</b></h4>
+			{% for speech in value.speeches %}
+			<div class="dndkeywordalert" style="padding-left: 0px; padding-bottom: 20px; max-width: 1000px;">
+				<div class="dndkeyworddate" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.timestamp|date:"d. m. Y"}}</div>
+				<div class="dndkeywordauthorsession" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.speaker_name }}, {{ speech.session_name }}</div>
+				<div style="color: #222222; font-family: Arial; font-size: 0.875rem; text-decoration: underline;">
+				<a href="{% trans 'https://parlameter.si/seja/' %}{{ speech.session_id }}/{% trans 'transkript-url' %}?page={{ speech.order }}#{{ speech.id }}">{{speech.content|safe}}</a>
+			</div><br/>
+			</div>
+			{% endfor %}
+			<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
+		{% endif %}
+		{% if value.votes %}
+			<h4><b style="color: #222222; font-family: Arial;"></b>{% trans 'Votes:' %}</b></h4>
+			{% for vote in value.votes %}
+			<div class="dndkeywordalert" style="padding-left: 0px; padding-bottom: 20px; max-width: 1000px;">
+				<div class="dndkeyworddate" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ vote.timestamp|date:"d. m. Y"}}</div>
+				<div class="dndkeywordauthorsession" style="color: #595959; font-family: Arial; font-size: 0.75 rem;"> {{ vote.session_name }}</div>
+				<div style="color: #222222; font-family: Arial; font-size: 0.875rem; text-decoration: underline;">
+				<a href="{% trans 'https://parlameter.si/seja/' %}{{ speech.session_id }}/{% trans 'voting-url' %}/{{ vote.id }}">{{vote.content|safe}}</a>
+			</div><br/>
+			</div>
+			{% endfor %}
+			<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
+		{% endif %}
+		{% if value.legislation %}
+			<h4><b style="color: #222222; font-family: Arial;"></b>{% trans 'New legislation in procedure:' %}</b></h4>
+			{% for law in value.legislation %}
+			<div class="dndkeywordalert" style="padding-left: 0px; padding-bottom: 20px; max-width: 1000px;">
+				<div class="dndkeyworddate" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ law.timestamp|date:"d. m. Y"}}</div>
+				<div style="color: #222222; font-family: Arial; font-size: 0.875rem; text-decoration: underline;">
+				<a href="{% trans 'https://parlameter.si' %}/{% trans 'legislation-url' %}/{{ law.id }}">{{law.content|safe}}</a>
+			</div><br/>
+			</div>
+			{% endfor %}
+			<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
+		{% endif %}
 	{% endfor %}
-	<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
 	<a class="logo" href="{% trans 'https://parlameter.si/' %}">
 		<img src="{% trans 'https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png' %}" alt="logo" width="100px">
 	</a>
