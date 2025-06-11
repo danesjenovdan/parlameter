@@ -30,16 +30,16 @@ resources:
 images:
   - name: parladata-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parladata-slovenija
-    newTag: '1dc9749b56a960eb891c7e46fc2a06d6318b93cf'
+    newTag: 'f5245fc9dc206bc1c404583b7908aa0cc8e19b0b'
   - name: parlasolr-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-slovenija
-    newTag: '1dc9749b56a960eb891c7e46fc2a06d6318b93cf'
+    newTag: 'f5245fc9dc206bc1c404583b7908aa0cc8e19b0b'
   - name: parlacards-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija
-    newTag: '1dc9749b56a960eb891c7e46fc2a06d6318b93cf'
+    newTag: 'f5245fc9dc206bc1c404583b7908aa0cc8e19b0b'
   - name: parlasite-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlasite-slovenija
-    newTag: '1dc9749b56a960eb891c7e46fc2a06d6318b93cf'
+    newTag: 'f5245fc9dc206bc1c404583b7908aa0cc8e19b0b'
   - name: parlassets-slovenija
     newName: rg.fr-par.scw.cloud/djnd/parlassets-slovenija
-    newTag: '1dc9749b56a960eb891c7e46fc2a06d6318b93cf'
+    newTag: 'f5245fc9dc206bc1c404583b7908aa0cc8e19b0b'
