@@ -13,7 +13,7 @@ card:
     večinsko izbiro (tisto, za katero je glasovalo največ poslank_cev: za,
     proti, vzdržani ali odsotni) v izbrani skupini delimo s skupnim številom
     vseh poslank_cev v tej skupini in rezultat množimo s 100, da dobimo
-    odstotke. Tako dobimo delež poslank_cev v izbrani skupini, katerih glas ž
+    odstotke. Tako dobimo delež poslank_cev v izbrani skupini, katerih glas
     ustreza večinski izbiri. Če so torej pri posameznem glasovanju vsi glasovi
     pripadali isti izbiri, je enotnost 100 %, če pa so bili glasovi razpršeni
     med več možnosti, je enotnost ustrezno nižja.
