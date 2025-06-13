@@ -25,7 +25,7 @@
 				<div class="dndkeyworddate" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ agenda_item.timestamp|date:"d. m. Y"}}</div>
 				<div class="dndkeywordauthorsession" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ agenda_item.session_name }}</div>
 				<div style="color: #222222; font-family: Arial; font-size: 0.875rem; text-decoration: underline;">
-				<a href="{% trans 'https://parlameter.si/seja/' %}{{ agenda_item.session_id }}/">{{agenda_item.content|safe}}</a>
+				<a href="{% trans 'https://parlameter.si/seja/' %}{{ agenda_item.session_id }}/{% trans 'agenda-item-url' %}#{{ agenda_item.id }}">{{agenda_item.content|safe}}</a>
 			</div><br/>
 			</div>
 			{% endfor %}
