@@ -37,3 +37,5 @@ spec:
               value: https://zagreb.parlametar.hr
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter
+            - name: VITE_PARLASITE_URL_BEFORE_2025_05_30
+              value: https://zagreb-2022.parlametar.hr

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: parlasite-2022
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - zagreb-2022.parlametar.hr
+      secretName: parlasite-2022-tls
+  rules:
+    - host: zagreb-2022.parlametar.hr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlasite-2022
+                port:
+                  number: 3066

@@ -13,6 +13,10 @@ resources:
   - parlacards/ingress.yaml
   - parlacards/service.yaml
 
+  - parlasite-2022/deployment.yaml
+  - parlasite-2022/ingress.yaml
+  - parlasite-2022/service.yaml
+
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml

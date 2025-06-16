@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlasite
+  name: parlasite-2022
   labels:
-    app: parlasite
+    app: parlasite-2022
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlasite
+      app: parlasite-2022
   template:
     metadata:
       labels:
         app: parlasite
     spec:
       containers:
-        - name: parlasite
+        - name: parlasite-2022
           image: parlasite-zagreb
           ports:
             - containerPort: 3066
@@ -36,10 +36,10 @@ spec:
             - name: PARLASITE_LEADER_ID
               value: "79"
             - name: PARLASITE_ROOT_ORG_ID
-              value: "71"
+              value: "1"
             - name: PARLASITE_MANDATE_ID
-              value: "2"
+              value: "1"
             - name: PARLASITE_DEFAULT_CARD_DATE
-              value: ""
+              value: "2025-05-30"
             - name: PARLASITE_NEWSLETTER_SEGMENT_ID
               value: ""
