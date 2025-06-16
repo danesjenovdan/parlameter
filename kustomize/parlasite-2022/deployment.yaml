@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: parlasite
+        app: parlasite-2022
     spec:
       containers:
         - name: parlasite-2022
