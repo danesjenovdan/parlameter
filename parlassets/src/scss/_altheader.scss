@@ -65,7 +65,7 @@
 
                 margin-top: 18px;
 
-                color: colors.$first;
+                color: colors.$link;
             }
 
             h2.cardname:only-child {
@@ -75,7 +75,7 @@
 
         .icon-circle {
           $size: 80px;
-          background: colors.$second;
+          background: colors.$link;
           border-radius: 50%;
           flex-shrink: 0;
           height: $size;
