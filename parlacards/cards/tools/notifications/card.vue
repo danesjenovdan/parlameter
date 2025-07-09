@@ -59,7 +59,6 @@
             <div class="text-col">
               <h4 class="group-title">{{ $t('trigger') }}</h4>
               <p>{{ $t('notification-steps[0].textfirst') }}</p>
-              <p>{{ $t('notification-steps[0].textsecond') }}</p>
             </div>
           </div>
           <div class="right-col">
