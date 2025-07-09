@@ -76,7 +76,7 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
     send_email(
         _("Parlameter notification"),
         user.email,
-        "notification.html",
+        "notification_speech.html",
         {"data": users_docs, "uuid": user.uuid},
     )
     user.notification_sent_at = sending_date
