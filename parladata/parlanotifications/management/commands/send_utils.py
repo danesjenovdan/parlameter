@@ -77,7 +77,7 @@ def solr_select(
 def send_notification_email(user, users_docs, keyword_ids, sending_date):
     print("send emails for user ", user.email)
     send_email(
-        _("Parlameter notification"),
+        _("V državnem zboru je bila obravnavana izbrana tema"),
         user.email,
         "notification.html",
         {"data": users_docs, "uuid": user.uuid},
@@ -222,4 +222,3 @@ def send_emails():
 def get_session_name(session):
     names = [org.name for org in session.organizations.all()]
     return f"{session.name} ({', '.join(names)})"
-    
