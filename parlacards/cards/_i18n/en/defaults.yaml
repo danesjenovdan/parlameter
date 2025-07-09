@@ -19,10 +19,9 @@ input-email: Enter email
 email-address: Email
 notification-steps:
 - textfirst: >-
-    Izberi besedo ali besedno zvezo, ki jo želiš spremljati.
-  textsecond: >-
-    Kmalu za tem, ko jo nekdo izgovori na seji državnega zbora ali enega od
-    delovnih teles, ti to sporočimo po e-pošti.
+    Izberi besedo ali besedno zvezo, ki jo želiš spremljatii. Kmalu za tem, ko
+    bo uporabljena v govoru, glasovanju ali zakonodaji, ti to sporočimo po
+    e-pošti.
 - textfirst: >-
     Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
     besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
@@ -36,8 +35,8 @@ notification-steps:
   thirdbullet: Največ enkrat na mesec
 - textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
   textsecond: >-
-    Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila ob omembi
-    izbranih besed ali besednih zvez v državnem zboru.
+    Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila, ko se
+    izbrane besede ali besedne zveze uporabijo pri delu državnega zbora.
   submit: Prijavi me
 - textfirst: Zabeleženo!
   textsecond: >-
