@@ -3,14 +3,13 @@ from itertools import groupby
 
 import requests
 from django.conf import settings
-from django.db import transaction
 from django.utils.translation import gettext as _
 from sentry_sdk import capture_message
 
 from parlacards.solr import shorten_highlighted_content
 from parladata.models import Speech, Vote, AgendaItem, Law
 from parladata.update_utils import send_email
-from parlanotifications.models import Keyword, NotificationUser
+from parlanotifications.models import KeywordForAll
 
 
 def solr_select(
@@ -84,7 +83,7 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
         {"data": users_docs, "uuid": user.uuid},
     )
     user.notification_sent_at = sending_date
-    Keyword.objects.filter(id__in=keyword_ids).update(
+    KeywordForAll.objects.filter(id__in=keyword_ids).update(
         latest_notification_sent_at=sending_date
     )
     user.save()
@@ -92,15 +91,15 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
 
 def send_emails():
     sending_date = datetime.now().date()
-    daily_keywords = Keyword.objects.filter(notification_frequency="DAILY").exclude(
+    daily_keywords = KeywordForAll.objects.filter(notification_frequency="DAILY").exclude(
         latest_notification_sent_at__gt=sending_date - timedelta(days=1)
     )
 
-    weekly_keywords = Keyword.objects.filter(notification_frequency="WEEKLY").exclude(
+    weekly_keywords = KeywordForAll.objects.filter(notification_frequency="WEEKLY").exclude(
         latest_notification_sent_at__gt=sending_date - timedelta(days=7)
     )
 
-    monthly_keywords = Keyword.objects.filter(notification_frequency="MONTHLY").exclude(
+    monthly_keywords = KeywordForAll.objects.filter(notification_frequency="MONTHLY").exclude(
         latest_notification_sent_at__gt=sending_date - timedelta(days=30)
     )
 
