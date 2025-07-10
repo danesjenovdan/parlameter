@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from parlanotifications.models import Keyword, NotificationUser, KeywordForAll
+from parlanotifications.models import Keyword, KeywordForAll, NotificationUser
 
 # Register your models here.
 
