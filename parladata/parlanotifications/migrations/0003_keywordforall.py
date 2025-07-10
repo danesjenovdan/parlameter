@@ -7,25 +7,61 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlanotifications', '0002_auto_20240704_1332'),
+        ("parlanotifications", "0002_auto_20240704_1332"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='KeywordForAll',
+            name="KeywordForAll",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True, db_index=True)),
-                ('updated_at', models.DateTimeField(auto_now=True, db_index=True)),
-                ('keyword', models.CharField(max_length=255)),
-                ('matching_method', models.CharField(choices=[('WIDE', 'Wide'), ('NARROW', 'Narrow')], default='WIDE', max_length=10)),
-                ('accepted_at', models.DateTimeField(blank=True, null=True)),
-                ('notification_frequency', models.CharField(choices=[('DAILY', 'Daily'), ('WEEKLY', 'Weekly'), ('MONTHLY', 'Monthly')], default='DAILY', max_length=10)),
-                ('latest_notification_sent_at', models.DateTimeField(blank=True, null=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='keywords_all', to='parlanotifications.notificationuser')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True, db_index=True)),
+                ("updated_at", models.DateTimeField(auto_now=True, db_index=True)),
+                ("keyword", models.CharField(max_length=255)),
+                (
+                    "matching_method",
+                    models.CharField(
+                        choices=[("WIDE", "Wide"), ("NARROW", "Narrow")],
+                        default="WIDE",
+                        max_length=10,
+                    ),
+                ),
+                ("accepted_at", models.DateTimeField(blank=True, null=True)),
+                (
+                    "notification_frequency",
+                    models.CharField(
+                        choices=[
+                            ("DAILY", "Daily"),
+                            ("WEEKLY", "Weekly"),
+                            ("MONTHLY", "Monthly"),
+                        ],
+                        default="DAILY",
+                        max_length=10,
+                    ),
+                ),
+                (
+                    "latest_notification_sent_at",
+                    models.DateTimeField(blank=True, null=True),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="keywords_all",
+                        to="parlanotifications.notificationuser",
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]

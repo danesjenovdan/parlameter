@@ -31,7 +31,7 @@ def solr_select(
         "rows": 500,
         "q": q_params,
         "fq": fq_params,
-        #"fl": fl,
+        # "fl": fl,
         "hl": "true",
         "hl.fl": "content",
         "hl.fragsize": 0,
@@ -71,7 +71,8 @@ def solr_select(
 
     return response.json()
 
-#data = solr_select(text_query="Zakon o pomoči pri prostovoljnem končanju življenja", date_from=datetime.now()-timedelta(days=30))
+
+# data = solr_select(text_query="Zakon o pomoči pri prostovoljnem končanju življenja", date_from=datetime.now()-timedelta(days=30))
 
 
 def send_notification_email(user, users_docs, keyword_ids, sending_date):
@@ -91,17 +92,17 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
 
 def send_emails():
     sending_date = datetime.now().date()
-    daily_keywords = KeywordForAll.objects.filter(notification_frequency="DAILY").exclude(
-        latest_notification_sent_at__gt=sending_date - timedelta(days=1)
-    )
+    daily_keywords = KeywordForAll.objects.filter(
+        notification_frequency="DAILY"
+    ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=1))
 
-    weekly_keywords = KeywordForAll.objects.filter(notification_frequency="WEEKLY").exclude(
-        latest_notification_sent_at__gt=sending_date - timedelta(days=7)
-    )
+    weekly_keywords = KeywordForAll.objects.filter(
+        notification_frequency="WEEKLY"
+    ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=7))
 
-    monthly_keywords = KeywordForAll.objects.filter(notification_frequency="MONTHLY").exclude(
-        latest_notification_sent_at__gt=sending_date - timedelta(days=30)
-    )
+    monthly_keywords = KeywordForAll.objects.filter(
+        notification_frequency="MONTHLY"
+    ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=30))
 
     keywords = daily_keywords.union(weekly_keywords).union(monthly_keywords)
 
@@ -189,9 +190,7 @@ def send_emails():
                             }
                         )
                     elif splited_key[0] == "law":
-                        law = Law.objects.filter(
-                            id=splited_key[1]
-                        ).first()
+                        law = Law.objects.filter(id=splited_key[1]).first()
                         enriched_search_results["legislation"].append(
                             {
                                 "id": law.id,
