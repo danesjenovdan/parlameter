@@ -45,7 +45,8 @@ class Keyword(Timestampable):
 
     def __str__(self):
         return self.keyword + " for " + self.user.email
-    
+
+
 class KeywordForAll(Timestampable):
     class Frequency(models.TextChoices):
         DAILY = "DAILY", "Daily"
