@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from parlanotifications.models import Keyword, NotificationUser
+from parlanotifications.models import Keyword, KeywordForAll, NotificationUser
 
 # Register your models here.
 
@@ -10,4 +10,5 @@ class UserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Keyword)
+admin.site.register(KeywordForAll)
 admin.site.register(NotificationUser, UserAdmin)

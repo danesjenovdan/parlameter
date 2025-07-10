@@ -1,5 +1,6 @@
 volumes:
   pgdata:
+  solrdata:
 
 
 services:
@@ -62,6 +63,7 @@ services:
     ports:
       - 8983:8983
     volumes:
+      - solrdata:/var/solr
       - ./parladata/solr/parlasearch-conf:/parlasearch-conf
 
   # ---
