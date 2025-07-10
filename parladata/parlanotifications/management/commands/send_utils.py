@@ -138,8 +138,6 @@ def send_emails():
                     print(splited_key)
                     if splited_key[0] == "speech":
                         speech = Speech.objects.get(id=splited_key[1])
-                        if len(enriched_search_results["speeches"]) > 5:
-                            continue
                         enriched_search_results["speeches"].append(
                             {
                                 "id": speech.id,
@@ -160,8 +158,6 @@ def send_emails():
                         agenda_item = AgendaItem.objects.filter(
                             id=splited_key[2]
                         ).first()
-                        if len(enriched_search_results["agenda_items"]) > 5:
-                            continue
                         enriched_search_results["agenda_items"].append(
                             {
                                 "id": agenda_item.id,
@@ -178,8 +174,6 @@ def send_emails():
                         )
                     elif splited_key[0] == "vote":
                         vote = Vote.objects.filter(id=splited_key[1]).first()
-                        if len(enriched_search_results["votes"]) > 5:
-                            continue
                         enriched_search_results["votes"].append(
                             {
                                 "id": vote.id,
@@ -198,8 +192,6 @@ def send_emails():
                         law = Law.objects.filter(
                             id=splited_key[1]
                         ).first()
-                        if len(enriched_search_results["legislation"]) > 5:
-                            continue
                         enriched_search_results["legislation"].append(
                             {
                                 "id": law.id,
