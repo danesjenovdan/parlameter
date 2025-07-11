@@ -2,7 +2,7 @@ from datetime import datetime
 
 from django.db.models import Count, Max
 
-from parlacards.models import OrganizationVoteUnity
+from parlacards.models import GroupDiscord
 from parlacards.scores.common import get_dates_between, get_fortnights_between
 from parladata.models.ballot import Ballot
 from parladata.models.common import Mandate
