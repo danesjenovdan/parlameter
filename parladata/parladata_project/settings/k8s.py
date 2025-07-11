@@ -68,6 +68,11 @@ else:
             "TIMEOUT": None,
         }
     }
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.dummy.DummyCache",
+        }
+    }
 
 BASE_URL = env["DJANGO_BASE_URL"]
 

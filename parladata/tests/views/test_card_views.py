@@ -352,13 +352,13 @@ def test_group_style_scores(first_mandate_party, all_mandate_party):
 
 
 @pytest.mark.django_db()
-def test_group_discord(first_mandate_party, all_mandate_party):
-    run_test_urls("/v3/cards/group/discord/", [first_mandate_party, all_mandate_party])
+def test_group_unity(first_mandate_party, all_mandate_party):
+    run_test_urls("/v3/cards/group/unity/", [first_mandate_party, all_mandate_party])
 
 
 @pytest.mark.django_db()
-def test_group_discord_with_nonexistent_id():
-    response = client.get("/v3/cards/group/discord/?id=12000")
+def test_group_unity_with_nonexistent_id():
+    response = client.get("/v3/cards/group/unity/?id=12000")
     assert response.status_code == 404
 
 

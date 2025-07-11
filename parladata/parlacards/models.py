@@ -143,7 +143,7 @@ class SessionGroupAttendance(SessionScore):
     )
 
 
-class GroupDiscord(GroupScore):
+class GroupUnity(GroupScore):
     pass
 
 

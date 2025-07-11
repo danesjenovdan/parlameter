@@ -10,7 +10,7 @@ from export.resources.common import (
 )
 from parlacards.models import (
     DeviationFromGroup,
-    GroupDiscord,
+    GroupUnity,
     GroupMonthlyVoteAttendance,
     GroupNumberOfQuestions,
     GroupStyleScore,
@@ -46,9 +46,9 @@ class GroupCardExport(CardExport):
         return get_cached_group_name(score.group_id)
 
 
-class GroupDiscordResource(GroupCardExport):
+class GroupUnityResource(GroupCardExport):
     class Meta:
-        model = GroupDiscord
+        model = GroupUnity
 
 
 class GroupVocabularySizeResource(GroupCardExport):

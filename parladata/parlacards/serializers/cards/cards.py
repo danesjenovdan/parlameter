@@ -647,8 +647,8 @@ class GroupLeastVotesInCommonCardSerializer(GroupScoreCardSerializer):
         return distances_serializer.data
 
 
-class GroupDiscordCardSerializer(GroupScoreCardSerializer):
-    results = ScoreSerializerField(property_model_name="GroupDiscord")
+class GroupUnityCardSerializer(GroupScoreCardSerializer):
+    results = ScoreSerializerField(property_model_name="GroupUnity")
 
 
 class RootGroupBasicInfoCardSerializer(CardSerializer):
