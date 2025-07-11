@@ -31,6 +31,9 @@
       // "parlassets/": true,
       // "parlasite/": true,
       // "parladata/": true,
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
   }
 }
