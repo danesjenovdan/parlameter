@@ -4,13 +4,21 @@
       <div class="filters">
         <div class="filter text-filter">
           <div v-t="'title-search'" class="filter-label"></div>
-          <search-field v-model="textFilter" @update:model-value="searchVotes" />
+          <search-field
+            v-model="textFilter"
+            @update:model-value="searchVotes"
+          />
         </div>
         <div class="filter" style="flex: 1"></div>
         <div v-if="type === 'person'" class="filter buttons-filter">
-          <striped-button v-for="voteOption in voteOptions" :key="voteOption.id" :color="voteOption.color"
-            :selected="selectedVoteOptions.includes(voteOption)" :small-text="voteOption.label"
-            @click="toggleVoteOption(voteOption)" />
+          <striped-button
+            v-for="voteOption in voteOptions"
+            :key="voteOption.id"
+            :color="voteOption.color"
+            :selected="selectedVoteOptions.includes(voteOption)"
+            :small-text="voteOption.label"
+            @click="toggleVoteOption(voteOption)"
+          />
         </div>
         <!-- <div v-if="type === 'party'" class="filter text-filter">
           <div v-t="'sort-by'" class="filter-label"></div>
@@ -19,16 +27,27 @@
       </div>
 
       <scroll-shadow ref="shadow">
-        <div v-infinite-scroll="loadMore" class="votes-list-shadow has-filters date-list"
-          @scroll="$refs.shadow.check($event.currentTarget)">
+        <div
+          v-infinite-scroll="loadMore"
+          class="votes-list-shadow has-filters date-list"
+          @scroll="$refs.shadow.check($event.currentTarget)"
+        >
           <empty-state v-if="!card.isLoading && !ballots?.length" />
           <template v-for="(dayBallots, key) in votingDays" :key="key">
-            <div v-if="type === 'person' || selectedSort === 'date'" class="date">
+            <div
+              v-if="type === 'person' || selectedSort === 'date'"
+              class="date"
+            >
               {{ formatDate(dayBallots[0].vote?.timestamp) }},
               {{ formatSessionInfo(dayBallots[0].vote?.session) }}
             </div>
             <template v-for="(ballot, i) in dayBallots">
-              <ballot v-if="ballot.vote" :key="ballot.vote.id" :ballot="ballot" type="person" />
+              <ballot
+                v-if="ballot.vote"
+                :key="ballot.vote.id"
+                :ballot="ballot"
+                type="person"
+              />
               <div v-else :key="`invalid-${i}`">
                 Invalid ballot (no `vote` property)
               </div>
