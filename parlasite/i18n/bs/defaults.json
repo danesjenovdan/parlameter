@@ -132,8 +132,8 @@
     },
     "tools": {
         "notifications": {
-            "title": "Parlameter obavijesti",
-            "text": "Isječci sa sjednica Parlamenta! Primite mail svaki put kad neko u Parlamentu izgovori riječ (ili više njih) koje ste odabrali."
+            "title": "Obavještenja Parlametra",
+            "text": "Prijavite se za obavještenja. Možete odabrati riječ ili frazu i putem e-maila primati obavještenja kada ih neko izgovori u Parlamentarnoj skupštini Bosne i Hercegovine."
         },
         "voteComparator": {
             "title": "Usporedba glasanja",
@@ -172,7 +172,7 @@
         "other_votings": "Glasanja",
         "agenda": "Dnevni red",
         "transcripts": "Transkripti",
-        "tools_intro": "Demokracija je kontinuirani proces koji ovisi o našem sudjelovanju u njemu. Pomoći će sljedeći alati!",
+        "tools_intro": "Demokratija je proces koji traje i zavisi od učešća svih nas. U tome vam mogu pomoći sljedeći alati!",
         "page-not-found-text": "Ovdje nema ništa. Šta tražiš?",
         "info_email": "info@zastone.ba",
         "unaffiliated": "Samostalni/a",
