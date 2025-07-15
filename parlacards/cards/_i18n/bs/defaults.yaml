@@ -12,7 +12,7 @@ select-time-period: Izberi časovno obdobje
 search_placeholder: Traži
 trigger: Okidač
 input-trigger: Unesite okidač
-match: podudaranje
+match: Podudaranje
 interval: interval
 email: email
 input-email: Unesite svoju e-mail adresu
@@ -41,13 +41,13 @@ notification-steps:
   textsecond: >-
     Link za potvrdu registracije i uređivanje ostalih postavki čeka vas u vašem e-mail sandučetu.
 - textfirst: Potvrđeno!
-  textsecond: Na e-mail {email} ćete primiti obavijesti za riječ ili izraz "{keyword}".
+  textsecond: Na e-mail {email} ćete primati obavještenja za riječ ili izraz "{keyword}".
 - textfirst: Napaka!
-  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+  textsecond: Došlo je do greške prilikom spremanja obavještenja.
 add-new-trigger: Dodaj novi okidač
 to-notification-list: Na popis obavijesti
 remove: Odstrani
-confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
+confirm-delete-notification: Jesi li siguran_sigurna da želiš obrisati ovu obavijest?
 comparator-text: >-
   Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili
   različito od njih. {load}
