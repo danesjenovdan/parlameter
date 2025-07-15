@@ -19,9 +19,7 @@ input-email: Unesite svoju e-mail adresu
 email-address: email
 notification-steps:
 - textfirst: >-
-    Odaberite riječ ili frazu koju želite pratiti.
-  textsecond: >-
-    Nedugo nakon što neko izgovori željeni izraz na sjednici Parlamentarne skupštine 
+    Odaberite riječ ili frazu koju želite pratiti. Nedugo nakon što neko izgovori željeni izraz na sjednici Parlamentarne skupštine
     BiH ili jednog od njenih radnih tijela, obavijestit ćemo vas putem e-maila.
 - textfirst: >-
     Odaberite metodu podudaranja okidača. Uz tačno podudaranje, obavijesti o riječima
