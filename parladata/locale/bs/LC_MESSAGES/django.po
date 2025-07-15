@@ -274,7 +274,7 @@ msgstr "Ova e-mail adresa koristi se za prijavu na obavještenja Parlametra, odn
 
 #: parlanotifications/templates/add_keyword.html:12
 msgid "Če si bil/-a to ti, potrdi naročilo s klikom na povezavo:"
-msgstr "Ako želite potvrditi svoju registraciju, kliknite ovdje"
+msgstr "Ako želite potvrditi svoju registraciju,"
 
 #: parlanotifications/templates/add_keyword.html:13
 msgid ""
@@ -306,7 +306,7 @@ msgstr "https://ba.parlameter.si/"
 #: parlanotifications/templates/add_keyword.html:19
 #: parlanotifications/templates/notification.html:33
 msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png"
-msgstr "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png"
+msgstr "https://parlassets-bosna.lb.djnd.si/img/logo-parlameter-mejl.png"
 
 #: parlanotifications/templates/add_keyword.html:22
 #: parlanotifications/templates/notification.html:38
