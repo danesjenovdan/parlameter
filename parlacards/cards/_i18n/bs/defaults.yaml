@@ -13,8 +13,8 @@ search_placeholder: Traži
 trigger: Okidač
 input-trigger: Unesite okidač
 match: Podudaranje
-interval: interval
-email: email
+interval: Interval
+email: Email
 input-email: Unesite svoju e-mail adresu
 email-address: email
 notification-steps:
