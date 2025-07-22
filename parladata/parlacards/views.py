@@ -70,6 +70,9 @@ from parlacards.serializers.cards import (
     VoteCardSerializer,
 )
 from parlacards.serializers.cards.misc.sessions import SessionsCardSerializer
+from parlacards.serializers.cards.misc.vote_comparator import (
+    VoteComparatorCardSerializer,
+)
 from parlacards.serializers.cards.person.recent_activity import (
     RecentActivityCardSerializer,
 )
@@ -707,3 +710,12 @@ class ToolsUnity(CardView):
 
     thing = Organization
     card_serializer = ToolsUnityCardSerializer
+
+
+class VoteComparator(CardView):
+    """
+    Compare votes between different mandates.
+    """
+
+    thing = Organization
+    card_serializer = VoteComparatorCardSerializer
