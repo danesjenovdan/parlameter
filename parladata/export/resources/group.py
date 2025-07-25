@@ -49,6 +49,18 @@ class GroupCardExport(CardExport):
 class GroupUnityResource(GroupCardExport):
     class Meta:
         model = GroupUnity
+        fields = (
+            "group",
+            "vote",
+            "value",
+            "timestamp",
+        )
+        export_order = (
+            "group",
+            "vote",
+            "value",
+            "timestamp",
+        )
 
 
 class GroupVocabularySizeResource(GroupCardExport):

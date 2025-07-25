@@ -49,10 +49,56 @@ class GroupResourceExportTest:
             assert column in columns
 
 
-class TestGroupUnityResource(GroupResourceExportTest):
-    resource = GroupUnityResource
+class GroupUnityResourceExportTest:
+    resource = None
+    columns = ["group", "vote", "value", "timestamp"]
     csv_results_count = 3
     json_results_count = 1
+
+    @pytest.mark.django_db()
+    def test_export_as_generator_json(self, first_mandate, first_mandate_party):
+        resource = self.resource()
+        generator = resource.export_as_generator_json(
+            mandate_id=first_mandate.id, request_id=first_mandate_party["id"]
+        )
+        chunks = list(generator)
+        chunks_joined = "".join(chunks)
+        print(chunks_joined)
+        res = json.loads(chunks_joined)
+        # check num of results
+        assert len(res) == self.json_results_count
+        # check keys
+        if self.json_results_count > 0:
+            json_keys = res[0].keys()
+
+            for column in self.columns:
+                assert column in json_keys
+
+    @pytest.mark.django_db()
+    def test_export_as_generator_csv(self, first_mandate, first_mandate_party):
+        resource = self.resource()
+        generator = resource.export_as_generator_csv(
+            mandate_id=first_mandate.id, request_id=first_mandate_party["id"]
+        )
+        chunks = list(generator)
+        chunks_joined = "".join(chunks)
+        lines = chunks_joined.splitlines()
+        print(lines)
+        columns = lines[0].split(",")
+        # check num of results
+        assert (
+            len(lines) == self.csv_results_count
+        )  # len(results) + columns + empty line
+        # check columns
+        for column in self.columns:
+            assert column in columns
+
+
+# TODO this needs to return actual results, we require those in the test database
+class TestGroupUnityResource(GroupUnityResourceExportTest):
+    resource = GroupUnityResource
+    csv_results_count = 2
+    json_results_count = 0
 
 
 class TestGroupVocabularySizeResource(GroupResourceExportTest):
