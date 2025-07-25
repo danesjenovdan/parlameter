@@ -2,7 +2,6 @@ from datetime import datetime
 
 from django.core.management.base import BaseCommand
 
-from parlacards.models import GroupUnity, PersonNumberOfSpokenWords
 from parladata.models.common import Mandate
 from parladata.models.memberships import OrganizationMembership, PersonMembership
 from parladata.models.organization import Organization
