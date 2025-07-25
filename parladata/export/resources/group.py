@@ -10,6 +10,8 @@ from export.resources.common import (
 )
 from parlacards.models import (
     DeviationFromGroup,
+    # TODO remove permanently in September 2025
+    # GroupDiscord,
     GroupUnity,
     GroupMonthlyVoteAttendance,
     GroupNumberOfQuestions,
@@ -44,6 +46,12 @@ class GroupCardExport(CardExport):
 
     def dehydrate_name(self, score):
         return get_cached_group_name(score.group_id)
+
+
+# TODO remove permanently in September 2025
+# class GroupDiscordResource(GroupCardExport):
+#     class Meta:
+#         model = GroupDiscord
 
 
 class GroupUnityResource(GroupCardExport):
