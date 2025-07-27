@@ -31,7 +31,7 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 64px 6px 0px 6px;">
+          <td style="padding: 36px 6px 0px 6px;">
             <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 14px; line-height: 21px; display: inline;">
               {% blocktrans %}
               Živjo!<br><br>
@@ -53,7 +53,7 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td width="6" height="1" bgcolor="#ffffff" style="padding: 63px 0px 0px 0px; border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
+          <td width="6" height="1" bgcolor="#ffffff" style="padding: 35px 0px 0px 0px; border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
           <td width="150" height="1" bgcolor="#ffffff" style="border: none; border-bottom: 1px solid #000000; font-size: 1px; line-height: 1px;">&nbsp;</td>
           <td height="1" bgcolor="#ffffff" style="border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
         </tr>
@@ -64,10 +64,10 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 64px 0px 0px 0px;">
-            <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 16px; line-height: 21px; display: inline-block; background-color: #9bdafb; padding: 2px 6px;">
+          <td style="padding: 36px 0px 0px 0px;">
+            <h1 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 18px; line-height: 21px; text-decoration: underline; display: inline-block; padding: 2px 6px;">
               {% trans "Rezultati za:" %} {% trans "»" %}{{ key.keyword }}{% trans "«" %}
-            </div>
+            </h1>
           </td>
         </tr>
       </table>
@@ -78,10 +78,10 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 32px 6px 0px 6px;">
-            <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; text-decoration: underline; display: inline;">
-              <u>{% trans "TOČKE DNEVNEGA REDA" %}</u>
-            </div>
+          <td style="padding: 28px 6px 0px 6px;">
+            <h2 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {% trans "TOČKE DNEVNEGA REDA" %}
+            </h2>
           </td>
         </tr>
       </table>
@@ -91,7 +91,7 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 21px 6px 0px 26px;">
+          <td style="padding: 14px 6px 0px 26px;">
             <div style="color: #595959; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 12px; line-height: 21px; display: inline;">
               {{ agenda_item.timestamp|date:"d. m. Y"}} | {{ agenda_item.session_name }}
             </div>
@@ -113,10 +113,10 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 32px 6px 0px 6px;">
-            <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; text-decoration: underline; display: inline;">
-              <u>{% trans "GOVORI" %}</u>
-            </div>
+          <td style="padding: 28px 6px 0px 6px;">
+            <h2 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {% trans "GOVORI" %}
+            </h2>
           </td>
         </tr>
       </table>
@@ -126,7 +126,7 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 21px 6px 0px 26px;">
+          <td style="padding: 14px 6px 0px 26px;">
             <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
               {{ speech.speaker_name }}
             </div>
@@ -155,10 +155,10 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 32px 6px 0px 6px;">
-            <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; text-decoration: underline; display: inline;">
-              <u>{% trans "GLASOVANJA" %}</u>
-            </div>
+          <td style="padding: 28px 6px 0px 6px;">
+            <h2 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {% trans "GLASOVANJA" %}
+            </h2>
           </td>
         </tr>
       </table>
@@ -168,7 +168,7 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 21px 6px 0px 26px;">
+          <td style="padding: 14px 6px 0px 26px;">
             <div style="color: #595959; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 12px; line-height: 21px; display: inline;">
               {{ vote.timestamp|date:"d. m. Y"}} | {{ vote.session_name }}
             </div>
@@ -190,10 +190,10 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 32px 6px 0px 6px;">
-            <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; text-decoration: underline; display: inline;">
-              <u>{% trans "NOVA ZAKONODAJA V PROCEDURI" %}</u>
-            </div>
+          <td style="padding: 28px 6px 0px 6px;">
+            <h2 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {% trans "NOVA ZAKONODAJA V PROCEDURI" %}
+            </h2>
           </td>
         </tr>
       </table>
@@ -203,7 +203,7 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 21px 6px 0px 26px;">
+          <td style="padding: 14px 6px 0px 26px;">
             <div style="color: #595959; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 12px; line-height: 21px; display: inline;">
               {{ law.timestamp|date:"d. m. Y"}}
             </div>
@@ -227,7 +227,7 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td width="6" height="1" bgcolor="#ffffff" style="padding: 63px 0px 0px 0px; border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
+          <td width="6" height="1" bgcolor="#ffffff" style="padding: 35px 0px 0px 0px; border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
           <td width="150" height="1" bgcolor="#ffffff" style="border: none; border-bottom: 1px solid #000000; font-size: 1px; line-height: 1px;">&nbsp;</td>
           <td height="1" bgcolor="#ffffff" style="border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
         </tr>
@@ -239,7 +239,7 @@
     <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
       <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
         <tr>
-          <td style="padding: 64px 6px 0 6px;">
+          <td style="padding: 36px 6px 0 6px;">
             <a target="_blank" href="{{ element.url }}" style="display: block; text-decoration: none;" href="{% trans 'https://parlameter.si/' %}"><img width="100" style="display: block; max-width: 100%; margin: 0; height: auto;" src="{% trans 'https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png' %}" alt="logo"></a>
           </td>
         </tr>
