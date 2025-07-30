@@ -29,7 +29,7 @@
                 class="checkbox"
                 @click="changeShowRelative"
               />
-              <label v-t="'show-relative'" for="show-relative"></label>
+              <label for="show-relative">{{ $t('show-relative') }}</label>
             </div>
           </div>
         </div>

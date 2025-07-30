@@ -1,48 +1,31 @@
 <template>
-  <card-wrapper
-    :content-class="{ 'is-loading': loading }"
-    :header-config="headerConfig"
-  >
+  <card-wrapper :header-config="headerConfig" max-height>
     <div id="primerjalnik">
-      <text-frame class="primerjalnik">
+      <TextFrame class="primerjalnik">
         <div class="primerjalnik-text">
-          <i18n-t keypath="comparator-text" tag="p">
+          <i18n-t keypath="comparator-text" tag="p" scope="global">
             <template #same>
               <span class="primerjalnik-for">
-                <tag
-                  v-for="party in sameParties"
-                  :key="party.id"
-                  @click="togglePartySame(party)"
-                >
-                  {{ party.acronym }}
-                </tag>
-                <tag
+                <Tag
                   v-for="person in selectedSamePeople"
                   :key="person.id"
-                  @click="removePerson(person)"
+                  @click="person.selected = false"
                 >
                   {{ person.label }}
-                </tag>
-                <plus @click="toggleModal('same', true)" />
+                </Tag>
+                <plus @click="sameModalVisible = true" />
               </span>
             </template>
             <template #different>
               <span class="primerjalnik-against">
-                <tag
-                  v-for="party in differentParties"
-                  :key="party.id"
-                  @click="togglePartyDifferent(party)"
-                >
-                  {{ party.acronym }}
-                </tag>
-                <tag
+                <Tag
                   v-for="person in selectedDifferentPeople"
                   :key="person.id"
-                  @click="removePerson(person)"
+                  @click="person.selected = false"
                 >
-                  {{ person.name }}
-                </tag>
-                <plus @click="toggleModal('different', true)" />
+                  {{ person.label }}
+                </Tag>
+                <plus @click="differentModalVisible = true" />
               </span>
             </template>
           </i18n-t>
@@ -53,166 +36,211 @@
                 :checked="special"
                 type="checkbox"
                 class="checkbox"
-                @click="toggleSpecial"
+                @click="special = !special"
               />
-              <label v-t="'ignore-absent'" for="ignore-absent"></label>
+              <label for="ignore-absent">{{ $t('ignore-absent') }}</label>
             </div>
           </div>
         </div>
         <div class="primerjalnik-button">
           <div class="spacer"></div>
-          <span place="load" class="load-button">
-            <load-link @click="loadResults">
+          <span class="load-button">
+            <LoadLink @click="searchVotesImmediate">
               {{ $t('load') }}
-            </load-link>
+            </LoadLink>
           </span>
           <div>
-            <i18n-t keypath="comparator-vote-percent" tag="p" class="summary">
-              <strong place="num">{{ votes.length }}</strong>
-              <strong place="percent">
-                {{ total === 0 ? 0 : round((votes.length / total) * 100, 2) }}%
-              </strong>
+            <i18n-t
+              keypath="comparator-vote-percent"
+              tag="p"
+              class="summary"
+              scope="global"
+            >
+              <template #num>
+                <strong>{{ votes.length }}</strong>
+              </template>
+              <template #percent>
+                <strong v-if="total == 0">{{ formatNumber(0) }}</strong>
+                <strong v-else>{{
+                  formatNumber((votes.length / total) * 100)
+                }}</strong>
+              </template>
             </i18n-t>
           </div>
         </div>
-      </text-frame>
+      </TextFrame>
 
-      <p-tabs :start-tab="selectedTab" @switch="focusTab">
-        <p-tab :label="$t('tabs.vote-list')">
-          <empty-circle
-            v-if="votes.length === 0"
+      <PTabs :start-tab="selectedTab" @switch="focusTab">
+        <PTab :label="$t('tabs.vote-list')">
+          <EmptyCircle
+            v-if="!card.isLoading && votes.length === 0"
             :text="$t('empty-state-text')"
           />
-          <div v-else class="glasovanja">
-            <seznam-glasovanj :data="voteObject" :show-filters="false" />
+          <div class="votes-list">
+            <ScrollShadow ref="shadow">
+              <div
+                v-infinite-scroll="loadMore"
+                class="votes-list-shadow"
+                @scroll="$refs.shadow.check($event.currentTarget)"
+              >
+                <VoteListItem
+                  v-for="vote in votes"
+                  :key="vote.id"
+                  :vote="vote"
+                />
+              </div>
+              <div v-if="card.isLoading" class="nalagalnik__wrapper">
+                <div class="nalagalnik"></div>
+              </div>
+            </ScrollShadow>
           </div>
-        </p-tab>
-        <p-tab :label="$t('tabs.time-chart')">
-          <empty-circle
-            v-if="votes.length === 0"
+        </PTab>
+        <PTab :label="$t('tabs.time-chart')">
+          <EmptyCircle
+            v-if="!card.isLoading && votes.length === 0"
             :text="$t('empty-state-text')"
           />
-          <time-chart v-else :data="data" />
-        </p-tab>
-        <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
+          <!-- <TimeChart v-else :data="data" /> -->
+        </PTab>
+        <PTab :label="$t('tabs.bar-chart')" class="tab-three">
           <div class="mdt-wrapper">
-            <empty-circle
-              v-if="votes.length === 0"
+            <EmptyCircle
+              v-if="!card.isLoading && votes.length === 0"
               :text="$t('empty-state-text')"
             />
-            <bar-chart v-else :data="barChartData" show-numbers />
+            <!-- <BarChart v-else :data="barChartData" show-numbers /> -->
           </div>
-        </p-tab>
-      </p-tabs>
+        </PTab>
+      </PTabs>
 
-      <modal
+      <Modal
         v-show="sameModalVisible"
         :header="$t('select-parties-people')"
         :button="$t('confirm')"
-        @ok="toggleModal('same', false)"
-        @close="toggleModal('same', false)"
+        @ok="sameModalVisible = false"
+        @close="sameModalVisible = false"
       >
-        <p>
-          <span
-            v-for="party in parties"
-            :key="party.id"
-            :class="['primerjalnik-ps-switch', { on: party.isSame }]"
-            :data-id="party.id"
-            :data-acronym="party.acronym"
-            @click="togglePartySame(party)"
-          >
-            {{ party.acronym }}
-          </span>
-        </p>
-        <p-search-dropdown
+        <PSearchDropdown
           v-model="samePeople"
           :placeholder="samePeoplePlaceholder"
         />
-      </modal>
+      </Modal>
 
-      <modal
+      <Modal
         v-show="differentModalVisible"
         :header="$t('select-parties-people')"
         :button="$t('confirm')"
-        @ok="toggleModal('different', false)"
-        @close="toggleModal('different', false)"
+        @ok="differentModalVisible = false"
+        @close="differentModalVisible = false"
       >
-        <p>
-          <span
-            v-for="party in parties"
-            :key="party.id"
-            :class="['primerjalnik-ps-switch', { on: party.isDifferent }]"
-            :data-id="party.id"
-            :data-acronym="party.acronym"
-            @click="togglePartyDifferent(party)"
-          >
-            {{ party.acronym }}
-          </span>
-        </p>
-        <p-search-dropdown
+        <PSearchDropdown
           v-model="differentPeople"
           :placeholder="differentPeoplePlaceholder"
         />
-      </modal>
+      </Modal>
     </div>
   </card-wrapper>
 </template>
 
 <script>
-import axios from 'axios';
-import common from '@/_mixins/common.js';
-import links from '@/_mixins/links.js';
-import { defaultDynamicHeaderConfig } from '@/_mixins/altHeaders.js';
-import BarChart from '@/_components/BarChart.vue';
+// import axios from 'axios';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
 import LoadLink from '@/_components/LoadLink.vue';
 import Modal from '@/_components/Modal.vue';
 import Plus from '@/_components/Plus.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import infiniteScroll from '@/_directives/infiniteScroll.js';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
 import Tag from '@/_components/Tag.vue';
 import TextFrame from '@/_components/TextFrame.vue';
-import TimeChart from '@/_components/TimeChart.vue';
+import VoteListItem from '@/_components/VoteListItem.vue';
+import numberFormatter from '@/_helpers/numberFormatter.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
+import links from '@/_mixins/links.js';
+// import TimeChart from '@/_components/TimeChart.vue';
+// import BarChart from '@/_components/BarChart.vue';
 
 export default {
   name: 'CardToolsComparator',
+  directives: {
+    infiniteScroll,
+  },
   components: {
-    BarChart,
+    // BarChart,
+    // TimeChart,
     EmptyCircle,
-    PSearchDropdown,
     LoadLink,
     Modal,
     Plus,
+    PSearchDropdown,
     PTab,
     PTabs,
+    ScrollShadow,
     Tag,
     TextFrame,
-    TimeChart,
-    // SeznamGlasovanj,
+    VoteListItem,
   },
-  mixins: [common, links],
+  mixins: [common, cancelableRequest, links],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
+    const selectedSamePeople = (() => {
+      const samePeople = cardState?.selectedSamePeople || '';
+      return samePeople.split(',').map((id) => id.trim());
+    })();
+
+    const selectedDifferentPeople = (() => {
+      const differentPeople = cardState?.selectedDifferentPeople || '';
+      return differentPeople.split(',').map((id) => id.trim());
+    })();
+
+    const people = (cardData?.data?.results?.members || []).map((m) => {
+      const mid = (m.slug || '').split('-')[0];
+      return {
+        id: mid,
+        slug: m.slug,
+        label: m.name,
+        image: m.image,
+        selected: false,
+      };
+    });
+
+    const samePeople = people.map((person) => ({
+      ...person,
+      selected: selectedSamePeople.includes(person.id),
+    }));
+
+    const differentPeople = people.map((person) => ({
+      ...person,
+      selected: selectedDifferentPeople.includes(person.id),
+    }));
+
+    const special = cardState?.special && cardState.special !== 'false';
+
+    // TODO: rename "comparator:" to "votes:" in paginator
     return {
-      parentOrgId: cardData?.id,
-      loading: true,
-      parties: [],
-      samePeople: [],
-      differentPeople: [],
-      special: !!cardState?.special,
-      data: [],
+      headerConfig: defaultHeaderConfig(this),
+      people,
+      card: {
+        objectCount: cardData?.data?.['comparator:count'] ?? 0,
+        currentPage: 1,
+        isLoading: false,
+      },
+      votes: cardData?.data?.results?.votes ?? [],
       total: 0,
+      special,
+      samePeople,
+      differentPeople,
       sameModalVisible: false,
       differentModalVisible: false,
-      selectedTab: cardState?.selectedTab || 0,
-      headerConfig: defaultDynamicHeaderConfig(this, {
-        circleIcon: 'primerjalnik',
-      }),
+      selectedTab: 0,
     };
   },
   computed: {
@@ -226,62 +254,48 @@ export default {
         ? this.$t('selected-mps', { num: this.selectedDifferentPeople.length })
         : this.$t('select-mps');
     },
-    queryUrl() {
-      // const base = `${this.slugs.urls.analize}/s/getComparedVotes/`;
-      // const samePeopleIds = this.selectedSamePeople
-      //   .map((person) => person.id)
-      //   .toString();
-      // const samePartyIds = this.sameParties.map((party) => party.id).toString();
-      // const diffPeopleIds = this.selectedDifferentPeople
-      //   .map((person) => person.id)
-      //   .toString();
-      // const diffPartyIds = this.differentParties
-      //   .map((party) => party.id)
-      //   .toString();
-      // const url = `${base}?people_same=${samePeopleIds}&parties_same=${samePartyIds}&people_different=${diffPeopleIds}&parties_different=${diffPartyIds}`;
-      // if (this.special) {
-      //   return `${url}&special=true`;
-      // }
-      // return url;
-      return '';
-    },
-    votes() {
-      return this.data || [];
-    },
-    voteObject() {
-      return {
-        votes: this.data.map((v) => ({
-          ...v.results,
-          session_id: v.session.id,
-        })),
-        session: {},
-        tags: [],
-      };
-    },
-    sameParties() {
-      return this.parties.filter((party) => party.isSame);
-    },
-    differentParties() {
-      return this.parties.filter((party) => party.isDifferent);
-    },
     selectedSamePeople() {
       return this.samePeople.filter((person) => person.selected);
     },
     selectedDifferentPeople() {
       return this.differentPeople.filter((person) => person.selected);
     },
-    barChartData() {
-      const tags = this.data.reduce((acc, d) => {
-        if (acc.indexOf(d.results.tags[0]) === -1) {
-          acc.push(d.results.tags[0]);
-        }
-        return acc;
-      }, []);
+    // barChartData() {
+    //   const tags = this.data.reduce((acc, d) => {
+    //     if (acc.indexOf(d.results.tags[0]) === -1) {
+    //       acc.push(d.results.tags[0]);
+    //     }
+    //     return acc;
+    //   }, []);
 
-      return tags.map((tag) => ({
-        label: tag || 'Brez MDT', // TODO i18n
-        value: this.data.filter((d) => d.results.tags[0] === tag).length,
-      }));
+    //   return tags.map((tag) => ({
+    //     label: tag || 'Brez MDT', // TODO i18n
+    //     value: this.data.filter((d) => d.results.tags[0] === tag).length,
+    //   }));
+    // },
+    searchUrl() {
+      const url = new URL(this.cardData.url);
+      url.searchParams.set('comparator:page', this.card.currentPage);
+
+      if (this.selectedSamePeople.length > 0) {
+        url.searchParams.set(
+          'people_same',
+          this.selectedSamePeople.map((p) => p.id).join(','),
+        );
+      } else {
+        url.searchParams.delete('people_same');
+      }
+
+      if (this.selectedDifferentPeople.length > 0) {
+        url.searchParams.set(
+          'people_different',
+          this.selectedDifferentPeople.map((p) => p.id).join(','),
+        );
+      } else {
+        url.searchParams.delete('people_different');
+      }
+
+      return url.toString();
     },
   },
   watch: {
@@ -304,88 +318,44 @@ export default {
       });
     },
   },
-  mounted() {
-    // const sameParties = this.$options.contextData.cardState?.sameParties || [];
-    // const differentParties =
-    //   this.$options.contextData.cardState?.differentParties || [];
-    // this.parties = this.generateParties(this.$options.contextData.cardData).map(
-    //   (party) => ({
-    //     id: party.properId,
-    //     acronym: party.acronym,
-    //     isCoalition: party.isCoalition,
-    //     name: party.name,
-    //     isSame: sameParties.indexOf(party.properId) > -1,
-    //     isDifferent: differentParties.indexOf(party.properId) > -1,
-    //   })
-    // );
-    // const samePeople = this.$options.contextData.cardState?.samePeople || [];
-    // const differentPeople =
-    //   this.$options.contextData.cardState?.differentPeople || [];
-    // this.samePeople = this.generatePeople(
-    //   this.$options.contextData.cardData
-    // ).map((person) => ({
-    //   selected: samePeople.indexOf(person.id) > -1,
-    //   label: person.label,
-    //   id: person.id,
-    //   image: person.image,
-    // }));
-    // this.differentPeople = this.generatePeople(
-    //   this.$options.contextData.cardData
-    // ).map((person) => ({
-    //   selected: differentPeople.indexOf(person.id) > -1,
-    //   label: person.label,
-    //   id: person.id,
-    //   image: person.image,
-    // }));
-    // this.loadResults();
-  },
   methods: {
-    toggleSpecial() {
-      this.special = !this.special;
+    searchVotesImmediate() {
+      this.card.isLoading = true;
+      this.votes = [];
+      this.card.objectCount = 0;
+      this.card.currentPage = 1;
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.votes = response?.data?.results?.votes || [];
+        this.card.objectCount = response?.data?.['comparator:count'];
+        this.card.currentPage = 1;
+        this.card.isLoading = false;
+      });
     },
-    round(value, decimals) {
-      return Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
-    },
-    togglePartySame(party) {
-      party.isDifferent = false;
-      party.isSame = !party.isSame;
-    },
-    togglePartyDifferent(party) {
-      party.isDifferent = !party.isDifferent;
-      party.isSame = false;
-    },
-    removePerson(person) {
-      person.selected = false;
-    },
-    toggleModal(modalType, newState) {
-      this[`${modalType}ModalVisible`] = newState;
-    },
-    loadResults() {
-      this.loading = true;
-      axios
-        .get(this.queryUrl)
-        .then((response) => {
-          // TODO: time-chart needs this:
-          // const dateParser = d3.timeParse('%d.%m.%Y');
-          // const data = Array.from(new Set(this.data.map((d) => d.results.date)))
-          //   .map((date) => ({
-          //     date: dateParser(date),
-          //     value: this.data.filter((d) => d.results.date === date).length,
-          //   }))
-          //   .sort((a, b) => a.date - b.date);
+    loadMore() {
+      if (this.card.isLoading) {
+        return;
+      }
+      if (this.votes.length >= this.card.objectCount) {
+        return;
+      }
 
-          this.data = response.data.results;
-          this.total = response.data.total;
-          this.loading = false;
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.log(error);
-          this.loading = false;
-        });
+      this.card.isLoading = true;
+      this.card.currentPage += 1;
+
+      const requestedPage = this.card.currentPage;
+      this.makeRequest(this.searchUrl).then((response) => {
+        if (response?.data?.['comparator:page'] === requestedPage) {
+          const newVotes = response?.data?.results?.votes || [];
+          this.votes.push(...newVotes);
+        }
+        this.card.isLoading = false;
+      });
     },
-    focusTab(tabindex) {
-      this.selectedTab = tabindex;
+    focusTab(index) {
+      this.selectedTab = index;
+    },
+    formatNumber(number) {
+      return numberFormatter(number, { percent: true });
     },
   },
 };
@@ -401,81 +371,8 @@ export default {
 
 #primerjalnik {
   :deep(.p-tabs) {
-    .p-tabs-content,
-    .p-tabs-content .tab-content {
-      overflow-y: visible;
-      overflow-x: visible;
-    }
-
     .p-tabs-content {
-      margin-top: 6px;
-    }
-  }
-
-  :deep(.word-list) {
-    max-height: none;
-    height: 420px;
-    overflow-y: auto;
-
-    .column-label {
-      flex: 2;
-
-      .chart-label .label-container {
-        line-height: 1;
-
-        @include breakpoints.respond-to(mobile) {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-
-  .glasovanja {
-    :deep(#votingCard) {
-      height: 420px;
-    }
-  }
-
-  .mdt-wrapper {
-    :deep(.progress-bar) {
-      background-color: colors.$third;
-    }
-  }
-
-  .tab-content,
-  .mdt-wrapper {
-    height: 420px;
-  }
-
-  .primerjalnik-ps-switch {
-    background: colors.$white;
-    cursor: pointer;
-    padding: 5px;
-    display: inline-block;
-    margin: 5px;
-    color: colors.$font-default;
-
-    &::after {
-      content: '×';
-      margin-left: 8px;
-      font-size: 20px;
-      line-height: 20px;
-      position: relative;
-      top: 2px;
-      transform: rotate(45deg);
-      display: inline-block;
-      transition: transform 0.2s ease-out;
-      color: colors.$first;
-    }
-
-    &.on {
-      background: colors.$first;
-      color: colors.$white;
-
-      &::after {
-        transform: rotate(0deg);
-        color: colors.$white;
-      }
+      margin-top: 8px;
     }
   }
 
@@ -559,6 +456,29 @@ export default {
           margin-top: 15px;
         }
       }
+    }
+  }
+
+  .votes-list {
+    .votes-list-shadow {
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: breakpoints.$full-card-height - 117;
+    }
+  }
+
+  .nalagalnik__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: colors.$white-hover;
+    z-index: 4;
+
+    .nalagalnik {
+      position: absolute;
+      top: calc(50% - 50px);
     }
   }
 }
