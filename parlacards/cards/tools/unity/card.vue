@@ -1,9 +1,5 @@
 <template>
   <card-wrapper :header-config="headerConfig">
-    <template #generator>
-      <tools-tabs current-tool="unity" />
-    </template>
-
     <div class="votes-list">
       <div class="filters">
         <div class="left-filters">
@@ -103,7 +99,6 @@
 
 <script>
 import { debounce } from 'lodash-es';
-import ToolsTabs from '@/_components/ToolsTabs.vue';
 import EmptyState from '@/_components/EmptyState.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import Toggle from '@/_components/Toggle.vue';
@@ -126,7 +121,6 @@ export default {
     infiniteScroll,
   },
   components: {
-    ToolsTabs,
     EmptyState,
     PSearchDropdown,
     Toggle,

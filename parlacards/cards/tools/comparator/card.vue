@@ -3,10 +3,6 @@
     :content-class="{ 'is-loading': loading }"
     :header-config="headerConfig"
   >
-    <template #generator>
-      <tools-tabs current-tool="voteComparator" />
-    </template>
-
     <div id="primerjalnik">
       <text-frame class="primerjalnik">
         <div class="primerjalnik-text">
@@ -167,7 +163,6 @@ import axios from 'axios';
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultDynamicHeaderConfig } from '@/_mixins/altHeaders.js';
-import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
 import LoadLink from '@/_components/LoadLink.vue';
@@ -183,7 +178,6 @@ import TimeChart from '@/_components/TimeChart.vue';
 export default {
   name: 'CardToolsComparator',
   components: {
-    ToolsTabs,
     BarChart,
     EmptyCircle,
     PSearchDropdown,

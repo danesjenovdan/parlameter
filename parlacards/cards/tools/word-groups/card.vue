@@ -3,10 +3,6 @@
     :content-class="{ 'is-loading': loading }"
     :header-config="headerConfig"
   >
-    <template #generator>
-      <tools-tabs current-tool="wordGroups" />
-    </template>
-
     <div id="skupine-besed">
       <text-frame class="skupine-besed">
         <div class="skupine-besed-text">
@@ -106,7 +102,6 @@ import axios from 'axios';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import common from '@/_mixins/common.js';
-import ToolsTabs from '@/_components/ToolsTabs.vue';
 import BarChart from '@/_components/BarChart.vue';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
 import LoadLink from '@/_components/LoadLink.vue';
@@ -122,7 +117,6 @@ import ScrollShadow from '@/_components/ScrollShadow.vue';
 export default {
   name: 'CardToolsWordGroups',
   components: {
-    ToolsTabs,
     BarChart,
     EmptyCircle,
     LoadLink,
