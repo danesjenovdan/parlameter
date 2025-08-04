@@ -13,7 +13,7 @@ spec:
         spec:
           containers:
           - name: parlameter-send-word-notifications
-            image: parladata
+            image: parladata-bosna
             env:
               - name: DJANGO_SETTINGS_MODULE
                 value: parladata_project.settings.k8s
