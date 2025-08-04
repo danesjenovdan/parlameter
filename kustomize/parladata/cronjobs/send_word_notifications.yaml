@@ -19,7 +19,7 @@ spec:
                 value: parladata_project.settings.k8s
             envFrom:
               - secretRef:
-                  name: parladata-credentials
+                  name: parladata-bosna-credentials
             command:
               - python
               - manage.py
