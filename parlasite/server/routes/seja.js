@@ -1,6 +1,10 @@
 const express = require('express');
-const fetch = require('node-fetch');
-const { asyncRender: ar, getOgImageUrl, slovenianDate, stringifyParams } = require('../utils');
+const {
+  asyncRender: ar,
+  getOgImageUrl,
+  slovenianDate,
+  stringifyParams,
+} = require('../utils');
 const { urls, locale, defaultCardDate } = require('../../config');
 const { i18n } = require('../server');
 
@@ -21,7 +25,9 @@ async function isMotionValid(/* sessionId, motionId */) {
 // TODO the ones for poslanec and poslanska skupina accept a slug
 async function getNewData(id) {
   const params = stringifyParams({ id, date: defaultCardDate || null });
-  const response = await fetch(`${urls.parladata}/cards/session/single/${params}`);
+  const response = await fetch(
+    `${urls.parladata}/cards/session/single/${params}`,
+  );
   // response.ok means status is 2xx
   if (response.ok) {
     const data = await response.json();
@@ -232,12 +238,12 @@ const renderDynamic = async (render, req, res, next) => {
   await renderEmpty(render, req, res, next);
 };
 
-router.get('/:id(\\d+)', ar(renderDynamic));
-router.get(`/:id(\\d+)/${sm.session.legislation}`, ar(renderLegislation));
-router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar(renderVotes));
-router.get(`/:id(\\d+)/${sm.session.agenda}`, ar(renderAgenda));
-router.get(`/:id(\\d+)/${sm.session.transcript}`, ar(renderTranscript));
-router.get(`/:id(\\d+)/${sm.session.minutes}`, ar(renderMinutes));
-router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar(renderMotion));
+router.get('/:id', ar(renderDynamic));
+router.get(`/:id/${sm.session.legislation}`, ar(renderLegislation));
+router.get(`/:id/${sm.session.otherVotings}`, ar(renderVotes));
+router.get(`/:id/${sm.session.agenda}`, ar(renderAgenda));
+router.get(`/:id/${sm.session.transcript}`, ar(renderTranscript));
+router.get(`/:id/${sm.session.minutes}`, ar(renderMinutes));
+router.get(`/:id/${sm.session.vote}/:motionId`, ar(renderMotion));
 
 module.exports = router;

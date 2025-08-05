@@ -40,9 +40,7 @@ const getTextFromRange = (containerElement, selectionRange) => {
       ) {
         text += '\n';
       }
-      // eslint-disable-next-line prefer-destructuring
       currentNode = currentNode.childNodes[0];
-      // eslint-disable-next-line no-continue
       continue;
     }
     let nextNode = currentNode.nextSibling;

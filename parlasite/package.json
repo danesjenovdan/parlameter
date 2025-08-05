@@ -9,20 +9,18 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "chalk": "^4.1.2",
     "ejs": "^3.1.10",
-    "express": "^4.21.2",
-    "fs-extra": "^11.3.0",
-    "lodash": "^4.17.21",
-    "node-fetch": "^2.7.0",
-    "serve-static": "^1.16.2",
-    "url-pattern": "^1.0.3"
+    "express": "^5.1.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^8.2.0",
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "nodemon": "^3.1.10"
+    "@eslint/js": "^9.32.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.3",
+    "globals": "^16.3.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2"
   }
 }

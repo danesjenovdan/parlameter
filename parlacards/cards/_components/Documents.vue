@@ -25,6 +25,7 @@ import { groupBy } from 'lodash-es';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 
 export default {
+  name: 'Documents',
   components: {
     ScrollShadow,
   },

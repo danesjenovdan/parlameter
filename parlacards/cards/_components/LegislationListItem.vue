@@ -24,6 +24,7 @@ import links from '@/_mixins/links.js';
 import legislationStatus from '@/_helpers/legislationStatus.js';
 
 export default {
+  name: 'LegislationListItem',
   mixins: [links],
   props: {
     law: {
