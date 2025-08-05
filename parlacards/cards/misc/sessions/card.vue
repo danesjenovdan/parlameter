@@ -288,7 +288,6 @@ export default {
           },
           { link: this.getSessionLink(session), text: session.name },
           session.start_time ? dateFormatter(session.start_time) : ' ',
-          // eslint-disable-next-line no-nested-ternary
           this.showEndDate
             ? session.end_time
               ? dateFormatter(session.end_time)

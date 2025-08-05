@@ -23,8 +23,7 @@
 
 # parlacards
 parlacards/.env*
-parlacards/.eslintrc.cjs
-parlacards/.eslintignore
+parlacards/eslint.config.js
 parlacards/.prettierrc.json
 parlacards/jsconfig.json
 parlacards/dist/

@@ -89,8 +89,7 @@ services:
       # - ./parlacards/dist/:/app/dist
       # #
       - ./parlacards/server/:/app/server
-      - ./parlacards/.eslintignore:/app/.eslintignore
-      - ./parlacards/.eslintrc.cjs:/app/.eslintrc.cjs
+      - ./parlacards/eslint.config.js:/app/eslint.config.js
       - ./parlacards/.prettierrc.json:/app/.prettierrc.json
       - ./parlassets/:/parlassets
 

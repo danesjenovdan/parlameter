@@ -13,7 +13,7 @@
     "start": "node --import ./instrument.js server/index.js",
     "start:watch": "nodemon -e js,cjs,mjs,vue,html server/index.js",
     "lint": "yarn lint:eslint && yarn lint:component-names",
-    "lint:eslint": "eslint . --ext js,cjs,mjs,vue",
+    "lint:eslint": "eslint .",
     "lint:component-names": "node build/lint-component-names.js"
   },
   "dependencies": {
@@ -39,18 +39,20 @@
     "vue-i18n": "^11.1.11"
   },
   "devDependencies": {
+    "@eslint/js": "^9.32.0",
     "@types/d3": "^7.4.3",
     "@types/lodash-es": "^4.17.12",
-    "eslint": "^8.2.0",
-    "eslint-config-airbnb-base": "15.0.0",
+    "eslint": "^9.32.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.3",
-    "eslint-plugin-vue": "^9.33.0",
+    "eslint-plugin-vue": "^10.4.0",
     "glob": "^11.0.3",
+    "globals": "^16.3.0",
     "js-yaml": "^4.1.0",
     "nodemon": "^3.1.10",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "vue-eslint-parser": "^10.2.0"
   }
 }
