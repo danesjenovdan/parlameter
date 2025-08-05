@@ -45,3 +45,34 @@ class Keyword(Timestampable):
 
     def __str__(self):
         return self.keyword + " for " + self.user.email
+
+
+class KeywordForAll(Timestampable):
+    class Frequency(models.TextChoices):
+        DAILY = "DAILY", "Daily"
+        WEEKLY = "WEEKLY", "Weekly"
+        MONTHLY = "MONTHLY", "Monthly"
+
+    class MatchingMethods(models.TextChoices):
+        WIDE = "WIDE", "Wide"
+        NARROW = "NARROW", "Narrow"
+
+    keyword = models.CharField(max_length=255)
+    user = models.ForeignKey(
+        NotificationUser, related_name="keywords_all", on_delete=models.CASCADE
+    )
+    matching_method = models.CharField(
+        max_length=10,
+        choices=MatchingMethods.choices,
+        default=MatchingMethods.WIDE,
+    )
+    accepted_at = models.DateTimeField(null=True, blank=True)
+    notification_frequency = models.CharField(
+        max_length=10,
+        choices=Frequency.choices,
+        default=Frequency.DAILY,
+    )
+    latest_notification_sent_at = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return self.keyword + " for " + self.user.email
