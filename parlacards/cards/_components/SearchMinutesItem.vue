@@ -25,6 +25,7 @@
 import links from '@/_mixins/links.js';
 
 export default {
+  name: 'SearchMinutesItem',
   mixins: [links],
   props: {
     agendaItem: {
