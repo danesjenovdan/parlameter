@@ -52,14 +52,18 @@ export default {
   },
   computed: {
     cardUrl() {
-      const { urls } = this.$root.$options.contextData;
+      const { urls, cardState, cardData } = this.$root.$options.contextData;
       const beforeStateUrl = `${urls.cards}/${this.cardName}/?id=${this.cardData.id}`;
-      const { cardState } = this.$root.$options.contextData;
+
+      const extraParams = { ...cardState };
+      if (cardData.date) {
+        extraParams.date = cardData.date;
+      }
 
       // TODO: replace with stringifyParams
-      const stateParams = Object.keys(cardState).reduce((prev, curr) => {
+      const stateParams = Object.keys(extraParams).reduce((prev, curr) => {
         return `${prev}&${encodeURIComponent(curr)}=${encodeURIComponent(
-          cardState[curr],
+          extraParams[curr],
         )}`;
       }, '');
       return `${beforeStateUrl}${stateParams}`;

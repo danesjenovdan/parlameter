@@ -24,6 +24,7 @@
 import links from '@/_mixins/links.js';
 
 export default {
+  name: 'PersonWithPosition',
   mixins: [links],
   props: {
     person: {

@@ -19,6 +19,10 @@
   ],
   "extensions": {
     "recommendations": [
+      "ms-python.black-formatter",
+      "ms-python.isort",
+      "ms-python.python",
+      "ms-python.vscode-pylance",
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode",
       "vue.volar",
@@ -26,11 +30,28 @@
     ]
   },
   "settings": {
-    "files.exclude": {
-      // "parlacards/": true,
-      // "parlassets/": true,
-      // "parlasite/": true,
-      // "parladata/": true,
+    // general settings
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    // python settings
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      },
+      "editor.rulers": [88],
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true
+    },
+    "isort.args": ["--profile", "black"],
+    // js/vue/json settings
+    "[json][jsonc][javascript][vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "editor.tabSize": 2,
+      "editor.insertSpaces": true
     }
   }
 }

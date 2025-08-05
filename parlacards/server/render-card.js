@@ -35,7 +35,6 @@ const getTemplate = (templateName) => {
   return (replacements = {}) => {
     let template = templates[templateName];
 
-    // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries(replacements)) {
       template = template.replaceAll(`<!--${key}-->`, value);
     }

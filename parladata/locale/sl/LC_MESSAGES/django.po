@@ -295,29 +295,29 @@ msgid "ekipa Parlametra"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:18
-#: parlanotifications/templates/notification.html:32
+#: parlanotifications/templates/notification.html:73
 msgid "https://parlameter.si/"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:19
-#: parlanotifications/templates/notification.html:33
+#: parlanotifications/templates/notification.html:74
 msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:22
-#: parlanotifications/templates/notification.html:38
+#: parlanotifications/templates/notification.html:79
 msgid "Uredi svoje nastavitve"
 msgstr "Odjavi se od obvestil ali uredi svoje nastavitve"
 
 #: parlanotifications/templates/add_keyword.html:22
-#: parlanotifications/templates/notification.html:38
+#: parlanotifications/templates/notification.html:79
 msgid ""
 "https://parlacards-slovenija.lb.djnd.si/tools/notifications/?"
 "id=undefined&no_card_data=true&locale=sl&template=share&action=list"
 msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:22
-#: parlanotifications/templates/notification.html:38
+#: parlanotifications/templates/notification.html:79
 msgid "tukaj"
 msgstr ""
 
@@ -325,14 +325,52 @@ msgstr ""
 msgid "Spodaj najdeš omembe izbranih besed oz. besednih zvez iz Parlametra."
 msgstr ""
 
-#: parlanotifications/templates/notification.html:26
-msgid "https://parlameter.si/seja/"
+#: parlanotifications/templates/notification.html:19
+msgid "Ključna beseda"
 msgstr ""
 
-#: parlanotifications/templates/notification.html:26
+#: parlanotifications/templates/notification.html:22
+msgid "Agenda items:"
+msgstr "Točke dnevnega reda:"
+
+#: parlanotifications/templates/notification.html:28
+#: parlanotifications/templates/notification.html:41
+#: parlanotifications/templates/notification.html:54
+msgid "https://parlameter.si/seja/"
+msgstr "https://parlameter.si/seja/"
+
+#: parlanotifications/templates/notification.html:28
+msgid "agenda-item-url"
+msgstr "dnevni-red"
+
+#: parlanotifications/templates/notification.html:35
+msgid "Speeches:"
+msgstr "Govori:"
+
+#: parlanotifications/templates/notification.html:41
 msgid "transkript-url"
 msgstr "transkript"
 
-#: parlanotifications/views.py:24
+#: parlanotifications/templates/notification.html:48
+msgid "Votes:"
+msgstr "Glasovanja:"
+
+#: parlanotifications/templates/notification.html:54
+msgid "voting-url"
+msgstr "glasovanje"
+
+#: parlanotifications/templates/notification.html:61
+msgid "New legislation in procedure:"
+msgstr "Nove zakonodaje v proceduri:"
+
+#: parlanotifications/templates/notification.html:66
+msgid "https://parlameter.si"
+msgstr "https://parlameter.si"
+
+#: parlanotifications/templates/notification.html:66
+msgid "legislation-url"
+msgstr "zakonodaja"
+
+#: parlanotifications/views.py:27
 msgid "Parlameter obvestila - potrditev"
 msgstr "Potrdi prijavo na obvestila"
