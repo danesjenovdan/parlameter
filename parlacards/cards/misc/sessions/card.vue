@@ -221,7 +221,11 @@ export default {
 
       return [
         { id: 'image', label: '', additionalClass: 'image' },
-        { id: 'name', label: this.$t('title'), additionalClass: 'name' },
+        {
+          id: 'name',
+          label: this.$t('title'),
+          additionalClass: 'name no-sort',
+        },
         {
           id: 'start_time',
           label: this.showEndDate ? this.$t('start-date') : this.$t('date'),
