@@ -1,7 +1,5 @@
-const chalk = require('chalk');
 const fs = require('fs-extra');
 const _ = require('lodash');
-const fetch = require('node-fetch');
 const { urls, locale, defaultCardDate } = require('../config');
 
 class ResponseTimings {
@@ -26,9 +24,10 @@ function stringifyParams(params) {
     const query = Object.keys(params)
       .filter((key) => params[key] != null) // maybe params[key] is undefined
       .map((key) => {
-        const val = (typeof params[key] === 'object')
-          ? JSON.stringify(params[key])
-          : String(params[key]);
+        const val =
+          typeof params[key] === 'object'
+            ? JSON.stringify(params[key])
+            : String(params[key]);
         return `${key}=${encodeURIComponent(val)}`;
       })
       .join('&');
@@ -56,7 +55,11 @@ function fixFetchCardArgs(cardPath, id, params = {}) {
   }
 
   // remove leading and trailing slashes
-  cardPath = cardPath.trim().replace(/^\/+/, '').replace(/\/+$/, '').toLowerCase();
+  cardPath = cardPath
+    .trim()
+    .replace(/^\/+/, '')
+    .replace(/\/+$/, '')
+    .toLowerCase();
 
   // set params
   if (id) {
@@ -100,16 +103,37 @@ async function fetchCardAsync(req, cardPath, params, uid, responseTimings) {
     // eslint-disable-next-line no-console
     console.error(`Failed to fetch card: status=${res.status} text=${text}`);
     if (cardPath === 'misc/error') {
-      return [null, `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>Status: ${res.status}</pre><pre>${text}</pre></div>`];
+      return [
+        null,
+        `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>Status: ${res.status}</pre><pre>${text}</pre></div>`,
+      ];
     }
-    return fetchCardAsync(req, 'misc/error', { ...params, message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}` }, uid, responseTimings);
+    return fetchCardAsync(
+      req,
+      'misc/error',
+      {
+        ...params,
+        message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}`,
+      },
+      uid,
+      responseTimings,
+    );
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Failed to fetch card:', error);
     if (cardPath === 'misc/error') {
-      return [null, `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${error}</pre><pre>${error.stack}</pre></div>`];
+      return [
+        null,
+        `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${error}</pre><pre>${error.stack}</pre></div>`,
+      ];
     }
-    return fetchCardAsync(req, 'misc/error', { ...params, message: `Failed to fetch card: ${cardPath}` }, uid, responseTimings);
+    return fetchCardAsync(
+      req,
+      'misc/error',
+      { ...params, message: `Failed to fetch card: ${cardPath}` },
+      uid,
+      responseTimings,
+    );
   }
 }
 
@@ -127,9 +151,11 @@ function fetchCard(cardPath, id, params = {}) {
   const uid = Math.random().toString(36).slice(2);
 
   // save the promise to be resolved later
-  this.outPromises.push(
-    [uid, cardPath, fetchCardAsync(this.req, cardPath, params, uid, this.responseTimings)],
-  );
+  this.outPromises.push([
+    uid,
+    cardPath,
+    fetchCardAsync(this.req, cardPath, params, uid, this.responseTimings),
+  ]);
 
   return `<!--asyncReplace(${uid})-->`;
 }
@@ -137,19 +163,30 @@ function fetchCard(cardPath, id, params = {}) {
 // This function replaces the placeholders in the HTML with the actual card content
 // after all async calls have been resolved.
 async function replaceAsyncPlaceholders(res, rawHtml, outPromises) {
-  const promises = outPromises.map(([uid, cardPath, promise]) => promise.then(([headers, html]) => {
-    rawHtml = rawHtml.replace(`<!--asyncReplace(${uid})-->`, `<!--async(${uid})-->${html}`);
-    if (headers) {
-      const timingHeader = headers.get('x-parlacards-timings');
-      if (timingHeader) {
-        res.setHeader(`x-parlacards-timings-${uid}-${cardPath.replaceAll('/', '-')}`, timingHeader);
+  const promises = outPromises.map(([uid, cardPath, promise]) =>
+    promise.then(([headers, html]) => {
+      rawHtml = rawHtml.replace(
+        `<!--asyncReplace(${uid})-->`,
+        `<!--async(${uid})-->${html}`,
+      );
+      if (headers) {
+        const timingHeader = headers.get('x-parlacards-timings');
+        if (timingHeader) {
+          res.setHeader(
+            `x-parlacards-timings-${uid}-${cardPath.replaceAll('/', '-')}`,
+            timingHeader,
+          );
+        }
       }
-    }
-  }));
+    }),
+  );
   return Promise.all(promises).then(() => rawHtml);
 }
 
-const asyncRoute = (fn) => (...args) => fn(...args).catch(args[2]);
+const asyncRoute =
+  (fn) =>
+  (...args) =>
+    fn(...args).catch(args[2]);
 
 const asyncRender = (fn) => (req, res, next) => {
   const responseTimings = new ResponseTimings();
@@ -173,7 +210,9 @@ const asyncRender = (fn) => (req, res, next) => {
           // rawHtml is filled with placeholders for async fetchCard calls
           // replaceAsyncPlaceholders will await them in parallel and replace
           // the placeholders with the actual card HTML
-          .then((rawHtml) => replaceAsyncPlaceholders(res, rawHtml, outPromises))
+          .then((rawHtml) =>
+            replaceAsyncPlaceholders(res, rawHtml, outPromises),
+          )
           .then((html) => {
             responseTimings.push('requestEnd', performance.now());
             res.setHeader('x-parlasite-timings', responseTimings.toString());
@@ -208,7 +247,9 @@ function expandProps(msg, props) {
 function i18n(lang) {
   const messages = fs.readJsonSync(`./i18n/${lang}/defaults.json`);
   const siteMap = fs.readJsonSync(`./i18n/${lang}/sitemap.json`);
-  const legalBody = fs.existsSync(`./i18n/${lang}/legal.html`) ? fs.readFileSync(`./i18n/${lang}/legal.html`, 'utf-8') : null;
+  const legalBody = fs.existsSync(`./i18n/${lang}/legal.html`)
+    ? fs.readFileSync(`./i18n/${lang}/legal.html`, 'utf-8')
+    : null;
 
   const get = (path, props = {}) => {
     if (path === 'legal.body' && legalBody) {
@@ -218,12 +259,16 @@ function i18n(lang) {
     const msg = messages[path] || _.get(messages, path);
     if (msg == null || msg === '[empty]' || msg === '') {
       // eslint-disable-next-line no-console
-      console.warn(chalk.yellow(`[i18n] Translation value for lang="${lang}" path="${path}" is missing.`));
+      console.warn(
+        `[i18n] Translation value for lang="${lang}" path="${path}" is missing.`,
+      );
       return path;
     }
     if (typeof msg !== 'string') {
       // eslint-disable-next-line no-console
-      console.warn(chalk.yellow(`[i18n] Translation value for lang="${lang}" path="${path}" is not a string.`));
+      console.warn(
+        `[i18n] Translation value for lang="${lang}" path="${path}" is not a string.`,
+      );
       if (typeof msg === 'object') {
         return JSON.stringify(msg);
       }

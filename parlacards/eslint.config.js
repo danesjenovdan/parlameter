@@ -22,7 +22,6 @@ export default defineConfig([
     rules: {
       'no-console': 'warn',
       'no-alert': 'warn',
-      'no-debugger': 'warn',
       'vue/multi-word-component-names': ['off'],
       'import/extensions': ['error', 'always', { ignorePackages: true }],
       'import/no-extraneous-dependencies': [
