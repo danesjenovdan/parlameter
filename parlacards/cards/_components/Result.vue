@@ -18,7 +18,7 @@ import DonutChart from '@/_components/DonutChart.vue';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 
 export default {
-  name: 'GlasovanjeSejeResult',
+  name: 'Result',
   components: { DonutChart },
   props: {
     chartData: {

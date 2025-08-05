@@ -12,9 +12,9 @@
     "build:locales": "node build/build-locales.js",
     "start": "node --import ./instrument.js server/index.js",
     "start:watch": "nodemon -e js,cjs,mjs,vue,html server/index.js",
-    "lint": "yarn lint:eslint && yarn lint:card-names",
+    "lint": "yarn lint:eslint && yarn lint:component-names",
     "lint:eslint": "eslint . --ext js,cjs,mjs,vue",
-    "lint:card-names": "node build/lint-card-names.js"
+    "lint:component-names": "node build/lint-component-names.js"
   },
   "dependencies": {
     "@fastify/cors": "^11.1.0",

@@ -54,6 +54,7 @@ import EmptyState from '@/_components/EmptyState.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
 
 export default {
+  name: 'PersonList',
   directives: {
     infiniteScroll,
   },

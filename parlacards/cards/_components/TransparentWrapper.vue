@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'TransparentCardWrapper',
+  name: 'TransparentWrapper',
   data() {
     const { cardState } = this.$root.$options.contextData;
 
