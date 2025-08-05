@@ -46,6 +46,7 @@ import dateFormatter from '@/_helpers/dateFormatter.js';
 import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 
 export default {
+  name: 'SearchMinutes',
   directives: {
     infiniteScroll,
   },

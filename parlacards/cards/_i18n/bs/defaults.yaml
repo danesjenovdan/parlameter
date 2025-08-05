@@ -10,40 +10,44 @@ select-group: Izberi skupino
 select-body: Izberi telo
 select-time-period: Izberi časovno obdobje
 search_placeholder: Traži
-trigger: okidač
+trigger: Okidač
 input-trigger: Unesite okidač
-match: podudaranje
-interval: interval
-email: email
+match: Podudaranje
+interval: Interval
+email: Email
 input-email: Unesite svoju e-mail adresu
 email-address: email
 notification-steps:
 - textfirst: >-
-    Odaberite riječ ili frazu koju želite pratiti. Nedugo nakon što željeni izraz netko izgovori na sjednici Hrvatskog sabora ili nekog od njegovih radnih tijela, obavijestit ćemo vas putem e-maila.
-- textfirst: Odaberite metodu podudaranja okidača. Uz točno podudaranje, o riječima ili izrazima obavještavat će se samo u obliku u kojem su napisani. Uz široko podudaranje uzet će se u obzir i neke varijacije odabranih riječi ili izraza, kao što su deklinacije, konjugacije ili srodni izrazi.
+    Odaberite riječ ili frazu koju želite pratiti. Nedugo nakon što neko izgovori željeni izraz na sjednici Parlamentarne skupštine
+    BiH ili jednog od njenih radnih tijela, obavijestit ćemo vas putem e-maila.
+- textfirst: >-
+    Odaberite metodu podudaranja okidača. Uz tačno podudaranje, obavijesti o riječima
+    ili izrazima slat će se samo u obliku u kojem su napisani. Uz široko podudaranje,
+    uzimat će se u obzir i neke varijacije odabranih riječi ili izraza, kao što su
+    deklinacije, konjugacije ili srodni izrazi.
   firstbullet: 'Točno podudaranje'
   secondbullet: 'Široko podudaranje'
-- textfirst: Koliko često vas trebamo obavještavati?
+- textfirst: Koliko često treba da vas obavještavamo?
   firstbullet: Najviše jednom dnevno
   secondbullet: Najviše jednom tjedno
   thirdbullet: Najviše jednom mjesečno
-- textfirst: Dajte nam e-mail adresu na koju želite da vam šaljemo obavijesti.
+- textfirst: Upišite nam e-mail adresu na koju želite da vam šaljemo obavještenja.
   textsecond: >-
-    Slažem se da mi Danas je novi dan u ime Gonga šalje obavijesti e-mailom kada
-    se odabrane riječi ili fraze spomenu u Gradskoj skupštini.
+    Slažem se da mi Danas je novi dan, u ime Zašto ne, šalje obavještenja e-mailom
+    kada se odabrane riječi ili fraze spomenu u Parlamentarnoj skupštini.
   submit: Prijavi me
 - textfirst: Zabilježeno!
   textsecond: >-
-    Link za potvrdu registracije i uređivanje ostalih postavki čeka vas u
-    vašem e-mail pretincu.
+    Link za potvrdu registracije i uređivanje ostalih postavki čeka vas u vašem e-mail sandučetu.
 - textfirst: Potvrđeno!
-  textsecond: Na e-mail {email} ćete primiti obavijesti za riječ ili izraz "{keyword}".
+  textsecond: Na e-mail {email} ćete primati obavještenja za riječ ili izraz "{keyword}".
 - textfirst: Napaka!
-  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+  textsecond: Došlo je do greške prilikom spremanja obavještenja.
 add-new-trigger: Dodaj novi okidač
 to-notification-list: Na popis obavijesti
 remove: Odstrani
-confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
+confirm-delete-notification: Jesi li siguran_sigurna da želiš obrisati ovu obavijest?
 comparator-text: >-
   Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili
   različito od njih. {load}
@@ -305,7 +309,7 @@ vote_types:
   personal_property_decree: tip glasanja
   other: ostalo
 tools:
-  notifications: Parlameter obavještenja
+  notifications: Obavještenja Parlametra
   vote-comparator: Komparator glasanja
   unity: Jedinstvo
   compass: Parlamentarni kompas
