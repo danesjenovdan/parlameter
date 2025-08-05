@@ -23,6 +23,7 @@ import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import links from '@/_mixins/links.js';
 
 export default {
+  name: 'GlobalSearch',
   components: {
     TransparentWrapper,
     PSearchDropdown,
