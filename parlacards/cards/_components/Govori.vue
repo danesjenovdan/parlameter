@@ -100,6 +100,7 @@ import sessionInfoFormatter from '@/_helpers/sessionInfoFormatter.js';
 import getD3Locale from '@/_i18n/d3locales.js';
 
 export default {
+  name: 'Govori',
   directives: {
     infiniteScroll,
   },

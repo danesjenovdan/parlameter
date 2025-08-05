@@ -130,7 +130,7 @@
     "tools": {
         "notifications": {
             "title": "Parlameter obvestila",
-            "text": "Prijavi se na obvestila. Izberi besedo ali besedno zvezo in prejmi e-pošto, ko jo nekdo izgovori v državnem zboru."
+            "text": "Prijavi se na obvestila. Izberi besedo ali besedno zvezo in prejmi e-pošto, ko bo uporabljena v državnem zboru."
         },
         "voteComparator": {
             "title": "Primerjalnik glasovanj",

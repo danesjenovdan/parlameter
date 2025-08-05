@@ -3,8 +3,9 @@ card:
   info: >-
     # Prijava na Parlametrova obvestila.
 
-    S pomočjo obvestil omogočamo spremljanje razprav v državnem zboru o točno
-    določenih tematikah. Nastaviti je mogoče iskano besedo ali besedno zvezo,
-    določiti način ujemanja in izbrati pogostost obvestil. Sistem samodejno
-    pošlje e-poštno obvestilo, ko se izbrani sprožilec pojavi na seji državnega
-    zbora ali enega od delovnih teles.
+    S pomočjo obvestil omogočamo spremljanje točno določenih razprav, glasovanj
+    in zakonodaje v državnem zboru. Nastaviti je mogoče iskano besedo ali
+    besedno zvezo, določiti način ujemanja in izbrati pogostost obvestil. Sistem
+    samodejno pošlje e-poštno obvestilo, ko je izbrani sprožilec uporabljen na
+    seji državnega zbora ali enega od delovnih teles, v enem od glasovanj ali v
+    obravnavani zakonodaji.
