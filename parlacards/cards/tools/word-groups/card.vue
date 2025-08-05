@@ -271,7 +271,6 @@ export default {
             .filter(scoreHigherThanZero)
             .map((person) => ({
               label: person.person.name,
-              // eslint-disable-next-line max-len
               value: Number(
                 (
                   person.score /
@@ -291,7 +290,6 @@ export default {
             .filter((party) => party.party.acronym !== 'unknown')
             .map((party) => ({
               label: party.party.acronym,
-              // eslint-disable-next-line max-len
               value: party.score,
               link: this.getPartyLinkSafe(party.party),
             }));
@@ -301,7 +299,6 @@ export default {
             .filter(scoreHigherThanZero)
             .map((person) => ({
               label: person.person.name,
-              // eslint-disable-next-line max-len
               value: person.score,
               link: this.getPersonLink(person.person),
               portrait: this.getPersonPortrait(person.person),

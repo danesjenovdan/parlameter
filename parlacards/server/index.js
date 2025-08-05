@@ -1,30 +1,25 @@
 import createFastify from 'fastify';
+import * as Sentry from '@sentry/node';
 import fastifyCors from '@fastify/cors';
-import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import { HTTPError, renderCard } from './render-card.js';
 import { ResponseTimings, getParlaHeaders } from './utils.js';
 
 const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
 
-fastify.register(fastifySentry, {
-  dsn:
-    process.env.NODE_ENV === 'production'
-      ? 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015'
-      : '',
-});
+Sentry.setupFastifyErrorHandler(fastify);
 
 process.on('unhandledRejection', (error) => {
   fastify.log.error(error);
-  fastify.Sentry.captureException(error);
-  fastify.Sentry.close().then(() => {
+  Sentry.captureException(error);
+  Sentry.close().then(() => {
     process.exit(2);
   });
 });
 
 process.on('uncaughtException', (error) => {
   fastify.log.error(error);
-  fastify.Sentry.captureException(error);
-  fastify.Sentry.close().then(() => {
+  Sentry.captureException(error);
+  Sentry.close().then(() => {
     process.exit(3);
   });
 });
@@ -72,7 +67,7 @@ const renderCardHandler = async (request, reply) => {
       }
     }
     fastify.log.error(error);
-    fastify.Sentry.captureException(error);
+    Sentry.captureException(error);
     return reply.status(500).type('text/html').send(error.stack);
   }
 };
@@ -82,8 +77,8 @@ fastify.get('/:group/:method', renderCardHandler);
 fastify.listen({ port: process.env.PORT || 3000, host: '0.0.0.0' }, (error) => {
   if (error) {
     fastify.log.error(error);
-    fastify.Sentry.captureException(error);
-    fastify.Sentry.close().then(() => {
+    Sentry.captureException(error);
+    Sentry.close().then(() => {
       process.exit(1);
     });
   }

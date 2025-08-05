@@ -2,7 +2,6 @@ const { i18n } = require('../server');
 
 const sm = i18n.siteMap;
 
-/* eslint-disable global-require */
 module.exports = (app) => {
   app.use('/', require('./landing'));
 
