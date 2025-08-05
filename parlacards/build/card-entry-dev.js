@@ -15,7 +15,7 @@ import cardState from './state.json';
     // eslint-disable-next-line import/no-unresolved
     const module = await import('@/_i18n/{cardLang}/{cardName}.yaml');
     cardMessages = module.default ?? {};
-  } catch (e) {
+  } catch {
     // noop
   }
 
@@ -51,10 +51,8 @@ import cardState from './state.json';
   window.card.use(i18n);
   window.card.mount('#card');
 
-  /* eslint-disable no-underscore-dangle */
   const element = window.card._container.parentElement;
   const { template } = window.card._component.contextData;
-  /* eslint-enable no-underscore-dangle */
   element.className = template.frameContainerClass;
 
   const templateDataElement = document.querySelector('#template-data');

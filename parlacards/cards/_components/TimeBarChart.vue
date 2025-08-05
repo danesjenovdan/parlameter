@@ -94,7 +94,7 @@ export default {
 
 .time-bar-chart :deep(svg) {
   .bar {
-    fill: colors.$time-chart-passive;;
+    fill: colors.$time-chart-passive;
   }
 }
 </style>
