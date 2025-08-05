@@ -28,7 +28,7 @@ function setupExpress() {
     app.locals.newsletterSegmentId = config.newsletterSegmentId;
 
     // i18n middleware
-    app.use('*', (req, res, next) => {
+    app.use((req, res, next) => {
       if (req.query.lang) {
         res.locals.i18n = _i18n(req.query.lang);
         res.locals.lang = req.query.lang;
@@ -40,7 +40,7 @@ function setupExpress() {
 
     // all other routes
     app.get(
-      '*',
+      '*any',
       ar((render, req, res) => {
         res.status(404);
         render('error/404', {

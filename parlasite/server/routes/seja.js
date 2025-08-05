@@ -238,12 +238,12 @@ const renderDynamic = async (render, req, res, next) => {
   await renderEmpty(render, req, res, next);
 };
 
-router.get('/:id(\\d+)', ar(renderDynamic));
-router.get(`/:id(\\d+)/${sm.session.legislation}`, ar(renderLegislation));
-router.get(`/:id(\\d+)/${sm.session.otherVotings}`, ar(renderVotes));
-router.get(`/:id(\\d+)/${sm.session.agenda}`, ar(renderAgenda));
-router.get(`/:id(\\d+)/${sm.session.transcript}`, ar(renderTranscript));
-router.get(`/:id(\\d+)/${sm.session.minutes}`, ar(renderMinutes));
-router.get(`/:id(\\d+)/${sm.session.vote}/:motionId(\\d+)`, ar(renderMotion));
+router.get('/:id', ar(renderDynamic));
+router.get(`/:id/${sm.session.legislation}`, ar(renderLegislation));
+router.get(`/:id/${sm.session.otherVotings}`, ar(renderVotes));
+router.get(`/:id/${sm.session.agenda}`, ar(renderAgenda));
+router.get(`/:id/${sm.session.transcript}`, ar(renderTranscript));
+router.get(`/:id/${sm.session.minutes}`, ar(renderMinutes));
+router.get(`/:id/${sm.session.vote}/:motionId`, ar(renderMotion));
 
 module.exports = router;

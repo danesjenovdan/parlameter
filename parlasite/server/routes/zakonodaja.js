@@ -33,7 +33,7 @@ router.get(
 );
 
 router.get(
-  '/:slug([a-z0-9-]+)',
+  '/:slug',
   ar(async (render, req, res, next) => {
     const lawData = await getNewData(req.params.slug);
     if (lawData) {

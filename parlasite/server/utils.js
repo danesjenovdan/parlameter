@@ -1,4 +1,4 @@
-const fs = require('fs-extra');
+const fs = require('fs');
 const _ = require('lodash');
 const { urls, locale, defaultCardDate } = require('../config');
 
@@ -245,8 +245,10 @@ function expandProps(msg, props) {
 }
 
 function i18n(lang) {
-  const messages = fs.readJsonSync(`./i18n/${lang}/defaults.json`);
-  const siteMap = fs.readJsonSync(`./i18n/${lang}/sitemap.json`);
+  const messagesStr = fs.readFileSync(`./i18n/${lang}/defaults.json`, 'utf-8');
+  const messages = JSON.parse(messagesStr);
+  const siteMapStr = fs.readFileSync(`./i18n/${lang}/sitemap.json`, 'utf-8');
+  const siteMap = JSON.parse(siteMapStr);
   const legalBody = fs.existsSync(`./i18n/${lang}/legal.html`)
     ? fs.readFileSync(`./i18n/${lang}/legal.html`, 'utf-8')
     : null;

@@ -54,16 +54,6 @@ router.get(
  */
 
 router.get(
-  `/${sm.landing.about}`,
-  ar((render) => {
-    render('landing/o-projektu', {
-      activeMenu: 'landing',
-      pageTitle: i18n('footer.about'),
-    });
-  }),
-);
-
-router.get(
   `/${sm.landing.media}`,
   ar((render) => {
     render('landing/za-medije', {

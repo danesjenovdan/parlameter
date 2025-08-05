@@ -28,7 +28,7 @@ async function getNewData(slug) {
 }
 
 router.get(
-  ['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.party.overview}`],
+  ['/:slug', `/:slug/${sm.party.overview}`],
   ar(async (render, req, res, next) => {
     const pgData = await getNewData(req.params.slug);
     if (pgData) {
@@ -50,7 +50,7 @@ router.get(
 );
 
 router.get(
-  [`/:slug([a-z0-9-]+)/${sm.party.votings}`],
+  [`/:slug/${sm.party.votings}`],
   ar(async (render, req, res, next) => {
     const pgData = await getNewData(req.params.slug);
     if (pgData) {
@@ -72,7 +72,7 @@ router.get(
 );
 
 router.get(
-  [`/:slug([a-z0-9-]+)/${sm.party.speeches}`],
+  [`/:slug/${sm.party.speeches}`],
   ar(async (render, req, res, next) => {
     const pgData = await getNewData(req.params.slug);
     if (pgData) {

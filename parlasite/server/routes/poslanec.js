@@ -46,7 +46,7 @@ async function getNewData(slug) {
 }
 
 router.get(
-  ['/:slug([a-z0-9-]+)', `/:slug([a-z0-9-]+)/${sm.member.overview}`],
+  ['/:slug', `/:slug/${sm.member.overview}`],
   redirectIfLeader,
   ar(async (render, req, res, next) => {
     const mpData = await getNewData(req.params.slug);
@@ -72,7 +72,7 @@ router.get(
 );
 
 router.get(
-  [`/:slug([a-z0-9-]+)/${sm.member.votings}`],
+  [`/:slug/${sm.member.votings}`],
   redirectIfLeader,
   ar(async (render, req, res, next) => {
     const mpData = await getNewData(req.params.slug);
@@ -98,7 +98,7 @@ router.get(
 );
 
 router.get(
-  [`/:slug([a-z0-9-]+)/${sm.member.speeches}`],
+  [`/:slug/${sm.member.speeches}`],
   redirectIfLeader,
   ar(async (render, req, res, next) => {
     const mpData = await getNewData(req.params.slug);
