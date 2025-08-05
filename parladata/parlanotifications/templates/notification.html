@@ -1,42 +1,268 @@
 {% load i18n %}
-
-<!DOCTYPE html>
-<html lang="si">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>{% trans 'Obvestila' %}</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--[if mso]>
+  <style> body,table tr,table td,a,span,table.MsoNormalTable { font-family: 'Arial', 'Helvetica', 'Helvetica Neue', sans-serif !important; }</style>
+  <![endif]-->
+  <style type="text/css">
+    p { margin: 0; padding: 0; margin-bottom: 0; }
+    @media screen and (max-width: 620px) {
+      .main-centered-content { width: 100% !important; max-width: 620px !important; }
+    }
+  </style>
 </head>
-<body>
-	<div class="dndkeywordauthorsession" style="color: #222222; font-family: Arial; font-size: 14px; line-height: 18px;">
-		{% trans 'Živjo' %}! <br/><br/>
-		{% trans 'Spodaj najdeš omembe izbranih besed oz. besednih zvez iz Parlametra.' %} <br/><br/>
-		{% trans 'Srečno' %},<br/>
-		{% trans 'ekipa Parlametra' %}
-	</div>
-	<br/>
-	<br/>
-	{% for key, value in data.items %}
-	<b style="color: #222222; font-family: Arial; font-size: 13px;">"{{key.keyword}}"</b><br/>
-</br>
-		{% for speech in value %}
-		<div class="dndkeywordalert" style="padding-left: 0px; padding-bottom: 20px; max-width: 1000px;">
-			<div class="dndkeyworddate" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.timestamp|date:"d. m. Y"}}</div>
-			<div class="dndkeywordauthorsession" style="color: #595959; font-family: Arial; font-size: 0.75 rem;">{{ speech.speaker_name }}, {{ speech.session_name }}</div>
-			<div style="color: #222222; font-family: Arial; font-size: 0.875rem; text-decoration: underline;">
-			<a href="{% trans 'https://parlameter.si/seja/' %}{{ speech.session_id }}/{% trans 'transkript-url' %}?page={{ speech.order }}#{{ speech.id }}">{{speech.content|safe}}</a>
-		</div><br/>
-		</div>
-		{% endfor %}
-	{% endfor %}
-	<div class="dndborder" style="padding: 10px 0 15px 0; margin: 10px 0; border-top: 1px solid #cccccc; width: 50%;">&nbsp;</div>
-	<a class="logo" href="{% trans 'https://parlameter.si/' %}">
-		<img src="{% trans 'https://parlassets-slovenija-staging.lb.djnd.si/img/logo-parlameter-mejl.png' %}" alt="logo" width="100px">
-	</a>
-	</br>
-	</br>
-	<div class="footer" style="color: #222222; font-family: Arial; font-size: 10px;">
-	{% trans 'Uredi svoje nastavitve' %} <a href="{% trans 'https://parlacards-slovenija-staging.lb.djnd.si/tools/notifications/?id=undefined&no_card_data=true&locale=sl&template=share&action=list' %}&uuid={{ uuid }}" style="color: #222222; font-family: Arial; font-size: 10px;">{% trans 'tukaj' %}</a>.
-	</div>
-</div>
+
+<body style="font-family: 'Arial', 'Helvetica', 'Helvetica Neue', sans-serif; background-color: #ffffff; width: 100%; padding: 0; margin: 0;">
+  {% spaceless %}
+  <!--[if mso]>
+  <table cellpadding="0" cellspacing="0" border="0" style="padding:0px;margin:0px;width:100%;">
+    <tr><td colspan="3" style="padding:0px;margin:0px;font-size:20px;height:20px;" height="20">&nbsp;</td></tr>
+    <tr>
+      <td style="padding:0px;margin:0px;">&nbsp;</td>
+      <td style="padding:0px;margin:0px;width:620px;">
+  <![endif]-->
+  <div class="main-centered-content" style="width: 620px; position: relative; margin: auto; background-color: #ffffff;">
+
+    <!-- START intro -->
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 36px 6px 0px 6px;">
+            <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 14px; line-height: 21px; display: inline;">
+              {% blocktrans %}
+              Živjo!<br><br>
+              Spodaj najdeš primere izbranih besed oz. besednih zvez iz Parlametra.<br><br>
+              Srečno,<br>
+              ekipa Parlametra
+              {% endblocktrans %}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- END intro -->
+
+    <!-- START keywords loop -->
+    {% for key, value in data.items %}
+
+    <!-- START divider -->
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td width="6" height="1" bgcolor="#ffffff" style="padding: 35px 0px 0px 0px; border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
+          <td width="150" height="1" bgcolor="#ffffff" style="border: none; border-bottom: 1px solid #000000; font-size: 1px; line-height: 1px;">&nbsp;</td>
+          <td height="1" bgcolor="#ffffff" style="border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <!-- END divider -->
+
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 36px 0px 0px 0px;">
+            <h1 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 18px; line-height: 21px; text-decoration: underline; display: inline-block; padding: 2px 6px;">
+              {% trans "Rezultati za:" %} {% trans "»" %}{{ key.keyword }}{% trans "«" %}
+            </h1>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- START agenda items -->
+    {% if value.agenda_items %}
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 28px 6px 0px 6px;">
+            <h2 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {% trans "TOČKE DNEVNEGA REDA" %}
+            </h2>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    {% for agenda_item in value.agenda_items %}
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 14px 6px 0px 26px;">
+            <div style="color: #595959; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 12px; line-height: 21px; display: inline;">
+              {{ agenda_item.timestamp|date:"d. m. Y"}} | {{ agenda_item.session_name }}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0px 6px 0px 26px;">
+            <a style="color: #2B68D2; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 14px; line-height: 21px; text-decoration: underline; display: inline;" href="{% trans 'https://parlameter.si/seja/' %}{{ agenda_item.session_id }}/{% trans 'agenda-item-url' %}#{{ agenda_item.id }}">{{ agenda_item.content|safe }}</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- END agenda items -->
+
+    <!-- START speeches -->
+    {% if value.speeches %}
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 28px 6px 0px 6px;">
+            <h2 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {% trans "GOVORI" %}
+            </h2>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    {% for speech in value.speeches %}
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 14px 6px 0px 26px;">
+            <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {{ speech.speaker_name }}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0px 6px 0px 26px;">
+            <div style="color: #595959; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 12px; line-height: 21px; display: inline;">
+              {{ speech.timestamp|date:"d. m. Y"}} | {{ speech.session_name }}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0px 6px 0px 26px;">
+            <a style="color: #2B68D2; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 14px; line-height: 21px; text-decoration: underline; display: inline;" href="{% trans 'https://parlameter.si/seja/' %}{{ speech.session_id }}/{% trans 'transkript-url' %}?page={{ speech.order }}#{{ speech.id }}">{{ speech.content|safe }}</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- END speeches -->
+
+    <!-- START votes -->
+    {% if value.votes %}
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 28px 6px 0px 6px;">
+            <h2 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {% trans "GLASOVANJA" %}
+            </h2>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    {% for vote in value.votes %}
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 14px 6px 0px 26px;">
+            <div style="color: #595959; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 12px; line-height: 21px; display: inline;">
+              {{ vote.timestamp|date:"d. m. Y"}} | {{ vote.session_name }}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0px 6px 0px 26px;">
+            <a style="color: #2B68D2; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 14px; line-height: 21px; text-decoration: underline; display: inline;" href="{% trans 'https://parlameter.si/seja/' %}{{ vote.session_id }}/{% trans 'voting-url' %}/{{ vote.id }}">{{ vote.content|safe }}</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- END votes -->
+
+    <!-- START legislation -->
+    {% if value.legislation %}
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 28px 6px 0px 6px;">
+            <h2 style="margin: 0; mso-line-height-rule: exactly; font-weight: 700; font-size: 14px; line-height: 21px; display: inline;">
+              {% trans "NOVA ZAKONODAJA V PROCEDURI" %}
+            </h2>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    {% for law in value.legislation %}
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 14px 6px 0px 26px;">
+            <div style="color: #595959; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 12px; line-height: 21px; display: inline;">
+              {{ law.timestamp|date:"d. m. Y"}}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 0px 6px 0px 26px;">
+            <a style="color: #2B68D2; margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 14px; line-height: 21px; text-decoration: underline; display: inline;" href="{% trans 'https://parlameter.si' %}/{% trans 'legislation-url' %}/{{ law.id }}">{{ law.content|safe }}</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <!-- END legislation -->
+
+    {% endfor %}
+    <!-- END keywords loop -->
+
+    <!-- START divider -->
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td width="6" height="1" bgcolor="#ffffff" style="padding: 35px 0px 0px 0px; border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
+          <td width="150" height="1" bgcolor="#ffffff" style="border: none; border-bottom: 1px solid #000000; font-size: 1px; line-height: 1px;">&nbsp;</td>
+          <td height="1" bgcolor="#ffffff" style="border:none; font-size: 1px; line-height: 1px;">&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <!-- END divider -->
+
+    <!-- START footer -->
+    <div style="display: block; width: 100%; overflow: hidden; position: relative; background-color: #ffffff;">
+      <table border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%; border: 0; border-collapse: collapse; margin: 0;">
+        <tr>
+          <td style="padding: 36px 6px 0 6px;">
+            <a target="_blank" href="{{ element.url }}" style="display: block; text-decoration: none;" href="{% trans 'https://parlameter.si/' %}"><img width="100" style="display: block; max-width: 100%; margin: 0; height: auto;" src="{% trans 'https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png' %}" alt="logo"></a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding: 21px 6px 64px 6px;">
+            <div style="margin: 0; mso-line-height-rule: exactly; font-weight: 400; font-size: 10px; line-height: 21px; display: inline;">
+              {% trans "Odjavi se od obvestil ali uredi svoje nastavitve" %}
+              <a style="color: #222222;" href="{% trans 'https://parlacards-slovenija.lb.djnd.si/tools/notifications/?id=undefined&no_card_data=true&locale=sl&template=share&action=list' %}&uuid={{ uuid }}">{% trans 'tukaj' %}</a>.
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- END footer -->
+  </div>
+  <!--[if mso]>
+      </td>
+      <td style="padding:0px;margin:0px;">&nbsp;</td>
+    </tr>
+    <tr><td colspan="3" style="padding:0px;margin:0px;font-size:20px;height:20px;" height="20">&nbsp;</td></tr>
+  </table>
+  <![endif]-->
+  {% endspaceless %}
 </body>
+
 </html>
