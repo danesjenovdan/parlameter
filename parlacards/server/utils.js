@@ -227,7 +227,7 @@ const fetchSiteMap = async () => {
     );
     siteMapCache.value = response.data;
     return siteMapCache.value;
-  } catch (error) {
+  } catch {
     return siteMapCache.default;
   }
 };

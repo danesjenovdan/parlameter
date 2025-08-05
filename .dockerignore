@@ -23,8 +23,7 @@
 
 # parlacards
 parlacards/.env*
-parlacards/.eslintrc.cjs
-parlacards/.eslintignore
+parlacards/eslint.config.js
 parlacards/.prettierrc.json
 parlacards/jsconfig.json
 parlacards/dist/
@@ -33,7 +32,6 @@ parlacards/dist/
 parlassets/scss/style.css
 
 # parlasite
-parlasite/.eslintrc.js
-parlasite/.eslintignore
+parlasite/eslint.config.js
 parlasite/.prettierrc.json
 parlasite/jsconfig.json

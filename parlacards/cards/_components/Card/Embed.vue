@@ -3,7 +3,7 @@
     <div class="card-back-content">
       <div class="embed-content">
         <div class="embed-divider"></div>
-        <div class="embed-switch-container">
+        <!-- <div class="embed-switch-container">
           <div v-t="'embed.always-refresh'" class="embed-label"></div>
           <div class="embed-switch-big-box" @click="refresh = !refresh">
             <div :class="['embed-switch-box', { off: !refresh }]">
@@ -16,13 +16,14 @@
             </div>
             <div class="embed-switch-ball"></div>
           </div>
-        </div>
+        </div> -->
         <div class="embed-divider"></div>
         <div class="embed-script">
           <!-- eslint-disable vue/no-v-html -->
           <textarea
             ref="embedInput"
             class="form-control"
+            rows="5"
             v-html="embedCode"
           ></textarea>
           <!-- eslint-enable vue/no-v-html -->
