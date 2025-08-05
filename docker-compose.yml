@@ -89,8 +89,7 @@ services:
       # - ./parlacards/dist/:/app/dist
       # #
       - ./parlacards/server/:/app/server
-      - ./parlacards/.eslintignore:/app/.eslintignore
-      - ./parlacards/.eslintrc.cjs:/app/.eslintrc.cjs
+      - ./parlacards/eslint.config.js:/app/eslint.config.js
       - ./parlacards/.prettierrc.json:/app/.prettierrc.json
       - ./parlassets/:/parlassets
 
@@ -129,6 +128,5 @@ services:
       - ./parlasite/i18n/:/app/i18n
       - ./parlasite/server/:/app/server
       - ./parlasite/views/:/app/views
-      - ./parlasite/.eslintignore:/app/.eslintignore
-      - ./parlasite/.eslintrc.js:/app/.eslintrc.js
+      - ./parlasite/eslint.config.js:/app/eslint.config.js
       - ./parlasite/.prettierrc.json:/app/.prettierrc.json

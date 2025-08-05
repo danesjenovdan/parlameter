@@ -245,7 +245,6 @@ export default {
             );
 
             itemsFromGroup.forEach((item, index) => {
-              // eslint-disable-next-line no-param-reassign
               item.groupLabel = index === 0 ? group.label : null;
             });
 
