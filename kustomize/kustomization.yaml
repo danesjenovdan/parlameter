@@ -26,16 +26,16 @@ resources:
 images:
   - name: parladata-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parladata-ajdovscina
-    newTag: 'e17a6b7c2d0fd8d49d882bbf1a4f588a00076825'
+    newTag: 'dd0de2447a4071a122045cf27507d2af56095384'
   - name: parlasolr-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-ajdovscina
-    newTag: 'e17a6b7c2d0fd8d49d882bbf1a4f588a00076825'
+    newTag: 'dd0de2447a4071a122045cf27507d2af56095384'
   - name: parlacards-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ajdovscina
-    newTag: 'e17a6b7c2d0fd8d49d882bbf1a4f588a00076825'
+    newTag: 'dd0de2447a4071a122045cf27507d2af56095384'
   - name: parlasite-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ajdovscina
-    newTag: 'e17a6b7c2d0fd8d49d882bbf1a4f588a00076825'
+    newTag: 'dd0de2447a4071a122045cf27507d2af56095384'
   - name: parlassets-ajdovscina
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ajdovscina
-    newTag: 'e17a6b7c2d0fd8d49d882bbf1a4f588a00076825'
+    newTag: 'dd0de2447a4071a122045cf27507d2af56095384'
