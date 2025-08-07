@@ -1,12 +1,12 @@
 from export.resources.group import (
     GroupDeviationFromGroupResource,
-    GroupUnityResource,
     GroupInfoResource,
     GroupMembersResource,
     GroupMonthlyVoteAttendanceResource,
     GroupNumberOfQuestionsResource,
     GroupStyleScoresResource,
     GroupTfidfResource,
+    GroupUnityResource,
     GroupVocabularySizeResource,
     GroupVoteAttendanceResource,
     GroupVotesInCommonResource,

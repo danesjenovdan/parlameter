@@ -8,15 +8,13 @@ from export.resources.common import (
     get_cached_group_name,
     get_cached_person_name,
 )
-from parlacards.models import (
+from parlacards.models import (  # TODO remove permanently in September 2025; GroupDiscord,
     DeviationFromGroup,
-    # TODO remove permanently in September 2025
-    # GroupDiscord,
-    GroupUnity,
     GroupMonthlyVoteAttendance,
     GroupNumberOfQuestions,
     GroupStyleScore,
     GroupTfidf,
+    GroupUnity,
     GroupVocabularySize,
     GroupVoteAttendance,
     GroupVotingDistance,

@@ -6,8 +6,8 @@ from import_export.fields import Field
 from export.resources.common import ExportModelResource, get_cached_person_name
 from parlacards.models import (
     DeviationFromGroup,
-    GroupUnity,
     GroupNumberOfQuestions,
+    GroupUnity,
     GroupVocabularySize,
     GroupVoteAttendance,
     PersonAvgSpeechesPerSession,
