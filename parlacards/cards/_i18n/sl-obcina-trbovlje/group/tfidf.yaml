@@ -1,0 +1,16 @@
+card:
+  title: Besede, ki jih zaznamujejo
+  info: >-
+    # Izpis 10 besed in besednih zvez, ki jih svetniška skupina uporablja pogosteje kot
+    ostale svetniške skupine.
+
+
+    Analizo izvajamo po statistiki [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Iz analize umikamo t. i. "stopwords". To so tiste besede, ki se pojavljajo zelo
+    pogosto in zato izgubijo svojo reprezentativnost (recimo povedati, napisati, bistvo
+    ...), ali pa same zase ne nosijo nobenega pomena (vezniki, mašila ...). Seznam
+    teh besed je dostopen [tukaj](https://github.com/danesjenovdan/parladata/commit/3f6ee924ddd33ce71f392fefa4dde9c4fe64f82a).
+
+
+    Korpus predstavljajo vsi govori, dokument pa vsi govori svetnikov in svetnic v
+    svetniški skupini.
