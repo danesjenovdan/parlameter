@@ -1,0 +1,12 @@
+card:
+  title: Skupine besed
+  info: >-
+    # Kartica prikazuje, kateri govorci/-ke oziroma katerega svetniške skupine
+    absolutno in relativno največ govorijo o določeni tematiki oziroma skupini
+    besed.
+
+
+    Preštejemo, kolikokrat je posamezni/-a govorec/-ka izrekel/-a vsaj dva
+    iskalna niza in tiste, ki so ga uporabili vsaj enkrat, rangiramo glede na
+    število pojavitev, deljeno z ulomkom števila vseh govorov tega govorca/-ke /
+    svetniške skupine in števila vseh govorov.

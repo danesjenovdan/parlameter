@@ -1,0 +1,9 @@
+card:
+  title: Prisotnost na glasovanjih skozi čas
+  info: >-
+    # Prisotnost svetniške skupine na glasovanjih skozi čas.
+
+
+    Izračunamo število glasovanj, na katerih bi v izbranem mesecu morali biti
+    prisotni svetniki svetniške skupine, preštejemo njihove oddane glasovnice
+    (ignoriramo "odsotne") in z odstotki prikažemo delež glasovanj, ki so se jih udeležili.

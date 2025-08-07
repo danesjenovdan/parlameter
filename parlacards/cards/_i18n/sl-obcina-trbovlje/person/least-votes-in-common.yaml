@@ -1,0 +1,26 @@
+card:
+  title: Najmanjkrat glasujejo enako
+  info: >-
+    # Seznam 5 svetnikov, ki najmanjkrat glasujejo enako kot izbrani_a
+    svetnik_ca. Svetniki so razvrščeni glede na vrednosti od največje proti
+    najmanjši. Večja kot je vrednost, manjše je ujemanje glasovanj.
+
+
+    Izračunamo [evklidsko
+    razdaljo](https://en.wikipedia.org/wiki/Euclidean_distance) med rezultati
+    svetnikovih/-činih glasovanj in rezultati vseh ostalih (pri čemer vrednosti
+    glasov pretvorimo v številčne vrednosti med -1 in 1).
+
+
+    Ko izračunamo "razdaljo" med vsemi svetniki, jih razvrstimo glede na
+    rezultat in prikažemo zadnjih oz. najbolj oddaljenih pet.
+
+
+    Številčne vrednosti glasov
+
+
+    * -1: proti
+
+    * 0: vzdržan_a ali ni prisoten_na
+
+    * 1: za
