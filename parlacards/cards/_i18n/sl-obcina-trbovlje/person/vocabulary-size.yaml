@@ -1,0 +1,21 @@
+card:
+  title: Raznolikost besedišča
+  info: >-
+    # Raznolikost besedišča, ki ga uporablja svetnik/-ca v svojih govorih v
+    primerjavi s povprečno in največjo vrednostjo.
+
+
+    Iz vseh svetnikovih/-činih govorov preštejemo unikatne besede ter število
+    vseh izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna
+    beseda pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki
+    se ponovijo enkrat, dvakrat, trikrat itn.
+
+
+    Na koncu izračunamo koeficient, kjer nad ulomkovo črto postavimo število
+    vseh unikatnih izgovorjenih besed, pod ulomkovo črto pa število besed, ki se
+    ponovijo z neko frekvenco (enkrat, dvakrat, trikrat ...) in množimo s
+    frekvenco na kvadrat (ena na kvadrat, dva na kvadrat, tri na kvadrat ...).
+
+
+    Za poved "Danes je nov dan in danes je dan za Parlameter" je rezultat: 7 /
+    ((3*2^2) + (4*1^2)) = 0,4375

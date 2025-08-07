@@ -1,0 +1,56 @@
+card:
+  title: Stilne analize
+  info: >-
+    # Pogostost uporabe stilno zaznamovanih besed v govorih svetnikov svetniškege
+    skupine.
+
+
+    Z združevanjem kvalifikatorjev
+    [SSKJ](http://www.fran.si/130/sskj-slovar-slovenskega-knjiznega-jezika) in
+    [SNB](http://www.fran.si/131/snb-slovar-novejsega-besedja) smo definirali
+    ekscesno, privzdignjeno in preprosto besedje v svetniških govorih.
+
+
+    Upoštevani so le kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in
+    imajo doseg do konca geselskega sestavka (ne pa tudi kvalifikatorji za
+    posamezne pomene oziroma rabe).
+
+
+    Podjetje [Amebis](http://www.amebis.si/) je iz transkriptov svetniških
+    govorov pripravilo sezname besed, ki imajo katerega od izbranih
+    kvalifikatorjev.
+
+
+    Črtni graf prikazuje delež posameznega tipa besedja v govorih svetniške
+    skupine glede na povprečje, izračunano za celoten sklic. Delež se izračuna
+    po naslednjem algoritmu: vzamejo se vsi govori svetniške skupine, prešteje
+    se število besed (in njihovih ponovitev) v vsaki kategoriji besedja. To se
+    izvede za vse svetnike, nato se deli vrednost kategorije za svetniška skupina
+    z vrednostjo povprečja (seštevek vrednosti vseh svetnikov, deljen s
+    številom svetnikov). Vrednost vsake kategorije za svetniško skupino se
+    normalizira (min. 1 – max. 100).
+
+
+    Privzdignjeno besedje
+
+
+    * Kvalifikatorji iz SSKJ: evfemistično (evfem.), mitološko (mitol.),
+    pesniško (pesn.), knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)
+
+
+    Preprosto besedje
+
+
+    * Kvalifikatorji iz SSKJ: narečno (nar.), pogovorno (pog.), nižje pogovorno
+    (nižje pog.)
+
+    * Kvalifikatorji iz SNB: pogovorno (pog.)
+
+
+    Ekscesno besedje
+
+
+    * Kvalifikatorji iz SSKJ: vulgarno (vulg.), slabšalno (slabš.), ekspresivno
+    (ekspr.), ironično (iron.), otroško (otr.)
+
+    * Kvalifikatorji iz SNB: slabšalno (slabš.), vulgarno (vulg.)
