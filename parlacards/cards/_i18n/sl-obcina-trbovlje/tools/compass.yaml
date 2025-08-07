@@ -1,0 +1,29 @@
+card:
+  title: Parlamentarni kompas
+  info: >-
+    # Pregled svetnikov v koordinatnem sistemu glede na podobnost njihovih
+    glasovanj. Dlje kot sta svetnika na političnem kompasu, bolj se njuna
+    glasovalna zgodovina razlikuje.
+
+
+    Za vsakega/-o svetnika/-co posebej prikličemo zgodovino glasovanj (ali
+    neprisotnosti). Zgodovino glasovanj vsake/-ga svetnika/-ce primejamo z
+    zgodovino glasovanj vseh drugih svetnikov in preštejemo, kolikokrat sta
+    svetnika glasovala enako. Rezultate postavimo v dvodimenzionalno matriko
+    (vrstice in stolpci so svetniki, vrednost X(i,j) predstavlja, kolikokrat sta
+    svetnika i in j glasovala enako). Nato matriko razbijemo na lastne
+    vrednosti.
+
+
+    Algoritem vrne tri matrike: u, s in V-transpose. O V-transpose matriki lahko
+    razmišljamo kot o novem naboru koordinat svetnikov. Iz V-transpose vzamemo
+    tisti dve vrstici, ki pojasnjujeta največji del prejšnje matrike in ju
+    vizualiziramo v dvodimenzionalnem koordinatnem sistemu.
+
+
+    O prvi matriki lahko razmišljamo kot o svetnikih, ki se nahajajo v
+    N-dimenzionalnem prostoru (N je število glasovanj, ki jih primerjamo med
+    sabo, oz. najdaljša zgodovina glasovanj enega svetnika/-ce). Algoritem
+    ustvari preslikavo iz N dimenzij na 2, pri čemer skuša čim bolj ohraniti
+    razdalje med svetniki. Dlje kot sta svetnika na političnem kompasu, bolj se
+    njuna glasovalna zgodovina razlikuje.

@@ -1,0 +1,9 @@
+card:
+  title: Število izgovorjenih besed
+  info: >-
+    # Število besed, ki jih je svetnik_ca izgovoril_a v vseh svojih dosedanjih govorih
+    v tem mandatu, v primerjavi s povprečno in največjo vrednostjo.
+
+
+    Seštejemo besede v govorih svetnika_ce, ki jih najdemo v transkriptih, pridobljenih
+    s spletnega mesta [Občine Trbovlje](https://www.trbovlje.si/).

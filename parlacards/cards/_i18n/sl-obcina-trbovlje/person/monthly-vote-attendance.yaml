@@ -1,0 +1,10 @@
+card:
+  title: Prisotnost na glasovanjih sej
+  info: >-
+    # Prisotnost svetnika_ce na glasovanjih skozi čas.
+
+
+    Vsak mesec preštejemo vse oddane glasovnice svetnika_ce in število delimo s
+    številom vseh glasovanj, na katerih bi moral_a svetnik_ca ta mesec
+    glasovati. Če svetnik_ca v izbranem mesecu mandata ni imel_a, prikažemo,
+    na kolikšnem odstotku glasovanj ni imel_a pravice glasovati.

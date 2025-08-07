@@ -1,0 +1,9 @@
+card:
+  title: Nastopi, v katerih je bil iskalni niz izrečen
+  info: >-
+    # Seznam povezav do vseh govorov, ki vsebujejo iskalni niz.
+
+
+    Po transkriptih vseh sej poiščemo in izpišemo povezave do vseh govorov, v
+    katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu od
+    najnovejše do najstarejše.

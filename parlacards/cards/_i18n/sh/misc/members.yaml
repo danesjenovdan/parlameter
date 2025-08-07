@@ -1,9 +1,0 @@
-card:
-  title: Seznam poslancev
-  info: >-
-    # Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu
-    ({parties}; {districts}). Seznam je sortiran po {sortBy}.
-
-
-    Stolpec analiza izraža skupni rezultat, stolpec sprememba pa razliko glede
-    na preteklo obdobje. Stolpec sprememba se osveži ob koncu vsake redne seje.

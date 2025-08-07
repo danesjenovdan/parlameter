@@ -1,0 +1,10 @@
+card:
+  title: Govori
+  info: >-
+    # Izpis povezav do vseh govorov te osebe v tem sklicu, ki ustrezajo uporabniškemu
+    vnosu, razvrščenih po datumu.
+
+
+    Naložimo povezave do vseh govorov izbrane osebe, ki jih najdemo v transkriptih,
+    pridobljenih s spletnega mesta [Občine Trbovlje](https://www.trbovlje.si/), nato
+    pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (časovno obdobje, vsebina).

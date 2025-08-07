@@ -1,0 +1,16 @@
+card:
+  title: Besede, ki so zaznamovale sejo
+  info: >-
+    # Izpis 10 besed in besednih zvez, ki so bile na seji uporabljene pogosteje kot
+    na vseh drugih sejah.
+
+
+    Analizo izvajamo po statistiki [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Iz analize umikamo t. i. "stopwords". To so tiste besede, ki se pojavljajo zelo
+    pogosto in zato izgubijo svojo reprezentativnost (recimo povedati, napisati, bistvo
+    ..., v primeru sej pa tudi občina, predlog, javen, sklep, svet, mio, točka, odbor),
+    ali pa same zase ne nosijo nobenega pomena (vezniki, mašila ...). Seznam teh besed
+    je dostopen [tukaj](https://github.com/danesjenovdan/parladata/commit/3f6ee924ddd33ce71f392fefa4dde9c4fe64f82a).
+
+
+    Korpus predstavljajo vsi govori vseh sej, dokument pa vsi govori na izbrani seji.
