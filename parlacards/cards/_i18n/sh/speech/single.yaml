@@ -1,6 +1,0 @@
-card:
-  title: Govor
-  info: >-
-    Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu
-    [DZ RS](http://www.dz-rs.si), strojno razbijemo na posamezne govorne
-    nastope. To je kartica, ki predstavlja en govor.

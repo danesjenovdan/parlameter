@@ -1,0 +1,10 @@
+card:
+  title: Št. vloženih amandmajev
+  info: >-
+    # Št. amandmajev, ki jih je vložila ta svetniška skupina v primerjavi s
+    povprečno in najvišjo vrednostjo med vsemi svetniškimi skupinami.
+
+
+    Število sedežev posamezne svetniške skupine dobimo tako, da preštejemo vse
+    njihove trenutno aktivne člane. Podatke pridobivamo s spletnega mesta [DZ
+    RS](http://www.dz-rs.si/wps/portal/Home/ODrzavnemZboru/KdoJeKdo/PoslanskeSkupine).
