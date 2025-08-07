@@ -1,12 +1,12 @@
 from export.resources.group import (
     GroupDeviationFromGroupResource,
-    GroupDiscordResource,
     GroupInfoResource,
     GroupMembersResource,
     GroupMonthlyVoteAttendanceResource,
     GroupNumberOfQuestionsResource,
     GroupStyleScoresResource,
     GroupTfidfResource,
+    GroupUnityResource,
     GroupVocabularySizeResource,
     GroupVoteAttendanceResource,
     GroupVotesInCommonResource,
@@ -14,13 +14,13 @@ from export.resources.group import (
 from export.views.common import ExportResourceView
 
 
-class ExportGroupDiscord(ExportResourceView):
+class ExportGroupUnity(ExportResourceView):
     """
-    Export group's discord from database and return them as a file in one of the allowed formats (json, csv).
+    Export group's unity from database and return them as a file in one of the allowed formats (json, csv).
     """
 
-    filename = "group_discord"
-    resource = GroupDiscordResource()
+    filename = "group_unity"
+    resource = GroupUnityResource()
 
 
 class ExportGroupVocabularySize(ExportResourceView):
