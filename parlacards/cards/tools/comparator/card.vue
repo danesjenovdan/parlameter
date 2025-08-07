@@ -9,7 +9,7 @@
           <PSearchDropdown
             v-model="sameMembersAndGroups"
             :groups="dropdownGroups"
-            @update:model-value="searchVotesImmediate"
+            @update:model-value="searchVotes"
           />
         </div>
         <div class="filter dropdown-filter">
@@ -19,7 +19,7 @@
           <PSearchDropdown
             v-model="differentMembersAndGroups"
             :groups="dropdownGroups"
-            @update:model-value="searchVotesImmediate"
+            @update:model-value="searchVotes"
           />
         </div>
         <div class="filter-text">
@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import { uniqBy } from 'lodash-es';
+import { debounce, uniqBy } from 'lodash-es';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
 import infiniteScroll from '@/_directives/infiniteScroll.js';
@@ -328,6 +328,9 @@ export default {
         this.card.isLoading = false;
       });
     },
+    searchVotes: debounce(function searchVotes() {
+      this.searchVotesImmediate();
+    }, 750),
     loadMore() {
       if (this.card.isLoading) {
         return;
