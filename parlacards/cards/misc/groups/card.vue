@@ -66,7 +66,7 @@ const analysesIDs = [
     id: 'number_of_amendments',
   },
   {
-    id: 'intra_disunion',
+    id: 'group_unity',
     precision: 2,
     unit: 'percent',
   },
