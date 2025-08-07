@@ -1,0 +1,14 @@
+card:
+  title: Neujemanje s svetniško skupino
+  info: >-
+    # Odstopanje svetnika_ce od večinskega glasu lastne svetniške skupine v primerjavi
+    s povprečno in največjo vrednostjo.
+
+
+    Za vsa glasovanja preračunamo večinski glas za vsako svetniško skupino. Večinski glas
+    je opcija, za katero se je odločilo največ svetnikov.
+
+
+    Za vsakega svetnika_co najdemo trenutno svetniško skupino in izračunamo odstotek
+    neujemanja glasov v obdobju članstva v občinskem svetu. Večji kot je prikazan
+    odstotek, večje je neujemanje svetnika_ce s svetniško skupino.

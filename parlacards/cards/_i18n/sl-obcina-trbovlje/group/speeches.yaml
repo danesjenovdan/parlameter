@@ -1,0 +1,11 @@
+card:
+  title: Govori
+  info: >-
+    # Izpis povezav do vseh govorov svetnikov svetniške skupine v tem sklicu, ki ustrezajo
+    uporabniškemu vnosu, razvrščenih po datumu.
+
+
+    Naložimo povezave do vseh govorov svetnikov izbrane svetniške skupine, ki jih
+    najdemo v transkriptih, pridobljenih s spletnega mesta [Občine Trbovlje](https://www.trbovlje.si/).
+    Ob uporabi filtrov prikažemo tiste, ki ustrezajo uporabniškemu vnosu (časovno
+    obdobje, vsebina govora).
