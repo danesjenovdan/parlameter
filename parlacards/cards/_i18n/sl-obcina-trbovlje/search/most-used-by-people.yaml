@@ -1,0 +1,10 @@
+card:
+  title: Največkrat so pojem uporabili
+  info: >-
+    # Seznam 5 svetnikov, ki so iskalni niz največkrat uporabili, razvrščen od
+    največje proti najmanjši vrednosti.
+
+
+    Preštejemo, kolikokrat je posamezni_a svetnik_ca izrekel_a iskani niz in
+    osebe, ki so ga uporabile vsaj enkrat, rangiramo glede na število pojavitev.
+    Prikažemo prvih pet.

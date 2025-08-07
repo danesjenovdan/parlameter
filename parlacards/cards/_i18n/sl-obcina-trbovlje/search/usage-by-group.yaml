@@ -1,0 +1,9 @@
+card:
+  title: Raba po svetniških skupinah
+  info: >-
+    # Pregled pogostosti pojavljanja iskalnega niza v govorih glede na svetniško skupino.
+
+
+    Za vsak iskalni niz preverimo, v koliko govorih svetnic in
+    svetnikov svetniških skupin se pojavi. Seštejemo jih glede na svetniško
+    skupino in prikažemo v krožnem grafikonu.

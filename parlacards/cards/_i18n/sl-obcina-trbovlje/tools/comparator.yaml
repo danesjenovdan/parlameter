@@ -1,0 +1,17 @@
+card:
+  title: Primerjalnik glasovanj
+  info: >-
+    Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi
+    svetniških skupin uporablja izračunan večinski glas, ki ga izračunamo tako,
+    da preštejemo za katero opcijo je glasovalo največ svetnikov svetniške
+    skupine.
+
+
+    Rezultate prikazujemo na tri načine:
+
+
+    * kot seznam vseh glasovanj,
+
+    * kot črtni grafikon ki predstavlja število glasovanj na dan,
+
+    * kot histogram s seštevki glasovanj glede na matično delovno telo.
