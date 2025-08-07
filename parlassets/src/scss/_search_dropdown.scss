@@ -112,7 +112,7 @@
         cursor: default;
         text-transform: uppercase;
       }
-      &.focused {
+      &.focused:not(.disabled) {
         background: color.adjust($normal-background, $lightness: -10%);
       }
       &.selected {
@@ -121,6 +121,10 @@
         &.focused {
           background: color.adjust($selected-background, $lightness: -10%);
         }
+      }
+      &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
       }
       &:not(:last-of-type):not(.selected) {
         border-bottom: $border-width solid colors.$background;

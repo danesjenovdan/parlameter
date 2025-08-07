@@ -338,6 +338,10 @@ export default {
       this.$emit('search', this.localFilter);
     },
     selectItem(selectedItemId) {
+      const item = this.modelValue.find((item) => item.id === selectedItemId);
+      if (!item || item.disabled) {
+        return;
+      }
       if (this.single) {
         // this.clearSelection();
         this.toggleDropdown(false);
@@ -407,6 +411,7 @@ export default {
         selected: item.selected,
         focused: this.focused === index,
         large: this.largeItems,
+        disabled: item.disabled,
       };
     },
     highlightLabel(label) {
