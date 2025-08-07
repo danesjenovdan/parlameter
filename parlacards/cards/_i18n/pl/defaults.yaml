@@ -5,7 +5,7 @@ recently-passed: Niedawno przyjęte
 most-discussed: Največ reakcij
 all-legislation: Wszystkie ustawy
 select-mps: Wybierz posła
-selected-mps: 'Wybrano: {num}'
+selected-mps: "Wybrano: {num}"
 select-group: Izberi skupino
 select-body: Izberi telo
 select-time-period: Izberi časovno obdobje
@@ -18,34 +18,34 @@ email: e-mail
 input-email: Enter email
 email-address: e-mail
 notification-steps:
-- textfirst: >-
-    Izberi besedo ali besedno zvezo, ki jo želiš spremljatii. Kmalu za tem, ko
-    bo uporabljena v govoru, glasovanju ali zakonodaji, ti to sporočimo po
-    e-pošti.
-- textfirst: >-
-    Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
-    besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
-    ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
-    zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
-  firstbullet: 'Natančno ujemanje'
-  secondbullet: 'Široko ujemanje'
-- textfirst: Kako pogosto naj ti pišemo?
-  firstbullet: Največ enkrat na dan
-  secondbullet: Največ enkrat na teden
-  thirdbullet: Največ enkrat na mesec
-- textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
-  textsecond: >-
-    Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila, ko se
-    izbrane besede ali besedne zveze uporabijo pri delu državnega zbora.
-  submit: Prijavi me
-- textfirst: Zabeleženo!
-  textsecond: >-
-    Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
-    e-poštnem predalu.
-- textfirst: Potrjeno!
-  textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
-- textfirst: Napaka!
-  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+  - textfirst: >-
+      Izberi besedo ali besedno zvezo, ki jo želiš spremljatii. Kmalu za tem, ko
+      bo uporabljena v govoru, glasovanju ali zakonodaji, ti to sporočimo po
+      e-pošti.
+  - textfirst: >-
+      Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
+      besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
+      ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
+      zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
+    firstbullet: "Natančno ujemanje"
+    secondbullet: "Široko ujemanje"
+  - textfirst: Kako pogosto naj ti pišemo?
+    firstbullet: Največ enkrat na dan
+    secondbullet: Največ enkrat na teden
+    thirdbullet: Največ enkrat na mesec
+  - textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
+    textsecond: >-
+      Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila, ko se
+      izbrane besede ali besedne zveze uporabijo pri delu državnega zbora.
+    submit: Prijavi me
+  - textfirst: Zabeleženo!
+    textsecond: >-
+      Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
+      e-poštnem predalu.
+  - textfirst: Potrjeno!
+    textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
+  - textfirst: Napaka!
+    textsecond: Prišlo je do napake pri shranjevanju obvestil.
 add-new-trigger: Dodaj nov sprožilec
 to-notification-list: Na seznam obvestil
 remove: Odstrani
@@ -53,18 +53,19 @@ confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvest
 comparator-text: >-
   Chcę wiedzieć, na których głosowaniach {same} głosowali jednakowo, a
   {different} głosowali inaczej od nich. {load}
-ignore-absent: Zignoruj "nieobecne" głosy
 comparator-vote-percent: '{num} wyszukane głosowania reprezentują {percent} wszystkich głosowań.'
+select-members-voted-same: Izberi poslance, ki so glasovali enako
+select-members-voted-different: Izberi poslance, ki so glasovali drugače
 tabs:
   vote-list: Lista głosowań
   time-chart: Oś czasu
   bar-chart: Dynamika w odniesieniu do komisji
-select-parties-people: Wybierz klub parlamentarny lub dodaj poszczególnego posła.
-empty-state-text: Aby wyświetlić głosowania, dodaj przynajmniej dwóch przedstawicieli.
+comparator-empty-state-text: Aby wyświetlić głosowania, dodaj przynajmniej dwóch przedstawicieli.
+comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
 speakers: Mówcy
 input-words: Wprowadż słowo lub kilka słów oddzielonych przecinkiem.
 empty-text: Aby wyświetlić wyniki, dodaj przynajmniej dwa słowa.
-wordgroups-text: 'Pokaż mi, kto naczęściej używa następujących grup wyrazów: {words}{load}'
+wordgroups-text: "Pokaż mi, kto naczęściej używa następujących grup wyrazów: {words}{load}"
 show-relative: Pokaż relatywną metrykę
 select-working-body-placeholder: Wybrana komisja
 only-abstracts: Tylko ze streszczeniem
@@ -88,8 +89,8 @@ update-session: Zaktualizuj posiedzenie
 tags: Oznaczenia
 add-tag: Dodaj oznaczenie
 votes: Głosy
-'yes': TAK
-'no': NIE
+"yes": TAK
+"no": NIE
 copy: Kopiuj
 copied: Skopiowano!
 load: Załaduj
@@ -108,7 +109,7 @@ working-body: Odpowiedzialna komisja
 working-bodies: Odpowiedzialne komisje
 vote-types: Typy głosowania
 select-placeholder: Wybierz
-selected-placeholder: 'Wybrano: {num}'
+selected-placeholder: "Wybrano: {num}"
 data: Podatki
 name: Imię
 name--for-legislation: Title
@@ -174,7 +175,6 @@ voted-did-not-vote--m: Brez glasu
 voted-did-not-vote--plural: Brez glasu
 anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Uporządkuj według
-sort-by--inequality: Niezgodności
 sort-by--date: Daty
 sort-by--unity: Enotnosti
 sort-by--disunity: Neenotnosti
@@ -198,7 +198,6 @@ absent--m: Nieobecny
 absent--plural: Nieobecni
 no-term: Bez mandatu
 no-data: Brez podatka
-inequality: Niezgodność
 unity: Enotnost
 everybody: Wszystko
 show: Pokaż
@@ -333,13 +332,13 @@ commissions: Delovna telesa
 delegations: Druga članstva
 friendship_groups: Druga članstva
 investigative_comissions: Preiskovalne komisije
-elected-to-district: 'Št. glasov: {numVotes}, {district}'
+elected-to-district: "Št. glasov: {numVotes}, {district}"
 elected-to-district--m: Prejel {numVotes} glasov v okraju {district}
 elected-to-district--f: Prejela {numVotes} glasov v okraju {district}
-elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points: "Št. točk: {numVotes}, {district}"
 elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
 elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
-age--years: '{age} lat'
+age--years: "{age} lat"
 no-social-media: brak mediów społecznościowych
 select-district-placeholder: Wybierz okręg
 select-parties-placeholder: Wybierz klub
@@ -360,19 +359,19 @@ analysis-texts:
     label: Demografia
   presence_votes:
     label: Obecność na głosowaniach Sejmu RP
-    titleSuffix: ' według obecności na głosowaniach Sejmu RP'
+    titleSuffix: " według obecności na głosowaniach Sejmu RP"
     explanation: >-
       Liczba głosowań, gdzie poseł był obecny, jest dzielona przez liczbę
       wszystkich głosowań i normalizowana (min 1 - max 100).
   number_of_questions:
     label: Liczba poselskich zapytań i inicjatyw
-    titleSuffix: ' według liczby poselskich zapytań i inicjatyw'
+    titleSuffix: " według liczby poselskich zapytań i inicjatyw"
     explanation: >-
       Liczba zapytań i inicjatyw poselskich podejmowanych przez posła na tym
       posiedzeniu Sejmu RP w porównaniu ze średnią i maksymalną wartością.
   speeches_per_session:
     label: Liczba wystąpień na posiedzenie
-    titleSuffix: ' według liczby wystąpień na posiedzenie'
+    titleSuffix: " według liczby wystąpień na posiedzenie"
     explanation: >-
       Liczymy wstąpienia posłów i dzielimy je przez liczbę posiedzeń, w trakcie
       których poseł przemawiał. Liczbę wszystkich wystąpień dzielimy najpierw
@@ -381,19 +380,19 @@ analysis-texts:
       z wartością średnią i maksymalną.
   spoken_words:
     label: Liczba wypowiedzianych słów
-    titleSuffix: ' według liczby wypowiedzianych słów'
+    titleSuffix: " według liczby wypowiedzianych słów"
     explanation: >-
       Liczba słów wypowiedzianych przez poseła w trakcie wszystkich swoich
       wystąpień w Sejmie.
   mismatch_of_pg:
     label: Odchylenie od klubu parlamentarnego
-    titleSuffix: ' według odchylenia od klubu parlamentarnego'
+    titleSuffix: " według odchylenia od klubu parlamentarnego"
     explanation: >-
       Odstępstwo od głosu większości klubu parlamentarnego na głosowaniach Sejmu
       RP.
   working_bodies:
     label: Delovna telesa
-    titleSuffix: ' po delovnih telesih'
+    titleSuffix: " po delovnih telesih"
     explanation: Članstva v delovnih telesih.
 all-votes: wszystkie głosowania
 all-working-bodies: wszystkie odpowiedzialne komisje
@@ -412,20 +411,20 @@ deputy--m: Podpredsednik
 deputy--f: Podpredsednica
 member--m: Član
 member--f: Članica
-number-of-seats: 'Liczba miejsc w parlamencie'
-contact: 'Kontakt'
+number-of-seats: "Liczba miejsc w parlamencie"
+contact: "Kontakt"
 mp: Poseł/Posłanka
 addressee: Adresat/-ka
 analysis-texts--party:
   seat_count:
     label: Liczba miejsc
-    titleSuffix: ' według liczby miejsc'
+    titleSuffix: " według liczby miejsc"
     explanation: >-
       Otrzymujemy liczbę miejsc każdego klubu parlamentarnego przez policzenie
       wszystkich jego aktywnych członków.
   presence_sessions:
     label: Obecność na posiedzeniach Sejmu RP
-    titleSuffix: ' zgodnie z wynikami analizy obecności na posiedzeniach Sejmu RP'
+    titleSuffix: " zgodnie z wynikami analizy obecności na posiedzeniach Sejmu RP"
     explanation: >-
       Liczymy wszystkie posiedzenia i sprawdzamy każdego członka tego klubu
       parlamentarnego, jeśli głosowali co najmniej raz w trakcie tego
@@ -435,7 +434,7 @@ analysis-texts--party:
       przez liczbę posiedzeń i normalizowany (min. 1 - maks. 100).
   vote_attendance:
     label: Obecność na głosowaniach
-    titleSuffix: ' zgodnie z wynikami analizy obecności na głosowaniach Sejmu RP'
+    titleSuffix: " zgodnie z wynikami analizy obecności na głosowaniach Sejmu RP"
     explanation: >-
       Liczymy wszystkie głosowania, a także liczbę posłów klubu parlamentarnego
       obecnych przy każdym głosowaniu. Suma wszystkich oddanych głosów jest
@@ -443,22 +442,22 @@ analysis-texts--party:
       Wynik jest następnie normalizowany (min. 1 - maks. 100).
   number_of_questions:
     label: Liczba poselskich zapytań i inicjatyw
-    titleSuffix: ' zgodnie z wynikami analizy według liczby zapytań i inicjatyw poselskich'
+    titleSuffix: " zgodnie z wynikami analizy według liczby zapytań i inicjatyw poselskich"
     explanation: >-
       Liczymy wszystkie zapytania i inicjatywy podejmowane przez członków
       wybranego klubu parlamentarnego w odniesieniu do Sejmu. Dane uzyskujemy ze
       strony internetowej Sejmu RP.
   number_of_amendments:
     label: Št. vloženih amandmajev
-    titleSuffix: ' glede na rezultate analize po št. vloženih amandmajev'
-    explanation: ''
-  intra_disunion:
-    label: Neenotnost glasovanj
-    titleSuffix: ' glede na neenotnost glasovanj'
-    explanation: ''
+    titleSuffix: " glede na rezultate analize po št. vloženih amandmajev"
+    explanation: ""
+  group_unity:
+    label: Enotnost glasovanj
+    titleSuffix: " glede na enotnost glasovanj"
+    explanation: ""
   vocabulary_size:
     label: Różnorodność słownictwa
-    titleSuffix: ' zgodnie z wynikami analizy różnorodności słownictwa'
+    titleSuffix: " zgodnie z wynikami analizy różnorodności słownictwa"
     explanation: >-
       W każdym wystąpieniu poselskim liczymy unikalne słowa i liczbę wszystkich
       wypowiedzianych słów. Następnie liczymy ile razy pojawia się każde
@@ -476,7 +475,7 @@ analysis-texts--party:
       100).
   privzdignjeno:
     label: Podniosłe słownictwo
-    titleSuffix: ' zgodnie z wynikami analizy podniosłego słownictwa'
+    titleSuffix: " zgodnie z wynikami analizy podniosłego słownictwa"
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
       privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
@@ -492,7 +491,7 @@ analysis-texts--party:
       s skupnim seštevkom in normaliziramo (min 1 - max 100).
   preprosto:
     label: Proste słownictwo
-    titleSuffix: ' zgodnie z wynikami analizy prostego słownictwa'
+    titleSuffix: " zgodnie z wynikami analizy prostego słownictwa"
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
       privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
@@ -507,7 +506,7 @@ analysis-texts--party:
       seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).
   problematicno:
     label: Przesadne słownictwo
-    titleSuffix: ' zgodnie z wynikami analizy przesadnego słownictwa'
+    titleSuffix: " zgodnie z wynikami analizy przesadnego słownictwa"
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
       privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
@@ -528,7 +527,7 @@ summary: Podsumowanie
 all-mps: Wszyscy posłowie
 whole-term: Cała kadencja
 last-year: Poprzedni rok
-limited-to-last-five: ', lista jest ograniczonona do pierwszych pięciu posiedzeń'
+limited-to-last-five: ", lista jest ograniczonona do pierwszych pięciu posiedzeń"
 just-last-five: Tylko ostatnich 5
 sort-by--updated: data ostatniej aktualizacji danych o posiedzeniu
 sort-by--workingBody: nazwa organizacji
@@ -543,7 +542,7 @@ mayor: Župan
 website: Spletno mesto
 budget: Proračun
 agenda-items: Točke dnevnega reda
-agenda-item-point: '{num}. točka'
+agenda-item-point: "{num}. točka"
 material: Gradivo
 documents: Dokumenti
 external_analysis: Analize

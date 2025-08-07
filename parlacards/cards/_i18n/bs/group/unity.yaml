@@ -1,0 +1,11 @@
+card:
+  title: Ujedinjenost glasanja
+  info: >-
+    # Ujedinjenost odabranog kluba na glasanju na sjednicama Parlamenta u
+    odnosu na prosječnu i najvišu stopu ujedinjenosti među svim klubovima.
+
+
+    Za svako glasanje za klub se prebroji koliko je zastupnika glasalo i kako
+    (ZA, PROTIV, SUZDRŽANI, ODSUTNI). Izračunava se postotak onih koji su
+    glasali za najpopularniju opciju. Tako se dobiva stepen ujedinjenosti
+    odnosno postotak zastupnika koji su se priklonili većinskom glasu kluba.
