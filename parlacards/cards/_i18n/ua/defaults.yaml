@@ -25,7 +25,7 @@ analysis-texts--party:
     label: Кількість поправок
     titleSuffix: " glede na rezultate analize po št. vloženih amandmajev"
     explanation: ""
-  intra_disunion:
+  group_unity:
     label: Розбіжності у голосуванні
     titleSuffix: " glede na enotnost glasovanj"
     explanation: ""

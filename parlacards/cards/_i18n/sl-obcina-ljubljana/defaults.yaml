@@ -442,7 +442,7 @@ analysis-texts--party:
     label: Št. vloženih amandmajev
     titleSuffix: " glede na rezultate analize po št. vloženih amandmajev"
     explanation: ""
-  intra_disunion:
+  group_unity:
     label: Enotnost glasovanj
     titleSuffix: " glede na enotnost glasovanj"
     explanation: ""

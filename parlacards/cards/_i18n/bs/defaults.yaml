@@ -437,7 +437,7 @@ analysis-texts--party:
     label: Br. podnesenih amandmana
     titleSuffix: " obzirom na rezultate analize po br. uloženih amandmana"
     explanation: ""
-  intra_disunion:
+  group_unity:
     label: Ujedinjenost glasanja
     titleSuffix: " obzirom na ujedinjenost glasanja"
     explanation: ""
