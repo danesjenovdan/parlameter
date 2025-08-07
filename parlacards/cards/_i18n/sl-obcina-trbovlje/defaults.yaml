@@ -418,9 +418,9 @@ analysis-texts--party:
     label: Št. vloženih amandmajev
     titleSuffix: ' glede na rezultate analize po št. vloženih amandmajev'
     explanation: ''
-  intra_disunion:
-    label: Neenotnost glasovanj
-    titleSuffix: ' glede na neenotnost glasovanj'
+  group_unity:
+    label: Enotnost glasovanj
+    titleSuffix: ' glede na enotnost glasovanj'
     explanation: ''
   vocabulary_size:
     label: Raznolikost besedišča
