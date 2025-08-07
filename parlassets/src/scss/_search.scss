@@ -16,39 +16,6 @@
   font-weight: 300;
 }
 
-.searchfilter-checkbox:last-child {
-  height: 60px;
-}
-
-.searchfilter-checkbox .checkbox+label {
-  width: 100%;
-  font-size: 16px;
-  line-height: 40px;
-  margin-bottom: 10px;
-  padding-left: 40px;
-}
-
-.searchfilter-checkbox .checkbox+label:before {
-  margin-top: 5px;
-  width: 30px;
-  height: 30px;
-  background-color: colors.$background;
-}
-
-.searchfilter-checkbox .checkbox.with-input+label:before {
-  margin-top: 10px;
-  width: 30px;
-  height: 30px;
-}
-
-.searchfilter-checkbox .checkbox:checked+label:before {
-  background-position: 7px 9px;
-}
-
-.searchfilter-checkbox .checkbox[disabled]+label {
-  opacity: 0.5;
-}
-
 .parlabutton-filter {
   margin: auto;
   position: relative;

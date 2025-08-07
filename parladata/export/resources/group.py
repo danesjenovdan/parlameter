@@ -8,13 +8,13 @@ from export.resources.common import (
     get_cached_group_name,
     get_cached_person_name,
 )
-from parlacards.models import (
+from parlacards.models import (  # TODO remove permanently in September 2025; GroupDiscord,
     DeviationFromGroup,
-    GroupDiscord,
     GroupMonthlyVoteAttendance,
     GroupNumberOfQuestions,
     GroupStyleScore,
     GroupTfidf,
+    GroupUnity,
     GroupVocabularySize,
     GroupVoteAttendance,
     GroupVotingDistance,
@@ -46,9 +46,27 @@ class GroupCardExport(CardExport):
         return get_cached_group_name(score.group_id)
 
 
-class GroupDiscordResource(GroupCardExport):
+# TODO remove permanently in September 2025
+# class GroupDiscordResource(GroupCardExport):
+#     class Meta:
+#         model = GroupDiscord
+
+
+class GroupUnityResource(GroupCardExport):
     class Meta:
-        model = GroupDiscord
+        model = GroupUnity
+        fields = (
+            "group",
+            "vote",
+            "value",
+            "timestamp",
+        )
+        export_order = (
+            "group",
+            "vote",
+            "value",
+            "timestamp",
+        )
 
 
 class GroupVocabularySizeResource(GroupCardExport):

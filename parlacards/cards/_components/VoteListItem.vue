@@ -82,7 +82,7 @@
                   }"
                 >
                   {{ voteNumbers?.for }}
-                  <div v-t="'vote-for-plural'" class="type"></div>
+                  <div class="type">{{ $t('vote-for-plural') }}</div>
                   <div class="indicator aye">&nbsp;</div>
                 </div>
                 <div
@@ -100,7 +100,7 @@
                   }"
                 >
                   {{ voteNumbers?.against }}
-                  <div v-t="'vote-against-plural'" class="type"></div>
+                  <div class="type">{{ $t('vote-against-plural') }}</div>
                   <div class="indicator ney">&nbsp;</div>
                 </div>
                 <div
@@ -118,7 +118,7 @@
                   }"
                 >
                   {{ voteNumbers?.abstain }}
-                  <div v-t="'vote-abstain-plural'" class="type"></div>
+                  <div class="type">{{ $t('vote-abstain-plural') }}</div>
                   <div class="indicator abstention">&nbsp;</div>
                 </div>
                 <div
@@ -136,7 +136,7 @@
                   }"
                 >
                   {{ voteNumbers?.absent }}
-                  <div v-t="'vote-absent-plural'" class="type"></div>
+                  <div class="type">{{ $t('vote-absent-plural') }}</div>
                   <div class="indicator not">&nbsp;</div>
                 </div>
                 <div
@@ -149,7 +149,7 @@
                   }"
                 >
                   {{ voteNumbers['did not vote'] }}
-                  <div v-t="'vote-did-not-vote-plural'" class="type"></div>
+                  <div class="type">{{ $t('vote-did-not-vote-plural') }}</div>
                   <div class="indicator none">&nbsp;</div>
                 </div>
               </div>

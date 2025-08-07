@@ -1,0 +1,11 @@
+card:
+  title: Ujedinjenost glasanja
+  info: >-
+    # Ujedinjenost odabranog kluba na glasanju na sjednicama Hrvatskog sabora
+    u odnosu na prosječnu i najvišu stopu ujedinjenosti među svim klubovima.
+
+
+    Za svako glasanje za klub se prebroji koliko je zastupnica glasalo i kako
+    (ZA, PROTIV, SUZDRŽANE, ODSUTNE). Izračunava se postotak onih koje su
+    glasale za najpopularniju opciju. Tako se dobiva stupanj ujedinjenosti
+    odnosno postotak zastupnica koje su se priklonile većinskom glasu kluba.

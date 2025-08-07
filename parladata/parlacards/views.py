@@ -10,7 +10,6 @@ from parlacards.serializers.cards import (
     DeviationFromGroupCardSerializer,
     GroupCardSerializer,
     GroupDeviationFromGroupCardSerializer,
-    GroupDiscordCardSerializer,
     GroupLeastVotesInCommonCardSerializer,
     GroupMediaReportsCardSerializer,
     GroupMembersCardSerializer,
@@ -21,6 +20,7 @@ from parlacards.serializers.cards import (
     GroupSpeechesCardSerializer,
     GroupStyleScoresCardSerializer,
     GroupTfidfCardSerializer,
+    GroupUnityCardSerializer,
     GroupVocabularySizeCardSerializer,
     GroupVoteAttendanceCardSerializer,
     GroupVoteCardSerializer,
@@ -71,7 +71,7 @@ from parlacards.serializers.cards import (
 )
 from parlacards.serializers.cards.misc.sessions import SessionsCardSerializer
 from parlacards.serializers.cards.misc.vote_comparator import (
-    VoteComparatorCardSerializer,
+    ToolsComparatorCardSerializer,
 )
 from parlacards.serializers.cards.person.recent_activity import (
     RecentActivityCardSerializer,
@@ -556,13 +556,13 @@ class GroupSpeechesView(CardView):
     card_serializer = GroupSpeechesCardSerializer
 
 
-class GroupDiscordView(CachedCardView):
+class GroupUnityView(CardView):
     """
-    A group's discord score.
+    A group's unity score.
     """
 
     thing = Organization
-    card_serializer = GroupDiscordCardSerializer
+    card_serializer = GroupUnityCardSerializer
 
 
 class RootOrganization(CardView):
@@ -712,10 +712,10 @@ class ToolsUnity(CardView):
     card_serializer = ToolsUnityCardSerializer
 
 
-class VoteComparator(CardView):
+class ToolsComparator(CardView):
     """
     Compare votes between different mandates.
     """
 
     thing = Organization
-    card_serializer = VoteComparatorCardSerializer
+    card_serializer = ToolsComparatorCardSerializer
