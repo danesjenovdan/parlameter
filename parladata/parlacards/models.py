@@ -167,13 +167,13 @@ class Quote(Timestampable):
     )
 
 
-class OrganizationVoteUnity(Score):
+class GroupUnity(Score):
     vote = models.ForeignKey(
         "parladata.Vote",
         related_name="organization_vote_unities",
         on_delete=models.CASCADE,
     )
-    organization = models.ForeignKey(
+    group = models.ForeignKey(
         "parladata.Organization",
         related_name="organization_vote_unities",
         on_delete=models.CASCADE,

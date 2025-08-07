@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 
-from parlacards.models import OrganizationVoteUnity
+from parlacards.models import GroupUnity
 from parlacards.scores.unity import save_organizations_vote_unities
 from parladata.models.common import Mandate
 from parladata.models.motion import Motion
@@ -19,7 +19,7 @@ class Command(BaseCommand):
         parser.add_argument("mandate_id", type=int)
 
     def handle(self, *args, **options):
-        OrganizationVoteUnity.objects.all().delete()
+        GroupUnity.objects.all().delete()
         self.stdout.write("Deleted all unity scores")
 
         mandate = Mandate.objects.get(id=options["mandate_id"])
