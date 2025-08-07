@@ -26,8 +26,11 @@ class GroupUnityScoreSerializerField(serializers.Field):
         if "request_date" not in self.context.keys():
             raise Exception(f"You need to provide a date in the serializer context.")
 
+        # check for cache
+        cache_key = self.calculate_cache_key(group.id, self.context["request_date"])
+        cached_content = cache.get(cache_key)
+
         # find all relevant groups
-        print(self.context)
         try:
             playing_field, mandate = group.get_last_playing_field_with_mandate(
                 self.context["request_date"]
@@ -42,8 +45,6 @@ class GroupUnityScoreSerializerField(serializers.Field):
         # calculate averages for all groups
         group_averages = {}
         for loop_group in relevant_groups:
-            print(loop_group)
-            print("###############")
             group_averages[loop_group.id] = {
                 "group": loop_group,
                 "average_unity": GroupUnity.objects.filter(
@@ -52,10 +53,6 @@ class GroupUnityScoreSerializerField(serializers.Field):
                     timestamp__lte=mandate.ending or datetime.strptime("3000", "%Y"),
                 ).aggregate(Avg("value"))["value__avg"],
             }
-
-        # check for cache
-        cache_key = self.calculate_cache_key(group.id, self.context["request_date"])
-        cached_content = cache.get(cache_key)
 
         if cached_content:
             return cached_content
