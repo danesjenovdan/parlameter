@@ -4,53 +4,58 @@ under-consideration: У порядку денному
 recently-passed: Нещодавно прийнятий
 analysis-texts--party:
   presence_sessions:
-    explanation: Ми рахуємо всі засідання та перевіряємо кожного члена парламентської
+    explanation:
+      Ми рахуємо всі засідання та перевіряємо кожного члена парламентської
       фракції/групи, чи вони голосували хоча б один раз протягом засідання. Якщо вони
       голосували хоча б один раз, такий представник вважається присутнім. Сума всіх
       відвідувань ділиться на кількість членів парламентської фракції/групи, після
       чого результат ділиться на кількість засідань та стандартизується (від мінімально
       1 до максимально 100).
-    titleSuffix: ' результат аналізу присутності в залі Верховної Ради'
+    titleSuffix: " результат аналізу присутності в залі Верховної Ради"
     label: Відвідування засідань
   vote_attendance:
-    explanation: Ми рахуємо усі голосування, а також кількість представників парламентської
+    explanation:
+      Ми рахуємо усі голосування, а також кількість представників парламентської
       фракції/групи присутніх на кожному із голосувань. Сума всіх поданих бюлетенів
       ділиться на кількість представників парламентської групи та кількість голосувань.
       Результат стандартизується (від мінімально 1 до максимально 100).
     label: Відвідування голосувань
-    titleSuffix: ' результати аналізу присутності під час голосувань'
+    titleSuffix: " результати аналізу присутності під час голосувань"
   number_of_amendments:
     label: Кількість поправок
-    titleSuffix: ' glede na rezultate analize po št. vloženih amandmajev'
-    explanation: ''
-  intra_disunion:
+    titleSuffix: " glede na rezultate analize po št. vloženih amandmajev"
+    explanation: ""
+  group_unity:
     label: Розбіжності у голосуванні
-    titleSuffix: ' glede na neenotnost glasovanj'
-    explanation: ''
+    titleSuffix: " glede na enotnost glasovanj"
+    explanation: ""
   vocabulary_size:
-    explanation: 'Ми рахуємо всі унікальні слова у промові народного депутата. Потім
+    explanation:
+      "Ми рахуємо всі унікальні слова у промові народного депутата. Потім
       ми рахуємо кількість повторень цих слів. Ми групуємо їх відповідно до кількості
       вживання. Зрештою, ми рахуємо коефіцієнт, який найкраще можна пояснити на такому
       прикладі: Для фрази «Сьогодні - новий день і сьогоднішній результат Парламетру»
       7 / ((3*2^2) + (4*1^2)) = 0,4375<br><br> Ми додаємо окремі результати для всієї
       парламентської групи та ділимо його на кількість представників групи. Ми ділимо
       окремі результати на загальну суму та стандартизуємо (від мінімально 1 до максимально
-      100).'
+      100)."
     label: Сила висловлювань
-    titleSuffix: ' сила висловлювань'
+    titleSuffix: " сила висловлювань"
   number_of_questions:
     label: Кількість депутатських запитань
-    titleSuffix: ' кількість депутатських запитань'
-    explanation: Ми рахуємо усі запитання та ініціативи народних депутатів цього скликання
+    titleSuffix: " кількість депутатських запитань"
+    explanation:
+      Ми рахуємо усі запитання та ініціативи народних депутатів цього скликання
       Верховної Ради.
   seat_count:
     label: Кількість місць
-    titleSuffix: ' кількість місць'
-    explanation: Ми отримуємо кількість місць парламентської фракції/групи шляхом
+    titleSuffix: " кількість місць"
+    explanation:
+      Ми отримуємо кількість місць парламентської фракції/групи шляхом
       підрахунку кількості всіх її активних учасників.
   privzdignjeno:
     label: Піднесена промова
-    titleSuffix: ' піднесена промова'
+    titleSuffix: " піднесена промова"
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
       privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
@@ -66,7 +71,7 @@ analysis-texts--party:
       s skupnim seštevkom in normaliziramo (min 1 - max 100).
   preprosto:
     label: Проста промова
-    titleSuffix: ' проста промова'
+    titleSuffix: " проста промова"
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
       privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
@@ -80,7 +85,7 @@ analysis-texts--party:
       rezultate poslancev in delimo s številom poslancev v njej. Posamezne
       seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).
   problematicno:
-    titleSuffix: ' довга промова'
+    titleSuffix: " довга промова"
     label: Довга промова
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
@@ -99,7 +104,7 @@ party: Парламентська фракція/група
 most-discussed: Найбільш обговорюваний
 all-legislation: Усі законопроєкти
 select-mps: Оберіть народного депутата
-selected-mps: 'Обрані: {кількість}'
+selected-mps: "Обрані: {кількість}"
 select-group: Izberi skupino
 select-body: Izberi telo
 select-time-period: Izberi časovno obdobje
@@ -112,45 +117,44 @@ email: електронна адреса
 input-email: Enter email
 email-address: електронна адреса
 notification-steps:
-- textfirst: >-
-    Izberi besedo ali besedno zvezo, ki jo želiš spremljatii. Kmalu za tem, ko
-    bo uporabljena v govoru, glasovanju ali zakonodaji, ti to sporočimo po
-    e-pošti.
-- textfirst: >-
-    Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
-    besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
-    ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
-    zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
-  firstbullet: 'Natančno ujemanje'
-  secondbullet: 'Široko ujemanje'
-- textfirst: Kako pogosto naj ti pišemo?
-  firstbullet: Največ enkrat na dan
-  secondbullet: Največ enkrat na teden
-  thirdbullet: Največ enkrat na mesec
-- textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
-  textsecond: >-
-    Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila, ko se
-    izbrane besede ali besedne zveze uporabijo pri delu državnega zbora.
-  submit: Prijavi me
-- textfirst: Zabeleženo!
-  textsecond: >-
-    Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
-    e-poštnem predalu.
-- textfirst: Potrjeno!
-  textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
-- textfirst: Napaka!
-  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+  - textfirst: >-
+      Izberi besedo ali besedno zvezo, ki jo želiš spremljatii. Kmalu za tem, ko
+      bo uporabljena v govoru, glasovanju ali zakonodaji, ti to sporočimo po
+      e-pošti.
+  - textfirst: >-
+      Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
+      besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
+      ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
+      zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
+    firstbullet: "Natančno ujemanje"
+    secondbullet: "Široko ujemanje"
+  - textfirst: Kako pogosto naj ti pišemo?
+    firstbullet: Največ enkrat na dan
+    secondbullet: Največ enkrat na teden
+    thirdbullet: Največ enkrat na mesec
+  - textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
+    textsecond: >-
+      Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila, ko se
+      izbrane besede ali besedne zveze uporabijo pri delu državnega zbora.
+    submit: Prijavi me
+  - textfirst: Zabeleženo!
+    textsecond: >-
+      Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
+      e-poštnem predalu.
+  - textfirst: Potrjeno!
+    textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
+  - textfirst: Napaka!
+    textsecond: Prišlo je do napake pri shranjevanju obvestil.
 add-new-trigger: Dodaj nov sprožilec
 to-notification-list: Na seznam obvestil
 remove: Odstrani
 confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
-ignore-absent: Не враховувати «відсутні» голоси
 tabs:
   vote-list: Список голосувань
   time-chart: Хронологія
   bar-chart: Динаміка робочого механізму
-select-parties-people: Оберіть парламентську фракцію/групу або окремих народних депутатів.
-empty-state-text: Для перегляду голосувань додайте щонайменше два значення.
+comparator-empty-state-text: Для перегляду голосувань додайте щонайменше два значення.
+comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
 speakers: Доповідачі
 empty-text: Щоб переглянути результат додайте щонайменше два слова.
 show-relative: Показати відносну метрику
@@ -171,8 +175,8 @@ update-session: Оновити засідання
 tags: Теги
 add-tag: Додати тег
 votes: Голоси
-'yes': ТАК
-'no': НІ
+"yes": ТАК
+"no": НІ
 copied: Скопійовано!
 load: Завантажити
 confirm: Підтвердити
@@ -181,7 +185,8 @@ data-not-published:
   link-url: http://example.com/
   data-not-available: Верховна Рада не опублікувала ці дані.
   parlamentary-questions: Парламент не публікує запитання народних депутатів.
-  show-of-hands: Парламент не надає інформацію щодо поіменного голосування у випадку
+  show-of-hands:
+    Парламент не надає інформацію щодо поіменного голосування у випадку
     голосування підняттям рук.
 search: Пошук
 title-search: Пошук за назвою
@@ -190,7 +195,7 @@ working-body: Відповідальний робочий орган
 working-bodies: Delovna telesa
 vote-types: Типи голосів
 select-placeholder: Виберіть
-selected-placeholder: 'Обрані: {num}'
+selected-placeholder: "Обрані: {num}"
 data: Дата
 name: Ім'я
 name--for-legislation: Title
@@ -270,7 +275,6 @@ absent--m: Відсутній
 absent--plural: Відсутні
 no-term: Позафракційні
 no-data: Brez podatka
-inequality: Розбіжність
 unity: Єдність
 everybody: Усі
 show: Показати
@@ -311,12 +315,12 @@ style-scores:
   simple-vocabulary: Проста промова
   excessive-vocabulary: Довга промова
 question:
-  asked--f: 'Поставила запитання: «{Назва}» Потребує відповіді від: {адресат}.'
-  asked--with-name--m: '{ім’я} поставив запитання «{назва}» до {адресат}.'
-  asked--with-name--f: '{ім’я} поставила запитання «{назва}» до {адресат}.'
-  asked--m: 'Поставив запитання: «{Назва}» Потребує відповіді від: {адресат}.'
-  asked--plural: 'Поставили запитання: «{Назва}» Потребує відповіді від: {адресат}.'
-  asked--with-name--plural: '{імена} поставили запитання «{назва}» до {адресат}.'
+  asked--f: "Поставила запитання: «{Назва}» Потребує відповіді від: {адресат}."
+  asked--with-name--m: "{ім’я} поставив запитання «{назва}» до {адресат}."
+  asked--with-name--f: "{ім’я} поставила запитання «{назва}» до {адресат}."
+  asked--m: "Поставив запитання: «{Назва}» Потребує відповіді від: {адресат}."
+  asked--plural: "Поставили запитання: «{Назва}» Потребує відповіді від: {адресат}."
+  asked--with-name--plural: "{імена} поставили запитання «{назва}» до {адресат}."
   asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
 initiative:
   asked--m: "Podal pobudo na temo: {title}"
@@ -350,18 +354,18 @@ event:
   show-answer: Prikaži odgovor
   hide-answer: Skrij odgovor
 months:
-- Січень
-- Лютий
-- Березень
-- Квітень
-- Травень
-- Червень
-- Липень
-- Серпень
-- Вересень
-- Жовтень
-- Листопад
-- Грудень
+  - Січень
+  - Лютий
+  - Березень
+  - Квітень
+  - Травень
+  - Червень
+  - Липень
+  - Серпень
+  - Вересень
+  - Жовтень
+  - Листопад
+  - Грудень
 vote_types:
   whole_law: закон проголосовано повністю
   amendment: поправка
@@ -385,14 +389,15 @@ tools:
   word-groups: Групи слів
 frame:
   show-in-context: Показати картку в контексті цієї веб-сторінки
-ogText: Парламетр аналізує голосування та промови у Верховній Раді для того, щоб відслідковувати
+ogText:
+  Парламетр аналізує голосування та промови у Верховній Раді для того, щоб відслідковувати
   роботу політиків.
 committees: Комітети
 councils: Ради
 commissions: Комісії
 delegations: Інші членства
 friendship_groups: Інші членства
-age--years: '{вік} роки/ів'
+age--years: "{вік} роки/ів"
 no-social-media: немає соціальних мереж.
 select-district-placeholder: Оберіть округ
 select-parties-placeholder: Оберіть парламентську фракцію
@@ -411,34 +416,38 @@ analysis-texts:
     label: Демографія
   presence_votes:
     label: Відвідуваність голосування
-    titleSuffix: ' відвідуваність голосування у Верховній Раді'
-    explanation: Кількість голосування, які відвідав представник, ділиться на кількість
+    titleSuffix: " відвідуваність голосування у Верховній Раді"
+    explanation:
+      Кількість голосування, які відвідав представник, ділиться на кількість
       усіх голосування та стандартизується (мінімум 1 – максимум 100).
   number_of_questions:
-    titleSuffix: ' кількість депутатських запитань та ініціатив'
+    titleSuffix: " кількість депутатських запитань та ініціатив"
     label: Кількість депутатських запитань
-    explanation: Кількість депутатських запитань та ініціатив у Верховній Раді у порівнянні
+    explanation:
+      Кількість депутатських запитань та ініціатив у Верховній Раді у порівнянні
       із середніми та максимальними значеннями.
   speeches_per_session:
     label: Кількість промов під час одного засідання
-    titleSuffix: ' відсутність промов під час засідання'
-    explanation: Ми рахуємо промови народних депутатів і ділимо їх на кількість засідань,
+    titleSuffix: " відсутність промов під час засідання"
+    explanation:
+      Ми рахуємо промови народних депутатів і ділимо їх на кількість засідань,
       під час яких народний депутат брав слово. Ми ділимо кількість усіх промов спочатку
       на кількість усіх народних депутатів, а потім, на кількість усіх засідань (під
       час яких лунали промови). Ми порівнюємо одиничний результат із середнім та максимальною
       значеннями.
   spoken_words:
     label: Кількість сказаних слів
-    titleSuffix: ' без промов'
-    explanation: Кількість слів, сказаних народним депутатом у всіх попередніх промовах
+    titleSuffix: " без промов"
+    explanation:
+      Кількість слів, сказаних народним депутатом у всіх попередніх промовах
       у Верховній Раді.
   mismatch_of_pg:
     label: Відхилення від фракції/групи
-    titleSuffix: ' відхилення від фракції/групи'
+    titleSuffix: " відхилення від фракції/групи"
     explanation: Відступ від голосування більшості.
   working_bodies:
     label: Delovna telesa
-    titleSuffix: ' po delovnih telesih'
+    titleSuffix: " po delovnih telesih"
     explanation: Članstva v delovnih telesih.
 all-votes: усі голосування
 all-working-bodies: усі відповідальні комітети
@@ -457,7 +466,7 @@ deputy--m: Podpredsednik
 deputy--f: Podpredsednica
 member--m: Član
 member--f: Članica
-contact: 'Контакти'
+contact: "Контакти"
 mp: Народний депутат
 addressee: Звертається до
 accepted: прийнято
@@ -467,7 +476,7 @@ summary: Звіт
 all-mps: Усі народні депутати
 whole-term: Повний термін повноважень
 last-year: Попередній рік
-limited-to-last-five: ', список обмежений останніми 5 засіданнями'
+limited-to-last-five: ", список обмежений останніми 5 засіданнями"
 just-last-five: Тільки останні 5
 sort-by--updated: дата останнього оновлення
 sort-by--workingBody: назва організації
@@ -482,17 +491,20 @@ mayor: Župan
 website: Spletno mesto
 budget: Proračun
 agenda-items: Točke dnevnega reda
-agenda-item-point: '{num}. točka'
+agenda-item-point: "{num}. točka"
 material: Gradivo
 documents: Dokumenti
 external_analysis: Analize
 other: Drugo
-comparator-text: Я хочу знати, коли {той самий} проголосував таким же чином, але {інший}
+comparator-text:
+  Я хочу знати, коли {той самий} проголосував таким же чином, але {інший}
   проголосував інакше. {завантажити}
 comparator-vote-percent: '{кількість} відфільтрованих голосувань становить {відсоток}
   усіх подій голосування.'
+select-members-voted-same: Izberi poslance, ki so glasovali enako
+select-members-voted-different: Izberi poslance, ki so glasovali drugače
 input-words: Введіть слово або декілька слів розділених комами.
-wordgroups-text: 'Показати, хто найбільше говорить про: {слова} {завантажити}'
+wordgroups-text: "Показати, хто найбільше говорить про: {слова} {завантажити}"
 only-with-votes: Лише з голосами
 create-commentality: Створити коментар
 only-current: Тільки діючі
@@ -506,7 +518,6 @@ vote-abstain: Утриматись
 voted-for--f: Голосувала ЗА
 voted-against--plural: Голосували ПРОТИ
 voted-abstain--m: Утримався від голосування
-sort-by--inequality: Розбіжність
 session-type: Вид засідання
 no-abstract: Приносимо вибачення, опис цього законопроєкту відсутній.
 session-processing: Запит знаходиться в процесі обробки.
@@ -515,15 +526,15 @@ abstract: Теза
 membership-list:
   no-memberships: Без участі.
 investigative_comissions: Слідчі комісії
-elected-to-district: 'Št. glasov: {numVotes}, {district}'
+elected-to-district: "Št. glasov: {numVotes}, {district}"
 elected-to-district--m: Набрав {numVotes} голосів у {окрузі}
 elected-to-district--f: Набрала {numVotes} голосів у {окрузі}
-elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points: "Št. točk: {numVotes}, {district}"
 elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
 elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
 missing-district: округ не обраний
 sort-by--change: оновлення результатів аналізу {аналіз}
-number-of-seats: 'Кількість місць у парламентській залі'
+number-of-seats: "Кількість місць у парламентській залі"
 organization-classifications:
   root: Parliament
   committee: Committees

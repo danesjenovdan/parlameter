@@ -1,397 +1,361 @@
 <template>
-  <card-wrapper
-    :content-class="{ 'is-loading': loading }"
-    :header-config="headerConfig"
-  >
-    <template #generator>
-      <tools-tabs current-tool="voteComparator" />
-    </template>
-
-    <div id="primerjalnik">
-      <text-frame class="primerjalnik">
-        <div class="primerjalnik-text">
-          <i18n-t keypath="comparator-text" tag="p">
+  <card-wrapper :header-config="headerConfig" max-height>
+    <div class="votes-list">
+      <div class="filters">
+        <div class="filter dropdown-filter">
+          <div class="filter-label">
+            {{ $t('select-members-voted-same') }}
+          </div>
+          <PSearchDropdown
+            v-model="sameMembersAndGroups"
+            :groups="dropdownGroups"
+            @update:model-value="searchVotes"
+          />
+        </div>
+        <div class="filter dropdown-filter">
+          <div class="filter-label">
+            {{ $t('select-members-voted-different') }}
+          </div>
+          <PSearchDropdown
+            v-model="differentMembersAndGroups"
+            :groups="dropdownGroups"
+            @update:model-value="searchVotes"
+          />
+        </div>
+        <div class="filter-text">
+          <i18n-t
+            keypath="comparator-vote-percent"
+            tag="div"
+            class="filter-summary"
+            scope="global"
+          >
+            <template #num>
+              <strong v-if="card.isLoading">?</strong>
+              <strong v-else>{{ card.objectCount }}</strong>
+            </template>
+            <template #percent>
+              <br />
+              <strong v-if="card.isLoading">?</strong>
+              <strong v-else-if="votes_total == 0">{{
+                formatPercent(0)
+              }}</strong>
+              <strong v-else>{{
+                formatPercent((card.objectCount / votes_total) * 100)
+              }}</strong>
+            </template>
+          </i18n-t>
+        </div>
+        <div class="under-filters">
+          <i18n-t
+            keypath="comparator-text"
+            tag="div"
+            class="filter-explainer"
+            scope="global"
+          >
             <template #same>
               <span class="primerjalnik-for">
-                <tag
-                  v-for="party in sameParties"
-                  :key="party.id"
-                  @click="togglePartySame(party)"
-                >
-                  {{ party.acronym }}
-                </tag>
-                <tag
-                  v-for="person in selectedSamePeople"
-                  :key="person.id"
-                  @click="removePerson(person)"
-                >
-                  {{ person.label }}
-                </tag>
-                <plus @click="toggleModal('same', true)" />
+                <strong v-if="!selectedSame.length">?</strong>
+                <strong v-else>{{ formatList(selectedSame) }}</strong>
               </span>
             </template>
             <template #different>
               <span class="primerjalnik-against">
-                <tag
-                  v-for="party in differentParties"
-                  :key="party.id"
-                  @click="togglePartyDifferent(party)"
-                >
-                  {{ party.acronym }}
-                </tag>
-                <tag
-                  v-for="person in selectedDifferentPeople"
-                  :key="person.id"
-                  @click="removePerson(person)"
-                >
-                  {{ person.name }}
-                </tag>
-                <plus @click="toggleModal('different', true)" />
+                <strong v-if="!selectedDifferent.length">?</strong>
+                <strong v-else>{{ formatList(selectedDifferent) }}</strong>
               </span>
             </template>
           </i18n-t>
-          <div class="searchfilter-checkboxes">
-            <div class="searchfilter-checkbox">
-              <input
-                id="ignore-absent"
-                :checked="special"
-                type="checkbox"
-                class="checkbox"
-                @click="toggleSpecial"
-              />
-              <label v-t="'ignore-absent'" for="ignore-absent"></label>
-            </div>
-          </div>
         </div>
-        <div class="primerjalnik-button">
-          <div class="spacer"></div>
-          <span place="load" class="load-button">
-            <load-link @click="loadResults">
-              {{ $t('load') }}
-            </load-link>
-          </span>
-          <div>
-            <i18n-t keypath="comparator-vote-percent" tag="p" class="summary">
-              <strong place="num">{{ votes.length }}</strong>
-              <strong place="percent">
-                {{ total === 0 ? 0 : round((votes.length / total) * 100, 2) }}%
-              </strong>
-            </i18n-t>
-          </div>
+      </div>
+
+      <ScrollShadow ref="shadow">
+        <div
+          v-infinite-scroll="loadMore"
+          class="votes-list-shadow"
+          @scroll="$refs.shadow.check($event.currentTarget)"
+        >
+          <EmptyCircle
+            v-if="
+              !card.isLoading &&
+              selectedSame.length + selectedDifferent.length < 2
+            "
+            :text="$t('comparator-empty-state-text')"
+          />
+          <EmptyCircle
+            v-else-if="!card.isLoading && !selectedSame.length"
+            :text="$t('comparator-empty-state-text-same')"
+          />
+          <EmptyCircle
+            v-else-if="!card.isLoading && !votes?.length"
+            :text="$t('filtered-to-none')"
+          />
+          <VoteListItem
+            v-for="vote in votes"
+            v-else
+            :key="vote.id"
+            :vote="vote"
+          />
         </div>
-      </text-frame>
-
-      <p-tabs :start-tab="selectedTab" @switch="focusTab">
-        <p-tab :label="$t('tabs.vote-list')">
-          <empty-circle
-            v-if="votes.length === 0"
-            :text="$t('empty-state-text')"
-          />
-          <div v-else class="glasovanja">
-            <seznam-glasovanj :data="voteObject" :show-filters="false" />
-          </div>
-        </p-tab>
-        <p-tab :label="$t('tabs.time-chart')">
-          <empty-circle
-            v-if="votes.length === 0"
-            :text="$t('empty-state-text')"
-          />
-          <time-chart v-else :data="data" />
-        </p-tab>
-        <p-tab :label="$t('tabs.bar-chart')" class="tab-three">
-          <div class="mdt-wrapper">
-            <empty-circle
-              v-if="votes.length === 0"
-              :text="$t('empty-state-text')"
-            />
-            <bar-chart v-else :data="barChartData" show-numbers />
-          </div>
-        </p-tab>
-      </p-tabs>
-
-      <modal
-        v-show="sameModalVisible"
-        :header="$t('select-parties-people')"
-        :button="$t('confirm')"
-        @ok="toggleModal('same', false)"
-        @close="toggleModal('same', false)"
-      >
-        <p>
-          <span
-            v-for="party in parties"
-            :key="party.id"
-            :class="['primerjalnik-ps-switch', { on: party.isSame }]"
-            :data-id="party.id"
-            :data-acronym="party.acronym"
-            @click="togglePartySame(party)"
-          >
-            {{ party.acronym }}
-          </span>
-        </p>
-        <p-search-dropdown
-          v-model="samePeople"
-          :placeholder="samePeoplePlaceholder"
-        />
-      </modal>
-
-      <modal
-        v-show="differentModalVisible"
-        :header="$t('select-parties-people')"
-        :button="$t('confirm')"
-        @ok="toggleModal('different', false)"
-        @close="toggleModal('different', false)"
-      >
-        <p>
-          <span
-            v-for="party in parties"
-            :key="party.id"
-            :class="['primerjalnik-ps-switch', { on: party.isDifferent }]"
-            :data-id="party.id"
-            :data-acronym="party.acronym"
-            @click="togglePartyDifferent(party)"
-          >
-            {{ party.acronym }}
-          </span>
-        </p>
-        <p-search-dropdown
-          v-model="differentPeople"
-          :placeholder="differentPeoplePlaceholder"
-        />
-      </modal>
+        <div v-if="card.isLoading" class="nalagalnik__wrapper">
+          <div class="nalagalnik"></div>
+        </div>
+      </ScrollShadow>
     </div>
   </card-wrapper>
 </template>
 
 <script>
-import axios from 'axios';
-import common from '@/_mixins/common.js';
-import links from '@/_mixins/links.js';
-import { defaultDynamicHeaderConfig } from '@/_mixins/altHeaders.js';
-import ToolsTabs from '@/_components/ToolsTabs.vue';
-import BarChart from '@/_components/BarChart.vue';
+import { debounce, uniqBy } from 'lodash-es';
 import EmptyCircle from '@/_components/EmptyCircle.vue';
-import LoadLink from '@/_components/LoadLink.vue';
-import Modal from '@/_components/Modal.vue';
-import Plus from '@/_components/Plus.vue';
+import ScrollShadow from '@/_components/ScrollShadow.vue';
+import infiniteScroll from '@/_directives/infiniteScroll.js';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
-import PTab from '@/_components/Tab.vue';
-import PTabs from '@/_components/Tabs.vue';
-import Tag from '@/_components/Tag.vue';
-import TextFrame from '@/_components/TextFrame.vue';
-import TimeChart from '@/_components/TimeChart.vue';
+import VoteListItem from '@/_components/VoteListItem.vue';
+import numberFormatter from '@/_helpers/numberFormatter.js';
+import listFormatter from '@/_helpers/listFormatter.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
+import common from '@/_mixins/common.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
+import links from '@/_mixins/links.js';
 
 export default {
   name: 'CardToolsComparator',
+  directives: {
+    infiniteScroll,
+  },
   components: {
-    ToolsTabs,
-    BarChart,
     EmptyCircle,
     PSearchDropdown,
-    LoadLink,
-    Modal,
-    Plus,
-    PTab,
-    PTabs,
-    Tag,
-    TextFrame,
-    TimeChart,
-    // SeznamGlasovanj,
+    ScrollShadow,
+    VoteListItem,
   },
-  mixins: [common, links],
+  mixins: [common, cancelableRequest, links],
   cardInfo: {
     doubleWidth: true,
   },
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
+    const getSelectedIDs = (stateKey) => {
+      return (cardState?.[stateKey] || '').split(',').map((id) => id.trim());
+    };
+    const sameMemberIds = getSelectedIDs('sameMembers');
+    const differentMemberIds = getSelectedIDs('differentMembers');
+    // const sameGroupIds = getSelectedIDs('sameGroups');
+    // const differentGroupIds = getSelectedIDs('differentGroups');
+
+    const rawMembers = cardData?.data?.results?.members || [];
+    const members = rawMembers.map((member) => {
+      const mid = (member.slug || '').split('-')[0];
+      return {
+        id: mid,
+        slug: member.slug,
+        label: member.name,
+        image: member.image,
+        imageStyle: { border: this.getPersonBorder(member) },
+        selected: false,
+        disabled: false,
+        isMember: true,
+      };
+    });
+
+    const groups = (cardData?.data?.results?.groups || []).map((group) => {
+      const gid = (group.slug || '').split('-')[0];
+      return {
+        id: gid,
+        slug: group.slug,
+        label: group.name,
+        selected: false,
+        disabled: false,
+        color: group.color,
+        isGroup: true,
+      };
+    });
+
+    const sameMembersAndGroups = (() => {
+      const sameMembers = members.map((member) => ({
+        ...member,
+        selected: sameMemberIds.includes(member.id),
+        disabled: differentMemberIds.includes(member.id),
+      }));
+      const sameGroups = [];
+      // const sameGroups = groups.map((group) => ({
+      //   ...group,
+      //   selected: sameGroupIds.includes(group.id),
+      //   disabled: differentGroupIds.includes(group.id),
+      // }));
+      return [...sameMembers, ...sameGroups];
+    })();
+
+    const differentMembersAndGroups = (() => {
+      const differentMembers = members.map((member) => ({
+        ...member,
+        selected: differentMemberIds.includes(member.id),
+        disabled: sameMemberIds.includes(member.id),
+      }));
+      const differentGroups = [];
+      // const differentGroups = groups.map((group) => ({
+      //   ...group,
+      //   selected: differentGroupIds.includes(group.id),
+      //   disabled: sameGroupIds.includes(group.id),
+      // }));
+      return [...differentMembers, ...differentGroups];
+    })();
+
+    const dropdownGroups = (() => {
+      const memberGroups = uniqBy(
+        rawMembers.map((member) => member?.group),
+        (group) => group?.slug,
+      );
+      return [
+        {
+          id: 'groups',
+          label: this.$t('parties'),
+          items: groups.map((group) => group?.id),
+        },
+        ...memberGroups.map((group) => {
+          return {
+            id: group?.slug || 'null',
+            label: group?.name || ' ',
+            items: rawMembers
+              .filter((member) => member?.group?.slug === group?.slug)
+              .map((member) => {
+                return (member.slug || '').split('-')[0];
+              }),
+          };
+        }),
+      ];
+    })();
+
     return {
-      parentOrgId: cardData?.id,
-      loading: true,
-      parties: [],
-      samePeople: [],
-      differentPeople: [],
-      special: !!cardState?.special,
-      data: [],
-      total: 0,
-      sameModalVisible: false,
-      differentModalVisible: false,
-      selectedTab: cardState?.selectedTab || 0,
-      headerConfig: defaultDynamicHeaderConfig(this, {
-        circleIcon: 'primerjalnik',
-      }),
+      headerConfig: defaultHeaderConfig(this),
+      card: {
+        objectCount: cardData?.data?.['votes:count'] ?? 0,
+        currentPage: 1,
+        isLoading: false,
+      },
+      votes: cardData?.data?.results?.votes ?? [],
+      votes_total: cardData?.data?.results?.votes_total ?? 0,
+      sameMembersAndGroups,
+      differentMembersAndGroups,
+      dropdownGroups,
     };
   },
   computed: {
-    samePeoplePlaceholder() {
-      return this.selectedSamePeople.length > 0
-        ? this.$t('selected-mps', { num: this.selectedSamePeople.length })
-        : this.$t('select-mps');
+    selectedSame() {
+      return this.sameMembersAndGroups.filter((item) => item.selected);
     },
-    differentPeoplePlaceholder() {
-      return this.selectedDifferentPeople.length > 0
-        ? this.$t('selected-mps', { num: this.selectedDifferentPeople.length })
-        : this.$t('select-mps');
+    selectedDifferent() {
+      return this.differentMembersAndGroups.filter((item) => item.selected);
     },
-    queryUrl() {
-      // const base = `${this.slugs.urls.analize}/s/getComparedVotes/`;
-      // const samePeopleIds = this.selectedSamePeople
-      //   .map((person) => person.id)
-      //   .toString();
-      // const samePartyIds = this.sameParties.map((party) => party.id).toString();
-      // const diffPeopleIds = this.selectedDifferentPeople
-      //   .map((person) => person.id)
-      //   .toString();
-      // const diffPartyIds = this.differentParties
-      //   .map((party) => party.id)
-      //   .toString();
-      // const url = `${base}?people_same=${samePeopleIds}&parties_same=${samePartyIds}&people_different=${diffPeopleIds}&parties_different=${diffPartyIds}`;
-      // if (this.special) {
-      //   return `${url}&special=true`;
-      // }
-      // return url;
-      return '';
+    selectedSameMembers() {
+      return this.selectedSame.filter((item) => item.isMember);
     },
-    votes() {
-      return this.data || [];
+    selectedSameGroups() {
+      return this.selectedSame.filter((item) => item.isGroup);
     },
-    voteObject() {
-      return {
-        votes: this.data.map((v) => ({
-          ...v.results,
-          session_id: v.session.id,
-        })),
-        session: {},
-        tags: [],
-      };
+    selectedDifferentMembers() {
+      return this.selectedDifferent.filter((item) => item.isMember);
     },
-    sameParties() {
-      return this.parties.filter((party) => party.isSame);
+    selectedDifferentGroups() {
+      return this.selectedDifferent.filter((item) => item.isGroup);
     },
-    differentParties() {
-      return this.parties.filter((party) => party.isDifferent);
-    },
-    selectedSamePeople() {
-      return this.samePeople.filter((person) => person.selected);
-    },
-    selectedDifferentPeople() {
-      return this.differentPeople.filter((person) => person.selected);
-    },
-    barChartData() {
-      const tags = this.data.reduce((acc, d) => {
-        if (acc.indexOf(d.results.tags[0]) === -1) {
-          acc.push(d.results.tags[0]);
-        }
-        return acc;
-      }, []);
+    searchUrl() {
+      const url = new URL(this.cardData.url);
+      url.searchParams.set('votes:page', this.card.currentPage);
 
-      return tags.map((tag) => ({
-        label: tag || 'Brez MDT', // TODO i18n
-        value: this.data.filter((d) => d.results.tags[0] === tag).length,
-      }));
+      if (this.selectedSameMembers.length > 0) {
+        url.searchParams.set(
+          'members_same',
+          this.selectedSameMembers.map((p) => p.id).join(','),
+        );
+      } else {
+        url.searchParams.delete('members_same');
+      }
+
+      if (this.selectedDifferentMembers.length > 0) {
+        url.searchParams.set(
+          'members_different',
+          this.selectedDifferentMembers.map((p) => p.id).join(','),
+        );
+      } else {
+        url.searchParams.delete('members_different');
+      }
+
+      if (this.selectedSameGroups.length > 0) {
+        url.searchParams.set(
+          'groups_same',
+          this.selectedSameGroups.map((g) => g.id).join(','),
+        );
+      } else {
+        url.searchParams.delete('groups_same');
+      }
+
+      if (this.selectedDifferentGroups.length > 0) {
+        url.searchParams.set(
+          'groups_different',
+          this.selectedDifferentGroups.map((g) => g.id).join(','),
+        );
+      } else {
+        url.searchParams.delete('groups_different');
+      }
+
+      return url.toString();
     },
   },
   watch: {
-    selectedSamePeople(newSelectedSamePeople) {
-      newSelectedSamePeople.forEach((person) => {
-        this.selectedDifferentPeople
-          .filter((p) => p.id === person.id)
-          .forEach((p) => {
-            p.selected = false;
-          });
+    selectedSame(newSelectedSame) {
+      this.differentMembersAndGroups.forEach((item) => {
+        item.disabled = newSelectedSame.some((p) => p.slug === item.slug);
       });
     },
-    selectedDifferentPeople(newSelectedDifferentPeople) {
-      newSelectedDifferentPeople.forEach((person) => {
-        this.selectedSamePeople
-          .filter((p) => p.id === person.id)
-          .forEach((p) => {
-            p.selected = false;
-          });
+    selectedDifferent(newSelectedDifferent) {
+      this.sameMembersAndGroups.forEach((item) => {
+        item.disabled = newSelectedDifferent.some((p) => p.slug === item.slug);
       });
     },
-  },
-  mounted() {
-    // const sameParties = this.$options.contextData.cardState?.sameParties || [];
-    // const differentParties =
-    //   this.$options.contextData.cardState?.differentParties || [];
-    // this.parties = this.generateParties(this.$options.contextData.cardData).map(
-    //   (party) => ({
-    //     id: party.properId,
-    //     acronym: party.acronym,
-    //     isCoalition: party.isCoalition,
-    //     name: party.name,
-    //     isSame: sameParties.indexOf(party.properId) > -1,
-    //     isDifferent: differentParties.indexOf(party.properId) > -1,
-    //   })
-    // );
-    // const samePeople = this.$options.contextData.cardState?.samePeople || [];
-    // const differentPeople =
-    //   this.$options.contextData.cardState?.differentPeople || [];
-    // this.samePeople = this.generatePeople(
-    //   this.$options.contextData.cardData
-    // ).map((person) => ({
-    //   selected: samePeople.indexOf(person.id) > -1,
-    //   label: person.label,
-    //   id: person.id,
-    //   image: person.image,
-    // }));
-    // this.differentPeople = this.generatePeople(
-    //   this.$options.contextData.cardData
-    // ).map((person) => ({
-    //   selected: differentPeople.indexOf(person.id) > -1,
-    //   label: person.label,
-    //   id: person.id,
-    //   image: person.image,
-    // }));
-    // this.loadResults();
   },
   methods: {
-    toggleSpecial() {
-      this.special = !this.special;
+    searchVotesImmediate() {
+      this.card.isLoading = true;
+      this.votes = [];
+      this.card.objectCount = 0;
+      this.card.currentPage = 1;
+      this.makeRequest(this.searchUrl).then((response) => {
+        this.votes = response?.data?.results?.votes || [];
+        this.card.objectCount = response?.data?.['votes:count'];
+        this.card.currentPage = 1;
+        this.card.isLoading = false;
+      });
     },
-    round(value, decimals) {
-      return Number(`${Math.round(`${value}e${decimals}`)}e-${decimals}`);
-    },
-    togglePartySame(party) {
-      party.isDifferent = false;
-      party.isSame = !party.isSame;
-    },
-    togglePartyDifferent(party) {
-      party.isDifferent = !party.isDifferent;
-      party.isSame = false;
-    },
-    removePerson(person) {
-      person.selected = false;
-    },
-    toggleModal(modalType, newState) {
-      this[`${modalType}ModalVisible`] = newState;
-    },
-    loadResults() {
-      this.loading = true;
-      axios
-        .get(this.queryUrl)
-        .then((response) => {
-          // TODO: time-chart needs this:
-          // const dateParser = d3.timeParse('%d.%m.%Y');
-          // const data = Array.from(new Set(this.data.map((d) => d.results.date)))
-          //   .map((date) => ({
-          //     date: dateParser(date),
-          //     value: this.data.filter((d) => d.results.date === date).length,
-          //   }))
-          //   .sort((a, b) => a.date - b.date);
+    searchVotes: debounce(function searchVotes() {
+      this.searchVotesImmediate();
+    }, 750),
+    loadMore() {
+      if (this.card.isLoading) {
+        return;
+      }
+      if (this.votes.length >= this.card.objectCount) {
+        return;
+      }
 
-          this.data = response.data.results;
-          this.total = response.data.total;
-          this.loading = false;
-        })
-        .catch((error) => {
-          // eslint-disable-next-line no-console
-          console.log(error);
-          this.loading = false;
-        });
+      this.card.isLoading = true;
+      this.card.currentPage += 1;
+
+      const requestedPage = this.card.currentPage;
+      this.makeRequest(this.searchUrl).then((response) => {
+        if (response?.data?.['votes:page'] === requestedPage) {
+          const newVotes = response?.data?.results?.votes || [];
+          this.votes.push(...newVotes);
+        }
+        this.card.isLoading = false;
+      });
     },
-    focusTab(tabindex) {
-      this.selectedTab = tabindex;
+    formatPercent(number) {
+      return numberFormatter(number, { percent: true });
+    },
+    formatList(items) {
+      return listFormatter(items.map((item) => item.label));
     },
   },
 };
@@ -401,170 +365,63 @@ export default {
 @use 'parlassets/scss/breakpoints';
 @use 'parlassets/scss/colors';
 
-:deep(.card-content) {
-  min-height: 660px;
-}
-
-#primerjalnik {
-  :deep(.p-tabs) {
-    .p-tabs-content,
-    .p-tabs-content .tab-content {
-      overflow-y: visible;
-      overflow-x: visible;
-    }
-
-    .p-tabs-content {
-      margin-top: 6px;
-    }
-  }
-
-  :deep(.word-list) {
-    max-height: none;
-    height: 420px;
-    overflow-y: auto;
-
-    .column-label {
-      flex: 2;
-
-      .chart-label .label-container {
-        line-height: 1;
-
-        @include breakpoints.respond-to(mobile) {
-          font-size: 12px;
-        }
-      }
-    }
-  }
-
-  .glasovanja {
-    :deep(#votingCard) {
-      height: 420px;
-    }
-  }
-
-  .mdt-wrapper {
-    :deep(.progress-bar) {
-      background-color: colors.$third;
-    }
-  }
-
-  .tab-content,
-  .mdt-wrapper {
-    height: 420px;
-  }
-
-  .primerjalnik-ps-switch {
-    background: colors.$white;
-    cursor: pointer;
-    padding: 5px;
-    display: inline-block;
-    margin: 5px;
-    color: colors.$font-default;
-
-    &::after {
-      content: '×';
-      margin-left: 8px;
-      font-size: 20px;
-      line-height: 20px;
-      position: relative;
-      top: 2px;
-      transform: rotate(45deg);
-      display: inline-block;
-      transition: transform 0.2s ease-out;
-      color: colors.$first;
-    }
-
-    &.on {
-      background: colors.$first;
-      color: colors.$white;
-
-      &::after {
-        transform: rotate(0deg);
-        color: colors.$white;
-      }
-    }
-  }
-
-  .primerjalnik.text-frame {
+.votes-list {
+  .filters {
     display: flex;
-    padding: 10px;
+    gap: 6px 10px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
 
-    @include breakpoints.respond-to(mobile) {
-      flex-direction: column;
+    .filter-label {
+      overflow: hidden;
+      height: 20px;
     }
 
-    .primerjalnik-text,
-    .primerjalnik-button {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .dropdown-filter {
+      flex-basis: 28%;
     }
 
-    .primerjalnik-text {
-      flex: 1 0 66%;
-      padding: 5px 10px 5px 0;
+    .filter-text {
+      margin-left: auto;
+      margin-top: 20px;
+      align-content: center;
+      justify-content: center;
+      text-align: center;
 
-      @include breakpoints.respond-to(mobile) {
-        padding-right: 0;
-      }
-
-      p {
-        margin: 15px 0 20px;
-
-        @include breakpoints.respond-to(mobile) {
-          border-bottom: 1px solid colors.$tools-border;
-          padding-bottom: 25px;
-        }
-      }
-
-      .searchfilter-checkboxes {
-        display: flex;
-        justify-content: center;
-
-        @include breakpoints.respond-to(mobile) {
-          margin-bottom: 20px;
-        }
-
-        .searchfilter-checkbox {
-          height: 30px;
-
-          .checkbox + label {
-            text-align: left;
-            margin-bottom: 0;
-            font-size: 11px;
-            line-height: 30px;
-            color: colors.$font-default;
-
-            &::before {
-              margin-top: 0;
-              background-color: transparent;
-            }
-          }
-        }
+      strong {
+        white-space: nowrap;
       }
     }
 
-    .primerjalnik-button {
-      flex: 1 0 33%;
-      padding: 5px 0 5px 10px;
-      border-left: 1px solid colors.$tools-border;
+    .under-filters {
+      flex-basis: 100%;
+      margin-top: 4px;
 
-      @include breakpoints.respond-to(mobile) {
-        border-left: none;
-        padding-left: 0;
-      }
-
-      .summary {
-        margin: 0;
-        line-height: 20px;
+      .filter-explainer {
         text-align: center;
-        font-size: 11px;
-        color: colors.$font-default;
-
-        @include breakpoints.respond-to(mobile) {
-          margin-top: 15px;
-        }
+        font-style: italic;
       }
+    }
+  }
+
+  .votes-list-shadow {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: breakpoints.$full-card-height - 72;
+  }
+
+  .nalagalnik__wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: colors.$white-hover;
+    z-index: 4;
+
+    .nalagalnik {
+      position: absolute;
+      top: calc(50% - 50px);
     }
   }
 }

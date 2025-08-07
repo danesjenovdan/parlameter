@@ -49,10 +49,11 @@ class GroupResourceExportTest:
             assert column in columns
 
 
-class TestGroupDiscordResource(GroupResourceExportTest):
-    resource = GroupDiscordResource
-    csv_results_count = 3
-    json_results_count = 1
+class TestGroupUnityResource(GroupResourceExportTest):
+    resource = GroupUnityResource
+    csv_results_count = 42
+    json_results_count = 40
+    columns = ["group", "vote", "value", "timestamp"]
 
 
 class TestGroupVocabularySizeResource(GroupResourceExportTest):
