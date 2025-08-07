@@ -51,14 +51,15 @@ confirm-delete-notification: Jesi li siguran_sigurna da želiš obrisati ovu oba
 comparator-text: >-
   Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili
   različito od njih. {load}
-ignore-absent: Zanemari "odsutne" glasove
-comparator-vote-percent: "{num} filtriranih glasanja predstavlja {percent} svih glasanja."
+comparator-vote-percent: '{num} filtriranih glasanja predstavlja {percent} svih glasanja.'
+select-members-voted-same: Izberi poslance, ki so glasovali enako
+select-members-voted-different: Izberi poslance, ki so glasovali drugače
 tabs:
   vote-list: Pregled glasanja
   time-chart: Dinamika kroz vrijeme
   bar-chart: Dinamika u odnosu na MRT
-select-parties-people: Uključite čitave klubove ili dodajte pojedine zastupnike.
-empty-state-text: Za prikaz glasanja dodajte najmanje dva aktera.
+comparator-empty-state-text: Za prikaz glasanja dodajte najmanje dva aktera.
+comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
 speakers: Govornici
 input-words: Unesi jednu ili više riječi odvojenih zarezom.
 empty-text: Za prikaz rezultata dodajte najmanje dvije riječi.

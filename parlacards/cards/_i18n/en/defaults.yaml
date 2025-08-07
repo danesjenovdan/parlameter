@@ -53,14 +53,15 @@ confirm-delete-notification: Ali si prepričan_a, da želiš odstraniti to obves
 comparator-text: >-
   I want to know, when {same} voted the same, but {different} voted differently.
   {load}
-ignore-absent: Ignore "absent" votes
-comparator-vote-percent: "{num} filtered voting events represents {percent} of all voting events."
+comparator-vote-percent: '{num} filtered voting events represents {percent} of all voting events.'
+select-members-voted-same: Izberi poslance, ki so glasovali enako
+select-members-voted-different: Izberi poslance, ki so glasovali drugače
 tabs:
   vote-list: List of voting events
   time-chart: Timeline
   bar-chart: Working body dynamics
-select-parties-people: Select parliamentary groups or add individual MPs.
-empty-state-text: To view voting events add at least two agents.
+comparator-empty-state-text: To view voting events add at least two agents.
+comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
 speakers: Speakers
 input-words: Enter a word or multiple words separated by a comma.
 empty-text: To view results add at least two words.

@@ -78,5 +78,5 @@ urlpatterns = [
         MandateUsageThroughTimeInAgendaItems.as_view(),
     ),
     path("tools/unity/", ToolsUnity.as_view()),
-    path("tools/comparator/", VoteComparator.as_view()),
+    path("tools/comparator/", ToolsComparator.as_view()),
 ]
