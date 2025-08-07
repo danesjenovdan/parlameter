@@ -48,7 +48,7 @@ urlpatterns = [
     path("person/public-questions/", ExportPersonPublicQuestionView.as_view()),
     path("person/public-answers/", ExportPersonPublicQuestionView.as_view()),
     # GROUPS
-    path("group/discord/", ExportGroupDiscord.as_view()),
+    path("group/unity/", ExportGroupUnity.as_view()),
     path("group/basic-information/", ExportGroupInfo.as_view()),
     path("group/members/", ExportGroupMembers.as_view()),
     path("group/vocabulary-size/", ExportGroupVocabularySize.as_view()),

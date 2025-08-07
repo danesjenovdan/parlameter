@@ -1,13 +1,13 @@
 from datetime import datetime, timedelta
 
-from django.db.models import Q
+from django.db.models import Avg, Q
 from import_export.fields import Field
 
 from export.resources.common import ExportModelResource, get_cached_person_name
 from parlacards.models import (
     DeviationFromGroup,
-    GroupDiscord,
     GroupNumberOfQuestions,
+    GroupUnity,
     GroupVocabularySize,
     GroupVoteAttendance,
     PersonAvgSpeechesPerSession,
@@ -20,6 +20,8 @@ from parlacards.models import (
     PersonVoteAttendance,
     VotingDistance,
 )
+from parlacards.serializers.unity import GroupUnityScoreSerializerField
+from parladata.exceptions import NoMembershipException
 from parladata.models import (
     Ballot,
     Law,
@@ -160,7 +162,7 @@ class GroupsResource(ExportModelResource):
     name = Field()
     acronym = Field()
     number_of_members_at = Field()
-    intra_disunion = Field()
+    group_unity = Field()
     vocabulary_size = Field()
     number_of_questions = Field()
     vote_attendance = Field()
@@ -172,13 +174,13 @@ class GroupsResource(ExportModelResource):
         """
         if mandate_id:
             try:
-                mandate = Mandate.objects.get(id=mandate_id)
-                from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(
+                self.mandate = Mandate.objects.get(id=mandate_id)
+                from_timestamp, to_timestamp = self.mandate.get_time_range_from_mandate(
                     datetime.now()
                 )
                 before_end = to_timestamp - timedelta(minutes=1)
-                root_organization, playing_field = mandate.query_root_organizations(
-                    before_end
+                root_organization, playing_field = (
+                    self.mandate.query_root_organizations(before_end)
                 )
                 organizations = playing_field.query_parliamentary_groups(before_end)
                 self.playing_field = playing_field
@@ -199,7 +201,7 @@ class GroupsResource(ExportModelResource):
             "name",
             "acronym",
             "number_of_members_at",
-            "intra_disunion",
+            "group_unity",
             "vocabulary_size",
             "number_of_questions",
             "vote_attendance",
@@ -216,6 +218,13 @@ class GroupsResource(ExportModelResource):
             return latest_scores.value
         return None
 
+    def get_group_unity_score(self, group):
+        return GroupUnity.objects.filter(
+            group=group,
+            timestamp__gte=self.mandate.beginning,
+            timestamp__lte=self.mandate.ending or datetime.strptime("3000", "%Y"),
+        ).aggregate(Avg("value"))["value__avg"]
+
     def dehydrate_name(self, organization):
         return organization.name
 
@@ -225,8 +234,8 @@ class GroupsResource(ExportModelResource):
     def dehydrate_number_of_members_at(self, organization):
         return organization.number_of_members_at()
 
-    def dehydrate_intra_disunion(self, organization):
-        return self.get_group_score(GroupDiscord, organization)
+    def dehydrate_group_unity(self, organization):
+        return self.get_group_unity_score(organization)
 
     def dehydrate_vocabulary_size(self, organization):
         return self.get_group_score(GroupVocabularySize, organization)

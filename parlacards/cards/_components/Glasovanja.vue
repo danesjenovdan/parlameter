@@ -165,7 +165,7 @@ export default {
       voteOptions,
       selectedSort: 'date',
       // sortOptions: {
-      //   maximum: this.$t('sort-by--inequality'),
+      //   maximum: this.$t('sort-by--unity'),
       //   date: this.$t('sort-by--date'),
       // },
       // TODO: neenakost filter pri grupah
