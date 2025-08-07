@@ -14,7 +14,7 @@ from parlacards.models import (
     GroupMonthlyVoteAttendance,
     GroupTfidf,
     GroupVotingDistance,
-    OrganizationVoteUnity,
+    GroupUnity,
     PersonMonthlyVoteAttendance,
     PersonTfidf,
     SessionGroupAttendance,
@@ -647,8 +647,8 @@ class GroupLeastVotesInCommonCardSerializer(GroupScoreCardSerializer):
         return distances_serializer.data
 
 
-class GroupDiscordCardSerializer(GroupScoreCardSerializer):
-    results = ScoreSerializerField(property_model_name="GroupDiscord")
+class GroupUnityCardSerializer(GroupScoreCardSerializer):
+    results = ScoreSerializerField(property_model_name="GroupUnity")
 
 
 class RootGroupBasicInfoCardSerializer(CardSerializer):
@@ -1201,8 +1201,8 @@ class ToolsUnityCardSerializer(CardSerializer):
         ###
 
         ### get vote scores
-        vote_scores = OrganizationVoteUnity.objects.filter(
-            # organization=organization,
+        vote_scores = GroupUnity.objects.filter(
+            # group=organization,
             # playing_field=organization,
             timestamp__range=(from_timestamp, to_timestamp),
         ).prefetch_related("vote")
@@ -1211,9 +1211,9 @@ class ToolsUnityCardSerializer(CardSerializer):
         ### filter vote scores by group (organization)
         group_id = self.context.get("GET", {}).get("group", None)
         if group_id and Organization.objects.filter(id=group_id).exists():
-            vote_scores = vote_scores.filter(organization_id=group_id)
+            vote_scores = vote_scores.filter(group_id=group_id)
         else:
-            vote_scores = vote_scores.filter(organization=organization)
+            vote_scores = vote_scores.filter(group=organization)
         ###
 
         ### filter vote scores by body (playing field)

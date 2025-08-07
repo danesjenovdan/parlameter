@@ -4,7 +4,7 @@ from django.db.models import Q
 from rest_framework import serializers
 
 from parlacards.models import (
-    GroupDiscord,
+    GroupUnity,
     GroupNumberOfQuestions,
     GroupVocabularySize,
     GroupVoteAttendance,
@@ -20,7 +20,7 @@ from parladata.models.memberships import PersonMembership
 class GroupAnalysesSerializer(CommonOrganizationSerializer):
     def calculate_cache_key(self, group):
         all_analyses = (
-            GroupDiscord,
+            GroupUnity,
             GroupVocabularySize,
             GroupNumberOfQuestions,
             GroupVoteAttendance,
@@ -66,7 +66,7 @@ class GroupAnalysesSerializer(CommonOrganizationSerializer):
     def get_results(self, obj):
         return {
             "seat_count": obj.number_of_members_at(self.context["request_date"]),
-            "intra_disunion": self.get_group_value(obj, "GroupDiscord"),
+            "intra_disunion": self.get_group_value(obj, "GroupUnity"),
             "number_of_amendments": None,  # TODO
             "vocabulary_size": self.get_group_value(obj, "GroupVocabularySize"),
             "number_of_questions": self.get_group_value(obj, "GroupNumberOfQuestions"),
