@@ -1,0 +1,10 @@
+card:
+  title: Prisotnost na glasovanjih sej občinskega sveta
+  info: >-
+    # Prisotnosti svetnika_ce na glasovanjih občinskega sveta v primerjavi s
+    povprečjem in največjo vrednostjo.
+
+
+    Preštejemo vse oddane glasovnice svetnika_ce in število delimo s številom
+    vseh glasovanj, na katerih bi moral_a svetnik_ca glasovati. Rezultat
+    izpišemo skupaj s povprečno in največjo vrednostjo.

@@ -1,0 +1,31 @@
+card:
+  title: Zadnja seja
+  tfidf-title: Besede, ki so zaznamovale sejo
+  attendance-title: Prisotnost svetniških skupin na glasovanjih seje
+  votes-title: Glasovanja
+  info: >-
+    # Pregled analiz zadnje seje, za katero so podatki objavljeni na spletnem mestu
+    [Občine Trbovlje](https://www.trbovlje.si/).
+
+
+    ## PRISOTNOST SVETNIŠKIH SKUPIN NA GLASOVANJIH SEJE
+
+
+    Svetniške skupine razvrstimo glede na odstotek, ki je seštevek prisotnosti njihovih
+    svetnikov in svetnic na glasovanjih izbrane seje.
+
+
+    ## GLASOVANJA
+
+
+    Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A)
+    in število svetnikov, ki niso glasovali, ter izpišemo rezultat glede na najpogostejši
+    glas ali odsotnost.
+
+
+    Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
+    pri vzdržanih in odsotnih glasov ne moremo zagotavljati. Prisotnost svetnikov
+    se na sejah občinskega sveta ne preverja na vsakem glasovanju, zato se lahko zgodi,
+    da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
+    z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
+    kot odsotna (rezultat: ni glasoval/a).

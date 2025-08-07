@@ -1,0 +1,38 @@
+card:
+  title: Vsa glasovanja
+  info: >-
+    # Popis svih glasanja u Hrvatskom saboru. Glasanja su razvrstana prema
+    datumu od najnovijih do najstarijih.
+
+
+    Za sva glasanja prebroje se svi glasovi (ZA, PROTIV, SUZDRŽANA) i broj
+    zastupnica koje nisu glasale te ispišu rezultati.
+
+
+    Zbirka glasanja preuzima se s web stranica Hrvatskog sabora
+    [HS](http://www.sabor.hr/sjednica-sabora).
+
+
+    Za označavanje neočekivanih rezultata koristi se probabilistička metoda
+    analize glavnih komponenti, [kako je implementirana u knjižicama
+    scikit-learn](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
+    i opisana [M. Tipping and C. Bishop, Probabilistic Principal Component
+    Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3,
+    pp. 611-622](http://www.miketipping.com/papers/met-mppca.pdf).
+
+
+    Sva glasanja pretvaraju se u četverodimenzionalne vektore, gdje svaka
+    komponenta predstavlja broj danih glasova određene vrijednosti (ZA, PROTIV,
+    ODSUTNA, SUZDRŽANA). PCA model prilagođava se matrici, a funkcijom
+    [score_samples](https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485)
+    dobiva se "log-likelihood" svakog glasanja u modelu. Model funkcionira tako
+    da prilikom adaptacije "log-likelihood" vrijednost nastoji maksimizirati za
+    što je moguće više glasanja. Kad se dobiju sve "log-likelihood" vrijednosti,
+    rangiraju se od najmanje do najveće i koristi se četvrtina svih glasanja
+    koji modelu najmanje odgovaraju. Kako u usporedbi s modelom ti glasovi
+    najviše odstupaju, kao takvi su najviše "neočekivani". U kartici su označeni
+    simbolom munje.
+
+
+    Ruka gore označava glasanja na kojima se nije glasalo individualno nego
+    podizanjem ruke.

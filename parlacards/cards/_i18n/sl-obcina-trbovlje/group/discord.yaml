@@ -1,0 +1,17 @@
+card:
+  title: Neenotnost glasovanj
+  info: >-
+    # Neenotnost izbrane svetniške skupine na glasovanjih v
+    primerjavi s povprečno in najvišjo stopnjo neenotnosti med vsemi svetniškimi
+    skupinami.
+
+
+    Za vsako glasovanje za svetniško skupino preštejemo, koliko svetnikov je
+    oddalo katero glasovnico (ZA, PROTI, NI, VZDRŽAN). Izračunamo odstotek
+    tistih, ki so glasovali za najbolj popularno opcijo. Ta odstotek odštejemo
+    do 100 in dobimo stopnjo neenotnosti oz. odstotek svetnikov in svetnic, ki
+    se z večinskim glasom niso strinjali.
+
+
+    Na podlagi rezultatov individualnih glasovanj izračunamo povprečni odstotek
+    nestrinjanja, ki ga prikažemo v kartici.

@@ -1,0 +1,540 @@
+card-errored: Pri nalaganju kartice je prišlo do napake.
+card-in-development: Ta kartica je še v razvoju.
+under-consideration: Trenutno v obravnavi
+recently-passed: Nedavno sprejeto
+most-discussed: Največ reakcij
+all-legislation: Vsi odloki
+select-mps: Izberi svetnike
+selected-mps: 'Izbranih: {num}'
+search_placeholder: Išči
+trigger: sprožilec
+match: ujemanje
+interval: pogostost
+email: email
+add_trigger: Dodaj sprožilec
+add: Dodaj
+continue: Nadaljuj
+back: Nazaj
+confirm_trigger: Nastavi opomnik
+add_new_trigger: Dodaj nov opomnik
+steps:
+- textfirst: >-
+    Nastavi sprožilec oziroma besedno zvezo ob omembi katere želiš, da te
+    obvestimo.
+  textsecond: >-
+    Kmalu za tem, ko nekdo o tem spregovori na seji DZ ali na sejah delovnih
+    teles, ti to sporočimo po e-pošti.
+- textfirst: Izberi način ujemanja
+  firstbullet: 'natančno ujemanje:'
+  secondbullet: 'široko ujemanje:'
+- textfirst: Kako pogosto naj ti pišemo?
+  textsecond: ob dogodku
+  textthird: največ enkrat na dan
+  textfourth: največ enkrat na teden
+- textfirst: Samo še tvoj e-naslov
+- textfirst: Zabeleženo!
+  textsecond: Na e-naslov
+  textthird: si vklopil/-a obvestila za iskalni niz
+  textfourth: >-
+    Povezava za potrditev naročila in urejanje drugih nastavitev te čaka na
+    mejlu.
+events:
+  event: ob dogodku
+  day: največ enkrat na dan
+  week: največ enkrat na teden
+modes:
+  precise: 'natančno ujemanje:'
+  broad: 'široko ujemanje:'
+comparator-text: >-
+  Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa
+  drugače od njih. {load}
+ignore-absent: Ignoriraj "odsotne" glasovnice
+comparator-vote-percent: '{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.'
+tabs:
+  vote-list: Seznam glasovanj
+  time-chart: Dinamika skozi čas
+  bar-chart: Dinamika glede na MDT
+select-parties-people: Vklopi cele svetniške skupine ali dodaj posamezne svetnike.
+empty-state-text: Za prikaz glasovanj dodaj vsaj dva akterja.
+speakers: Govorci
+input-words: Vnesi posamezno besedo ali več besed, ločenih z vejico.
+empty-text: Za prikaz rezultatov dodaj vsaj dve besedi.
+wordgroups-text: 'Pokaži mi, kdo največ omenja naslednjo skupino besed: {words} {load}'
+show-relative: Prikaži relativno metriko
+select-working-body-placeholder: Izberi delovno telo
+only-abstracts: Samo s povzetki
+only-with-votes: Samo z glasovanji
+icon: Ikona
+exposed: Izpostavljeno
+create-commentality: Ustvari na Commentality
+edit-info: Uredi informacije
+only-parties: Samo svetniške skupine
+edit-memberships: Uredi članstva
+only-current: Samo trenutna
+add-member: Dodaj člana
+edit-membership: Uredi članstvo
+save-membership: Shrani članstvo
+member: Član
+add-membership: Dodaj članstvo
+members: Članice in člani
+only-mps: Samo svetniki
+display-name: Ime za prikaz
+update-session: Posodobi sejo
+tags: Oznake
+add-tag: Dodaj oznako
+votes: Glasovi
+'yes': DA
+'no': NE
+copy: Kopiraj
+copied: Skopirano!
+load: Naloži
+confirm: Potrdi
+data-currently-unavailable: Podatki trenutno niso na voljo.
+data-not-published:
+  link-text: Opozori jih tukaj!
+  link-url: ''
+  data-not-available: Občinski svet teh podatkov ne objavlja.
+  show-of-hands: Občinski svet ne objavlja popolnih poimenskih rezultatov glasovanj.
+  parlamentary-questions: Občinski svet ne objavlja svetniških vprašanj in pobud.
+search: Išči
+title-search: Išči po naslovu
+contents-search: Išči po vsebini govorov
+working-body: Delovno telo
+working-bodies: Delovna telesa
+vote-types: Tipi glasovanja
+select-placeholder: Izberi
+selected-placeholder: 'Izbranih: {num}'
+data: Podatki
+name: Ime
+epa: EPA
+change: Sprememba
+status: Status
+result: Rezultat
+age: Starost
+education-level: Stopnja izobrazbe
+education: Izobrazba
+number-of-votes: Število glasov
+number-of-points: Število točk
+number-of-terms: Število mandatov
+previous-occupation: Delovno mesto
+district: Okraj
+birth-date: Rojstni dan
+gender: Spol
+social-media: Družbena omrežja
+analysis: Analiza
+vote-passed: Sprejet
+vote-not-passed: Zavrnjen
+vote-under-consideration: V obravnavi
+vote-unknown: Neznano
+vote-result--enacted: Sprejet
+vote-result--submitted: Oddan
+vote-result--rejected: Zavrnjen
+vote-result--retracted: Umaknjen
+vote-result--adopted: Sprejet
+vote-result--received: Prejet
+vote-result--in_procedure: V obravnavi
+average: Povprečje
+maximum: Največ
+coalition: koalicija
+opposition: opozicija
+vote-for: Za
+vote-for-plural: Za
+vote-against: Proti
+vote-against-plural: Proti
+vote-abstain: Vzdržan
+vote-abstain--m: Vzdržan
+vote-abstain--f: Vzdržana
+vote-abstain-plural: Vzdržani
+vote-absent: Odsoten
+vote-absent-plural: Odsotni
+vote-did-not-vote: Brez glasu
+vote-did-not-vote-plural: Brez glasu
+vote-no-majority: Ni večinskega glasu
+voted-for--f: ZA
+voted-for--m: ZA
+voted-for--plural: ZA
+voted-against--f: PROTI
+voted-against--m: PROTI
+voted-against--plural: PROTI
+voted-abstain--f: Vzdržana
+voted-abstain--m: Vzdržan
+voted-abstain--plural: Vzdržani
+voted-absent--f: Odsotna
+voted-absent--m: Odsoten
+voted-absent--plural: Odsotni
+voted-did-not-vote--f: Brez glasu
+voted-did-not-vote--m: Brez glasu
+voted-did-not-vote--plural: Brez glasu
+anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
+sort-by: Razvrsti po
+sort-by--inequality: Neenotnosti
+sort-by--date: Datumu
+filtered-to-none: Brez zadetkov
+mps: Svetniki
+party: Svetniška skupina
+parties: Svetniške skupine
+unaffiliated--f: nepovezana
+unaffiliated--m: nepovezan
+unaffiliated--plural: nepovezani
+time-period: Časovno obdobje
+session-type: Vrsta seje
+no-results: Brez zadetkov.
+no-speeches: Brez govorov.
+no-abstract: Za ta zakon žal nimamo povzetka.
+present--f: Prisotna
+present--m: Prisoten
+present--plural: Prisotni
+absent--f: Odsotna
+absent--m: Odsoten
+absent--plural: Odsotni
+no-term: Brez mandata
+no-data: Brez podatka
+inequality: Neenotnost
+everybody: Vsi
+show: Prikaži
+full-speech: Cel govor
+session-processing: Seja v obdelavi.
+organization: Organizacija
+start: Začetek
+date: Datum
+legislation: Odloki in akti
+laws: Odloki
+acts: Akti
+votings: Glasovanja
+save: Shrani
+save-all: Shrani vse
+saved: Shranjeno
+generate: Ustvari
+edit-abstract: Uredi povzetek
+abstract: Povzetek
+acronym: Kratica
+classification: Klasifikacija
+info:
+  title: Info
+  methodology: METODOLOGIJA
+share:
+  title: Deli
+  direct-link: Neposredna povezava do kartice
+embed:
+  title: Vdelaj
+  always-refresh: Podatki naj se vedno osvežujejo
+previous:
+  title: Prejšnje verzije
+membership-list:
+  no-memberships: Brez članstev.
+style-scores:
+  elevated-vocabulary: Privzdignjeno besedje
+  simple-vocabulary: Preprosto besedje
+  excessive-vocabulary: Ekscesno besedje
+question:
+  asked--m: "Zastavil vprašanje na temo: {title}"
+  asked--f: "Zastavila vprašanje na temo: {title}"
+  asked--plural: "Zastavili vprašanje na temo: {title}"
+  asked--with-name--m: "{name} je zastavil vprašanje na temo: {title}"
+  asked--with-name--f: "{name} je zastavila vprašanje na temo: {title}"
+  asked--with-name--plural: "{name} so zastavili vprašanje na temo: {title}"
+  asked--group: "Svetniška skupina {name} je zastavila vprašanje na temo: {title}"
+initiative:
+  asked--m: "Podal pobudo na temo: {title}"
+  asked--f: "Podala pobudo na temo: {title}"
+  asked--plural: "Podali pobudo na temo: {title}"
+  asked--with-name--m: "{name} je podal pobudo na temo: {title}"
+  asked--with-name--f: "{name} je podala pobudo na temo: {title}"
+  asked--with-name--plural: "{name} so podali pobudo na temo: {title}"
+  asked--group: "Svetniška skupina {name} je podala pobudo na temo: {title}"
+unknown:
+  asked--m: "Odprl temo: {title}"
+  asked--f: "Odprla temo: {title}"
+  asked--plural: "Odprli temo: {title}"
+  asked--with-name--m: "{name} je odprl temo: {title}"
+  asked--with-name--f: "{name} je odprla temo: {title}"
+  asked--with-name--plural: "{name} so odprli temo: {title}"
+  asked--group: "Svetniška skupina {name} je odprla temo: {title}"
+event:
+  ballot--for--m: Glasoval ZA {title}
+  ballot--for--f: Glasovala ZA {title}
+  ballot--against--m: Glasoval PROTI {title}
+  ballot--against--f: Glasovala PROTI {title}
+  ballot--absent--m: Ni bil prisoten na glasovanju o {title}
+  ballot--absent--f: Ni bila prisotna na glasovanju o {title}
+  ballot--abstain--m: VZDRŽAL se je glasovanja o {title}
+  ballot--abstain--f: VZDRŽALA se je glasovanja o {title}
+  ballot--did-not-vote--m: "BREZ GLASU na glasovanju o {title}"
+  ballot--did-not-vote--f: "BREZ GLASU na glasovanju o {title}"
+  speech--m: Govoril na {session} {org}
+  speech--f: Govorila na {session} {org}
+  show-answer: Prikaži odgovor
+  hide-answer: Skrij odgovor
+months:
+- januar
+- februar
+- marec
+- april
+- maj
+- junij
+- julij
+- avgust
+- september
+- oktober
+- november
+- december
+vote_types:
+  agenda: dnevni red
+  whole_law: glasovanje o zakonu v celoti
+  amendment: amandma
+  no_confidence: interpelacija
+  record_conclusion: evidenčni sklep
+  conclusion_proposal: predlog sklepa
+  ratification: zakon o ratifikaciji
+  naming: imenovanje
+  call_proposal: predlog za razpis
+  recommendation: priporočilo
+  report: poročilo
+  procedural_proposal: proceduralni predlog
+  personal_property_decree: odlok o načrtu ravnanja s stvarnim premoženjem
+  other: drugo
+tools:
+  notifications: Parlameter obvestila
+  vote-comparator: Primerjalnik glasovanj
+  discord: Raziskovalec neenotnosti
+  compass: Parlamentarni kompas
+  word-groups: Skupine besed
+frame:
+  show-in-context: Oglej si kartico v kontekstu spletnega mesta
+ogText: >-
+  Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša
+  spremljanje dela v Državnem zboru.
+committees: Delovna telesa
+councils: Delovna telesa
+commissions: Delovna telesa
+delegations: Druga članstva
+friendship_groups: Druga članstva
+investigative_comissions: Preiskovalne komisije
+elected-to-district: 'Št. glasov: {numVotes}, {district}'
+elected-to-district--m: Prejel {numVotes} glasov v okraju {district}
+elected-to-district--f: Prejela {numVotes} glasov v okraju {district}
+elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
+elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
+age--years: '{age} let'
+no-social-media: ni družbenih omrežij.
+select-district-placeholder: Izberi okraj
+select-parties-placeholder: Izberi svetniško skupino
+all-parties: vse svetniške skupine
+all-voting-districts: vsi volilni okraji
+missing-district: okraj ni vnešen
+voting-district: volilni okraj
+sort-by--name: abecedi
+sort-by--district: okrajih
+sort-by--party: svetniških skupinah
+sort-by--analysis: rezultatu analize {analysis}
+sort-by--change: aktualni spremembi v rezultatu analize {analysis}
+sort-by--age: starosti
+sort-by--education: stopnji izobrazbe
+sort-by--terms: številu mandatov
+analysis-texts:
+  demographics:
+    label: Demografija
+  presence_votes:
+    label: Prisotnost na glasovanjih
+    titleSuffix: ' po prisotnosti na glasovanjih'
+    explanation: >-
+      Število glasovanj, ko je bil svetnik prisoten, delimo s številom vseh
+      glasovanj in normaliziramo (min 1 - max 100).
+  number_of_questions:
+    label: Št. svetniških vprašanj in pobud
+    titleSuffix: ' po št. svetniških vprašanj in pobud'
+    explanation: >-
+      Število svetniških vprašanj in pobud, ki jih je svetnik/-ca zastavil/-a v
+      tem sklicu DZ v primerjavi s povprečno in največjo vrednostjo.
+  speeches_per_session:
+    label: Št. govorov na sejo
+    titleSuffix: ' po št. govorov na sejo'
+    explanation: >-
+      Preštejemo svetnikove govore in število delimo s številom sej, na katerih
+      je svetnik govoril. Število vseh govorov delimo najprej s številom
+      svetnikov, potem pa še s številom vseh sej (na katerih se je govorilo).
+      Individualni rezultat primerjamo s povprečnim.
+  spoken_words:
+    label: Št. izgovorjenih besed
+    titleSuffix: ' po št. izgovorjenih besed'
+    explanation: >-
+      Število besed, ki jih je svetnik izgovoril v vseh svojih dosedanjih
+      govorih v DZ.
+  mismatch_of_pg:
+    label: Neujemanje s svetniško skupino
+    titleSuffix: ' po neujemanju s svetniško skupino'
+    explanation: Odstopanje od večinskega glasu svetniške skupine na glasovanjih v
+      DZ.
+  working_bodies:
+    label: Delovna telesa
+    titleSuffix: ' po delovnih telesih'
+    explanation: Članstva v delovnih telesih.
+all-votes: vsa glasovanja
+all-working-bodies: vsa delovna telesa
+everyone: Vsi
+parliament: sabor
+analysis-not-available: Ta analiza ni na voljo.
+party-leader--m: Vodja svetniške skupine
+party-leader--f: Vodja svetniške skupine
+deputy-leader--m: Namestnik
+deputy-leader--f: Namestnica
+number-of-seats: 'Število svetniških sedežev'
+contact: 'Kontakt'
+mp: Svetnik/-ka
+addressee: Naslovljenec/-ka
+analysis-texts--party:
+  seat_count:
+    label: Število sedežev
+    titleSuffix: ' po številu sedežev'
+    explanation: >-
+      Število sedežev posamezne svetniške skupine dobimo tako, da preštejemo vse
+      njihove trenutno aktivne člane.
+  presence_sessions:
+    label: Prisotnost na sejah DZ
+    titleSuffix: ' glede na rezultate analize s prisotnostjo na sejah DZ'
+    explanation: >-
+      Preštejemo vse seje in za vsakega svetnika/-co SK preverimo, če je na
+      posamezni seji vsaj enkrat glasoval/-a. V primeru, da je, ga/jo, štejemo
+      kot prisotnega/-o na tej seji. Seštevek vseh prisotnosti svetnikov SK na
+      sejah DZ delimo s številom svetnikov v SK, ta rezultat pa delimo številom
+      sej in normaliziramo (min 1 - max 100).
+  vote_attendance:
+    label: Prisotnost na glasovanjih
+    titleSuffix: ' glede na rezultate analize s prisotnostjo na glasovanjih'
+    explanation: >-
+      Preštejemo vsa glasovanja, nato pa še, koliko svetnikov svetniške skupine
+      (SK) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih
+      glasovnic svetnikov SK delimo s številom svetnikov v SK, ta rezultat pa
+      delimo s številom glasovanj in normaliziramo (min 1 - max 100).
+  number_of_questions:
+    label: Št. svetniških vprašanj in pobud
+    titleSuffix: ' glede na rezultate analize po št. svetniških vprašanj in pobud'
+    explanation: >-
+      Preštejemo vsa svetniška vprašanja in pobude, ki so jih postavili svetniki/-ce'
+      izbrane svetniške skupine v tem sklicu DZ. Podatke pridobivamo s spletnega
+      mesta DZ RS.
+  number_of_amendments:
+    label: Št. vloženih amandmajev
+    titleSuffix: ' glede na rezultate analize po št. vloženih amandmajev'
+    explanation: ''
+  group_unity:
+    label: Enotnost glasovanj
+    titleSuffix: ' glede na enotnost glasovanj'
+    explanation: ''
+  vocabulary_size:
+    label: Raznolikost besedišča
+    titleSuffix: ' glede na rezultate analize z raznolikostjo besedišča'
+    explanation: >-
+      Iz vseh svetniških govorov preštejemo unikatne besede ter število vseh
+      izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda
+      pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se
+      ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient,
+      kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih
+      besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco
+      (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na
+      kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan
+      in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) =
+      0,4375<br><br>Za vsako svetniško skupino seštejemo rezultate svetnikov in
+      delimo s številom svetnikov v njej. Posamezne seštevke delimo s skupnim
+      seštevkom in normaliziramo (min 1 - max 100).
+  privzdignjeno:
+    label: Privzdignjeno besedje
+    titleSuffix: ' glede na rezultate analize s privzdignjenim besedjem'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v svetniških govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov svetniških govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Privzdignjeno besedje<br>Kvalifikatorji iz
+      SSKJ<br>evfemistično (evfem.), mitološko (mitol.), pesniško (pesn.),
+      knjižno (knjiž.), zastarelo (zastar.), starinsko (star.)<br>Kvalifikatorji
+      iz SNB<br>/<br><br>Za vsako svetniško skupino seštejemo rezultate
+      svetnikov in delimo s številom svetnikov v njej. Posamezne seštevke delimo
+      s skupnim seštevkom in normaliziramo (min 1 - max 100).
+  preprosto:
+    label: Preprosto besedje
+    titleSuffix: ' glede na rezultate analize s preprostim besedjem'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v svetniških govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov svetniških govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Preprosto besedje<br>Kvalifikatorji iz SSKJ<br>narečno
+      (nar.), pogovorno (pog.), nižje pogovorno (nižje pog.) <br>Kvalifikatorji
+      iz SNB<br>pogovorno (pog.)<br><br>Za vsako svetniško skupino seštejemo
+      rezultate svetnikov in delimo s številom svetnikov v njej. Posamezne
+      seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).
+  problematicno:
+    label: Ekscesno besedje
+    titleSuffix: ' glede na rezultate analize z ekscesnim besedjem'
+    explanation: >-
+      Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
+      privzdignjeno in preprosto besedje v svetniških govorih. Upoštevani so le
+      kvalifikatorji, ki so v obeh slovarjih tik za zaglavjem in imajo doseg do
+      konca geselskega sestavka (ne pa tudi kvalifikatorji za posamezne pomene
+      oziroma rabe). Podjetje Amebis je iz transkriptov svetniških govorov
+      pripravilo sezname besed, ki imajo katerega od izbranih
+      kvalifikatorjev.<br>Ekscesno besedje<br>Kvalifikatorji iz SSKJ
+      <br>vulgarno (vulg.), slabšalno (slabš.), ekspresivno (ekspr.), ironično
+      (iron.), otroško (otr.) <br>Kvalifikatorji iz SNB<br>slabšalno (slabš.),
+      vulgarno (vulg.)<br><br>Za vsako svetniško skupino seštejemo rezultate
+      svetnikov in delimo s številom svetnikov v njej. Posamezne seštevke delimo
+      s skupnim seštevkom in normaliziramo (min 1 - max 100).
+accepted: sprejeti
+rejected: zavrnjeni
+gov-side: Stran vlade
+summary: Povzetek
+all-mps: Vsi svetniki
+whole-term: Cel mandat
+last-year: Zadnje leto
+limited-to-last-five: ', izpis pa omejen samo na zgornjih pet sej'
+just-last-five: Samo zadnjih 5
+sort-by--updated: datumu zadnje spremembe podatkov o seji
+sort-by--workingBody: imenu organizacije
+title: Ime
+other-procedures: Drugi postopki
+speech-link: Povezava do govora v transkriptu
+speech-card-link: Povezava do kartice govora
+minutes-agenda-link: Povezava do dnevnega reda
+minutes-item-card-link: Povezava do kartice točke zapisnika
+vote-roll-results: Poimensko glasovanje
+mayor: Župan
+website: Spletno mesto
+budget: Proračun
+agenda-items: Točke dnevnega reda
+agenda-item-point: '{num}. točka'
+material: Gradivo
+documents: Dokumenti
+other: Drugo
+organization-classifications:
+  root: Mestni svet
+  committee: Odbori
+  other: Drugo
+  commission: Komisije
+legislation-classifications:
+  act: Akt
+  decree: Odlok
+  law: Zakon
+anonymous:
+  person:
+    name: Neznana oseba
+  group:
+    name: Neznana poslanska skupina
+    acronym: N/A
+newsletter-signup-title: Sign up to our newsletter!
+newsletter-signup-description: Sign up to our newsletter, sign up to our newsletter,
+  sign up to our newsletter, sign up to our newsletter.
+newsletter-signup-input-placeholder: Email
+newsletter-signup-checkbox-text: Some GDPR consent text
+newsletter-signup-button-text: SIGN UP
+newsletter-signup-unsubscribe-button-text: Unsubscribe me!
+newsletter-signup-success-text: Registration successful!
+ask-person-a-question: Napiši vprašanje za poslanca_ko.
+thank-you-for-the-question: Hvala za poslano vprašanje!
+send: Pošlji
+error-message: Prišlo je do napake.

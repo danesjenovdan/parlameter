@@ -1,0 +1,14 @@
+card:
+  title: 'Seznam glasovanj po '
+  info: >-
+    # Seznam vseh glasovanj DZ, ki ustrezajo uporabniškemu vnosu ({text}), za
+    izbrana matična delovna telesa ({wbs}), razvrščenih po {sortBy}.
+
+
+    Seznam vseh glasovanj, ki so se zgodila v tekočem sklicu DZ in so bila
+    objavljena na spletnem mestu [DZ RS](http://www.dz-rs.si) ter ustrezajo
+    uporabniškemu vnosu.
+
+
+    Rezultati so razvrščeni bodisi po neenotnosti izbrane organizacije bodisi po
+    datumu.
