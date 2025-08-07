@@ -1,0 +1,20 @@
+card:
+  title: Glasovanja
+  info: >-
+    # Pregled vseh glasovanj in večinskega glasu svetniške skupine
+
+
+    Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI, VZDRŽAN/-A)
+    in število svetnikov, ki niso glasovali, ter izpišemo rezultate glede na najpogostejši
+    glas ali odsotnost.
+
+
+    Nabor glasovanj pridobimo s spletnega mesta [Občine Trbovlje](https://www.trbovlje.si/).
+
+
+    Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
+    pri vzdržanih in odsotnih glasovih ne moremo zagotavljati. Prisotnost svetnikov
+    se na sejah občinskega sveta ne preverja na vsakem glasovanju, zato se lahko zgodi,
+    da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
+    z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
+    kot odsotna (rezultat: ni glasoval/a).
