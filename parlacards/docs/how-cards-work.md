@@ -7,6 +7,7 @@
 Each card has a `group` and a `method` (sometimes just called `name`), which when combined create a `cardName`.
 
 For example:
+
 - group: `person`
 - method `basic-information`
 - cardName: `person/basic-information`
@@ -18,6 +19,7 @@ For the build system to find a card you need to create a `card.vue` in the appro
 All the cards are stored in the [cards](../cards) folder, and subfolders based ond the `cardName`.
 
 For example:
+
 - [person/basic-information/card.vue](../cards/person/basic-information/card.vue)
 
 ### Required files
@@ -29,6 +31,7 @@ When creating a new card there are some required files:
 - `state.json` - State used when developing the card.
 
 Not strictly required while developing but could error when built:
+
 - `_i18n/<lang>/<cardName>.yaml` - The locale file for the card. (You can use `yarn lint:locales` to check if any locale files are missing)
 
 ## Data
@@ -91,7 +94,7 @@ List of analysis IDs that can be used on misc/members:
 
 - `number_of_questions` - how many questions / suggestions each member gave
 
-- `mismatch_of_pg` -  how many times did each member vote differently from their member group
+- `mismatch_of_pg` - how many times did each member vote differently from their member group
 
 - `working_bodies` - a list of working bodies each member is a part of
 
@@ -100,7 +103,6 @@ List of analysis IDs that can be used on misc/members:
   - `speeches_per_session` - average number of speeches each member gave per session
 
   - `spoken_words` - number of words each member spoke
-
 
 #### List of analysis IDs that can be used on misc/groups:
 
@@ -112,7 +114,7 @@ List of analysis IDs that can be used on misc/members:
 
 - `number_of_amendments` - how many amendments each group gave
 
-- `intra_disunion` - how differently do members of each group vote on average
+- `group_unity` - how differently do members of each group vote on average
 
 - analysis of transcripts:
 
