@@ -1,9 +1,0 @@
-card:
-  title: Prisotnost na glasovanjih sej DZ
-  info: >-
-    # Prisotnost poslanske skupine na glasovanjih DZ v primerjavi s povprečjem
-    in največjo vrednostjo.
-
-
-    Število glasovanj, ko je poslanska skupina prisotna na glasovanjih delimo s
-    številom vseh glasovanj in normaliziramo (min 1 - max 100).
