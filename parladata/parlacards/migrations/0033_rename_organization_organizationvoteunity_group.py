@@ -7,14 +7,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlacards', '0032_alter_organizationvoteunity_organization_and_more'),
-        ('parladata', '0078_alter_law_status_alter_organization_classification_and_more'),
+        ("parlacards", "0032_alter_organizationvoteunity_organization_and_more"),
+        (
+            "parladata",
+            "0078_alter_law_status_alter_organization_classification_and_more",
+        ),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='organizationvoteunity',
-            old_name='organization',
-            new_name='group',
+            model_name="organizationvoteunity",
+            old_name="organization",
+            new_name="group",
         ),
     ]

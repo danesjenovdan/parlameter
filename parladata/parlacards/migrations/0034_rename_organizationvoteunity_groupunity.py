@@ -6,13 +6,16 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlacards', '0033_rename_organization_organizationvoteunity_group'),
-        ('parladata', '0078_alter_law_status_alter_organization_classification_and_more'),
+        ("parlacards", "0033_rename_organization_organizationvoteunity_group"),
+        (
+            "parladata",
+            "0078_alter_law_status_alter_organization_classification_and_more",
+        ),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='OrganizationVoteUnity',
-            new_name='GroupUnity',
+            old_name="OrganizationVoteUnity",
+            new_name="GroupUnity",
         ),
     ]
