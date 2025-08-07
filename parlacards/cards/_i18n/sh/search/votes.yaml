@@ -1,9 +1,0 @@
-card:
-  title: Glasovanja, ki vsebujejo iskalni niz
-  info: >-
-    # Pregled vseh glasovanj, ki vsebujejo iskalni niz, razvščenih glede na čas.
-
-
-    Po glasovanjih vseh sej poiščemo in izpišemo povezave do vseh glasovanj, v
-    katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu (od
-    najnovejše do najstarejše) in podobnosti z iskalnim nizom.
