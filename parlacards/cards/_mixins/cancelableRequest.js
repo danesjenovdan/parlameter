@@ -1,43 +1,33 @@
 import axios from 'axios';
 
-const { CancelToken } = axios;
-
 export default {
   data() {
     return {
-      cancelRequest: null,
+      abortController: null,
     };
   },
   methods: {
     makeRequest(url) {
-      if (this.cancelRequest) {
-        this.cancelRequest();
-        this.cancelRequest = null;
+      if (this.abortController) {
+        this.abortController.abort();
       }
-      const request = axios
-        .get(url, {
-          cancelToken: new CancelToken((c) => {
-            this.cancelRequest = c;
-          }),
-        })
-        .then(
-          (response) => {
-            this.cancelRequest = null;
-            return response;
-          },
-          (error) => {
-            this.cancelRequest = null;
-            throw error;
-          },
-        );
+      this.abortController = new AbortController();
+      const request = axios.get(url, {
+        signal: this.abortController.signal,
+      });
       return {
         then(responseHandler) {
-          // catch cancelations to prevent sending them to sentry as errors
-          return request.then(responseHandler).catch((error) => {
-            if (!axios.isCancel(error)) {
-              throw error;
-            }
-          });
+          request.then(
+            (response) => {
+              responseHandler.call(null, response);
+            },
+            (error) => {
+              // catch cancelations to prevent sending them to sentry as errors
+              if (!axios.isCancel(error)) {
+                throw error;
+              }
+            },
+          );
         },
       };
     },

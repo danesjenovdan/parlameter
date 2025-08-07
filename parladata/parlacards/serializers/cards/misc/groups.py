@@ -1,11 +1,12 @@
+from datetime import datetime
 from importlib import import_module
 
-from django.db.models import Q
+from django.db.models import Avg, Q
 from rest_framework import serializers
 
 from parlacards.models import (
-    GroupDiscord,
     GroupNumberOfQuestions,
+    GroupUnity,
     GroupVocabularySize,
     GroupVoteAttendance,
 )
@@ -14,13 +15,14 @@ from parlacards.serializers.common import (
     CommonOrganizationSerializer,
     MandateSerializer,
 )
+from parladata.exceptions import NoMembershipException
 from parladata.models.memberships import PersonMembership
 
 
 class GroupAnalysesSerializer(CommonOrganizationSerializer):
     def calculate_cache_key(self, group):
         all_analyses = (
-            GroupDiscord,
+            GroupUnity,
             GroupVocabularySize,
             GroupNumberOfQuestions,
             GroupVoteAttendance,
@@ -63,10 +65,25 @@ class GroupAnalysesSerializer(CommonOrganizationSerializer):
             return score_object.value
         return None
 
+    def get_group_unity_value(self, group):
+        # find all relevant groups
+        try:
+            playing_field, mandate = group.get_last_playing_field_with_mandate(
+                self.context["request_date"]
+            )
+        except NoMembershipException as e:
+            raise NotFound(detail=str(e), code=404)
+
+        return GroupUnity.objects.filter(
+            group=group,
+            timestamp__gte=mandate.beginning,
+            timestamp__lte=mandate.ending or datetime.strptime("3000", "%Y"),
+        ).aggregate(Avg("value"))["value__avg"]
+
     def get_results(self, obj):
         return {
             "seat_count": obj.number_of_members_at(self.context["request_date"]),
-            "intra_disunion": self.get_group_value(obj, "GroupDiscord"),
+            "group_unity": self.get_group_unity_value(obj),
             "number_of_amendments": None,  # TODO
             "vocabulary_size": self.get_group_value(obj, "GroupVocabularySize"),
             "number_of_questions": self.get_group_value(obj, "GroupNumberOfQuestions"),

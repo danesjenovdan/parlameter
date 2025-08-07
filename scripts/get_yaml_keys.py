@@ -1,6 +1,17 @@
 import yaml
 
 
+class UniqueKeyLoader(yaml.SafeLoader):
+    def construct_mapping(self, node, deep=False):
+        mapping = set()
+        for key_node, value_node in node.value:
+            key = self.construct_object(key_node, deep=deep)
+            if key in mapping:
+                raise ValueError(f"Duplicate key {key!r} found in YAML.")
+            mapping.add(key)
+        return super().construct_mapping(node, deep)
+
+
 YAML_TEST_INPUT = """
 one: 1
 two: 2
@@ -59,9 +70,41 @@ YAML_TEST_KEYS = [
     "empty",
 ]
 
+YAML_TEST_DUPLICATES1_INPUT = """
+one: 1
+one: 1
+two: 2
+"""
+
+YAML_TEST_DUPLICATES1_ERROR = "Duplicate key 'one' found in YAML."
+
+YAML_TEST_DUPLICATES2_INPUT = """
+one: 1
+two: 2
+three: 3
+two: 2
+"""
+
+YAML_TEST_DUPLICATES2_ERROR = "Duplicate key 'two' found in YAML."
+
+YAML_TEST_DUPLICATES3_INPUT = """
+nested:
+  level1:
+    level2:
+      key1: value1
+      key2: value2
+nested:
+  level1:
+    level2:
+      key1: value1
+      key2: value2
+"""
+
+YAML_TEST_DUPLICATES3_ERROR = "Duplicate key 'nested' found in YAML."
+
 
 def get_yaml_keys_impl(input):
-    data = yaml.safe_load(input)
+    data = yaml.load(input, Loader=UniqueKeyLoader)
 
     keys = []
 
@@ -87,8 +130,22 @@ def get_yaml_keys(input_file):
         return get_yaml_keys_impl(file.read())
 
 
+def _test_yaml_duplicates(input_data, expected_error):
+    try:
+        get_yaml_keys_impl(input_data)
+        assert False, f"Expected error: {expected_error}"
+    except ValueError as e:
+        assert str(e) == expected_error, f"Unexpected error message: {e}"
+
+
 if __name__ == "__main__":
     print("Testing YAML key extraction...")
     keys = get_yaml_keys_impl(YAML_TEST_INPUT)
-    assert keys == YAML_TEST_KEYS, "Keys do not match expected keys."
+    assert keys == YAML_TEST_KEYS, "Keys do not match expected keys!"
     print("All keys match expected keys.")
+
+    print("Testing YAML key extraction with duplicates...")
+    _test_yaml_duplicates(YAML_TEST_DUPLICATES1_INPUT, YAML_TEST_DUPLICATES1_ERROR)
+    _test_yaml_duplicates(YAML_TEST_DUPLICATES2_INPUT, YAML_TEST_DUPLICATES2_ERROR)
+    _test_yaml_duplicates(YAML_TEST_DUPLICATES3_INPUT, YAML_TEST_DUPLICATES3_ERROR)
+    print("All duplicate key tests passed.")
