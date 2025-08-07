@@ -53,14 +53,15 @@ confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvest
 comparator-text: >-
   Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa
   drugače od njih. {load}
-ignore-absent: Ignoriraj "odsotne" glasovnice
-comparator-vote-percent: "{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj."
+comparator-vote-percent: '{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.'
+select-members-voted-same: Izberi poslance, ki so glasovali enako
+select-members-voted-different: Izberi poslance, ki so glasovali drugače
 tabs:
   vote-list: Seznam glasovanj
   time-chart: Dinamika skozi čas
   bar-chart: Dinamika glede na MDT
-select-parties-people: Vklopi cele poslanske skupine ali dodaj posamezne poslance.
-empty-state-text: Za prikaz glasovanj dodaj vsaj dva akterja.
+comparator-empty-state-text: Za prikaz glasovanj dodaj vsaj dva akterja.
+comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
 speakers: Govorci
 input-words: Vnesi posamezno besedo ali več besed, ločenih z vejico.
 empty-text: Za prikaz rezultatov dodaj vsaj dve besedi.

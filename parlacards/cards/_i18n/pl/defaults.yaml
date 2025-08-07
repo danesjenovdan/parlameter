@@ -53,14 +53,15 @@ confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvest
 comparator-text: >-
   Chcę wiedzieć, na których głosowaniach {same} głosowali jednakowo, a
   {different} głosowali inaczej od nich. {load}
-ignore-absent: Zignoruj "nieobecne" głosy
-comparator-vote-percent: "{num} wyszukane głosowania reprezentują {percent} wszystkich głosowań."
+comparator-vote-percent: '{num} wyszukane głosowania reprezentują {percent} wszystkich głosowań.'
+select-members-voted-same: Izberi poslance, ki so glasovali enako
+select-members-voted-different: Izberi poslance, ki so glasovali drugače
 tabs:
   vote-list: Lista głosowań
   time-chart: Oś czasu
   bar-chart: Dynamika w odniesieniu do komisji
-select-parties-people: Wybierz klub parlamentarny lub dodaj poszczególnego posła.
-empty-state-text: Aby wyświetlić głosowania, dodaj przynajmniej dwóch przedstawicieli.
+comparator-empty-state-text: Aby wyświetlić głosowania, dodaj przynajmniej dwóch przedstawicieli.
+comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
 speakers: Mówcy
 input-words: Wprowadż słowo lub kilka słów oddzielonych przecinkiem.
 empty-text: Aby wyświetlić wyniki, dodaj przynajmniej dwa słowa.

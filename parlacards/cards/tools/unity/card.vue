@@ -359,13 +359,6 @@ export default {
       }
     }
 
-    // .right-filters {
-    //   @include breakpoints.respond-to(up-to-limbo) {
-    //     width: 100%;
-    //     justify-content: flex-end;
-    //   }
-    // }
-
     .filter-label {
       overflow: hidden;
       height: 20px;
