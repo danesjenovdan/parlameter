@@ -166,7 +166,7 @@ import { sum } from 'lodash-es';
 import links from '@/_mixins/links.js';
 
 export default {
-  name: 'VoteList',
+  name: 'VoteListItem',
   mixins: [links],
   props: {
     vote: {
