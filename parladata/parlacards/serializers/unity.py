@@ -29,6 +29,8 @@ class GroupUnityScoreSerializerField(serializers.Field):
         # check for cache
         cache_key = self.calculate_cache_key(group.id, self.context["request_date"])
         cached_content = cache.get(cache_key)
+        if cached_content:
+            return cached_content
 
         # find all relevant groups
         try:
@@ -39,7 +41,7 @@ class GroupUnityScoreSerializerField(serializers.Field):
             raise NotFound(detail=str(e), code=404)
 
         relevant_groups = playing_field.query_organization_members(
-            timestamp=self.context["request_date"]
+            timestamp=mandate.ending or self.context["request_date"]
         ).filter(classification="pg")
 
         # calculate averages for all groups
@@ -54,10 +56,13 @@ class GroupUnityScoreSerializerField(serializers.Field):
                 ).aggregate(Avg("value"))["value__avg"],
             }
 
-        if cached_content:
-            return cached_content
-
-        score = group_averages[group.id]["average_unity"]
+        try:
+            score = group_averages[group.id]["average_unity"]
+        except KeyError:
+            raise NotFound(
+                detail="No unity score was calculated for this parliamentary group.",
+                code=404,
+            )
 
         average_score = sum(
             [avg["average_unity"] for avg in group_averages.values()]
