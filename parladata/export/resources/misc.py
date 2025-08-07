@@ -6,8 +6,8 @@ from import_export.fields import Field
 from export.resources.common import ExportModelResource, get_cached_person_name
 from parlacards.models import (
     DeviationFromGroup,
-    GroupDiscord,
     GroupNumberOfQuestions,
+    GroupUnity,
     GroupVocabularySize,
     GroupVoteAttendance,
     PersonAvgSpeechesPerSession,
@@ -226,7 +226,7 @@ class GroupsResource(ExportModelResource):
         return organization.number_of_members_at()
 
     def dehydrate_intra_disunion(self, organization):
-        return self.get_group_score(GroupDiscord, organization)
+        return self.get_group_score(GroupUnity, organization)
 
     def dehydrate_vocabulary_size(self, organization):
         return self.get_group_score(GroupVocabularySize, organization)

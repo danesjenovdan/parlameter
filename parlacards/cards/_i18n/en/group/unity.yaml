@@ -1,0 +1,13 @@
+card:
+  title: Vote unity
+  info: >-
+    # Vote unity within the selected parliamentary group for voting events in
+    the National Assembly compared to the average and maximum value of unity
+    within all the parliamentary groups.
+
+
+    For each voting event we count which ballot (FOR, AGAINST, ABSTAINED,
+    ABSENT) was submitted by the parliamentary group's MPs. We calculate the
+    percentage of those who voted for the most popular option. That percentage
+    is the level of unity i. e. the percentage of MPs who voted the same as
+    the majority.

@@ -5,7 +5,7 @@ recently-passed: Recently passed
 most-discussed: Največ reakcij
 all-legislation: All legislation
 select-mps: Choose MPs
-selected-mps: 'Chosen: {num}'
+selected-mps: "Chosen: {num}"
 select-group: Izberi skupino
 select-body: Izberi telo
 select-time-period: Izberi časovno obdobje
@@ -18,34 +18,34 @@ email: Email
 input-email: Enter email
 email-address: Email
 notification-steps:
-- textfirst: >-
-    Izberi besedo ali besedno zvezo, ki jo želiš spremljatii. Kmalu za tem, ko
-    bo uporabljena v govoru, glasovanju ali zakonodaji, ti to sporočimo po
-    e-pošti.
-- textfirst: >-
-    Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
-    besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
-    ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
-    zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
-  firstbullet: 'Natančno ujemanje'
-  secondbullet: 'Široko ujemanje'
-- textfirst: Kako pogosto naj ti pišemo?
-  firstbullet: Največ enkrat na dan
-  secondbullet: Največ enkrat na teden
-  thirdbullet: Največ enkrat na mesec
-- textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
-  textsecond: >-
-    Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila, ko se
-    izbrane besede ali besedne zveze uporabijo pri delu državnega zbora.
-  submit: Prijavi me
-- textfirst: Zabeleženo!
-  textsecond: >-
-    Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
-    e-poštnem predalu.
-- textfirst: Potrjeno!
-  textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
-- textfirst: Napaka!
-  textsecond: Prišlo je do napake pri shranjevanju obvestil.
+  - textfirst: >-
+      Izberi besedo ali besedno zvezo, ki jo želiš spremljatii. Kmalu za tem, ko
+      bo uporabljena v govoru, glasovanju ali zakonodaji, ti to sporočimo po
+      e-pošti.
+  - textfirst: >-
+      Izberi način ujemanja sprožilca. Z natančnim ujemanjem bodo besede ali
+      besedne zveze zaznane zgolj v taki obliki, kot so bile zapisane. S širokim
+      ujemanjem bodo upoštevane tudi nekatere druge različice besede ali besedne
+      zveze, kot so sklanjatve, spregatve ali sorodni izrazi.
+    firstbullet: "Natančno ujemanje"
+    secondbullet: "Široko ujemanje"
+  - textfirst: Kako pogosto naj ti pišemo?
+    firstbullet: Največ enkrat na dan
+    secondbullet: Največ enkrat na teden
+    thirdbullet: Največ enkrat na mesec
+  - textfirst: Zaupaj nam e-naslov, na katerega ti naj pošiljamo obvestila.
+    textsecond: >-
+      Strinjam se, da mi Danes je nov dan po e-pošti pošilja obvestila, ko se
+      izbrane besede ali besedne zveze uporabijo pri delu državnega zbora.
+    submit: Prijavi me
+  - textfirst: Zabeleženo!
+    textsecond: >-
+      Povezava za potrditev prijave in urejanje drugih nastavitev te čaka v
+      e-poštnem predalu.
+  - textfirst: Potrjeno!
+    textsecond: Na e-naslov {email} prejmeš obvestila za besedo oz. besedno zvezo “{keyword}”.
+  - textfirst: Napaka!
+    textsecond: Prišlo je do napake pri shranjevanju obvestil.
 add-new-trigger: Dodaj nov sprožilec
 to-notification-list: Na seznam obvestil
 remove: Odstrani
@@ -54,7 +54,7 @@ comparator-text: >-
   I want to know, when {same} voted the same, but {different} voted differently.
   {load}
 ignore-absent: Ignore "absent" votes
-comparator-vote-percent: '{num} filtered voting events represents {percent} of all voting events.'
+comparator-vote-percent: "{num} filtered voting events represents {percent} of all voting events."
 tabs:
   vote-list: List of voting events
   time-chart: Timeline
@@ -64,7 +64,7 @@ empty-state-text: To view voting events add at least two agents.
 speakers: Speakers
 input-words: Enter a word or multiple words separated by a comma.
 empty-text: To view results add at least two words.
-wordgroups-text: 'Show me who talks about the most: {words} {load}'
+wordgroups-text: "Show me who talks about the most: {words} {load}"
 show-relative: Display relative metric
 select-working-body-placeholder: Select working body
 only-abstracts: Only with abstracts
@@ -88,8 +88,8 @@ update-session: Update session
 tags: Tags
 add-tag: Add a tag
 votes: Votes
-'yes': 'YES'
-'no': 'NO'
+"yes": "YES"
+"no": "NO"
 copy: Copy
 copied: Copied!
 load: Load
@@ -108,7 +108,7 @@ working-body: Working body responsible
 working-bodies: Working bodies responsible
 vote-types: Vote types
 select-placeholder: Choose
-selected-placeholder: 'Chosen: {num}'
+selected-placeholder: "Chosen: {num}"
 data: Podatki
 name: Name
 name--for-legislation: Title
@@ -174,7 +174,6 @@ voted-did-not-vote--m: Did not vote
 voted-did-not-vote--plural: Did not vote
 anonymous-votes-present: Občinski svet ni objavil vseh individualnih glasovnic.
 sort-by: Order by
-sort-by--inequality: Discord
 sort-by--date: Date
 sort-by--unity: Unity
 sort-by--disunity: Disunity
@@ -198,7 +197,6 @@ absent--m: Absent
 absent--plural: Absent
 no-term: No mandate
 no-data: No data
-inequality: Discord
 unity: Unity
 everybody: All
 show: Show
@@ -333,13 +331,13 @@ commissions: Delovna telesa
 delegations: Druga članstva
 friendship_groups: Druga članstva
 investigative_comissions: Preiskovalne komisije
-elected-to-district: 'Št. glasov: {numVotes}, {district}'
+elected-to-district: "Št. glasov: {numVotes}, {district}"
 elected-to-district--m: Prejel {numVotes} glasov v okraju {district}
 elected-to-district--f: Prejela {numVotes} glasov v okraju {district}
-elected-to-district-with-points: 'Št. točk: {numVotes}, {district}'
+elected-to-district-with-points: "Št. točk: {numVotes}, {district}"
 elected-to-district-with-points--m: Prejel {numVotes} točk v okraju {district}
 elected-to-district-with-points--f: Prejela {numVotes} točk v okraju {district}
-age--years: '{age} years'
+age--years: "{age} years"
 no-social-media: no social media.
 select-district-placeholder: Select district
 select-parties-placeholder: Select parliamentary group
@@ -360,20 +358,20 @@ analysis-texts:
     label: Demographics
   presence_votes:
     label: Attendance at voting events
-    titleSuffix: ' attendance at voting events in the National Assembly'
+    titleSuffix: " attendance at voting events in the National Assembly"
     explanation: >-
       The number of voting events where the representative was present is
       divided by the number of all voting events and normalised (min 1-max 100).
   number_of_questions:
     label: Number of parliamentary questions
-    titleSuffix: ' the number of parliamentary questions and initiatives'
+    titleSuffix: " the number of parliamentary questions and initiatives"
     explanation: >-
       The number of parliamentary questions and initiatives by the MP in this
       sitting of the National Assembly compared to the average and maximum
       value.
   speeches_per_session:
     label: Number of speeches per session
-    titleSuffix: ' no. speeches at the session'
+    titleSuffix: " no. speeches at the session"
     explanation: >-
       We count the MP's speeches and divide it by the number of sessions where
       the MP spoke. We divide the number of all speeches first by the number of
@@ -382,17 +380,17 @@ analysis-texts:
       values.
   spoken_words:
     label: Number of spoken words
-    titleSuffix: ' no. spoken words'
+    titleSuffix: " no. spoken words"
     explanation: >-
       The number of words by the MEP said in all his previous speeches in the
       DZ.
   mismatch_of_pg:
     label: Deviation from the parliamentary group
-    titleSuffix: ' deviation from the parliamentary group'
+    titleSuffix: " deviation from the parliamentary group"
     explanation: Derogation from the majority voice of ballots group in the DZ.
   working_bodies:
     label: Delovna telesa
-    titleSuffix: ' po delovnih telesih'
+    titleSuffix: " po delovnih telesih"
     explanation: Članstva v delovnih telesih.
 all-votes: all voting events
 all-working-bodies: all committees responsible
@@ -411,20 +409,20 @@ deputy--m: Deputy
 deputy--f: Deputy
 member--m: Member
 member--f: Member
-number-of-seats: 'Number of seats in the parliament'
-contact: 'Contact'
+number-of-seats: "Number of seats in the parliament"
+contact: "Contact"
 mp: MP
 addressee: Addressed to
 analysis-texts--party:
   seat_count:
     label: Number of seats
-    titleSuffix: ' number of seats'
+    titleSuffix: " number of seats"
     explanation: >-
       We get the number of seats for a parliamentary group by counting all of
       their active members.
   presence_sessions:
     label: Attendance at sessions
-    titleSuffix: ' the results of the analysis with the presence of the DZ'
+    titleSuffix: " the results of the analysis with the presence of the DZ"
     explanation: >-
       We count all the sessions and check every member of that parliamentary
       group if they voted at least once at that session. In case they voted at
@@ -434,7 +432,7 @@ analysis-texts--party:
       (min 1 - max 100).
   vote_attendance:
     label: Attendance at voting events
-    titleSuffix: ' the results of the analysis with the presence at voting events'
+    titleSuffix: " the results of the analysis with the presence at voting events"
     explanation: >-
       We count all the voting events as well as the number of representatives
       from the parliamentary group was present at any given voting. The sum of
@@ -443,21 +441,21 @@ analysis-texts--party:
       normalised (min 1 - max 100).
   number_of_questions:
     label: Number of parliamentary questions
-    titleSuffix: ' number of MPs'' questions'
+    titleSuffix: " number of MPs' questions"
     explanation: >-
       We count all the parliamentary questions and initiatives by the
       parliamentary group's MPs in this sitting of the National Assembly.
   number_of_amendments:
     label: Št. vloženih amandmajev
-    titleSuffix: ' glede na rezultate analize po št. vloženih amandmajev'
-    explanation: ''
+    titleSuffix: " glede na rezultate analize po št. vloženih amandmajev"
+    explanation: ""
   intra_disunion:
     label: Neenotnost glasovanj
-    titleSuffix: ' glede na neenotnost glasovanj'
-    explanation: ''
+    titleSuffix: " glede na neenotnost glasovanj"
+    explanation: ""
   vocabulary_size:
     label: Vocabulary strength
-    titleSuffix: ' vocabulary strength'
+    titleSuffix: " vocabulary strength"
     explanation: >-
       We count all unique words in an MP's speech. Then we count the number of
       occurrences or this words. We join them based on the number of
@@ -469,7 +467,7 @@ analysis-texts--party:
       the common sum and normalise (min 1 - max 100).
   privzdignjeno:
     label: Elevated speech
-    titleSuffix: ' elevated speech'
+    titleSuffix: " elevated speech"
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
       privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
@@ -485,7 +483,7 @@ analysis-texts--party:
       s skupnim seštevkom in normaliziramo (min 1 - max 100).
   preprosto:
     label: Simple speech
-    titleSuffix: ' simple speech'
+    titleSuffix: " simple speech"
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
       privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
@@ -500,7 +498,7 @@ analysis-texts--party:
       seštevke delimo s skupnim seštevkom in normaliziramo (min 1 - max 100).
   problematicno:
     label: Excessive speech
-    titleSuffix: ' excessive speech'
+    titleSuffix: " excessive speech"
     explanation: >-
       Z združevanjem kvalifikatorjev SSKJ in SNB smo definirali ekscesno,
       privzdignjeno in preprosto besedje v poslanskih govorih. Upoštevani so le
@@ -521,7 +519,7 @@ summary: Summary
 all-mps: All MPs
 whole-term: The whole term of office
 last-year: Previous year
-limited-to-last-five: ', the list is limited to top five sessions'
+limited-to-last-five: ", the list is limited to top five sessions"
 just-last-five: Only the last 5
 sort-by--updated: date when last update was made
 sort-by--workingBody: name of the organisation
@@ -536,7 +534,7 @@ mayor: Mayor
 website: Website
 budget: Budget
 agenda-items: Agenda items
-agenda-item-point: '{num}. item'
+agenda-item-point: "{num}. item"
 material: Material
 documents: Documents
 external_analysis: External analyses

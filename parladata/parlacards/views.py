@@ -10,7 +10,6 @@ from parlacards.serializers.cards import (
     DeviationFromGroupCardSerializer,
     GroupCardSerializer,
     GroupDeviationFromGroupCardSerializer,
-    GroupDiscordCardSerializer,
     GroupLeastVotesInCommonCardSerializer,
     GroupMediaReportsCardSerializer,
     GroupMembersCardSerializer,
@@ -21,6 +20,7 @@ from parlacards.serializers.cards import (
     GroupSpeechesCardSerializer,
     GroupStyleScoresCardSerializer,
     GroupTfidfCardSerializer,
+    GroupUnityCardSerializer,
     GroupVocabularySizeCardSerializer,
     GroupVoteAttendanceCardSerializer,
     GroupVoteCardSerializer,
@@ -556,13 +556,13 @@ class GroupSpeechesView(CardView):
     card_serializer = GroupSpeechesCardSerializer
 
 
-class GroupDiscordView(CardView):
+class GroupUnityView(CardView):
     """
-    A group's discord score.
+    A group's unity score.
     """
 
     thing = Organization
-    card_serializer = GroupDiscordCardSerializer
+    card_serializer = GroupUnityCardSerializer
 
 
 class RootOrganization(CardView):

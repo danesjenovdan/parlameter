@@ -49,7 +49,7 @@ urlpatterns = [
     path("group/tfidf/", GroupTfidfView.as_view()),
     path("group/style-scores/", GroupStyleScores.as_view()),
     path("group/speeches/", GroupSpeechesView.as_view()),
-    path("group/discord/", GroupDiscordView.as_view()),
+    path("group/unity/", GroupUnityView.as_view()),
     path("group/media-reports/", GroupMediaReportsView.as_view()),
     path("session/legislation/", SessionLegislation.as_view()),
     path("session/speeches/", SessionSpeeches.as_view()),
