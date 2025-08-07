@@ -68,6 +68,7 @@ from parlacards.serializers.speech import (
 )
 from parlacards.serializers.style_scores import StyleScoresSerializer
 from parlacards.serializers.tfidf import TfidfSerializer
+from parlacards.serializers.unity import GroupUnityScoreSerializerField
 from parlacards.serializers.vote import (
     SessionVoteSerializer,
     ToolsUnitySerializer,
@@ -647,8 +648,9 @@ class GroupLeastVotesInCommonCardSerializer(GroupScoreCardSerializer):
         return distances_serializer.data
 
 
+# HERE
 class GroupUnityCardSerializer(GroupScoreCardSerializer):
-    results = ScoreSerializerField(property_model_name="GroupUnity")
+    results = GroupUnityScoreSerializerField()
 
 
 class RootGroupBasicInfoCardSerializer(CardSerializer):
