@@ -1,0 +1,12 @@
+card:
+  title: Povprečno število govorov na sejo
+  info: >-
+    # Povprečno število govorov svetnika_ce na sejo v primerjavi s povprečno in največjo
+    vrednostjo.
+
+
+    Preštejemo govore svetnika_ce, ki jih najdemo v transkriptih, pridobljenih s spletnega
+    mesta [Občine Trbovlje](https://www.trbovlje.si/), in število delimo s številom
+    sej, na katerih je bil_a svetnik_ca prisoten_na. Število vseh govorov delimo najprej
+    s številom svetnikov, potem pa še s številom vseh sej (na katerih se je govorilo).
+    Individualni rezultat primerjamo s povprečnim in najvišjim.
