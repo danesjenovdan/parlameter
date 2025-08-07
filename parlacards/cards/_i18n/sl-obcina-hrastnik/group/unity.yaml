@@ -1,0 +1,17 @@
+card:
+  title: Enotnost glasovanj
+  info: >-
+    # Enotnost izbranega svetniškega kluba na glasovanjih v
+    primerjavi s povprečno in najvišjo stopnjo enotnosti med vsemi svetniškimi
+    klubi.
+
+
+    Za vsako glasovanje za svetniški klub preštejemo, koliko svetnikov je
+    oddalo katero glasovnico (ZA, PROTI, NI, VZDRŽAN). Izračunamo odstotek
+    tistih, ki so glasovali za najbolj popularno opcijo. Tako dobimo stopnjo
+    enotnosti oz. odstotek svetnikov in svetnic, ki so se strinjali z
+    večinskim glasom.
+
+
+    Na podlagi rezultatov individualnih glasovanj izračunamo povprečni odstotek
+    nestrinjanja, ki ga prikažemo v kartici.
