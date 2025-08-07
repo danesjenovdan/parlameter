@@ -1,0 +1,6 @@
+card:
+  title: Točke dnevnega reda, v katerih je bil uporabljen iskalni niz
+  info: "# Seznam povezav do vseh točk dnevnega reda, ki vsebujejo iskalni niz.\n\n\
+    Po zapisnikih vseh sej poiščemo in izpišemo povezave do vseh točk dnevnega reda,\
+    \ v katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu od najnovejše\
+    \ do najstarejše."

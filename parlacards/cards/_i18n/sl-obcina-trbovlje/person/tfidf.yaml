@@ -1,0 +1,17 @@
+card:
+  title: Besede, ki jo/ga zaznamujejo
+  info: >-
+    # Izpis 10 besed in besednih zvez, ki jih ta oseba uporablja pogosteje kot ostali
+    svetniki.
+
+
+    Analizo izvajamo po statistiki [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Iz analize umikamo t. i. "stopwords". To so tiste besede, ki se pojavljajo zelo
+    pogosto in zato izgubijo svojo reprezentativnost (recimo povedati, napisati, bistvo
+    ...), ali pa same zase ne nosijo nobenega pomena (vezniki, mašila ...). Seznam
+    teh besed je dostopen [tukaj](https://github.com/danesjenovdan/parladata/commit/3f6ee924ddd33ce71f392fefa4dde9c4fe64f82a).
+
+
+    Korpus predstavljajo vsi govori svetnikov_ic in župana, dokument pa vsi govori
+    te osebe. Zaradi nizkega števila izgovorjenih besed in umika "stopwords" se pri
+    nekaterih osebah lahko zgodi, da je rezultatov manj kot 10.
