@@ -8,9 +8,11 @@ from parlacards.scores.avg_number_of_speeches_per_session import (
     save_people_avg_number_of_speeches_per_session,
 )
 from parlacards.scores.deviation_from_group import save_people_deviations_from_group
-from parlacards.scores.discord import (
-    save_groups_discords,
-)
+
+# TODO remove permanently in September 2025
+# from parlacards.scores.discord import (
+#     save_groups_discords,
+# )
 from parlacards.scores.monthly_attendance import (
     save_groups_monthly_vote_attendance,
     save_people_monthly_vote_attendance,
@@ -113,7 +115,8 @@ def force_run_group_analyses(timestamp=None, print_method=print):
         save_groups_voting_distances(playing_field, timestamp)
         save_groups_monthly_vote_attendance(playing_field, timestamp)
         save_groups_vote_attendance_on_sessions(playing_field, timestamp)
-        save_groups_discords(playing_field, timestamp)
+        # TODO remove permanently in September 2025
+        # save_groups_discords(playing_field, timestamp)
         save_groups_vote_attendance(playing_field, timestamp)
         save_groups_vocabulary_sizes(playing_field, timestamp)
 
@@ -153,7 +156,8 @@ def run_vote_analyses_on_date(playing_field, timestamp):
     save_people_vote_attendance(playing_field, timestamp)
     save_groups_vote_attendance(playing_field, timestamp)
     save_people_deviations_from_group(playing_field, timestamp)
-    save_groups_discords(playing_field, timestamp)
+    # TODO remove permanently in September 2025
+    # save_groups_discords(playing_field, timestamp)
     save_organizations_vote_unities(playing_field, timestamp)
     save_people_monthly_vote_attendance(playing_field, timestamp)
     save_groups_monthly_vote_attendance(playing_field, timestamp)

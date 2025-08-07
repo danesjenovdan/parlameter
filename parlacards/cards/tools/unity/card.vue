@@ -1,21 +1,17 @@
 <template>
   <card-wrapper :header-config="headerConfig">
-    <template #generator>
-      <tools-tabs current-tool="unity" />
-    </template>
-
     <div class="votes-list">
       <div class="filters">
         <div class="left-filters">
           <div class="filter text-filter">
-            <div v-t="'title-search'" class="filter-label"></div>
+            <div class="filter-label">{{ $t('title-search') }}</div>
             <SearchField
               v-model="textFilter"
               @update:model-value="searchVotes"
             />
           </div>
           <div class="filter group-filter">
-            <div v-t="'select-group'" class="filter-label"></div>
+            <div class="filter-label">{{ $t('select-group') }}</div>
             <PSearchDropdown
               v-model="groups"
               single
@@ -24,7 +20,7 @@
             />
           </div>
           <div class="filter body-filter">
-            <div v-t="'select-body'" class="filter-label"></div>
+            <div class="filter-label">{{ $t('select-body') }}</div>
             <PSearchDropdown
               v-model="bodies"
               single
@@ -33,7 +29,7 @@
             />
           </div>
           <div class="filter month-filter">
-            <div v-t="'select-time-period'" class="filter-label"></div>
+            <div class="filter-label">{{ $t('select-time-period') }}</div>
             <PSearchDropdown
               v-model="allMonths"
               :alphabetise="false"
@@ -45,7 +41,7 @@
         </div>
         <div class="right-filters">
           <div class="filter toggle-filter">
-            <div v-t="'sort-by'" class="filter-label"></div>
+            <div class="filter-label">{{ $t('sort-by') }}</div>
             <Toggle v-model="selectedSort" :options="sortOptions" />
           </div>
         </div>
@@ -67,7 +63,7 @@
           >
             <div class="unity">
               <div class="percentage">{{ Math.round(vote.value) }} %</div>
-              <div v-t="'unity'" class="text"></div>
+              <div class="text">{{ $t('unity') }}</div>
             </div>
             <div class="name">
               {{ vote.title }}
@@ -84,11 +80,11 @@
             <div class="result">
               <template v-if="vote.passed">
                 <i class="accepted glyphicon glyphicon-ok"></i>
-                <div v-t="'vote-passed'" class="text"></div>
+                <div class="text">{{ $t('vote-passed') }}</div>
               </template>
               <template v-else>
                 <i class="not-accepted glyphicon glyphicon-remove"></i>
-                <div v-t="'vote-not-passed'" class="text"></div>
+                <div class="text">{{ $t('vote-not-passed') }}</div>
               </template>
             </div>
           </a>
@@ -103,7 +99,6 @@
 
 <script>
 import { debounce } from 'lodash-es';
-import ToolsTabs from '@/_components/ToolsTabs.vue';
 import EmptyState from '@/_components/EmptyState.vue';
 import PSearchDropdown from '@/_components/SearchDropdown.vue';
 import Toggle from '@/_components/Toggle.vue';
@@ -126,7 +121,6 @@ export default {
     infiniteScroll,
   },
   components: {
-    ToolsTabs,
     EmptyState,
     PSearchDropdown,
     Toggle,
@@ -364,13 +358,6 @@ export default {
         margin-right: 0;
       }
     }
-
-    // .right-filters {
-    //   @include breakpoints.respond-to(up-to-limbo) {
-    //     width: 100%;
-    //     justify-content: flex-end;
-    //   }
-    // }
 
     .filter-label {
       overflow: hidden;

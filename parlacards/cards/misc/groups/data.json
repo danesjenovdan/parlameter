@@ -12,7 +12,7 @@
         "is_in_coalition": false,
         "results": {
           "seat_count": 27,
-          "intra_disunion": 23.0555555555555,
+          "group_unity": 23.0555555555555,
           "number_of_amendments": null,
           "vocabulary_size": 0.000272373762589161,
           "number_of_questions": 12.0,
@@ -28,7 +28,7 @@
         "is_in_coalition": true,
         "results": {
           "seat_count": 7,
-          "intra_disunion": 2.08333333333333,
+          "group_unity": 2.08333333333333,
           "number_of_amendments": null,
           "vocabulary_size": 0.00183964603437146,
           "number_of_questions": 0.0,
@@ -44,7 +44,7 @@
         "is_in_coalition": true,
         "results": {
           "seat_count": 5,
-          "intra_disunion": 3.0,
+          "group_unity": 3.0,
           "number_of_amendments": null,
           "vocabulary_size": 0.00184115702073895,
           "number_of_questions": 0.0,
@@ -60,7 +60,7 @@
         "is_in_coalition": false,
         "results": {
           "seat_count": 8,
-          "intra_disunion": 43.75,
+          "group_unity": 43.75,
           "number_of_amendments": null,
           "vocabulary_size": 0.0020611614787819,
           "number_of_questions": 0.0,
@@ -76,7 +76,7 @@
         "is_in_coalition": false,
         "results": {
           "seat_count": 2,
-          "intra_disunion": 28.75,
+          "group_unity": 28.75,
           "number_of_amendments": null,
           "vocabulary_size": 0.0402915838303512,
           "number_of_questions": 0.0,
@@ -92,7 +92,7 @@
         "is_in_coalition": true,
         "results": {
           "seat_count": 40,
-          "intra_disunion": 5.85334584115072,
+          "group_unity": 5.85334584115072,
           "number_of_amendments": null,
           "vocabulary_size": 0.000538836586349609,
           "number_of_questions": 0.0,

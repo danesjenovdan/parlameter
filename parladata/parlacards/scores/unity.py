@@ -2,7 +2,7 @@ from datetime import datetime
 
 from django.db.models import Count
 
-from parlacards.models import OrganizationVoteUnity
+from parlacards.models import GroupUnity
 from parladata.models.ballot import Ballot
 from parladata.models.common import Mandate
 from parladata.models.memberships import PersonMembership
@@ -133,8 +133,8 @@ def save_organization_vote_unity(
         if unity is None:
             continue
 
-        OrganizationVoteUnity(
-            organization=organization,
+        GroupUnity(
+            group=organization,
             vote=vote,
             value=unity,
             timestamp=timestamp,
@@ -151,7 +151,7 @@ def save_organizations_vote_unities(playing_field, timestamp=None):
     coalition = get_coalition(main_playing_field, timestamp)
 
     votes_already_calculated = (
-        OrganizationVoteUnity.objects.filter(playing_field=playing_field)
+        GroupUnity.objects.filter(playing_field=playing_field)
         .values_list("vote__id", flat=True)
         .distinct("vote__id")
     )
