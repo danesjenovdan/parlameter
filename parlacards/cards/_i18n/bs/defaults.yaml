@@ -438,8 +438,8 @@ analysis-texts--party:
     titleSuffix: " obzirom na rezultate analize po br. uloženih amandmana"
     explanation: ""
   intra_disunion:
-    label: Razjedinjenost glasanja
-    titleSuffix: " obzirom na razjedinjenost glasanja"
+    label: Ujedinjenost glasanja
+    titleSuffix: " obzirom na ujedinjenost glasanja"
     explanation: ""
   vocabulary_size:
     label: Raznolikost vokabulara

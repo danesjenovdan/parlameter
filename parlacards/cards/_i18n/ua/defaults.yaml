@@ -27,7 +27,7 @@ analysis-texts--party:
     explanation: ""
   intra_disunion:
     label: Розбіжності у голосуванні
-    titleSuffix: " glede na neenotnost glasovanj"
+    titleSuffix: " glede na enotnost glasovanj"
     explanation: ""
   vocabulary_size:
     explanation:
