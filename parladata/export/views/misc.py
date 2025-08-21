@@ -1,6 +1,7 @@
 from export.resources.misc import (
     GroupsResource,
     LegislationResource,
+    MiscLegislationResource,
     MPResource,
     SessionResource,
 )
@@ -27,11 +28,20 @@ class ExportParliamentGroupsView(ExportResourceView):
 
 class ExportLegislationView(ExportResourceView):
     """
-    Export all legislation from database and return them as a file in one of the allowed formats (json, csv).
+    Export session legislation from database and return them as a file in one of the allowed formats (json, csv).
     """
 
     filename = "legislation"
     resource = LegislationResource()
+
+
+class ExportMiscLegislationView(ExportResourceView):
+    """
+    Export all legislation from database and return them as a file in one of the allowed formats (json, csv).
+    """
+
+    filename = "legislation"
+    resource = MiscLegislationResource()
 
 
 class ExportSessionView(ExportResourceView):
