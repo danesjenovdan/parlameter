@@ -11,7 +11,7 @@ urlpatterns = [
     path("misc/members/", ExportParliamentMembersView.as_view()),
     path("misc/groups/", ExportParliamentGroupsView.as_view()),
     path("misc/sessions/", ExportSessionView.as_view()),
-    path("misc/legislation/", ExportLegislationView.as_view()),
+    path("misc/legislation/", ExportMiscLegislationView.as_view()),
     # next misc endpoints are not implemented because they are not useful
     # path('misc/last-session/', LastSession.as_view()),
     # path('misc/search/', SearchDropdown.as_view()),
