@@ -413,7 +413,6 @@ class MiscLegislationResource(LegislationResource):
         Returns a queryset of legislation for given mandate id.
         Or returns all legislation if there is no mandate id.
         """
-        #mandate_id = request_id
         if mandate_id:
             legislation = Law.objects.filter(
                 Q(legislationconsideration__session__mandate_id=mandate_id)
