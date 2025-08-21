@@ -359,7 +359,7 @@ class LegislationResource(ExportModelResource):
                 legislation = legislation.filter(
                     legislationconsideration__session_id=request_id
                 )
-            return legislation
+            return legislation.distinct()
         else:
             return Law.objects.all()
 
@@ -405,3 +405,19 @@ class LegislationResource(ExportModelResource):
 
     def dehydrate_timestamp(self, legislation):
         return legislation.timestamp.isoformat() if legislation.timestamp else ""
+
+
+class MiscLegislationResource(LegislationResource):
+    def get_queryset(self, mandate_id=None, request_id=None):
+        """
+        Returns a queryset of legislation for given mandate id.
+        Or returns all legislation if there is no mandate id.
+        """
+        if mandate_id:
+            legislation = Law.objects.filter(
+                Q(legislationconsideration__session__mandate_id=mandate_id)
+                | Q(mandate_id=mandate_id)
+            )
+            return legislation.distinct()
+        else:
+            return Law.objects.all()
