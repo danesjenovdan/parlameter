@@ -476,6 +476,7 @@ export default {
       } else {
         url.searchParams.delete('districts');
       }
+      url.searchParams.set('current_analysis', this.currentAnalysis);
       const sortPrefix = this.currentSortOrder === 'desc' ? '-' : '';
       const sort =
         this.currentSort === 'analysis'
@@ -557,6 +558,7 @@ export default {
         this.page = response?.data?.['members:page'];
         this.membersPerPage[this.page - 1] =
           response?.data?.results?.members || [];
+        this.analysesMaxValues = response?.data?.results?.maximum_scores || {};
         this.isLoading = false;
       });
     },
