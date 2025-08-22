@@ -1,757 +1,620 @@
 {
-  "url": "https://data.10.parlametar.hr/v3/cards/misc/members/?id=1127",
-  "id": "1127",
+  "url": "http://localhost:8000/v3/cards/misc/members/?id=137",
+  "id": "137",
   "error": false,
   "data": {
     "results": {
       "groups": [
         {
-          "name": "Klub zastupnika Domovinskog pokreta",
-          "acronym": "Domovinski pokret",
-          "slug": "957-klub-zastupnika-domovinskog-pokreta",
-          "color": "#06637D",
+          "name": "Slovenska demokratska stranka",
+          "acronym": "SDS",
+          "slug": "2-slovenska-demokratska-stranka",
+          "color": "#679BBB",
           "classification": "pg",
           "is_in_coalition": false
         },
         {
-          "name": "Klub zastupnika Samostalne demokratske srpske stranke",
-          "acronym": "SDSS",
-          "slug": "969-klub-zastupnika-samostalne-demokratske-srpske-stranke",
-          "color": "#9D26CC",
+          "name": "Socialni demokrati",
+          "acronym": "SD",
+          "slug": "4-socialni-demokrati",
+          "color": "#B3422E",
+          "classification": "pg",
+          "is_in_coalition": true
+        },
+        {
+          "name": "Levica",
+          "acronym": "Levica",
+          "slug": "6-levica",
+          "color": "#FFAFA1",
+          "classification": "pg",
+          "is_in_coalition": true
+        },
+        {
+          "name": "Nova Slovenija - Krščanski demokrati",
+          "acronym": "NSi",
+          "slug": "7-nova-slovenija-krscanski-demokrati",
+          "color": "#8E7A86",
           "classification": "pg",
           "is_in_coalition": false
         },
         {
-          "name": "Klub zastupnika Možemo!",
-          "acronym": "Možemo!",
-          "slug": "972-klub-zastupnika-mozemo",
-          "color": "#1DE900",
+          "name": "Italijanska in madžarska narodna skupnost",
+          "acronym": "IMNS",
+          "slug": "10-italijanska-in-madzarska-narodna-skupnost",
+          "color": "#C3CB2C",
           "classification": "pg",
           "is_in_coalition": false
         },
         {
-          "name": "Klub zastupnika Hrvatske demokratske zajednice",
-          "acronym": "HDZ",
-          "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
-          "color": "#1523FF",
+          "name": "Svoboda",
+          "acronym": "Svoboda",
+          "slug": "138-svoboda",
+          "color": "#002F42",
           "classification": "pg",
-          "is_in_coalition": false
+          "is_in_coalition": true
         },
         {
-          "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
-          "acronym": "SDP",
-          "slug": "1009-klub-zastupnika-socijaldemokratske-partije-hrvatske",
-          "color": "#F04118",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub zastupnika Mosta",
-          "acronym": "Most",
-          "slug": "1043-klub-zastupnika-mosta",
-          "color": "#00E1E7",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka",
-          "acronym": "HSLS i V. Bilek",
-          "slug": "1049-klub-zastupnika-hrvatske-socijalno-liberalne-stranke-i-nezavisnog-zastupnika-vladimira-bileka",
-          "color": "#9F9E54",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Hrvatskih Suverenista, Stranke Pravo I Pravda I Nezavisnog Zastupnika Josipa Jurčevića",
-          "acronym": "H. suverenisti, PiP i NZ",
-          "slug": "1129-klub-zastupnika-hrvatskih-suverenista-stranke-pravo-i-pravda-i-nezavisnog-zastupnika-josipa-jurcevica",
-          "color": "#000000",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Centra I Nezavisne Platforme Sjevera",
-          "acronym": "Centar i NP Sjever",
-          "slug": "1130-klub-zastupnika-centra-i-nezavisne-platforme-sjevera",
-          "color": "#FFF600",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Hrvatske Seljačke Stranke, Građansko-Liberalnog Saveza I Dalije Orešković I Stranke S Imenom I Prezimenom",
-          "acronym": "HSS, GLAS, DOSIP",
-          "slug": "1134-klub-zastupnika-hrvatske-seljacke-stranke-graansko-liberalnog-saveza-i-dalije-oreskovic-i-stranke-s-imenom-i-prezimenom",
-          "color": "#FFA500",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Nezavisni I Fokus",
-          "acronym": "NZ i Fokus",
-          "slug": "1135-klub-zastupnika-nezavisni-i-fokus",
-          "color": "#E890FF",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Istarskog Demokratskog Sabora (Ids), Primorsko-Goranskog Saveza (Pgs), Unije Kvarnera (Unija) I Istarske Stranke Umirovljenika - Partito Istriano Dei Pensionati (Isu - Pip)",
-          "acronym": "IDS, PGU, UK i ISU",
-          "slug": "1136-klub-zastupnika-istarskog-demokratskog-sabora-ids-primorsko-goranskog-saveza-pgs-unije-kvarnera-unija-i-istarske-stranke-umirovljenika-partito-istriano-dei-pensionati-isu-pip",
-          "color": "#49A343",
-          "classification": "pg",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Klub Zastupnika Hrvatske Narodne Stranke I Nezavisnih Zastupnika",
-          "acronym": "HNS i NZ",
-          "slug": "1137-klub-zastupnika-hrvatske-narodne-stranke-i-nezavisnih-zastupnika",
-          "color": "#CCB899",
+          "name": "Poslanska skupina nepovezanih poslancev",
+          "acronym": "NP",
+          "slug": "584-poslanska-skupina-nepovezanih-poslancev",
+          "color": "#31A8B1",
           "classification": "pg",
           "is_in_coalition": false
         }
       ],
       "working_bodies": [
         {
-          "name": "Odbor za regionalni razvoj i fondove Europske unije",
-          "acronym": "Odbor za regionalni razvoj i fondove Europske unije",
-          "slug": "945-odbor-za-regionalni-razvoj-i-fondove-europske-unije",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za lokalnu i područnu (regionalnu) samoupravu",
-          "acronym": "Odbor za lokalnu i područnu (regionalnu) samoupravu",
-          "slug": "946-odbor-za-lokalnu-i-podrucnu-regionalnu-samoupravu",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Nacionalno vijeće za praćenje provedbe Strategije suzbijanja korupcije",
-          "acronym": "Nacionalno vijeće za praćenje provedbe Strategije suzbijanja korupcije",
-          "slug": "947-nacionalno-vijece-za-pracenje-provedbe-strategije-suzbijanja-korupcije",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za ravnopravnost spolova",
-          "acronym": "Odbor za ravnopravnost spolova",
-          "slug": "949-odbor-za-ravnopravnost-spolova",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za prostorno uređenje i graditeljstvo",
-          "acronym": "Odbor za prostorno uređenje i graditeljstvo",
-          "slug": "950-odbor-za-prostorno-ureenje-i-graditeljstvo",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za međuparlamentarnu suradnju",
-          "acronym": "Odbor za međuparlamentarnu suradnju",
-          "slug": "951-odbor-za-meuparlamentarnu-suradnju",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za Hrvate izvan Republike Hrvatske",
-          "acronym": "Odbor za Hrvate izvan Republike Hrvatske",
-          "slug": "954-odbor-za-hrvate-izvan-republike-hrvatske",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Mandatno-imunitetno povjerenstvo",
-          "acronym": "Mandatno-imunitetno povjerenstvo",
-          "slug": "958-mandatno-imunitetno-povjerenstvo",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za ljudska prava i prava nacionalnih manjina",
-          "acronym": "Odbor za ljudska prava i prava nacionalnih manjina",
-          "slug": "959-odbor-za-ljudska-prava-i-prava-nacionalnih-manjina",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za zaštitu okoliša i prirode",
-          "acronym": "Odbor za zaštitu okoliša i prirode",
-          "slug": "960-odbor-za-zastitu-okolisa-i-prirode",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za europske poslove",
-          "acronym": "Odbor za europske poslove",
-          "slug": "961-odbor-za-europske-poslove",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
           "name": "Odbor za gospodarstvo",
           "acronym": "Odbor za gospodarstvo",
-          "slug": "962-odbor-za-gospodarstvo",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za financije i državni proračun",
-          "acronym": "Odbor za financije i državni proračun",
-          "slug": "963-odbor-za-financije-i-drzavni-proracun",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-          "acronym": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-          "slug": "966-odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za predstavke i pritužbe",
-          "acronym": "Odbor za predstavke i pritužbe",
-          "slug": "967-odbor-za-predstavke-i-prituzbe",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbora za poljoprivredu",
-          "acronym": "Odbora za poljoprivredu",
-          "slug": "974-odbora-za-poljoprivredu",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za vanjsku politiku",
-          "acronym": "Odbor za vanjsku politiku",
-          "slug": "976-odbor-za-vanjsku-politiku",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbora za obranu",
-          "acronym": "Odbora za obranu",
-          "slug": "981-odbora-za-obranu",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za turizam",
-          "acronym": "Odbor za turizam",
-          "slug": "983-odbor-za-turizam",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za zdravstvo i socijalnu politiku",
-          "acronym": "Odbor za zdravstvo i socijalnu politiku",
-          "slug": "989-odbor-za-zdravstvo-i-socijalnu-politiku",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za zakonodavstvo",
-          "acronym": "Odbor za zakonodavstvo",
-          "slug": "1019-odbor-za-zakonodavstvo",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za pravosuđe",
-          "acronym": "Odbor za pravosuđe",
-          "slug": "1020-odbor-za-pravosue",
-          "color": "#09a2cc",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        {
-          "name": "Odbor za izbor, imenovanja i upravne poslove",
-          "acronym": "Odbor za izbor, imenovanja i upravne poslove",
-          "slug": "1131-odbor-za-izbor-imenovanja-i-upravne-poslove",
+          "slug": "24-odbor-za-gospodarstvo",
           "color": "#09A2CC",
           "classification": "committee",
           "is_in_coalition": false
         },
         {
-          "name": "Odbor za Ustav, Poslovnik i politički sustav",
-          "acronym": "Odbor za Ustav, Poslovnik i politički sustav",
-          "slug": "1133-odbor-za-ustav-poslovnik-i-politicki-sustav",
+          "name": "Komisija za nadzor obveščevalnih in varnostnih služb",
+          "acronym": "Komisija za nadzor obveščevalnih in varnostnih služb",
+          "slug": "17-komisija-za-nadzor-obvescevalnih-in-varnostnih-sluzb",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za finance",
+          "acronym": "Odbor za finance",
+          "slug": "23-odbor-za-finance",
           "color": "#09A2CC",
           "classification": "committee",
           "is_in_coalition": false
         },
         {
-          "name": "Odbor za obitelj, mlade i sport",
-          "acronym": "Odbor za obitelj, mlade i sport",
-          "slug": "1139-odbor-za-obitelj-mlade-i-sport",
+          "name": "Odbor za pravosodje",
+          "acronym": "Odbor za pravosodje",
+          "slug": "31-odbor-za-pravosodje",
           "color": "#09A2CC",
           "classification": "committee",
           "is_in_coalition": false
         },
         {
-          "name": "Odbor za rad, mirovinski sustav i socijalno partnerstvo",
-          "acronym": "Odbor za rad, mirovinski sustav i socijalno partnerstvo",
-          "slug": "1140-odbor-za-rad-mirovinski-sustav-i-socijalno-partnerstvo",
+          "name": "Odbor za obrambo",
+          "acronym": "Odbor za obrambo",
+          "slug": "30-odbor-za-obrambo",
           "color": "#09A2CC",
           "classification": "committee",
           "is_in_coalition": false
         },
         {
-          "name": "Odbor za ratne veterane",
-          "acronym": "Odbor za ratne veterane",
-          "slug": "1141-odbor-za-ratne-veterane",
+          "name": "Odbor za zunanjo politiko",
+          "acronym": "Odbor za zunanjo politiko",
+          "slug": "34-odbor-za-zunanjo-politiko",
           "color": "#09A2CC",
           "classification": "committee",
           "is_in_coalition": false
         },
         {
-          "name": "Odbor za pomorstvo, promet i infrastrukturu",
-          "acronym": "Odbor za pomorstvo, promet i infrastrukturu",
-          "slug": "1142-odbor-za-pomorstvo-promet-i-infrastrukturu",
+          "name": "Odbor za zadeve Evropske unije",
+          "acronym": "Odbor za zadeve Evropske unije",
+          "slug": "32-odbor-za-zadeve-evropske-unije",
           "color": "#09A2CC",
           "classification": "committee",
           "is_in_coalition": false
         },
         {
-          "name": "Odbor za obrazovanje, znanost i kulturu",
-          "acronym": "Odbor za obrazovanje, znanost i kulturu",
-          "slug": "1143-odbor-za-obrazovanje-znanost-i-kulturu",
+          "name": "Odbor za kulturo",
+          "acronym": "Odbor za kulturo",
+          "slug": "28-odbor-za-kulturo",
           "color": "#09A2CC",
           "classification": "committee",
           "is_in_coalition": false
         },
         {
-          "name": "Odbor za informiranje, informatizaciju i medije",
-          "acronym": "Odbor za informiranje, informatizaciju i medije",
-          "slug": "1144-odbor-za-informiranje-informatizaciju-i-medije",
+          "name": "Mandatno-volilna komisija",
+          "acronym": "Mandatno-volilna komisija",
+          "slug": "35-mandatno-volilna-komisija",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Komisija za peticije, človekove pravice in enake možnosti",
+          "acronym": null,
+          "slug": "92-komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Ustavna komisija",
+          "acronym": "Ustavna komisija",
+          "slug": "88-ustavna-komisija",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za delo, družino, socialne zadeve in invalide",
+          "acronym": null,
+          "slug": "93-odbor-za-delo-druzino-socialne-zadeve-in-invalide",
           "color": "#09A2CC",
           "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+          "acronym": null,
+          "slug": "97-odbor-za-notranje-zadeve-javno-upravo-in-lokalno-samoupravo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za izobraževanje, znanost, šport in mladino",
+          "acronym": null,
+          "slug": "99-odbor-za-izobrazevanje-znanost-sport-in-mladino",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Kolegij predsednice Državnega zbora",
+          "acronym": "Kolegij predsednice Državnega zbora",
+          "slug": "139-kolegij-predsednice-drzavnega-zbora",
+          "color": "#09A2CC",
+          "classification": "council",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za infrastrukturo, okolje in prostor",
+          "acronym": null,
+          "slug": "94-odbor-za-infrastrukturo-okolje-in-prostor",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+          "acronym": null,
+          "slug": "95-odbor-za-kmetijstvo-gozdarstvo-in-prehrano",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Preiskovalna komisija o ugotavljanju zlorab in nezakonitosti pri gradnji povezovalnega kanala C0 na območju ljubljanskega vodonosnika Ljubljanskega polja",
+          "acronym": "Preiskovalna komisija o ugotavljanju zlorab in nezakonitosti pri gradnji povezovalnega kanala C0 na območju ljubljanskega vodonosnika Ljubljanskega polja",
+          "slug": "395-preiskovalna-komisija-o-ugotavljanju-zlorab-in-nezakonitosti-pri-gradnji-povezovalnega-kanala-c0-na-obmocju-ljubljanskega-vodonosnika-ljubljanskega-polja",
+          "color": "#09A2CC",
+          "classification": "investigative_commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Preiskovalna komisija o ugotavljanju politične odgovornosti nosilcev javnih funkcij zaradi domnevnega nezakonitega financiranja političnih strank in strankarske politične propagande v medijih pred in med volitvami poslancev v Državni zbor leta 2022 s finančnimi sredstvi podjetij v državni lasti, državnih institucij ter subjektov iz tujine",
+          "acronym": "Preiskovalna komisija o ugotavljanju politične odgovornosti nosilcev javnih funkcij zaradi domnevnega nezakonitega financiranja političnih strank in strankarske politične propagande v medijih pred in med volitvami poslancev v Državni zbor leta 2022 s finančnimi sredstvi podjetij v državni lasti, državnih institucij ter subjektov iz tujine",
+          "slug": "220-preiskovalna-komisija-o-ugotavljanju-politicne-odgovornosti-nosilcev-javnih-funkcij-zaradi-domnevnega-nezakonitega-financiranja-politicnih-strank-in-strankarske-politicne-propagande-v-medijih-pred-in-med-volitvami-poslancev-v-drzavni-zbor-leta-2022-s-financnimi-sredstvi-podjetij-v-drzavni-lasti-drzavnih-institucij-ter-subjektov-iz-tujine",
+          "color": "#09A2CC",
+          "classification": "investigative_commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Preiskovalna komisija o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in drugih pristojnih državnih organov s področij davkov in preprečevanja pranja denarja ter nedopustnega političnega vplivanja na potek oziroma izid posameznih predkazenskih in postopkov finančnega nadzora ter odkrivanja in preprečevanja pranja denarja",
+          "acronym": "Preiskovalna komisija o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in drugih pristojnih državnih organov s področij davkov in preprečevanja pranja denarja ter nedopustnega političnega vplivanja na potek oziroma izid posameznih predkazenskih in postopkov finančnega nadzora ter odkrivanja in preprečevanja pranja denarja",
+          "slug": "285-preiskovalna-komisija-o-ugotavljanju-morebitne-politicne-odgovornosti-nosilcev-javnih-funkcij-zaradi-suma-nedopustnega-politicnega-vmesavanja-v-delo-policije-in-drugih-pristojnih-drzavnih-organov-s-podrocij-davkov-in-preprecevanja-pranja-denarja-ter-nedopustnega-politicnega-vplivanja-na-potek-oziroma-izid-posameznih-predkazenskih-in-postopkov-financnega-nadzora-ter-odkrivanja-in-preprecevanja-pranja-denarja",
+          "color": "#09A2CC",
+          "classification": "investigative_commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za izobraževanje, znanost in mladino",
+          "acronym": "Odbor Za Izobraževanje, Znanost In Mladino Ix",
+          "slug": "223-odbor-za-izobrazevanje-znanost-in-mladino",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Komisija za poslovnik",
+          "acronym": "Komisija za poslovnik",
+          "slug": "21-komisija-za-poslovnik",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
+          "acronym": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
+          "slug": "19-komisija-za-odnose-s-slovenci-v-zamejstvu-in-po-svetu",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Komisija za nadzor javnih financ",
+          "acronym": "Komisija za nadzor javnih financ",
+          "slug": "16-komisija-za-nadzor-javnih-financ",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+          "acronym": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+          "slug": "404-preiskovalna-komisija-o-ugotavljanju-in-oceni-dejanskega-stanja-o-primerih-ukradenih-otrok",
+          "color": "#09a2cc",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Komisija za narodni skupnosti",
+          "acronym": "Komisija za narodni skupnosti",
+          "slug": "18-komisija-za-narodni-skupnosti",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Odbor za zdravstvo",
+          "acronym": "Odbor za zdravstvo",
+          "slug": "33-odbor-za-zdravstvo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
+          "acronym": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
+          "slug": "402-preiskovalna-komisija-o-ugotavljanju-domnevnega-financnega-izcrpavanja-podjetja-gen-i-domnevno-spornih-praks-v-zvezi-s-podjetjem-star-solar-doo-domnevnega-nezakonitega-financiranja-politicne-stranke-gibanje-svoboda-in-domnevnega-nezakonitega-financiranja-volilne-kampanje-gibanja-svoboda-za-redne-volitve-poslancev-v-drzavni-zbor-republike-slovenije-leta-2022",
+          "color": "#09A2CC",
+          "classification": "investigative_commission",
           "is_in_coalition": false
         }
       ],
       "districts": [
+        { "name": "Ormož", "classification": "district", "slug": "1-ormoz" },
+        { "name": "Krško", "classification": "district", "slug": "3-krsko" },
         {
-          "name": "X. izborna jedinica",
+          "name": "Slovenske Konjice",
           "classification": "district",
-          "slug": "121-x-izborna-jedinica"
+          "slug": "4-slovenske-konjice"
+        },
+        { "name": "Ruše", "classification": "district", "slug": "5-ruse" },
+        {
+          "name": "Lendava",
+          "classification": "district",
+          "slug": "6-lendava"
+        },
+        { "name": "Koper", "classification": "district", "slug": "7-koper" },
+        {
+          "name": "Škofja Loka I",
+          "classification": "district",
+          "slug": "8-skofja-loka-i"
         },
         {
-          "name": "VI. izborna jedinica",
+          "name": "Kranj I",
           "classification": "district",
-          "slug": "122-vi-izborna-jedinica"
+          "slug": "9-kranj-i"
         },
         {
-          "name": "I. izborna jedinica",
+          "name": "Maribor IV",
           "classification": "district",
-          "slug": "123-i-izborna-jedinica"
+          "slug": "12-maribor-iv"
         },
         {
-          "name": "II. izborna jedinica",
+          "name": "Celje II",
           "classification": "district",
-          "slug": "124-ii-izborna-jedinica"
+          "slug": "14-celje-ii"
         },
         {
-          "name": "IV. izborna jedinica",
+          "name": "Koper I",
           "classification": "district",
-          "slug": "125-iv-izborna-jedinica"
+          "slug": "15-koper-i"
         },
         {
-          "name": "VIII. izborna jedinica",
+          "name": "Ljubljana Bežigrad II",
           "classification": "district",
-          "slug": "126-viii-izborna-jedinica"
+          "slug": "16-ljubljana-bezigrad-ii"
         },
         {
-          "name": "VII. izborna jedinica",
+          "name": "Ljubljana Moste-Polje II",
           "classification": "district",
-          "slug": "127-vii-izborna-jedinica"
+          "slug": "17-ljubljana-moste-polje-ii"
         },
         {
-          "name": "IX. izborna jedinica",
+          "name": "Ljubljana Bežigrad I",
           "classification": "district",
-          "slug": "128-ix-izborna-jedinica"
+          "slug": "18-ljubljana-bezigrad-i"
         },
         {
-          "name": "XII. izborna jedinica",
+          "name": "Ljubljana Moste-Polje III",
           "classification": "district",
-          "slug": "129-xii-izborna-jedinica"
+          "slug": "19-ljubljana-moste-polje-iii"
+        },
+        { "name": "Izola", "classification": "district", "slug": "20-izola" },
+        {
+          "name": "Šmarje pri Jelšah",
+          "classification": "district",
+          "slug": "21-smarje-pri-jelsah"
         },
         {
-          "name": "V. izborna jedinica",
+          "name": "Kranj II",
           "classification": "district",
-          "slug": "130-v-izborna-jedinica"
+          "slug": "23-kranj-ii"
         },
         {
-          "name": "XI. izborna jedinica",
+          "name": "Ljubljana Vič - Rudnik II",
           "classification": "district",
-          "slug": "131-xi-izborna-jedinica"
+          "slug": "24-ljubljana-vic-rudnik-ii"
         },
         {
-          "name": "III. izborna jedinica",
+          "name": "Ljubljana Vič - Rudnik III",
           "classification": "district",
-          "slug": "132-iii-izborna-jedinica"
+          "slug": "25-ljubljana-vic-rudnik-iii"
+        },
+        {
+          "name": "Maribor VI",
+          "classification": "district",
+          "slug": "26-maribor-vi"
+        },
+        {
+          "name": "Ravne na Koroškem",
+          "classification": "district",
+          "slug": "28-ravne-na-koroskem"
+        },
+        {
+          "name": "Kočevje",
+          "classification": "district",
+          "slug": "29-kocevje"
+        },
+        { "name": "Piran", "classification": "district", "slug": "33-piran" },
+        { "name": "Idrija", "classification": "district", "slug": "34-idrija" },
+        {
+          "name": "Ljubljana Šiška II",
+          "classification": "district",
+          "slug": "35-ljubljana-siska-ii"
+        },
+        {
+          "name": "Murska Sobota II",
+          "classification": "district",
+          "slug": "36-murska-sobota-ii"
+        },
+        { "name": "Sežana", "classification": "district", "slug": "37-sezana" },
+        {
+          "name": "Kranj III",
+          "classification": "district",
+          "slug": "40-kranj-iii"
+        },
+        {
+          "name": "Postojna",
+          "classification": "district",
+          "slug": "41-postojna"
+        },
+        {
+          "name": "Mozirje",
+          "classification": "district",
+          "slug": "42-mozirje"
+        },
+        {
+          "name": "Slovenj Gradec",
+          "classification": "district",
+          "slug": "43-slovenj-gradec"
+        },
+        {
+          "name": "Logatec",
+          "classification": "district",
+          "slug": "44-logatec"
+        },
+        {
+          "name": "Vrhnika",
+          "classification": "district",
+          "slug": "45-vrhnika"
+        },
+        {
+          "name": "Domžale I",
+          "classification": "district",
+          "slug": "47-domzale-i"
+        },
+        {
+          "name": "Maribor VII",
+          "classification": "district",
+          "slug": "51-maribor-vii"
+        },
+        { "name": "Kamnik", "classification": "district", "slug": "52-kamnik" },
+        {
+          "name": "Zagorje ob Savi",
+          "classification": "district",
+          "slug": "53-zagorje-ob-savi"
+        },
+        {
+          "name": "Radovljica II",
+          "classification": "district",
+          "slug": "54-radovljica-ii"
+        },
+        {
+          "name": "Slovenska Bistrica",
+          "classification": "district",
+          "slug": "55-slovenska-bistrica"
+        },
+        { "name": "Litija", "classification": "district", "slug": "56-litija" },
+        {
+          "name": "Grosuplje",
+          "classification": "district",
+          "slug": "57-grosuplje"
+        },
+        {
+          "name": "Ajdovščina",
+          "classification": "district",
+          "slug": "58-ajdovscina"
+        },
+        {
+          "name": "Maribor III",
+          "classification": "district",
+          "slug": "59-maribor-iii"
+        },
+        {
+          "name": "Ljubljana Vič - Rudnik I",
+          "classification": "district",
+          "slug": "60-ljubljana-vic-rudnik-i"
+        },
+        { "name": "Lenart", "classification": "district", "slug": "61-lenart" },
+        {
+          "name": "Novo mesto I",
+          "classification": "district",
+          "slug": "62-novo-mesto-i"
+        },
+        {
+          "name": "Ptuj III",
+          "classification": "district",
+          "slug": "63-ptuj-iii"
+        },
+        { "name": "Tolmin", "classification": "district", "slug": "64-tolmin" },
+        {
+          "name": "Škofja Loka II",
+          "classification": "district",
+          "slug": "65-skofja-loka-ii"
+        },
+        {
+          "name": "Ljubljana Vič - Rudnik IV",
+          "classification": "district",
+          "slug": "67-ljubljana-vic-rudnik-iv"
+        },
+        {
+          "name": "Sevnica",
+          "classification": "district",
+          "slug": "68-sevnica"
+        },
+        {
+          "name": "Pesnica",
+          "classification": "district",
+          "slug": "69-pesnica"
+        },
+        {
+          "name": "Trebnje",
+          "classification": "district",
+          "slug": "70-trebnje"
+        },
+        {
+          "name": "Velenje II",
+          "classification": "district",
+          "slug": "71-velenje-ii"
+        },
+        { "name": "Ptuj I", "classification": "district", "slug": "72-ptuj-i" },
+        {
+          "name": "Žalec II",
+          "classification": "district",
+          "slug": "73-zalec-ii"
+        },
+        {
+          "name": "Ljutomer",
+          "classification": "district",
+          "slug": "74-ljutomer"
+        },
+        {
+          "name": "Žalec I",
+          "classification": "district",
+          "slug": "75-zalec-i"
+        },
+        {
+          "name": "Celje I",
+          "classification": "district",
+          "slug": "77-celje-i"
+        },
+        {
+          "name": "Ljubljana Šiška III",
+          "classification": "district",
+          "slug": "79-ljubljana-siska-iii"
         }
       ],
       "maximum_scores": {
-        "speeches_per_session": 572,
-        "number_of_questions": 7,
-        "mismatch_of_pg": 93.75,
-        "presence_votes": 100,
-        "spoken_words": 38506,
-        "vocabulary_size": 0.6637931034482759
+        "speeches_per_session": 31.435714285714287,
+        "number_of_questions": 502.0,
+        "mismatch_of_pg": 48.67595818815331,
+        "presence_votes": 99.73021582733813,
+        "spoken_words": 799076.0,
+        "vocabulary_size": 0.0015455343720955166
       },
       "members": [
         {
-          "slug": "1410-ana-puz-kukuljan",
-          "name": "Ana Puž Kukuljan",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
-            "acronym": "SDP",
-            "slug": "1009-klub-zastupnika-socijaldemokratske-partije-hrvatske",
-            "color": "#F04118",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/1410.jpg",
-          "results": {
-            "mandates": 1,
-            "speeches_per_session": 1,
-            "number_of_questions": 0,
-            "mismatch_of_pg": 31.25,
-            "presence_votes": 68.75,
-            "birth_date": "1985-01-20",
-            "education": "7",
-            "spoken_words": 137,
-            "vocabulary_size": 0.3464285714285714,
-            "working_bodies": [
-              {
-                "name": "Odbor za međuparlamentarnu suradnju",
-                "acronym": "Odbor za međuparlamentarnu suradnju",
-                "slug": "951-odbor-za-meuparlamentarnu-suradnju",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za predstavke i pritužbe",
-                "acronym": "Odbor za predstavke i pritužbe",
-                "slug": "967-odbor-za-predstavke-i-prituzbe",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za turizam",
-                "acronym": "Odbor za turizam",
-                "slug": "983-odbor-za-turizam",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za pomorstvo, promet i infrastrukturu",
-                "acronym": "Odbor za pomorstvo, promet i infrastrukturu",
-                "slug": "1142-odbor-za-pomorstvo-promet-i-infrastrukturu",
-                "color": "#09A2CC",
-                "classification": "committee",
-                "is_in_coalition": false
-              }
-            ],
-            "districts": [
-              {
-                "name": "VIII. izborna jedinica",
-                "classification": "district",
-                "slug": "126-viii-izborna-jedinica"
-              }
-            ]
-          }
-        },
-        {
-          "slug": "922-anamarija-blazevic",
-          "name": "Anamarija Blažević",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Klub zastupnika Hrvatske demokratske zajednice",
-            "acronym": "HDZ",
-            "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
-            "color": "#1523FF",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/922.jpg",
-          "results": {
-            "mandates": 2,
-            "speeches_per_session": 6,
-            "number_of_questions": 1,
-            "mismatch_of_pg": 0,
-            "presence_votes": 100,
-            "birth_date": "1979-08-18",
-            "education": "6",
-            "spoken_words": 3114,
-            "vocabulary_size": 0.015261227615298844,
-            "working_bodies": [
-              {
-                "name": "Odbor za međuparlamentarnu suradnju",
-                "acronym": "Odbor za međuparlamentarnu suradnju",
-                "slug": "951-odbor-za-meuparlamentarnu-suradnju",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbora za poljoprivredu",
-                "acronym": "Odbora za poljoprivredu",
-                "slug": "974-odbora-za-poljoprivredu",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za obitelj, mlade i sport",
-                "acronym": "Odbor za obitelj, mlade i sport",
-                "slug": "1139-odbor-za-obitelj-mlade-i-sport",
-                "color": "#09A2CC",
-                "classification": "committee",
-                "is_in_coalition": false
-              }
-            ],
-            "districts": [
-              {
-                "name": "V. izborna jedinica",
-                "classification": "district",
-                "slug": "130-v-izborna-jedinica"
-              }
-            ]
-          }
-        },
-        {
-          "slug": "1005-andro-krstulovic-opara",
-          "name": "Andro Krstulović Opara",
+          "slug": "6038-aleksander-prosen-kralj",
+          "name": "Aleksander Prosen Kralj",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Klub zastupnika Hrvatske demokratske zajednice",
-            "acronym": "HDZ",
-            "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
-            "color": "#1523FF",
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": false
+            "is_in_coalition": true
           },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/1005.jpg",
-          "results": {
-            "mandates": 3,
-            "speeches_per_session": 5,
-            "number_of_questions": 1,
-            "mismatch_of_pg": 0,
-            "presence_votes": 100,
-            "birth_date": "1967-05-22",
-            "education": "7",
-            "spoken_words": 1492,
-            "vocabulary_size": 0.04608913003718832,
-            "working_bodies": [
-              {
-                "name": "Odbor za međuparlamentarnu suradnju",
-                "acronym": "Odbor za međuparlamentarnu suradnju",
-                "slug": "951-odbor-za-meuparlamentarnu-suradnju",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za europske poslove",
-                "acronym": "Odbor za europske poslove",
-                "slug": "961-odbor-za-europske-poslove",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za vanjsku politiku",
-                "acronym": "Odbor za vanjsku politiku",
-                "slug": "976-odbor-za-vanjsku-politiku",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za obrazovanje, znanost i kulturu",
-                "acronym": "Odbor za obrazovanje, znanost i kulturu",
-                "slug": "1143-odbor-za-obrazovanje-znanost-i-kulturu",
-                "color": "#09A2CC",
-                "classification": "committee",
-                "is_in_coalition": false
-              }
-            ],
-            "districts": [
-              {
-                "name": "X. izborna jedinica",
-                "classification": "district",
-                "slug": "121-x-izborna-jedinica"
-              }
-            ]
-          }
-        },
-        {
-          "slug": "1494-anelka-salopek",
-          "name": "Anđelka Salopek",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Klub zastupnika Hrvatske demokratske zajednice",
-            "acronym": "HDZ",
-            "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
-            "color": "#1523FF",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/Salopek_Andjelka.jpeg",
+          "image": "/media/P422.jpg",
+          "is_active": true,
           "results": {
             "mandates": 1,
-            "speeches_per_session": 0,
-            "number_of_questions": 0,
-            "mismatch_of_pg": 0,
-            "presence_votes": 0,
-            "birth_date": "1972-01-25",
-            "education": "7",
-            "spoken_words": 0,
-            "vocabulary_size": 0,
-            "working_bodies": [],
-            "districts": [
-              {
-                "name": "VII. izborna jedinica",
-                "classification": "district",
-                "slug": "127-vii-izborna-jedinica"
-              }
-            ]
-          }
-        },
-        {
-          "slug": "1381-anita-curis-krok",
-          "name": "Anita Curiš Krok",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Klub zastupnika Socijaldemokratske partije Hrvatske",
-            "acronym": "SDP",
-            "slug": "1009-klub-zastupnika-socijaldemokratske-partije-hrvatske",
-            "color": "#F04118",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/1381.jpg",
-          "results": {
-            "mandates": 1,
-            "speeches_per_session": 11,
-            "number_of_questions": 0,
-            "mismatch_of_pg": 0,
-            "presence_votes": 100,
-            "birth_date": "1986-12-15",
-            "education": "7",
-            "spoken_words": 9259,
-            "vocabulary_size": 0.0033655109483781732,
-            "working_bodies": [
-              {
-                "name": "Odbor za lokalnu i područnu (regionalnu) samoupravu",
-                "acronym": "Odbor za lokalnu i područnu (regionalnu) samoupravu",
-                "slug": "946-odbor-za-lokalnu-i-podrucnu-regionalnu-samoupravu",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za obitelj, mlade i sport",
-                "acronym": "Odbor za obitelj, mlade i sport",
-                "slug": "1139-odbor-za-obitelj-mlade-i-sport",
-                "color": "#09A2CC",
-                "classification": "committee",
-                "is_in_coalition": false
-              }
-            ],
-            "districts": [
-              {
-                "name": "III. izborna jedinica",
-                "classification": "district",
-                "slug": "132-iii-izborna-jedinica"
-              }
-            ]
-          }
-        },
-        {
-          "slug": "911-anka-mrak-taritas",
-          "name": "Anka Mrak-Taritaš",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Klub Zastupnika Hrvatske Seljačke Stranke, Građansko-Liberalnog Saveza I Dalije Orešković I Stranke S Imenom I Prezimenom",
-            "acronym": "HSS, GLAS, DOSIP",
-            "slug": "1134-klub-zastupnika-hrvatske-seljacke-stranke-graansko-liberalnog-saveza-i-dalije-oreskovic-i-stranke-s-imenom-i-prezimenom",
-            "color": "#FFA500",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/911.jpg",
-          "results": {
-            "mandates": 4,
-            "speeches_per_session": 23.5,
-            "number_of_questions": 1,
-            "mismatch_of_pg": 31.25,
-            "presence_votes": 64.58333333333333,
-            "birth_date": "1959-11-24",
-            "education": "7",
-            "spoken_words": 30190,
-            "vocabulary_size": 0.0005909936052434579,
+            "speeches_per_session": 1.2428571428571429,
+            "number_of_questions": 18.0,
+            "mismatch_of_pg": 8.730402705195205,
+            "presence_votes": 92.53393665158372,
+            "birth_date": "1985-11-28",
+            "education": "6/2",
+            "spoken_words": 105973.0,
+            "vocabulary_size": 4.7741402179985694e-5,
             "working_bodies": [
               {
                 "name": "Odbor za gospodarstvo",
                 "acronym": "Odbor za gospodarstvo",
-                "slug": "962-odbor-za-gospodarstvo",
-                "color": "#09a2cc",
+                "slug": "24-odbor-za-gospodarstvo",
+                "color": "#09A2CC",
                 "classification": "committee",
                 "is_in_coalition": false
               },
               {
-                "name": "Odbor za turizam",
-                "acronym": "Odbor za turizam",
-                "slug": "983-odbor-za-turizam",
-                "color": "#09a2cc",
-                "classification": "committee",
+                "name": "Mandatno-volilna komisija",
+                "acronym": "Mandatno-volilna komisija",
+                "slug": "35-mandatno-volilna-komisija",
+                "color": "#09A2CC",
+                "classification": "commission",
                 "is_in_coalition": false
               },
               {
-                "name": "Odbor za obitelj, mlade i sport",
-                "acronym": "Odbor za obitelj, mlade i sport",
-                "slug": "1139-odbor-za-obitelj-mlade-i-sport",
+                "name": "Komisija za peticije, človekove pravice in enake možnosti",
+                "acronym": null,
+                "slug": "92-komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Komisija za narodni skupnosti",
+                "acronym": "Komisija za narodni skupnosti",
+                "slug": "18-komisija-za-narodni-skupnosti",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za zdravstvo",
+                "acronym": "Odbor za zdravstvo",
+                "slug": "33-odbor-za-zdravstvo",
                 "color": "#09A2CC",
                 "classification": "committee",
                 "is_in_coalition": false
@@ -759,135 +622,266 @@
             ],
             "districts": [
               {
-                "name": "II. izborna jedinica",
+                "name": "Postojna",
                 "classification": "district",
-                "slug": "124-ii-izborna-jedinica"
+                "slug": "41-postojna"
               }
             ]
           }
         },
         {
-          "slug": "1487-ante-babic",
-          "name": "Ante Babić",
+          "slug": "81-aleksander-rebersek",
+          "name": "Aleksander Reberšek",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Klub zastupnika Hrvatske demokratske zajednice",
-            "acronym": "HDZ",
-            "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
-            "color": "#1523FF",
+            "name": "Nova Slovenija - Krščanski demokrati",
+            "acronym": "NSi",
+            "slug": "7-nova-slovenija-krscanski-demokrati",
+            "color": "#8E7A86",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/s.jpg",
+          "image": "/media/P338.png",
+          "is_active": true,
+          "results": {
+            "mandates": 2,
+            "speeches_per_session": 3.1423076923076922,
+            "number_of_questions": 132.0,
+            "mismatch_of_pg": 6.372549019607843,
+            "presence_votes": 92.67563527653213,
+            "birth_date": "1980-10-09",
+            "education": "4",
+            "spoken_words": 514982.0,
+            "vocabulary_size": 3.662198029633318e-6,
+            "working_bodies": [
+              {
+                "name": "Komisija za peticije, človekove pravice in enake možnosti",
+                "acronym": null,
+                "slug": "92-komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za delo, družino, socialne zadeve in invalide",
+                "acronym": null,
+                "slug": "93-odbor-za-delo-druzino-socialne-zadeve-in-invalide",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Preiskovalna komisija o ugotavljanju zlorab in nezakonitosti pri gradnji povezovalnega kanala C0 na območju ljubljanskega vodonosnika Ljubljanskega polja",
+                "acronym": "Preiskovalna komisija o ugotavljanju zlorab in nezakonitosti pri gradnji povezovalnega kanala C0 na območju ljubljanskega vodonosnika Ljubljanskega polja",
+                "slug": "395-preiskovalna-komisija-o-ugotavljanju-zlorab-in-nezakonitosti-pri-gradnji-povezovalnega-kanala-c0-na-obmocju-ljubljanskega-vodonosnika-ljubljanskega-polja",
+                "color": "#09A2CC",
+                "classification": "investigative_commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Preiskovalna komisija o ugotavljanju politične odgovornosti nosilcev javnih funkcij zaradi domnevnega nezakonitega financiranja političnih strank in strankarske politične propagande v medijih pred in med volitvami poslancev v Državni zbor leta 2022 s finančnimi sredstvi podjetij v državni lasti, državnih institucij ter subjektov iz tujine",
+                "acronym": "Preiskovalna komisija o ugotavljanju politične odgovornosti nosilcev javnih funkcij zaradi domnevnega nezakonitega financiranja političnih strank in strankarske politične propagande v medijih pred in med volitvami poslancev v Državni zbor leta 2022 s finančnimi sredstvi podjetij v državni lasti, državnih institucij ter subjektov iz tujine",
+                "slug": "220-preiskovalna-komisija-o-ugotavljanju-politicne-odgovornosti-nosilcev-javnih-funkcij-zaradi-domnevnega-nezakonitega-financiranja-politicnih-strank-in-strankarske-politicne-propagande-v-medijih-pred-in-med-volitvami-poslancev-v-drzavni-zbor-leta-2022-s-financnimi-sredstvi-podjetij-v-drzavni-lasti-drzavnih-institucij-ter-subjektov-iz-tujine",
+                "color": "#09A2CC",
+                "classification": "investigative_commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Komisija za poslovnik",
+                "acronym": "Komisija za poslovnik",
+                "slug": "21-komisija-za-poslovnik",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Komisija za nadzor javnih financ",
+                "acronym": "Komisija za nadzor javnih financ",
+                "slug": "16-komisija-za-nadzor-javnih-financ",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+                "acronym": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+                "slug": "404-preiskovalna-komisija-o-ugotavljanju-in-oceni-dejanskega-stanja-o-primerih-ukradenih-otrok",
+                "color": "#09a2cc",
+                "classification": "committee",
+                "is_in_coalition": false
+              }
+            ],
+            "districts": [
+              {
+                "name": "Žalec II",
+                "classification": "district",
+                "slug": "73-zalec-ii"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "5944-alenka-helbl",
+          "name": "Alenka Helbl",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "/media/P383.png",
+          "is_active": true,
           "results": {
             "mandates": 1,
-            "speeches_per_session": 3,
-            "number_of_questions": 0,
-            "mismatch_of_pg": 0,
-            "presence_votes": 100,
-            "birth_date": "1973-09-17",
+            "speeches_per_session": 2.8969072164948453,
+            "number_of_questions": 185.0,
+            "mismatch_of_pg": 21.052631578947366,
+            "presence_votes": 72.57100149476831,
+            "birth_date": "1965-10-25",
             "education": "7",
-            "spoken_words": 801,
-            "vocabulary_size": 0.12423979148566464,
+            "spoken_words": 414894.0,
+            "vocabulary_size": 4.807183261448362e-6,
             "working_bodies": [
               {
-                "name": "Odbor za europske poslove",
-                "acronym": "Odbor za europske poslove",
-                "slug": "961-odbor-za-europske-poslove",
+                "name": "Komisija za peticije, človekove pravice in enake možnosti",
+                "acronym": null,
+                "slug": "92-komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za delo, družino, socialne zadeve in invalide",
+                "acronym": null,
+                "slug": "93-odbor-za-delo-druzino-socialne-zadeve-in-invalide",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za izobraževanje, znanost, šport in mladino",
+                "acronym": null,
+                "slug": "99-odbor-za-izobrazevanje-znanost-sport-in-mladino",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+                "acronym": null,
+                "slug": "95-odbor-za-kmetijstvo-gozdarstvo-in-prehrano",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za izobraževanje, znanost in mladino",
+                "acronym": "Odbor Za Izobraževanje, Znanost In Mladino Ix",
+                "slug": "223-odbor-za-izobrazevanje-znanost-in-mladino",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+                "acronym": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+                "slug": "404-preiskovalna-komisija-o-ugotavljanju-in-oceni-dejanskega-stanja-o-primerih-ukradenih-otrok",
                 "color": "#09a2cc",
                 "classification": "committee",
                 "is_in_coalition": false
               },
               {
-                "name": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-                "acronym": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-                "slug": "966-odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za zakonodavstvo",
-                "acronym": "Odbor za zakonodavstvo",
-                "slug": "1019-odbor-za-zakonodavstvo",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za pravosuđe",
-                "acronym": "Odbor za pravosuđe",
-                "slug": "1020-odbor-za-pravosue",
-                "color": "#09a2cc",
-                "classification": "committee",
+                "name": "Komisija za narodni skupnosti",
+                "acronym": "Komisija za narodni skupnosti",
+                "slug": "18-komisija-za-narodni-skupnosti",
+                "color": "#09A2CC",
+                "classification": "commission",
                 "is_in_coalition": false
               }
             ],
             "districts": [
-              {
-                "name": "IX. izborna jedinica",
-                "classification": "district",
-                "slug": "128-ix-izborna-jedinica"
-              }
+              { "name": "Radlje", "classification": "", "slug": "90-radlje" }
             ]
           }
         },
         {
-          "slug": "927-ante-deur",
-          "name": "Ante Deur",
+          "slug": "47-alenka-jeraj",
+          "name": "Alenka Jeraj",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": "he",
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Klub zastupnika Hrvatske demokratske zajednice",
-            "acronym": "HDZ",
-            "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
-            "color": "#1523FF",
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/927.jpg",
+          "image": "/media/P029.png",
+          "is_active": true,
           "results": {
-            "mandates": 2,
-            "speeches_per_session": 10,
-            "number_of_questions": 0,
-            "mismatch_of_pg": 0,
-            "presence_votes": 100,
-            "birth_date": "1970-06-13",
-            "education": "4",
-            "spoken_words": 1877,
-            "vocabulary_size": 0.02260853625003819,
+            "mandates": 5,
+            "speeches_per_session": 3.142857142857143,
+            "number_of_questions": 103.0,
+            "mismatch_of_pg": 24.240545567265965,
+            "presence_votes": 68.01195814648729,
+            "birth_date": "1973-02-23",
+            "education": "5",
+            "spoken_words": 365639.0,
+            "vocabulary_size": 5.881682161287741e-6,
             "working_bodies": [
               {
-                "name": "Mandatno-imunitetno povjerenstvo",
-                "acronym": "Mandatno-imunitetno povjerenstvo",
-                "slug": "958-mandatno-imunitetno-povjerenstvo",
+                "name": "Odbor za kulturo",
+                "acronym": "Odbor za kulturo",
+                "slug": "28-odbor-za-kulturo",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Mandatno-volilna komisija",
+                "acronym": "Mandatno-volilna komisija",
+                "slug": "35-mandatno-volilna-komisija",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za izobraževanje, znanost, šport in mladino",
+                "acronym": null,
+                "slug": "99-odbor-za-izobrazevanje-znanost-sport-in-mladino",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za izobraževanje, znanost in mladino",
+                "acronym": "Odbor Za Izobraževanje, Znanost In Mladino Ix",
+                "slug": "223-odbor-za-izobrazevanje-znanost-in-mladino",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+                "acronym": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+                "slug": "404-preiskovalna-komisija-o-ugotavljanju-in-oceni-dejanskega-stanja-o-primerih-ukradenih-otrok",
                 "color": "#09a2cc",
                 "classification": "committee",
                 "is_in_coalition": false
               },
               {
-                "name": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-                "acronym": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-                "slug": "966-odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbora za obranu",
-                "acronym": "Odbora za obranu",
-                "slug": "981-odbora-za-obranu",
-                "color": "#09a2cc",
-                "classification": "committee",
-                "is_in_coalition": false
-              },
-              {
-                "name": "Odbor za ratne veterane",
-                "acronym": "Odbor za ratne veterane",
-                "slug": "1141-odbor-za-ratne-veterane",
+                "name": "Odbor za zdravstvo",
+                "acronym": "Odbor za zdravstvo",
+                "slug": "33-odbor-za-zdravstvo",
                 "color": "#09A2CC",
                 "classification": "committee",
                 "is_in_coalition": false
@@ -895,94 +889,60 @@
             ],
             "districts": [
               {
-                "name": "II. izborna jedinica",
+                "name": "Ljubljana Vič - Rudnik I",
                 "classification": "district",
-                "slug": "124-ii-izborna-jedinica"
+                "slug": "60-ljubljana-vic-rudnik-i"
               }
             ]
           }
         },
         {
-          "slug": "928-ante-kujundzic",
-          "name": "Ante Kujundžić",
+          "slug": "3808-ales-lipicnik",
+          "name": "Aleš Lipičnik",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": "he",
+          "preferred_pronoun": null,
           "group": {
-            "name": "Klub zastupnika Mosta",
-            "acronym": "Most",
-            "slug": "1043-klub-zastupnika-mosta",
-            "color": "#00E1E7",
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": false
+            "is_in_coalition": true
           },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/928.jpg",
+          "image": "/media/lipicnik.jpg",
+          "is_active": true,
           "results": {
-            "mandates": 2,
-            "speeches_per_session": 6.5,
-            "number_of_questions": 0,
-            "mismatch_of_pg": 27.083333333333332,
-            "presence_votes": 68.75,
-            "birth_date": "1984-01-31",
-            "education": "7",
-            "spoken_words": 4778,
-            "vocabulary_size": 0.01174471747388414,
-            "working_bodies": [],
-            "districts": [
-              {
-                "name": "X. izborna jedinica",
-                "classification": "district",
-                "slug": "121-x-izborna-jedinica"
-              }
-            ]
-          }
-        },
-        {
-          "slug": "925-ante-sanader",
-          "name": "Ante Sanader",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Klub zastupnika Hrvatske demokratske zajednice",
-            "acronym": "HDZ",
-            "slug": "979-klub-zastupnika-hrvatske-demokratske-zajednice",
-            "color": "#1523FF",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "https://s3.fr-par.scw.cloud/parlameter/hrvaska/925.jpg",
-          "results": {
-            "mandates": 6,
-            "speeches_per_session": 3.5,
-            "number_of_questions": 1,
-            "mismatch_of_pg": 0,
-            "presence_votes": 100,
-            "birth_date": "1960-05-17",
-            "education": "7",
-            "spoken_words": 2681,
-            "vocabulary_size": 0.018386771919565996,
+            "mandates": 1,
+            "speeches_per_session": 1.123456790123457,
+            "number_of_questions": 0.0,
+            "mismatch_of_pg": 2.771179730799683,
+            "presence_votes": 99.65986394557824,
+            "birth_date": "1963-09-12",
+            "education": null,
+            "spoken_words": 25376.0,
+            "vocabulary_size": 0.0003141802377147878,
             "working_bodies": [
               {
-                "name": "Odbor za zaštitu okoliša i prirode",
-                "acronym": "Odbor za zaštitu okoliša i prirode",
-                "slug": "960-odbor-za-zastitu-okolisa-i-prirode",
-                "color": "#09a2cc",
+                "name": "Odbor za finance",
+                "acronym": "Odbor za finance",
+                "slug": "23-odbor-za-finance",
+                "color": "#09A2CC",
                 "classification": "committee",
                 "is_in_coalition": false
               },
               {
-                "name": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-                "acronym": "Odbor za unutarnju politiku i nacionalnu sigurnost",
-                "slug": "966-odbor-za-unutarnju-politiku-i-nacionalnu-sigurnost",
-                "color": "#09a2cc",
+                "name": "Odbor za pravosodje",
+                "acronym": "Odbor za pravosodje",
+                "slug": "31-odbor-za-pravosodje",
+                "color": "#09A2CC",
                 "classification": "committee",
                 "is_in_coalition": false
               },
               {
-                "name": "Odbor za Ustav, Poslovnik i politički sustav",
-                "acronym": "Odbor za Ustav, Poslovnik i politički sustav",
-                "slug": "1133-odbor-za-ustav-poslovnik-i-politicki-sustav",
+                "name": "Odbor za zadeve Evropske unije",
+                "acronym": "Odbor za zadeve Evropske unije",
+                "slug": "32-odbor-za-zadeve-evropske-unije",
                 "color": "#09A2CC",
                 "classification": "committee",
                 "is_in_coalition": false
@@ -990,9 +950,378 @@
             ],
             "districts": [
               {
-                "name": "IX. izborna jedinica",
+                "name": "Kamnik",
                 "classification": "district",
-                "slug": "128-ix-izborna-jedinica"
+                "slug": "52-kamnik"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "5966-ales-rezar",
+          "name": "Aleš Rezar",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
+            "classification": "pg",
+            "is_in_coalition": true
+          },
+          "image": "/media/P405.png",
+          "is_active": true,
+          "results": {
+            "mandates": 1,
+            "speeches_per_session": 1.4892703862660943,
+            "number_of_questions": 7.0,
+            "mismatch_of_pg": 8.435664709022959,
+            "presence_votes": 91.66666666666667,
+            "birth_date": "1987-04-29",
+            "education": "7",
+            "spoken_words": 112811.0,
+            "vocabulary_size": 4.703871830014451e-5,
+            "working_bodies": [
+              {
+                "name": "Odbor za obrambo",
+                "acronym": "Odbor za obrambo",
+                "slug": "30-odbor-za-obrambo",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za infrastrukturo, okolje in prostor",
+                "acronym": null,
+                "slug": "94-odbor-za-infrastrukturo-okolje-in-prostor",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+                "acronym": null,
+                "slug": "95-odbor-za-kmetijstvo-gozdarstvo-in-prehrano",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Preiskovalna komisija o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in drugih pristojnih državnih organov s področij davkov in preprečevanja pranja denarja ter nedopustnega političnega vplivanja na potek oziroma izid posameznih predkazenskih in postopkov finančnega nadzora ter odkrivanja in preprečevanja pranja denarja",
+                "acronym": "Preiskovalna komisija o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in drugih pristojnih državnih organov s področij davkov in preprečevanja pranja denarja ter nedopustnega političnega vplivanja na potek oziroma izid posameznih predkazenskih in postopkov finančnega nadzora ter odkrivanja in preprečevanja pranja denarja",
+                "slug": "285-preiskovalna-komisija-o-ugotavljanju-morebitne-politicne-odgovornosti-nosilcev-javnih-funkcij-zaradi-suma-nedopustnega-politicnega-vmesavanja-v-delo-policije-in-drugih-pristojnih-drzavnih-organov-s-podrocij-davkov-in-preprecevanja-pranja-denarja-ter-nedopustnega-politicnega-vplivanja-na-potek-oziroma-izid-posameznih-predkazenskih-in-postopkov-financnega-nadzora-ter-odkrivanja-in-preprecevanja-pranja-denarja",
+                "color": "#09A2CC",
+                "classification": "investigative_commission",
+                "is_in_coalition": false
+              }
+            ],
+            "districts": [
+              {
+                "name": "Žalec I",
+                "classification": "district",
+                "slug": "75-zalec-i"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "5946-alma-intihar",
+          "name": "Alma Intihar",
+          "honorific_prefix": "mag.",
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
+            "classification": "pg",
+            "is_in_coalition": true
+          },
+          "image": "/media/P385.png",
+          "is_active": true,
+          "results": {
+            "mandates": 1,
+            "speeches_per_session": 0.4358974358974359,
+            "number_of_questions": 4.0,
+            "mismatch_of_pg": 7.293354943273905,
+            "presence_votes": 94.5814648729447,
+            "birth_date": "1973-01-21",
+            "education": "8/1",
+            "spoken_words": 27999.0,
+            "vocabulary_size": 0.0004708264397120109,
+            "working_bodies": [
+              {
+                "name": "Odbor za pravosodje",
+                "acronym": "Odbor za pravosodje",
+                "slug": "31-odbor-za-pravosodje",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za zadeve Evropske unije",
+                "acronym": "Odbor za zadeve Evropske unije",
+                "slug": "32-odbor-za-zadeve-evropske-unije",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za kulturo",
+                "acronym": "Odbor za kulturo",
+                "slug": "28-odbor-za-kulturo",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Mandatno-volilna komisija",
+                "acronym": "Mandatno-volilna komisija",
+                "slug": "35-mandatno-volilna-komisija",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              }
+            ],
+            "districts": [
+              {
+                "name": "Radovljica II",
+                "classification": "district",
+                "slug": "54-radovljica-ii"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "5945-andrej-hoivik",
+          "name": "Andrej Hoivik",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "/media/P384.png",
+          "is_active": true,
+          "results": {
+            "mandates": 1,
+            "speeches_per_session": 6.319371727748691,
+            "number_of_questions": 116.0,
+            "mismatch_of_pg": 23.039660914320315,
+            "presence_votes": 68.94618834080717,
+            "birth_date": "1993-01-13",
+            "education": "7",
+            "spoken_words": 799076.0,
+            "vocabulary_size": 2.1647678036693477e-6,
+            "working_bodies": [
+              {
+                "name": "Odbor za pravosodje",
+                "acronym": "Odbor za pravosodje",
+                "slug": "31-odbor-za-pravosodje",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za zadeve Evropske unije",
+                "acronym": "Odbor za zadeve Evropske unije",
+                "slug": "32-odbor-za-zadeve-evropske-unije",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za kulturo",
+                "acronym": "Odbor za kulturo",
+                "slug": "28-odbor-za-kulturo",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Komisija za peticije, človekove pravice in enake možnosti",
+                "acronym": null,
+                "slug": "92-komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+                "acronym": "Preiskovalna komisija o ugotavljanju in oceni dejanskega stanja o primerih ukradenih otrok",
+                "slug": "404-preiskovalna-komisija-o-ugotavljanju-in-oceni-dejanskega-stanja-o-primerih-ukradenih-otrok",
+                "color": "#09a2cc",
+                "classification": "committee",
+                "is_in_coalition": false
+              }
+            ],
+            "districts": [
+              {
+                "name": "Škofja Loka I",
+                "classification": "district",
+                "slug": "8-skofja-loka-i"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "6456-andrej-kosi",
+          "name": "Andrej Kosi",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "/media/kosi.jpg",
+          "is_active": true,
+          "results": {
+            "mandates": 1,
+            "speeches_per_session": 3.0,
+            "number_of_questions": 404.0,
+            "mismatch_of_pg": 6.544502617801047,
+            "presence_votes": 88.19153881915388,
+            "birth_date": "1977-10-24",
+            "education": "6/1",
+            "spoken_words": 487366.0,
+            "vocabulary_size": 3.5825539846870604e-6,
+            "working_bodies": [
+              {
+                "name": "Odbor za gospodarstvo",
+                "acronym": "Odbor za gospodarstvo",
+                "slug": "24-odbor-za-gospodarstvo",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za zunanjo politiko",
+                "acronym": "Odbor za zunanjo politiko",
+                "slug": "34-odbor-za-zunanjo-politiko",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za zadeve Evropske unije",
+                "acronym": "Odbor za zadeve Evropske unije",
+                "slug": "32-odbor-za-zadeve-evropske-unije",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+                "acronym": null,
+                "slug": "97-odbor-za-notranje-zadeve-javno-upravo-in-lokalno-samoupravo",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Komisija za narodni skupnosti",
+                "acronym": "Komisija za narodni skupnosti",
+                "slug": "18-komisija-za-narodni-skupnosti",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              }
+            ],
+            "districts": [
+              {
+                "name": "Ormož",
+                "classification": "district",
+                "slug": "1-ormoz"
+              }
+            ]
+          }
+        },
+        {
+          "slug": "6482-andrej-poglajen",
+          "name": "Andrej Poglajen",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "/media/P429-andrej-poglajen.jpg",
+          "is_active": true,
+          "results": {
+            "mandates": 1,
+            "speeches_per_session": 3.875912408759124,
+            "number_of_questions": 28.0,
+            "mismatch_of_pg": 21.253175275190518,
+            "presence_votes": 66.77350427350427,
+            "birth_date": "2000-06-05",
+            "education": "5",
+            "spoken_words": 166318.0,
+            "vocabulary_size": 2.3962059050159848e-5,
+            "working_bodies": [
+              {
+                "name": "Odbor za pravosodje",
+                "acronym": "Odbor za pravosodje",
+                "slug": "31-odbor-za-pravosodje",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za kulturo",
+                "acronym": "Odbor za kulturo",
+                "slug": "28-odbor-za-kulturo",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Ustavna komisija",
+                "acronym": "Ustavna komisija",
+                "slug": "88-ustavna-komisija",
+                "color": "#09A2CC",
+                "classification": "commission",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
+                "acronym": null,
+                "slug": "97-odbor-za-notranje-zadeve-javno-upravo-in-lokalno-samoupravo",
+                "color": "#09A2CC",
+                "classification": "committee",
+                "is_in_coalition": false
+              },
+              {
+                "name": "Preiskovalna komisija o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in drugih pristojnih državnih organov s področij davkov in preprečevanja pranja denarja ter nedopustnega političnega vplivanja na potek oziroma izid posameznih predkazenskih in postopkov finančnega nadzora ter odkrivanja in preprečevanja pranja denarja",
+                "acronym": "Preiskovalna komisija o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in drugih pristojnih državnih organov s področij davkov in preprečevanja pranja denarja ter nedopustnega političnega vplivanja na potek oziroma izid posameznih predkazenskih in postopkov finančnega nadzora ter odkrivanja in preprečevanja pranja denarja",
+                "slug": "285-preiskovalna-komisija-o-ugotavljanju-morebitne-politicne-odgovornosti-nosilcev-javnih-funkcij-zaradi-suma-nedopustnega-politicnega-vmesavanja-v-delo-policije-in-drugih-pristojnih-drzavnih-organov-s-podrocij-davkov-in-preprecevanja-pranja-denarja-ter-nedopustnega-politicnega-vplivanja-na-potek-oziroma-izid-posameznih-predkazenskih-in-postopkov-financnega-nadzora-ter-odkrivanja-in-preprecevanja-pranja-denarja",
+                "color": "#09A2CC",
+                "classification": "investigative_commission",
+                "is_in_coalition": false
+              }
+            ],
+            "districts": [
+              {
+                "name": "Idrija",
+                "classification": "district",
+                "slug": "34-idrija"
               }
             ]
           }
@@ -1000,12 +1329,12 @@
       ]
     },
     "mandate": {
-      "id": 14,
-      "description": "Sabor, 11. saziv",
-      "beginning": "2024-05-15T00:00:00"
+      "id": 2,
+      "description": "IX",
+      "beginning": "2022-05-13T00:00:01"
     },
-    "members:count": 151,
-    "members:pages": 16,
+    "members:count": 90,
+    "members:pages": 9,
     "members:page": 1,
     "members:per_page": 10
   }
