@@ -23,22 +23,67 @@ export default function devServeCards(env) {
             (v) => v.map(([, m]) => m),
           );
           const cardRows = Object.entries(cardsByGroup)
+            .sort(([a], [b]) => a.localeCompare(b))
             .map(
               ([group, methods]) => `
-              <table style="margin: 0 auto; border-collapse: collapse; display: inline-block;">
+              <table>
                 ${methods
+                  .sort((a, b) => a.localeCompare(b))
                   .map(
                     (method) => `
                     <tr>
-                      <td style="border: 1px solid black;">${group}</td>
-                      <td style="border: 1px solid black;"><a href="/${group}/${method}">${method}</a></td>
+                      <td>${group}</td>
+                      <td><a href="/${group}/${method}">${method}</a></td>
                     </tr>`,
                   )
                   .join('\n')}
               </table>`,
             )
             .join('\n');
-          res.end(cardRows);
+          res.end(`
+            <!DOCTYPE html>
+            <html>
+              <head>
+                <style>
+                  .columns {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    columns: 3;
+                  }
+                  table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    font-family: system-ui;
+                    margin-bottom: 8px;
+                  }
+                  table td {
+                    border: 1px solid black;
+                    padding: 2px 8px;
+                    font-size: 14px;
+                  }
+                  table td:first-child {
+                    font-weight: 700;
+                    width: 10%;
+                  }
+                  table td:last-child {
+                    font-weight: 600;
+                  }
+                  table a {
+                    color: #03a;
+                    text-decoration: underline;
+                  }
+                  table a:hover {
+                    text-decoration: none;
+                  }
+                </style>
+              </head>
+              <body>
+                <div class="columns">
+                  ${cardRows}
+                </div>
+              </body>
+            </html>
+          `);
         } else if (pathname.slice(1).split('/').length === 2) {
           const [group, method] = pathname.slice(1).split('/');
           const cardName = `${group}/${method}`;
