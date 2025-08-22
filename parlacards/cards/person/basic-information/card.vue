@@ -65,13 +65,20 @@
         </div>
       </div>
 
-      <div class="row">
+      <div v-if="results.education || results.education_level" class="row">
         <div class="parlaicon-container">
           <span class="parlaicon parlaicon-izobrazba" aria-hidden="true"></span>
         </div>
         <div class="bordertop0">
           <span class="key">
-            <span v-t="'education'"></span>: <b>{{ results.education }}</b>
+            <template v-if="results.education">
+              <span v-t="'education'"></span>:
+              <b>{{ results.education }}</b>
+            </template>
+            <template v-else-if="results.education_level">
+              <span v-t="'education-level'"></span>:
+              <b>{{ results.education_level }}</b>
+            </template>
           </span>
         </div>
       </div>
