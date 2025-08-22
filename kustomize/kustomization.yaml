@@ -26,16 +26,16 @@ resources:
 images:
   - name: parladata-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parladata-ljubljana
-    newTag: '70a907628fbbd0508cbc724d86c78191b8cb472e'
+    newTag: '6c2dd06951337a1cb7446769b1273cf2fe59deb2'
   - name: parlasolr-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-ljubljana
-    newTag: '70a907628fbbd0508cbc724d86c78191b8cb472e'
+    newTag: '6c2dd06951337a1cb7446769b1273cf2fe59deb2'
   - name: parlacards-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ljubljana
-    newTag: '70a907628fbbd0508cbc724d86c78191b8cb472e'
+    newTag: '6c2dd06951337a1cb7446769b1273cf2fe59deb2'
   - name: parlasite-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ljubljana
-    newTag: '70a907628fbbd0508cbc724d86c78191b8cb472e'
+    newTag: '6c2dd06951337a1cb7446769b1273cf2fe59deb2'
   - name: parlassets-ljubljana
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ljubljana
-    newTag: '70a907628fbbd0508cbc724d86c78191b8cb472e'
+    newTag: '6c2dd06951337a1cb7446769b1273cf2fe59deb2'
