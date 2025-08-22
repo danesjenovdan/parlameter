@@ -3,14 +3,6 @@ from importlib import import_module
 from django.db.models import OuterRef, Q, Subquery
 from rest_framework import serializers
 
-from parlacards.models import (
-    DeviationFromGroup,
-    PersonAvgSpeechesPerSession,
-    PersonNumberOfQuestions,
-    PersonNumberOfSpokenWords,
-    PersonVocabularySize,
-    PersonVoteAttendance,
-)
 from parlacards.pagination import create_paginator
 from parlacards.serializers.area import AreaSerializer
 from parlacards.serializers.common import (
@@ -29,38 +21,39 @@ from parladata.models.versionable_properties import (
     PersonPreferredPronoun,
 )
 
+SCORE_MODELS_MAPPING = {
+    "presence_votes": "PersonVoteAttendance",
+    "number_of_questions": "PersonNumberOfQuestions",
+    "speeches_per_session": "PersonAvgSpeechesPerSession",
+    "spoken_words": "PersonNumberOfSpokenWords",
+    "mismatch_of_pg": "DeviationFromGroup",
+    "vocabulary_size": "PersonVocabularySize",
+}
+
 
 class PersonAnalysesSerializer(CommonPersonSerializer):
     def calculate_cache_key(self, person):
-        all_analyses = (
-            PersonAvgSpeechesPerSession,
-            PersonNumberOfQuestions,
-            DeviationFromGroup,
-            PersonVoteAttendance,
-            PersonNumberOfSpokenWords,
-            PersonVocabularySize,
-        )
-
-        analysis_timestamps = []
-        for analysis in all_analyses:
-            if (
-                analysis_object := analysis.objects.filter(person=person)
-                .order_by("-timestamp")
-                .first()
-            ):
-                analysis_timestamps.append(analysis_object.timestamp)
+        playing_field = self.context["playing_field"]
+        current_analysis = self.context["current_analysis"]
 
         last_membership = PersonMembership.objects.filter(member=person).latest(
             "updated_at"
         )
 
-        timestamp = max(
-            [person.updated_at, last_membership.updated_at, *analysis_timestamps]
-        )
+        timestamp = max([person.updated_at, last_membership.updated_at])
 
-        playing_field = self.context["playing_field"]
+        score_model_name = SCORE_MODELS_MAPPING.get(current_analysis, None)
+        if score_model_name:
+            scores_module = import_module("parlacards.models")
+            ScoreModel = getattr(scores_module, score_model_name)
+            if (
+                analysis_object := ScoreModel.objects.filter(person=person)
+                .order_by("-timestamp")
+                .first()
+            ):
+                timestamp = max([timestamp, analysis_object.timestamp])
 
-        return f"PersonAnalysesSerializer_{person.id}_{playing_field.id}_{timestamp.isoformat()}"
+        return f"PersonAnalysesSerializer_{person.id}_{playing_field.id}_{current_analysis}_{timestamp.isoformat()}"
 
     def _get_person_value(self, person, property_model_name):
         scores_module = import_module("parlacards.models")
@@ -110,25 +103,27 @@ class PersonAnalysesSerializer(CommonPersonSerializer):
         return districts_serializer.data
 
     def get_results(self, person):
-        return {
+        results_obj = {
             "mandates": person.number_of_mandates,
-            "speeches_per_session": self._get_person_value(
-                person, "PersonAvgSpeechesPerSession"
-            ),
-            "number_of_questions": self._get_person_value(
-                person, "PersonNumberOfQuestions"
-            ),
-            "mismatch_of_pg": self._get_person_value(person, "DeviationFromGroup"),
-            "presence_votes": self._get_person_value(person, "PersonVoteAttendance"),
             "birth_date": (
                 person.date_of_birth.isoformat() if person.date_of_birth else None
             ),
             "education": person.education_level,
-            "spoken_words": self._get_person_value(person, "PersonNumberOfSpokenWords"),
-            "vocabulary_size": self._get_person_value(person, "PersonVocabularySize"),
-            "working_bodies": self._get_working_bodies(person),
             "districts": self._get_districts(person),
         }
+
+        current_analysis = self.context["current_analysis"]
+
+        score_model_name = SCORE_MODELS_MAPPING.get(current_analysis, None)
+        if score_model_name:
+            results_obj[current_analysis] = self._get_person_value(
+                person, score_model_name
+            )
+
+        if current_analysis == "working_bodies":
+            results_obj["working_bodies"] = self._get_working_bodies(person)
+
+        return results_obj
 
     results = serializers.SerializerMethodField()
 
@@ -142,15 +137,6 @@ class MiscMembersCardSerializer(CardSerializer):
         "name": ("PersonName", "value"),
         "mandates": ("PersonNumberOfMandates", "value"),
         "education": ("PersonEducationLevel", "education_level__text"),
-    }
-
-    score_models_mapping = {
-        "speeches_per_session": "PersonAvgSpeechesPerSession",
-        "number_of_questions": "PersonNumberOfQuestions",
-        "mismatch_of_pg": "DeviationFromGroup",
-        "presence_votes": "PersonVoteAttendance",
-        "spoken_words": "PersonNumberOfSpokenWords",
-        "vocabulary_size": "PersonVocabularySize",
     }
 
     def _groups(self, playing_field, timestamp):
@@ -213,13 +199,16 @@ class MiscMembersCardSerializer(CardSerializer):
 
         return 0.0
 
-    def _maximum_scores(self, playing_field, timestamp):
+    def _maximum_scores(self, playing_field, current_analysis, timestamp):
         people = playing_field.query_voters(timestamp)
 
-        score_maximum_values = {
-            key: self._maximum_score(playing_field, model_name, people)
-            for key, model_name in self.score_models_mapping.items()
-        }
+        score_maximum_values = {}
+
+        score_model_name = SCORE_MODELS_MAPPING.get(current_analysis, None)
+        if score_model_name:
+            score_maximum_values[current_analysis] = self._maximum_score(
+                playing_field, score_model_name, people
+            )
 
         return score_maximum_values
 
@@ -386,7 +375,7 @@ class MiscMembersCardSerializer(CardSerializer):
             return list(sorted(list(people), key=get_sort_key, reverse=order_reverse))
 
         # order by score model
-        score_model_name = self.score_models_mapping.get(order_by, None)
+        score_model_name = SCORE_MODELS_MAPPING.get(order_by, None)
         if score_model_name:
             scores_module = import_module("parlacards.models")
             ScoreModel = getattr(scores_module, score_model_name)
@@ -414,9 +403,6 @@ class MiscMembersCardSerializer(CardSerializer):
             "groups": self._groups(parent_organization, self.context["request_date"]),
             "working_bodies": self._working_bodies(self.context["request_date"]),
             "districts": self._districts(self.context["request_date"]),
-            "maximum_scores": self._maximum_scores(
-                parent_organization, self.context["request_date"]
-            ),
         }
 
     def get_mandate(self, playing_field):
@@ -433,6 +419,10 @@ class MiscMembersCardSerializer(CardSerializer):
     def to_representation(self, parent_organization):
         parent_data = super().to_representation(parent_organization)
 
+        current_analysis = self.context.get("GET", {}).get(
+            "current_analysis", "demographics"
+        )
+
         ordered_people = self._filtered_and_ordered_people(
             parent_organization, self.context["request_date"]
         )
@@ -443,10 +433,18 @@ class MiscMembersCardSerializer(CardSerializer):
 
         new_context = dict.copy(self.context)
         new_context["playing_field"] = parent_organization
+        new_context["current_analysis"] = current_analysis
 
         # serialize people
         people_serializer = PersonAnalysesSerializer(
             paged_object_list, many=True, context=new_context
+        )
+
+        # calculate maximum score for current analysis
+        maximum_scores = self._maximum_scores(
+            parent_organization,
+            current_analysis,
+            self.context["request_date"],
         )
 
         return {
@@ -454,6 +452,7 @@ class MiscMembersCardSerializer(CardSerializer):
             **pagination_metadata,
             "results": {
                 **parent_data["results"],
+                "maximum_scores": maximum_scores,
                 "members": people_serializer.data,
             },
         }

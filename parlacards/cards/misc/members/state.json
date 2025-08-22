@@ -1,12 +1,12 @@
 {
   "generator": true,
   "showWorkingBodiesFilter": "true",
-  "showDistrictsFilter": "false",
+  "showDistrictsFilter": "true",
   "showGendersFilter": "true",
   "showDemographicsAge": "true",
   "showDemographicsEducation": "true",
   "showDemographicsMandates": "true",
   "showDemographicsGroup": "true",
   "showExportButton": "true",
-  "hiddenAnalyses": "spoken_words|mismatch_of_pg"
+  "hiddenAnalyses": ""
 }
