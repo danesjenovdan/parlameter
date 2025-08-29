@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from django.utils.translation import gettext_lazy as _
 from django.db import models
 
 from parlacards.scores.common import get_lemmatize_method, remove_punctuation, tokenize
@@ -26,37 +26,52 @@ class Speech(Versionable, Timestampable, Taggable):
 
     speaker = models.ForeignKey(
         "Person",
+        verbose_name=_("Speaker"),
         on_delete=models.CASCADE,
         related_name="speeches",
-        help_text="Person making the speech",
+        help_text=_("Select the person making the speech"),
     )
 
-    content = models.TextField(blank=False, null=False, help_text="Words spoken")
+    content = models.TextField(
+        _("content"), blank=False, null=False, help_text=_("The content of the speech.")
+    )
 
     lemmatized_content = models.TextField(
-        blank=True, null=True, help_text="Lemmatized words spoken"
+        _("lemmatized_content"),
+        blank=True,
+        null=True,
+        help_text=_("Lemmatized words spoken"),
     )
 
-    order = models.IntegerField(blank=True, null=True, help_text="Order of speech")
+    order = models.IntegerField(
+        _("order"), blank=True, null=True, help_text="Order of the speech"
+    )
 
     session = models.ForeignKey(
         "Session",
+        verbose_name=_("Session"),
         blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="speeches",
-        help_text="Speech session",
+        help_text=_("Select the session of the speech."),
     )
 
-    start_time = models.DateTimeField(blank=True, null=True, help_text="Start time")
+    start_time = models.DateTimeField(
+        _("start_time"), blank=True, null=True, help_text=_("Select the start time")
+    )
 
-    end_time = models.DateTimeField(blank=True, null=True, help_text="End time")
+    end_time = models.DateTimeField(
+        _("end_time"), blank=True, null=True, help_text=_("Select the end time")
+    )
 
     agenda_items = models.ManyToManyField(
         "AgendaItem", blank=True, help_text="Agenda items", related_name="speeches"
     )
 
-    motions = models.ManyToManyField("Motion", blank=True, help_text="Votes on speech")
+    motions = models.ManyToManyField(
+        _("Motion"), blank=True, help_text="Votes on speech"
+    )
 
     objects = ValidSpeechesManager()
 

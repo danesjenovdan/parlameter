@@ -47,25 +47,36 @@ class Person(Timestampable, Parsable, Sluggable, VersionableFieldsOwner):
     """Model for all people that are somehow connected to the parlament."""
 
     date_of_birth = models.DateField(
-        _("date of birth"), blank=True, null=True, help_text=_("A date of birth")
+        _("date of birth"),
+        blank=True,
+        null=True,
+        help_text=_("Select the date of birth"),
     )
 
     date_of_death = models.DateField(
-        _("date of death"), blank=True, null=True, help_text=_("A date of death")
+        _("date of death"),
+        blank=True,
+        null=True,
+        help_text=_("Select the date of death"),
     )
 
     image = models.ImageField(
-        _("image (url)"), blank=True, null=True, help_text=_("A image of a head shot")
+        _("image (url)"),
+        blank=True,
+        null=True,
+        help_text=_("Insert a portrait photograph that focuses on the person's face."),
     )
 
     districts = models.ManyToManyField(
-        "Area", blank=True, help_text="District of person", related_name="candidates"
+        "Area",
+        blank=True,
+        help_text=_("Select the person's district"),
+        related_name="candidates",
+        verbose_name=_("Area"),
     )
 
     # TODO consider this, maybe we don't need it
-    active = models.BooleanField(
-        _("active"), default=True, help_text="a generic active or not toggle"
-    )
+    active = models.BooleanField(_("active"), default=True)
 
     objects = ExtendedManager()
 

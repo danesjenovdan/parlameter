@@ -1,11 +1,13 @@
 from django.db import models
 from tinymce.models import HTMLField
-
+from django.utils.translation import gettext_lazy as _
 from parladata.behaviors.models import Taggable, Timestampable
 
 
 class LegislationStatus(Timestampable):
-    name = models.TextField(blank=True, null=True, help_text="Status of legisaltion")
+    name = models.TextField(
+        _("Name"), blank=True, null=True, help_text=_("Status of legisaltion")
+    )
 
     def __str__(self):
         return self.name
@@ -29,60 +31,92 @@ class Law(Timestampable, Taggable):
         ("retracted", "retracted"),
     ]
 
-    uid = models.TextField(blank=True, null=True, help_text="law uid from DZ page")
-
-    session = models.ForeignKey(
-        "Session",
+    uid = models.TextField(
+        _("uid"),
         blank=True,
         null=True,
+        help_text=_("uid reference of the law found on the DZ page"),
+    )
+
+    session = models.ForeignKey(
+        _("Session"),
+        blank=True,
+        null=True,
+        verbose_name=_("Session"),
         on_delete=models.CASCADE,
-        help_text="The legislative session in which the law was proposed",
+        help_text=_(
+            "The legislative session in which the law was proposed",
+        ),
     )
 
     mandate = models.ForeignKey(
-        "Mandate",
+        _("Mandate"),
         blank=True,
         null=True,
+        verbose_name=_("Mandate"),
         related_name="legislation",
         on_delete=models.SET_NULL,
-        help_text="The mandate of this law.",
+        help_text=_("Select the mandate of the law."),
     )
 
-    text = models.TextField(blank=True, null=True, help_text="The text of the law")
+    text = models.TextField(
+        _("text"),
+        blank=True,
+        null=True,
+        help_text=_("Insert the title of the law eg. 'Zakon o...'"),
+    )
 
-    epa = models.TextField(blank=True, null=True, help_text="EPA number")
+    epa = models.TextField(
+        _("EPA"),
+        blank=True,
+        null=True,
+        help_text=_("Insert the EPA number eg. 2318-IX"),
+    )
 
     mdt = models.TextField(
-        blank=True, null=True, max_length=1024, help_text="Working body text"
+        _("MDT"),
+        blank=True,
+        null=True,
+        max_length=1024,
+        help_text=_("Insert the working body eg. 'Committee on the Economy'"),
     )
 
     mdt_fk = models.ForeignKey(
-        "Organization",
+        _("Organization"),
         related_name="laws",
         blank=True,
         null=True,
+        verbose_name=_("Organization"),
         max_length=255,
         on_delete=models.CASCADE,
-        help_text="Working body obj",
+        help_text=_("Select the working body"),
     )
 
     status = models.ForeignKey(
-        "LegislationStatus",
+        _("LegislationStatus"),
         on_delete=models.SET_DEFAULT,
         blank=True,
         null=True,
+        verbose_name=_("Legislation status"),
+        help_text=_("Select the status of the legislative procedure"),
         default=LegislationStatus.get_or_create_default_photo_pk,
     )
 
     passed = models.BooleanField(blank=True, null=True)
 
-    proposer_text = models.TextField(blank=True, null=True, help_text="Proposer of law")
+    proposer_text = models.TextField(
+        _("proposer_text"),
+        blank=True,
+        null=True,
+        help_text=_("Insert who proposed the law"),
+    )
 
     procedure_type = models.TextField(
+        _("procedure_type"),
         blank=True,
         null=True,
         max_length=255,
-        help_text="Skrajšani, normalni, hitri postopek...",
+        help_text=_("Insert the type of procedure (redni, skrajšani, nujni)"),
     )
 
     classification = models.ForeignKey(
@@ -90,6 +124,7 @@ class Law(Timestampable, Taggable):
         on_delete=models.CASCADE,
         blank=True,
         null=True,
+        verbose_name=_("Legislation classification"),
     )
 
     abstract = HTMLField(blank=True, null=True)
@@ -145,6 +180,7 @@ class LegislationConsideration(Timestampable):
         "Organization",
         blank=True,
         null=True,
+        verbose_name=_("Organization"),
         on_delete=models.CASCADE,
         help_text="Organization in which consideration happened",
     )
@@ -154,6 +190,7 @@ class LegislationConsideration(Timestampable):
         "Session",
         blank=True,
         null=True,
+        verbose_name=_("Session"),
         on_delete=models.CASCADE,
         related_name="legislation_considerations",
         help_text="Session at which the legislation was discussed",

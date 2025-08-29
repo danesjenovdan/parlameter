@@ -1,6 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 from parladata.behaviors.models import Timestampable
 
 
@@ -21,34 +21,38 @@ class Ballot(Timestampable):
     ]
 
     vote = models.ForeignKey(
-        "Vote",
-        help_text="The vote event",
+        _("Vote"),
+        verbose_name=_("Vote"),
+        help_text=_("What was the vote on"),
         related_name="ballots",
         on_delete=models.CASCADE,
     )
 
     personvoter = models.ForeignKey(
-        "Person",
+        _("Person"),
         blank=True,
         null=True,
+        verbose_name=_("Person"),
         on_delete=models.CASCADE,
         related_name="ballots",
-        help_text="The voter",
+        help_text=_("Who voted"),
     )
 
     orgvoter = models.ForeignKey(
-        "Organization",
+        _("Organization"),
         blank=True,
         null=True,
+        verbose_name=_("Organization"),
         on_delete=models.CASCADE,
-        help_text="The voter represents and organisation.",
+        help_text=_("The organization that the voter represents"),
     )
 
     option = models.CharField(
+        _("Option"),
         max_length=128,
         blank=True,
         null=True,
-        help_text="Yes, no, abstain",
+        help_text=_("Choose one of the possible options"),
         choices=OPTIONS,
     )
 

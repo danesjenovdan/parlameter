@@ -14,7 +14,14 @@ from taggit.managers import TaggableManager
 
 
 class Parsable(models.Model):
-    parser_names = models.TextField(blank=True, null=True)
+    parser_names = models.TextField(
+        _("parser_names"),
+        blank=True,
+        null=True,
+        help_text=_(
+            "Variations of a name e.g. 'Janez Janša|Ivan Janez Janša' that the parser considers equal"
+        ),
+    )
 
     def add_parser_name(self, new_parser_name):
         if not self.parser_names:
@@ -40,8 +47,8 @@ class Timestampable(models.Model):
     ``created`` and ``modified`` fields.
     """
 
-    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
-    updated_at = models.DateTimeField(auto_now=True, db_index=True)
+    created_at = models.DateTimeField(_("created_at"), auto_now_add=True, db_index=True)
+    updated_at = models.DateTimeField(_("updated_at"), auto_now=True, db_index=True)
 
     class Meta:
         abstract = True
@@ -62,10 +69,22 @@ class Versionable(models.Model):
     """
 
     valid_from = models.DateTimeField(
-        help_text=_("row valid from"), blank=True, null=True, default=None
+        _("valid_from"),
+        help_text=_(
+            "Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from."
+        ),
+        blank=True,
+        null=True,
+        default=None,
     )
     valid_to = models.DateTimeField(
-        help_text=_("row valid to"), blank=True, null=True, default=None
+        _("valid_to"),
+        help_text=_(
+            "Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value."
+        ),
+        blank=True,
+        null=True,
+        default=None,
     )
 
     objects = ValidAtQuerySet.as_manager()
@@ -77,7 +96,9 @@ class Versionable(models.Model):
 # TODO touch on delete
 class VersionableProperty(Versionable):
     owner = None
-    value = models.TextField(blank=False, null=False)
+    value = models.TextField(
+        _("value"), blank=False, null=False, help_text=_("Insert approriate value")
+    )
 
     def __str__(self):
         return str(self.value)
@@ -182,8 +203,20 @@ class Approvable(models.Model):
     ``approved_at`` and ``rejecated_at`` fields.
     """
 
-    approved_at = models.DateTimeField(null=True, blank=True, db_index=True)
-    rejected_at = models.DateTimeField(null=True, blank=True, db_index=True)
+    approved_at = models.DateTimeField(
+        _("approved_at"),
+        null=True,
+        blank=True,
+        db_index=True,
+        help_text=_("Insert the date when the item was approved"),
+    )
+    rejected_at = models.DateTimeField(
+        _("approved_at"),
+        null=True,
+        blank=True,
+        db_index=True,
+        help_text=_("Insert the date when the item was rejected"),
+    )
 
     class Meta:
         abstract = True

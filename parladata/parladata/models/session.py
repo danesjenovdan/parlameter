@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 from parladata.behaviors.models import Timestampable
 
 
@@ -15,37 +15,49 @@ class Session(Timestampable):
     ]
 
     mandate = models.ForeignKey(
-        "Mandate",
+        _("Mandate"),
         blank=False,
         null=False,
         related_name="sessions",
         on_delete=models.CASCADE,
-        help_text="The mandate of this session.",
+        help_text=_("Select the mandate of this session."),
     )
 
-    name = models.TextField(blank=False, null=False, help_text="Session name")
+    name = models.TextField(
+        _("name"),
+        blank=False,
+        null=False,
+        help_text=_("Insert the session name and number e.g. '48. nujna seja'"),
+    )
 
-    gov_id = models.TextField(blank=True, null=True, help_text="Gov website ID.")
+    gov_id = models.TextField(
+        _("gov_id"), blank=True, null=True, help_text=_("Insert the gov website ID.")
+    )
 
-    start_time = models.DateTimeField(blank=True, null=True, help_text="Start time")
+    start_time = models.DateTimeField(
+        _("start_time"), blank=True, null=True, help_text=_("Insert the start time")
+    )
 
-    end_time = models.DateTimeField(blank=True, null=True, help_text="End time")
+    end_time = models.DateTimeField(
+        _("end_time"), blank=True, null=True, help_text=_("Insert the end time")
+    )
 
     organizations = models.ManyToManyField(
         "Organization",
         related_name="sessions",
-        help_text="The organization(s) in session",
+        help_text=_("Select the organization(s) that participated in the session."),
     )
 
     classification = models.CharField(
+        _("classification"),
         max_length=128,
-        help_text="Session classification",
+        help_text=_("Select the session classification"),
         choices=CLASSIFICATIONS,
         default="unknown",
     )
 
     in_review = models.BooleanField(
-        default=False, help_text="Is session still in review?"
+        _("in_review"), default=False, help_text=_("Is session still in review?")
     )
 
     needs_editing = models.BooleanField("Session needs editing", default=False)

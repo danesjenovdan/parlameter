@@ -1,16 +1,20 @@
 import uuid
 
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 from parladata.behaviors.models import Timestampable
 
 
 # Create your models here.
 class NotificationUser(Timestampable):
-    email = models.EmailField()
+    email = models.EmailField(help_text=_("email"))
     hash = models.CharField(max_length=255)
     uuid = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
-    latest_notification_sent_at = models.DateTimeField(null=True, blank=True)
+    latest_notification_sent_at = models.DateTimeField(
+        null=True,
+        blank=True,
+        help_text=_("Date and time when the last notification was sent at"),
+    )
 
     def __str__(self):
         return self.email
@@ -18,13 +22,13 @@ class NotificationUser(Timestampable):
 
 class Keyword(Timestampable):
     class Frequency(models.TextChoices):
-        DAILY = "DAILY", "Daily"
-        WEEKLY = "WEEKLY", "Weekly"
-        MONTHLY = "MONTHLY", "Monthly"
+        DAILY = _("DAILY"), _("Daily")
+        WEEKLY = _("WEEKLY"), _("Weekly")
+        MONTHLY = _("MONTHLY"), _("Monthly")
 
     class MatchingMethods(models.TextChoices):
-        WIDE = "WIDE", "Wide"
-        NARROW = "NARROW", "Narrow"
+        WIDE = _("WIDE"), _("Wide")
+        NARROW = _("NARROW"), _("Narrow")
 
     keyword = models.CharField(max_length=255)
     user = models.ForeignKey(
@@ -49,13 +53,13 @@ class Keyword(Timestampable):
 
 class KeywordForAll(Timestampable):
     class Frequency(models.TextChoices):
-        DAILY = "DAILY", "Daily"
-        WEEKLY = "WEEKLY", "Weekly"
-        MONTHLY = "MONTHLY", "Monthly"
+        DAILY = _("DAILY"), _("Daily")
+        WEEKLY = _("WEEKLY"), _("Weekly")
+        MONTHLY = _("MONTHLY"), _("Monthly")
 
     class MatchingMethods(models.TextChoices):
-        WIDE = "WIDE", "Wide"
-        NARROW = "NARROW", "Narrow"
+        WIDE = _("WIDE"), _("Wide")
+        NARROW = _("NARROW"), _("Narrow")
 
     keyword = models.CharField(max_length=255)
     user = models.ForeignKey(

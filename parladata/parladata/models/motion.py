@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 from parladata.behaviors.models import Parsable, Taggable, Timestampable
 
 
@@ -7,18 +7,20 @@ class Motion(Timestampable, Taggable, Parsable):
     """Votings which taken place in parlament."""
 
     datetime = models.DateTimeField(
+        _("datetime"),
         blank=True,
         null=True,
-        help_text="The date and time when the motion was proposed",
+        help_text=_("Select the date and time when the motion was proposed"),
     )
 
     session = models.ForeignKey(
-        "Session",
+        _("Session"),
         blank=True,
         null=True,
         related_name="motions",
         on_delete=models.CASCADE,
-        help_text="The legislative session in which the motion was proposed",
+        verbose_name=_("Session"),
+        help_text=_("Select the legislative session in which the motion was proposed"),
     )
 
     # TODO this should be reworked possibly by allowing organizations as champions
@@ -26,15 +28,21 @@ class Motion(Timestampable, Taggable, Parsable):
         "Person", help_text="The people who proposed the motion.", blank=True
     )
 
-    summary = models.TextField(blank=True, null=True, help_text="Motion summary")
-
-    text = models.TextField(blank=True, null=True, help_text="The text of the motion")
-
-    classification = models.TextField(
-        blank=True, null=True, help_text="Motion classification"
+    summary = models.TextField(
+        _("summary"), blank=True, null=True, help_text=_("Insert the motion summary")
     )
 
-    title = models.TextField(help_text="Title of the motion")
+    text = models.TextField(
+        _("text"), blank=True, null=True, help_text=_("Insert the text of the motion")
+    )
+
+    classification = models.TextField(
+        _("classification"), blank=True, null=True, help_text=_("Motion classification")
+    )
+
+    title = models.TextField(
+        _("title"), help_text="Insert the title of the motion eg. 'Zakon o...'"
+    )
 
     # TODO rework this into a choice field
     requirement = models.TextField(
@@ -42,20 +50,25 @@ class Motion(Timestampable, Taggable, Parsable):
     )
 
     result = models.BooleanField(
-        blank=True, null=True, help_text="Did the motion pass?"
+        _("result"), blank=True, null=True, help_text=_("Did the motion pass?")
     )
 
     agenda_items = models.ManyToManyField(
-        "AgendaItem", blank=True, help_text="Agenda items", related_name="motions"
+        "AgendaItem",
+        blank=True,
+        help_text="Agenda items",
+        related_name="motions",
+        verbose_name=_("Agenda items"),
     )
 
     law = models.ForeignKey(
-        "Law",
+        _("Law"),
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
+        verbose_name=_("Law"),
         related_name="motions",
-        help_text="Piece of legislation this motion is about",
+        help_text=_("Select the piece of legislation this motion is about"),
     )
 
     gov_id = models.TextField(

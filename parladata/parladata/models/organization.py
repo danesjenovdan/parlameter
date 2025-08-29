@@ -86,30 +86,42 @@ class Organization(
         _("classification"),
         blank=True,
         null=True,
-        help_text=("An organization category, e.g. committee"),
+        help_text=_("Select an organization category, e.g. committee"),
         choices=CLASSIFICATIONS,
     )
 
     # reference to "http://popoloproject.com/schemas/organization.json#"
     parent = models.ForeignKey(
-        "Organization",
+        _("Organization"),
         blank=True,
         null=True,
         related_name="children",
         on_delete=models.CASCADE,
-        help_text=_("The organization that contains this organization"),
+        verbose_name=_("Organization"),
+        help_text=_(
+            "Select the higher tier organization that contains this organization"
+        ),
     )
 
     founding_date = models.DateTimeField(
-        blank=True, null=True, help_text=_("A date of founding")
+        _("founding_date"),
+        blank=True,
+        null=True,
+        help_text=_("Select the date of founding"),
     )
 
     dissolution_date = models.DateTimeField(
-        blank=True, null=True, help_text=_("A date of dissolution")
+        _("dissolution_date"),
+        blank=True,
+        null=True,
+        help_text=_("Select the date of dissolution"),
     )
 
     description = models.TextField(
-        blank=True, null=True, help_text="Organization description"
+        _("description"),
+        blank=True,
+        null=True,
+        help_text="Insert the description of the organization",
     )
 
     color = ColorField(default="#09a2cc")

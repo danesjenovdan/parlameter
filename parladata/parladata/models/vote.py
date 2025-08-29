@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 from parladata.behaviors.models import Taggable, Timestampable
 from parladata.models.ballot import Ballot
 from parladata.models.memberships import PersonMembership
@@ -11,20 +11,20 @@ class Vote(Timestampable, Taggable):
     name = models.TextField(blank=True, null=True, help_text="Vote name/identifier")
 
     motion = models.ForeignKey(
-        "Motion",
+        _("Motion"),
         blank=True,
         null=True,
         related_name="vote",
         on_delete=models.CASCADE,
-        help_text="The motion for which the vote took place",
+        help_text=_("Select the motion for which the vote took place"),
     )
 
-    timestamp = models.DateTimeField(blank=True, null=True, help_text="Vote time")
+    timestamp = models.DateTimeField(_("timestamp"), blank=True, null=True, help_text=_("Select the vote time."))
 
     needs_editing = models.BooleanField("Vote needs editing", default=False)
 
     result = models.BooleanField(
-        blank=True, null=True, help_text="The result of the vote"
+        _("result"), blank=True, null=True, help_text=_("Select the result of the vote.")
     )
 
     def get_option_counts(self, gov_side=None):
