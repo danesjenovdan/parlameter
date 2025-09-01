@@ -92,17 +92,17 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
 
 def send_emails():
     sending_date = datetime.now().date()
-    daily_keywords = Keyword.objects.filter(
-        notification_frequency="DAILY"
-    ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=1))
+    daily_keywords = Keyword.objects.filter(notification_frequency="DAILY").exclude(
+        latest_notification_sent_at__gt=sending_date - timedelta(days=1)
+    )
 
-    weekly_keywords = Keyword.objects.filter(
-        notification_frequency="WEEKLY"
-    ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=7))
+    weekly_keywords = Keyword.objects.filter(notification_frequency="WEEKLY").exclude(
+        latest_notification_sent_at__gt=sending_date - timedelta(days=7)
+    )
 
-    monthly_keywords = Keyword.objects.filter(
-        notification_frequency="MONTHLY"
-    ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=30))
+    monthly_keywords = Keyword.objects.filter(notification_frequency="MONTHLY").exclude(
+        latest_notification_sent_at__gt=sending_date - timedelta(days=30)
+    )
 
     keywords = daily_keywords.union(weekly_keywords).union(monthly_keywords)
 

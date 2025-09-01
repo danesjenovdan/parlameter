@@ -6,11 +6,11 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlanotifications', '0003_keywordforall'),
+        ("parlanotifications", "0003_keywordforall"),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='KeywordForAll',
+            name="KeywordForAll",
         ),
     ]
