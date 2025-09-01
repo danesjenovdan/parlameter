@@ -9,7 +9,7 @@ from sentry_sdk import capture_message
 from parlacards.solr import shorten_highlighted_content
 from parladata.models import AgendaItem, Law, Speech, Vote
 from parladata.update_utils import send_email
-from parlanotifications.models import KeywordForAll
+from parlanotifications.models import Keyword
 
 
 def solr_select(
@@ -84,7 +84,7 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
         {"data": users_docs, "uuid": user.uuid},
     )
     user.notification_sent_at = sending_date
-    KeywordForAll.objects.filter(id__in=keyword_ids).update(
+    Keyword.objects.filter(id__in=keyword_ids).update(
         latest_notification_sent_at=sending_date
     )
     user.save()
@@ -92,15 +92,15 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
 
 def send_emails():
     sending_date = datetime.now().date()
-    daily_keywords = KeywordForAll.objects.filter(
+    daily_keywords = Keyword.objects.filter(
         notification_frequency="DAILY"
     ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=1))
 
-    weekly_keywords = KeywordForAll.objects.filter(
+    weekly_keywords = Keyword.objects.filter(
         notification_frequency="WEEKLY"
     ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=7))
 
-    monthly_keywords = KeywordForAll.objects.filter(
+    monthly_keywords = Keyword.objects.filter(
         notification_frequency="MONTHLY"
     ).exclude(latest_notification_sent_at__gt=sending_date - timedelta(days=30))
 
