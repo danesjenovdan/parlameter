@@ -117,7 +117,7 @@ def save_organization_vote_unity(
     if coalition:
         organizations.append(coalition)
 
-    if playing_field.classification == "root":
+    if playing_field.classification == "house":
         organizations += list(playing_field.query_parliamentary_groups(vote.timestamp))
     else:
         organizations += list(playing_field.query_voter_groups(vote.timestamp))
