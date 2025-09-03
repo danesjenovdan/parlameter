@@ -2,6 +2,7 @@
 
 from django.db import migrations
 
+
 def move_root_org_classification(apps, schema_editor):
     Organization = apps.get_model("parladata", "Organization")
     OrganizationMembership = apps.get_model("parladata", "OrganizationMembership")
@@ -17,10 +18,14 @@ def move_root_org_classification(apps, schema_editor):
         org.classification = "house"
         org.save()
 
+
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0078_alter_law_status_alter_organization_classification_and_more'),
+        (
+            "parladata",
+            "0078_alter_law_status_alter_organization_classification_and_more",
+        ),
     ]
 
     operations = [
