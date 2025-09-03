@@ -11,7 +11,11 @@ class Link(Timestampable, Taggable):
     # max_length increased to account for lengthy Camera's URLS
     """
 
-    url = models.URLField(_("url"), max_length=350, help_text=_("Insert the URL"))
+    url = models.URLField(
+        verbose_name=_("url"),
+        max_length=350,
+        help_text=_("Insert the URL"),
+    )
 
     note = models.CharField(
         _("note"),

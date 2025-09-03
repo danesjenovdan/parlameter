@@ -19,12 +19,17 @@ class ActiveAtQuerySet(models.QuerySet):
 
 
 class Membership(Timestampable):
-    start_time = models.DateTimeField(_("start_time"), blank=True, null=True, help_text=_("Select the start time"))
+    start_time = models.DateTimeField(
+        _("start_time"), blank=True, null=True, help_text=_("Select the start time")
+    )
 
-    end_time = models.DateTimeField(_("end_time"), blank=True, null=True, help_text=_("Select the end time"))
+    end_time = models.DateTimeField(
+        _("end_time"), blank=True, null=True, help_text=_("Select the end time")
+    )
 
     organization = models.ForeignKey(
-        _("Organization"),
+        "Organization",
+        verbose_name=_("Organization"),
         blank=False,
         null=False,
         related_name="%(class)ss_children",
@@ -33,10 +38,10 @@ class Membership(Timestampable):
     )
 
     mandate = models.ForeignKey(
-        _("Mandate"),
+        "Mandate",
         blank=True,
         null=True,
-        help_text=_("Select the mandate.")
+        help_text=_("Select the mandate."),
         verbose_name=_("Mandate"),
         related_name="%(class)ss",
         on_delete=models.CASCADE,
@@ -55,42 +60,43 @@ class PersonMembership(Membership):
     """A relationship between a person and an organization."""
 
     ROLES = [
-        ("member", "member"),
-        ("deputy member", "deputy member"),
-        ("voter", "voter"),
-        ("president", "president"),
-        ("deputy", "deputy"),
-        ("leader", "leader"),
+        ("member", _("member")),
+        ("deputy member", _("deputy member")),
+        ("voter", _("voter")),
+        ("president", _("president")),
+        ("deputy", _("deputy")),
+        ("leader", _("leader")),
     ]
 
     member = models.ForeignKey(
-        _("Person"),
+        "Person",
         blank=False,
         null=False,
         on_delete=models.CASCADE,
-        verbose_name= _("Person"),
+        verbose_name=_("Person"),
         related_name="person_memberships",
         help_text=_("Choose the person to whom the membership applies."),
     )
 
     role = models.TextField(
-        _("role"),
+        _("Role"),
         blank=False,
         null=False,
         default="member",
         choices=ROLES,
-        verbose_name= _("Role"),
         help_text=_("Select the role that the person fulfills in the organization."),
     )
 
     on_behalf_of = models.ForeignKey(
-        _("Organization"),
+        "Organization",
         blank=True,
         null=True,
         on_delete=models.CASCADE,
-        verbose_name= _("Organization"),
+        verbose_name=_("Organization"),
         related_name="representatives",
-        help_text=_("Select the organization on whose behalf the person is a member of the organization."),
+        help_text=_(
+            "Select the organization on whose behalf the person is a member of the organization."
+        ),
     )
 
     def __str__(self):
@@ -123,12 +129,12 @@ class PersonMembership(Membership):
 
 class OrganizationMembership(Membership):
     member = models.ForeignKey(
-        _("Organization"),
+        "Organization",
         blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="organization_memberships",
-        verbose_name= _("Organization"),
+        verbose_name=_("Organization"),
         help_text=_("The organization that is a party to the relationship"),
     )
 

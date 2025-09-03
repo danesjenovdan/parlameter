@@ -8,53 +8,56 @@ class Ballot(Timestampable):
     """All ballots from all votes."""
 
     OPTIONS = [
-        ("for", "for"),
-        ("against", "against"),
-        ("abstain", "abstain"),
-        ("absent", "absent"),
+        ("for", _("for")),
+        ("against", _("against")),
+        ("abstain", _("abstain")),
+        ("absent", _("absent")),
         # following is a special case for slovenian
         # municipalities there are situations where
         # they check if they have a majority of yeses
         # and if they do they don't ask anyone else
         # if they are against or abstained
-        ("did not vote", "did not vote"),
+        ("did not vote", _("did not vote")),
     ]
 
     vote = models.ForeignKey(
-        _("Vote"),
+        "Vote",
         verbose_name=_("Vote"),
         help_text=_("What was the vote on"),
         related_name="ballots",
         on_delete=models.CASCADE,
     )
-
     personvoter = models.ForeignKey(
-        _("Person"),
+        "Person",
+        verbose_name=_("Person"),
+        help_text=_("Who voted"),
         blank=True,
         null=True,
-        verbose_name=_("Person"),
         on_delete=models.CASCADE,
         related_name="ballots",
-        help_text=_("Who voted"),
     )
-
     orgvoter = models.ForeignKey(
-        _("Organization"),
-        blank=True,
-        null=True,
+        "Organization",
         verbose_name=_("Organization"),
-        on_delete=models.CASCADE,
-        help_text=_("The organization that the voter represents"),
-    )
-
-    option = models.CharField(
-        _("Option"),
-        max_length=128,
+        help_text=_("Which organization voted"),
         blank=True,
         null=True,
+        on_delete=models.CASCADE,
+        related_name="ballots",
+    )
+    option = models.CharField(
+        verbose_name=_("Option"),
         help_text=_("Choose one of the possible options"),
+        blank=True,
+        null=True,
+        max_length=128,
         choices=OPTIONS,
     )
+
+    class Meta:
+        verbose_name = _("Ballot")
+        verbose_name_plural = _("Ballots")
+        ordering = ["id"]
 
     def __str__(self):
         if self.personvoter and self.orgvoter:
