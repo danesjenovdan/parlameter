@@ -12,7 +12,7 @@ local_collator = Collator.createInstance(Locale(settings.LANGUAGE_CODE))
 def get_playing_fields(timestamp):
     organization_memberships = (
         OrganizationMembership.valid_at(timestamp)
-        .filter(member__classification="root")
+        .filter(member__classification="house")
         .distinct("member")
     )
 
