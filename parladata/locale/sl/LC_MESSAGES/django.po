@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 12:06+0200\n"
+"POT-Creation-Date: 2025-09-04 10:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgstr ""
 msgid "identifier"
 msgstr ""
 
-#: parladata/models/area.py:21 parladata/models/organization.py:86
+#: parladata/models/area.py:21 parladata/models/organization.py:87
 msgid "classification"
 msgstr ""
 
@@ -165,19 +165,19 @@ msgstr ""
 msgid "The organization that is a party to the relationship"
 msgstr ""
 
-#: parladata/models/organization.py:82
+#: parladata/models/organization.py:83
 msgid "Gov website ID"
 msgstr ""
 
-#: parladata/models/organization.py:100
+#: parladata/models/organization.py:101
 msgid "The organization that contains this organization"
 msgstr ""
 
-#: parladata/models/organization.py:104
+#: parladata/models/organization.py:105
 msgid "A date of founding"
 msgstr ""
 
-#: parladata/models/organization.py:108
+#: parladata/models/organization.py:109
 msgid "A date of dissolution"
 msgstr ""
 

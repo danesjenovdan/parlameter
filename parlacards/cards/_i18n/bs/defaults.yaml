@@ -19,8 +19,7 @@ input-email: Unesite svoju e-mail adresu
 email-address: email
 notification-steps:
 - textfirst: >-
-    Odaberite riječ ili frazu koju želite pratiti. Nedugo nakon što neko izgovori željeni izraz na sjednici Parlamentarne skupštine
-    BiH ili jednog od njenih radnih tijela, obavijestit ćemo vas putem e-maila.
+    Odaberite riječ ili frazu koju želite pratiti. Nedugo nakon što neko upotrijebi odabrani izraz u govoru ili glasanju u Parlamentarnoj skupštini Bosne i Hercegovine ili se izraz pojavi tokom zakonodavnog postupka, obavijestit ćemo vas e-mailom.
 - textfirst: >-
     Odaberite metodu podudaranja okidača. Uz tačno podudaranje, obavijesti o riječima
     ili izrazima slat će se samo u obliku u kojem su napisani. Uz široko podudaranje,
@@ -47,7 +46,7 @@ notification-steps:
 add-new-trigger: Dodaj novi okidač
 to-notification-list: Na popis obavijesti
 remove: Odstrani
-confirm-delete-notification: Jesi li siguran_sigurna da želiš obrisati ovu obavijest?
+confirm-delete-notification: Želite li obrisati ovu obavijest?
 comparator-text: >-
   Zanima me, na kojim glasanjima su {same} glasali jednako, {different} ili
   različito od njih. {load}

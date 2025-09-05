@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-25 12:06+0200\n"
+"POT-Creation-Date: 2025-09-04 10:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,7 +79,7 @@ msgstr ""
 msgid "identifier"
 msgstr ""
 
-#: parladata/models/area.py:21 parladata/models/organization.py:86
+#: parladata/models/area.py:21 parladata/models/organization.py:87
 msgid "classification"
 msgstr ""
 
@@ -165,19 +165,19 @@ msgstr ""
 msgid "The organization that is a party to the relationship"
 msgstr ""
 
-#: parladata/models/organization.py:82
+#: parladata/models/organization.py:83
 msgid "Gov website ID"
 msgstr ""
 
-#: parladata/models/organization.py:100
+#: parladata/models/organization.py:101
 msgid "The organization that contains this organization"
 msgstr ""
 
-#: parladata/models/organization.py:104
+#: parladata/models/organization.py:105
 msgid "A date of founding"
 msgstr ""
 
-#: parladata/models/organization.py:108
+#: parladata/models/organization.py:109
 msgid "A date of dissolution"
 msgstr ""
 
@@ -264,7 +264,7 @@ msgstr ""
 
 #: parlanotifications/management/commands/send_utils.py:81
 msgid "V državnem zboru je bila obravnavana izbrana tema"
-msgstr ""
+msgstr "U Parlamentarnoj skupštini BiH se govorilo o odabranoj temi"
 
 #: parlanotifications/templates/add_keyword.html:6
 #: parlanotifications/templates/notification_speech.html:7
@@ -353,9 +353,15 @@ msgid ""
 "              ekipa Parlametra\n"
 "              "
 msgstr ""
+"\n"
+"              Pozdrav!<br><br>\n"
+"              Ispod ćete pronaći spominjanje odabranih riječi ili fraza iz Parlametra.<br><br>\n"
+"              Srdačan pozdrav,<br>\n"
+"              Tim Parlametra\n"
+"              "
 
 #: parlanotifications/templates/notification.html:69
-msgid "Rezultati za:"
+msgid "Ključna riječ:"
 msgstr ""
 
 #: parlanotifications/templates/notification.html:69
@@ -368,7 +374,7 @@ msgstr ""
 
 #: parlanotifications/templates/notification.html:83
 msgid "TOČKE DNEVNEGA REDA"
-msgstr ""
+msgstr "Tačka dnevnog reda"
 
 #: parlanotifications/templates/notification.html:102
 #: parlanotifications/templates/notification.html:144
@@ -379,11 +385,11 @@ msgstr "https://ba.parlameter.si/sjednica/"
 
 #: parlanotifications/templates/notification.html:102
 msgid "agenda-item-url"
-msgstr ""
+msgstr "dnevni-red"
 
 #: parlanotifications/templates/notification.html:118
 msgid "GOVORI"
-msgstr ""
+msgstr "Govori"
 
 #: parlanotifications/templates/notification.html:144
 #: parlanotifications/templates/notification_speech.html:26
@@ -392,33 +398,28 @@ msgstr "transkript"
 
 #: parlanotifications/templates/notification.html:160
 msgid "GLASOVANJA"
-msgstr ""
+msgstr "Glasanja"
 
 #: parlanotifications/templates/notification.html:179
 msgid "voting-url"
-msgstr ""
+msgstr "glasanje"
 
 #: parlanotifications/templates/notification.html:195
 msgid "NOVA ZAKONODAJA V PROCEDURI"
-msgstr ""
+msgstr "Novi zakoni u postupku donošenja"
 
 #: parlanotifications/templates/notification.html:214
-#, fuzzy
-#| msgid "https://parlameter.si/"
 msgid "https://parlameter.si"
-msgstr "https://ba.parlameter.si/"
+msgstr "https://ba.parlameter.si"
 
 #: parlanotifications/templates/notification.html:214
 msgid "legislation-url"
-msgstr ""
+msgstr "legislativa"
 
 #: parlanotifications/templates/notification.html:249
-#, fuzzy
-#| msgid "Uredi svoje nastavitve"
 msgid "Odjavi se od obvestil ali uredi svoje nastavitve"
 msgstr ""
-"Ako želite otkazati pretplatu na obavještenja ili urediti svoje postavke, to "
-"možete izvršiti"
+"Ako želite otkazati pretplatu na obavijesti ili urediti svoje postavke, to možete učiniti ovdje"
 
 #: parlanotifications/templates/notification_speech.html:12
 msgid "Spodaj najdeš omembe izbranih besed oz. besednih zvez iz Parlametra."
