@@ -49,7 +49,7 @@ class Command(BaseCommand):
 
         # fix set mandate to existing organization memberships
         for root in OrganizationMembership.objects.filter(
-            member__classification="root"
+            member__classification="house"
         ):
             OrganizationMembership.objects.filter(organization=root.member).update(
                 mandate=root.mandate

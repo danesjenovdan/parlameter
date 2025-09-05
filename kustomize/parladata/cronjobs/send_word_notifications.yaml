@@ -23,5 +23,5 @@ spec:
             command:
               - python
               - manage.py
-              - send_speech_notifications
+              - send_notifications
           restartPolicy: Never
