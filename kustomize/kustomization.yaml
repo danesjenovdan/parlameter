@@ -27,16 +27,16 @@ resources:
 images:
   - name: parladata-bosna
     newName: rg.fr-par.scw.cloud/djnd/parladata-bosna
-    newTag: 'c5bb96e55493e41ea4469ab4cd919f890989bb78'
+    newTag: '9320a34625e7db870abc4ffaaa33823d51a2a330'
   - name: parlasolr-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-bosna
-    newTag: 'c5bb96e55493e41ea4469ab4cd919f890989bb78'
+    newTag: '9320a34625e7db870abc4ffaaa33823d51a2a330'
   - name: parlacards-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlacards-bosna
-    newTag: 'c5bb96e55493e41ea4469ab4cd919f890989bb78'
+    newTag: '9320a34625e7db870abc4ffaaa33823d51a2a330'
   - name: parlasite-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlasite-bosna
-    newTag: 'c5bb96e55493e41ea4469ab4cd919f890989bb78'
+    newTag: '9320a34625e7db870abc4ffaaa33823d51a2a330'
   - name: parlassets-bosna
     newName: rg.fr-par.scw.cloud/djnd/parlassets-bosna
-    newTag: 'c5bb96e55493e41ea4469ab4cd919f890989bb78'
+    newTag: '9320a34625e7db870abc4ffaaa33823d51a2a330'
