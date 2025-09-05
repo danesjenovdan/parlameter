@@ -1,11 +1,6 @@
 card:
   title: Obavještenja
   info: >-
-    # Prijavite se na obavještenja Parlametra.
+    # Prijavite se na obavijesti Parlametra.
 
-    Pomoću obavještenja omogućavamo vam praćenje rasprava u Parlamentarnoj
-    skupštini BiH o određenim temama. Možete odabrati riječ ili izraz za
-    pretragu, odrediti nivo podudaranja i odabrati učestalost slanja
-    obavještenja. Sistem će vam automatski slati obavještenja putem
-    e-maila kada se odabrani okidač izgovori na sjednici Parlamentarne
-    skupštine BiH ili nekog od njenih radnih tijela.
+    Obavijesti vam omogućuju praćenje rasprava, glasanja i zakonodavnog postupka u Parlamentarnoj skupštini Bosne i Hercegovine. Možete odabrati riječ ili izraz za pretraživanje, odrediti nivo podudaranja i odabrati učestalost slanja obavijesti. Sistem će vam automatski slati obavijest e-mailom kada se odabrani izraz izgovori na sjednici Parlamentarne skupštine BiH ili nekog od njenih radnih tijela, odnosno kad se pojavi u nekom od glasanja ili u postupku donošenja nekog zakona.
