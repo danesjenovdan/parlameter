@@ -25,7 +25,7 @@ class Command(BaseCommand):
     mandate = Mandate.objects.get(id=2)
     from_timestamp, to_timestamp = mandate.get_time_range_from_mandate(None)
     filtered_classifications = [
-        c[0] for c in ORGANIZATION_CLASSIFICATIONS if c[0] != "pg" and c[0] != "root"
+        c[0] for c in ORGANIZATION_CLASSIFICATIONS if c[0] != "pg" and c[0] != "house"
     ]
 
     sids = Session.objects.filter(mandate=mandate).values_list("organizations", flat=True).distinct()

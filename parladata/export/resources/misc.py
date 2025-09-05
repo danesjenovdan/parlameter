@@ -190,7 +190,7 @@ class GroupsResource(ExportModelResource):
                 return Organization.objects.none()
         else:
             memberships = OrganizationMembership.objects.filter(
-                organization__classification="root"
+                organization__classificatio="house"
             ).values_list("member__id", flat=True)
             return Organization.objects.filter(id__in=memberships)
 
