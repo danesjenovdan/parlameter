@@ -29,12 +29,18 @@ class OrganizationBasicInfoSerializer(CommonCachableSerializer):
         return [{"type": link.note, "url": link.url} for link in links]
 
     def get_presidents(self, obj):
-        presidents = obj.query_members_by_role("president", self.context["request_date"])
+        presidents = obj.query_members_by_role(
+            "president",
+            self.context["request_date"],
+        )
         serializer = CommonPersonSerializer(presidents, many=True, context=self.context)
         return serializer.data
 
     def get_deputies(self, obj):
-        deputies = obj.query_members_by_role("deputy", self.context["request_date"])
+        deputies = obj.query_members_by_role(
+            "deputy",
+            self.context["request_date"],
+        )
         serializer = CommonPersonSerializer(deputies, many=True, context=self.context)
         return serializer.data
 
