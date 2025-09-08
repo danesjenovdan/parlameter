@@ -542,6 +542,7 @@ external_analysis: External analyses
 other: Other
 organization-classifications:
   root: Parliament
+  house: Parliament
   committee: Committees
   other: Other working bodies
   commission: Commission
