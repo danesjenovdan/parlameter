@@ -538,6 +538,7 @@ documents: Dokumenti
 external_analysis: Analize
 other: Drugo
 organization-classifications:
+  root: Mestni svet
   house: Mestni svet
   committee: Odbori
   other: Drugo
