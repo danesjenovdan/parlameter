@@ -160,6 +160,15 @@ export default {
       { id: 'she', icon: 'gender-f', selected: initialGenders.includes('she') },
     ];
 
+    // get current analysis or set default
+    const cardStateAnalysis = Array.isArray(cardState?.analysis)
+      ? cardState.analysis[0]
+      : cardState?.analysis;
+    const currentAnalysis =
+      cardStateAnalysis && analysesIDs.find((a) => a.id === cardStateAnalysis)
+        ? cardStateAnalysis
+        : 'demographics';
+
     // parse hidden analyses into an array
     const hiddenAnalyses = cardState?.hiddenAnalyses?.split('|') || [];
 
@@ -218,7 +227,7 @@ export default {
     return {
       analyses,
       analysesMaxValues: cardData?.data?.results?.maximum_scores || {},
-      currentAnalysis: cardState?.analysis || 'demographics',
+      currentAnalysis,
       textFilter: initialTextFilter,
       groups,
       workingBodies,
@@ -251,7 +260,10 @@ export default {
   computed: {
     cardUrl() {
       const url = common.computed.cardUrl.call(this);
-      return `${url}&analysis=${this.currentAnalysis}`;
+      const [path, search] = url.split('?');
+      const searchParams = new URLSearchParams(search);
+      searchParams.set('analysis', this.currentAnalysis);
+      return `${path}?${searchParams.toString()}`;
     },
     partiesPlaceholder() {
       return this.selectedGroupIds.length > 0

@@ -60,6 +60,12 @@ export default {
         extraParams.date = cardData.date;
       }
 
+      // Don't include altHeader in the URL
+      // it's dynamically added on server-side based on template
+      if (extraParams.altHeader) {
+        delete extraParams.altHeader;
+      }
+
       // TODO: replace with stringifyParams
       const stateParams = Object.keys(extraParams).reduce((prev, curr) => {
         return `${prev}&${encodeURIComponent(curr)}=${encodeURIComponent(
