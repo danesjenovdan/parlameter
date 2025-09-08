@@ -533,6 +533,7 @@ external_analysis: Analize
 other: Drugo
 organization-classifications:
   root: Parliament
+  house: Parliament
   committee: Committees
   other: Other working bodies
   commission: Commission

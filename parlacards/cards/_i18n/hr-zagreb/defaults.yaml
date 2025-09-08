@@ -532,6 +532,7 @@ external_analysis: Analize
 other: Drugo
 organization-classifications:
   root: Sabor
+  house: Sabor
   committee: Saborski odbori
   other: Other working bodies
   commission: Commission
