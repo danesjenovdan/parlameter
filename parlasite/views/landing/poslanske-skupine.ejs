@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- fetchCard('/misc/groups/', rootOrgId, { generator: true, "showExportButton": true }) %>
+<%- fetchCard('/misc/groups/', rootOrgId, { generator: true, hiddenAnalyses: "group_unity", "showExportButton": true }) %>
 
 <%- await include('../_partials/footer.ejs') %>
