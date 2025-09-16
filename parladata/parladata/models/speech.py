@@ -27,53 +27,67 @@ class Speech(Versionable, Timestampable, Taggable):
     speaker = models.ForeignKey(
         "Person",
         verbose_name=_("Speaker"),
+        help_text=_("Select the person making the speech"),
         on_delete=models.CASCADE,
         related_name="speeches",
-        help_text=_("Select the person making the speech"),
     )
-
     content = models.TextField(
-        _("content"), blank=False, null=False, help_text=_("The content of the speech.")
+        verbose_name=_("content"),
+        help_text=_("The content of the speech."),
+        blank=False,
+        null=False,
     )
-
     lemmatized_content = models.TextField(
-        _("lemmatized_content"),
+        verbose_name=_("lemmatized_content"),
+        help_text=_("Lemmatized words spoken"),
         blank=True,
         null=True,
-        help_text=_("Lemmatized words spoken"),
     )
-
     order = models.IntegerField(
-        _("order"), blank=True, null=True, help_text="Order of the speech"
+        verbose_name=_("order"),
+        help_text=_("Order of the speech"),
+        blank=True,
+        null=True,
     )
-
     session = models.ForeignKey(
         "Session",
         verbose_name=_("Session"),
+        help_text=_("Select the session of the speech."),
         blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="speeches",
-        help_text=_("Select the session of the speech."),
     )
-
     start_time = models.DateTimeField(
-        _("start_time"), blank=True, null=True, help_text=_("Select the start time")
+        verbose_name=_("start_time"),
+        help_text=_("Select the start time"),
+        blank=True,
+        null=True,
     )
-
     end_time = models.DateTimeField(
-        _("end_time"), blank=True, null=True, help_text=_("Select the end time")
+        verbose_name=_("end_time"),
+        help_text=_("Select the end time"),
+        blank=True,
+        null=True,
     )
-
     agenda_items = models.ManyToManyField(
-        "AgendaItem", blank=True, help_text="Agenda items", related_name="speeches"
+        "AgendaItem",
+        verbose_name=_("Agenda items"),
+        help_text=_("Select agenda items"),
+        blank=True,
+        related_name="speeches",
     )
-
     motions = models.ManyToManyField(
-        _("Motion"), blank=True, help_text="Votes on speech"
+        "Motion",
+        verbose_name=_("Motions"),
+        help_text=_("Select motions related to the speech"),
+        blank=True,
     )
-
     objects = ValidSpeechesManager()
+
+    class Meta:
+        verbose_name = "Speech"
+        verbose_name_plural = "Speeches"
 
     def __str__(self):
         if self.session:
@@ -113,6 +127,3 @@ class Speech(Versionable, Timestampable, Taggable):
     @property
     def parliamentary_group(self):
         return self.speaker.parliamentary_group_on_date(datetime=self.start_time)
-
-    class Meta:
-        verbose_name_plural = "Speeches"

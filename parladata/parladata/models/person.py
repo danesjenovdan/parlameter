@@ -47,36 +47,36 @@ class Person(Timestampable, Parsable, Sluggable, VersionableFieldsOwner):
     """Model for all people that are somehow connected to the parlament."""
 
     date_of_birth = models.DateField(
-        _("date of birth"),
-        blank=True,
-        null=True,
+        verbose_name=_("date of birth"),
         help_text=_("Select the date of birth"),
+        blank=True,
+        null=True,
     )
-
     date_of_death = models.DateField(
-        _("date of death"),
-        blank=True,
-        null=True,
+        verbose_name=_("date of death"),
         help_text=_("Select the date of death"),
-    )
-
-    image = models.ImageField(
-        _("image (url)"),
         blank=True,
         null=True,
-        help_text=_("Insert a portrait photograph that focuses on the person's face."),
     )
-
+    image = models.ImageField(
+        verbose_name=_("image (url)"),
+        help_text=_("Insert a portrait photograph that focuses on the person's face."),
+        blank=True,
+        null=True,
+    )
     districts = models.ManyToManyField(
         "Area",
-        blank=True,
-        help_text=_("Select the person's district"),
-        related_name="candidates",
         verbose_name=_("Area"),
+        help_text=_("Select the person's district"),
+        blank=True,
+        related_name="candidates",
     )
-
     # TODO consider this, maybe we don't need it
-    active = models.BooleanField(_("active"), default=True)
+    active = models.BooleanField(
+        verbose_name=_("active"),
+        help_text=_("Is this person active?"),
+        default=True,
+    )
 
     objects = ExtendedManager()
 
@@ -231,7 +231,7 @@ class Person(Timestampable, Parsable, Sluggable, VersionableFieldsOwner):
 
     def __str__(self):
         return f"{self.id}: {self.name}"
-
+    
     class Meta:
         verbose_name = "Person"
         verbose_name_plural = "People"

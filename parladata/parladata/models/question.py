@@ -1,11 +1,12 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from parladata.behaviors.models import Timestampable
 
 QUESTION_TYPES = [
-    ("question", "question"),
-    ("initiative", "initiative"),
-    ("unknown", "unknown"),
+    ("question", _("question")),
+    ("initiative", _("initiative")),
+    ("unknown", _("unknown")),
 ]
 
 
@@ -13,104 +14,102 @@ class Question(Timestampable):
     """All questions from members of parlament."""
 
     session = models.ForeignKey(
-        _("Session"),
+        "Session",
+        verbose_name=_("session"),
+        help_text=_("The session this question belongs to."),
         blank=True,
         null=True,
         on_delete=models.CASCADE,
-        verbose_name=_("Session"),
-        help_text=_("Select the session this question belongs to."),
     )
 
     mandate = models.ForeignKey(
-        _("Mandate"),
+        "Mandate",
+        verbose_name=_("mandate"),
+        help_text=_("The mandate of this question."),
         blank=True,
         null=True,
         related_name="questions",
         on_delete=models.SET_NULL,
-        verbose_name=_("Mandate"),
-        help_text=_("Select the mandate of this question."),
     )
 
     timestamp = models.DateTimeField(
-        _("timestamp"),
+        verbose_name=_("date of the question."),
+        help_text=_("Date of the question."),
         blank=True,
         null=True,
-        help_text=_("Select the date of the question."),
     )
 
     answer_timestamp = models.DateTimeField(
-        _("answer_timestamp"),
+        verbose_name=_("date of the answer."),
+        help_text=_("Date of answer the question."),
         blank=True,
         null=True,
-        help_text=_("Select the date of the answer to the question."),
     )
 
     title = models.TextField(
-        _("title"),
+        verbose_name=_("title"),
+        help_text=_("Title name as written on dz-rs.si"),
         blank=True,
         null=True,
-        help_text=_("Insert the title as written on dz-rs.si"),
     )
 
     person_authors = models.ManyToManyField(
-        "person_authors",
+        "Person",
+        verbose_name=_("authors"),
+        help_text=_("The persons (MP) who asked the question."),
         blank=True,
         related_name="authored_questions",
-        verbose_name=_("Person authors"),
-        help_text=_("Select the persons (MP) who asked the question."),
     )
 
     organization_authors = models.ManyToManyField(
-        "organization_authors",
+        "Organization",
+        verbose_name=_("organization authors"),
+        help_text=_("The organizations who asked the question."),
         blank=True,
-        help_text=_("Select the organization that asked the question."),
         related_name="questions_org_author",
-        verbose_name=_("Organization authors"),
     )
 
     recipient_people = models.ManyToManyField(
-        "recipient_people",
+        "Person",
+        verbose_name=_("recipient people"),
+        help_text=_("Recipient person (if it's a person)."),
         blank=True,
-        help_text=_(
-            "Select the recipient person (if the questions was addressed to a person)."
-        ),
         related_name="received_questions",
-        verbose_name=_("Recipient people"),
     )
 
     recipient_organizations = models.ManyToManyField(
-        "recipient_organizations",
+        "Organization",
+        verbose_name=_("recipient organizations"),
+        help_text=_("Recipient organization (if it's an organization)."),
         blank=True,
-        help_text=_(
-            "Select the recipient organization (if the question was addressed to an organization)."
-        ),
         related_name="questions_org",
-        verbose_name=_("Recipient organization"),
     )
 
     recipient_text = models.TextField(
-        _("recipient_text"),
+        verbose_name=_("recipient name"),
+        help_text=_("Recipient name as written on dz-rs.si"),
         blank=True,
         null=True,
-        help_text=_("Insert the recipient name as written on dz-rs.si"),
     )
 
     type_of_question = models.TextField(
-        _("type_of_question"),
+        verbose_name=_("type of question"),
+        help_text=_("Type of question."),
         blank=True,
         null=True,
-        help_text=_("Select the type of question."),
         choices=QUESTION_TYPES,
     )
 
     gov_id = models.TextField(
-        _("gov_id"),
+        verbose_name=_("government ID"),
+        help_text=_("Unique identifier of question on government site."),
         blank=True,
         null=True,
-        help_text=_(
-            "Insert the unique identifier of question, found on the government site."
-        ),
     )
+
+    class Meta:
+        verbose_name = _("question")
+        verbose_name_plural = _("questions")
 
     def __str__(self):
         person_author_names = " ".join(
@@ -129,40 +128,41 @@ class Answer(Timestampable):
     """All questions from members of parlament."""
 
     question = models.ForeignKey(
-        _("Question"),
+        "Question",
+        verbose_name=_("question"),
+        help_text=_("The question this answer belongs to."),
         on_delete=models.CASCADE,
-        verbose_name=_("Question"),
-        help_text=_("Select the question this answer belongs to."),
         related_name="answers",
     )
 
     timestamp = models.DateTimeField(
-        _("timestamp"), blank=True, null=True, help_text="Date of the question."
+        verbose_name=_("date of the answer."),
+        help_text=_("Date of the answer."),
+        blank=True,
+        null=True,
     )
 
     text = models.TextField(
-        _("text"),
+        verbose_name=_("text"),
+        help_text=_("as written on parlament page."),
         blank=True,
         null=True,
-        help_text="Insert the title as written on dz-rs.si",
     )
 
     person_authors = models.ManyToManyField(
         "Person",
+        verbose_name=_("authors"),
+        help_text=_("The persons (MP) who answered the question."),
         blank=True,
         related_name="authored_ansewrs",
-        verbose_name=_("Person"),
-        help_text=_("Select the persons (MP) who asked the question."),
     )
 
     organization_authors = models.ManyToManyField(
         "Organization",
+        verbose_name=_("organization authors"),
+        help_text=_("The organizations who answered the question."),
         blank=True,
-        help_text=_(
-            "Select the recipient organization (if the question was addressed to an organization)."
-        ),
         related_name="answers_org_author",
-        verbose_name=_("Organization"),
     )
 
     def __str__(self):

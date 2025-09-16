@@ -8,24 +8,42 @@ from parladata.models.memberships import PersonMembership
 class Vote(Timestampable, Taggable):
     """Votings which taken place in parlament."""
 
-    name = models.TextField(blank=True, null=True, help_text="Vote name/identifier")
-
+    name = models.TextField(
+        verbose_name=_("name"),
+        help_text=_("Vote name/identifier"),
+        blank=True,
+        null=True,
+    )
     motion = models.ForeignKey(
-        _("Motion"),
+        "Motion",
+        verbose_name=_("Motion"),
+        help_text=_("Select the motion for which the vote took place"),
         blank=True,
         null=True,
         related_name="vote",
         on_delete=models.CASCADE,
-        help_text=_("Select the motion for which the vote took place"),
     )
-
-    timestamp = models.DateTimeField(_("timestamp"), blank=True, null=True, help_text=_("Select the vote time."))
-
-    needs_editing = models.BooleanField("Vote needs editing", default=False)
-
+    timestamp = models.DateTimeField(
+        verbose_name=_("timestamp"),
+        help_text=_("Select the vote time."),
+        blank=True,
+        null=True,
+    )
+    needs_editing = models.BooleanField(
+        verbose_name=_("Vote needs editing"),
+        help_text=_("Indicates if the vote needs editing."),
+        default=False,
+    )
     result = models.BooleanField(
-        _("result"), blank=True, null=True, help_text=_("Select the result of the vote.")
+        verbose_name=_("result"),
+        help_text=_("Select the result of the vote."),
+        blank=True,
+        null=True,
     )
+
+    class Meta:
+        verbose_name = _("Vote")
+        verbose_name_plural = _("Votes")
 
     def get_option_counts(self, gov_side=None):
         """
