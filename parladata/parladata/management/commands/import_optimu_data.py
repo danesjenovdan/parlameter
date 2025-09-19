@@ -92,7 +92,7 @@ class Command(BaseCommand):
                 owner=default,
                 value="default",
             ).save()
-            playing_field = Organization(classification="root")
+            playing_field = Organization(classification="house")
             playing_field.save()
             OrganizationName(
                 owner=playing_field,

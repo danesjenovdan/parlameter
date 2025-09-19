@@ -168,6 +168,7 @@ LANGUAGES = [
     ("hr", "Croatian"),
     ("sl", "Slovenščina"),
     ("en", "English"),
+    ("hr-ZG", "Zagreb"),
 ]
 
 LANGUAGE_CODE = os.getenv("PARLAMETER_LANGUAGE_CODE", "sl")
