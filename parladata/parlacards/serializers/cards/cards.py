@@ -197,7 +197,7 @@ class PersonMembershipCardSerializer(PersonScoreCardSerializer):
         filtered_classifications = [
             classification[0]
             for classification in filter(
-                lambda x: x[0] != "pg" and x[0] != "root", ORGANIZATION_CLASSIFICATIONS
+                lambda x: x[0] != "pg" and x[0] != "house", ORGANIZATION_CLASSIFICATIONS
             )
         ]
 
@@ -1186,7 +1186,7 @@ class ToolsUnityCardSerializer(CardSerializer):
         filtered_classifications = [
             c[0]
             for c in ORGANIZATION_CLASSIFICATIONS
-            if c[0] != "root" and c[0] != "pg"
+            if c[0] != "house" and c[0] != "pg"
         ]
 
         motion_organizations__ids = (

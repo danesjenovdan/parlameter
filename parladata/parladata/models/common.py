@@ -32,7 +32,7 @@ class Mandate(models.Model):
             timestamp = datetime.now()
 
         memberships = OrganizationMembership.valid_at(timestamp).filter(
-            mandate=self, member__classification="root"
+            mandate=self, member__classification="house"
         )
         if not memberships:
             raise NoMembershipException(
@@ -53,7 +53,7 @@ class Mandate(models.Model):
             valid_memberships = PersonMembership.objects.all()
 
         person_memberships = valid_memberships.filter(
-            member=person, organization__classification="root"
+            member=person, organization__classification="house"
         ).first()
         if person_memberships:
             return person_memberships.organization
