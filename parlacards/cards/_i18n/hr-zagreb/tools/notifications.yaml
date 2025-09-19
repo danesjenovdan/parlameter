@@ -1,4 +1,6 @@
 card:
-  title: Obvestila
+  title: Obavijesti
   info: >-
-    # todo-tools/notifications
+    # Prijavite se na obavijesti Parlametra.
+
+    Obavijesti vam omogućuju praćenje rasprava, glasanja i postupka donošenja svake pojedine odluke u Gradskoj skupštini. Možete odabrati riječ ili izraz za pretraživanje, odrediti razinu podudaranja i odabrati učestalost slanja obavijesti. Sustav će vam automatski slati obavijest e-mailom kada se odabrani izraz izgovori na sjednici Gradske skupštine ili nekog od njezinih radnih tijela, odnosno kad se pojavi u nekom od glasanja ili u skupštinskom postupku donošenja neke odluke.

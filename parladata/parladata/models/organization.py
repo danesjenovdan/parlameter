@@ -21,6 +21,7 @@ from parladata.models.versionable_properties import OrganizationName
 
 CLASSIFICATIONS = [
     ("root", "root"),
+    ("house", "house"),
     ("pg", "pg"),
     ("commission", "commission"),
     ("committee", "committee"),
@@ -307,7 +308,7 @@ class Organization(
         return (
             OrganizationMembership.valid_at(timestamp)
             .filter(
-                organization__classification="root",
+                organization__classification="house",
                 member=self,
             )
             .first()
@@ -319,7 +320,7 @@ class Organization(
 
         membership_at = (
             OrganizationMembership.objects.active_at(timestamp)
-            .filter(member=self, organization__classification="root")
+            .filter(member=self, organization__classification="house")
             .order_by("end_time")
             .last()
         )
@@ -329,7 +330,7 @@ class Organization(
         else:
             membership_at = (
                 OrganizationMembership.objects.filter(
-                    member=self, organization__classification="root"
+                    member=self, organization__classification="house"
                 )
                 .order_by("end_time")
                 .last()
