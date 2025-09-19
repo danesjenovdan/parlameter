@@ -93,7 +93,7 @@ class SessionsCardSerializer(CardSerializer):
 
         # filter by organization classifications (show root by default)
         classification_filter = (
-            self.context.get("GET", {}).get("classification", None) or "root"
+            self.context.get("GET", {}).get("classification", None) or "house"
         )
         classifications = classification_filter.split(",")
 

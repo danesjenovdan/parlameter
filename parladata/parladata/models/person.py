@@ -185,7 +185,7 @@ class Person(Timestampable, Parsable, Sluggable, VersionableFieldsOwner):
 
         membership_at = (
             PersonMembership.objects.active_at(timestamp)
-            .filter(member=self, role="voter", organization__classification="root")
+            .filter(member=self, role="voter", organization__classification="house")
             .order_by("end_time")
             .last()
         )
@@ -206,7 +206,7 @@ class Person(Timestampable, Parsable, Sluggable, VersionableFieldsOwner):
             else:
                 membership_at = (
                     PersonMembership.objects.filter(
-                        member=self, role="voter", organization__classification="root"
+                        member=self, role="voter", organization__classification="house"
                     )
                     .order_by("end_time")
                     .last()
