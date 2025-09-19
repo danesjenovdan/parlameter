@@ -107,15 +107,15 @@ export default {
         return organization.classification != null;
       })
       .sort((a, b) => {
-        // make sure `root` comes first and `other` comes last
+        // make sure `house` comes first and `other` comes last
         if (a.classification !== b.classification) {
-          if (a.classification === 'root') {
+          if (a.classification === 'house') {
             return -1;
           }
           if (a.classification === 'other') {
             return 1;
           }
-          if (b.classification === 'root') {
+          if (b.classification === 'house') {
             return 1;
           }
           if (b.classification === 'other') {

@@ -1119,7 +1119,7 @@ def delete_overlayed_memberships():
 
 
 def fix_playing_fields_mandates():
-    for root in OrganizationMembership.objects.filter(member__classification="root"):
+    for root in OrganizationMembership.objects.filter(member__classification="house"):
         OrganizationMembership.objects.filter(organization=root.member).update(
             mandate=root.mandate
         )

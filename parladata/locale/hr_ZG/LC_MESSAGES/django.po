@@ -1,0 +1,423 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-04 10:49+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: parlacards/admin_views.py:29
+msgid "Calculation of TFIDF for members is completed"
+msgstr ""
+
+#: parlacards/admin_views.py:35
+msgid "Calculation of TFIDF for organizations is completed"
+msgstr ""
+
+#: parlacards/admin_views.py:44
+msgid "Calculation of TFIDF for session is completed: "
+msgstr ""
+
+#: parladata/behaviors/models.py:65
+msgid "row valid from"
+msgstr ""
+
+#: parladata/behaviors/models.py:68
+msgid "row valid to"
+msgstr ""
+
+#: parladata/forms.py:133
+msgid "Time intervals are in intersection"
+msgstr ""
+
+#: parladata/forms.py:139
+msgid "End time"
+msgstr ""
+
+#: parladata/forms.py:140
+msgid "End time of the membership"
+msgstr ""
+
+#: parladata/management/commands/import_sentio_data.py:154
+msgid "Pri parsanju sentio datoteke smo naleteli na potencialne napake"
+msgstr ""
+
+#: parladata/management/commands/public_questions_notifications.py:27
+msgid "New public questions for approval in parameter "
+msgstr ""
+
+#: parladata/management/commands/public_questions_notifications.py:46
+msgid "Question from Parlameter"
+msgstr "Pitanje Parlametra"
+
+#: parladata/management/commands/run_tasks.py:45
+msgid "Completed tasks at the Parlameter "
+msgstr ""
+
+#: parladata/models/area.py:10 parladata/models/media.py:9
+msgid "name"
+msgstr ""
+
+#: parladata/models/area.py:10
+msgid "Area name"
+msgstr ""
+
+#: parladata/models/area.py:13
+msgid "identifier"
+msgstr ""
+
+#: parladata/models/area.py:21 parladata/models/organization.py:87
+msgid "classification"
+msgstr ""
+
+#: parladata/models/link.py:14 parladata/models/media.py:15
+#: parladata/models/media.py:47
+msgid "url"
+msgstr ""
+
+#: parladata/models/link.py:14
+msgid "A URL"
+msgstr ""
+
+#: parladata/models/link.py:17
+msgid "note"
+msgstr ""
+
+#: parladata/models/link.py:21
+msgid "A note, e.g. 'Wikipedia page'"
+msgstr ""
+
+#: parladata/models/media.py:10
+msgid "Medium name"
+msgstr ""
+
+#: parladata/models/media.py:16
+msgid "Medium URL"
+msgstr ""
+
+#: parladata/models/media.py:21 parladata/models/media.py:53
+msgid "uri"
+msgstr ""
+
+#: parladata/models/media.py:22
+msgid "Medium URI"
+msgstr ""
+
+#: parladata/models/media.py:26 parladata/models/person.py:67
+msgid "active"
+msgstr ""
+
+#: parladata/models/media.py:41
+msgid "title"
+msgstr ""
+
+#: parladata/models/media.py:42
+msgid "Report title"
+msgstr ""
+
+#: parladata/models/media.py:48
+msgid "Report URL"
+msgstr ""
+
+#: parladata/models/media.py:54
+msgid "Article URI"
+msgstr ""
+
+#: parladata/models/memberships.py:32
+msgid "The organization that the member belongs to."
+msgstr ""
+
+#: parladata/models/memberships.py:39
+msgid "Mandate"
+msgstr ""
+
+#: parladata/models/memberships.py:71
+msgid "The person who is a party to the relationship"
+msgstr ""
+
+#: parladata/models/memberships.py:75
+msgid "role"
+msgstr ""
+
+#: parladata/models/memberships.py:80
+msgid "The role that the person fulfills in the organization"
+msgstr ""
+
+#: parladata/models/memberships.py:90
+msgid ""
+"The organization on whose behalf the person is a party to the relationship"
+msgstr ""
+
+#: parladata/models/memberships.py:129
+msgid "The organization that is a party to the relationship"
+msgstr ""
+
+#: parladata/models/organization.py:83
+msgid "Gov website ID"
+msgstr ""
+
+#: parladata/models/organization.py:101
+msgid "The organization that contains this organization"
+msgstr ""
+
+#: parladata/models/organization.py:105
+msgid "A date of founding"
+msgstr ""
+
+#: parladata/models/organization.py:109
+msgid "A date of dissolution"
+msgstr ""
+
+#: parladata/models/person.py:50
+msgid "date of birth"
+msgstr ""
+
+#: parladata/models/person.py:50
+msgid "A date of birth"
+msgstr ""
+
+#: parladata/models/person.py:54
+msgid "date of death"
+msgstr ""
+
+#: parladata/models/person.py:54
+msgid "A date of death"
+msgstr ""
+
+#: parladata/models/person.py:58
+msgid "image (url)"
+msgstr ""
+
+#: parladata/models/person.py:58
+msgid "A image of a head shot"
+msgstr ""
+
+#: parladata/templates/admin/parladata/parliamentarygroup/change_list.html:5
+#: parladata/templates/admin/parladata/parliamentmember/change_list.html:5
+msgid "Run TFIDF"
+msgstr ""
+
+#: parladata/templates/daily_notification.html:6
+msgid "New updates on Parlameter"
+msgstr ""
+
+#: parladata/templates/data_validation_email.html:6
+msgid "Parladata data validator"
+msgstr ""
+
+#: parladata/templates/email_on_tasks_compeleted.html:6
+msgid "Completed tasks at the Parlameter"
+msgstr ""
+
+#: parladata/templates/error_notification.html:6
+msgid "Potencialne napake pri prasanju sentio datoteka na Parlametru."
+msgstr ""
+
+#: parladata/templates/public_question_email.html:5
+msgid "Question for: "
+msgstr "Pitanje za: "
+
+#: parladata/templates/public_question_email.html:6
+msgid "The following question was asked to you on the Parlameter platform."
+msgstr ""
+"Poštovana zastupnice/ poštovani zastupniče Hrvatskog sabora, prosljeđujemo "
+"Vam pitanje koje nam je stiglo od građana ili građanke preko opcije \"Pitaj "
+"zastupnika\" na našu platformu Parlametar.hr."
+
+#: parladata/templates/public_question_email.html:7
+msgid "Please reply to this email and we will publish your reply."
+msgstr ""
+"Molimo Vas da odgovor na pitanje pošaljete na ovaj e-mail s kojega Vam se "
+"obraćamo kako bismo ga mogli objaviti na našoj platformi."
+
+#: parladata/templates/public_question_email.html:13
+msgid "Thank you in advance"
+msgstr "Srdačno hvala,"
+
+#: parladata/templates/public_question_email.html:14
+msgid "Team Parlameter"
+msgstr "Tim Parlametra"
+
+#: parladata/update_utils.py:129
+msgid "New data for edit in parlameter "
+msgstr ""
+
+#: parladata/views.py:39
+msgid "Merge people to person with ID: "
+msgstr ""
+
+#: parladata/views.py:123
+msgid "Merge organizations"
+msgstr ""
+
+#: parlanotifications/management/commands/send_utils.py:81
+msgid "V državnem zboru je bila obravnavana izbrana tema"
+msgstr "U Gradskoj skupštini se govorilo o odabranoj temi"
+
+#: parlanotifications/templates/add_keyword.html:6
+#: parlanotifications/templates/notification_speech.html:7
+msgid "Obvestila"
+msgstr "Obavijesti"
+
+#: parlanotifications/templates/add_keyword.html:10
+#: parlanotifications/templates/notification_speech.html:11
+msgid "Živjo"
+msgstr "Pozdrav"
+
+#: parlanotifications/templates/add_keyword.html:11
+msgid "Na ta e-naslov je nekdo prijavil Parlameter obvestila za ključno besedo"
+msgstr ""
+"Ova adresa e-pošte koristi se za prijavu na obavijesti Parlametra, odnosno "
+"za ključnu riječ ili izraz"
+
+#: parlanotifications/templates/add_keyword.html:12
+msgid "Če si bil/-a to ti, potrdi naročilo s klikom na povezavo:"
+msgstr "Ako želite potvrditi svoju registraciju,"
+
+#: parlanotifications/templates/add_keyword.html:13
+msgid ""
+"https://parlacards-slovenija.lb.djnd.si/tools/notifications/?"
+"id=undefined&no_card_data=true&locale=sl&template=share&action=confirm"
+msgstr ""
+"https://gledaj.10.parlametar.hr/tools/notifications/?"
+"id=undefined&no_card_data=true&locale=hr&template=share&action=confirm"
+
+#: parlanotifications/templates/add_keyword.html:13
+msgid "klikni tukaj"
+msgstr "kliknite ovdje"
+
+#: parlanotifications/templates/add_keyword.html:14
+#: parlanotifications/templates/notification_speech.html:13
+msgid "Srečno"
+msgstr "Srdačan pozdrav"
+
+#: parlanotifications/templates/add_keyword.html:15
+#: parlanotifications/templates/notification_speech.html:14
+msgid "ekipa Parlametra"
+msgstr "Tim Parlametra"
+
+#: parlanotifications/templates/add_keyword.html:18
+#: parlanotifications/templates/notification.html:243
+#: parlanotifications/templates/notification_speech.html:32
+msgid "https://parlameter.si/"
+msgstr "https://zagreb.parlametar.hr/"
+
+#: parlanotifications/templates/add_keyword.html:19
+#: parlanotifications/templates/notification.html:243
+#: parlanotifications/templates/notification_speech.html:33
+msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png"
+msgstr "https://cdn.zagreb.parlametar.hr/img/logo-parlameter-mejl.png"
+
+#: parlanotifications/templates/add_keyword.html:22
+#: parlanotifications/templates/notification_speech.html:38
+msgid "Uredi svoje nastavitve"
+msgstr ""
+"Ako želite otkazati pretplatu na obavijesti ili urediti svoje postavke, to "
+"možete učiniti"
+
+#: parlanotifications/templates/add_keyword.html:22
+#: parlanotifications/templates/notification.html:250
+#: parlanotifications/templates/notification_speech.html:38
+msgid ""
+"https://parlacards-slovenija.lb.djnd.si/tools/notifications/?"
+"id=undefined&no_card_data=true&locale=sl&template=share&action=list"
+msgstr ""
+"https://gledaj.zagreb.parlametar.hr/alati/obavijesti/?"
+"id=undefined&no_card_data=true&locale=hr-zagreb&template=share&action=list"
+
+#: parlanotifications/templates/add_keyword.html:22
+#: parlanotifications/templates/notification.html:250
+#: parlanotifications/templates/notification_speech.html:38
+msgid "tukaj"
+msgstr "ovdje"
+
+#: parlanotifications/templates/notification.html:36
+msgid ""
+"\n"
+"              Pozdrav!<br><br>\n"
+"              Ispod ćete pronaći spominjanje odabranih riječi ili fraza iz Parlametra.<br><br>\n"
+"              Srdačan pozdrav,<br>\n"
+"              Tim Parlametra\n"
+"              "
+msgstr ""
+
+#: parlanotifications/templates/notification.html:69
+msgid "Rezultati za:"
+msgstr "Ključna riječ:"
+
+#: parlanotifications/templates/notification.html:69
+msgid "»"
+msgstr ""
+
+#: parlanotifications/templates/notification.html:69
+msgid "«"
+msgstr ""
+
+#: parlanotifications/templates/notification.html:83
+msgid "TOČKE DNEVNEGA REDA"
+msgstr "Točka dnevnog reda"
+
+#: parlanotifications/templates/notification.html:102
+#: parlanotifications/templates/notification.html:144
+#: parlanotifications/templates/notification.html:179
+#: parlanotifications/templates/notification_speech.html:26
+msgid "https://parlameter.si/seja/"
+msgstr "https://parlametar.hr/sjednica/"
+
+#: parlanotifications/templates/notification.html:102
+msgid "agenda-item-url"
+msgstr "dnevni-red"
+
+#: parlanotifications/templates/notification.html:118
+msgid "GOVORI"
+msgstr "Govori"
+
+#: parlanotifications/templates/notification.html:144
+#: parlanotifications/templates/notification_speech.html:26
+msgid "transkript-url"
+msgstr "transkript"
+
+#: parlanotifications/templates/notification.html:160
+msgid "GLASOVANJA"
+msgstr "Glasanja"
+
+#: parlanotifications/templates/notification.html:179
+msgid "voting-url"
+msgstr "glasanje"
+
+#: parlanotifications/templates/notification.html:195
+msgid "NOVA ZAKONODAJA V PROCEDURI"
+msgstr "Nove odluke u postupku donošenja"
+
+#: parlanotifications/templates/notification.html:214
+msgid "https://parlameter.si"
+msgstr "https://zagreb.parlametar.hr"
+
+#: parlanotifications/templates/notification.html:214
+msgid "legislation-url"
+msgstr "odluke"
+
+#: parlanotifications/templates/notification.html:249
+msgid "Odjavi se od obvestil ali uredi svoje nastavitve"
+msgstr ""
+"Ako želite otkazati pretplatu na obavijesti ili urediti svoje postavke, to možete učiniti ovdje."
+
+#: parlanotifications/templates/notification_speech.html:12
+msgid "Spodaj najdeš omembe izbranih besed oz. besednih zvez iz Parlametra."
+msgstr ""
+"Ispod ćete pronaći spominjanje odabranih riječi ili fraza iz Parlametra."
+
+#: parlanotifications/views.py:27
+msgid "Parlameter obvestila - potrditev"
+msgstr "Potvrdite pretplatu na obavijesti"
