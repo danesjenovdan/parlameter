@@ -101,6 +101,15 @@ export default {
   data() {
     const { cardState, cardData } = this.$root.$options.contextData;
 
+    // get current analysis or set default
+    const cardStateAnalysis = Array.isArray(cardState?.analysis)
+      ? cardState.analysis[0]
+      : cardState?.analysis;
+    const currentAnalysis =
+      cardStateAnalysis && analysesIDs.find((a) => a.id === cardStateAnalysis)
+        ? cardStateAnalysis
+        : 'seat_count';
+
     // parse hidden analyses into an array
     const hiddenAnalyses = cardState?.hiddenAnalyses?.split('|') || [];
 
@@ -122,14 +131,17 @@ export default {
 
     return {
       results: cardData?.data?.results || [],
-      currentAnalysis: cardState?.analysis || 'seat_count',
+      currentAnalysis,
       analyses,
     };
   },
   computed: {
     cardUrl() {
       const url = common.computed.cardUrl.call(this);
-      return `${url}&analysis=${this.currentAnalysis}`;
+      const [path, search] = url.split('?');
+      const searchParams = new URLSearchParams(search);
+      searchParams.set('analysis', this.currentAnalysis);
+      return `${path}?${searchParams.toString()}`;
     },
     headerConfig() {
       return defaultHeaderConfig(this, {

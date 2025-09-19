@@ -539,6 +539,7 @@ external_analysis: Analize
 other: Drugo
 organization-classifications:
   root: Državni zbor
+  house: Državni zbor
   committee: Odbori
   other: Drugo
   commission: Komisije
