@@ -49,7 +49,7 @@ notification-steps:
 add-new-trigger: Dodaj nov sprožilec
 to-notification-list: Na seznam obvestil
 remove: Odstrani
-confirm-delete-notification: Ali si prepričan_a, da želiš odstraniti to obvestilo?
+confirm-delete-notification: Ali želiš odstraniti to obvestilo?
 comparator-text: >-
   Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa
   drugače od njih. {load}
@@ -539,6 +539,7 @@ external_analysis: Analize
 other: Drugo
 organization-classifications:
   root: Mestni svet
+  house: Mestni svet
   committee: Odbori
   other: Drugo
   commission: Komisije

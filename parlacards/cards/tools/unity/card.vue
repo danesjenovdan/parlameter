@@ -142,10 +142,10 @@ export default {
     const monthsFilter = String(cardState?.months || '').split(',');
 
     const sortGroupsFunc = (a, b) => {
-      if (a.classification === 'root') {
+      if (a.classification === 'house') {
         return -1;
       }
-      if (b.classification === 'root') {
+      if (b.classification === 'house') {
         return 1;
       }
       if (a.classification === 'coalition') {

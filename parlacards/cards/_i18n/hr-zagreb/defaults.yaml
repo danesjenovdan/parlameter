@@ -19,7 +19,7 @@ input-email: Unesite svoju e-mail adresu
 email-address: email
 notification-steps:
   - textfirst: >-
-      Odaberite riječ ili frazu koju želite pratiti. Nedugo nakon što željeni izraz netko izgovori na sjednici Hrvatskog sabora ili nekog od njegovih radnih tijela, obavijestit ćemo vas putem e-maila.
+      Odaberite riječ ili frazu koju želite pratiti. Nedugo nakon što netko upotrijebi odabrani izraz u govoru ili glasanju u Gradskoj skupštini ili se izraz pojavi u skupštinskom postupku donošenja odluka, obavijestit ćemo vas e-mailom.
   - textfirst: Odaberite metodu podudaranja okidača. Uz točno podudaranje, o riječima ili izrazima obavještavat će se samo u obliku u kojem su napisani. Uz široko podudaranje uzet će se u obzir i neke varijacije odabranih riječi ili izraza, kao što su deklinacije, konjugacije ili srodni izrazi.
     firstbullet: "Točno podudaranje"
     secondbullet: "Široko podudaranje"
@@ -532,6 +532,7 @@ external_analysis: Analize
 other: Drugo
 organization-classifications:
   root: Sabor
+  house: Sabor
   committee: Saborski odbori
   other: Other working bodies
   commission: Commission
