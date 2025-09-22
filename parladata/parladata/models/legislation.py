@@ -1,6 +1,7 @@
 from django.db import models
-from tinymce.models import HTMLField
 from django.utils.translation import gettext_lazy as _
+from tinymce.models import HTMLField
+
 from parladata.behaviors.models import Taggable, Timestampable
 
 
