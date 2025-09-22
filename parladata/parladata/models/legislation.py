@@ -1,11 +1,22 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 from tinymce.models import HTMLField
 
 from parladata.behaviors.models import Taggable, Timestampable
 
 
 class LegislationStatus(Timestampable):
-    name = models.TextField(blank=True, null=True, help_text="Status of legisaltion")
+    name = models.TextField(
+        verbose_name=_("Name"),
+        help_text=_("Status of legislation for example 'in_procedure', 'enacted'..."),
+        blank=True,
+        null=True,
+    )
+
+    class Meta:
+        verbose_name = _("Legislation status")
+        verbose_name_plural = _("Legislation statuses")
+        ordering = ["name"]
 
     def __str__(self):
         return self.name
@@ -19,94 +30,115 @@ class LegislationStatus(Timestampable):
 class Law(Timestampable, Taggable):
     """Laws which taken place in parlament."""
 
-    STATUSES = [
-        ("in_procedure", "in_procedure"),
-        ("enacted", "enacted"),
-        ("submitted", "submitted"),
-        ("rejected", "rejected"),
-        ("adopted", "adopted"),
-        ("received", "received"),
-        ("retracted", "retracted"),
-    ]
-
-    uid = models.TextField(blank=True, null=True, help_text="law uid from DZ page")
-
+    uid = models.TextField(
+        verbose_name=_("uid"),
+        help_text=_("uid reference of the law found on the source page"),
+        blank=True,
+        null=True,
+    )
     session = models.ForeignKey(
         "Session",
+        verbose_name=_("Session"),
+        help_text=_("The legislative session in which the law was proposed"),
         blank=True,
         null=True,
         on_delete=models.CASCADE,
-        help_text="The legislative session in which the law was proposed",
     )
-
     mandate = models.ForeignKey(
         "Mandate",
+        verbose_name=_("Mandate"),
+        help_text=_("Select the mandate of the law."),
         blank=True,
         null=True,
         related_name="legislation",
         on_delete=models.SET_NULL,
-        help_text="The mandate of this law.",
     )
-
-    text = models.TextField(blank=True, null=True, help_text="The text of the law")
-
-    epa = models.TextField(blank=True, null=True, help_text="EPA number")
-
+    text = models.TextField(
+        verbose_name=_("text"),
+        help_text=_("Insert the text of the law eg. 'Law on...'"),
+        blank=True,
+        null=True,
+    )
+    epa = models.TextField(
+        verbose_name=_("EPA"),
+        help_text=_("Insert the EPA number eg. 2318-IX"),
+        blank=True,
+        null=True,
+    )
     mdt = models.TextField(
-        blank=True, null=True, max_length=1024, help_text="Working body text"
+        verbose_name=_("MDT"),
+        help_text=_("Insert the working body eg. 'Committee on the Economy'"),
+        blank=True,
+        null=True,
+        max_length=1024,
     )
-
     mdt_fk = models.ForeignKey(
         "Organization",
+        verbose_name=_("Organization"),
+        help_text=_("Select the working body"),
         related_name="laws",
         blank=True,
         null=True,
         max_length=255,
         on_delete=models.CASCADE,
-        help_text="Working body obj",
     )
 
     status = models.ForeignKey(
         "LegislationStatus",
-        on_delete=models.SET_DEFAULT,
+        verbose_name=_("Legislation status"),
+        help_text=_("Select the status of the legislative procedure"),
         blank=True,
         null=True,
+        on_delete=models.SET_DEFAULT,
         default=LegislationStatus.get_or_create_default_photo_pk,
     )
-
-    passed = models.BooleanField(blank=True, null=True)
-
-    proposer_text = models.TextField(blank=True, null=True, help_text="Proposer of law")
-
+    passed = models.BooleanField(
+        verbose_name=_("passed"),
+        help_text=_("Was the law passed?"),
+        blank=True,
+        null=True,
+        default=False,
+    )
+    proposer_text = models.TextField(
+        verbose_name=_("proposer_text"),
+        help_text=_("Insert who proposed the law"),
+        blank=True,
+        null=True,
+    )
     procedure_type = models.TextField(
+        verbose_name=_("procedure_type"),
+        help_text=_("Insert the type of procedure (e.g., 'regular', 'urgent'...)"),
         blank=True,
         null=True,
         max_length=255,
-        help_text="Skrajšani, normalni, hitri postopek...",
     )
-
     classification = models.ForeignKey(
         "LegislationClassification",
+        verbose_name=_("Legislation classification"),
+        help_text=_("Classification of legislation (e.g., 'Law', 'Act', 'Decree'...)"),
+        blank=True,
+        null=True,
         on_delete=models.CASCADE,
+    )
+    abstract = HTMLField(
+        verbose_name=_("Abstract"),
+        help_text=_("Abstract of the law in HTML"),
         blank=True,
         null=True,
     )
-
-    abstract = HTMLField(blank=True, null=True)
-
     timestamp = models.DateTimeField(
-        blank=True, null=True, help_text="Date of the law."
+        verbose_name=_("Timestamp"),
+        help_text=_("Date of the law."),
+        blank=True,
+        null=True,
     )
-
     considerations = models.ManyToManyField(
         "ProcedurePhase",
+        verbose_name=_("Considerations"),
+        help_text=_("Consideration of legislation"),
         through="LegislationConsideration",
         blank=True,
-        help_text="Consideration of legislation",
     )
-
-    def __str__(self):
-        return f'{self.session.name if self.session else ""} -> {self.text}'
 
     @property
     def has_votes(self):
@@ -118,20 +150,43 @@ class Law(Timestampable, Taggable):
         return bool(self.abstract)
 
     class Meta:
-        verbose_name = "Law"
-        verbose_name_plural = "Legislation"
+        verbose_name = _("Law")
+        verbose_name_plural = _("Legislation")
+
+    def __str__(self):
+        return f'{self.session.name if self.session else ""} -> {self.text}'
 
 
 class Procedure(Timestampable):
-    type = models.TextField(blank=True, null=True, help_text="Name of procedure type")
+    type = models.TextField(
+        verbose_name=_("Type"),
+        help_text=_("Name of procedure type"),
+        blank=True,
+        null=True,
+    )
+
+    class Meta:
+        verbose_name = _("Procedure")
+        verbose_name_plural = _("Procedures")
 
 
 class ProcedurePhase(Timestampable):
-    name = models.TextField(blank=True, null=True, help_text="Name of procedure phase")
+    name = models.TextField(
+        verbose_name=_("Name"),
+        help_text=_("Name of procedure phase"),
+        blank=True,
+        null=True,
+    )
     procedure = models.ForeignKey(
         "Procedure",
+        verbose_name=_("Procedure"),
+        help_text=_("Procedure to which the phase belongs"),
         on_delete=models.CASCADE,
     )
+
+    class Meta:
+        verbose_name = _("Procedure phase")
+        verbose_name_plural = _("Procedure phases")
 
     def __str__(self):
         return self.name
@@ -139,29 +194,59 @@ class ProcedurePhase(Timestampable):
 
 class LegislationConsideration(Timestampable):
     timestamp = models.DateTimeField(
-        blank=True, null=True, help_text="Date of the law."
+        verbose_name=_("Timestamp"),
+        help_text=_("Date of the law."),
+        blank=True,
+        null=True,
     )
     organization = models.ForeignKey(
         "Organization",
+        verbose_name=_("Organization"),
+        help_text=_("Organization in which consideration happened"),
         blank=True,
         null=True,
         on_delete=models.CASCADE,
-        help_text="Organization in which consideration happened",
     )
-    legislation = models.ForeignKey("Law", on_delete=models.CASCADE)
-    procedure_phase = models.ForeignKey("ProcedurePhase", on_delete=models.CASCADE)
+    legislation = models.ForeignKey(
+        "Law",
+        verbose_name=_("Legislation"),
+        help_text=_("Legislation that was considered"),
+        on_delete=models.CASCADE,
+    )
+    procedure_phase = models.ForeignKey(
+        "ProcedurePhase",
+        verbose_name=_("Procedure phase"),
+        help_text=_("Phase of the procedure"),
+        on_delete=models.CASCADE,
+    )
     session = models.ForeignKey(
         "Session",
+        verbose_name=_("Session"),
+        help_text=_("Session at which the legislation was discussed"),
         blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="legislation_considerations",
-        help_text="Session at which the legislation was discussed",
     )
+
+    class Meta:
+        verbose_name = _("Legislation consideration")
+        verbose_name_plural = _("Legislation considerations")
+        ordering = ["-timestamp"]
 
 
 class LegislationClassification(Timestampable):
-    name = models.TextField(blank=True, null=True, help_text="Status of legisaltion")
+    name = models.TextField(
+        verbose_name=_("Name"),
+        help_text=_("Classification of legislation (e.g., 'Law', 'Act', 'Decree'...)"),
+        blank=True,
+        null=True,
+    )
+
+    class Meta:
+        verbose_name = _("Legislation classification")
+        verbose_name_plural = _("Legislation classifications")
+        ordering = ["name"]
 
     def __str__(self):
         return self.name
