@@ -2,6 +2,7 @@ from datetime import datetime
 
 from django.db import models
 from django.db.models import Q
+from django.utils.translation import gettext_lazy as _
 
 from parladata.behaviors.models import Timestampable
 from parladata.exceptions import NoMembershipException
@@ -19,13 +20,31 @@ class ActiveAtQuerySet(models.QuerySet):
 class Mandate(models.Model):
     """Mandate"""
 
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(
+        verbose_name=_("Description"),
+        help_text=_("Description of the mandate"),
+        blank=True,
+        null=True,
+    )
+    beginning = models.DateTimeField(
+        verbose_name=_("Beginning"),
+        help_text=_("Beginning of the mandate"),
+        blank=True,
+        null=True,
+    )
 
-    beginning = models.DateTimeField(blank=True, null=True)
-
-    ending = models.DateTimeField(blank=True, null=True)
-
+    ending = models.DateTimeField(
+        verbose_name=_("Ending"),
+        help_text=_("Ending of the mandate"),
+        blank=True,
+        null=True,
+    )
     objects = ActiveAtQuerySet.as_manager()
+
+    class Meta:
+        verbose_name = _("Mandate")
+        verbose_name_plural = _("Mandates")
+        ordering = ["beginning"]
 
     def query_root_organizations(self, timestamp=None):
         if not timestamp:
