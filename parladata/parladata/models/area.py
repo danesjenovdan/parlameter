@@ -7,22 +7,37 @@ from parladata.behaviors.models import Sluggable, Timestampable
 class Area(Timestampable, Sluggable):
     """Places of any kind."""
 
-    name = models.TextField(_("name"), help_text=_("Area name"))
-
+    name = models.TextField(
+        verbose_name=_("name"),
+        help_text=_("Name of the area"),
+    )
     identifier = models.TextField(
-        _("identifier"), blank=True, null=True, help_text="Area identifier"
-    )
-
-    parent = models.ForeignKey(
-        "Area", blank=True, null=True, on_delete=models.CASCADE, help_text="Area parent"
-    )
-
-    classification = models.TextField(
-        _("classification"),
+        verbose_name=_("Identifier"),
         blank=True,
         null=True,
-        help_text="Area classification (Unit/Region)",
+        help_text=_("Area identifier"),
     )
+    parent = models.ForeignKey(
+        "Area",
+        verbose_name=_("Parent"),
+        help_text=_("Select the parent area"),
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+    )
+    classification = models.TextField(
+        verbose_name=_("Classification"),
+        help_text=_("Area classification (Unit or Region)"),
+        blank=True,
+        null=True,
+    )
+
+    class Meta:
+        verbose_name = _("Area")
+        verbose_name_plural = _("Areas")
+        ordering = [
+            "name",
+        ]
 
     def __str__(self):
         return self.name

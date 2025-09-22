@@ -19,77 +19,93 @@ class ActiveAtQuerySet(models.QuerySet):
 
 
 class Membership(Timestampable):
-    start_time = models.DateTimeField(blank=True, null=True, help_text="Start time")
-
-    end_time = models.DateTimeField(blank=True, null=True, help_text="End time")
-
+    start_time = models.DateTimeField(
+        verbose_name=_("start_time"),
+        help_text=_("Select the start time"),
+        blank=True,
+        null=True,
+    )
+    end_time = models.DateTimeField(
+        verbose_name=_("end_time"),
+        help_text=_("Select the end time"),
+        blank=True,
+        null=True,
+    )
     organization = models.ForeignKey(
         "Organization",
+        verbose_name=_("Organization"),
+        help_text=_("Select the organization that the member belongs to."),
         blank=False,
         null=False,
         related_name="%(class)ss_children",
         on_delete=models.CASCADE,
-        help_text=_("The organization that the member belongs to."),
     )
-
     mandate = models.ForeignKey(
         "Mandate",
+        verbose_name=_("Mandate"),
+        help_text=_("Select the mandate."),
         blank=True,
         null=True,
-        verbose_name=_("Mandate"),
         related_name="%(class)ss",
         on_delete=models.CASCADE,
     )
 
     objects = ActiveAtQuerySet.as_manager()
 
+    class Meta:
+        abstract = True
+        verbose_name = _("membership")
+        verbose_name_plural = _("memberships")
+
     def __str__(self):
         return f"Member: {self.member}, Org: {self.organization}, StartTime: {self.start_time}"
 
-    class Meta:
-        abstract = True
+    
 
 
 class PersonMembership(Membership):
     """A relationship between a person and an organization."""
 
     ROLES = [
-        ("member", "member"),
-        ("deputy member", "deputy member"),
-        ("voter", "voter"),
-        ("president", "president"),
-        ("deputy", "deputy"),
-        ("leader", "leader"),
+        ("member", _("member")),
+        ("deputy member", _("deputy member")),
+        ("voter", _("voter")),
+        ("president", _("president")),
+        ("deputy", _("deputy")),
+        ("leader", _("leader")),
     ]
-
     member = models.ForeignKey(
         "Person",
+        verbose_name=_("Person"),
+        help_text=_("Choose the person to whom the membership applies."),
         blank=False,
         null=False,
         on_delete=models.CASCADE,
         related_name="person_memberships",
-        help_text=_("The person who is a party to the relationship"),
     )
-
     role = models.TextField(
-        _("role"),
+        verbose_name=_("Role"),
+        help_text=_("Select the role that the person fulfills in the organization."),
         blank=False,
         null=False,
         default="member",
         choices=ROLES,
-        help_text=_("The role that the person fulfills in the organization"),
     )
-
     on_behalf_of = models.ForeignKey(
         "Organization",
+        verbose_name=_("On behalf of organization"),
+        help_text=_(
+            "Select the organization on whose behalf the person is a member of the organization."
+        ),
         blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="representatives",
-        help_text=_(
-            "The organization on whose behalf the person is a party to the relationship"
-        ),
     )
+
+    class Meta:
+        verbose_name = _("Person Membership")
+        verbose_name_plural = _("Person Memberships")
 
     def __str__(self):
         return f"{self.role}: {self.member}, Org: {self.organization}, StartTime: {self.start_time}"
@@ -122,12 +138,17 @@ class PersonMembership(Membership):
 class OrganizationMembership(Membership):
     member = models.ForeignKey(
         "Organization",
+        verbose_name=_("Organization"),
+        help_text=_("The organization that is a party to the relationship"),
         blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name="organization_memberships",
-        help_text=_("The organization that is a party to the relationship"),
     )
+
+    class Meta:
+        verbose_name = _("Organization Membership")
+        verbose_name_plural = _("Organization Memberships")
 
     @staticmethod
     def valid_at(timestamp=None):
