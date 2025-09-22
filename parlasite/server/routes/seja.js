@@ -4,6 +4,7 @@ const {
   getOgImageUrl,
   slovenianDate,
   stringifyParams,
+  sentryFetch,
 } = require('../utils');
 const { urls, locale, defaultCardDate } = require('../../config');
 const { i18n } = require('../server');
@@ -12,33 +13,31 @@ const sm = i18n.siteMap;
 
 const router = express.Router();
 
+// TODO: figure out how to know when to return 404
 // TODO: is there a way to preload this?
 async function isMotionValid(/* sessionId, motionId */) {
   return true;
-  // TODO: figure out how to know when to return 404
-  // THIS IS OLD AND INCOMPATIBLE CODE
-  // const res = await fetch(`${data.urls.urls.analize}/s/getMotionOfSession/${sessionId}`);
-  // const json = await res.json();
-  // return json.results.findIndex(m => m.results.motion_id === motionId) !== -1;
 }
 
-// TODO the ones for poslanec and poslanska skupina accept a slug
 async function getNewData(id) {
   const params = stringifyParams({ id, date: defaultCardDate || null });
-  const response = await fetch(
-    `${urls.parladata}/cards/session/single/${params}`,
-  );
-  // response.ok means status is 2xx
-  if (response.ok) {
-    const data = await response.json();
+  try {
+    const res = await sentryFetch(
+      `${urls.parladata}/cards/session/single/${params}`,
+    );
+    const data = await res.json();
     return {
       session: {
         ...data.results,
         id,
       },
     };
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return null;
+    }
+    throw error;
   }
-  return false;
 }
 
 const SESSION_CLASSIFICATIONS = {

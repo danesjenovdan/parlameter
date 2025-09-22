@@ -1,3 +1,4 @@
+const Sentry = require('@sentry/node');
 const express = require('express');
 const config = require('../config');
 const { i18n: _i18n, asyncRender: ar } = require('./utils');
@@ -9,7 +10,7 @@ const app = express();
 function setupExpress() {
   return new Promise((resolve, reject) => {
     // eslint-disable-next-line no-console
-    console.log('| EXPRESS SERVER | - starting');
+    console.log('| EXPRESS SERVER | - starting...');
 
     // disable "X-Powered-By: Express" header
     app.disable('x-powered-by');
@@ -51,12 +52,15 @@ function setupExpress() {
       }),
     );
 
+    // needs to be after all routes and before any other error handlers
+    Sentry.setupExpressErrorHandler(app);
+
     // catch-all error handler (needs all 4 args)
     app.use((error, req, res, next) => {
+      // eslint-disable-next-line no-console
+      console.error('express catch-all error', error);
+
       ar((render) => {
-        // TODO: sentry
-        // eslint-disable-next-line no-console
-        console.log('error', error);
         res.status(500);
         render('error/500', {
           pageTitle: '500 Internal Server Error',
@@ -67,16 +71,20 @@ function setupExpress() {
     });
 
     // start listening on port
-    const server = app.listen(config.port, () => {
-      // eslint-disable-next-line no-console
-      console.log(
-        `| EXPRESS SERVER | - started on: http://localhost:${config.port}/`,
-      );
-      resolve();
+    const server = app.listen(config.port, (error) => {
+      if (!error) {
+        // eslint-disable-next-line no-console
+        console.log(
+          `| EXPRESS SERVER | - started on: http://localhost:${config.port}/`,
+        );
+        resolve();
+      } else {
+        reject(error);
+      }
     });
 
-    server.on('error', (err) => {
-      reject(err);
+    server.on('error', (error) => {
+      reject(error);
     });
 
     server.timeout = config.serverTimeout;
