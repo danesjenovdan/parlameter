@@ -120,7 +120,7 @@ class Link(Timestampable, Taggable):
     class Meta:
         verbose_name = _("link")
         verbose_name_plural = _("links")
-        ordering = ['-created_at']
+        #ordering = ['-created_at']
 
     def __str__(self):
         return self.url

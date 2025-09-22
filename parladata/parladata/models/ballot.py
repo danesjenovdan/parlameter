@@ -57,7 +57,6 @@ class Ballot(Timestampable):
     class Meta:
         verbose_name = _("Ballot")
         verbose_name_plural = _("Ballots")
-        ordering = ["id"]
 
     def __str__(self):
         if self.personvoter and self.orgvoter:

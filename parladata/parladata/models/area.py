@@ -35,9 +35,6 @@ class Area(Timestampable, Sluggable):
     class Meta:
         verbose_name = _("Area")
         verbose_name_plural = _("Areas")
-        ordering = [
-            "name",
-        ]
 
     def __str__(self):
         return self.name
