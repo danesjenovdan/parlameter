@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 from parladata.behaviors.models import Timestampable
 
 
@@ -7,48 +7,72 @@ class Session(Timestampable):
     """Sessions that happened in parliament."""
 
     CLASSIFICATIONS = [
-        ("unknown", "unknown"),
-        ("regular", "regular"),
-        ("irregular", "irregular"),
-        ("correspondent", "correspondent"),
-        ("urgent", "urgent"),
+        ("unknown", _("unknown")),
+        ("regular", _("regular")),
+        ("irregular", _("irregular")),
+        ("correspondent", _("correspondent")),
+        ("urgent", _("urgent")),
     ]
-
     mandate = models.ForeignKey(
         "Mandate",
+        verbose_name=_("Mandate"),
+        help_text=_("Select the mandate of this session."),
         blank=False,
         null=False,
         related_name="sessions",
         on_delete=models.CASCADE,
-        help_text="The mandate of this session.",
     )
-
-    name = models.TextField(blank=False, null=False, help_text="Session name")
-
-    gov_id = models.TextField(blank=True, null=True, help_text="Gov website ID.")
-
-    start_time = models.DateTimeField(blank=True, null=True, help_text="Start time")
-
-    end_time = models.DateTimeField(blank=True, null=True, help_text="End time")
-
+    name = models.TextField(
+        verbose_name=_("name"),
+        help_text=_("Insert the session name and number e.g. '48. nujna seja'"),
+        blank=False,
+        null=False,
+    )
+    gov_id = models.TextField(
+        verbose_name=_("gov_id"),
+        help_text=_("Insert the gov website ID."),
+        blank=True,
+        null=True,
+    )
+    start_time = models.DateTimeField(
+        verbose_name=_("start_time"),
+        help_text=_("Insert the start time"),
+        blank=True,
+        null=True,
+    )
+    end_time = models.DateTimeField(
+        verbose_name=_("end_time"),
+        help_text=_("Insert the end time"),
+        blank=True,
+        null=True,
+    )
     organizations = models.ManyToManyField(
         "Organization",
+        verbose_name=_("organizations"),
+        help_text=_("Select the organization(s) that participated in the session."),
         related_name="sessions",
-        help_text="The organization(s) in session",
     )
-
     classification = models.CharField(
+        verbose_name=_("classification"),
+        help_text=_("Select the session classification"),
         max_length=128,
-        help_text="Session classification",
         choices=CLASSIFICATIONS,
         default="unknown",
     )
-
     in_review = models.BooleanField(
-        default=False, help_text="Is session still in review?"
+        verbose_name=_("in_review"),
+        help_text=_("Is session still in review?"),
+        default=False,
+    )
+    needs_editing = models.BooleanField(
+        verbose_name=_("needs_editing"),
+        help_text=_("Does this session need editing?"),
+        default=False,
     )
 
-    needs_editing = models.BooleanField("Session needs editing", default=False)
+    class Meta:
+        verbose_name = _("session")
+        verbose_name_plural = _("sessions")
 
     @property
     def organization(self):
