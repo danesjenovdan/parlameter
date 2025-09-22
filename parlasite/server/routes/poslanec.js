@@ -1,5 +1,10 @@
 const express = require('express');
-const { asyncRender: ar, getOgImageUrl, stringifyParams } = require('../utils');
+const {
+  asyncRender: ar,
+  getOgImageUrl,
+  stringifyParams,
+  sentryFetch,
+} = require('../utils');
 const { urls, leaderId, defaultCardDate } = require('../../config');
 const { i18n } = require('../server');
 
@@ -24,25 +29,29 @@ function redirectIfLeader(req, res, next) {
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0], 10);
   const params = stringifyParams({ id, date: defaultCardDate || null });
-  const response = await fetch(
-    `${urls.parladata}/cards/person/basic-information/${params}`,
-  );
-  // response.ok means status is 2xx
-  if (response.ok) {
-    const data = await response.json();
+  try {
+    const res = await sentryFetch(
+      `${urls.parladata}/cards/person/basic-information/${params}`,
+    );
+    const data = await res.json();
     // only members with valid membership (voter, leader) on this date have a slug
     if (data.person && data.person.slug) {
       return {
         mp: {
           ...data.person,
           ...data.results,
-          id, // TODO this might be simpler if parladata would return the ID
+          id,
         },
         isLeader: isLeader(slug),
       };
     }
+    return null;
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return null;
+    }
+    throw error;
   }
-  return false;
 }
 
 router.get(

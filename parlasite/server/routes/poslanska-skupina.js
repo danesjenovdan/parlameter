@@ -1,5 +1,10 @@
 const express = require('express');
-const { asyncRender: ar, getOgImageUrl, stringifyParams } = require('../utils');
+const {
+  asyncRender: ar,
+  getOgImageUrl,
+  stringifyParams,
+  sentryFetch,
+} = require('../utils');
 const { urls, defaultCardDate } = require('../../config');
 const { i18n } = require('../server');
 
@@ -10,21 +15,24 @@ const router = express.Router();
 async function getNewData(slug) {
   const id = parseInt(slug.split('-')[0], 10);
   const params = stringifyParams({ id, date: defaultCardDate || null });
-  const response = await fetch(
-    `${urls.parladata}/cards/group/basic-information/${params}`,
-  );
-  // response.ok means status is 2xx
-  if (response.ok) {
-    const data = await response.json();
+  try {
+    const res = await sentryFetch(
+      `${urls.parladata}/cards/group/basic-information/${params}`,
+    );
+    const data = await res.json();
     return {
       group: {
         ...data.group,
         ...data.results,
-        id, // TODO this might be simpler if parladata would return the ID
+        id,
       },
     };
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      return null;
+    }
+    throw error;
   }
-  return false;
 }
 
 router.get(
