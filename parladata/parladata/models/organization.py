@@ -20,17 +20,17 @@ from parladata.models.person import Person
 from parladata.models.versionable_properties import OrganizationName
 
 CLASSIFICATIONS = [
-    ("root", "root"),
-    ("house", "house"),
-    ("pg", "pg"),
-    ("commission", "commission"),
-    ("committee", "committee"),
-    ("council", "council"),
-    ("delegation", "delegation"),
-    ("friendship_group", "friendship_group"),
-    ("investigative_commission", "investigative_commission"),
-    ("other", "other"),
-    ("coalition", "coalition"),
+    ("root", _("root")),
+    ("pg", _("pg")),
+    ("commission", _("commission")),
+    ("committee", _("committee")),
+    ("council", _("council")),
+    ("delegation", _("delegation")),
+    ("friendship_group", _("friendship_group")),
+    ("investigative_commission", _("investigative_commission")),
+    ("other", _("other")),
+    ("coalition", _("coalition")),
+    ("house", _("house")),
 ]
 
 
@@ -80,42 +80,57 @@ class Organization(
     """
 
     gov_id = models.TextField(
-        _("Gov website ID"), blank=True, null=True, help_text=_("Gov website ID")
-    )
-
-    classification = models.TextField(
-        _("classification"),
+        verbose_name=_("Gov website ID"),
+        help_text=_("Gov website ID"),
         blank=True,
         null=True,
-        help_text=("An organization category, e.g. committee"),
+    )
+    classification = models.TextField(
+        verbose_name=_("classification"),
+        help_text=_("Select an organization category, e.g. committee"),
+        blank=True,
+        null=True,
         choices=CLASSIFICATIONS,
     )
-
     # reference to "http://popoloproject.com/schemas/organization.json#"
     parent = models.ForeignKey(
         "Organization",
+        verbose_name=_("Organization"),
+        help_text=_(
+            "Select the higher tier organization that contains this organization"
+        ),
         blank=True,
         null=True,
         related_name="children",
         on_delete=models.CASCADE,
-        help_text=_("The organization that contains this organization"),
     )
-
     founding_date = models.DateTimeField(
-        blank=True, null=True, help_text=_("A date of founding")
+        verbose_name=_("founding_date"),
+        help_text=_("Select the date of founding"),
+        blank=True,
+        null=True,
     )
-
     dissolution_date = models.DateTimeField(
-        blank=True, null=True, help_text=_("A date of dissolution")
+        verbose_name=_("dissolution_date"),
+        help_text=_("Select the date of dissolution"),
+        blank=True,
+        null=True,
     )
-
     description = models.TextField(
-        blank=True, null=True, help_text="Organization description"
+        verbose_name=_("description"),
+        help_text="Insert the description of the organization",
+        blank=True,
+        null=True,
     )
-
-    color = ColorField(default="#09a2cc")
+    color = ColorField(
+        default="#09a2cc",
+    )
 
     objects = ExtendedManager.from_queryset(ActiveAtQuerySet)()
+
+    class Meta:
+        verbose_name = _("organization")
+        verbose_name_plural = _("organizations")
 
     @property
     def name(self):
