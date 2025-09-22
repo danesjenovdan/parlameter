@@ -1,6 +1,66 @@
+const Sentry = require('@sentry/node');
 const fs = require('fs');
 const _ = require('lodash');
 const { urls, locale, defaultCardDate } = require('../config');
+
+function formatError(error, indent = '') {
+  let lines = [];
+
+  lines.push(`${error}`);
+  lines.push(`${error.stack}`);
+
+  if (error.cause) {
+    lines = lines.concat(formatError(error.cause));
+  }
+
+  // stack can have multiple lines, so join and split again
+  let str = lines.join('\n');
+  lines = str.split('\n');
+
+  // dedupe same consecutive lines
+  lines = lines.filter(
+    (line, index) => index === 0 || line !== lines[index - 1],
+  );
+
+  // indent all lines except the first
+  lines = lines.map((line, index) => (index === 0 ? line : `${indent}${line}`));
+
+  // join lines again
+  str = lines.join('\n');
+  return str;
+}
+
+async function sentryFetch(resource, options) {
+  try {
+    const res = await fetch(resource, options);
+    if (!res.ok) {
+      const error = new Error('fetch response not ok');
+      error.response = res;
+      const resClone = res.clone();
+      const text = await resClone.text();
+      Sentry.withScope(function (scope) {
+        scope.setExtras({
+          'fetch-resource': resource,
+          'fetch-options': options,
+          'fetch-status': res.status,
+          'fetch-response-text': text,
+        });
+        Sentry.captureException(error);
+      });
+      throw error;
+    }
+    return res;
+  } catch (error) {
+    Sentry.withScope(function (scope) {
+      scope.setExtras({
+        'fetch-resource': resource,
+        'fetch-options': options,
+      });
+      Sentry.captureException(error);
+    });
+    throw error;
+  }
+}
 
 class ResponseTimings {
   constructor() {
@@ -81,59 +141,29 @@ async function fetchCardAsync(req, cardPath, params, uid, responseTimings) {
   const currentUrl = `${req.protocol}://${req.hostname}${req.originalUrl}`;
 
   // eslint-disable-next-line no-console
-  console.log('Fetching:', cardUrl);
-  // eslint-disable-next-line no-console
-  console.log('  > from:', currentUrl);
+  console.log(`[${uid} | ${cardPath}] Fetching card:\n  > url: ${cardUrl}`);
 
   try {
     responseTimings.push(`beforeFetch/${uid}`, performance.now());
-    const res = await fetch(cardUrl, {
+    const res = await sentryFetch(cardUrl, {
       headers: {
         'x-parlasite-request-url': cardUrl,
         'x-parlasite-request-from': currentUrl,
         'x-parlasite-request-user-agent': req.headers['user-agent'],
       },
     });
-    if (res.ok) {
-      const text = await res.text();
-      responseTimings.push(`afterFetch/${uid}`, performance.now());
-      return [res.headers, text];
-    }
     const text = await res.text();
-    // eslint-disable-next-line no-console
-    console.error(`Failed to fetch card: status=${res.status} text=${text}`);
-    if (cardPath === 'misc/error') {
-      return [
-        null,
-        `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>Status: ${res.status}</pre><pre>${text}</pre></div>`,
-      ];
-    }
-    return fetchCardAsync(
-      req,
-      'misc/error',
-      {
-        ...params,
-        message: `Failed to fetch card: ${cardPath} (${res.status}) ${text}`,
-      },
-      uid,
-      responseTimings,
-    );
+    responseTimings.push(`afterFetch/${uid}`, performance.now());
+    return [res.headers, text];
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error('Failed to fetch card:', error);
-    if (cardPath === 'misc/error') {
-      return [
-        null,
-        `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${error}</pre><pre>${error.stack}</pre></div>`,
-      ];
-    }
-    return fetchCardAsync(
-      req,
-      'misc/error',
-      { ...params, message: `Failed to fetch card: ${cardPath}` },
-      uid,
-      responseTimings,
+    console.error(
+      `\n[${uid} | ${cardPath}] Failed to fetch card:\n  > url: ${cardUrl}\n  > ${formatError(error, '  > ')}\n`,
     );
+    return [
+      null,
+      `<div class="alert alert-danger" style="margin-top:20px;text-align:left">Failed to fetch card: ${cardPath}<pre>${error}</pre></div>`,
+    ];
   }
 }
 
@@ -296,6 +326,7 @@ function getOgImageUrl(type, params = {}) {
 }
 
 module.exports = {
+  sentryFetch,
   stringifyParams,
   slovenianDate,
   asyncRoute,

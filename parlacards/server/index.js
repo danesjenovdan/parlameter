@@ -4,7 +4,10 @@ import fastifyCors from '@fastify/cors';
 import { HTTPError, renderCard } from './render-card.js';
 import { ResponseTimings, getParlaHeaders } from './utils.js';
 
-const fastify = createFastify({ logger: true, ignoreTrailingSlash: true });
+const fastify = createFastify({
+  logger: true,
+  routerOptions: { ignoreTrailingSlash: true },
+});
 
 Sentry.setupFastifyErrorHandler(fastify);
 
