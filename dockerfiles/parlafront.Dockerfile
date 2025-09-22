@@ -68,6 +68,7 @@ RUN yarn && yarn cache clean
 COPY --from=build-parlacards /app/build ./build
 COPY --from=build-parlacards /app/dist ./dist
 COPY --from=build-parlacards /app/server ./server
+COPY --from=build-parlacards /app/instrument.js ./instrument.js
 
 # set user
 USER node
