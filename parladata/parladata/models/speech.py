@@ -1,6 +1,7 @@
 from datetime import datetime
-from django.utils.translation import gettext_lazy as _
+
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from parlacards.scores.common import get_lemmatize_method, remove_punctuation, tokenize
 from parladata.behaviors.models import Taggable, Timestampable, Versionable

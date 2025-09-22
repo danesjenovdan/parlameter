@@ -1,6 +1,7 @@
 from django.db import models
-from martor.models import MartorField
 from django.utils.translation import gettext_lazy as _
+from martor.models import MartorField
+
 from parladata.behaviors.models import Taggable, Timestampable
 
 
