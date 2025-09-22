@@ -60,8 +60,6 @@ class Membership(Timestampable):
     def __str__(self):
         return f"Member: {self.member}, Org: {self.organization}, StartTime: {self.start_time}"
 
-    
-
 
 class PersonMembership(Membership):
     """A relationship between a person and an organization."""
