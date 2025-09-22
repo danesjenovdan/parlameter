@@ -10,6 +10,7 @@ class Link(Timestampable, Taggable):
     A URL
     # max_length increased to account for lengthy Camera's URLS
     """
+
     url = models.URLField(
         verbose_name=_("url"),
         help_text=_("Insert the URL"),
@@ -42,7 +43,6 @@ class Link(Timestampable, Taggable):
         null=True,
         on_delete=models.CASCADE,
         related_name="links",
-        
     )
     organization = models.ForeignKey(
         "Organization",
@@ -120,7 +120,7 @@ class Link(Timestampable, Taggable):
     class Meta:
         verbose_name = _("link")
         verbose_name_plural = _("links")
-        #ordering = ['-created_at']
+        # ordering = ['-created_at']
 
     def __str__(self):
         return self.url

@@ -225,7 +225,7 @@ class LegislationConsideration(Timestampable):
         blank=True,
         null=True,
         on_delete=models.CASCADE,
-        related_name="legislation_considerations",  
+        related_name="legislation_considerations",
     )
 
     class Meta:

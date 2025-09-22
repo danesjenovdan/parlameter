@@ -231,7 +231,7 @@ class Person(Timestampable, Parsable, Sluggable, VersionableFieldsOwner):
 
     def __str__(self):
         return f"{self.id}: {self.name}"
-    
+
     class Meta:
         verbose_name = "Person"
         verbose_name_plural = "People"

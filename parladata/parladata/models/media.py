@@ -27,7 +27,7 @@ class Medium(Timestampable):
     order = models.PositiveIntegerField(
         verbose_name=_("order"),
         help_text=_("Order of appearance"),
-        default=1
+        default=1,
     )
 
     class Meta(object):
@@ -61,7 +61,7 @@ class MediaReport(Timestampable):
     retrieval_date = models.DateTimeField(
         verbose_name=_("retrieval date"),
         help_text=_("Date when the report was retrieved"),
-        auto_now=True
+        auto_now=True,
     )
     medium = models.ForeignKey(
         Medium,
