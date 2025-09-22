@@ -1,7 +1,7 @@
 # ---
 # build stage image
 # ---
-FROM node:20-alpine as build-parlacards
+FROM node:24-alpine AS build-parlacards
 
 # set current directory
 WORKDIR /app
@@ -21,7 +21,7 @@ RUN yarn build
 # ---
 # build stage image
 # ---
-FROM node:20-alpine as build-parlassets
+FROM node:24-alpine AS build-parlassets
 
 # set current directory
 WORKDIR /app
@@ -38,7 +38,7 @@ RUN yarn build
 # ---
 # actual image for parlassets; use `--target parlassets` to build
 # ---
-FROM nginx:alpine as parlassets
+FROM nginx:alpine AS parlassets
 
 # copy nginx configuration
 COPY parlassets/default.conf /etc/nginx/conf.d/default.conf
@@ -50,7 +50,7 @@ COPY --from=build-parlacards /app/dist/client /usr/share/nginx/html/assets
 # ---
 # actual image for parlacards; use `--target parlacards` to build
 # ---
-FROM node:20-alpine as parlacards
+FROM node:24-alpine AS parlacards
 
 # install tini
 RUN apk add --no-cache tini
@@ -75,4 +75,4 @@ USER node
 # define port
 EXPOSE 3000
 
-CMD ["node", "server/index.js"]
+CMD ["node", "--import", "./instrument.js", "server/index.js"]
