@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-04 10:46+0200\n"
+"POT-Creation-Date: 2025-09-22 11:49+0200\n"
 "PO-Revision-Date: 2025-04-15 13:39+0000\n"
 "Last-Translator: Weblate Admin <tech@danesjenovdan.si>\n"
 "Language-Team: Croatian <http://weblate.lb.djnd.si/projects/parlameter/"
@@ -32,12 +32,74 @@ msgstr ""
 msgid "Calculation of TFIDF for session is completed: "
 msgstr ""
 
-#: parladata/behaviors/models.py:65
-msgid "row valid from"
+#: parladata/behaviors/models.py:18
+msgid "parser_names"
 msgstr ""
 
-#: parladata/behaviors/models.py:68
-msgid "row valid to"
+#: parladata/behaviors/models.py:20
+msgid ""
+"Variations of a name e.g. 'Janez Janša|Ivan Janez Janša' that the parser "
+"considers equal"
+msgstr ""
+
+#: parladata/behaviors/models.py:51
+msgid "created_at"
+msgstr ""
+
+#: parladata/behaviors/models.py:52
+msgid "The time the object was created."
+msgstr ""
+
+#: parladata/behaviors/models.py:57
+msgid "updated_at"
+msgstr ""
+
+#: parladata/behaviors/models.py:58
+msgid "The time the object was last updated."
+msgstr ""
+
+#: parladata/behaviors/models.py:82
+msgid "valid_from"
+msgstr ""
+
+#: parladata/behaviors/models.py:84
+msgid ""
+"Leave blank if the value hasn't changed. If the vales changes insert the "
+"time and the the value is valid from."
+msgstr ""
+
+#: parladata/behaviors/models.py:91
+msgid "valid_to"
+msgstr ""
+
+#: parladata/behaviors/models.py:93
+msgid ""
+"Leave blank if the value hasn't changed. If the vales changes insert the "
+"time and the the value is valid to. Then add a new entry for the value."
+msgstr ""
+
+#: parladata/behaviors/models.py:110
+msgid "value"
+msgstr ""
+
+#: parladata/behaviors/models.py:111
+msgid "Insert approriate value"
+msgstr ""
+
+#: parladata/behaviors/models.py:220
+msgid "approved_at"
+msgstr ""
+
+#: parladata/behaviors/models.py:221
+msgid "Insert the date when the item was approved"
+msgstr ""
+
+#: parladata/behaviors/models.py:227
+msgid "rejected_at"
+msgstr ""
+
+#: parladata/behaviors/models.py:228
+msgid "Insert the date when the item was rejected"
 msgstr ""
 
 #: parladata/forms.py:133
@@ -68,68 +130,568 @@ msgstr "Pitanje Parlametra"
 msgid "Completed tasks at the Parlameter "
 msgstr ""
 
-#: parladata/models/area.py:10 parladata/models/media.py:9
+#: parladata/models/agenda_item.py:9 parladata/models/document.py:13
+#: parladata/models/legislation.py:9 parladata/models/legislation.py:174
+#: parladata/models/legislation.py:239
+msgid "Name"
+msgstr ""
+
+#: parladata/models/agenda_item.py:10
+msgid "The name of agenda"
+msgstr ""
+
+#: parladata/models/agenda_item.py:15
+msgid "Date and time"
+msgstr ""
+
+#: parladata/models/agenda_item.py:16
+msgid "Date and time of the item."
+msgstr ""
+
+#: parladata/models/agenda_item.py:22 parladata/models/legislation.py:40
+#: parladata/models/legislation.py:223 parladata/models/link.py:39
+#: parladata/models/motion.py:17 parladata/models/speech.py:54
+msgid "Session"
+msgstr ""
+
+#: parladata/models/agenda_item.py:23
+msgid "Select the session."
+msgstr ""
+
+#: parladata/models/agenda_item.py:30
+msgid "Order"
+msgstr ""
+
+#: parladata/models/agenda_item.py:31
+msgid "Order of agenda item"
+msgstr ""
+
+#: parladata/models/agenda_item.py:36
+msgid "Government ID"
+msgstr ""
+
+#: parladata/models/agenda_item.py:37
+msgid "Government ID of the agenda item"
+msgstr ""
+
+#: parladata/models/agenda_item.py:42
+msgid "Agenda item content"
+msgstr ""
+
+#: parladata/models/agenda_item.py:43
+msgid "Content of the agenda item in markdown format"
+msgstr ""
+
+#: parladata/models/agenda_item.py:49 parladata/models/link.py:112
+#, fuzzy
+#| msgid "agenda-item-url"
+msgid "Agenda item"
+msgstr "dnevni-red"
+
+#: parladata/models/agenda_item.py:50 parladata/models/motion.py:68
+#: parladata/models/motion.py:69 parladata/models/speech.py:75
+#, fuzzy
+#| msgid "agenda-item-url"
+msgid "Agenda items"
+msgstr "dnevni-red"
+
+#: parladata/models/area.py:11 parladata/models/link.py:26
+#: parladata/models/media.py:9 parladata/models/session.py:26
+#: parladata/models/vote.py:12
 msgid "name"
 msgstr ""
 
-#: parladata/models/area.py:10
-msgid "Area name"
+#: parladata/models/area.py:12
+msgid "Name of the area"
 msgstr ""
 
-#: parladata/models/area.py:13
-msgid "identifier"
+#: parladata/models/area.py:15
+msgid "Identifier"
 msgstr ""
 
-#: parladata/models/area.py:21 parladata/models/organization.py:87
-msgid "classification"
+#: parladata/models/area.py:18
+msgid "Area identifier"
 msgstr ""
 
-#: parladata/models/link.py:14 parladata/models/media.py:15
-#: parladata/models/media.py:47
+#: parladata/models/area.py:22
+msgid "Parent"
+msgstr ""
+
+#: parladata/models/area.py:23
+msgid "Select the parent area"
+msgstr ""
+
+#: parladata/models/area.py:29
+msgid "Classification"
+msgstr ""
+
+#: parladata/models/area.py:30
+msgid "Area classification (Unit or Region)"
+msgstr ""
+
+#: parladata/models/area.py:36 parladata/models/person.py:69
+msgid "Area"
+msgstr ""
+
+#: parladata/models/area.py:37
+msgid "Areas"
+msgstr ""
+
+#: parladata/models/ballot.py:11
+msgid "for"
+msgstr ""
+
+#: parladata/models/ballot.py:12
+msgid "against"
+msgstr ""
+
+#: parladata/models/ballot.py:13
+msgid "abstain"
+msgstr ""
+
+#: parladata/models/ballot.py:14
+msgid "absent"
+msgstr ""
+
+#: parladata/models/ballot.py:20
+msgid "did not vote"
+msgstr ""
+
+#: parladata/models/ballot.py:25 parladata/models/vote.py:45
+msgid "Vote"
+msgstr ""
+
+#: parladata/models/ballot.py:26
+msgid "What was the vote on"
+msgstr ""
+
+#: parladata/models/ballot.py:32 parladata/models/link.py:58
+#: parladata/models/memberships.py:79 parladata/models/public_question.py:9
+msgid "Person"
+msgstr ""
+
+#: parladata/models/ballot.py:33
+msgid "Who voted"
+msgstr ""
+
+#: parladata/models/ballot.py:41 parladata/models/legislation.py:76
+#: parladata/models/legislation.py:203 parladata/models/link.py:49
+#: parladata/models/memberships.py:36 parladata/models/memberships.py:141
+#: parladata/models/organization.py:98
+msgid "Organization"
+msgstr ""
+
+#: parladata/models/ballot.py:42
+msgid "Which organization voted"
+msgstr ""
+
+#: parladata/models/ballot.py:49
+msgid "Option"
+msgstr ""
+
+#: parladata/models/ballot.py:50
+msgid "Choose one of the possible options"
+msgstr ""
+
+#: parladata/models/ballot.py:58
+msgid "Ballot"
+msgstr ""
+
+#: parladata/models/ballot.py:59
+msgid "Ballots"
+msgstr ""
+
+#: parladata/models/common.py:24
+msgid "Description"
+msgstr ""
+
+#: parladata/models/common.py:25
+msgid "Description of the mandate"
+msgstr ""
+
+#: parladata/models/common.py:30
+msgid "Beginning"
+msgstr ""
+
+#: parladata/models/common.py:31
+msgid "Beginning of the mandate"
+msgstr ""
+
+#: parladata/models/common.py:37
+msgid "Ending"
+msgstr ""
+
+#: parladata/models/common.py:38
+msgid "Ending of the mandate"
+msgstr ""
+
+#: parladata/models/common.py:45 parladata/models/legislation.py:48
+#: parladata/models/memberships.py:45 parladata/models/public_question.py:34
+#: parladata/models/public_question.py:77 parladata/models/session.py:18
+msgid "Mandate"
+msgstr ""
+
+#: parladata/models/common.py:46
+msgid "Mandates"
+msgstr ""
+
+#: parladata/models/document.py:9
+msgid "File"
+msgstr ""
+
+#: parladata/models/document.py:10
+msgid "Upload a document file"
+msgstr ""
+
+#: parladata/models/document.py:14
+msgid "Name of the document"
+msgstr ""
+
+#: parladata/models/document.py:20
+msgid "Document"
+msgstr ""
+
+#: parladata/models/document.py:21
+msgid "Documents"
+msgstr ""
+
+#: parladata/models/legislation.py:10
+msgid "Status of legislation for example 'in_procedure', 'enacted'..."
+msgstr ""
+
+#: parladata/models/legislation.py:16 parladata/models/legislation.py:87
+#, fuzzy
+#| msgid "legislation-url"
+msgid "Legislation status"
+msgstr "zakonodavstvo"
+
+#: parladata/models/legislation.py:17
+#, fuzzy
+#| msgid "legislation-url"
+msgid "Legislation statuses"
+msgstr "zakonodavstvo"
+
+#: parladata/models/legislation.py:33
+msgid "uid"
+msgstr ""
+
+#: parladata/models/legislation.py:34
+msgid "uid reference of the law found on the source page"
+msgstr ""
+
+#: parladata/models/legislation.py:41
+msgid "The legislative session in which the law was proposed"
+msgstr ""
+
+#: parladata/models/legislation.py:49
+msgid "Select the mandate of the law."
+msgstr ""
+
+#: parladata/models/legislation.py:56 parladata/models/motion.py:38
+#: parladata/models/public_question.py:22
+#: parladata/models/public_question.py:65 parladata/models/question.py:146
+msgid "text"
+msgstr ""
+
+#: parladata/models/legislation.py:57
+msgid "Insert the text of the law eg. 'Law on...'"
+msgstr ""
+
+#: parladata/models/legislation.py:62
+msgid "EPA"
+msgstr ""
+
+#: parladata/models/legislation.py:63
+msgid "Insert the EPA number eg. 2318-IX"
+msgstr ""
+
+#: parladata/models/legislation.py:68
+msgid "MDT"
+msgstr ""
+
+#: parladata/models/legislation.py:69
+msgid "Insert the working body eg. 'Committee on the Economy'"
+msgstr ""
+
+#: parladata/models/legislation.py:77
+msgid "Select the working body"
+msgstr ""
+
+#: parladata/models/legislation.py:88
+msgid "Select the status of the legislative procedure"
+msgstr ""
+
+#: parladata/models/legislation.py:95
+msgid "passed"
+msgstr ""
+
+#: parladata/models/legislation.py:96
+msgid "Was the law passed?"
+msgstr ""
+
+#: parladata/models/legislation.py:102
+msgid "proposer_text"
+msgstr ""
+
+#: parladata/models/legislation.py:103
+msgid "Insert who proposed the law"
+msgstr ""
+
+#: parladata/models/legislation.py:108
+msgid "procedure_type"
+msgstr ""
+
+#: parladata/models/legislation.py:109
+msgid "Insert the type of procedure (e.g., 'regular', 'urgent'...)"
+msgstr ""
+
+#: parladata/models/legislation.py:116 parladata/models/legislation.py:246
+msgid "Legislation classification"
+msgstr ""
+
+#: parladata/models/legislation.py:117 parladata/models/legislation.py:240
+msgid "Classification of legislation (e.g., 'Law', 'Act', 'Decree'...)"
+msgstr ""
+
+#: parladata/models/legislation.py:123
+msgid "Abstract"
+msgstr ""
+
+#: parladata/models/legislation.py:124
+msgid "Abstract of the law in HTML"
+msgstr ""
+
+#: parladata/models/legislation.py:129 parladata/models/legislation.py:196
+msgid "Timestamp"
+msgstr ""
+
+#: parladata/models/legislation.py:130 parladata/models/legislation.py:197
+msgid "Date of the law."
+msgstr ""
+
+#: parladata/models/legislation.py:136
+msgid "Considerations"
+msgstr ""
+
+#: parladata/models/legislation.py:137
+msgid "Consideration of legislation"
+msgstr ""
+
+#: parladata/models/legislation.py:152 parladata/models/motion.py:75
+msgid "Law"
+msgstr ""
+
+#: parladata/models/legislation.py:153 parladata/models/legislation.py:211
+#, fuzzy
+#| msgid "legislation-url"
+msgid "Legislation"
+msgstr "zakonodavstvo"
+
+#: parladata/models/legislation.py:161
+msgid "Type"
+msgstr ""
+
+#: parladata/models/legislation.py:162
+msgid "Name of procedure type"
+msgstr ""
+
+#: parladata/models/legislation.py:168 parladata/models/legislation.py:181
+msgid "Procedure"
+msgstr ""
+
+#: parladata/models/legislation.py:169
+msgid "Procedures"
+msgstr ""
+
+#: parladata/models/legislation.py:175
+msgid "Name of procedure phase"
+msgstr ""
+
+#: parladata/models/legislation.py:182
+msgid "Procedure to which the phase belongs"
+msgstr ""
+
+#: parladata/models/legislation.py:187 parladata/models/legislation.py:217
+msgid "Procedure phase"
+msgstr ""
+
+#: parladata/models/legislation.py:188
+msgid "Procedure phases"
+msgstr ""
+
+#: parladata/models/legislation.py:204
+msgid "Organization in which consideration happened"
+msgstr ""
+
+#: parladata/models/legislation.py:212
+msgid "Legislation that was considered"
+msgstr ""
+
+#: parladata/models/legislation.py:218
+msgid "Phase of the procedure"
+msgstr ""
+
+#: parladata/models/legislation.py:224
+msgid "Session at which the legislation was discussed"
+msgstr ""
+
+#: parladata/models/legislation.py:232
+msgid "Legislation consideration"
+msgstr ""
+
+#: parladata/models/legislation.py:233
+msgid "Legislation considerations"
+msgstr ""
+
+#: parladata/models/legislation.py:247
+msgid "Legislation classifications"
+msgstr ""
+
+#: parladata/models/link.py:14 parladata/models/media.py:13
+#: parladata/models/media.py:48
 msgid "url"
 msgstr ""
 
-#: parladata/models/link.py:14
-msgid "A URL"
+#: parladata/models/link.py:15
+msgid "Insert the URL"
 msgstr ""
 
-#: parladata/models/link.py:17
+#: parladata/models/link.py:19
 msgid "note"
 msgstr ""
 
-#: parladata/models/link.py:21
+#: parladata/models/link.py:20
 msgid "A note, e.g. 'Wikipedia page'"
+msgstr ""
+
+#: parladata/models/link.py:27
+msgid "Name of the link"
+msgstr ""
+
+#: parladata/models/link.py:32
+msgid "date"
+msgstr ""
+
+#: parladata/models/link.py:33
+msgid "Insert the date"
+msgstr ""
+
+#: parladata/models/link.py:40
+msgid "Select the session"
+msgstr ""
+
+#: parladata/models/link.py:50
+msgid "Select the organization connected to the link content"
+msgstr ""
+
+#: parladata/models/link.py:59
+msgid "Select the person connected to the link"
+msgstr ""
+
+#: parladata/models/link.py:67
+msgid "Person membership"
+msgstr ""
+
+#: parladata/models/link.py:68
+msgid "The membership of this link."
+msgstr ""
+
+#: parladata/models/link.py:76 parladata/models/vote.py:19
+msgid "Motion"
+msgstr ""
+
+#: parladata/models/link.py:77
+msgid "Select the motion this link belongs to."
+msgstr ""
+
+#: parladata/models/link.py:85 parladata/models/public_question.py:59
+#, fuzzy
+#| msgid "Question for: "
+msgid "Question"
+msgstr "Pitanje za: "
+
+#: parladata/models/link.py:86
+msgid "Select the question this link belongs to."
+msgstr ""
+
+#: parladata/models/link.py:94
+msgid "Answer"
+msgstr ""
+
+#: parladata/models/link.py:95
+msgid "Select the answer this link belongs to."
+msgstr ""
+
+#: parladata/models/link.py:103
+msgid "Legislation Consideration"
+msgstr ""
+
+#: parladata/models/link.py:104
+msgid "The legislation consideration this link belongs to."
+msgstr ""
+
+#: parladata/models/link.py:113
+msgid "Select the agenda item this link belongs to."
+msgstr ""
+
+#: parladata/models/link.py:121
+msgid "link"
+msgstr ""
+
+#: parladata/models/link.py:122
+msgid "links"
 msgstr ""
 
 #: parladata/models/media.py:10
 msgid "Medium name"
 msgstr ""
 
-#: parladata/models/media.py:16
+#: parladata/models/media.py:14
 msgid "Medium URL"
 msgstr ""
 
-#: parladata/models/media.py:21 parladata/models/media.py:53
+#: parladata/models/media.py:18 parladata/models/media.py:53
 msgid "uri"
 msgstr ""
 
-#: parladata/models/media.py:22
+#: parladata/models/media.py:19
 msgid "Medium URI"
 msgstr ""
 
-#: parladata/models/media.py:26 parladata/models/person.py:67
+#: parladata/models/media.py:23 parladata/models/person.py:76
 msgid "active"
 msgstr ""
 
-#: parladata/models/media.py:41
+#: parladata/models/media.py:24
+msgid "Is this medium active?"
+msgstr ""
+
+#: parladata/models/media.py:28 parladata/models/speech.py:47
+msgid "order"
+msgstr ""
+
+#: parladata/models/media.py:29
+msgid "Order of appearance"
+msgstr ""
+
+#: parladata/models/media.py:34 parladata/models/media.py:68
+msgid "medium"
+msgstr ""
+
+#: parladata/models/media.py:35
+msgid "media"
+msgstr ""
+
+#: parladata/models/media.py:44 parladata/models/motion.py:50
+#: parladata/models/question.py:50
 msgid "title"
 msgstr ""
 
-#: parladata/models/media.py:42
+#: parladata/models/media.py:45
 msgid "Report title"
 msgstr ""
 
-#: parladata/models/media.py:48
+#: parladata/models/media.py:49
 msgid "Report URL"
 msgstr ""
 
@@ -137,73 +699,854 @@ msgstr ""
 msgid "Article URI"
 msgstr ""
 
-#: parladata/models/memberships.py:32
-msgid "The organization that the member belongs to."
+#: parladata/models/media.py:58
+msgid "report date"
 msgstr ""
 
-#: parladata/models/memberships.py:39
-msgid "Mandate"
+#: parladata/models/media.py:59
+msgid "Date of the report"
+msgstr ""
+
+#: parladata/models/media.py:62
+msgid "retrieval date"
+msgstr ""
+
+#: parladata/models/media.py:63
+msgid "Date when the report was retrieved"
+msgstr ""
+
+#: parladata/models/media.py:69
+msgid "The medium this report is associated with"
+msgstr ""
+
+#: parladata/models/media.py:75
+msgid "mentioned people"
+msgstr ""
+
+#: parladata/models/media.py:76
+msgid "People mentioned in the report"
+msgstr ""
+
+#: parladata/models/media.py:82
+msgid "mentioned organizations"
+msgstr ""
+
+#: parladata/models/media.py:83
+msgid "Organizations mentioned in the report"
+msgstr ""
+
+#: parladata/models/media.py:94
+msgid "mentioned motions"
+msgstr ""
+
+#: parladata/models/media.py:95
+msgid "Motions mentioned in the report"
+msgstr ""
+
+#: parladata/models/media.py:101
+msgid "mentioned votes"
+msgstr ""
+
+#: parladata/models/media.py:102
+msgid "Votes mentioned in the report"
+msgstr ""
+
+#: parladata/models/media.py:108
+msgid "media report"
+msgstr ""
+
+#: parladata/models/media.py:109
+msgid "media reports"
+msgstr ""
+
+#: parladata/models/memberships.py:23 parladata/models/session.py:38
+#: parladata/models/speech.py:62
+msgid "start_time"
+msgstr ""
+
+#: parladata/models/memberships.py:24 parladata/models/speech.py:63
+msgid "Select the start time"
+msgstr ""
+
+#: parladata/models/memberships.py:29 parladata/models/session.py:44
+#: parladata/models/speech.py:68
+msgid "end_time"
+msgstr ""
+
+#: parladata/models/memberships.py:30 parladata/models/speech.py:69
+msgid "Select the end time"
+msgstr ""
+
+#: parladata/models/memberships.py:37
+msgid "Select the organization that the member belongs to."
+msgstr ""
+
+#: parladata/models/memberships.py:46
+msgid "Select the mandate."
+msgstr ""
+
+#: parladata/models/memberships.py:57
+msgid "membership"
+msgstr ""
+
+#: parladata/models/memberships.py:58
+msgid "memberships"
+msgstr ""
+
+#: parladata/models/memberships.py:70
+msgid "member"
 msgstr ""
 
 #: parladata/models/memberships.py:71
-msgid "The person who is a party to the relationship"
+msgid "deputy member"
+msgstr ""
+
+#: parladata/models/memberships.py:72
+msgid "voter"
+msgstr ""
+
+#: parladata/models/memberships.py:73
+msgid "president"
+msgstr ""
+
+#: parladata/models/memberships.py:74
+msgid "deputy"
 msgstr ""
 
 #: parladata/models/memberships.py:75
-msgid "role"
+msgid "leader"
 msgstr ""
 
 #: parladata/models/memberships.py:80
-msgid "The role that the person fulfills in the organization"
+msgid "Choose the person to whom the membership applies."
 msgstr ""
 
-#: parladata/models/memberships.py:90
+#: parladata/models/memberships.py:87
+msgid "Role"
+msgstr ""
+
+#: parladata/models/memberships.py:88
+msgid "Select the role that the person fulfills in the organization."
+msgstr ""
+
+#: parladata/models/memberships.py:96
+msgid "On behalf of organization"
+msgstr ""
+
+#: parladata/models/memberships.py:98
 msgid ""
-"The organization on whose behalf the person is a party to the relationship"
+"Select the organization on whose behalf the person is a member of the "
+"organization."
 msgstr ""
 
-#: parladata/models/memberships.py:129
+#: parladata/models/memberships.py:107
+msgid "Person Membership"
+msgstr ""
+
+#: parladata/models/memberships.py:108
+msgid "Person Memberships"
+msgstr ""
+
+#: parladata/models/memberships.py:142
 msgid "The organization that is a party to the relationship"
 msgstr ""
 
-#: parladata/models/organization.py:83
+#: parladata/models/memberships.py:150
+msgid "Organization Membership"
+msgstr ""
+
+#: parladata/models/memberships.py:151
+msgid "Organization Memberships"
+msgstr ""
+
+#: parladata/models/motion.py:10
+msgid "datetime"
+msgstr ""
+
+#: parladata/models/motion.py:11
+msgid "Select the date and time when the motion was proposed"
+msgstr ""
+
+#: parladata/models/motion.py:18
+msgid "Select the legislative session in which the motion was proposed"
+msgstr ""
+
+#: parladata/models/motion.py:27
+msgid "champions"
+msgstr ""
+
+#: parladata/models/motion.py:32
+msgid "summary"
+msgstr ""
+
+#: parladata/models/motion.py:33
+msgid "Insert the motion summary"
+msgstr ""
+
+#: parladata/models/motion.py:39
+msgid "Insert the text of the motion"
+msgstr ""
+
+#: parladata/models/motion.py:44 parladata/models/organization.py:89
+#: parladata/models/session.py:56
+msgid "classification"
+msgstr ""
+
+#: parladata/models/motion.py:45
+msgid "Motion classification"
+msgstr ""
+
+#: parladata/models/motion.py:55
+msgid "requirement"
+msgstr ""
+
+#: parladata/models/motion.py:61 parladata/models/vote.py:38
+msgid "result"
+msgstr ""
+
+#: parladata/models/motion.py:62
+msgid "Did the motion pass?"
+msgstr ""
+
+#: parladata/models/motion.py:76
+msgid "Select the piece of legislation this motion is about"
+msgstr ""
+
+#: parladata/models/motion.py:83
+msgid "Gov ID"
+msgstr ""
+
+#: parladata/models/motion.py:84 parladata/models/public_question.py:86
+msgid "Gov ID or identifier for parser"
+msgstr ""
+
+#: parladata/models/motion.py:90
+msgid "motion"
+msgstr ""
+
+#: parladata/models/motion.py:91
+msgid "motions"
+msgstr ""
+
+#: parladata/models/organization.py:23
+msgid "root"
+msgstr ""
+
+#: parladata/models/organization.py:24
+msgid "pg"
+msgstr ""
+
+#: parladata/models/organization.py:25
+msgid "commission"
+msgstr ""
+
+#: parladata/models/organization.py:26
+msgid "committee"
+msgstr ""
+
+#: parladata/models/organization.py:27
+msgid "council"
+msgstr ""
+
+#: parladata/models/organization.py:28
+#, fuzzy
+#| msgid "legislation-url"
+msgid "delegation"
+msgstr "zakonodavstvo"
+
+#: parladata/models/organization.py:29
+msgid "friendship_group"
+msgstr ""
+
+#: parladata/models/organization.py:30
+msgid "investigative_commission"
+msgstr ""
+
+#: parladata/models/organization.py:31
+msgid "other"
+msgstr ""
+
+#: parladata/models/organization.py:32
+msgid "coalition"
+msgstr ""
+
+#: parladata/models/organization.py:33
+msgid "house"
+msgstr ""
+
+#: parladata/models/organization.py:83 parladata/models/organization.py:84
 msgid "Gov website ID"
 msgstr ""
 
-#: parladata/models/organization.py:101
-msgid "The organization that contains this organization"
+#: parladata/models/organization.py:90
+msgid "Select an organization category, e.g. committee"
 msgstr ""
 
-#: parladata/models/organization.py:105
-msgid "A date of founding"
+#: parladata/models/organization.py:100
+msgid "Select the higher tier organization that contains this organization"
+msgstr ""
+
+#: parladata/models/organization.py:108
+msgid "founding_date"
 msgstr ""
 
 #: parladata/models/organization.py:109
-msgid "A date of dissolution"
+msgid "Select the date of founding"
+msgstr ""
+
+#: parladata/models/organization.py:114
+msgid "dissolution_date"
+msgstr ""
+
+#: parladata/models/organization.py:115
+msgid "Select the date of dissolution"
+msgstr ""
+
+#: parladata/models/organization.py:120
+msgid "description"
+msgstr ""
+
+#: parladata/models/organization.py:132
+msgid "organization"
+msgstr ""
+
+#: parladata/models/organization.py:133 parladata/models/session.py:51
+msgid "organizations"
 msgstr ""
 
 #: parladata/models/person.py:50
 msgid "date of birth"
 msgstr ""
 
-#: parladata/models/person.py:50
-msgid "A date of birth"
+#: parladata/models/person.py:51
+msgid "Select the date of birth"
 msgstr ""
 
-#: parladata/models/person.py:54
+#: parladata/models/person.py:56
 msgid "date of death"
 msgstr ""
 
-#: parladata/models/person.py:54
-msgid "A date of death"
+#: parladata/models/person.py:57
+msgid "Select the date of death"
 msgstr ""
 
-#: parladata/models/person.py:58
+#: parladata/models/person.py:62
 msgid "image (url)"
 msgstr ""
 
-#: parladata/models/person.py:58
-msgid "A image of a head shot"
+#: parladata/models/person.py:63
+msgid "Insert a portrait photograph that focuses on the person's face."
+msgstr ""
+
+#: parladata/models/person.py:70
+msgid "Select the person's district"
+msgstr ""
+
+#: parladata/models/person.py:77
+msgid "Is this person active?"
+msgstr ""
+
+#: parladata/models/public_question.py:10
+msgid "Recipient person."
+msgstr ""
+
+#: parladata/models/public_question.py:15
+msgid "author email"
+msgstr ""
+
+#: parladata/models/public_question.py:16
+msgid "Email of the author of the question"
+msgstr ""
+
+#: parladata/models/public_question.py:23
+msgid "Text of question"
+msgstr ""
+
+#: parladata/models/public_question.py:26
+#: parladata/models/public_question.py:69
+msgid "notification sent at"
+msgstr ""
+
+#: parladata/models/public_question.py:27
+#: parladata/models/public_question.py:70
+msgid "Timestamp when notification was sent"
+msgstr ""
+
+#: parladata/models/public_question.py:35
+msgid "Select the mandate of this public question."
+msgstr ""
+
+#: parladata/models/public_question.py:42
+#: parladata/models/public_question.py:85 parladata/models/session.py:32
+msgid "gov_id"
+msgstr ""
+
+#: parladata/models/public_question.py:43
+msgid "Insert the GOV ID."
+msgstr ""
+
+#: parladata/models/public_question.py:52
+msgid "public person question"
+msgstr ""
+
+#: parladata/models/public_question.py:53
+msgid "public person questions"
+msgstr ""
+
+#: parladata/models/public_question.py:60
+msgid "Select the question this answer relates to."
+msgstr ""
+
+#: parladata/models/public_question.py:66
+msgid "Text of answer"
+msgstr ""
+
+#: parladata/models/public_question.py:78
+msgid "The mandate of this public question."
+msgstr ""
+
+#: parladata/models/public_question.py:92
+msgid "public person answer"
+msgstr ""
+
+#: parladata/models/public_question.py:93
+msgid "public person answers"
+msgstr ""
+
+#: parladata/models/question.py:7 parladata/models/question.py:111
+#: parladata/models/question.py:132
+#, fuzzy
+#| msgid "Question for: "
+msgid "question"
+msgstr "Pitanje za: "
+
+#: parladata/models/question.py:8
+msgid "initiative"
+msgstr ""
+
+#: parladata/models/question.py:9 parladata/models/session.py:10
+msgid "unknown"
+msgstr ""
+
+#: parladata/models/question.py:18 parladata/models/session.py:74
+msgid "session"
+msgstr ""
+
+#: parladata/models/question.py:19
+msgid "The session this question belongs to."
+msgstr ""
+
+#: parladata/models/question.py:27
+msgid "mandate"
+msgstr ""
+
+#: parladata/models/question.py:28
+msgid "The mandate of this question."
+msgstr ""
+
+#: parladata/models/question.py:36
+msgid "date of the question."
+msgstr ""
+
+#: parladata/models/question.py:37
+msgid "Date of the question."
+msgstr ""
+
+#: parladata/models/question.py:43 parladata/models/question.py:139
+msgid "date of the answer."
+msgstr ""
+
+#: parladata/models/question.py:44
+msgid "Date of answer the question."
+msgstr ""
+
+#: parladata/models/question.py:51
+msgid "Title name as written on dz-rs.si"
+msgstr ""
+
+#: parladata/models/question.py:58 parladata/models/question.py:154
+msgid "authors"
+msgstr ""
+
+#: parladata/models/question.py:59
+msgid "The persons (MP) who asked the question."
+msgstr ""
+
+#: parladata/models/question.py:66 parladata/models/question.py:162
+msgid "organization authors"
+msgstr ""
+
+#: parladata/models/question.py:67
+msgid "The organizations who asked the question."
+msgstr ""
+
+#: parladata/models/question.py:74
+msgid "recipient people"
+msgstr ""
+
+#: parladata/models/question.py:75
+msgid "Recipient person (if it's a person)."
+msgstr ""
+
+#: parladata/models/question.py:82
+msgid "recipient organizations"
+msgstr ""
+
+#: parladata/models/question.py:83
+msgid "Recipient organization (if it's an organization)."
+msgstr ""
+
+#: parladata/models/question.py:89
+msgid "recipient name"
+msgstr ""
+
+#: parladata/models/question.py:90
+msgid "Recipient name as written on dz-rs.si"
+msgstr ""
+
+#: parladata/models/question.py:96
+msgid "type of question"
+msgstr ""
+
+#: parladata/models/question.py:97
+msgid "Type of question."
+msgstr ""
+
+#: parladata/models/question.py:104
+msgid "government ID"
+msgstr ""
+
+#: parladata/models/question.py:105
+msgid "Unique identifier of question on government site."
+msgstr ""
+
+#: parladata/models/question.py:112
+#, fuzzy
+#| msgid "Question for: "
+msgid "questions"
+msgstr "Pitanje za: "
+
+#: parladata/models/question.py:133
+msgid "The question this answer belongs to."
+msgstr ""
+
+#: parladata/models/question.py:140
+msgid "Date of the answer."
+msgstr ""
+
+#: parladata/models/question.py:147
+msgid "as written on parlament page."
+msgstr ""
+
+#: parladata/models/question.py:155
+msgid "The persons (MP) who answered the question."
+msgstr ""
+
+#: parladata/models/question.py:163
+msgid "The organizations who answered the question."
+msgstr ""
+
+#: parladata/models/session.py:11
+msgid "regular"
+msgstr ""
+
+#: parladata/models/session.py:12
+msgid "irregular"
+msgstr ""
+
+#: parladata/models/session.py:13
+msgid "correspondent"
+msgstr ""
+
+#: parladata/models/session.py:14
+msgid "urgent"
+msgstr ""
+
+#: parladata/models/session.py:19
+msgid "Select the mandate of this session."
+msgstr ""
+
+#: parladata/models/session.py:27
+msgid "Insert the session name and number e.g. '48. nujna seja'"
+msgstr ""
+
+#: parladata/models/session.py:33
+msgid "Insert the gov website ID."
+msgstr ""
+
+#: parladata/models/session.py:39
+msgid "Insert the start time"
+msgstr ""
+
+#: parladata/models/session.py:45
+msgid "Insert the end time"
+msgstr ""
+
+#: parladata/models/session.py:52
+msgid "Select the organization(s) that participated in the session."
+msgstr ""
+
+#: parladata/models/session.py:57
+msgid "Select the session classification"
+msgstr ""
+
+#: parladata/models/session.py:63
+msgid "in_review"
+msgstr ""
+
+#: parladata/models/session.py:64
+msgid "Is session still in review?"
+msgstr ""
+
+#: parladata/models/session.py:68
+msgid "needs_editing"
+msgstr ""
+
+#: parladata/models/session.py:69
+msgid "Does this session need editing?"
+msgstr ""
+
+#: parladata/models/session.py:75
+msgid "sessions"
+msgstr ""
+
+#: parladata/models/speech.py:29
+msgid "Speaker"
+msgstr ""
+
+#: parladata/models/speech.py:30
+msgid "Select the person making the speech"
+msgstr ""
+
+#: parladata/models/speech.py:35
+msgid "content"
+msgstr ""
+
+#: parladata/models/speech.py:36
+msgid "The content of the speech."
+msgstr ""
+
+#: parladata/models/speech.py:41
+msgid "lemmatized_content"
+msgstr ""
+
+#: parladata/models/speech.py:42
+msgid "Lemmatized words spoken"
+msgstr ""
+
+#: parladata/models/speech.py:48
+msgid "Order of the speech"
+msgstr ""
+
+#: parladata/models/speech.py:55
+msgid "Select the session of the speech."
+msgstr ""
+
+#: parladata/models/speech.py:76
+msgid "Select agenda items"
+msgstr ""
+
+#: parladata/models/speech.py:82
+msgid "Motions"
+msgstr ""
+
+#: parladata/models/speech.py:83
+msgid "Select motions related to the speech"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:23
+msgid "Person name"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:24
+msgid "Person names"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:29
+msgid "Person honorific prefix"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:30
+msgid "Person honorific prefixes"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:35
+msgid "Person honorific suffix"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:36
+msgid "Person honorific suffixes"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:41
+msgid "Person previous occupation"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:42
+msgid "Person previous occupations"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:47
+msgid "Person education"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:48
+msgid "Person educations"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:54
+msgid "Education level"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:55
+msgid "Select the education level"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:62
+msgid "Person education level"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:63
+msgid "Person education levels"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:72
+msgid "Number of mandates"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:73
+msgid "Enter the number of mandates"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:79
+#: parladata/models/versionable_properties.py:80
+msgid "Person number of mandates"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:85
+msgid "Person email"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:86
+msgid "Person emails"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:91
+msgid "he"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:92
+msgid "she"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:93
+msgid "they"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:96
+msgid "Preferred pronoun"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:97
+msgid "Select the preferred pronoun"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:104
+msgid "Person preferred pronoun"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:105
+msgid "Person preferred pronouns"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:110
+msgid "Number of voters"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:111
+msgid "Enter the number of voters"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:117
+#: parladata/models/versionable_properties.py:118
+msgid "Person number of voters"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:123
+msgid "Number of points"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:124
+msgid "Enter the number of points"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:130
+#: parladata/models/versionable_properties.py:131
+msgid "Person number of points"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:140
+msgid "Owner"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:141
+msgid "Select the organization"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:152
+msgid "Organization name"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:153
+msgid "Organization names"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:158
+msgid "Organization acronym"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:159
+msgid "Organization acronyms"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:164
+msgid "Organization email"
+msgstr ""
+
+#: parladata/models/versionable_properties.py:165
+msgid "Organization emails"
+msgstr ""
+
+#: parladata/models/vote.py:13
+msgid "Vote name/identifier"
+msgstr ""
+
+#: parladata/models/vote.py:20
+msgid "Select the motion for which the vote took place"
+msgstr ""
+
+#: parladata/models/vote.py:27
+msgid "timestamp"
+msgstr ""
+
+#: parladata/models/vote.py:28
+msgid "Select the vote time."
+msgstr ""
+
+#: parladata/models/vote.py:33
+msgid "Vote needs editing"
+msgstr ""
+
+#: parladata/models/vote.py:34
+msgid "Indicates if the vote needs editing."
+msgstr ""
+
+#: parladata/models/vote.py:39
+msgid "Select the result of the vote."
+msgstr ""
+
+#: parladata/models/vote.py:46
+msgid "Votes"
 msgstr ""
 
 #: parladata/templates/admin/parladata/parliamentarygroup/change_list.html:5
@@ -267,6 +1610,106 @@ msgstr ""
 #: parlanotifications/management/commands/send_utils.py:81
 msgid "V državnem zboru je bila obravnavana izbrana tema"
 msgstr "U Hrvatskom saboru se govorilo o odabranoj temi"
+
+#: parlanotifications/models.py:11 parlanotifications/models.py:12
+msgid "email"
+msgstr ""
+
+#: parlanotifications/models.py:15
+msgid "hash"
+msgstr ""
+
+#: parlanotifications/models.py:16
+msgid "Hash for email confirmation"
+msgstr ""
+
+#: parlanotifications/models.py:20
+msgid "uuid"
+msgstr ""
+
+#: parlanotifications/models.py:21
+msgid "UUID for the user"
+msgstr ""
+
+#: parlanotifications/models.py:27 parlanotifications/models.py:84
+msgid "latest notification sent at"
+msgstr ""
+
+#: parlanotifications/models.py:28 parlanotifications/models.py:85
+msgid "Date and time when the last notification was sent at"
+msgstr ""
+
+#: parlanotifications/models.py:34
+msgid "notification user"
+msgstr ""
+
+#: parlanotifications/models.py:35
+msgid "notification users"
+msgstr ""
+
+#: parlanotifications/models.py:43
+msgid "Daily"
+msgstr ""
+
+#: parlanotifications/models.py:44
+msgid "Weekly"
+msgstr ""
+
+#: parlanotifications/models.py:45
+msgid "Monthly"
+msgstr ""
+
+#: parlanotifications/models.py:48
+msgid "Wide"
+msgstr ""
+
+#: parlanotifications/models.py:49
+msgid "Narrow"
+msgstr ""
+
+#: parlanotifications/models.py:52 parlanotifications/models.py:91
+msgid "keyword"
+msgstr ""
+
+#: parlanotifications/models.py:53
+msgid "Notification keyword"
+msgstr ""
+
+#: parlanotifications/models.py:58
+msgid "user"
+msgstr ""
+
+#: parlanotifications/models.py:59
+msgid "The user associated with this keyword"
+msgstr ""
+
+#: parlanotifications/models.py:64
+msgid "matching method"
+msgstr ""
+
+#: parlanotifications/models.py:65
+msgid "The matching method for this keyword"
+msgstr ""
+
+#: parlanotifications/models.py:71
+msgid "accepted at"
+msgstr ""
+
+#: parlanotifications/models.py:72
+msgid "Date and time when the user accepted the keyword"
+msgstr ""
+
+#: parlanotifications/models.py:77
+msgid "notification frequency"
+msgstr ""
+
+#: parlanotifications/models.py:78
+msgid "The frequency of notifications for this keyword"
+msgstr ""
+
+#: parlanotifications/models.py:92
+msgid "keywords"
+msgstr ""
 
 #: parlanotifications/templates/add_keyword.html:6
 #: parlanotifications/templates/notification_speech.html:7
@@ -357,7 +1800,8 @@ msgid ""
 msgstr ""
 "\n"
 "              Pozdrav!<br><br>\n"
-"              Ispod ćete pronaći spominjanje odabranih riječi ili fraza iz Parlametra.<br><br>\n"
+"              Ispod ćete pronaći spominjanje odabranih riječi ili fraza iz "
+"Parlametra.<br><br>\n"
 "              Srdačan pozdrav,<br>\n"
 "              Tim Parlametra\n"
 "              "
@@ -421,7 +1865,8 @@ msgstr "zakonodavstvo"
 #: parlanotifications/templates/notification.html:249
 msgid "Odjavi se od obvestil ali uredi svoje nastavitve"
 msgstr ""
-"Ako želite otkazati pretplatu na obavijesti ili urediti svoje postavke, to možete učiniti ovdje."
+"Ako želite otkazati pretplatu na obavijesti ili urediti svoje postavke, to "
+"možete učiniti ovdje."
 
 #: parlanotifications/templates/notification_speech.html:12
 msgid "Spodaj najdeš omembe izbranih besed oz. besednih zvez iz Parlametra."
