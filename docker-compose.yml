@@ -91,6 +91,7 @@ services:
       - ./parlacards/server/:/app/server
       - ./parlacards/eslint.config.js:/app/eslint.config.js
       - ./parlacards/.prettierrc.json:/app/.prettierrc.json
+      - ./parlacards/instrument.js:/app/instrument.js
       - ./parlassets/:/parlassets
 
 
@@ -130,3 +131,4 @@ services:
       - ./parlasite/views/:/app/views
       - ./parlasite/eslint.config.js:/app/eslint.config.js
       - ./parlasite/.prettierrc.json:/app/.prettierrc.json
+      - ./parlasite/instrument.js:/app/instrument.js
