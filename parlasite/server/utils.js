@@ -30,34 +30,70 @@ function formatError(error, indent = '') {
   return str;
 }
 
+function isValidErrorForSentry(error, responseText) {
+  if (error.response) {
+    if (error.response.status === 400 && responseText != null) {
+      if (/^Query parameter '.*' missing$/.test(responseText)) {
+        return false;
+      }
+      if (/^{"error": "`id` needs to be an integer."}$/.test(responseText)) {
+        return false;
+      }
+    }
+    if (error.response.status === 404 && responseText != null) {
+      if (/^(Template|Card|Locale) '.*' not found$/.test(responseText)) {
+        return false;
+      }
+      if (responseText === '') {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+async function cloneResponseTextForSentry(response) {
+  if (!response) {
+    return null;
+  }
+  try {
+    const responseClone = response.clone();
+    const responseText = await responseClone.text();
+    return responseText;
+  } catch {
+    return '<could not read response text>';
+  }
+}
+
 async function sentryFetch(resource, options) {
   try {
     const res = await fetch(resource, options);
     if (!res.ok) {
       const error = new Error('fetch response not ok');
       error.response = res;
-      const resClone = res.clone();
-      const text = await resClone.text();
-      Sentry.withScope(function (scope) {
-        scope.setExtras({
-          'fetch-resource': resource,
-          'fetch-options': options,
-          'fetch-status': res.status,
-          'fetch-response-text': text,
-        });
-        Sentry.captureException(error);
-      });
       throw error;
     }
     return res;
   } catch (error) {
-    Sentry.withScope(function (scope) {
-      scope.setExtras({
-        'fetch-resource': resource,
-        'fetch-options': options,
+    let responseText = await cloneResponseTextForSentry(error.response);
+    if (isValidErrorForSentry(error, responseText)) {
+      Sentry.withScope(function (scope) {
+        const resourceTag = (resource || '').split('?')[0];
+        scope.setTag('fetch-resource', resourceTag);
+        scope.setExtras({
+          'fetch-resource': resource,
+          'fetch-options': options,
+        });
+        if (error.response) {
+          scope.setTag('fetch-status', error.response.status);
+          scope.setExtras({
+            'fetch-status': error.response.status,
+            'fetch-response-text': responseText,
+          });
+        }
+        Sentry.captureException(error);
       });
-      Sentry.captureException(error);
-    });
+    }
     throw error;
   }
 }
