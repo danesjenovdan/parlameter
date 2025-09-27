@@ -28,7 +28,7 @@ async function getNewData(slug) {
       },
     };
   } catch (error) {
-    if (error.response && error.response.status === 404) {
+    if (error.response && [400, 404].includes(error.response.status)) {
       return null;
     }
     throw error;
