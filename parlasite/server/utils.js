@@ -85,6 +85,7 @@ async function sentryFetch(resource, options) {
           'fetch-options': options,
         });
         if (error.response) {
+          scope.setTag('fetch-status', error.response.status);
           scope.setExtras({
             'fetch-status': error.response.status,
             'fetch-response-text': responseText,
