@@ -12,15 +12,15 @@
   <!-- <div class="col-md-6">
     <%# fetchCard('/group/number-of-introduced-amendments/', group.id) %>
   </div> -->
-  <div class="col-md-6">
-    <%- fetchCard('/group/number-of-questions/', group.id, { "showExportButton": true }) %>
-  </div>
+  <!-- <div class="col-md-6">
+    <%# fetchCard('/group/number-of-questions/', group.id, { "showExportButton": true }) %>
+  </div> -->
   <div class="col-md-6">
     <%- fetchCard('/group/vote-attendance/', group.id, { "showExportButton": true }) %>
   </div>
-  <div class="col-md-12">
-    <%- fetchCard('/group/questions/', group.id) %>
-  </div>
+  <!-- <div class="col-md-12">
+    <%# fetchCard('/group/questions/', group.id) %>
+  </div> -->
 </div>
 
 <%- await include('../_partials/footer.ejs') %>
