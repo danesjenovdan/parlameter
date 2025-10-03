@@ -32,6 +32,7 @@ class GroupQuestionCardSerializer(GroupScoreCardSerializer):
             Q(timestamp__range=(from_timestamp, to_timestamp))
             | Q(timestamp__isnull=True),
             person_authors__id__in=member_ids,
+            mandate=mandate,
         ).prefetch_related("person_authors")
 
         if not all_member_questions.exists():
@@ -91,6 +92,7 @@ class GroupQuestionCardSerializer(GroupScoreCardSerializer):
             Q(timestamp__range=(from_timestamp, to_timestamp))
             | Q(timestamp__isnull=True),
             organization_authors=group,
+            mandate=mandate,
         )
 
         # union "organizational questions" with members' questions
