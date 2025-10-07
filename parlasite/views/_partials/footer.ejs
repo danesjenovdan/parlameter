@@ -32,23 +32,18 @@
             </p>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <p class="text-uppercase"><%- i18n('footer.partners_heading') %></p>
-            <div class="row partners">
-              <div class="col-xs-12">
-                <a target="_blank" href="https://www.zagreb.hr/">
-                  <img class="img-responsive zagreb-logo" src="<%- config.urls.cdn %>/img/logo-grad-zagreb.png" alt="logo">
-                </a>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
-                <a target="_blank" href="https://danesjenovdan.si/">
-                  <img class="img-responsive" src="<%- config.urls.cdn %>/img/djdn-logo.svg" alt="logo">
-                </a>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
-                <a target="_blank" href="https://gong.hr/">
-                  <img class="img-responsive" src="<%- config.urls.cdn %>/img/gong-logo.png" alt="logo">
-                </a>
-              </div>
+            <!-- <p class="text-uppercase"><%- i18n('footer.partners_heading') %></p> -->
+            <p>Parlametar Zagreb nastao je u suradnji Danes je nov dan i Gonga.</p>
+            <div class="partners">
+              <a target="_blank" href="https://www.zagreb.hr/">
+                <img class="img-responsive" src="<%- config.urls.cdn %>/img/logo-grad-zagreb.png" alt="logo">
+              </a>
+              <a target="_blank" href="https://danesjenovdan.si/">
+                <img class="img-responsive" src="<%- config.urls.cdn %>/img/djdn-logo.svg" alt="logo">
+              </a>
+              <a target="_blank" href="https://gong.hr/">
+                <img class="img-responsive" src="<%- config.urls.cdn %>/img/gong-logo.png" alt="logo">
+              </a>
             </div>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -76,11 +71,18 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 10px;
+}
+.partners a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .partners .img-responsive {
-  width: 100%;
-  max-width: 92px;
-  margin-bottom: 15px;
+  width: auto;
+  max-width: 70px;
+  height: 50px;
+  object-fit: contain;
 }
 footer.footer .footer-about a {
   color: #333;
@@ -92,9 +94,6 @@ footer.footer .footer-about a {
 .arrow-link svg {
   width: 14px;
   margin-left: 5px;
-}
-.zagreb-logo {
-  padding: 0 30px 0 0;
 }
 .footer-legal {
   text-align: right;
