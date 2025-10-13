@@ -8,7 +8,8 @@ resources:
   - parladata/service.yaml
   - parladata/solr.yaml
   # uncomment cronjob to enable it
-  # - parladata/cronjobs/task_runner_cronjob.yaml
+  - parladata/cronjobs/task_runner_cronjob.yaml
+  - parladata/cronjobs/sentio_import_cronjob.yaml
 
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
