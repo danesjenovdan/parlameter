@@ -86,7 +86,7 @@ spec:
             - --threads
             - "3"
             - --timeout
-            - "120"
+            - "30"
           ports:
             - containerPort: 8000
           envFrom:
