@@ -90,6 +90,13 @@ def send_notification_email(user, users_docs, keyword_ids, sending_date):
     user.save()
 
 
+def get_highlighted_content(highlight, data):
+    if "content" in highlight:
+        return highlight["content"][0]
+    return data["response"]["docs"][0]["content"][:200] + "..."
+
+
+
 def send_emails():
     sending_date = datetime.now().date()
     daily_keywords = Keyword.objects.filter(notification_frequency="DAILY").exclude(
@@ -143,7 +150,7 @@ def send_emails():
                             {
                                 "id": speech.id,
                                 "content": shorten_highlighted_content(
-                                    highlight["content"][0]
+                                    get_highlighted_content(highlight, data)
                                 )
                                 .replace("<em>", "<strong>")
                                 .replace("</em>", "</strong>"),
@@ -163,7 +170,7 @@ def send_emails():
                             {
                                 "id": agenda_item.id,
                                 "content": shorten_highlighted_content(
-                                    highlight["content"][0]
+                                    get_highlighted_content(highlight, data)
                                 )
                                 .replace("<em>", "<strong>")
                                 .replace("</em>", "</strong>"),
@@ -179,7 +186,7 @@ def send_emails():
                             {
                                 "id": vote.id,
                                 "content": shorten_highlighted_content(
-                                    highlight["content"][0]
+                                    get_highlighted_content(highlight, data)
                                 )
                                 .replace("<em>", "<strong>")
                                 .replace("</em>", "</strong>"),
@@ -195,7 +202,7 @@ def send_emails():
                             {
                                 "id": law.id,
                                 "content": shorten_highlighted_content(
-                                    highlight["content"][0]
+                                    get_highlighted_content(highlight, data)
                                 )
                                 .replace("<em>", "<strong>")
                                 .replace("</em>", "</strong>"),
