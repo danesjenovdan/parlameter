@@ -64,18 +64,34 @@ class GroupUnityScoreSerializerField(serializers.Field):
                 code=404,
             )
 
-        average_score = sum(
-            [avg["average_unity"] for avg in group_averages.values()]
-        ) / len(group_averages.keys())
+        try:
+            average_score = sum(
+                [
+                    avg["average_unity"]
+                    for avg in group_averages.values()
+                    if avg["average_unity"]
+                ]
+            ) / len(group_averages.keys())
+        except ZeroDivisionError:
+            raise NotFound(
+                detail="No unity score was calculated for this parliamentary group.",
+                code=404,
+            )
 
         # get the maximum score and the id of the groups in one loop
         maximum_score = -1
         winner_ids = []
         for group_average_key, group_average_value in group_averages.items():
-            if group_average_value["average_unity"] > maximum_score:
+            if (
+                group_average_value["average_unity"]
+                and group_average_value["average_unity"] > maximum_score
+            ):
                 maximum_score = group_average_value["average_unity"]
                 winner_ids = [group_average_key]
-            elif group_average_value["average_unity"] == maximum_score:
+            elif (
+                group_average_value["average_unity"]
+                and group_average_value["average_unity"] == maximum_score
+            ):
                 winner_ids.append(group_average_key)
 
         maximum_competitors = Organization.objects.filter(id__in=winner_ids)[
