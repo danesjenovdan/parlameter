@@ -38,7 +38,9 @@ class Command(BaseCommand):
 
             motion_organizations__ids = (
                 Motion.objects.filter(datetime__range=(from_timestamp, to_timestamp))
-                .filter(session__organizations__classification__in=filtered_classifications)
+                .filter(
+                    session__organizations__classification__in=filtered_classifications
+                )
                 .values_list("session__organizations__id", flat=True)
                 .distinct()
             )

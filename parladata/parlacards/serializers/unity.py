@@ -65,7 +65,11 @@ class GroupUnityScoreSerializerField(serializers.Field):
             )
 
         average_score = sum(
-            [avg["average_unity"] for avg in group_averages.values() if avg["average_unity"]]
+            [
+                avg["average_unity"]
+                for avg in group_averages.values()
+                if avg["average_unity"]
+            ]
         ) / len(group_averages.keys())
 
         # get the maximum score and the id of the groups in one loop

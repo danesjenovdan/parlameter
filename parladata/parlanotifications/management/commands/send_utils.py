@@ -96,7 +96,6 @@ def get_highlighted_content(highlight, data):
     return data["response"]["docs"][0]["content"][:200] + "..."
 
 
-
 def send_emails():
     sending_date = datetime.now().date()
     daily_keywords = Keyword.objects.filter(notification_frequency="DAILY").exclude(
