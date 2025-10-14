@@ -207,7 +207,7 @@ class Person(Timestampable, Parsable, Sluggable, VersionableFieldsOwner):
             # get leader membership
             membership_at = (
                 PersonMembership.objects.active_at(timestamp)
-                .filter(member=self, role="leader", organization__classification=None)
+                .filter(member=self, role="leader", organization__classification="root")
                 .order_by("end_time")
                 .last()
             )
