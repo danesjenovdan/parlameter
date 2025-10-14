@@ -344,7 +344,7 @@ class QuestionView(viewsets.ModelViewSet):
     fields = "__all__"
     filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
     filterset_fields = ("person_authors", "mandate")
-    ordering_fields = ("date",)
+    ordering_fields = ("timestamp",)
 
 
 class AnswerView(viewsets.ModelViewSet):
