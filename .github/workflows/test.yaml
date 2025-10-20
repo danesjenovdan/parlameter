@@ -20,7 +20,7 @@ jobs:
       - name: Set up PostgreSQL
         uses: harmon758/postgresql-action@v1
         with:
-          postgresql version: "15"
+          postgresql version: "16"
           postgresql db: "parladata"
           postgresql user: postgres
           postgresql password: postgres
