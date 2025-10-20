@@ -1,3 +1,4 @@
+from django.db.models import Q
 from rest_framework import serializers
 
 from parlacards.serializers.common import CommonCachableSerializer, CommonSerializer
@@ -43,7 +44,9 @@ class LegislationDetailSerializer(LegislationSerializer):
 
     def get_documents(self, obj):
         links = (
-            Link.objects.filter(motion__law=obj)
+            Link.objects.filter(
+                Q(motion__law=obj) | Q(legislation_consideration__legislation=obj)
+            )
             .exclude(tags__name="vote-pdf")
             .distinct("url")
         )
