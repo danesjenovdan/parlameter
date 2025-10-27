@@ -9,14 +9,14 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "@sentry/node": "^10.12.0",
+    "@sentry/node": "^10.22.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
-    "eslint": "^9.36.0",
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
