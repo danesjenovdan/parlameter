@@ -1,6 +1,7 @@
 const Sentry = require('@sentry/node');
 const express = require('express');
 const config = require('../config');
+const { sanitizeSlug } = require('./sanitize');
 const { i18n: _i18n, asyncRender: ar } = require('./utils');
 
 const i18n = _i18n(config.locale);
@@ -30,9 +31,16 @@ function setupExpress() {
 
     // i18n middleware
     app.use((req, res, next) => {
-      if (req.query.lang) {
-        res.locals.i18n = _i18n(req.query.lang);
-        res.locals.lang = req.query.lang;
+      if (req.query.lang && req.query.lang !== config.locale) {
+        const lang = sanitizeSlug(req.query.lang);
+        try {
+          const i18nTemp = _i18n(lang);
+          res.locals.i18n = i18nTemp;
+          res.locals.lang = lang;
+        } catch {
+          res.locals.i18n = i18n;
+          res.locals.lang = config.locale;
+        }
       }
       next();
     });
