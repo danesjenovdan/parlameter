@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import axios from 'axios';
+import { sanitizeSlug, sanitizeCardName } from './sanitize.js';
 
 class ResponseTimings {
   constructor() {
@@ -85,6 +86,7 @@ const createError = (statusCode, error, message, code) => {
 const moduleCache = {};
 
 const loadCardModule = async (cardName) => {
+  cardName = sanitizeCardName(cardName);
   if (!(cardName in moduleCache)) {
     try {
       moduleCache[cardName] = await import(`../dist/server/${cardName}.js`);
@@ -103,6 +105,7 @@ const loadCardModule = async (cardName) => {
 const localeCache = {};
 
 const loadLocale = async (locale) => {
+  locale = sanitizeSlug(locale);
   if (!(locale in localeCache)) {
     try {
       localeCache[locale] = await fs.readJSON(`./dist/locales/${locale}.json`);
