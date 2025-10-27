@@ -1,3 +1,5 @@
+const { sanitizeSlug } = require('../server/sanitize');
+
 const config = {
   port: 3066,
   serverTimeout: 120000,
@@ -20,6 +22,8 @@ const config = {
   defaultCardDate: process.env.PARLASITE_DEFAULT_CARD_DATE,
   newsletterSegmentId: process.env.PARLASITE_NEWSLETTER_SEGMENT_ID,
 };
+
+config.locale = sanitizeSlug(config.locale);
 
 if (!config.leaderId || !config.rootOrgId || !config.rootOrgId2 || !config.mandateId) {
   throw new Error('Required config values are not defined!');
