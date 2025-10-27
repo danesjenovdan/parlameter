@@ -25,6 +25,7 @@ class PersonQuestionCardSerializer(PersonScoreCardSerializer):
             Q(timestamp__range=(from_timestamp, to_timestamp))
             | Q(timestamp__isnull=True),
             person_authors=person,
+            mandate=mandate,
         ).order_by("-timestamp")
 
         paged_object_list, pagination_metadata = create_paginator(

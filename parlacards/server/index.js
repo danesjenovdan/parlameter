@@ -3,6 +3,7 @@ import * as Sentry from '@sentry/node';
 import fastifyCors from '@fastify/cors';
 import { HTTPError, renderCard } from './render-card.js';
 import { ResponseTimings, getParlaHeaders } from './utils.js';
+import { sanitizeCardName, sanitizeSlug } from './sanitize.js';
 
 const fastify = createFastify({
   logger: true,
@@ -36,8 +37,16 @@ const renderCardHandler = async (request, reply) => {
   responseTimings.push('requestStart', reply.elapsedTime);
 
   const { group, method } = request.params;
-  const { id, date, locale, template, ...state } = request.query;
-  const cardName = `${group}/${method}`;
+  const {
+    id,
+    date,
+    locale: _locale,
+    template: _template,
+    ...state
+  } = request.query;
+  const locale = sanitizeSlug(_locale);
+  const template = sanitizeSlug(_template);
+  const cardName = sanitizeCardName(`${group}/${method}`);
   const currentUrl = `${request.protocol}://${request.hostname}${request.originalUrl}`;
   const parlaHeaders = getParlaHeaders(request.headers);
 
