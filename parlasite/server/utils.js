@@ -1,6 +1,7 @@
 const Sentry = require('@sentry/node');
 const fs = require('fs');
 const _ = require('lodash');
+const { sanitizeSlug } = require('./sanitize');
 const { urls, locale, defaultCardDate } = require('../config');
 
 function formatError(error, indent = '') {
@@ -311,6 +312,7 @@ function expandProps(msg, props) {
 }
 
 function i18n(lang) {
+  lang = sanitizeSlug(lang);
   const messagesStr = fs.readFileSync(`./i18n/${lang}/defaults.json`, 'utf-8');
   const messages = JSON.parse(messagesStr);
   const siteMapStr = fs.readFileSync(`./i18n/${lang}/sitemap.json`, 'utf-8');
