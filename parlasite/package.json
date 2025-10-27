@@ -12,6 +12,7 @@
     "@sentry/node": "^10.22.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "limiter": "^3.0.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
