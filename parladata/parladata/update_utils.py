@@ -20,6 +20,7 @@ from parladata.models.public_question import PublicPersonQuestion
 from parladata.models.session import Session
 from parladata.models.speech import Speech
 from parladata.models.vote import Vote
+from parladata.models.memberships import PersonMembership
 
 """
 relativno navadno večino: (večina prisotnih poslancev; najpogostejši način odločanja),
@@ -115,6 +116,8 @@ def notify_editors_for_new_data():
         created_at__gte=previous_parse, needs_editing=True
     )
 
+    updated_memberships = PersonMembership.objects.filter(updated_at__gte=previous_parse)
+
     assert bool(editor_permission_group), "There's no editor permission group"
 
     if (
@@ -139,6 +142,7 @@ def notify_editors_for_new_data():
                     "new_people": new_people,
                     "new_votes_need_editing": new_votes_need_editing,
                     "new_legislation_considered": new_legislation_considered,
+                    "updated_memberships": updated_memberships,
                     "instalation_name": settings.INSTALATION_NAME,
                 },
             )
