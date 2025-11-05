@@ -37,7 +37,7 @@ class OrganizationAdmin(admin.ModelAdmin):
     ]
     search_fields = ("id", "organizationname__value")  # 'name' maybe?
 
-    list_display = ("id", "get_name")
+    list_display = ("id", "get_name", "gov_id", "classification")
     autocomplete_fields = ("parent",)
 
     # set order of fields in the dashboard
