@@ -116,7 +116,9 @@ def notify_editors_for_new_data():
         created_at__gte=previous_parse, needs_editing=True
     )
 
-    updated_memberships = PersonMembership.objects.filter(updated_at__gte=previous_parse)
+    updated_memberships = PersonMembership.objects.filter(
+        updated_at__gte=previous_parse
+    )
 
     assert bool(editor_permission_group), "There's no editor permission group"
 
