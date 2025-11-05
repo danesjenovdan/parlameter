@@ -8,31 +8,37 @@ card:
     mestu [DZ RS](https://www.dz-rs.si/).
 
 
-    ## BESEDE, KI SO ZAZNAMOVALE SEJO
+    **BESEDE, KI SO ZAZNAMOVALE SEJO**
 
 
-    Analizo izvajamo po statistiki [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
-    Korpus predstavljajo vsi govori, dokument pa vsi govori na seji.
+    Izpis 10 besed in besednih zvez, ki so bile na seji uporabljene pogosteje
+    kot na vseh drugih sejah.
 
 
-    ## PRISOTNOST POSLANSKIH SKUPIN NA GLASOVANJIH SEJE
+    Analizo izvajamo po statistiki
+    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf). Osnovo analize (korpus)
+    predstavljajo vsi govori v DZ, dokument pa vsi govori na obravnavani seji.
+
+
+    **PRISOTNOST POSLANSKIH SKUPIN NA GLASOVANJIH SEJE**
 
 
     Poslanske skupine razvrstimo glede na odstotek, ki je seštevek prisotnosti
     njihovih poslank in poslancev na glasovanjih izbrane seje.
 
 
-    ## GLASOVANJA
+    **GLASOVANJA**
 
 
     Za vsa glasovanja na posamezni seji preštejemo vse glasove (ZA, PROTI,
-    VZDRŽAN_A) in število poslancev, ki niso glasovali, ter izpišemo rezultat
-    glede na najpogostejši glas ali odsotnost.
+    VZDRŽANO) ter število poslank in poslancev, ki niso glasovali. Nato izpišemo
+    rezultat glede na najpogostejši glas ali odsotnost.
 
 
-    Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
-    pri vzdržanih in odsotnih glasov ne moremo zagotavljati. Prisotnost poslancev
-    se na sejah DZ ne preverja na vsakem glasovanju, zato se lahko zgodi,
-    da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
-    z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
-    kot odsotna (rezultat: ni glasoval/a).
+    Za pravilnost rezultatov glasovanja skrbimo po najboljših močeh, a je
+    predvsem pri vzdržanih in odsotnih glasovih ne moremo zagotavljati.
+    Prisotnost poslank in poslancev se na sejah DZ ne preverja na vsakem
+    glasovanju, zato se lahko zgodi, da je bila oseba vzdržana, pa je zaradi
+    manjka podatkov v dokumentu z rezultati glasovanja, ki ga uporabljamo kot
+    vir, na Parlametru ta oseba prikazana kot odsotna (rezultat: ni glasoval oz.
+    glasovala).

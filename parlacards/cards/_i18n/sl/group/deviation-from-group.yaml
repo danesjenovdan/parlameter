@@ -1,13 +1,11 @@
 card:
-  title: Neujemanje s poslansko skupino
+  title: Ujemanje s poslansko skupino
   info: >-
-    # Seznam vseh poslancev poslanske skupine, ki so razvrščeni glede na
-    vrednost ujemanja z glasom poslanske skupine. Večja kot je vrednost, manjše
-    je ujemanje.
+    # Seznam članic in članov poslanske skupine, razvrščen glede na to, kako
+    pogosto glasujejo enako kot večina v poslanski skupini. Večja kot je
+    vrednost,
 
 
-    Za vsako glasovanje izračunamo "glas poslanske skupine", ki ji pripada
-    posamezni_a poslanec_ka. Potem za vsakega člana_ico izračunamo odstotek
-    glasovanj, na katerih je poslanec_ka glasoval_a drugače od večinskega
-    glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja
-    proti najmanjšemu.
+    Za vsako glasovanje najprej izračunamo večinski glas poslanske skupine (ZA,
+    PROTI ali VZDRŽANO), torej tisti glas, za katerega se je odločilo največ
+    njenih članov in članic.

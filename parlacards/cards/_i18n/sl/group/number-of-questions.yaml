@@ -1,8 +1,9 @@
 card:
   title: Št. poslanskih vprašanj in pobud
   info: >-
-    # Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci
-    izbrane poslanske skupine v tem sklicu DZ.
+    # Število poslanskih vprašanj in pobud vseh članic in članov poslanske
+    skupine v tem mandatu v primerjavi s povprečno in najvišjo vrednostjo.
 
 
-    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
+    Vprašanja in pobude pridobivamo s spletnega mesta [DZ
+    RS](https://www.dz-rs.si/).

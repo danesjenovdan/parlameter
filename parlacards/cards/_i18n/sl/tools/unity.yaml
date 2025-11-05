@@ -1,30 +1,29 @@
 card:
-  title: 'Enotnost'
+  title: Enotnost
   info: >-
     # Analiza enotnosti glasovanj v državnem zboru.
 
 
     V tej analizi prikažemo enotnost glasovanj v izbrani skupini (državni zbor,
-    koalicija, posamezna poslanska skupina). Odstotek izraža usklajenost
-    poslank_cev pri posameznih glasovanjih.
+    koalicija, posamezna poslanska skupina). Odstotek izraža usklajenost poslank
+    in poslancev pri posameznih glasovanjih.
 
 
-    Enotnost izračunamo tako, da pri posameznem glasovanju število glasovnic z
-    večinsko izbiro (tisto, za katero je glasovalo največ poslank_cev: za,
-    proti, vzdržani ali odsotni) v izbrani skupini delimo s skupnim številom
-    vseh poslank_cev v tej skupini in rezultat množimo s 100, da dobimo
-    odstotke. Tako dobimo delež poslank_cev v izbrani skupini, katerih glas
+    Na vrhu kartice lahko s klikom na želeni filter izbereš opazovano skupino,
+    telo, kjer je potekalo glasovanje (DZ ali matična delovna telesa), in
+    časovno obdobje, rezultate pa razvrščaš po stopnji enotnosti – bodisi od
+    največje proti najmanjši bodisi obratno.
+
+
+    Enotnost za posamezno glasovanje izračunamo tako, da najprej ugotovimo
+    večinski glas znotraj izbrane skupine (ZA, PROTI, VZDRŽAN ali ODSOTEN). Nato
+    preštejemo, koliko poslank in poslancev je glasovalo v skladu s to večino,
+    to število pa delimo s skupnim številom vseh članic in članov v tej skupini.
+    Tako dobimo delež poslank in poslancev v izbrani skupini, katerih glas
     ustreza večinski izbiri. Če so torej pri posameznem glasovanju vsi glasovi
     pripadali isti izbiri, je enotnost 100 %, če pa so bili glasovi razpršeni
     med več možnosti, je enotnost ustrezno nižja.
 
 
-    Orodje omogoča filtriranje glede na telo, kjer je bilo glasovanje izvedeno
-    (državni zbor ali matična delovna telesa), in izbrano obdobje ter
-    razvrščanje rezultatov po enotnosti – bodisi od največje proti najmanjši
-    bodisi obratno.
-
-
-    Seznam vključuje vsa glasovanja, ki so se zgodila v tekočem sklicu državnega
-    zbora in so bila objavljena na uradnem
-    [spletnem mestu DZ RS](https://www.dz-rs.si/wps/portal/Home).
+    Analiza vključuje vsa glasovanja v tekočem sklicu državnega zbora. Podatke
+    pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
