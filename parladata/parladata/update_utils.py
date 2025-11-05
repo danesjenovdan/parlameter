@@ -14,6 +14,7 @@ from django.utils.translation import gettext as _
 from parlacards.models import SessionTfidf
 from parladata.models.agenda_item import AgendaItem
 from parladata.models.legislation import LegislationConsideration
+from parladata.models.memberships import PersonMembership
 from parladata.models.motion import Motion
 from parladata.models.person import Person
 from parladata.models.public_question import PublicPersonQuestion
@@ -115,6 +116,10 @@ def notify_editors_for_new_data():
         created_at__gte=previous_parse, needs_editing=True
     )
 
+    updated_memberships = PersonMembership.objects.filter(
+        updated_at__gte=previous_parse
+    )
+
     assert bool(editor_permission_group), "There's no editor permission group"
 
     if (
@@ -139,6 +144,7 @@ def notify_editors_for_new_data():
                     "new_people": new_people,
                     "new_votes_need_editing": new_votes_need_editing,
                     "new_legislation_considered": new_legislation_considered,
+                    "updated_memberships": updated_memberships,
                     "instalation_name": settings.INSTALATION_NAME,
                 },
             )
