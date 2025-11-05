@@ -1,4 +1,4 @@
-Django==5.0.13
+Django==5.1.14
 django-autoslug
 psycopg==3.2.1
 djangorestframework
