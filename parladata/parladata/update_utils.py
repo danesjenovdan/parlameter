@@ -14,13 +14,13 @@ from django.utils.translation import gettext as _
 from parlacards.models import SessionTfidf
 from parladata.models.agenda_item import AgendaItem
 from parladata.models.legislation import LegislationConsideration
+from parladata.models.memberships import PersonMembership
 from parladata.models.motion import Motion
 from parladata.models.person import Person
 from parladata.models.public_question import PublicPersonQuestion
 from parladata.models.session import Session
 from parladata.models.speech import Speech
 from parladata.models.vote import Vote
-from parladata.models.memberships import PersonMembership
 
 """
 relativno navadno večino: (večina prisotnih poslancev; najpogostejši način odločanja),
