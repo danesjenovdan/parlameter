@@ -45,8 +45,8 @@ spec:
             memory: 1Gi
             cpu: 400m
           limits:
-            memory: 1Gi
-            cpu: 400m
+            memory: 2Gi
+            cpu: 600m
       initContainers:
       - name: create-core
         image: parlasolr-slovenija
