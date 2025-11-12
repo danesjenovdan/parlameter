@@ -35,7 +35,7 @@ class OrganizationAdmin(admin.ModelAdmin):
         OrganizationEmailInline,
         LinkOrganizationInline,
     ]
-    search_fields = ("id", "organizationname__value")  # 'name' maybe?
+    search_fields = ("id", "organizationname__value", "gov_id")  # Added gov_id for better search
 
     list_display = ("id", "get_name", "gov_id", "classification")
     autocomplete_fields = ("parent",)

@@ -57,7 +57,10 @@ class SessionSerializer(CommonCachableSerializer):
     def get_has_votes(self, session):
         return Vote.objects.filter(motion__session=session).exists()
 
-    name = serializers.CharField()
+    def get_name(self, session):
+        return session.get_joint_name()
+
+    name = serializers.SerializerMethodField()
     id = serializers.IntegerField()
     start_time = serializers.DateTimeField()
     end_time = serializers.DateTimeField()

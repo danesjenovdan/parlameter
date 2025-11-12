@@ -11,6 +11,7 @@ from parladata.forms import (
     EndMembershipsForm,
     MergeOrganizationsForm,
     MergePeopleForm,
+    MergeSessionsForm,
 )
 from parladata.models.ballot import Ballot
 from parladata.models.common import Mandate
@@ -21,6 +22,7 @@ from parladata.models.vote import Vote
 from parladata.utils import (
     make_organization_merge_statistics,
     make_person_merge_statistics,
+    make_sessions_merge_statistics,
 )
 
 
@@ -195,6 +197,86 @@ def merge_organizations(request):
             "opts": {
                 "app_label": "parladata",
                 "app_config": {"verbose_name": "parliamentarygroup"},
+            },
+        },
+    )
+
+def merge_sessions(request):
+    passed_real_session = request.GET.get("real_session", None)
+    app_list = admin.site.get_app_list(request)
+    if request.method == "POST":
+        form = MergeSessionsForm(request.POST)
+        real_session = dict(form.data)["real_session"][0]
+        duplicated_session = dict(form.data)["duplicated_session"][0]
+        confirmed = dict(form.data)["confirmed"][0]
+        if duplicated_session:
+            if confirmed:
+                message = _("Merge sessions to session with ID: ") + str(real_session)
+                Task(
+                    name="merge_sessions",
+                    payload={"real_session_id": real_session, "duplicated_session_id": duplicated_session},
+                    module_name="parladata.tasks",
+                    email_msg=message,
+                ).save()
+                return render(
+                    request,
+                    "merge_sessions.html",
+                    {
+                        "form": MergeSessionsForm(),
+                        "info": "Sessions will be merged soon.",
+                        "app_list": app_list,
+                        "opts": {
+                            "app_label": "parladata",
+                            "app_config": {"verbose_name": "sessions"},
+                        },
+                    },
+                )
+            statisctics = make_sessions_merge_statistics(real_session, duplicated_session)
+            _mutable = form.data._mutable
+            form.data._mutable = True
+            form.data["confirmed"] = True
+            form.data._mutable = _mutable
+            return render(
+                request,
+                "merge_sessions.html",
+                {
+                    "statistics": statisctics,
+                    "form": form,
+                    "app_list": app_list,
+                    "opts": {
+                        "app_label": "parladata",
+                        "app_config": {"verbose_name": "sessions"},
+                    },
+                },
+            )
+        else:
+            form.clean()
+            return render(
+                request,
+                "merge_sessions.html",
+                {
+                    "form": form,
+                    "app_list": app_list,
+                    "opts": {
+                        "app_label": "parladata",
+                        "app_config": {"verbose_name": "sessions"},
+                    },
+                },
+            )
+    if passed_real_session:
+        form = MergeSessionsForm(initial={"real_session": passed_real_session})
+    else:
+        form = MergeSessionsForm()
+
+    return render(
+        request,
+        "merge_sessions.html",
+        {
+            "form": form,
+            "app_list": app_list,
+            "opts": {
+                "app_label": "parladata",
+                "app_config": {"verbose_name": "sessions"},
             },
         },
     )

@@ -1,0 +1,19 @@
+/* Custom styles for admin interface */
+
+/* Limit width of organization dropdown in SessionOrganizationsInline */
+.inline-related .field-organization select {
+    max-width: 300px !important;
+    width: 300px !important;
+}
+
+/* More specific targeting for session organizations through inline */
+.inline-group .field-organization select {
+    max-width: 300px !important;
+    width: 300px !important;
+}
+
+/* Target by ID if the inline has specific ID */
+#sessionorganizationthrough_set-group .field-organization select {
+    max-width: 300px !important;
+    width: 300px !important;
+}
