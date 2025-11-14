@@ -280,6 +280,7 @@ def merge_sessions(real_session_id, duplicated_session_id, print_method=print):
 
     real_session.gov_id = f"{real_session.gov_id}|{duplicated_session.gov_id}"
     real_session.is_joint_session = True
+    real_session.name = f"{real_session.name}({real_session.organizations.first().name}), {duplicated_session.name}({duplicated_session.organizations.first().name})"
     real_session.save()
 
     duplicated_session_through = duplicated_session.session_organization_through.all()

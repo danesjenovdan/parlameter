@@ -113,6 +113,9 @@ class Session(Timestampable):
         if self.is_joint_session:
             return f"{self.get_joint_name_with_orgs()},  {self.mandate}"
         else:
+            org = self.organizations.first()
+            if org:
+                return f"{self.name}, ({org.name}) {self.mandate}"
             return f"{self.name}, {self.mandate}"
 
 

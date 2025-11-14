@@ -45,7 +45,7 @@ class SessionAdmin(admin.ModelAdmin):
     search_fields = ["name"]
     list_display = [
         "id",
-        "get_name",
+        "name",
         "tfidf",
         "run_tfidf",
         "agenda_items",
@@ -83,9 +83,6 @@ class SessionAdmin(admin.ModelAdmin):
     def get_mandate(self, obj):
         return obj.mandate.description
 
-    def get_name(self, obj):
-        return obj.get_joint_name()
-
     def get_organizations(self, obj):
         return " - ".join([org.name for org in obj.organizations.all()])
 
@@ -95,7 +92,6 @@ class SessionAdmin(admin.ModelAdmin):
     run_tfidf.short_description = "TFIDF TASK"
     get_mandate.short_description = "mandate"
     get_organizations.short_description = "Organizations"
-    get_name.short_description = "Name"
     join_sessions.allow_tags = True
     join_sessions.short_description = "Join sessions"
 

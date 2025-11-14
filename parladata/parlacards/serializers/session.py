@@ -9,6 +9,11 @@ from parladata.models.agenda_item import AgendaItem
 from parladata.models.vote import Vote
 
 
+class SessionJointPartSerializer(serializers.Serializer):
+    name = serializers.CharField()
+    organization = CommonOrganizationSerializer()
+
+
 class SessionSerializer(CommonCachableSerializer):
     def calculate_cache_key(self, session):
         dates = list(session.organizations.all().values_list("updated_at", flat=True))
@@ -56,11 +61,18 @@ class SessionSerializer(CommonCachableSerializer):
 
     def get_has_votes(self, session):
         return Vote.objects.filter(motion__session=session).exists()
+    
+    def get_joint_data(self, session):
+        if session.is_joint_session:
+            return SessionJointPartSerializer(
+                session.session_organization_through.all(), context=self.context, many=True
+            ).data
+        else:
+            return None
 
-    def get_name(self, session):
-        return session.get_joint_name()
 
-    name = serializers.SerializerMethodField()
+    name = serializers.CharField()
+    joint_data = serializers.SerializerMethodField()
     id = serializers.IntegerField()
     start_time = serializers.DateTimeField()
     end_time = serializers.DateTimeField()
