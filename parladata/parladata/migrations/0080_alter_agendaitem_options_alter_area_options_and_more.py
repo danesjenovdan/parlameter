@@ -2,1548 +2,3139 @@
 
 import django.db.models.deletion
 import martor.models
-import parladata.models.legislation
 import tinymce.models
 from django.db import migrations, models
+
+import parladata.models.legislation
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0079_auto_20250829_1332'),
+        ("parladata", "0079_auto_20250829_1332"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='agendaitem',
-            options={'ordering': ['order'], 'verbose_name': 'Agenda item', 'verbose_name_plural': 'Agenda items'},
+            name="agendaitem",
+            options={
+                "ordering": ["order"],
+                "verbose_name": "Agenda item",
+                "verbose_name_plural": "Agenda items",
+            },
         ),
         migrations.AlterModelOptions(
-            name='area',
-            options={'verbose_name': 'Area', 'verbose_name_plural': 'Areas'},
+            name="area",
+            options={"verbose_name": "Area", "verbose_name_plural": "Areas"},
         ),
         migrations.AlterModelOptions(
-            name='ballot',
-            options={'verbose_name': 'Ballot', 'verbose_name_plural': 'Ballots'},
+            name="ballot",
+            options={"verbose_name": "Ballot", "verbose_name_plural": "Ballots"},
         ),
         migrations.AlterModelOptions(
-            name='document',
-            options={'ordering': ['id'], 'verbose_name': 'Document', 'verbose_name_plural': 'Documents'},
+            name="document",
+            options={
+                "ordering": ["id"],
+                "verbose_name": "Document",
+                "verbose_name_plural": "Documents",
+            },
         ),
         migrations.AlterModelOptions(
-            name='legislationclassification',
-            options={'ordering': ['name'], 'verbose_name': 'Legislation classification', 'verbose_name_plural': 'Legislation classifications'},
+            name="legislationclassification",
+            options={
+                "ordering": ["name"],
+                "verbose_name": "Legislation classification",
+                "verbose_name_plural": "Legislation classifications",
+            },
         ),
         migrations.AlterModelOptions(
-            name='legislationconsideration',
-            options={'ordering': ['-timestamp'], 'verbose_name': 'Legislation consideration', 'verbose_name_plural': 'Legislation considerations'},
+            name="legislationconsideration",
+            options={
+                "ordering": ["-timestamp"],
+                "verbose_name": "Legislation consideration",
+                "verbose_name_plural": "Legislation considerations",
+            },
         ),
         migrations.AlterModelOptions(
-            name='legislationstatus',
-            options={'ordering': ['name'], 'verbose_name': 'Legislation status', 'verbose_name_plural': 'Legislation statuses'},
+            name="legislationstatus",
+            options={
+                "ordering": ["name"],
+                "verbose_name": "Legislation status",
+                "verbose_name_plural": "Legislation statuses",
+            },
         ),
         migrations.AlterModelOptions(
-            name='link',
-            options={'verbose_name': 'link', 'verbose_name_plural': 'links'},
+            name="link",
+            options={"verbose_name": "link", "verbose_name_plural": "links"},
         ),
         migrations.AlterModelOptions(
-            name='mandate',
-            options={'ordering': ['beginning'], 'verbose_name': 'Mandate', 'verbose_name_plural': 'Mandates'},
+            name="mandate",
+            options={
+                "ordering": ["beginning"],
+                "verbose_name": "Mandate",
+                "verbose_name_plural": "Mandates",
+            },
         ),
         migrations.AlterModelOptions(
-            name='mediareport',
-            options={'verbose_name': 'media report', 'verbose_name_plural': 'media reports'},
+            name="mediareport",
+            options={
+                "verbose_name": "media report",
+                "verbose_name_plural": "media reports",
+            },
         ),
         migrations.AlterModelOptions(
-            name='medium',
-            options={'ordering': ['order'], 'verbose_name': 'medium', 'verbose_name_plural': 'media'},
+            name="medium",
+            options={
+                "ordering": ["order"],
+                "verbose_name": "medium",
+                "verbose_name_plural": "media",
+            },
         ),
         migrations.AlterModelOptions(
-            name='motion',
-            options={'verbose_name': 'motion', 'verbose_name_plural': 'motions'},
+            name="motion",
+            options={"verbose_name": "motion", "verbose_name_plural": "motions"},
         ),
         migrations.AlterModelOptions(
-            name='organization',
-            options={'verbose_name': 'organization', 'verbose_name_plural': 'organizations'},
+            name="organization",
+            options={
+                "verbose_name": "organization",
+                "verbose_name_plural": "organizations",
+            },
         ),
         migrations.AlterModelOptions(
-            name='organizationacronym',
-            options={'verbose_name': 'Organization acronym', 'verbose_name_plural': 'Organization acronyms'},
+            name="organizationacronym",
+            options={
+                "verbose_name": "Organization acronym",
+                "verbose_name_plural": "Organization acronyms",
+            },
         ),
         migrations.AlterModelOptions(
-            name='organizationemail',
-            options={'verbose_name': 'Organization email', 'verbose_name_plural': 'Organization emails'},
+            name="organizationemail",
+            options={
+                "verbose_name": "Organization email",
+                "verbose_name_plural": "Organization emails",
+            },
         ),
         migrations.AlterModelOptions(
-            name='organizationmembership',
-            options={'verbose_name': 'Organization Membership', 'verbose_name_plural': 'Organization Memberships'},
+            name="organizationmembership",
+            options={
+                "verbose_name": "Organization Membership",
+                "verbose_name_plural": "Organization Memberships",
+            },
         ),
         migrations.AlterModelOptions(
-            name='organizationname',
-            options={'verbose_name': 'Organization name', 'verbose_name_plural': 'Organization names'},
+            name="organizationname",
+            options={
+                "verbose_name": "Organization name",
+                "verbose_name_plural": "Organization names",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personeducation',
-            options={'verbose_name': 'Person education', 'verbose_name_plural': 'Person educations'},
+            name="personeducation",
+            options={
+                "verbose_name": "Person education",
+                "verbose_name_plural": "Person educations",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personeducationlevel',
-            options={'verbose_name': 'Person education level', 'verbose_name_plural': 'Person education levels'},
+            name="personeducationlevel",
+            options={
+                "verbose_name": "Person education level",
+                "verbose_name_plural": "Person education levels",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personemail',
-            options={'verbose_name': 'Person email', 'verbose_name_plural': 'Person emails'},
+            name="personemail",
+            options={
+                "verbose_name": "Person email",
+                "verbose_name_plural": "Person emails",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personhonorificprefix',
-            options={'verbose_name': 'Person honorific prefix', 'verbose_name_plural': 'Person honorific prefixes'},
+            name="personhonorificprefix",
+            options={
+                "verbose_name": "Person honorific prefix",
+                "verbose_name_plural": "Person honorific prefixes",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personhonorificsuffix',
-            options={'verbose_name': 'Person honorific suffix', 'verbose_name_plural': 'Person honorific suffixes'},
+            name="personhonorificsuffix",
+            options={
+                "verbose_name": "Person honorific suffix",
+                "verbose_name_plural": "Person honorific suffixes",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personmembership',
-            options={'verbose_name': 'Person Membership', 'verbose_name_plural': 'Person Memberships'},
+            name="personmembership",
+            options={
+                "verbose_name": "Person Membership",
+                "verbose_name_plural": "Person Memberships",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personname',
-            options={'verbose_name': 'Person name', 'verbose_name_plural': 'Person names'},
+            name="personname",
+            options={
+                "verbose_name": "Person name",
+                "verbose_name_plural": "Person names",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personnumberofmandates',
-            options={'verbose_name': 'Person number of mandates', 'verbose_name_plural': 'Person number of mandates'},
+            name="personnumberofmandates",
+            options={
+                "verbose_name": "Person number of mandates",
+                "verbose_name_plural": "Person number of mandates",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personnumberofpoints',
-            options={'verbose_name': 'Person number of points', 'verbose_name_plural': 'Person number of points'},
+            name="personnumberofpoints",
+            options={
+                "verbose_name": "Person number of points",
+                "verbose_name_plural": "Person number of points",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personnumberofvoters',
-            options={'verbose_name': 'Person number of voters', 'verbose_name_plural': 'Person number of voters'},
+            name="personnumberofvoters",
+            options={
+                "verbose_name": "Person number of voters",
+                "verbose_name_plural": "Person number of voters",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personpreferredpronoun',
-            options={'verbose_name': 'Person preferred pronoun', 'verbose_name_plural': 'Person preferred pronouns'},
+            name="personpreferredpronoun",
+            options={
+                "verbose_name": "Person preferred pronoun",
+                "verbose_name_plural": "Person preferred pronouns",
+            },
         ),
         migrations.AlterModelOptions(
-            name='personpreviousoccupation',
-            options={'verbose_name': 'Person previous occupation', 'verbose_name_plural': 'Person previous occupations'},
+            name="personpreviousoccupation",
+            options={
+                "verbose_name": "Person previous occupation",
+                "verbose_name_plural": "Person previous occupations",
+            },
         ),
         migrations.AlterModelOptions(
-            name='procedure',
-            options={'verbose_name': 'Procedure', 'verbose_name_plural': 'Procedures'},
+            name="procedure",
+            options={"verbose_name": "Procedure", "verbose_name_plural": "Procedures"},
         ),
         migrations.AlterModelOptions(
-            name='procedurephase',
-            options={'verbose_name': 'Procedure phase', 'verbose_name_plural': 'Procedure phases'},
+            name="procedurephase",
+            options={
+                "verbose_name": "Procedure phase",
+                "verbose_name_plural": "Procedure phases",
+            },
         ),
         migrations.AlterModelOptions(
-            name='publicpersonanswer',
-            options={'verbose_name': 'public person answer', 'verbose_name_plural': 'public person answers'},
+            name="publicpersonanswer",
+            options={
+                "verbose_name": "public person answer",
+                "verbose_name_plural": "public person answers",
+            },
         ),
         migrations.AlterModelOptions(
-            name='publicpersonquestion',
-            options={'verbose_name': 'public person question', 'verbose_name_plural': 'public person questions'},
+            name="publicpersonquestion",
+            options={
+                "verbose_name": "public person question",
+                "verbose_name_plural": "public person questions",
+            },
         ),
         migrations.AlterModelOptions(
-            name='question',
-            options={'verbose_name': 'question', 'verbose_name_plural': 'questions'},
+            name="question",
+            options={"verbose_name": "question", "verbose_name_plural": "questions"},
         ),
         migrations.AlterModelOptions(
-            name='session',
-            options={'verbose_name': 'session', 'verbose_name_plural': 'sessions'},
+            name="session",
+            options={"verbose_name": "session", "verbose_name_plural": "sessions"},
         ),
         migrations.AlterModelOptions(
-            name='speech',
-            options={'verbose_name': 'Speech', 'verbose_name_plural': 'Speeches'},
+            name="speech",
+            options={"verbose_name": "Speech", "verbose_name_plural": "Speeches"},
         ),
         migrations.AlterModelOptions(
-            name='task',
-            options={'verbose_name': 'Task', 'verbose_name_plural': 'Tasks'},
+            name="task",
+            options={"verbose_name": "Task", "verbose_name_plural": "Tasks"},
         ),
         migrations.AlterModelOptions(
-            name='vote',
-            options={'verbose_name': 'Vote', 'verbose_name_plural': 'Votes'},
+            name="vote",
+            options={"verbose_name": "Vote", "verbose_name_plural": "Votes"},
         ),
         migrations.AddField(
-            model_name='session',
-            name='is_joint_session',
-            field=models.BooleanField(default=False, help_text='Is this a joint session of multiple organizations?', verbose_name='is_joint_session'),
-        ),
-        migrations.AlterField(
-            model_name='agendaitem',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='agendaitem',
-            name='datetime',
-            field=models.DateTimeField(blank=True, help_text='Date and time of the item.', null=True, verbose_name='Date and time'),
-        ),
-        migrations.AlterField(
-            model_name='agendaitem',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='Government ID of the agenda item', null=True, verbose_name='Government ID'),
-        ),
-        migrations.AlterField(
-            model_name='agendaitem',
-            name='name',
-            field=models.TextField(blank=True, help_text='The name of agenda', null=True, verbose_name='Name'),
-        ),
-        migrations.AlterField(
-            model_name='agendaitem',
-            name='order',
-            field=models.IntegerField(blank=True, help_text='Order of agenda item', null=True, verbose_name='Order'),
-        ),
-        migrations.AlterField(
-            model_name='agendaitem',
-            name='session',
-            field=models.ForeignKey(blank=True, help_text='Select the session.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='agenda_items', to='parladata.session', verbose_name='Session'),
-        ),
-        migrations.AlterField(
-            model_name='agendaitem',
-            name='text',
-            field=martor.models.MartorField(blank=True, help_text='Content of the agenda item in markdown format', null=True, verbose_name='Agenda item content'),
-        ),
-        migrations.AlterField(
-            model_name='agendaitem',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='answer',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='answer',
-            name='organization_authors',
-            field=models.ManyToManyField(blank=True, help_text='The organizations who answered the question.', related_name='answers_org_author', to='parladata.organization', verbose_name='organization authors'),
-        ),
-        migrations.AlterField(
-            model_name='answer',
-            name='person_authors',
-            field=models.ManyToManyField(blank=True, help_text='The persons (MP) who answered the question.', related_name='authored_ansewrs', to='parladata.person', verbose_name='authors'),
-        ),
-        migrations.AlterField(
-            model_name='answer',
-            name='question',
-            field=models.ForeignKey(help_text='The question this answer belongs to.', on_delete=django.db.models.deletion.CASCADE, related_name='answers', to='parladata.question', verbose_name='question'),
-        ),
-        migrations.AlterField(
-            model_name='answer',
-            name='text',
-            field=models.TextField(blank=True, help_text='as written on parlament page.', null=True, verbose_name='text'),
-        ),
-        migrations.AlterField(
-            model_name='answer',
-            name='timestamp',
-            field=models.DateTimeField(blank=True, help_text='Date of the answer.', null=True, verbose_name='date of the answer.'),
-        ),
-        migrations.AlterField(
-            model_name='answer',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='area',
-            name='classification',
-            field=models.TextField(blank=True, help_text='Area classification (Unit or Region)', null=True, verbose_name='Classification'),
-        ),
-        migrations.AlterField(
-            model_name='area',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='area',
-            name='identifier',
-            field=models.TextField(blank=True, help_text='Area identifier', null=True, verbose_name='Identifier'),
-        ),
-        migrations.AlterField(
-            model_name='area',
-            name='name',
-            field=models.TextField(help_text='Name of the area', verbose_name='name'),
-        ),
-        migrations.AlterField(
-            model_name='area',
-            name='parent',
-            field=models.ForeignKey(blank=True, help_text='Select the parent area', null=True, on_delete=django.db.models.deletion.CASCADE, to='parladata.area', verbose_name='Parent'),
-        ),
-        migrations.AlterField(
-            model_name='area',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='ballot',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='ballot',
-            name='option',
-            field=models.CharField(blank=True, choices=[('for', 'for'), ('against', 'against'), ('abstain', 'abstain'), ('absent', 'absent'), ('did not vote', 'did not vote')], help_text='Choose one of the possible options', max_length=128, null=True, verbose_name='Option'),
-        ),
-        migrations.AlterField(
-            model_name='ballot',
-            name='orgvoter',
-            field=models.ForeignKey(blank=True, help_text='Which organization voted', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='ballots', to='parladata.organization', verbose_name='Organization'),
-        ),
-        migrations.AlterField(
-            model_name='ballot',
-            name='personvoter',
-            field=models.ForeignKey(blank=True, help_text='Who voted', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='ballots', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='ballot',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='ballot',
-            name='vote',
-            field=models.ForeignKey(help_text='What was the vote on', on_delete=django.db.models.deletion.CASCADE, related_name='ballots', to='parladata.vote', verbose_name='Vote'),
-        ),
-        migrations.AlterField(
-            model_name='document',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='document',
-            name='file',
-            field=models.FileField(help_text='Upload a document file', upload_to='', verbose_name='File'),
-        ),
-        migrations.AlterField(
-            model_name='document',
-            name='name',
-            field=models.TextField(blank=True, help_text='Name of the document', null=True, verbose_name='Name'),
-        ),
-        migrations.AlterField(
-            model_name='document',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='educationlevel',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='educationlevel',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='abstract',
-            field=tinymce.models.HTMLField(blank=True, help_text='Abstract of the law in HTML', null=True, verbose_name='Abstract'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='classification',
-            field=models.ForeignKey(blank=True, help_text="Classification of legislation (e.g., 'Law', 'Act', 'Decree'...)", null=True, on_delete=django.db.models.deletion.CASCADE, to='parladata.legislationclassification', verbose_name='Legislation classification'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='considerations',
-            field=models.ManyToManyField(blank=True, help_text='Consideration of legislation', through='parladata.LegislationConsideration', to='parladata.procedurephase', verbose_name='Considerations'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='epa',
-            field=models.TextField(blank=True, help_text='Insert the EPA number eg. 2318-IX', null=True, verbose_name='EPA'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='mandate',
-            field=models.ForeignKey(blank=True, help_text='Select the mandate of the law.', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='legislation', to='parladata.mandate', verbose_name='Mandate'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='mdt',
-            field=models.TextField(blank=True, help_text="Insert the working body eg. 'Committee on the Economy'", max_length=1024, null=True, verbose_name='MDT'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='mdt_fk',
-            field=models.ForeignKey(blank=True, help_text='Select the working body', max_length=255, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='laws', to='parladata.organization', verbose_name='Organization'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='passed',
-            field=models.BooleanField(blank=True, default=False, help_text='Was the law passed?', null=True, verbose_name='passed'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='procedure_type',
-            field=models.TextField(blank=True, help_text="Insert the type of procedure (e.g., 'regular', 'urgent'...)", max_length=255, null=True, verbose_name='procedure_type'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='proposer_text',
-            field=models.TextField(blank=True, help_text='Insert who proposed the law', null=True, verbose_name='proposer_text'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='session',
-            field=models.ForeignKey(blank=True, help_text='The legislative session in which the law was proposed', null=True, on_delete=django.db.models.deletion.CASCADE, to='parladata.session', verbose_name='Session'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='status',
-            field=models.ForeignKey(blank=True, default=parladata.models.legislation.LegislationStatus.get_or_create_default_photo_pk, help_text='Select the status of the legislative procedure', null=True, on_delete=django.db.models.deletion.SET_DEFAULT, to='parladata.legislationstatus', verbose_name='Legislation status'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='text',
-            field=models.TextField(blank=True, help_text="Insert the text of the law eg. 'Law on...'", null=True, verbose_name='text'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='timestamp',
-            field=models.DateTimeField(blank=True, help_text='Date of the law.', null=True, verbose_name='Timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='uid',
-            field=models.TextField(blank=True, help_text='uid reference of the law found on the source page', null=True, verbose_name='uid'),
-        ),
-        migrations.AlterField(
-            model_name='law',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='legislationclassification',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='legislationclassification',
-            name='name',
-            field=models.TextField(blank=True, help_text="Classification of legislation (e.g., 'Law', 'Act', 'Decree'...)", null=True, verbose_name='Name'),
-        ),
-        migrations.AlterField(
-            model_name='legislationclassification',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='legislationconsideration',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='legislationconsideration',
-            name='legislation',
-            field=models.ForeignKey(help_text='Legislation that was considered', on_delete=django.db.models.deletion.CASCADE, to='parladata.law', verbose_name='Legislation'),
-        ),
-        migrations.AlterField(
-            model_name='legislationconsideration',
-            name='organization',
-            field=models.ForeignKey(blank=True, help_text='Organization in which consideration happened', null=True, on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='Organization'),
-        ),
-        migrations.AlterField(
-            model_name='legislationconsideration',
-            name='procedure_phase',
-            field=models.ForeignKey(help_text='Phase of the procedure', on_delete=django.db.models.deletion.CASCADE, to='parladata.procedurephase', verbose_name='Procedure phase'),
-        ),
-        migrations.AlterField(
-            model_name='legislationconsideration',
-            name='session',
-            field=models.ForeignKey(blank=True, help_text='Session at which the legislation was discussed', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='legislation_considerations', to='parladata.session', verbose_name='Session'),
-        ),
-        migrations.AlterField(
-            model_name='legislationconsideration',
-            name='timestamp',
-            field=models.DateTimeField(blank=True, help_text='Date of the law.', null=True, verbose_name='Timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='legislationconsideration',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='legislationstatus',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='legislationstatus',
-            name='name',
-            field=models.TextField(blank=True, help_text="Status of legislation for example 'in_procedure', 'enacted'...", null=True, verbose_name='Name'),
-        ),
-        migrations.AlterField(
-            model_name='legislationstatus',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='agenda_item',
-            field=models.ForeignKey(blank=True, help_text='Select the agenda item this link belongs to.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.agendaitem', verbose_name='Agenda item'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='answer',
-            field=models.ForeignKey(blank=True, help_text='Select the answer this link belongs to.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.answer', verbose_name='Answer'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='date',
-            field=models.DateField(blank=True, help_text='Insert the date', null=True, verbose_name='date'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='legislation_consideration',
-            field=models.ForeignKey(blank=True, help_text='The legislation consideration this link belongs to.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.legislationconsideration', verbose_name='Legislation Consideration'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='membership',
-            field=models.ForeignKey(blank=True, help_text='The membership of this link.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.personmembership', verbose_name='Person membership'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='motion',
-            field=models.ForeignKey(blank=True, help_text='Select the motion this link belongs to.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.motion', verbose_name='Motion'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='name',
-            field=models.TextField(blank=True, help_text='Name of the link', null=True, verbose_name='name'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='organization',
-            field=models.ForeignKey(blank=True, help_text='Select the organization connected to the link content', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.organization', verbose_name='Organization'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='person',
-            field=models.ForeignKey(blank=True, help_text='Select the person connected to the link', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='question',
-            field=models.ForeignKey(blank=True, help_text='Select the question this link belongs to.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.question', verbose_name='Question'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='session',
-            field=models.ForeignKey(blank=True, help_text='Select the session', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.session', verbose_name='Session'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='link',
-            name='url',
-            field=models.URLField(help_text='Insert the URL', max_length=350, verbose_name='url'),
-        ),
-        migrations.AlterField(
-            model_name='mandate',
-            name='beginning',
-            field=models.DateTimeField(blank=True, help_text='Beginning of the mandate', null=True, verbose_name='Beginning'),
-        ),
-        migrations.AlterField(
-            model_name='mandate',
-            name='description',
-            field=models.TextField(blank=True, help_text='Description of the mandate', null=True, verbose_name='Description'),
-        ),
-        migrations.AlterField(
-            model_name='mandate',
-            name='ending',
-            field=models.DateTimeField(blank=True, help_text='Ending of the mandate', null=True, verbose_name='Ending'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='medium',
-            field=models.ForeignKey(help_text='The medium this report is associated with', on_delete=django.db.models.deletion.CASCADE, related_name='reports', to='parladata.medium', verbose_name='medium'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='mentioned_motions',
-            field=models.ManyToManyField(blank=True, help_text='Motions mentioned in the report', related_name='media_reports', to='parladata.motion', verbose_name='mentioned motions'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='mentioned_organizations',
-            field=models.ManyToManyField(blank=True, help_text='Organizations mentioned in the report', related_name='media_reports', to='parladata.organization', verbose_name='mentioned organizations'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='mentioned_people',
-            field=models.ManyToManyField(blank=True, help_text='People mentioned in the report', related_name='media_reports', to='parladata.person', verbose_name='mentioned people'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='mentioned_votes',
-            field=models.ManyToManyField(blank=True, help_text='Votes mentioned in the report', related_name='media_reports', to='parladata.vote', verbose_name='mentioned votes'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='report_date',
-            field=models.DateField(help_text='Date of the report', verbose_name='report date'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='retrieval_date',
-            field=models.DateTimeField(auto_now=True, help_text='Date when the report was retrieved', verbose_name='retrieval date'),
-        ),
-        migrations.AlterField(
-            model_name='mediareport',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='medium',
-            name='active',
-            field=models.BooleanField(default=True, help_text='Is this medium active?', verbose_name='active'),
-        ),
-        migrations.AlterField(
-            model_name='medium',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='medium',
-            name='order',
-            field=models.PositiveIntegerField(default=1, help_text='Order of appearance', verbose_name='order'),
-        ),
-        migrations.AlterField(
-            model_name='medium',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='agenda_items',
-            field=models.ManyToManyField(blank=True, help_text='Agenda items', related_name='motions', to='parladata.agendaitem', verbose_name='Agenda items'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='champions',
-            field=models.ManyToManyField(blank=True, help_text='The people who proposed the motion.', to='parladata.person', verbose_name='champions'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='classification',
-            field=models.TextField(blank=True, help_text='Motion classification', null=True, verbose_name='classification'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='datetime',
-            field=models.DateTimeField(blank=True, help_text='Select the date and time when the motion was proposed', null=True, verbose_name='datetime'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='Gov ID or identifier for parser', null=True, verbose_name='Gov ID'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='law',
-            field=models.ForeignKey(blank=True, help_text='Select the piece of legislation this motion is about', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='motions', to='parladata.law', verbose_name='Law'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='parser_names',
-            field=models.TextField(blank=True, help_text="Variations of a name e.g. 'Janez Janša|Ivan Janez Janša' that the parser considers equal", null=True, verbose_name='parser_names'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='requirement',
-            field=models.TextField(blank=True, help_text='The requirement for the motion to pass', null=True, verbose_name='requirement'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='result',
-            field=models.BooleanField(blank=True, help_text='Did the motion pass?', null=True, verbose_name='result'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='session',
-            field=models.ForeignKey(blank=True, help_text='Select the legislative session in which the motion was proposed', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='motions', to='parladata.session', verbose_name='Session'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='summary',
-            field=models.TextField(blank=True, help_text='Insert the motion summary', null=True, verbose_name='summary'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='text',
-            field=models.TextField(blank=True, help_text='Insert the text of the motion', null=True, verbose_name='text'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='title',
-            field=models.TextField(help_text="Insert the title of the motion eg. 'Zakon o...'", verbose_name='title'),
-        ),
-        migrations.AlterField(
-            model_name='motion',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='organization',
-            name='classification',
-            field=models.TextField(blank=True, choices=[('root', 'root'), ('pg', 'pg'), ('commission', 'commission'), ('committee', 'committee'), ('council', 'council'), ('delegation', 'delegation'), ('friendship_group', 'friendship_group'), ('investigative_commission', 'investigative_commission'), ('other', 'other'), ('coalition', 'coalition'), ('house', 'house')], help_text='Select an organization category, e.g. committee', null=True, verbose_name='classification'),
-        ),
-        migrations.AlterField(
-            model_name='organization',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='organization',
-            name='description',
-            field=models.TextField(blank=True, help_text='Insert the description of the organization', null=True, verbose_name='description'),
-        ),
-        migrations.AlterField(
-            model_name='organization',
-            name='dissolution_date',
-            field=models.DateTimeField(blank=True, help_text='Select the date of dissolution', null=True, verbose_name='dissolution_date'),
-        ),
-        migrations.AlterField(
-            model_name='organization',
-            name='founding_date',
-            field=models.DateTimeField(blank=True, help_text='Select the date of founding', null=True, verbose_name='founding_date'),
-        ),
-        migrations.AlterField(
-            model_name='organization',
-            name='parent',
-            field=models.ForeignKey(blank=True, help_text='Select the higher tier organization that contains this organization', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='children', to='parladata.organization', verbose_name='Organization'),
-        ),
-        migrations.AlterField(
-            model_name='organization',
-            name='parser_names',
-            field=models.TextField(blank=True, help_text="Variations of a name e.g. 'Janez Janša|Ivan Janez Janša' that the parser considers equal", null=True, verbose_name='parser_names'),
-        ),
-        migrations.AlterField(
-            model_name='organization',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='organizationacronym',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the organization', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.organization', verbose_name='Owner'),
-        ),
-        migrations.AlterField(
-            model_name='organizationacronym',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='organizationacronym',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='organizationacronym',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='organizationemail',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the organization', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.organization', verbose_name='Owner'),
-        ),
-        migrations.AlterField(
-            model_name='organizationemail',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='organizationemail',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='organizationemail',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='organizationmembership',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='organizationmembership',
-            name='end_time',
-            field=models.DateTimeField(blank=True, help_text='Select the end time', null=True, verbose_name='end_time'),
-        ),
-        migrations.AlterField(
-            model_name='organizationmembership',
-            name='mandate',
-            field=models.ForeignKey(blank=True, help_text='Select the mandate.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)ss', to='parladata.mandate', verbose_name='Mandate'),
-        ),
-        migrations.AlterField(
-            model_name='organizationmembership',
-            name='member',
-            field=models.ForeignKey(blank=True, help_text='The organization that is a party to the relationship', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='organization_memberships', to='parladata.organization', verbose_name='Organization'),
-        ),
-        migrations.AlterField(
-            model_name='organizationmembership',
-            name='organization',
-            field=models.ForeignKey(help_text='Select the organization that the member belongs to.', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)ss_children', to='parladata.organization', verbose_name='Organization'),
-        ),
-        migrations.AlterField(
-            model_name='organizationmembership',
-            name='start_time',
-            field=models.DateTimeField(blank=True, help_text='Select the start time', null=True, verbose_name='start_time'),
-        ),
-        migrations.AlterField(
-            model_name='organizationmembership',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='organizationname',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the organization', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.organization', verbose_name='Owner'),
-        ),
-        migrations.AlterField(
-            model_name='organizationname',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='organizationname',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='organizationname',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='active',
-            field=models.BooleanField(default=True, help_text='Is this person active?', verbose_name='active'),
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='date_of_birth',
-            field=models.DateField(blank=True, help_text='Select the date of birth', null=True, verbose_name='date of birth'),
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='date_of_death',
-            field=models.DateField(blank=True, help_text='Select the date of death', null=True, verbose_name='date of death'),
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='districts',
-            field=models.ManyToManyField(blank=True, help_text="Select the person's district", related_name='candidates', to='parladata.area', verbose_name='Area'),
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='image',
-            field=models.ImageField(blank=True, help_text="Insert a portrait photograph that focuses on the person's face.", null=True, upload_to='', verbose_name='image (url)'),
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='parser_names',
-            field=models.TextField(blank=True, help_text="Variations of a name e.g. 'Janez Janša|Ivan Janez Janša' that the parser considers equal", null=True, verbose_name='parser_names'),
-        ),
-        migrations.AlterField(
-            model_name='person',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='personeducation',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personeducation',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personeducation',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personeducation',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personeducationlevel',
-            name='education_level',
-            field=models.ForeignKey(blank=True, help_text='Select the education level', null=True, on_delete=django.db.models.deletion.CASCADE, to='parladata.educationlevel', verbose_name='Education level'),
-        ),
-        migrations.AlterField(
-            model_name='personeducationlevel',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personeducationlevel',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personeducationlevel',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personemail',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personemail',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personemail',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personemail',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personhonorificprefix',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personhonorificprefix',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personhonorificprefix',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personhonorificprefix',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personhonorificsuffix',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personhonorificsuffix',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personhonorificsuffix',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personhonorificsuffix',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='end_time',
-            field=models.DateTimeField(blank=True, help_text='Select the end time', null=True, verbose_name='end_time'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='mandate',
-            field=models.ForeignKey(blank=True, help_text='Select the mandate.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='%(class)ss', to='parladata.mandate', verbose_name='Mandate'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='member',
-            field=models.ForeignKey(help_text='Choose the person to whom the membership applies.', on_delete=django.db.models.deletion.CASCADE, related_name='person_memberships', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='on_behalf_of',
-            field=models.ForeignKey(blank=True, help_text='Select the organization on whose behalf the person is a member of the organization.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='representatives', to='parladata.organization', verbose_name='On behalf of organization'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='organization',
-            field=models.ForeignKey(help_text='Select the organization that the member belongs to.', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)ss_children', to='parladata.organization', verbose_name='Organization'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='role',
-            field=models.TextField(choices=[('member', 'member'), ('deputy member', 'deputy member'), ('voter', 'voter'), ('president', 'president'), ('deputy', 'deputy'), ('leader', 'leader')], default='member', help_text='Select the role that the person fulfills in the organization.', verbose_name='Role'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='start_time',
-            field=models.DateTimeField(blank=True, help_text='Select the start time', null=True, verbose_name='start_time'),
-        ),
-        migrations.AlterField(
-            model_name='personmembership',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='personname',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personname',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personname',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personname',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofmandates',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofmandates',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofmandates',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofmandates',
-            name='value',
-            field=models.IntegerField(help_text='Enter the number of mandates', verbose_name='Number of mandates'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofpoints',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofpoints',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofpoints',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofpoints',
-            name='value',
-            field=models.IntegerField(help_text='Enter the number of points', verbose_name='Number of points'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofvoters',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofvoters',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofvoters',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofvoters',
-            name='value',
-            field=models.IntegerField(help_text='Enter the number of voters', verbose_name='Number of voters'),
-        ),
-        migrations.AlterField(
-            model_name='personpreferredpronoun',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personpreferredpronoun',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personpreferredpronoun',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personpreferredpronoun',
-            name='value',
-            field=models.TextField(choices=[('he', 'he'), ('she', 'she'), ('they', 'they')], help_text='Select the preferred pronoun', verbose_name='Preferred pronoun'),
-        ),
-        migrations.AlterField(
-            model_name='personpreviousoccupation',
-            name='owner',
-            field=models.ForeignKey(help_text='Select the person', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='personpreviousoccupation',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='personpreviousoccupation',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='personpreviousoccupation',
-            name='value',
-            field=models.TextField(help_text='Insert approriate value', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='procedure',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='procedure',
-            name='type',
-            field=models.TextField(blank=True, help_text='Name of procedure type', null=True, verbose_name='Type'),
-        ),
-        migrations.AlterField(
-            model_name='procedure',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='procedurephase',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='procedurephase',
-            name='name',
-            field=models.TextField(blank=True, help_text='Name of procedure phase', null=True, verbose_name='Name'),
-        ),
-        migrations.AlterField(
-            model_name='procedurephase',
-            name='procedure',
-            field=models.ForeignKey(help_text='Procedure to which the phase belongs', on_delete=django.db.models.deletion.CASCADE, to='parladata.procedure', verbose_name='Procedure'),
-        ),
-        migrations.AlterField(
-            model_name='procedurephase',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='approved_at',
-            field=models.DateTimeField(blank=True, db_index=True, help_text='Insert the date when the item was approved', null=True, verbose_name='approved_at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='Gov ID or identifier for parser', null=True, verbose_name='gov_id'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='mandate',
-            field=models.ForeignKey(blank=True, help_text='The mandate of this public question.', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='public_answers', to='parladata.mandate', verbose_name='Mandate'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='notification_sent_at',
-            field=models.DateTimeField(blank=True, db_index=True, help_text='Timestamp when notification was sent', null=True, verbose_name='notification sent at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='question',
-            field=models.ForeignKey(help_text='Select the question this answer relates to.', on_delete=django.db.models.deletion.PROTECT, related_name='answer', to='parladata.publicpersonquestion', verbose_name='Question'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='rejected_at',
-            field=models.DateTimeField(blank=True, db_index=True, help_text='Insert the date when the item was rejected', null=True, verbose_name='rejected_at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='text',
-            field=models.TextField(help_text='Text of answer', verbose_name='text'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonanswer',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='approved_at',
-            field=models.DateTimeField(blank=True, db_index=True, help_text='Insert the date when the item was approved', null=True, verbose_name='approved_at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='author_email',
-            field=models.EmailField(blank=True, help_text='Email of the author of the question', max_length=256, null=True, verbose_name='author email'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='Insert the GOV ID.', null=True, verbose_name='gov_id'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='mandate',
-            field=models.ForeignKey(blank=True, help_text='Select the mandate of this public question.', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='public_questions', to='parladata.mandate', verbose_name='Mandate'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='notification_sent_at',
-            field=models.DateTimeField(blank=True, db_index=True, help_text='Timestamp when notification was sent', null=True, verbose_name='notification sent at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='recipient_person',
-            field=models.ForeignKey(help_text='Recipient person.', on_delete=django.db.models.deletion.CASCADE, related_name='received_person_questions', to='parladata.person', verbose_name='Person'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='rejected_at',
-            field=models.DateTimeField(blank=True, db_index=True, help_text='Insert the date when the item was rejected', null=True, verbose_name='rejected_at'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='text',
-            field=models.TextField(help_text='Text of question', verbose_name='text'),
-        ),
-        migrations.AlterField(
-            model_name='publicpersonquestion',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='answer_timestamp',
-            field=models.DateTimeField(blank=True, help_text='Date of answer the question.', null=True, verbose_name='date of the answer.'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='Unique identifier of question on government site.', null=True, verbose_name='government ID'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='mandate',
-            field=models.ForeignKey(blank=True, help_text='The mandate of this question.', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='questions', to='parladata.mandate', verbose_name='mandate'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='organization_authors',
-            field=models.ManyToManyField(blank=True, help_text='The organizations who asked the question.', related_name='questions_org_author', to='parladata.organization', verbose_name='organization authors'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='person_authors',
-            field=models.ManyToManyField(blank=True, help_text='The persons (MP) who asked the question.', related_name='authored_questions', to='parladata.person', verbose_name='authors'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='recipient_organizations',
-            field=models.ManyToManyField(blank=True, help_text="Recipient organization (if it's an organization).", related_name='questions_org', to='parladata.organization', verbose_name='recipient organizations'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='recipient_people',
-            field=models.ManyToManyField(blank=True, help_text="Recipient person (if it's a person).", related_name='received_questions', to='parladata.person', verbose_name='recipient people'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='recipient_text',
-            field=models.TextField(blank=True, help_text='Recipient name as written on dz-rs.si', null=True, verbose_name='recipient name'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='session',
-            field=models.ForeignKey(blank=True, help_text='The session this question belongs to.', null=True, on_delete=django.db.models.deletion.CASCADE, to='parladata.session', verbose_name='session'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='timestamp',
-            field=models.DateTimeField(blank=True, help_text='Date of the question.', null=True, verbose_name='date of the question.'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='title',
-            field=models.TextField(blank=True, help_text='Title name as written on dz-rs.si', null=True, verbose_name='title'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='type_of_question',
-            field=models.TextField(blank=True, choices=[('question', 'question'), ('initiative', 'initiative'), ('unknown', 'unknown')], help_text='Type of question.', null=True, verbose_name='type of question'),
-        ),
-        migrations.AlterField(
-            model_name='question',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='classification',
-            field=models.CharField(choices=[('unknown', 'unknown'), ('regular', 'regular'), ('irregular', 'irregular'), ('correspondent', 'correspondent'), ('urgent', 'urgent')], default='unknown', help_text='Select the session classification', max_length=128, verbose_name='classification'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='end_time',
-            field=models.DateTimeField(blank=True, help_text='Insert the end time', null=True, verbose_name='end_time'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='gov_id',
-            field=models.TextField(blank=True, help_text='Insert the gov website ID.', null=True, verbose_name='gov_id'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='in_review',
-            field=models.BooleanField(default=False, help_text='Is session still in review?', verbose_name='in_review'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='mandate',
-            field=models.ForeignKey(help_text='Select the mandate of this session.', on_delete=django.db.models.deletion.CASCADE, related_name='sessions', to='parladata.mandate', verbose_name='Mandate'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='name',
-            field=models.TextField(help_text="Insert the session name and number e.g. '48. nujna seja'", verbose_name='name'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='needs_editing',
-            field=models.BooleanField(default=False, help_text='Does this session need editing?', verbose_name='needs_editing'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='start_time',
-            field=models.DateTimeField(blank=True, help_text='Insert the start time', null=True, verbose_name='start_time'),
-        ),
-        migrations.AlterField(
-            model_name='session',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='agenda_items',
-            field=models.ManyToManyField(blank=True, help_text='Select agenda items', related_name='speeches', to='parladata.agendaitem', verbose_name='Agenda items'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='content',
-            field=models.TextField(help_text='The content of the speech.', verbose_name='content'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='end_time',
-            field=models.DateTimeField(blank=True, help_text='Select the end time', null=True, verbose_name='end_time'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='lemmatized_content',
-            field=models.TextField(blank=True, help_text='Lemmatized words spoken', null=True, verbose_name='lemmatized_content'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='motions',
-            field=models.ManyToManyField(blank=True, help_text='Select motions related to the speech', to='parladata.motion', verbose_name='Motions'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='order',
-            field=models.IntegerField(blank=True, help_text='Order of the speech', null=True, verbose_name='order'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='session',
-            field=models.ForeignKey(blank=True, help_text='Select the session of the speech.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='speeches', to='parladata.session', verbose_name='Session'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='speaker',
-            field=models.ForeignKey(help_text='Select the person making the speech', on_delete=django.db.models.deletion.CASCADE, related_name='speeches', to='parladata.person', verbose_name='Speaker'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='start_time',
-            field=models.DateTimeField(blank=True, help_text='Select the start time', null=True, verbose_name='start_time'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='valid_from',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.", null=True, verbose_name='valid_from'),
-        ),
-        migrations.AlterField(
-            model_name='speech',
-            name='valid_to',
-            field=models.DateTimeField(blank=True, default=None, help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.", null=True, verbose_name='valid_to'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='email_msg',
-            field=models.TextField(help_text='A message sent to the administrator when the task is complete.', verbose_name='email_msg'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='errored_at',
-            field=models.DateTimeField(blank=True, default=None, help_text='time when errored', null=True, verbose_name='errored_at'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='finished_at',
-            field=models.DateTimeField(blank=True, default=None, help_text='time when finished', null=True, verbose_name='finished_at'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='module_name',
-            field=models.TextField(default='parladata.tasks', help_text='Name of task', verbose_name='module_name'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='name',
-            field=models.TextField(help_text='Name of task', verbose_name='name'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='payload',
-            field=models.JSONField(help_text='Payload kwargs', verbose_name='payload'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='started_at',
-            field=models.DateTimeField(blank=True, default=None, help_text='time when started', null=True, verbose_name='started_at'),
-        ),
-        migrations.AlterField(
-            model_name='task',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
-        ),
-        migrations.AlterField(
-            model_name='vote',
-            name='created_at',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at'),
-        ),
-        migrations.AlterField(
-            model_name='vote',
-            name='motion',
-            field=models.ForeignKey(blank=True, help_text='Select the motion for which the vote took place', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='vote', to='parladata.motion', verbose_name='Motion'),
-        ),
-        migrations.AlterField(
-            model_name='vote',
-            name='name',
-            field=models.TextField(blank=True, help_text='Vote name/identifier', null=True, verbose_name='name'),
-        ),
-        migrations.AlterField(
-            model_name='vote',
-            name='needs_editing',
-            field=models.BooleanField(default=False, help_text='Indicates if the vote needs editing.', verbose_name='Vote needs editing'),
-        ),
-        migrations.AlterField(
-            model_name='vote',
-            name='result',
-            field=models.BooleanField(blank=True, help_text='Select the result of the vote.', null=True, verbose_name='result'),
-        ),
-        migrations.AlterField(
-            model_name='vote',
-            name='timestamp',
-            field=models.DateTimeField(blank=True, help_text='Select the vote time.', null=True, verbose_name='timestamp'),
-        ),
+            model_name="session",
+            name="is_joint_session",
+            field=models.BooleanField(
+                default=False,
+                help_text="Is this a joint session of multiple organizations?",
+                verbose_name="is_joint_session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agendaitem",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agendaitem",
+            name="datetime",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Date and time of the item.",
+                null=True,
+                verbose_name="Date and time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agendaitem",
+            name="gov_id",
+            field=models.TextField(
+                blank=True,
+                help_text="Government ID of the agenda item",
+                null=True,
+                verbose_name="Government ID",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agendaitem",
+            name="name",
+            field=models.TextField(
+                blank=True,
+                help_text="The name of agenda",
+                null=True,
+                verbose_name="Name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agendaitem",
+            name="order",
+            field=models.IntegerField(
+                blank=True,
+                help_text="Order of agenda item",
+                null=True,
+                verbose_name="Order",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agendaitem",
+            name="session",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the session.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="agenda_items",
+                to="parladata.session",
+                verbose_name="Session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agendaitem",
+            name="text",
+            field=martor.models.MartorField(
+                blank=True,
+                help_text="Content of the agenda item in markdown format",
+                null=True,
+                verbose_name="Agenda item content",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agendaitem",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="answer",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
         migrations.AlterField(
-            model_name='vote',
-            name='updated_at',
-            field=models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at'),
+            model_name="answer",
+            name="organization_authors",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="The organizations who answered the question.",
+                related_name="answers_org_author",
+                to="parladata.organization",
+                verbose_name="organization authors",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="answer",
+            name="person_authors",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="The persons (MP) who answered the question.",
+                related_name="authored_ansewrs",
+                to="parladata.person",
+                verbose_name="authors",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="answer",
+            name="question",
+            field=models.ForeignKey(
+                help_text="The question this answer belongs to.",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="answers",
+                to="parladata.question",
+                verbose_name="question",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="answer",
+            name="text",
+            field=models.TextField(
+                blank=True,
+                help_text="as written on parlament page.",
+                null=True,
+                verbose_name="text",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="answer",
+            name="timestamp",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Date of the answer.",
+                null=True,
+                verbose_name="date of the answer.",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="answer",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="area",
+            name="classification",
+            field=models.TextField(
+                blank=True,
+                help_text="Area classification (Unit or Region)",
+                null=True,
+                verbose_name="Classification",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="area",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="area",
+            name="identifier",
+            field=models.TextField(
+                blank=True,
+                help_text="Area identifier",
+                null=True,
+                verbose_name="Identifier",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="area",
+            name="name",
+            field=models.TextField(help_text="Name of the area", verbose_name="name"),
+        ),
+        migrations.AlterField(
+            model_name="area",
+            name="parent",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the parent area",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.area",
+                verbose_name="Parent",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="area",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="ballot",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="ballot",
+            name="option",
+            field=models.CharField(
+                blank=True,
+                choices=[
+                    ("for", "for"),
+                    ("against", "against"),
+                    ("abstain", "abstain"),
+                    ("absent", "absent"),
+                    ("did not vote", "did not vote"),
+                ],
+                help_text="Choose one of the possible options",
+                max_length=128,
+                null=True,
+                verbose_name="Option",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="ballot",
+            name="orgvoter",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Which organization voted",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="ballots",
+                to="parladata.organization",
+                verbose_name="Organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="ballot",
+            name="personvoter",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Who voted",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="ballots",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="ballot",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="ballot",
+            name="vote",
+            field=models.ForeignKey(
+                help_text="What was the vote on",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="ballots",
+                to="parladata.vote",
+                verbose_name="Vote",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="document",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="document",
+            name="file",
+            field=models.FileField(
+                help_text="Upload a document file", upload_to="", verbose_name="File"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="document",
+            name="name",
+            field=models.TextField(
+                blank=True,
+                help_text="Name of the document",
+                null=True,
+                verbose_name="Name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="document",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="educationlevel",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="educationlevel",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="abstract",
+            field=tinymce.models.HTMLField(
+                blank=True,
+                help_text="Abstract of the law in HTML",
+                null=True,
+                verbose_name="Abstract",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="classification",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Classification of legislation (e.g., 'Law', 'Act', 'Decree'...)",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.legislationclassification",
+                verbose_name="Legislation classification",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="considerations",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Consideration of legislation",
+                through="parladata.LegislationConsideration",
+                to="parladata.procedurephase",
+                verbose_name="Considerations",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="epa",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the EPA number eg. 2318-IX",
+                null=True,
+                verbose_name="EPA",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="mandate",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the mandate of the law.",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="legislation",
+                to="parladata.mandate",
+                verbose_name="Mandate",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="mdt",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the working body eg. 'Committee on the Economy'",
+                max_length=1024,
+                null=True,
+                verbose_name="MDT",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="mdt_fk",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the working body",
+                max_length=255,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="laws",
+                to="parladata.organization",
+                verbose_name="Organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="passed",
+            field=models.BooleanField(
+                blank=True,
+                default=False,
+                help_text="Was the law passed?",
+                null=True,
+                verbose_name="passed",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="procedure_type",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the type of procedure (e.g., 'regular', 'urgent'...)",
+                max_length=255,
+                null=True,
+                verbose_name="procedure_type",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="proposer_text",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert who proposed the law",
+                null=True,
+                verbose_name="proposer_text",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="session",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="The legislative session in which the law was proposed",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.session",
+                verbose_name="Session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="status",
+            field=models.ForeignKey(
+                blank=True,
+                default=parladata.models.legislation.LegislationStatus.get_or_create_default_photo_pk,
+                help_text="Select the status of the legislative procedure",
+                null=True,
+                on_delete=django.db.models.deletion.SET_DEFAULT,
+                to="parladata.legislationstatus",
+                verbose_name="Legislation status",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="text",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the text of the law eg. 'Law on...'",
+                null=True,
+                verbose_name="text",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="timestamp",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Date of the law.",
+                null=True,
+                verbose_name="Timestamp",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="uid",
+            field=models.TextField(
+                blank=True,
+                help_text="uid reference of the law found on the source page",
+                null=True,
+                verbose_name="uid",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="law",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationclassification",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationclassification",
+            name="name",
+            field=models.TextField(
+                blank=True,
+                help_text="Classification of legislation (e.g., 'Law', 'Act', 'Decree'...)",
+                null=True,
+                verbose_name="Name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationclassification",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationconsideration",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationconsideration",
+            name="legislation",
+            field=models.ForeignKey(
+                help_text="Legislation that was considered",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.law",
+                verbose_name="Legislation",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationconsideration",
+            name="organization",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Organization in which consideration happened",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="Organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationconsideration",
+            name="procedure_phase",
+            field=models.ForeignKey(
+                help_text="Phase of the procedure",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.procedurephase",
+                verbose_name="Procedure phase",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationconsideration",
+            name="session",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Session at which the legislation was discussed",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="legislation_considerations",
+                to="parladata.session",
+                verbose_name="Session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationconsideration",
+            name="timestamp",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Date of the law.",
+                null=True,
+                verbose_name="Timestamp",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationconsideration",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationstatus",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationstatus",
+            name="name",
+            field=models.TextField(
+                blank=True,
+                help_text="Status of legislation for example 'in_procedure', 'enacted'...",
+                null=True,
+                verbose_name="Name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="legislationstatus",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="agenda_item",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the agenda item this link belongs to.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.agendaitem",
+                verbose_name="Agenda item",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="answer",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the answer this link belongs to.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.answer",
+                verbose_name="Answer",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="date",
+            field=models.DateField(
+                blank=True, help_text="Insert the date", null=True, verbose_name="date"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="legislation_consideration",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="The legislation consideration this link belongs to.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.legislationconsideration",
+                verbose_name="Legislation Consideration",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="membership",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="The membership of this link.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.personmembership",
+                verbose_name="Person membership",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="motion",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the motion this link belongs to.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.motion",
+                verbose_name="Motion",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="name",
+            field=models.TextField(
+                blank=True, help_text="Name of the link", null=True, verbose_name="name"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="organization",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the organization connected to the link content",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.organization",
+                verbose_name="Organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="person",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the person connected to the link",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="question",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the question this link belongs to.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.question",
+                verbose_name="Question",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="session",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the session",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.session",
+                verbose_name="Session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="link",
+            name="url",
+            field=models.URLField(
+                help_text="Insert the URL", max_length=350, verbose_name="url"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mandate",
+            name="beginning",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Beginning of the mandate",
+                null=True,
+                verbose_name="Beginning",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mandate",
+            name="description",
+            field=models.TextField(
+                blank=True,
+                help_text="Description of the mandate",
+                null=True,
+                verbose_name="Description",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mandate",
+            name="ending",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Ending of the mandate",
+                null=True,
+                verbose_name="Ending",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="medium",
+            field=models.ForeignKey(
+                help_text="The medium this report is associated with",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="reports",
+                to="parladata.medium",
+                verbose_name="medium",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="mentioned_motions",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Motions mentioned in the report",
+                related_name="media_reports",
+                to="parladata.motion",
+                verbose_name="mentioned motions",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="mentioned_organizations",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Organizations mentioned in the report",
+                related_name="media_reports",
+                to="parladata.organization",
+                verbose_name="mentioned organizations",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="mentioned_people",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="People mentioned in the report",
+                related_name="media_reports",
+                to="parladata.person",
+                verbose_name="mentioned people",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="mentioned_votes",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Votes mentioned in the report",
+                related_name="media_reports",
+                to="parladata.vote",
+                verbose_name="mentioned votes",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="report_date",
+            field=models.DateField(
+                help_text="Date of the report", verbose_name="report date"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="retrieval_date",
+            field=models.DateTimeField(
+                auto_now=True,
+                help_text="Date when the report was retrieved",
+                verbose_name="retrieval date",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="mediareport",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="medium",
+            name="active",
+            field=models.BooleanField(
+                default=True, help_text="Is this medium active?", verbose_name="active"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="medium",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="medium",
+            name="order",
+            field=models.PositiveIntegerField(
+                default=1, help_text="Order of appearance", verbose_name="order"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="medium",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="agenda_items",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Agenda items",
+                related_name="motions",
+                to="parladata.agendaitem",
+                verbose_name="Agenda items",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="champions",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="The people who proposed the motion.",
+                to="parladata.person",
+                verbose_name="champions",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="classification",
+            field=models.TextField(
+                blank=True,
+                help_text="Motion classification",
+                null=True,
+                verbose_name="classification",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="datetime",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the date and time when the motion was proposed",
+                null=True,
+                verbose_name="datetime",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="gov_id",
+            field=models.TextField(
+                blank=True,
+                help_text="Gov ID or identifier for parser",
+                null=True,
+                verbose_name="Gov ID",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="law",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the piece of legislation this motion is about",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="motions",
+                to="parladata.law",
+                verbose_name="Law",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="parser_names",
+            field=models.TextField(
+                blank=True,
+                help_text="Variations of a name e.g. 'Janez Janša|Ivan Janez Janša' that the parser considers equal",
+                null=True,
+                verbose_name="parser_names",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="requirement",
+            field=models.TextField(
+                blank=True,
+                help_text="The requirement for the motion to pass",
+                null=True,
+                verbose_name="requirement",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="result",
+            field=models.BooleanField(
+                blank=True,
+                help_text="Did the motion pass?",
+                null=True,
+                verbose_name="result",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="session",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the legislative session in which the motion was proposed",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="motions",
+                to="parladata.session",
+                verbose_name="Session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="summary",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the motion summary",
+                null=True,
+                verbose_name="summary",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="text",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the text of the motion",
+                null=True,
+                verbose_name="text",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="title",
+            field=models.TextField(
+                help_text="Insert the title of the motion eg. 'Zakon o...'",
+                verbose_name="title",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="motion",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organization",
+            name="classification",
+            field=models.TextField(
+                blank=True,
+                choices=[
+                    ("root", "root"),
+                    ("pg", "pg"),
+                    ("commission", "commission"),
+                    ("committee", "committee"),
+                    ("council", "council"),
+                    ("delegation", "delegation"),
+                    ("friendship_group", "friendship_group"),
+                    ("investigative_commission", "investigative_commission"),
+                    ("other", "other"),
+                    ("coalition", "coalition"),
+                    ("house", "house"),
+                ],
+                help_text="Select an organization category, e.g. committee",
+                null=True,
+                verbose_name="classification",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organization",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organization",
+            name="description",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the description of the organization",
+                null=True,
+                verbose_name="description",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organization",
+            name="dissolution_date",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the date of dissolution",
+                null=True,
+                verbose_name="dissolution_date",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organization",
+            name="founding_date",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the date of founding",
+                null=True,
+                verbose_name="founding_date",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organization",
+            name="parent",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the higher tier organization that contains this organization",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="children",
+                to="parladata.organization",
+                verbose_name="Organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organization",
+            name="parser_names",
+            field=models.TextField(
+                blank=True,
+                help_text="Variations of a name e.g. 'Janez Janša|Ivan Janez Janša' that the parser considers equal",
+                null=True,
+                verbose_name="parser_names",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organization",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationacronym",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the organization",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.organization",
+                verbose_name="Owner",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationacronym",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationacronym",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationacronym",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationemail",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the organization",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.organization",
+                verbose_name="Owner",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationemail",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationemail",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationemail",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationmembership",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationmembership",
+            name="end_time",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the end time",
+                null=True,
+                verbose_name="end_time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationmembership",
+            name="mandate",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the mandate.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)ss",
+                to="parladata.mandate",
+                verbose_name="Mandate",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationmembership",
+            name="member",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="The organization that is a party to the relationship",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="organization_memberships",
+                to="parladata.organization",
+                verbose_name="Organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationmembership",
+            name="organization",
+            field=models.ForeignKey(
+                help_text="Select the organization that the member belongs to.",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)ss_children",
+                to="parladata.organization",
+                verbose_name="Organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationmembership",
+            name="start_time",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the start time",
+                null=True,
+                verbose_name="start_time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationmembership",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationname",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the organization",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.organization",
+                verbose_name="Owner",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationname",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationname",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="organizationname",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="person",
+            name="active",
+            field=models.BooleanField(
+                default=True, help_text="Is this person active?", verbose_name="active"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="person",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="person",
+            name="date_of_birth",
+            field=models.DateField(
+                blank=True,
+                help_text="Select the date of birth",
+                null=True,
+                verbose_name="date of birth",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="person",
+            name="date_of_death",
+            field=models.DateField(
+                blank=True,
+                help_text="Select the date of death",
+                null=True,
+                verbose_name="date of death",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="person",
+            name="districts",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Select the person's district",
+                related_name="candidates",
+                to="parladata.area",
+                verbose_name="Area",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="person",
+            name="image",
+            field=models.ImageField(
+                blank=True,
+                help_text="Insert a portrait photograph that focuses on the person's face.",
+                null=True,
+                upload_to="",
+                verbose_name="image (url)",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="person",
+            name="parser_names",
+            field=models.TextField(
+                blank=True,
+                help_text="Variations of a name e.g. 'Janez Janša|Ivan Janez Janša' that the parser considers equal",
+                null=True,
+                verbose_name="parser_names",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="person",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personeducation",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personeducation",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personeducation",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personeducation",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personeducationlevel",
+            name="education_level",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the education level",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.educationlevel",
+                verbose_name="Education level",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personeducationlevel",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personeducationlevel",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personeducationlevel",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personemail",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personemail",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personemail",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personemail",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personhonorificprefix",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personhonorificprefix",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personhonorificprefix",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personhonorificprefix",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personhonorificsuffix",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personhonorificsuffix",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personhonorificsuffix",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personhonorificsuffix",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="end_time",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the end time",
+                null=True,
+                verbose_name="end_time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="mandate",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the mandate.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)ss",
+                to="parladata.mandate",
+                verbose_name="Mandate",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="member",
+            field=models.ForeignKey(
+                help_text="Choose the person to whom the membership applies.",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="person_memberships",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="on_behalf_of",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the organization on whose behalf the person is a member of the organization.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="representatives",
+                to="parladata.organization",
+                verbose_name="On behalf of organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="organization",
+            field=models.ForeignKey(
+                help_text="Select the organization that the member belongs to.",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)ss_children",
+                to="parladata.organization",
+                verbose_name="Organization",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="role",
+            field=models.TextField(
+                choices=[
+                    ("member", "member"),
+                    ("deputy member", "deputy member"),
+                    ("voter", "voter"),
+                    ("president", "president"),
+                    ("deputy", "deputy"),
+                    ("leader", "leader"),
+                ],
+                default="member",
+                help_text="Select the role that the person fulfills in the organization.",
+                verbose_name="Role",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="start_time",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the start time",
+                null=True,
+                verbose_name="start_time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmembership",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personname",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personname",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personname",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personname",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofmandates",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofmandates",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofmandates",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofmandates",
+            name="value",
+            field=models.IntegerField(
+                help_text="Enter the number of mandates",
+                verbose_name="Number of mandates",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofpoints",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofpoints",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofpoints",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofpoints",
+            name="value",
+            field=models.IntegerField(
+                help_text="Enter the number of points", verbose_name="Number of points"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofvoters",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofvoters",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofvoters",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofvoters",
+            name="value",
+            field=models.IntegerField(
+                help_text="Enter the number of voters", verbose_name="Number of voters"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personpreferredpronoun",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personpreferredpronoun",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personpreferredpronoun",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personpreferredpronoun",
+            name="value",
+            field=models.TextField(
+                choices=[("he", "he"), ("she", "she"), ("they", "they")],
+                help_text="Select the preferred pronoun",
+                verbose_name="Preferred pronoun",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personpreviousoccupation",
+            name="owner",
+            field=models.ForeignKey(
+                help_text="Select the person",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personpreviousoccupation",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personpreviousoccupation",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personpreviousoccupation",
+            name="value",
+            field=models.TextField(
+                help_text="Insert approriate value", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="procedure",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="procedure",
+            name="type",
+            field=models.TextField(
+                blank=True,
+                help_text="Name of procedure type",
+                null=True,
+                verbose_name="Type",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="procedure",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="procedurephase",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="procedurephase",
+            name="name",
+            field=models.TextField(
+                blank=True,
+                help_text="Name of procedure phase",
+                null=True,
+                verbose_name="Name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="procedurephase",
+            name="procedure",
+            field=models.ForeignKey(
+                help_text="Procedure to which the phase belongs",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.procedure",
+                verbose_name="Procedure",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="procedurephase",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="approved_at",
+            field=models.DateTimeField(
+                blank=True,
+                db_index=True,
+                help_text="Insert the date when the item was approved",
+                null=True,
+                verbose_name="approved_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="gov_id",
+            field=models.TextField(
+                blank=True,
+                help_text="Gov ID or identifier for parser",
+                null=True,
+                verbose_name="gov_id",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="mandate",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="The mandate of this public question.",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="public_answers",
+                to="parladata.mandate",
+                verbose_name="Mandate",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="notification_sent_at",
+            field=models.DateTimeField(
+                blank=True,
+                db_index=True,
+                help_text="Timestamp when notification was sent",
+                null=True,
+                verbose_name="notification sent at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="question",
+            field=models.ForeignKey(
+                help_text="Select the question this answer relates to.",
+                on_delete=django.db.models.deletion.PROTECT,
+                related_name="answer",
+                to="parladata.publicpersonquestion",
+                verbose_name="Question",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="rejected_at",
+            field=models.DateTimeField(
+                blank=True,
+                db_index=True,
+                help_text="Insert the date when the item was rejected",
+                null=True,
+                verbose_name="rejected_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="text",
+            field=models.TextField(help_text="Text of answer", verbose_name="text"),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonanswer",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="approved_at",
+            field=models.DateTimeField(
+                blank=True,
+                db_index=True,
+                help_text="Insert the date when the item was approved",
+                null=True,
+                verbose_name="approved_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="author_email",
+            field=models.EmailField(
+                blank=True,
+                help_text="Email of the author of the question",
+                max_length=256,
+                null=True,
+                verbose_name="author email",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="gov_id",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the GOV ID.",
+                null=True,
+                verbose_name="gov_id",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="mandate",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the mandate of this public question.",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="public_questions",
+                to="parladata.mandate",
+                verbose_name="Mandate",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="notification_sent_at",
+            field=models.DateTimeField(
+                blank=True,
+                db_index=True,
+                help_text="Timestamp when notification was sent",
+                null=True,
+                verbose_name="notification sent at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="recipient_person",
+            field=models.ForeignKey(
+                help_text="Recipient person.",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="received_person_questions",
+                to="parladata.person",
+                verbose_name="Person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="rejected_at",
+            field=models.DateTimeField(
+                blank=True,
+                db_index=True,
+                help_text="Insert the date when the item was rejected",
+                null=True,
+                verbose_name="rejected_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="text",
+            field=models.TextField(help_text="Text of question", verbose_name="text"),
+        ),
+        migrations.AlterField(
+            model_name="publicpersonquestion",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="answer_timestamp",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Date of answer the question.",
+                null=True,
+                verbose_name="date of the answer.",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="gov_id",
+            field=models.TextField(
+                blank=True,
+                help_text="Unique identifier of question on government site.",
+                null=True,
+                verbose_name="government ID",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="mandate",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="The mandate of this question.",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="questions",
+                to="parladata.mandate",
+                verbose_name="mandate",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="organization_authors",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="The organizations who asked the question.",
+                related_name="questions_org_author",
+                to="parladata.organization",
+                verbose_name="organization authors",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="person_authors",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="The persons (MP) who asked the question.",
+                related_name="authored_questions",
+                to="parladata.person",
+                verbose_name="authors",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="recipient_organizations",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Recipient organization (if it's an organization).",
+                related_name="questions_org",
+                to="parladata.organization",
+                verbose_name="recipient organizations",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="recipient_people",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Recipient person (if it's a person).",
+                related_name="received_questions",
+                to="parladata.person",
+                verbose_name="recipient people",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="recipient_text",
+            field=models.TextField(
+                blank=True,
+                help_text="Recipient name as written on dz-rs.si",
+                null=True,
+                verbose_name="recipient name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="session",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="The session this question belongs to.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.session",
+                verbose_name="session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="timestamp",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Date of the question.",
+                null=True,
+                verbose_name="date of the question.",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="title",
+            field=models.TextField(
+                blank=True,
+                help_text="Title name as written on dz-rs.si",
+                null=True,
+                verbose_name="title",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="type_of_question",
+            field=models.TextField(
+                blank=True,
+                choices=[
+                    ("question", "question"),
+                    ("initiative", "initiative"),
+                    ("unknown", "unknown"),
+                ],
+                help_text="Type of question.",
+                null=True,
+                verbose_name="type of question",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="question",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="classification",
+            field=models.CharField(
+                choices=[
+                    ("unknown", "unknown"),
+                    ("regular", "regular"),
+                    ("irregular", "irregular"),
+                    ("correspondent", "correspondent"),
+                    ("urgent", "urgent"),
+                ],
+                default="unknown",
+                help_text="Select the session classification",
+                max_length=128,
+                verbose_name="classification",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="end_time",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Insert the end time",
+                null=True,
+                verbose_name="end_time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="gov_id",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the gov website ID.",
+                null=True,
+                verbose_name="gov_id",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="in_review",
+            field=models.BooleanField(
+                default=False,
+                help_text="Is session still in review?",
+                verbose_name="in_review",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="mandate",
+            field=models.ForeignKey(
+                help_text="Select the mandate of this session.",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="sessions",
+                to="parladata.mandate",
+                verbose_name="Mandate",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="name",
+            field=models.TextField(
+                help_text="Insert the session name and number e.g. '48. nujna seja'",
+                verbose_name="name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="needs_editing",
+            field=models.BooleanField(
+                default=False,
+                help_text="Does this session need editing?",
+                verbose_name="needs_editing",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="start_time",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Insert the start time",
+                null=True,
+                verbose_name="start_time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="session",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="agenda_items",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Select agenda items",
+                related_name="speeches",
+                to="parladata.agendaitem",
+                verbose_name="Agenda items",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="content",
+            field=models.TextField(
+                help_text="The content of the speech.", verbose_name="content"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="end_time",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the end time",
+                null=True,
+                verbose_name="end_time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="lemmatized_content",
+            field=models.TextField(
+                blank=True,
+                help_text="Lemmatized words spoken",
+                null=True,
+                verbose_name="lemmatized_content",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="motions",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Select motions related to the speech",
+                to="parladata.motion",
+                verbose_name="Motions",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="order",
+            field=models.IntegerField(
+                blank=True,
+                help_text="Order of the speech",
+                null=True,
+                verbose_name="order",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="session",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the session of the speech.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="speeches",
+                to="parladata.session",
+                verbose_name="Session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="speaker",
+            field=models.ForeignKey(
+                help_text="Select the person making the speech",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="speeches",
+                to="parladata.person",
+                verbose_name="Speaker",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="start_time",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the start time",
+                null=True,
+                verbose_name="start_time",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="valid_from",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid from.",
+                null=True,
+                verbose_name="valid_from",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="speech",
+            name="valid_to",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="Leave blank if the value hasn't changed. If the vales changes insert the time and the the value is valid to. Then add a new entry for the value.",
+                null=True,
+                verbose_name="valid_to",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="email_msg",
+            field=models.TextField(
+                help_text="A message sent to the administrator when the task is complete.",
+                verbose_name="email_msg",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="errored_at",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="time when errored",
+                null=True,
+                verbose_name="errored_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="finished_at",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="time when finished",
+                null=True,
+                verbose_name="finished_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="module_name",
+            field=models.TextField(
+                default="parladata.tasks",
+                help_text="Name of task",
+                verbose_name="module_name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="name",
+            field=models.TextField(help_text="Name of task", verbose_name="name"),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="payload",
+            field=models.JSONField(help_text="Payload kwargs", verbose_name="payload"),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="started_at",
+            field=models.DateTimeField(
+                blank=True,
+                default=None,
+                help_text="time when started",
+                null=True,
+                verbose_name="started_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="task",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="vote",
+            name="created_at",
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                help_text="The time the object was created.",
+                verbose_name="created_at",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="vote",
+            name="motion",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the motion for which the vote took place",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="vote",
+                to="parladata.motion",
+                verbose_name="Motion",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="vote",
+            name="name",
+            field=models.TextField(
+                blank=True,
+                help_text="Vote name/identifier",
+                null=True,
+                verbose_name="name",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="vote",
+            name="needs_editing",
+            field=models.BooleanField(
+                default=False,
+                help_text="Indicates if the vote needs editing.",
+                verbose_name="Vote needs editing",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="vote",
+            name="result",
+            field=models.BooleanField(
+                blank=True,
+                help_text="Select the result of the vote.",
+                null=True,
+                verbose_name="result",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="vote",
+            name="timestamp",
+            field=models.DateTimeField(
+                blank=True,
+                help_text="Select the vote time.",
+                null=True,
+                verbose_name="timestamp",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="vote",
+            name="updated_at",
+            field=models.DateTimeField(
+                auto_now=True,
+                db_index=True,
+                help_text="The time the object was last updated.",
+                verbose_name="updated_at",
+            ),
         ),
     ]

@@ -61,15 +61,16 @@ class SessionSerializer(CommonCachableSerializer):
 
     def get_has_votes(self, session):
         return Vote.objects.filter(motion__session=session).exists()
-    
+
     def get_joint_data(self, session):
         if session.is_joint_session:
             return SessionJointPartSerializer(
-                session.session_organization_through.all(), context=self.context, many=True
+                session.session_organization_through.all(),
+                context=self.context,
+                many=True,
             ).data
         else:
             return None
-
 
     name = serializers.CharField()
     joint_data = serializers.SerializerMethodField()

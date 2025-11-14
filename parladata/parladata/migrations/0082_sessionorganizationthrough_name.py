@@ -6,13 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0081_sessionorganizationthrough_and_more'),
+        ("parladata", "0081_sessionorganizationthrough_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='sessionorganizationthrough',
-            name='name',
-            field=models.TextField(blank=True, help_text="Insert the session name and number e.g. '48. nujna seja'", null=True, verbose_name='name'),
+            model_name="sessionorganizationthrough",
+            name="name",
+            field=models.TextField(
+                blank=True,
+                help_text="Insert the session name and number e.g. '48. nujna seja'",
+                null=True,
+                verbose_name="name",
+            ),
         ),
     ]

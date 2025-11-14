@@ -26,12 +26,10 @@ class SessionLinkInline(admin.TabularInline):
 class SessionOrganizationsInline(admin.TabularInline):
     model = Session.organizations.through
     extra = 0
-    autocomplete_fields = ['organization']
-    
+    autocomplete_fields = ["organization"]
+
     class Media:
-        css = {
-            'all': ('css/custom_admin.css',)
-        }
+        css = {"all": ("css/custom_admin.css",)}
 
 
 class SessionAdmin(admin.ModelAdmin):
@@ -72,7 +70,7 @@ class SessionAdmin(admin.ModelAdmin):
         return mark_safe(
             f'<a href="{url}"><input type="button" value="Run TFIDF task" /></a>'
         )
-    
+
     def join_sessions(self, obj):
         partial_url = "/admin/parladata/session/mergesessions/"
         url = f"{settings.BASE_URL}{partial_url}?real_session={obj.id}"

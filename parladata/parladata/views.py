@@ -201,6 +201,7 @@ def merge_organizations(request):
         },
     )
 
+
 def merge_sessions(request):
     passed_real_session = request.GET.get("real_session", None)
     app_list = admin.site.get_app_list(request)
@@ -214,7 +215,10 @@ def merge_sessions(request):
                 message = _("Merge sessions to session with ID: ") + str(real_session)
                 Task(
                     name="merge_sessions",
-                    payload={"real_session_id": real_session, "duplicated_session_id": duplicated_session},
+                    payload={
+                        "real_session_id": real_session,
+                        "duplicated_session_id": duplicated_session,
+                    },
                     module_name="parladata.tasks",
                     email_msg=message,
                 ).save()
@@ -231,7 +235,9 @@ def merge_sessions(request):
                         },
                     },
                 )
-            statisctics = make_sessions_merge_statistics(real_session, duplicated_session)
+            statisctics = make_sessions_merge_statistics(
+                real_session, duplicated_session
+            )
             _mutable = form.data._mutable
             form.data._mutable = True
             form.data["confirmed"] = True

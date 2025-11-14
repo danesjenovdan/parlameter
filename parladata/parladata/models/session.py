@@ -89,17 +89,17 @@ class Session(Timestampable):
         #     )
 
         return self.organizations.first()
-    
+
     def get_joint_name(self):
         if self.is_joint_session:
             return " - ".join(
-                self.session_organization_through.all().order_by("id").values_list(
-                    "name", flat=True
-                )
+                self.session_organization_through.all()
+                .order_by("id")
+                .values_list("name", flat=True)
             )
         else:
             return self.name
-        
+
     def get_joint_name_with_orgs(self):
         if self.is_joint_session:
             parts = []
@@ -138,7 +138,7 @@ class SessionOrganizationThrough(models.Model):
     )
 
     class Meta:
-        db_table = 'parladata_session_organizations'
+        db_table = "parladata_session_organizations"
         unique_together = (("session", "organization"),)
 
     def __str__(self):
