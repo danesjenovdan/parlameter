@@ -120,8 +120,7 @@ def notify_editors_for_new_data():
         updated_at__gte=previous_parse
     )
     joint_sessions = Session.objects.filter(
-        needs_editing=True,
-        created_at__gte=previous_parse
+        needs_editing=True, created_at__gte=previous_parse
     ).distinct("id")
 
     assert bool(editor_permission_group), "There's no editor permission group"
