@@ -9,7 +9,7 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "@sentry/node": "^10.22.0",
+    "@sentry/node": "^10.27.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "limiter": "^3.0.0",
