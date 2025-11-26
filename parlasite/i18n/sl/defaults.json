@@ -174,7 +174,8 @@
     "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
     "info_email": "info@parlameter.si",
     "unaffiliated": "nepovezan/a",
-    "no-session-data": "Za to sejo (še) nimamo podatkov."
+    "no-session-data": "Za to sejo (še) nimamo podatkov.",
+    "joint-session": "Skupna seja"
   },
   "social": {
     "facebook": "https://www.facebook.com/parlameter",
