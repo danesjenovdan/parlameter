@@ -20,6 +20,20 @@
 
     .session-extra-info {
       margin-bottom: 30px;
+
+      h2 {
+        font-size: 16px;
+      }
+
+      h2.session-extra-name {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      h3 {
+        margin-top: 10px;
+      }
     }
   }
 

@@ -133,7 +133,33 @@ function stringifyParams(params) {
   return '';
 }
 
+function sessionName(session) {
+  if (session.joint_data?.length) {
+    return this.i18n('general.joint-session');
+  } else {
+    return session.name;
+  }
+}
+
+function joinSessionNamesAndOrgs(session) {
+  if (session.joint_data?.length) {
+    return session.joint_data.map((s) => {
+      return {
+        name: s.name,
+        orgName: s.organization.name,
+      };
+    });
+  } else {
+    return [
+      {
+        orgName: session.organizations[0].name,
+      },
+    ];
+  }
+}
+
 function slovenianDate(isoDate) {
+  // TODO: rename to localeDate and use i18n function to properly format dates
   if (!isoDate) {
     return 'Invalid Date';
   }
@@ -261,9 +287,12 @@ const asyncRender = (fn) => (req, res, next) => {
 
   const outPromises = [];
   const render = (view, opts) => {
+    const i18n = res.locals.i18n || req.app.locals.i18n;
     const options = {
       ...opts,
       slovenianDate,
+      sessionName: sessionName.bind({ i18n }),
+      joinSessionNamesAndOrgs,
       // bind the `this` object to the fetchCard function so we can access the
       // req, res and outPromises in the function when called from the template
       fetchCard: fetchCard.bind({ req, res, outPromises, responseTimings }),

@@ -23,9 +23,52 @@ class PersonSerializer(serializers.ModelSerializer):
 
 
 class SessionSerializer(serializers.ModelSerializer):
+    organizations = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=Organization.objects.all(),
+        required=False
+    )
+
     class Meta:
         model = Session
         fields = "__all__"
+
+    def create(self, validated_data):
+        organizations = validated_data.pop('organizations', [])
+        session = Session.objects.create(**validated_data)
+        
+        # Create SessionOrganizationThrough entries with name=None
+        for org in organizations:
+            SessionOrganizationThrough.objects.create(
+                session=session,
+                organization=org,
+                name=None
+            )
+        
+        return session
+
+    def update(self, instance, validated_data):
+        organizations = validated_data.pop('organizations', None)
+        
+        # Update session fields
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        
+        # Update organizations if provided
+        if organizations is not None:
+            # Remove existing relationships
+            SessionOrganizationThrough.objects.filter(session=instance).delete()
+            
+            # Create new relationships with name=None
+            for org in organizations:
+                SessionOrganizationThrough.objects.create(
+                    session=instance,
+                    organization=org,
+                    name=None
+                )
+        
+        return instance
 
 
 # class OrganizationNameSerializer(serializers.ModelSerializer):
