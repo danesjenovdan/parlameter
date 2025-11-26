@@ -1,5 +1,5 @@
 from parlacards.solr import delete_from_solr
-from parladata.models import Organization, Person
+from parladata.models import Organization, Person, Session
 
 
 def merge_people(real_person_id, fake_person_ids, print_method=print):
@@ -250,3 +250,49 @@ def merge_organizations(real_org_id, fake_orgs_ids, print_method=print):
             real_org.add_parser_name(fake_org_name)
         real_org.save()
         print_method(str(fake_org.delete()))
+
+
+def merge_sessions(real_session_id, duplicated_session_id, print_method=print):
+    print_method(f"Real session id: {real_session_id}")
+    print_method(f"Duplicate session id: {duplicated_session_id}")
+    print_method("\n")
+
+    # check if real session exists
+    try:
+        real_session = Session.objects.get(id=int(real_session_id))
+    except Session.DoesNotExist:
+        raise Exception("No real session found")
+
+    # check if duplicate sessions exist
+    duplicated_session = Session.objects.filter(id=duplicated_session_id).first()
+    if not duplicated_session:
+        raise Exception("No duplicate session found")
+
+    duplicate_speeches = duplicated_session.speeches.all()
+    print_method(
+        f"Delete {duplicate_speeches.count()} speeches from duplicate session."
+    )
+    duplicate_speeches.delete()
+
+    duplicate_votes = duplicated_session.motions.all()
+    print_method(f"Delete {duplicate_votes.count()} votes.")
+    duplicate_votes.delete()
+
+    real_session.gov_id = f"{real_session.gov_id}|{duplicated_session.gov_id}"
+    real_session.is_joint_session = True
+    real_session.name = f"{real_session.name} ({real_session.organizations.first().name}), {duplicated_session.name} ({duplicated_session.organizations.first().name})"
+    real_session.save()
+
+    duplicated_session_through = duplicated_session.session_organization_through.all()
+    duplicated_session_through.update(
+        session=real_session,
+        name=duplicated_session.name,
+    )
+
+    real_session_through = real_session.session_organization_through.all()
+    for rst in real_session_through:
+        if not rst.name:
+            rst.name = real_session.name
+            rst.save()
+
+    print(duplicated_session.delete())

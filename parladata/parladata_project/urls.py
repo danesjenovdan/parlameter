@@ -20,6 +20,7 @@ from parladata.views import (
     add_ballots,
     merge_organizations,
     merge_people,
+    merge_sessions,
 )
 
 urlpatterns = [
@@ -31,6 +32,7 @@ urlpatterns = [
     # admin views
     path("admin/parladata/parliamentmember/mergepeople/", merge_people),
     path("admin/parladata/parliamentarygroup/mergeorganizations/", merge_organizations),
+    path("admin/parladata/session/mergesessions/", merge_sessions),
     path("admin/parladata/vote/addballots/", add_ballots),
     path("admin/parladata/vote/addanonymousballots/", add_anonymous_ballots),
     path(
