@@ -6,12 +6,12 @@
   <div class="col-md-12">
     <%- fetchCard('/person/votes/', mp.id, { "showExportButton": true }) %>
   </div>
-  <!-- <div class="col-md-6">
-    <%# fetchCard('/person/most-votes-in-common/', mp.id, { "showExportButton": true }) %>
+  <div class="col-md-6">
+    <%- fetchCard('/person/most-votes-in-common/', mp.id, { "showExportButton": true }) %>
   </div>
   <div class="col-md-6">
-    <%# fetchCard('/person/least-votes-in-common/', mp.id, { "showExportButton": true }) %>
-  </div> -->
+    <%- fetchCard('/person/least-votes-in-common/', mp.id, { "showExportButton": true }) %>
+  </div>
   <div class="col-md-6">
     <%- fetchCard('/person/deviation-from-group/', mp.id, { "showExportButton": true }) %>
   </div>

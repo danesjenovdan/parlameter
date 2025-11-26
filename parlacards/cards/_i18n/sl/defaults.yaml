@@ -543,7 +543,8 @@ organization-classifications:
   committee: Odbori
   other: Drugo
   commission: Komisije
-  council: Kolegij predsednice Državnega zbora
+  council: Kolegij predsednika Državnega zbora
+  investigative_commission: Preiskovalne komisije
 legislation-classifications:
   act: Akt
   decree: Odlok

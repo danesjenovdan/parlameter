@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: parladata
+  name: parladata-slovenija
 spec:
   selector:
-    app: parladata
+    app: parladata-slovenija
   ports:
     - protocol: TCP
       port: 8000
@@ -13,10 +13,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: parladata-nginx
+  name: parladata-slovenija-nginx
 spec:
   selector:
-    app: parladata
+    app: parladata-slovenija
   ports:
     - protocol: TCP
       port: 80

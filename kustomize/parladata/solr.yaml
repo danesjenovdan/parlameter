@@ -19,7 +19,7 @@ spec:
         fsGroup: 8983
       containers:
       - name: parlasolr
-        image: parlasolr # kustomize thing
+        image: parlasolr-slovenija # kustomize thing
         volumeMounts:
         - name: parlasolr-persistent-storage
           mountPath: /var/solr/data
@@ -43,13 +43,13 @@ spec:
         resources:
           requests:
             memory: 1Gi
-            cpu: 200m
+            cpu: 400m
           limits:
-            memory: 1Gi
-            cpu: 200m
+            memory: 2Gi
+            cpu: 600m
       initContainers:
       - name: create-core
-        image: parlasolr
+        image: parlasolr-slovenija
         # command: ['solr', 'create_core', '-c', 'parlasearch']
         # create parlasearch core with a convenience script
         command: ['sh', '-c', '/opt/docker-solr/scripts/precreate-core parlasearch']
@@ -65,7 +65,7 @@ spec:
             memory: 100Mi
             cpu: 50m
       - name: link-config-1
-        image: parlasolr
+        image: parlasolr-slovenija
         command: ['cp', '-f', '/parlasearch-conf/schema.xml', '/var/solr/data/parlasearch/conf/']
         volumeMounts:
         - name: parlasolr-persistent-storage
@@ -79,7 +79,7 @@ spec:
             memory: 100Mi
             cpu: 50m
       - name: link-config-2
-        image: parlasolr
+        image: parlasolr-slovenija
         command: ['cp', '-f', '/parlasearch-conf/solrconfig.xml', '/var/solr/data/parlasearch/conf/']
         volumeMounts:
         - name: parlasolr-persistent-storage
@@ -121,15 +121,23 @@ spec:
 # only. Make sure it's always commented out.
 # Your SOLR instance should not accessible
 # from the public internet.
+# If you do uncomment this, make sure you set
+# the nginx.ingress.kubernetes.io/whitelist-source-range
+# annotation.
 # apiVersion: networking.k8s.io/v1
 # kind: Ingress
 # metadata:
 #   name: parlasolr
 #   annotations:
-#     nginx.ingress.kubernetes.io/rewrite-target: /
+#     cert-manager.io/cluster-issuer: "letsencrypt-production"
+#     # nginx.ingress.kubernetes.io/whitelist-source-range: 51.159.115.36,93.103.238.39,91.236.1.1/24
 # spec:
+#   tls:
+#     - hosts:
+#         - slovenija.parlasolr.lb.djnd.si
+#       secretName: slovenija-parlasolr-tls
 #   rules:
-#   - host: parlasolr.lb.djnd.si
+#   - host: slovenija.parlasolr.lb.djnd.si
 #     http:
 #       paths:
 #       - path: /

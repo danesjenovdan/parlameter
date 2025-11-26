@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: parlameter-TODO-BRANCH-NAME-HERE
+namespace: parlameter-slovenija
 resources:
   - parladata/deployment.yaml
   - parladata/ingress.yaml
@@ -8,7 +8,8 @@ resources:
   - parladata/service.yaml
   - parladata/solr.yaml
   # uncomment cronjob to enable it
-  # - parladata/cronjobs/task_runner_cronjob.yaml
+  - parladata/cronjobs/task_runner_cronjob.yaml
+  - parladata/cronjobs/send_word_notifications.yaml
 
   - parlacards/deployment.yaml
   - parlacards/ingress.yaml
@@ -17,23 +18,28 @@ resources:
   - parlasite/deployment.yaml
   - parlasite/ingress.yaml
   - parlasite/service.yaml
-
+  - parlasite-viii/deployment.yaml
+  - parlasite-viii/ingress.yaml
+  - parlasite-viii/service.yaml
+  - parlasite-vii/deployment.yaml
+  - parlasite-vii/ingress.yaml
+  - parlasite-vii/service.yaml
   - parlassets/deployment.yaml
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
-  - name: parladata
-    newName: rg.fr-par.scw.cloud/djnd/parladata-TODO-BRANCH-NAME-HERE
-    newTag: 'latest'
-  - name: parlasolr
-    newName: rg.fr-par.scw.cloud/djnd/parlasolr-TODO-BRANCH-NAME-HERE
-    newTag: 'latest'
-  - name: parlacards-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE
-    newTag: 'latest'
-  - name: parlasite-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlasite-TODO-BRANCH-NAME-HERE
-    newTag: 'latest'
-  - name: parlassets-TODO-BRANCH-NAME-HERE
-    newName: rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE
-    newTag: 'latest'
+  - name: parladata-slovenija
+    newName: rg.fr-par.scw.cloud/djnd/parladata-slovenija
+    newTag: 'd0f447d0c00d7477d650a813f9c6f475fbe6108b'
+  - name: parlasolr-slovenija
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-slovenija
+    newTag: 'd0f447d0c00d7477d650a813f9c6f475fbe6108b'
+  - name: parlacards-slovenija
+    newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija
+    newTag: 'd0f447d0c00d7477d650a813f9c6f475fbe6108b'
+  - name: parlasite-slovenija
+    newName: rg.fr-par.scw.cloud/djnd/parlasite-slovenija
+    newTag: 'd0f447d0c00d7477d650a813f9c6f475fbe6108b'
+  - name: parlassets-slovenija
+    newName: rg.fr-par.scw.cloud/djnd/parlassets-slovenija
+    newTag: 'd0f447d0c00d7477d650a813f9c6f475fbe6108b'

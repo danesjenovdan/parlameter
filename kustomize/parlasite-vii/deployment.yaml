@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlasite
+  name: parlasite-vii
   labels:
-    app: parlasite
+    app: parlasite-vii
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlasite
+      app: parlasite-vii
   template:
     metadata:
       labels:
-        app: parlasite
+        app: parlasite-vii
     spec:
       containers:
-        - name: parlasite
+        - name: parlasite-vii
           image: parlasite-slovenija
           ports:
             - containerPort: 3066
@@ -34,12 +34,10 @@ spec:
             - name: PARLASITE_DATA_URL
               value: "https://parladata-slovenija.lb.djnd.si/v3"
             - name: PARLASITE_LEADER_ID
-              value: "4434"
+              value: "261"
             - name: PARLASITE_ROOT_ORG_ID
-              value: "137"
+              value: "293"
             - name: PARLASITE_MANDATE_ID
-              value: "2"
+              value: "3"
             - name: PARLASITE_DEFAULT_CARD_DATE
-              value: ""
-            - name: PARLASITE_NEWSLETTER_SEGMENT_ID
-              value: ""
+              value: "2018-06-20"

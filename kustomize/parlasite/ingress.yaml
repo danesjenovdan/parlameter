@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - parlasite-TODO-BRANCH-NAME-HERE.lb.djnd.si
+        - parlameter.si
       secretName: parlasite-tls
   rules:
-    - host: parlasite-TODO-BRANCH-NAME-HERE.lb.djnd.si
+    - host: parlameter.si
       http:
         paths:
           - path: /

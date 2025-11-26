@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: parlameter-task-runner
 spec:
-  schedule: "15 * * * *"
+  schedule: "15,45 * * * *"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
   jobTemplate:
@@ -13,13 +13,15 @@ spec:
         spec:
           containers:
           - name: parladata-task-runner
-            image: parladata
+            image: parladata-slovenija
             env:
               - name: DJANGO_SETTINGS_MODULE
                 value: parladata_project.settings.k8s
+              - name: INSTALATION_NAME
+                value: Slovenija
             envFrom:
               - secretRef:
-                  name: parladata-credentials
+                  name: parladata-slovenija-credentials
             command:
               - python
               - manage.py

@@ -49,7 +49,7 @@
       <%- fetchCard('/search/speeches/', mandateId, { text: query, people: mps, groups: pgs }) %>
     </div>
     <div class="col-md-12">
-      <%- fetchCard('/search/legislation/', mandateId, { text: query }) %>
+      <%- fetchCard('/search/legislation/', mandateId, { text: query, showEpaColumn: 'true' }) %>
     </div>
     <div class="col-md-12">
       <%- fetchCard('/search/votes/', mandateId, { text: query }) %>

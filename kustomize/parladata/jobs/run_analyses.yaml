@@ -1,13 +1,13 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: parladata-analyses-job-runner
+  name: parladata-analyses-job-runner-2022-07-25 # change the date to yesterday
 spec:
   template:
     spec:
       containers:
       - name: parladata-analyses-job-runner
-        image: rg.fr-par.scw.cloud/djnd/parladata:latest
+        image: rg.fr-par.scw.cloud/djnd/parladata-slovenija:latest
         env:
           - name: DJANGO_SETTINGS_MODULE
             value: parladata_project.settings.k8s
@@ -15,12 +15,12 @@ spec:
             value: "true"
         envFrom:
           - secretRef:
-              name: parladata-credentials
+              name: parladata-slovenija-credentials
         command:
           - python
           - manage.py
           - run_all_analyses
           - --start_time
-          - 2021-07-24
+          - 2022-07-25 # set this to yesterday's date
       restartPolicy: Never
   backoffLimit: 1

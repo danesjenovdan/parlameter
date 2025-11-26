@@ -3,13 +3,13 @@
 /////////////////////////////
 
 // gradient
-$first: #005554;
-$second: #007a78;
-$third: #c41454;
+$first: #197197;
+$second: #009cdd;
+$third: #ff5e41;
 
-$gradient-first: $second;
-$gradient-second: #80bdbc;
-$gradient-third: #009cdd;
+$gradient-first: $first;
+$gradient-second: $second;
+$gradient-third: $third;
 
 // tabs
 $tab-active: $second;
@@ -18,14 +18,14 @@ $tab-passive: $first;
 
 // links
 $link: $first;
-$link-hover-background: #eff7f7;
+$link-hover-background: #d9e7ed;
 
 // card footer buttons
 $card-footer-button-passive-background: $first;
 $card-footer-button-hover-background: $second;
 
 // scroller
-$scroller: #eff7f7;
+$scroller: #d9e7ed;
 $element: $first;
 
 // divider
@@ -41,14 +41,14 @@ $icon-accepted: $second;
 $icon-rejected: $third;
 $icon-session: $third;
 $icon-transcript: $first;
-$icon-transcript-hover-background: #eff7f7;
+$icon-transcript-hover-background: #d9e7ed;
 
 
 // buttons
 $button-for: $second;
 $button-against: $third;
-$button-abstained: #009cdd;
-$button-absent: #003130;
+$button-abstained: #88dcff;
+$button-absent: #003c55;
 
 // dropdown
 $dropdown-arrow: $first;

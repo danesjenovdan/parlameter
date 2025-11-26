@@ -1,5 +1,5 @@
 <%- await include('../_partials/header.ejs') %>
 
-<%- fetchCard('/misc/legislation/', mandateId, { "showExportButton": true }) %>
+<%- fetchCard('/misc/legislation/', mandateId, { showEpaColumn: 'true', "showExportButton": true }) %>
 
 <%- await include('../_partials/footer.ejs') %>

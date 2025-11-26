@@ -9,9 +9,9 @@
   <div class="col-md-6">
     <%- fetchCard('/person/recent-activity/', mp.id) %>
   </div>
-  <!-- <div class="col-md-12">
-    <%# fetchCard('/person/monthly-vote-attendance/', mp.id, { "showExportButton": true }) %>
-  </div> -->
+  <div class="col-md-12">
+    <%- fetchCard('/person/monthly-vote-attendance/', mp.id, { "showExportButton": true }) %>
+  </div>
   <div class="col-md-6">
     <%- fetchCard('/person/questions/', mp.id, { "showExportButton": true }) %>
   </div>
