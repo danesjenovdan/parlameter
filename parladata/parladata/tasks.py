@@ -278,6 +278,12 @@ def merge_sessions(real_session_id, duplicated_session_id, print_method=print):
     print_method(f"Delete {duplicate_votes.count()} votes.")
     duplicate_votes.delete()
 
+    real_session_through = real_session.session_organization_through.all()
+    for rst in real_session_through:
+        if not rst.name:
+            rst.name = real_session.name
+            rst.save()
+
     real_session.gov_id = f"{real_session.gov_id}|{duplicated_session.gov_id}"
     real_session.is_joint_session = True
     real_session.name = f"{real_session.name} ({real_session.organizations.first().name}), {duplicated_session.name} ({duplicated_session.organizations.first().name})"
@@ -288,11 +294,5 @@ def merge_sessions(real_session_id, duplicated_session_id, print_method=print):
         session=real_session,
         name=duplicated_session.name,
     )
-
-    real_session_through = real_session.session_organization_through.all()
-    for rst in real_session_through:
-        if not rst.name:
-            rst.name = real_session.name
-            rst.save()
 
     print(duplicated_session.delete())
