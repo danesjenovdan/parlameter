@@ -914,6 +914,44 @@ def make_person_merge_statistics(real_person_id, fake_person_ids):
     return data
 
 
+def make_sessions_merge_statistics(real_session_id, duplicated_session_id):
+    print(real_session_id, duplicated_session_id)
+    data = {}
+
+    real_session = Session.objects.get(id=int(real_session_id))
+    data["real_session"] = {
+        "name": real_session.name,
+        "organizations": " ".join(
+            real_session.organizations.values_list("latest_name", flat=True)
+        ),
+        "motions": real_session.motions.all().count(),
+        "speeches": real_session.speeches.all().count(),
+        "agenda_items": real_session.agenda_items.all().count(),
+        "links": real_session.links.all().count(),
+        "legislation_considerations": real_session.legislation_considerations.all().count(),
+        "questions": real_session.question_set.all().count(),
+    }
+
+    duplicated_session = Session.objects.filter(id=duplicated_session_id).first()
+    if not duplicated_session:
+        return data
+
+    data["duplicated_session"] = {
+        "name": duplicated_session.name,
+        "organizations": " ".join(
+            real_session.organizations.values_list("latest_name", flat=True)
+        ),
+        "motions": duplicated_session.motions.all().count(),
+        "speeches": duplicated_session.speeches.all().count(),
+        "agenda_items": duplicated_session.agenda_items.all().count(),
+        "links": duplicated_session.links.all().count(),
+        "legislation_considerations": duplicated_session.legislation_considerations.all().count(),
+        "questions": duplicated_session.question_set.all().count(),
+    }
+
+    return data
+
+
 def make_organization_merge_statistics(real_organization_id, fake_organization_ids):
     data = {}
 

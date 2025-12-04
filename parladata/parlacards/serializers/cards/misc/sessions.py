@@ -107,7 +107,7 @@ class SessionsCardSerializer(CardSerializer):
             Q(start_time__lte=self.context["request_date"])
             | Q(start_time__isnull=True),
             organizations__classification__in=classifications,
-        )
+        ).distinct()
 
         if len(organization_ids):
             sessions = sessions.filter(organizations__id__in=organization_ids)

@@ -5,10 +5,17 @@
         <b>S</b>
       </div>
 
-      <h1><%- session.name %></h1>
+      <h1><%- sessionName(session) %></h1>
 
       <div class="session-extra-info">
-        <h2><%- session.organizations[0].name %></h2>
+        <% joinSessionNamesAndOrgs(session).forEach(function(item) { %>
+          <% if (item.name) { %>
+            <h2 class="session-extra-name"><%- item.name %></h2>
+          <% } %>
+          <% if (item.orgName) { %>
+            <h2><%- item.orgName %></h2>
+          <% } %>
+        <% }); %>
         <h3><%- slovenianDate(session.start_time) %></h3>
       </div>
 

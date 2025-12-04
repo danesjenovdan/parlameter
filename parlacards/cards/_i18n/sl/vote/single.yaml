@@ -1,36 +1,38 @@
 card:
   title: Glasovanje
   info: >-
-    Nabor glasovanj pridobimo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
+    # Pregled posameznega glasovanja na seji.
 
 
-    Rezultat posameznega glasovanja ima tri različne izpise: na nivoju
-    poslancev, na nivoju poslanskih skupin ter glede na stran vlade.
+    Rezultat posameznega glasovanja ima tri različne izpise: na ravni poslank in
+    poslancev, na ravni poslanskih skupin ter glede na stran vlade.
 
 
-    Prvi zavihek omogoča pregled glasov poslancev, filtriranje glede na vrednost
-    glasovnice (ZA, PROTI, VZDRŽAN_A, NI GLASOVAL_A) ter iskanje posameznih
-    poslancev. Poleg krožnega grafikona se izpisuje večinski glas DZ na tem
-    glasovanju. "60 % ZA" npr. pomeni, da je ZA glasovalo 60 % vseh poslancev z
-    glasovalno pravico na tem glasovanju.
+    Prvi zavihek omogoča pregled glasov poslank in poslancev, filtriranje glede
+    na vrednost glasovnice (ZA, PROTI, VZDRŽANI, ODSOTNI) ter iskanje posameznih
+    poslank in poslancev. Poleg krožnega grafikona se izpisuje večinski glas DZ
+    na tem glasovanju. "60 % ZA" npr. pomeni, da je ZA glasovalo 60 % vseh
+    poslank in poslancev z glasovalno pravico na tem glasovanju.
 
 
     Drugi zavihek prikazuje glasove poslanskih skupin. Na koncu vsake vrstice je
     izpisan večinski glas poslanske skupine, gumbi z vrednostmi glasovnic pa
-    odpirajo sezname poslancev, ki so oddali tak glas. S strelo opozarjamo na
-    razkole v poslanskih skupinah - izrišemo jo nad tistimi glasovi, ki niso
-    enaki večinskemu, pri čemer so odsotni izvzeti. Če je bila večina poslancev
-    poslanske skupine odsotnih, večinskega glasu ni.
+    odpirajo sezname poslank in poslancev, ki so oddali tak glas.
 
 
-    Tretji zavihek rezultat izpiše glede na stran vlade. Tudi tu s strelo
-    opozarjamo na nepričakovane glasove - označujemo odstopanje od večinskega
-    glasu koalicije.
+    Tretji zavihek rezultat izpiše glede na stran vlade. Ponovno je na koncu
+    vsake vrstice izpisan večinski glas, gumbi z vrednostmi glasovnic pa
+    odpirajo sezname poslank in poslancev, ki so oddali tak glas.
 
 
-    Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
-    pri vzdržanih in odsotnih glasov ne moremo zagotavljati. Prisotnost poslancev
-    se na sejah DZ ne preverja na vsakem glasovanju, zato se lahko zgodi,
-    da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
-    z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
-    kot odsotna (rezultat: ni glasoval/a).
+    Za pravilnost rezultatov glasovanja skrbimo po najboljših močeh, a je
+    predvsem pri vzdržanih in odsotnih glasovih ne moremo zagotavljati.
+    Prisotnost poslank in poslancev se na sejah DZ ne preverja na vsakem
+    glasovanju, zato se lahko zgodi, da je bila oseba vzdržana, pa je zaradi
+    manjka podatkov v dokumentu z rezultati glasovanja, ki ga uporabljamo kot
+    vir, na Parlametru ta oseba prikazana kot odsotna (rezultat: ni glasoval oz.
+    glasovala).
+
+
+    Nabor glasovanj pridobivamo s spletnega mesta [DZ
+    RS](https://www.dz-rs.si/).
