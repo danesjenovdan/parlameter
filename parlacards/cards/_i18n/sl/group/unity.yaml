@@ -1,17 +1,16 @@
 card:
   title: Enotnost glasovanj
   info: >-
-    # Enotnost izbrane poslanske skupine na glasovanjih sej Državnega zbora v
-    primerjavi s povprečno in najvišjo stopnjo enotnosti med vsemi poslanskimi
-    skupinami.
+    # Enotnost izbrane poslanske skupine na glasovanjih v primerjavi s povprečno
+    in najvišjo stopnjo enotnosti med vsemi poslanskimi skupinami.
 
 
-    Za vsako glasovanje za poslansko skupino preštejemo, koliko poslancev je
-    oddalo katero glasovnico (ZA, PROTI, NI, VZDRŽAN). Izračunamo odstotek
-    tistih, ki so glasovali za najbolj popularno opcijo. Tako dodimo mero
-    enotnosti oz. odstotek poslank in poslancev, ki so se strinjali z
-    večinskim glasom.
+    Pri vsakem glasovanju za vsako poslansko skupino najprej izračunamo, koliko
+    članic in članov je oddalo katero glasovnico (ZA, PROTI, VZDRŽANI, ODSOTNI).
+    Nato izračunamo odstotek tistih, ki so glasovali za večinsko izbiro. Tako
+    dobimo mero enotnosti oz. odstotek poslank in poslancev, ki so se strinjali
+    z večinskim glasom.
 
 
     Na podlagi rezultatov individualnih glasovanj izračunamo povprečni odstotek
-    nestrinjanja, ki ga prikažemo v kartici.
+    strinjanja, ki ga prikažemo v kartici.

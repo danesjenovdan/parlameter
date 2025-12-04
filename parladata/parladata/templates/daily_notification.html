@@ -12,6 +12,12 @@
             </br></br>
         {% endif %}
 
+        {% if joint_sessions %}
+            There are new candidates for joint sessions:</br></br>
+            <a href="{{ base_url }}{% url 'admin:parladata_session_changelist' %}?needs_editing__exact=1">Check new joint sessions</a>
+            </br></br>
+        {% endif %}
+
         {% if new_speeches %}
             There are new TFIDF for sessions in Parlameter: </br>
             {% for session in new_tfidf_sessions %}
@@ -47,6 +53,16 @@
         {% for person in new_people %}
             <p>
                 <a href="{{ base_url }}{% url 'admin:parladata_person_change' person.id %}">{{ person }}</a>
+            </p>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        {% if updated_memberships %}
+        There are updated memberships:
+        {% for membership in updated_memberships %}
+            <p>
+                <a href="{{ base_url }}{% url 'admin:parladata_personmembership_change' membership.id %}">{{ membership }}</a> Created_at: {{ membership.created_at }} Updated_at: {{ membership.updated_at }}
             </p>
         {% endfor %}
         </br></br>

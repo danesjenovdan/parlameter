@@ -1,10 +1,12 @@
 card:
   title: Največkrat glasujejo enako
   info: >-
-    # Seznam 5 poslancev, ki največkrat glasujejo enako kot izbrani_a
-    poslanec_ka. Poslanci so razvrščeni glede na odstotek ujemanja od največjega proti
-    najmanjšemu.
+    # Seznam petih poslank in poslancev, ki najpogosteje glasujejo enako kot
+    izbrana poslanka ali poslanec. Seznam je razvrščen glede na odstotek
+    ujemanja od največjega proti najmanjšemu.
 
-    Upoštevamo samo glasovanja, na katerih sta bila prisotna oba poslanca in sta glasovala 
-    za, proti ali se vzdržala. Število ujemajočih se glasov delimo s številom vseh glasovanj,
-    na katerih sta bila oba prisotna.
+
+    V analizo vključimo le tista glasovanja, na katerih sta bili prisotni in
+    glasovali obe primerjani osebi (ZA, PROTI, VZDRŽANO). Odstotek ujemanja
+    izračunamo tako, da število glasovanj, kjer sta obe osebi glasovali enako,
+    delimo s skupnim številom glasovanj, kjer sta bili obe prisotni.
