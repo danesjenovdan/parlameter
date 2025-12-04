@@ -39,6 +39,7 @@ urlpatterns = [
     re_path(r"^", include(router.urls)),
     re_path(r"^merge-people", merge_people),
     re_path(r"^merge-organizations", merge_organizations),
+    re_path(r"^merge-sessions", merge_sessions),
     re_path(r"^add-ballots", add_ballots),
     path(
         r"end-memberships/<int:person_id>/",

@@ -1,9 +1,10 @@
 card:
   title: Število izgovorjenih besed
   info: >-
-    # Število besed, ki jih je poslanec_ka izgovoril_a v vseh svojih dosedanjih
-    govorih v tem mandatu, v primerjavi s povprečno in največjo vrednostjo.
+    # Število izgovorjenih besed poslanke ali poslanca v vseh dosedanjih govorih
+    v tem mandatu v primerjavi s povprečno in najvišjo vrednostjo.
 
 
-    Seštejemo besede v govorih poslanca_ke, ki jih najdemo v transkriptih,
-    pridobljenih s spletnega mesta [DZ RS](https://www.dz-rs.si/).
+    Preštejemo besede v govorih poslanke ali poslanca, ki jih najdemo v
+    transkriptih na spletnem mestu [DZ RS](https://www.dz-rs.si/). Rezultat
+    prikažemo skupaj s povprečno in najvišjo vrednostjo.
