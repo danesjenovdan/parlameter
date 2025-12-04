@@ -1,6 +1,9 @@
 card:
   title: Transkript seje
   info: >-
+    # Transkript vseh govorov poslank in poslancev na izbrani seji.
+
+
     Transkript seje, ki je v obliki HTML dokumenta objavljen na spletnem mestu
-    [DZ RS](https://www.dz-rs.si/), strojno razbijemo na posamezne govorne nastope
-    in jih v izvornem vrstnem redu združimo v kartico transkript.
+    [DZ RS](https://www.dz-rs.si/), strojno razbijemo na posamezne govorne
+    nastope in jih v izvirnem vrstnem redu združimo v kartico transkript.

@@ -1,10 +1,11 @@
 card:
   title: Prisotnost skozi čas na plenarnih sejah DZ
   info: >-
-    # Prisotnost poslanca_ke na glasovanjih na plenarnih sejah DZ skozi čas.
+    # Prisotnost poslanke oz. poslanca na glasovanjih na plenarnih sejah DZ
+    skozi čas.
 
 
-    Vsak mesec preštejemo vse oddane glasovnice poslanca_ke in število delimo s številom
-    vseh glasovanj, na katerih bi moral_a poslanec_ka ta mesec glasovati. Če poslanec_ka
-    v izbranem mesecu mandata ni imel_a, prikažemo, na kolikšnem odstotku glasovanj
-    ni imel_a pravice glasovati.
+    Za vsak mesec preštejemo vse oddane glasove poslanke ali poslanca. To
+    število delimo s skupnim številom vseh glasovanj, na katerih je bilo treba
+    glasovati tisti mesec. Če oseba v izbranem mesecu ni imela mandata,
+    prikažemo delež glasovanj, na katerih ni imela pravice glasovati.

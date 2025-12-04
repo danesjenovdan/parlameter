@@ -1,19 +1,25 @@
 card:
   title: Glasovanja
   info: >-
-    # Pregled vseh glasovanj tega mandata.
+    # Pregled vseh glasovanj poslanke ali poslanca v tem mandatu.
 
 
-    Prikazujemo glasovanja trenutnega mandata skupaj z rezultatom glasovanja in
-    osebnim glasom poslanca_ke.
+    Prikazujemo glasovanja trenutnega mandata skupaj z uradnim izidom in osebnim
+    glasom poslanke ali poslanca.
 
 
-    Nabor glasovanj pridobimo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
+    Z iskalnikom lahko iščeš po naslovu glasovanja, s filtri pa omejiš prikaz
+    glede na osebni glas poslanke ali poslanca (ZA, PROTI, VZDRŽAN, ODSOTEN).
 
 
-    Za pravilnost rezultatov glasovanja skrbimo po svojih najboljših močeh, a je predvsem
-    pri vzdržanih in odsotnih glasovih ne moremo zagotavljati. Prisotnost poslancev
-    se na sejah DZ ne preverja na vsakem glasovanju, zato se lahko zgodi,
-    da je bila oseba pri glasovanju vzdržana, pa je zaradi manjka podatkov v dokumentu
-    z rezultati glasovanja, iz katerega črpamo podatke, na Parlametru ta oseba prikazana
-    kot odsotna (rezultat: ni glasoval/a).
+    Nabor glasovanj pridobivamo s spletnega mesta [DZ
+    RS](https://www.dz-rs.si/).
+
+
+    Za pravilnost rezultatov glasovanja skrbimo po najboljših močeh, a je
+    predvsem pri vzdržanih in odsotnih glasovih ne moremo zagotavljati.
+    Prisotnost poslank in poslancev se na sejah DZ ne preverja na vsakem
+    glasovanju, zato se lahko zgodi, da je bila oseba vzdržana, pa je zaradi
+    manjka podatkov v dokumentu z rezultati glasovanja, ki ga uporabljamo kot
+    vir, na Parlametru ta oseba prikazana kot odsotna (rezultat: ni glasoval oz.
+    glasovala).
