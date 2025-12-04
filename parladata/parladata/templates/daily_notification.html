@@ -12,6 +12,12 @@
             </br></br>
         {% endif %}
 
+        {% if joint_sessions %}
+            There are new candidates for joint sessions:</br></br>
+            <a href="{{ base_url }}{% url 'admin:parladata_session_changelist' %}?needs_editing__exact=1">Check new joint sessions</a>
+            </br></br>
+        {% endif %}
+
         {% if new_speeches %}
             There are new TFIDF for sessions in Parlameter: </br>
             {% for session in new_tfidf_sessions %}

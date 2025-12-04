@@ -119,6 +119,9 @@ def notify_editors_for_new_data():
     updated_memberships = PersonMembership.objects.filter(
         updated_at__gte=previous_parse
     )
+    joint_sessions = Session.objects.filter(
+        needs_editing=True, created_at__gte=previous_parse
+    ).distinct("id")
 
     assert bool(editor_permission_group), "There's no editor permission group"
 
@@ -135,6 +138,7 @@ def notify_editors_for_new_data():
                 editor.email,
                 "daily_notification.html",
                 {
+                    "joint_sessions": joint_sessions,
                     "base_url": settings.BASE_URL,
                     "new_motions": new_motions,
                     "new_speeches": new_speeches,

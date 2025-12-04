@@ -1,7 +1,20 @@
 card:
   title: Seznam poslancev
   info: >-
-    # Množica vseh trenutno aktivnih poslancev, ki ustrezajo uporabniškemu vnosu.
+    # Seznam vseh trenutno aktivnih poslank in poslancev, ki ustrezajo tvojemu
+    vnosu.
 
 
-    Stolpec analiza izraža skupni rezultat trenutnega mandata.
+    Na vrhu kartice lahko s klikom na želeni filter izbiraš med različnimi
+    analizami (demografija, prisotnost na glasovanjih, aktivnost, ujemanje s
+    poslansko skupino). Z iskalnikom lahko iščeš posamezno poslanko ali
+    poslanca, seznam pa lahko filtriraš tudi po poslanski skupini, volilnem
+    okraju in spolu. 
+
+
+    Rezultate lahko razvrščaš s klikom na glave stolpcev.
+
+
+    Stolpec "Analiza" prikazuje skupni rezultat izbrane analize za celoten
+    izbrani mandat (npr. odstotek prisotnosti posamezne poslanke ali poslanca na
+    vseh glasovanjih v izbranem mandatu).
