@@ -24,10 +24,13 @@
         <template v-if="cell && cell.contents">
           <template v-for="(content, j) in cell.contents">
             <template v-if="content.link">
-              <a :key="j" :href="content.link">{{ content.text }}</a>
+              <a :key="j" :href="content.link">{{ content.text }}</a
+              >{{ cell.contents.length - j > 1 ? ', ' : '' }}
             </template>
-            <template v-else>{{ content.text }}</template>
-            {{ cell.contents.length - j > 1 ? ', ' : '' }}
+            <template v-else
+              >{{ content.text
+              }}{{ cell.contents.length - j > 1 ? ', ' : '' }}</template
+            >
           </template>
         </template>
         <template v-else-if="cell && cell.barchart">

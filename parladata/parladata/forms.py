@@ -11,7 +11,7 @@ from django.forms.widgets import HiddenInput
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from parladata.models import Organization, Person, Question
+from parladata.models import Organization, Person, Question, Session
 
 
 class QuestionAutocompleteSelectMultiple(AutocompleteSelectMultiple):
@@ -78,6 +78,18 @@ class OrganizationsChoiceField(forms.ModelChoiceField):
         super().__init__(queryset, widget=widget, **kwargs)
 
 
+class SessionChoiceField(forms.ModelChoiceField):
+    def __init__(self, queryset=None, widget=None, **kwargs):
+        model = Session
+        if queryset is None:
+            queryset = Session.objects.all()
+        if widget is None:
+            widget = QuestionAutocompleteSelect(
+                Question._meta.get_field("session"), admin.site
+            )
+        super().__init__(queryset, widget=widget, **kwargs)
+
+
 class MergePeopleForm(forms.Form):
     confirmed = forms.BooleanField(widget=HiddenInput())
     real_person = UserChoiceField()
@@ -88,6 +100,12 @@ class MergeOrganizationsForm(forms.Form):
     confirmed = forms.BooleanField(widget=HiddenInput())
     real_organization = OrganizationChoiceField()
     organizations = OrganizationsChoiceField()
+
+
+class MergeSessionsForm(forms.Form):
+    confirmed = forms.BooleanField(widget=HiddenInput())
+    real_session = SessionChoiceField()
+    duplicated_session = SessionChoiceField()
 
 
 class AddBallotsForm(forms.Form):
