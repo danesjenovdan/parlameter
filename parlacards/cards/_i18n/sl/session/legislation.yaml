@@ -1,8 +1,14 @@
 card:
   title: Zakonodaja
   info: >-
-    # Seznam vseh zakonov in aktov, o katerih so ne tej seji glasovali
-    in ustrezajo uporabniškemu vnosu (naslov, matično delovno telo).
+    # Seznam vseh zakonov in aktov, o katerih se je glasovalo na izbrani seji.
 
 
-    Podatke o sejah pridobivamo iz spletnega mesta [DZ RS](https://www.dz-rs.si/).
+    Z iskalnikom lahko iščeš po naslovu, s klikom na želeni filter pa izbereš
+    prikaz samo zakonov ali samo aktov. Rezultate lahko razvšrčaš po imenu,
+    številki EPA ([evidenca parlamentarnega
+    akta](https://www.dz-rs.si/wps/portal/Home/is/PogostaVprasanja/vprasanje/0baec2b0-8dc3-4943-b897-6f51a6a870c2/!ut/p/z1/vVPJkpswEP0VcuCI1cBgy3PDniqMPd4zMeaSEiBjUSAxsowTf32Ep3JIZbzkkr5o6ffU_bpbKEYRijlpWE4UE5yU-ryNu98Hs5UXTgIb8Kpnw9INZ93XkW2H4KHNBTDuT_xxCwi8AMPy62S-Go8GMMceiq-6MQTOX3xn5cHyxRlM1-DC2oEL_258uGL-g_wbCd7hf0MxiuuUZWgLCaGpk4CFs9S1nvpPrpXgfs_q7jybdAnuQeq06JSrWu3RNjsbmUiPFeXqYEJFM1YwE0R2Zo1em1qSA-EFMbhoGCeyoI3BuCGyXDRCMoNrJzXhoaibe22MbxdxfAFMwvm6P7B9wIHmh_bC92brlR0M7XZOHDkdTnNdDKL2FuM7gaL5izyThtMqToQ8omhBZElavURysRCHUtQFRdGEF-zMWUpCPmSKlO0WbXXKvaspB120aRg9oTcuZKUHdf2PfRj9FnWjKFoUK97fY1_3THBFfygU_cemfV7Th6haWl6K5OMD-zxxsX5E0h2VVHaOUl_vlaoPzyaYcDqdOrkQeUk7qahM-IyyFwet_U8kqqs3bRV2f1rxdlENEzxVXuKVzav_5Rf7k6xH/dz/d5/L2dBISEvZ0FBIS9nQSEh/)),
+    datumu ali statusu (sprejet, zavrnjen ali v obravnavi).
+
+
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).

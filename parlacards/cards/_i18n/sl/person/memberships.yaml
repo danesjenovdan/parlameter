@@ -1,8 +1,8 @@
 card:
   title: Članstva
   info: >-
-    # Izpis vseh članstev poslanca_ke v delovnih telesih, stalnih delegacijah
-    in skupinah prijateljstva.
+    # Izpis vseh članstev poslanke ali poslanca v delovnih telesih, stalnih
+    delegacijah in skupinah prijateljstva.
 
 
-    Podatke o članstvih pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).

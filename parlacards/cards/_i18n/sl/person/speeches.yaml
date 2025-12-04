@@ -1,11 +1,11 @@
 card:
   title: Govori
   info: >-
-    # Izpis povezav do vseh govorov te osebe v tem sklicu, ki ustrezajo
-    uporabniškemu vnosu, razvrščenih po datumu.
+    # Seznam vseh govorov poslanke ali poslanca v tem mandatu, razvrščenih po
+    datumu.
 
 
-    Naložimo povezave do vseh govorov izbrane osebe, ki jih najdemo v
-    transkriptih, pridobljenih s spletnega mesta [DZ RS](https://www.dz-rs.si/),
-    nato pa prikažemo tiste, ki ustrezajo uporabniškemu vnosu (časovno obdobje,
-    vsebina).
+    Na seznam dodamo povezave do vseh govorov izbrane osebe, ki jih pridobivamo
+    iz transkriptov sej na spletnem mestu [DZ RS](https://www.dz-rs.si/). Z
+    iskalnikom lahko iščeš po vsebini govorov, s filtrom pa omejiš prikaz na
+    izbrano časovno obdobje.
