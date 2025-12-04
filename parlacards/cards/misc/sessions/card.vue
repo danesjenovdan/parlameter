@@ -61,6 +61,7 @@ import SortableTable from '@/_components/SortableTable.vue';
 import { SESSIONS_PER_PAGE } from '@/_helpers/constants.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import sessionClassification from '@/_helpers/sessionClassification.js';
+import sessionName from '@/_helpers/sessionName.js';
 
 export default {
   name: 'CardMiscSessions',
@@ -286,7 +287,10 @@ export default {
               sessionClassification(session.classification).icon
             }.svg`,
           },
-          { link: this.getSessionLink(session), text: session.name },
+          {
+            link: this.getSessionLink(session),
+            text: sessionName(session, this.$t),
+          },
           session.start_time ? dateFormatter(session.start_time) : ' ',
           this.showEndDate
             ? session.end_time

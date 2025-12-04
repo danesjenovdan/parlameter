@@ -1,10 +1,16 @@
 card:
   title: Zakon
   info: >-
-    # Zakon in rezultati vseh z njim povezanih glasovanj.
+    # Pregled izbranega zakona ali akta ter vseh z njim povezanih glasovanj in
+    dokumentov.
 
 
-    S spletnega mesta [DZ RS](https://www.dz-rs.si/) pridobimo informacije o
-    zakonih in glasovanjih, ki jih med seboj povežemo. V prvem zavihku
-    (Glasovanja) prikažemo vsa glasovanja, ki so povezana z izbranim zakonom, v
-    drugem zavihku (Dokumenti) pa prikažemo z zakonom povezane dokumente.
+    Na vrhu kartice je prikazan status zakona ali akta.
+
+
+    Prvi zavihek omogoča pregled vseh glasovanj, ki so z njim povezana, vključno
+    s končnim izidom. Drugi zavihek pa prikazuje vse zbrane dokumente, vezane na
+    zakonodajni postopek.
+
+
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).

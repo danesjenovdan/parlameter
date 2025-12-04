@@ -1,13 +1,13 @@
 card:
   title: Poslanska vprašanja in pobude
   info: >-
-    # Pregled poslanskih vprašanj in pobud na nivoju poslanske skupine.
+    # Izpis vseh poslanskih vprašanj in pobud članic in članov izbrane poslanske
+    skupine v tem mandatu.
 
 
-    Vsa poslanska vprašanja in pobude razvrstimo po poslanskih skupinah in jih
-    opremimo z informacijo o poslancih_kah, ki so jih postavile_i, in tematiko
-    vprašanja ali pobude.
+    Vsa vprašanja in pobude razvrstimo po poslanski skupini, zraven pa povemo,
+    katere članice in člani so jih podali ter kaj je bila tema.
 
 
-    Nabor poslanskih vprašanj in pobud pridobimo s spletnega mesta [DZ
+    Vprašanja in pobude pridobivamo s spletnega mesta [DZ
     RS](https://www.dz-rs.si/).

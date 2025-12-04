@@ -27,9 +27,9 @@
         <a
           :href="getSessionTranscriptLink(session)"
           class="funblue-light-hover"
-          >{{ session?.name }}</a
+          >{{ getSessionName(session) }}</a
         ><br />
-        <span class="date">{{ session?.date }}</span>
+        <span class="date">{{ formatDate(speech.start_time) }}</span>
       </div>
     </div>
     <div class="everything">
@@ -114,6 +114,8 @@
 import links from '@/_mixins/links.js';
 import { QUOTE_PADDING_LENGTH } from '@/_helpers/constants.js';
 import mapVotes from '@/_helpers/mapVotes.js';
+import sessionName from '@/_helpers/sessionName.js';
+import dateFormatter from '@/_helpers/dateFormatter.js';
 
 export default {
   name: 'Speech',
@@ -178,6 +180,12 @@ export default {
     showFullSpeech(event) {
       event.preventDefault();
       this.hideQuote = true;
+    },
+    getSessionName(session) {
+      return sessionName(session, this.$t);
+    },
+    formatDate(date) {
+      return dateFormatter(date, this.$t('missing-date'));
     },
     mapVotes,
   },
@@ -246,6 +254,9 @@ export default {
     }
 
     .date {
+      display: inline-block;
+      margin-top: 4px;
+      font-family: Roboto Slab;
     }
   }
 }
