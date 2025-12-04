@@ -9,20 +9,20 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "@sentry/node": "^10.22.0",
+    "@sentry/node": "^10.28.0",
     "ejs": "^3.1.10",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "limiter": "^3.0.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@eslint/js": "^9.38.0",
-    "eslint": "^9.38.0",
+    "@eslint/js": "^9.39.1",
+    "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
-    "globals": "^16.4.0",
-    "nodemon": "^3.1.10",
-    "prettier": "^3.6.2"
+    "globals": "^16.5.0",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.7.4"
   }
 }

@@ -1,0 +1,80 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+{% load i18n %}
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href=" {% static 'admin/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/nav_sidebar.css' %}">
+    <script src="{% static 'admin/js/nav_sidebar.js' %}" defer=""></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'static/admin/css/forms.css' %}">
+    <link href=" {% static 'admin/css/vendor/select2/select2.css' %}" type="text/css" media="screen" rel="stylesheet">
+    <link href="{% static 'admin/css/autocomplete.css' %}" type="text/css" media="screen" rel="stylesheet">
+    <script src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+    <script src="{% static 'admin/js/vendor/select2/select2.full.js' %}"></script>
+    <script src="{% static 'admin/js/jquery.init.js' %}"></script>
+    <script src="{% static 'admin/js/core.js' %}"></script>
+    <script src="{% static 'admin/js/autocomplete.js' %}"></script>
+    <script src="{% static 'admin/js/admin/RelatedObjectLookups.js' %}"></script>
+    <script src="{% static 'admin/js/actions.js' %}"></script>
+    <script src="{% static 'admin/js/urlify.js' %}"></script>
+    <script src="{% static 'admin/js/prepopulate.js' %}"></script>
+    <script src=" {% static 'admin/js/vendor/xregexp/xregexp.js' %}"></script>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/responsive.css' %}">
+    <meta name="robots" content="NONE,NOARCHIVE">
+    <style>
+        .inner{
+            margin: auto;
+            width: 40%;
+            padding: 10px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div id="content-main">
+        <div class="inner">
+            <h3>{{ info }}</h3>
+            {% if statistics %}
+                Merge sessions statistic:</br></br>
+                Original session: </br>
+                <hr>
+                {{ statistics.real_session.name }} - {{ statistics.real_session.organizations }}</br>
+                Motions: {{ statistics.real_session.motions }}</br>
+                Speeches: {{ statistics.real_session.speeches }}</br>
+                Agenda_items: {{ statistics.real_session.agenda_items }}</br>
+                Links: {{ statistics.real_session.links }}</br>
+                Legislation consideration: {{ statistics.real_session.legislation_considerations }}</br>
+                Questions: {{ statistics.real_session.questions }}</br>
+                <hr></br>
+                Duplicated session: </br><hr>
+
+                {{ statistics.duplicated_session.name }} - {{ statistics.duplicated_session.organizations }}</br>
+                Motions: {{ statistics.duplicated_session.motions }}</br>
+                Speeches: {{ statistics.duplicated_session.speeches }}</br>
+                Agenda_items: {{ statistics.duplicated_session.agenda_items }}</br>
+                Links: {{ statistics.duplicated_session.links }}</br>
+                Legislation consideration: {{ statistics.duplicated_session.legislation_considerations }}</br>
+                Questions: {{ statistics.duplicated_session.questions }}</br>
+                <hr>
+
+                <form action="/v3/merge-sessions/" method="post">
+                    {% csrf_token %}
+                    {{ form.confirmed }}
+                    <div style="display: none;">
+                        Real session: {{ form.real_session }}</br>
+                        Duplicated session: {{ form.duplicated_session }} </br>
+                    </div>
+                    <input type="submit" value="Confirm merging">
+                </form>
+            {% elif form %}
+                <form action="/v3/merge-sessions/" method="post">
+                    {% csrf_token %}
+                    {{ form.confirmed }}
+                    Real session: {{ form.real_session }}</br>
+                    Duplicated session: {{ form.duplicated_session }}</br>
+                    <input type="submit" value="Submit">
+                </form>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
