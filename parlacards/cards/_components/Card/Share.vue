@@ -6,7 +6,7 @@
         <input
           :id="shareUrlElementId"
           ref="urlInput"
-          :value="shortenedUrl"
+          :value="shareUrl"
           type="url"
           class="form-control share-url"
         />
@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import copyInput from '@/_helpers/copyInput.js';
 
 export default {
@@ -32,7 +31,6 @@ export default {
   data() {
     return {
       copied: false,
-      shortenedUrl: null,
     };
   },
   computed: {
@@ -45,31 +43,7 @@ export default {
       return `share-url__${this.$root.$options.contextData.mountId}`;
     },
   },
-  watch: {
-    shareUrl() {
-      this.shortenUrl();
-    },
-  },
-  mounted() {
-    this.shortenedUrl = this.shareUrl;
-    this.shortenUrl();
-  },
   methods: {
-    shortenUrl() {
-      axios
-        .get(
-          `https://parla.me/shortner/generate?url=${encodeURIComponent(
-            this.shareUrl,
-          )}`,
-        )
-        .then((response) => {
-          this.shortenedUrl = response.data;
-          this.copied = false;
-          this.$nextTick(() => {
-            this.$refs.urlInput.select();
-          });
-        });
-    },
     copyLink() {
       this.copied = copyInput(this.$refs.urlInput);
     },
