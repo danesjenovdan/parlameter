@@ -1,11 +1,11 @@
 card:
   title: Govori
   info: >-
-    # Izpis povezav do vseh govorov poslancev poslanske skupine v tem sklicu, ki
-    ustrezajo uporabniškemu vnosu, razvrščenih po datumu.
+    # Seznam vseh govorov članic in članov izbrane poslanske skupine v tem
+    mandatu, razvrščenih po datumu.
 
 
-    Naložimo povezave do vseh govorov poslancev izbrane poslanske skupine, ki
-    jih najdemo v transkriptih, pridobljenih s spletnega mesta [DZ
-    RS](https://www.dz-rs.si/). Ob uporabi filtrov prikažemo tiste, ki ustrezajo
-    uporabniškemu vnosu (časovno obdobje, vsebina govora).
+    Na seznam dodamo povezave do vseh govorov članic in članov izbrane poslanske
+    skupine, ki jih pridobivamo iz transkriptov sej na spletnem mestu [DZ
+    RS](https://www.dz-rs.si/). Z iskalnikom lahko iščeš po vsebini govorov, s
+    filtrom pa omejiš prikaz na izbrano časovno obdobje.
