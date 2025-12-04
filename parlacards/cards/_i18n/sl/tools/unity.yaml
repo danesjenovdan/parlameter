@@ -16,7 +16,7 @@ card:
 
 
     Enotnost za posamezno glasovanje izračunamo tako, da najprej ugotovimo
-    večinski glas znotraj izbrane skupine (ZA, PROTI, VZDRŽAN ali ODSOTEN). Nato
+    večinski glas znotraj izbrane skupine (ZA, PROTI, VZDRŽANI, ODSOTNI). Nato
     preštejemo, koliko poslank in poslancev je glasovalo v skladu s to večino,
     to število pa delimo s skupnim številom vseh članic in članov v tej skupini.
     Tako dobimo delež poslank in poslancev v izbrani skupini, katerih glas

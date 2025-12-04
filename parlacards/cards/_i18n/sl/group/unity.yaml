@@ -6,11 +6,11 @@ card:
 
 
     Pri vsakem glasovanju za vsako poslansko skupino najprej izračunamo, koliko
-    članic in članov je oddalo katero glasovnico (ZA, PROTI, NI GLASU,
-    VZDRŽANO). Nato izračunamo odstotek tistih, ki so glasovali za večinsko
-    izbiro. Tako dobimo mero enotnosti oz. odstotek poslank in poslancev, ki so
-    se strinjali z večinskim glasom.
+    članic in članov je oddalo katero glasovnico (ZA, PROTI, VZDRŽANI, ODSOTNI).
+    Nato izračunamo odstotek tistih, ki so glasovali za večinsko izbiro. Tako
+    dobimo mero enotnosti oz. odstotek poslank in poslancev, ki so se strinjali
+    z večinskim glasom.
 
 
     Na podlagi rezultatov individualnih glasovanj izračunamo povprečni odstotek
-    nestrinjanja, ki ga prikažemo v kartici.
+    strinjanja, ki ga prikažemo v kartici.

@@ -2,14 +2,14 @@ card:
   title: Najmanjkrat glasujejo enako
   info: >-
     # Seznam petih poslank in poslancev, ki najmanjkrat glasujejo enako kot
-    večina v poslanski skupini. Razvrščeni so glede na odstotek ujemanja od
-    najmanjšega proti največjemu.
+    večina v izbrani poslanski skupini. Razvrščeni so glede na odstotek ujemanja
+    od najmanjšega proti največjemu.
 
 
     Za vsako glasovanje najprej izračunamo večinski glas poslanske skupine (ZA,
-    PROTI ali VZDRŽANO), torej tisti glas, za katerega se je odločilo največ
-    njenih članov in članic. Glasovanja, kjer je odsotna celotna poslanska
-    skupina, umaknemo iz analize.
+    PROTI, VZDRŽANI, ODSOTNI), torej tisti glas, za katerega se je odločilo
+    največ njenih članov in članic. Glasovanja, kjer je odsotna celotna
+    poslanska skupina, umaknemo iz analize.
 
 
     Nato izračunamo odstotek ujemanja med rezultati glasovanj poslanske skupine

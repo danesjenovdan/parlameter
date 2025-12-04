@@ -6,13 +6,14 @@ card:
 
 
     Za vsa glasovanja najprej izračunamo večinski glas vsake poslanske skupine.
-    To je tisti glas, za katerega se je odločila večina njenih poslank in
-    poslancev.
+    To je tisti glas (ZA, PROTI, VZDRŽANI, ODSOTNI), za katerega se je odločila
+    večina njenih poslank in poslancev.
 
 
     Nato za vsako poslanko ali poslanca ugotovimo, kateri poslanski skupini
-    trenutno pripada, in za celotno obdobje članstva v tej skupini izračunamo
-    odstotek ujemanja glasov. Višji kot je prikazan odstotek, večja je skladnost
+    trenutno pripada. Odstotek neujemanja izračunamo tako, da število glasovanj,
+    na katerih je oseba glasovala drugače od večinskega glasu, delimo s skupnim
+    številom vseh glasovanj. Višji kot je prikazan odstotek, večje je razhajanje
     poslanke ali poslanca z lastno poslansko skupino.
 
 

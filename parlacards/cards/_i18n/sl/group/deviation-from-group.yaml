@@ -1,11 +1,21 @@
 card:
   title: Ujemanje s poslansko skupino
   info: >-
-    # Seznam članic in članov poslanske skupine, razvrščen glede na to, kako
-    pogosto glasujejo enako kot večina v poslanski skupini. Večja kot je
-    vrednost,
+    # Seznam članic in članov izbrane poslanske skupine, razvrščen glede na to,
+    kako pogosto glasujejo drugače kot večina v poslanski skupini. Večja kot je
+    vrednost, manjše je ujemanje.
 
 
-    Za vsako glasovanje najprej izračunamo večinski glas poslanske skupine (ZA,
-    PROTI ali VZDRŽANO), torej tisti glas, za katerega se je odločilo največ
-    njenih članov in članic.
+    Za vsako glasovanje najprej izračunamo večinski glas izbrane poslanske
+    skupine (ZA, PROTI, VZDRŽANI, ODSOTNI), torej tisti glas, za katerega se je
+    odločilo največ njenih članov in članic.
+
+
+    Nato za vsako osebo izračunamo odstotek neujemanja tako, da število
+    glasovanj, na katerih je glasovala drugače od večinskega glasu, delimo s
+    skupnim številom vseh glasovanj. Višji kot je prikazan odstotek, večje je
+    razhajanje članice ali člana z lastno poslansko skupino.
+
+
+    Rezultati so na seznamu razvrščeni od največjega odstopanja proti
+    najmanjšemu.

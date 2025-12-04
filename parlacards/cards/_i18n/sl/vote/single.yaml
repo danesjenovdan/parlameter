@@ -9,11 +9,10 @@ card:
 
 
     Prvi zavihek omogoča pregled glasov poslank in poslancev, filtriranje glede
-    na vrednost glasovnice (ZA, PROTI, VZDRŽANO, NI GLASA) ter iskanje
-    posameznih poslank in poslancev. Poleg krožnega grafikona se izpisuje
-    večinski glas DZ na tem glasovanju. "60 % ZA" npr. pomeni, da je ZA
-    glasovalo 60 % vseh poslank in poslancev z glasovalno pravico na tem
-    glasovanju.
+    na vrednost glasovnice (ZA, PROTI, VZDRŽANI, ODSOTNI) ter iskanje posameznih
+    poslank in poslancev. Poleg krožnega grafikona se izpisuje večinski glas DZ
+    na tem glasovanju. "60 % ZA" npr. pomeni, da je ZA glasovalo 60 % vseh
+    poslank in poslancev z glasovalno pravico na tem glasovanju.
 
 
     Drugi zavihek prikazuje glasove poslanskih skupin. Na koncu vsake vrstice je

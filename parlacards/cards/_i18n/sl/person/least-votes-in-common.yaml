@@ -6,7 +6,7 @@ card:
     ujemanja od najmanjšega proti največjemu.
 
 
-    V analizo vključimo le tista glasovanja, na katerih sta glasovali obe
-    primerjani osebi (ZA, PROTI ali VZDRŽANO). Odstotek ujemanja izračunamo
-    tako, da število glasovanj, kjer sta obe osebi glasovali enako, delimo s
-    skupnim številom glasovanj, kjer sta bili obe prisotni.
+    V analizo vključimo le tista glasovanja, na katerih sta bili prisotni in
+    glasovali obe primerjani osebi (ZA, PROTI, VZDRŽANO). Odstotek ujemanja
+    izračunamo tako, da število glasovanj, kjer sta obe osebi glasovali enako,
+    delimo s skupnim številom glasovanj, kjer sta bili obe prisotni.
