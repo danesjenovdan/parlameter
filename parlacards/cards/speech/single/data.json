@@ -1,40 +1,90 @@
 {
+  "url": "http://localhost:8000/v3/cards/speech/single/?id=1774854",
+  "id": "1774854",
   "data": {
     "results": {
-      "id": 32508,
-      "content": "Lepo pozdravljeni. Pred vami je še ena lokacijska preveritev, in sicer za doživljajski most Muste. Za ureditev v izrazitem javnem interesu. Naročnik Mestna občina Ljubljana, pripravljavec Oddelek za urejanje prostora in naročnik Oddelek za varstvo okolja, izdelovalec elaborata pa Ljubljanski urbanistični zavod LUZ. Lokacija je med Fužinami in Štepanjskim naseljem, prikazujemo vam kakšno lokacijo s to črtkano črto bi bila možna, koliko bi bilo možno v OPN-ju predvideno lokacijo mostu premakniti in sedanja lokacija, ki je bila tudi potrjena na arhitekturnem natečaju pač presega ta odmik. To je pravzaprav edini razlog zaradi česar je bilo potrebno narediti lokacijsko preveritev. Lokacija še tako na pogledu iz zraka. In še pogled na obe ureditvi tako na Štepanjski kot na Fužinski strani, ki bosta povezani z novim doživljajskim mostom. Prikaz še tlorisne situacije. Sam postopek je potekal kot običajno, z javno razgrnitvijo 14 dni, pridobili smo 1 pripombo, na katero smo odgovorili, kar vidite v gradivu, vendar kakšnih posebnih pripomb seveda na to ureditev ni bilo. Pravna podlaga je tudi tukaj zelo jasna. Gre za pogoj OPN-ja, ki bi onemogočil izvedbo načrtovane investicije in zato v ta namen lokacijska preveritev. Prav tako pa je v skladu s cilji urejanja prostora in v skladu z javnim interesom in varstvom okolja. Sklep, pomembno je zadnji stavek: »dopušča se premik mostu ali brvi za več kot 50 m do največ 100 m od lokacije prikazane v občinskem prostorskem načrtu«. Tako pa še vizualizacija, kako bo peš in kolesarski most izgledal, in še ena. Najlepša hvala.",
-      "the_order": 62,
+      "id": 1774854,
+      "content": "Dobro jutro! Začenjam 136. sejo Kolegija.\nVse prisotne lepo pozdravljam.\nPrehajamo kar na 1. TOČKO DNEVNEGA REDA, TO JE NA DOGOVOR O SKLICU IZREDNE SEJE DRŽAVNEGA ZBORA. \nS sklicem seje kolegija ste kot gradivo k tej točki prejeli zahtevo skupine poslank in poslancev s prvopodpisano magistrico Natašo Avšič Bogovič za sklic izredne seje.\nV zvezi s tem sklicem predlagam sledeče. Predlog dnevnega reda je določen z zahtevo in se glasi: 1. točka, predlog sklepa o razveljavitvi sklepa Državnega zbora, da se razpiše posvetovalni referendum o povišanju obrambnih izdatkov Republike Slovenije. Seja bi potekala v petek, 18. julija, 15 minut po končani 109. izredni seji Državnega zbora do zaključka seje. In glede na najave časa predlagam za poslanske skupine do 5 minut za predstavitev stališča ter po drugem odstavku 67. člena Poslovnika do 10 minut za razpravo, do 5 minut za dopolnilno obrazložitev predlagateljice predloga sklepa in do 10 minut za razpravo predlagateljice ter do 5 minut za predstavitev mnenja Vlade in do 10 minut za razpravo Vlade. Želi kdo besedo tukaj? Nihče. Ja, ja, Izvolite, kolegica Irgl.",
+      "the_order": 1,
       "person": {
-        "slug": "309-liljana-jankovic-grobelsek",
-        "name": "Liljana Jankovič Grobelšek",
-        "honorific_prefix": "dr.",
+        "slug": "5950-urska-klakocar-zupancic",
+        "name": "Urška Klakočar Zupančič",
+        "honorific_prefix": "mag.",
         "honorific_suffix": null,
-        "preferred_pronoun": null,
-        "group": null,
-        "image": null
+        "preferred_pronoun": "she",
+        "group": {
+          "name": "Svoboda",
+          "acronym": "Svoboda",
+          "slug": "138-svoboda",
+          "color": "#002F42",
+          "classification": "pg",
+          "is_in_coalition": true
+        },
+        "image": "/media/P389.png",
+        "is_active": true
       },
-      "start_time": "2021-09-27T15:30:00",
+      "start_time": "2025-07-17T00:00:00",
       "votes": [],
       "session": {
-        "name": "25. seja Mestnega sveta MOL",
-        "id": 1450,
-        "start_time": "2021-09-27T15:30:00",
+        "name": "136. redna seja (Kolegij predsednice Državnega zbora), 1. redna seja (Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022)",
+        "joint_data": [
+          {
+            "name": "136. redna seja",
+            "organization": {
+              "name": "Kolegij predsednice Državnega zbora",
+              "acronym": "Kolegij predsednice Državnega zbora",
+              "slug": "139-kolegij-predsednice-drzavnega-zbora",
+              "color": "#09A2CC",
+              "classification": "council",
+              "is_in_coalition": false
+            }
+          },
+          {
+            "name": "1. redna seja",
+            "organization": {
+              "name": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
+              "acronym": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
+              "slug": "402-preiskovalna-komisija-o-ugotavljanju-domnevnega-financnega-izcrpavanja-podjetja-gen-i-domnevno-spornih-praks-v-zvezi-s-podjetjem-star-solar-doo-domnevnega-nezakonitega-financiranja-politicne-stranke-gibanje-svoboda-in-domnevnega-nezakonitega-financiranja-volilne-kampanje-gibanja-svoboda-za-redne-volitve-poslancev-v-drzavni-zbor-republike-slovenije-leta-2022",
+              "color": "#09A2CC",
+              "classification": "investigative_commission",
+              "is_in_coalition": false
+            }
+          }
+        ],
+        "id": 6574,
+        "start_time": "2025-07-17T09:32:00",
         "end_time": null,
         "organizations": [
           {
-            "name": "Mestni svet MOL",
-            "acronym": null,
-            "slug": "1-mestni-svet-mol",
-            "color": "#09a2cc"
+            "name": "Kolegij predsednice Državnega zbora",
+            "acronym": "Kolegij predsednice Državnega zbora",
+            "slug": "139-kolegij-predsednice-drzavnega-zbora",
+            "color": "#09A2CC",
+            "classification": "council",
+            "is_in_coalition": false
+          },
+          {
+            "name": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
+            "acronym": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
+            "slug": "402-preiskovalna-komisija-o-ugotavljanju-domnevnega-financnega-izcrpavanja-podjetja-gen-i-domnevno-spornih-praks-v-zvezi-s-podjetjem-star-solar-doo-domnevnega-nezakonitega-financiranja-politicne-stranke-gibanje-svoboda-in-domnevnega-nezakonitega-financiranja-volilne-kampanje-gibanja-svoboda-za-redne-volitve-poslancev-v-drzavni-zbor-republike-slovenije-leta-2022",
+            "color": "#09A2CC",
+            "classification": "investigative_commission",
+            "is_in_coalition": false
           }
         ],
         "classification": "regular",
-        "in_review": false
+        "in_review": true,
+        "has_transcript": true,
+        "has_agenda_items": false,
+        "has_minutes": false,
+        "has_legislation": false,
+        "has_votes": false
       }
     },
     "mandate": {
-      "description": "MOL mandat ta naš, kaj je že",
-      "beginning": "2018-12-17T12:00:00"
+      "id": 2,
+      "description": "IX",
+      "beginning": "2022-05-13T00:00:01"
     }
   }
 }

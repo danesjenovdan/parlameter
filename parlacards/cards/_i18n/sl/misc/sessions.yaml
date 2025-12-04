@@ -1,7 +1,12 @@
 card:
   title: Seznam sej
   info: >-
-    # Seznam vseh sej tega sklica DZ, ki ustrezajo uporabniškemu vnosu.
+    # Seznam vseh sej tega sklica DZ.
 
 
-    Podatke o sejah pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
+    Na vrhu kartice lahko s klikom na želeni filter izbereš prikaz sej DZ ter
+    njegovih odborov, komisij in drugih teles. Rezultate lahko razvrščaš po
+    imenu ali datumu.
+
+
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
