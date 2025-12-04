@@ -32,7 +32,7 @@ spec:
             - name: VITE_PARLADATA_URL
               value: https://parladata-slovenija.lb.djnd.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards-slovenija.lb.djnd.si
+              value: https://kartica.parlameter.si
             - name: VITE_PARLASITE_URL
               value: https://parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_05_11

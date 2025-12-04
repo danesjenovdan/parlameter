@@ -30,7 +30,7 @@ spec:
             - name: PARLASITE_CDN_URL
               value: "https://parlassets-slovenija.lb.djnd.si"
             - name: PARLASITE_CARDS_URL
-              value: "https://parlacards-slovenija.lb.djnd.si"
+              value: "https://kartica.parlameter.si"
             - name: PARLASITE_DATA_URL
               value: "https://parladata-slovenija.lb.djnd.si/v3"
             - name: PARLASITE_LEADER_ID

@@ -9,9 +9,20 @@ spec:
   tls:
     - hosts:
         - parlacards-slovenija.lb.djnd.si
+        - kartica.parlameter.si
       secretName: parlacards-tls
   rules:
     - host: parlacards-slovenija.lb.djnd.si
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: parlacards
+                port:
+                  number: 3000
+    - host: kartica.parlameter.si
       http:
         paths:
           - path: /
