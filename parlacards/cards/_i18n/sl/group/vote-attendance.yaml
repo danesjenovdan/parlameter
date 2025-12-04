@@ -1,9 +1,14 @@
 card:
   title: Prisotnost na glasovanjih sej DZ
   info: >-
-    # Prisotnost poslanske skupine na glasovanjih DZ v primerjavi s povprečjem
-    in največjo vrednostjo.
+    # Prisotnost izbrane poslanske skupine na glasovanjih v primerjavi s
+    povprečjem in najvišjo vrednostjo.
 
 
-    Število glasovanj, na katerih je poslanska skupina prisotna, delimo s
-    številom vseh glasovanj in pretvorimo v odstotke (* 100).
+    Preštejemo vse oddane glasove vseh članic in članov izbrane poslanske
+    skupine, nato pa to število delimo s številom vseh glasov, ki bi jih skupina
+    lahko oddala. Rezultat izrazimo v odstotkih in ga primerjamo s povprečjem in
+    najvišjo vrednostjo. 
+
+
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).

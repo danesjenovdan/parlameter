@@ -3,6 +3,56 @@ card:
   info: >-
     # Trenutno aktivne poslanske skupine.
 
-    Na zavihkih prikažemo poslanske skupine po številu sedežev ter glede
-    na rezultate analize s prisotnostjo na glasovanjih in rezultate
-    analize po št. poslanskih vprašanj in pobud.
+
+    Pregled delovanja trenutno aktivnih poslanskih skupin v tem mandatu. Na vrhu
+    kartice lahko s klikom na posamezen zavihek izbiraš med različnimi
+    analizami.
+
+
+    **ŠTEVILO SEDEŽEV**
+
+
+    Prikaz števila poslank in poslancev v posamezni poslanski skupini.
+
+
+    **PRISOTNOST NA GLASOVANJIH**
+
+
+    **Seznam poslanskih skupin glede na prisotnost na glasovanjih**
+
+
+    Povprečna prisotnost članic in članov posamezne poslanske skupine na vseh
+    glasovanjih v tem mandatu.
+
+
+    **ŠTEVILO POSLANSKIH VPRAŠANJ IN POBUD**
+
+
+    **Seznam poslanskih skupin glede na število zastavljenih poslanskih vprašanj
+    in pobud**
+
+
+    Seštevek vseh poslanskih vprašanj in pobud, ki so jih vložile članice in
+    člani posamezne poslanske skupine v tem mandatu.
+
+
+    **ENOTNOST GLASOVANJ**
+
+
+    Analiza enotnosti glasovanj za vsako poslansko skupino. Višji, kot je
+    prikazan odstotek, bolj usklajeno so članice in člani skupine glasovali na
+    glasovanjih v tem mandatu.
+
+
+    **RAZNOLIKOST BESEDIŠČA**
+
+
+    **Seznam poslanskih skupin glede na raznolikost besedišča**
+
+
+    Primerjava koeficientov raznolikosti besedišča med poslanskimi skupinami.
+    Višji rezultat pomeni bolj raznoliko besedišče, ki ga članice in člani
+    skupine uporabljajo v svojih govorih.
+
+
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).

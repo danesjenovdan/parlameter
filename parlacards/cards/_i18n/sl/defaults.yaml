@@ -543,7 +543,7 @@ organization-classifications:
   committee: Odbori
   other: Drugo
   commission: Komisije
-  council: Kolegij predsednika Državnega zbora
+  council: Kolegij predsednice Državnega zbora
   investigative_commission: Preiskovalne komisije
 legislation-classifications:
   act: Akt
@@ -570,3 +570,4 @@ ask-person-a-question:
 thank-you-for-the-question: Hvala za poslano vprašanje!
 send: Pošlji
 error-message: Prišlo je do napake.
+joint-session: Skupna seja

@@ -1,9 +1,14 @@
 card:
   title: Prisotnost skozi čas na plenarnih sejah DZ
   info: >-
-    # Prisotnost poslanske skupine na glasovanjih na plenarnih sejah DZ skozi čas.
+    # Prisotnost izbrane poslanske skupine na glasovanjih na plenarnih sejah DZ
+    skozi čas.
 
 
-    Izračunamo število glasovanj, na katerih bi v izbranem mesecu morali biti prisotni
-    poslanci poslanske skupine, preštejemo njihove oddane glasovnice (ignoriramo "odsotne")
-    in z odstotki prikažemo delež glasovanj na plenarnih sejah DZ, ki so se jih udeležili.
+    Za vsak mesec posebej preštejemo vse oddane glasove vseh članic in članov
+    izbrane poslanske skupine, nato pa to število delimo s številom vseh glasov,
+    ki bi jih skupina v tistem mesecu lahko oddala. Rezultat izrazimo v
+    odstotkih in ga prikažemo na grafu.
+
+
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
