@@ -109,7 +109,7 @@ class MiscGroupsCardSerializer(CardSerializer):
 
     def get_mandate(self, playing_field):
         organization_membership = playing_field.organization_memberships.filter(
-            organization__classification=None
+            organization__classification="root"
         ).first()
         if organization_membership:
             mandate = organization_membership.mandate
