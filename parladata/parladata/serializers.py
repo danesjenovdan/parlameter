@@ -228,7 +228,7 @@ class TagsSerializer(serializers.ModelSerializer):
 class OrganizationMembershipSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrganizationMembership
-        fields = ("id", "member", "organization", "start_time", "end_time")
+        fields = ("id", "member", "organization", "start_time", "end_time", "mandate")
 
 
 class MandateSerializer(serializers.ModelSerializer):
