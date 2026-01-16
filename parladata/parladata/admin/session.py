@@ -40,7 +40,7 @@ class SessionAdmin(admin.ModelAdmin):
         # SpeechSessionInline,
         # MotionSessionInline,
     ]
-    search_fields = ["name"]
+    search_fields = ["name", "organizations__parser_names", "mandate__description"]
     list_display = [
         "id",
         "name",

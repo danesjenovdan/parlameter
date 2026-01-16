@@ -136,7 +136,7 @@ class PersonMembership(Membership):
 class OrganizationMembership(Membership):
     member = models.ForeignKey(
         "Organization",
-        verbose_name=_("Organization"),
+        verbose_name=_("Child organization"),
         help_text=_("The organization that is a party to the relationship"),
         blank=True,
         null=True,
