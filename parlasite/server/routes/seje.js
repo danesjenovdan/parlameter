@@ -1,5 +1,9 @@
 const express = require('express');
-const { asyncRender: ar, getOgImageUrl } = require('../utils');
+const {
+  asyncRender: ar,
+  getOgImageUrl,
+  getQueryParamString,
+} = require('../utils');
 const { i18n } = require('../server');
 
 const sm = i18n.siteMap;
@@ -25,7 +29,7 @@ router.get(
     render('seje/isci', {
       activeMenu: 'sessions_search',
       pageTitle: i18n('titles.sessions-search'),
-      query: req.query.q,
+      query: getQueryParamString(req.query.q),
       mps: req.query.mps,
       pgs: req.query.pgs,
     });
