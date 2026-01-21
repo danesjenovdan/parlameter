@@ -30,7 +30,7 @@
     "fastify": "^5.6.2",
     "fs-extra": "^11.3.2",
     "html-safe-json": "^2.0.3",
-    "lodash-es": "^4.17.21",
+    "lodash-es": "^4.17.23",
     "recaptcha-v3": "^1.11.3",
     "remarkable": "^2.0.1",
     "sass": "^1.94.2",
