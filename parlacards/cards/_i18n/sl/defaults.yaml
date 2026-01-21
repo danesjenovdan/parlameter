@@ -243,21 +243,21 @@ style-scores:
   simple-vocabulary: Preprosto besedje
   excessive-vocabulary: Ekscesno besedje
 question:
-  asked--m: "Zastavil vprašanje na temo: {title}"
-  asked--f: "Zastavila vprašanje na temo: {title}"
-  asked--plural: "Zastavili vprašanje na temo: {title}"
-  asked--with-name--m: "{name} je zastavil vprašanje na temo: {title}"
-  asked--with-name--f: "{name} je zastavila vprašanje na temo: {title}"
-  asked--with-name--plural: "{name} so zastavili vprašanje na temo: {title}"
-  asked--group: "Poslanska skupina {name} je zastavila vprašanje na temo: {title}"
+  asked--m: "Zastavil vprašanje {title}"
+  asked--f: "Zastavila vprašanje {title}"
+  asked--plural: "Zastavili vprašanje {title}"
+  asked--with-name--m: "{name} je zastavil vprašanje {title}"
+  asked--with-name--f: "{name} je zastavila vprašanje {title}"
+  asked--with-name--plural: "{name} so zastavili vprašanje {title}"
+  asked--group: "Poslanska skupina {name} je zastavila vprašanje {title}"
 initiative:
-  asked--m: "Podal pobudo na temo: {title}"
-  asked--f: "Podala pobudo na temo: {title}"
-  asked--plural: "Podali pobudo na temo: {title}"
-  asked--with-name--m: "{name} je podal pobudo na temo: {title}"
-  asked--with-name--f: "{name} je podala pobudo na temo: {title}"
-  asked--with-name--plural: "{name} so podali pobudo na temo: {title}"
-  asked--group: "Poslanska skupina {name} je podala pobudo na temo: {title}"
+  asked--m: "Podal pobudo {title}"
+  asked--f: "Podala pobudo {title}"
+  asked--plural: "Podali pobudo {title}"
+  asked--with-name--m: "{name} je podal pobudo {title}"
+  asked--with-name--f: "{name} je podala pobudo {title}"
+  asked--with-name--plural: "{name} so podali pobudo {title}"
+  asked--group: "Poslanska skupina {name} je podala pobudo {title}"
 unknown:
   asked--m: "Odprl temo: {title}"
   asked--f: "Odprla temo: {title}"
@@ -426,7 +426,7 @@ analysis-texts--party:
       sej in normaliziramo (min 1 - max 100).
   vote_attendance:
     label: Prisotnost na glasovanjih
-    titleSuffix: " glede na rezultate analize s prisotnostjo na glasovanjih"
+    titleSuffix: " glede na prisotnost na glasovanjih"
     explanation: >-
       Preštejemo vsa glasovanja, nato pa še, koliko poslancev poslanske skupine
       (PS) je bilo prisotnih na posameznem glasovanju. Seštevek vseh oddanih
@@ -434,7 +434,7 @@ analysis-texts--party:
       delimo s številom glasovanj in normaliziramo (min 1 - max 100).
   number_of_questions:
     label: Št. poslanskih vprašanj in pobud
-    titleSuffix: " glede na rezultate analize po št. poslanskih vprašanj in pobud"
+    titleSuffix: " glede na število zastavljenih poslanskih vprašanj in pobud"
     explanation: >-
       Preštejemo vsa poslanska vprašanja in pobude, ki so jih postavili poslanci
       izbrane poslanske skupine v tem sklicu DZ. Podatke pridobivamo s spletnega
@@ -449,7 +449,7 @@ analysis-texts--party:
     explanation: ""
   vocabulary_size:
     label: Raznolikost besedišča
-    titleSuffix: " glede na rezultate analize z raznolikostjo besedišča"
+    titleSuffix: " glede na raznolikost besedišča"
     explanation: >-
       Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh
       izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda
