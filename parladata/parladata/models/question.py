@@ -125,7 +125,7 @@ class Question(Timestampable):
 
 
 class Answer(Timestampable):
-    """All questions from members of parlament."""
+    """All answers from members of parlament."""
 
     question = models.ForeignKey(
         "Question",
