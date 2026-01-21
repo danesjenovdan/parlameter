@@ -161,8 +161,7 @@ class VoteAdmin(ExportMixin, admin.ModelAdmin):
         absent = self.get_absent(obj)
         did_not_vote = self.get_did_not_vote(obj)
 
-        return mark_safe(
-            f"""<table>
+        return mark_safe(f"""<table>
                 <tr>
                     <th>{_("for")}</th>
                     <th>{_("against")}</th>
@@ -180,8 +179,7 @@ class VoteAdmin(ExportMixin, admin.ModelAdmin):
                     <td>{for_votes + against + abstain + absent + did_not_vote}</td>
                 </tr>
             </table>
-            """
-        )
+            """)
 
     get_for.short_description = "for"
     get_against.short_description = "against"
