@@ -281,8 +281,18 @@ def calculate_sessions_tfidf(playing_field, timestamp=None):
 
     output = []
     for session_index, session_id in enumerate(session_ids):
+
+        # Value can be one item matrix so get the item out of them.
+        # Value used to be a number at some point.
+        # TypeError: only 0-dimensional arrays can be converted to Python scalars
+
+        # session_tfidf = [
+        #     (feature_names[feature_index], truncate_score(float(value)))
+        #     for feature_index, value in enumerate(tfidf[session_index].T.todense())
+        # ]
+
         session_tfidf = [
-            (feature_names[feature_index], truncate_score(float(value)))
+            (feature_names[feature_index], truncate_score(float(value[0].item())))
             for feature_index, value in enumerate(tfidf[session_index].T.todense())
         ]
         # sort in place

@@ -184,13 +184,11 @@ class CommonSerializer(serializers.Serializer):
 
 class CommonCachableSerializer(CommonSerializer):
     def calculate_cache_key(self, instance):
-        raise NotImplementedError(
-            """
+        raise NotImplementedError("""
             You need to define your own function to calculate the cache key.
             Maybe something like:
             `return f'ModelName_{instance.id}_{instance.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'`
-        """
-        )
+        """)
 
     def to_representation(self, instance):
         cache_key = self.calculate_cache_key(instance)

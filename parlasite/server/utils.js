@@ -133,6 +133,22 @@ function stringifyParams(params) {
   return '';
 }
 
+function getQueryParamString(param) {
+  let queryText = '';
+  if (typeof param === 'string') {
+    queryText = param.trim();
+  } else if (Array.isArray(param)) {
+    const first = param[0];
+    if (typeof first === 'string') {
+      queryText = first.trim();
+    }
+  }
+  if (!queryText) {
+    queryText = '';
+  }
+  return queryText;
+}
+
 function sessionName(session) {
   if (session.joint_data?.length) {
     return this.i18n('general.joint-session');
@@ -395,6 +411,7 @@ function getOgImageUrl(type, params = {}) {
 module.exports = {
   sentryFetch,
   stringifyParams,
+  getQueryParamString,
   slovenianDate,
   asyncRoute,
   asyncRender,

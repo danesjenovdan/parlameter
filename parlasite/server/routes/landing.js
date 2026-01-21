@@ -1,5 +1,9 @@
 const express = require('express');
-const { asyncRender: ar, getOgImageUrl } = require('../utils');
+const {
+  asyncRender: ar,
+  getOgImageUrl,
+  getQueryParamString,
+} = require('../utils');
 const { i18n } = require('../server');
 
 const sm = i18n.siteMap;
@@ -16,7 +20,7 @@ router.get(
     render('landing', {
       activeMenu: 'landing',
       pageTitle: i18n('landing.title'),
-      query: req.query.q,
+      query: getQueryParamString(req.query.q),
     });
   }),
 );
