@@ -359,6 +359,8 @@ class AnswerView(viewsets.ModelViewSet):
 class OrganizationMembershipsViewSet(viewsets.ModelViewSet):
     queryset = OrganizationMembership.objects.all().order_by("id")
     serializer_class = OrganizationMembershipSerializer
+    filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
+    filterset_fields = ("mandate",)
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
