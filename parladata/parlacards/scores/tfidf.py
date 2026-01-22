@@ -83,7 +83,7 @@ def calculate_people_tfidf(playing_field, timestamp=None):
     output = []
     for competitor_index, competitor_id in enumerate(competitor_ids):
         competitor_tfidf = [
-            (feature_names[feature_index], truncate_score(float(value)))
+            (feature_names[feature_index], truncate_score(float(value[0].item())))
             for feature_index, value in enumerate(tfidf[competitor_index].T.todense())
         ]
         # sort in place
@@ -177,7 +177,7 @@ def calculate_groups_tfidf(playing_field, timestamp=None):
     output = []
     for group_index, group_id in enumerate(groups.values_list("id", flat=True)):
         group_tfidf = [
-            (feature_names[feature_index], truncate_score(float(value)))
+            (feature_names[feature_index], truncate_score(float(value[0].item())))
             for feature_index, value in enumerate(tfidf[group_index].T.todense())
         ]
         # sort in place
