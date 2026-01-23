@@ -7,6 +7,7 @@ from parlacards.scores.attendance import (
 from parlacards.scores.avg_number_of_speeches_per_session import (
     save_people_avg_number_of_speeches_per_session,
 )
+from parlacards.scores.common import get_session_last_speech_dates
 from parlacards.scores.deviation_from_group import save_people_deviations_from_group
 
 # TODO remove permanently in September 2025
@@ -169,3 +170,29 @@ def run_vote_analyses_on_date(playing_field, timestamp):
 def run_question_analyses_on_date(playing_field, timestamp):
     save_people_number_of_questions(playing_field, timestamp)
     save_group_number_of_questions(playing_field, timestamp)
+
+
+def run_speech_analyses(timestamp=None, print_method=print):
+    print_method("Start speeches analyses on date method")
+    if not timestamp:
+        timestamp = datetime.now()
+
+    for playing_field in get_playing_fields(timestamp):
+        print_method(
+            f"Running speeches analyses for: {playing_field.latest_name} on {timestamp}"
+        )
+        run_speech_analyses_on_date(playing_field, timestamp)
+
+
+def run_speech_analyses_for_playing_field_sessions(
+    playing_field_id, print_method=print
+):
+    print_method("Start speeches analyses for playing field sessions method")
+    playing_field_obj = Organization.objects.get(id=playing_field_id)
+    end_dates = get_session_last_speech_dates(playing_field_obj)
+
+    for end_date in end_dates:
+        print_method(
+            f"Running speeches analyses for: {playing_field_obj.latest_name} on {end_date}"
+        )
+        run_speech_analyses_on_date(playing_field_obj, end_date)
