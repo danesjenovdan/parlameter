@@ -30,7 +30,7 @@ def save_person_number_of_spoken_words(person, playing_field, timestamp=None):
 
     speeches = (
         Speech.objects.filter_valid_speeches(timestamp)
-        .filter(speaker=person, session__mandate=mandate)
+        .filter(speaker=person, session__mandate=mandate, start_time__lte=timestamp)
         .values_list("lemmatized_content", flat=True)
     )
 
