@@ -179,7 +179,7 @@ def run_speech_analyses(timestamp=None, print_method=print):
 
     for playing_field in get_playing_fields(timestamp):
         print_method(
-            f"Running speeches analyses for: {playing_field.latest_name} on {timestamp}"
+            f"Running speeches analyses for: {playing_field.name} on {timestamp}"
         )
         run_speech_analyses_on_date(playing_field, timestamp)
 
@@ -193,6 +193,6 @@ def run_speech_analyses_for_playing_field_sessions(
 
     for end_date in end_dates:
         print_method(
-            f"Running speeches analyses for: {playing_field_obj.latest_name} on {end_date}"
+            f"Running speeches analyses for: {playing_field_obj.name} on {end_date}"
         )
         run_speech_analyses_on_date(playing_field_obj, end_date)
