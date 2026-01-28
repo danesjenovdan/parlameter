@@ -37,3 +37,7 @@ spec:
               value: https://lendava.parlameter.si
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter
+            - name: SENTRY_DSN
+              value: https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
+            - name: SENTRY_ENVIRONMENT
+              value: lendava

@@ -30,18 +30,22 @@ function rateLimit(event) {
   return null;
 }
 
+const isProd = process.env.NODE_ENV === 'production';
+const sentryDsn = process.env.SENTRY_DSN || '';
+const sentryEnv = process.env.SENTRY_ENVIRONMENT || '';
+
 // Ensure to call this before requiring any other modules!
 Sentry.init({
-  dsn:
-    process.env.NODE_ENV === 'production'
-      ? 'https://64b10a3bec54dedb44314a61dc68a82b@o1076834.ingest.us.sentry.io/4510062422327296'
-      : '',
+  dsn: isProd ? sentryDsn : '',
+  environment: sentryEnv,
   beforeSend(event) {
     return rateLimit(event);
   },
 });
 
-// eslint-disable-next-line no-console
-console.log(
-  `| SENTRY | - instrumentation done (${Sentry.isEnabled() ? 'enabled' : 'disabled'})`,
-);
+/* eslint-disable no-console */
+console.log(`| SENTRY | - instrumentation: `);
+console.log(`| SENTRY | -   Enabled: ${Sentry.isEnabled()}`);
+console.log(`| SENTRY | -   Environment: ${sentryEnv}`);
+console.log(`| SENTRY | -   DSN: ${sentryDsn}`);
+/* eslint-enable no-console */
