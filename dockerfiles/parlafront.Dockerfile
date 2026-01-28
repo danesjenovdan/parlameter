@@ -16,6 +16,8 @@ RUN yarn
 COPY parlassets /parlassets
 COPY parlacards .
 ARG VITE_PARLASSETS_URL
+ARG SENTRY_DSN
+ARG SENTRY_ENVIRONMENT
 RUN yarn build
 
 # ---
