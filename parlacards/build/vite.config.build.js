@@ -28,7 +28,10 @@ const inputs = files.reduce((acc, file) => {
 
 const virtuals = files.reduce((acc, file) => {
   const cardName = file.split('/').slice(-3, -1).join('/');
-  acc[cardName] = entrySource.replace(/{cardName}/g, cardName);
+  acc[cardName] = entrySource
+    .replace(/{cardName}/g, cardName)
+    .replace(/{sentryDsn}/g, process.env.SENTRY_DSN || '')
+    .replace(/{sentryEnv}/g, process.env.SENTRY_ENVIRONMENT || '');
   return acc;
 }, {});
 

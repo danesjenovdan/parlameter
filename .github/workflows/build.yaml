@@ -48,7 +48,9 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlassets
           build-args: |
-            VITE_PARLASSETS_URL=https://cdn.ljubljana.parlameter.si
+            VITE_PARLASSETS_URL=https://parlassets-ljubljana.lb.djnd.si
+            SENTRY_DSN=https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
+            SENTRY_ENVIRONMENT=ljubljana
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlassets-ljubljana:${{ github.sha }}
@@ -61,7 +63,9 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlacards
           build-args: |
-            VITE_PARLASSETS_URL=https://cdn.ljubljana.parlameter.si
+            VITE_PARLASSETS_URL=https://parlassets-ljubljana.lb.djnd.si
+            SENTRY_DSN=https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
+            SENTRY_ENVIRONMENT=ljubljana
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlacards-ljubljana:${{ github.sha }}
