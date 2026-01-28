@@ -20,7 +20,8 @@ const app = createApp({ ...Card, contextData });
 // SENTRY
 Sentry.init({
   app,
-  dsn: 'https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.sentry.io/6080015',
+  dsn: '{sentryDsn}',
+  environment: '{sentryEnv}',
   // Ignore some external errors, such as facebook,
   // twitter, slack bots or link crawlers and scanners.
   ignoreErrors: [
@@ -33,6 +34,7 @@ Sentry.init({
     'Blocked a frame with origin',
     // Chrome on iOS
     '__gCrWeb',
+    'Maximum call stack size exceeded',
   ],
   denyUrls: [
     // Chrome extensions

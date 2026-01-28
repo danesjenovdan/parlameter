@@ -39,3 +39,7 @@ spec:
               value: https://meta-image-generator.lb.djnd.si/parlameter
             - name: VITE_PARLASITE_URL_BEFORE_2025_05_30
               value: https://zagreb-2022.parlametar.hr
+            - name: SENTRY_DSN
+              value: https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
+            - name: SENTRY_ENVIRONMENT
+              value: zagreb
