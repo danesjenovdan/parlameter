@@ -41,3 +41,9 @@ spec:
               value: "3"
             - name: PARLASITE_DEFAULT_CARD_DATE
               value: "2018-06-20"
+            - name: PARLASITE_NEWSLETTER_SEGMENT_ID
+              value: ""
+            - name: SENTRY_DSN
+              value: https://64b10a3bec54dedb44314a61dc68a82b@o1076834.ingest.us.sentry.io/4510062422327296
+            - name: SENTRY_ENVIRONMENT
+              value: slovenija-staging
