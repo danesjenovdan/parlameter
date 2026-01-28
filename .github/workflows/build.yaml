@@ -49,6 +49,8 @@ jobs:
           target: parlassets
           build-args: |
             VITE_PARLASSETS_URL=https://parlassets-TODO-BRANCH-NAME-HERE.lb.djnd.si
+            SENTRY_DSN=https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
+            SENTRY_ENVIRONMENT=TODO-BRANCH-NAME-HERE
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:${{ github.sha }}
