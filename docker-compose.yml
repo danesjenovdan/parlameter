@@ -40,7 +40,7 @@ services:
       - ./parladata/ipython_config.py:/root/.ipython/profile_default/ipython_config.py
 
   db:
-    image: postgres:latest
+    image: postgres:16-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -82,6 +82,8 @@ services:
       - VITE_PARLACARDS_URL=http://localhost:3000
       - VITE_PARLASITE_URL=http://localhost:3066
       - VITE_METAIMAGES_URL=https://meta-image-generator.lb.djnd.si/parlameter
+      - SENTRY_DSN=https://not-configured/dev
+      - SENTRY_ENVIRONMENT=development
     volumes:
       - ./parlacards/build/:/app/build
       - ./parlacards/cards/:/app/cards
@@ -124,6 +126,8 @@ services:
       - PARLASITE_MANDATE_ID=2
       - PARLASITE_DEFAULT_CARD_DATE=
       - PARLASITE_NEWSLETTER_SEGMENT_ID=
+      - SENTRY_DSN=https://not-configured/dev
+      - SENTRY_ENVIRONMENT=development
     volumes:
       - ./parlasite/config/:/app/config
       - ./parlasite/i18n/:/app/i18n
