@@ -74,9 +74,6 @@ jobs:
         with:
           context: .
           file: dockerfiles/parlasite.Dockerfile
-          build-args: |
-            SENTRY_DSN=https://64b10a3bec54dedb44314a61dc68a82b@o1076834.ingest.us.sentry.io/4510062422327296
-            SENTRY_ENVIRONMENT=slovenija-staging
           push: true
           tags: |
             rg.fr-par.scw.cloud/djnd/parlasite-slovenija-staging:${{ github.sha }}
