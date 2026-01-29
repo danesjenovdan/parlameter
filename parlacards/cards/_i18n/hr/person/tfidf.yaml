@@ -1,12 +1,20 @@
 card:
-  title: Riječi koje označavaju zastupnicu
+  title: Riječi koje obilježavaju osobu
   info: >-
-    # Ispis 10 riječi i fraza koje je odabrana zastupnica koristila češće od
-    ostalih zastupnica u Hrvatskom saboru HS-u.
+    # Ispis 10 riječi i fraza koje osoba koristi češće nego ostale zastupnice i
+    zastupnici.
 
 
-    Analiza se provodi prema statistici
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Analizu provodimo prema statistici
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). Iz analize uklanjamo
+    tzv. "stop riječi", odnosno riječi koje se pojavljuju vrlo često i stoga
+    gube svoju reprezentativnost (npr. riječi, napisati, biti…) ili riječi koje
+    same po sebi nemaju značenje (npr. veznici, pomoćne riječi…). Popis tih
+    riječi dostupan je
+    [ovdje](https://github.com/danesjenovdan/parlameter/blob/dev/parladata/parlacards/lemmatizers/hr/stop_words.py).
 
 
-    Korpus čine svi govori, a dokument svi govori odabrane zastupnice.
+    Temelj analize (korpus) čine svi govori svih zastupnica i zastupnika, a
+    dokument čine svi govori te osobe. Zbog malog broja izgovorenih riječi i
+    uklanjanja "stop riječi" kod nekih osoba može se prikazati manje od 10
+    rezultata.

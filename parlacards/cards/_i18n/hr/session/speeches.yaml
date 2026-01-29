@@ -1,6 +1,9 @@
 card:
-  title: Transkript
+  title: Transkript sjednice
   info: >-
-    Transkripti sjednica koji se objavljuju na stranici
-    [HS](http://www.sabor.hr/hr), strojno se raščlanjuju u pojedinačne govorne
-    nastupe i prema izvornom redoslijedu kombiniraju u kartici transkripata.
+    # Transkript svih govora zastupnica i zastupnika na odabranoj sjednici.
+
+
+    Transkript sjednice, koji je u obliku HTML dokumenta objavljen na mrežnoj
+    stranici Hrvatskog sabora, strojno razdvajamo na pojedinačne govorne nastupe
+    i zatim ih u izvornom redoslijedu spajamo u karticu transkripta.

@@ -438,7 +438,7 @@ analysis-texts--party:
       sazivu HS-a. Podaci se preuzimaju s web stranice sabor. hr.
   number_of_amendments:
     label: Br. podnesenih amandmana
-    titleSuffix: Prema rezultatima analize br. podnesenih amandmana
+    titleSuffix: " prema rezultatima analize br. podnesenih amandmana"
     explanation: ""
   group_unity:
     label: Ujedinjenost glasanja
