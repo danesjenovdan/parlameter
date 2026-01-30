@@ -1,4 +1,6 @@
 card:
-  title: Popis sjednica
-  info: >-
-    # Popis svih sjednica u aktuelnom mandatu, sortiran redom održavanja sjednica.
+  title: Lista sjednica
+  info: |-
+    # Lista svih sjednica ovog saziva PSBiH.
+
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).

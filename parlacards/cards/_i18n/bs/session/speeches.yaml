@@ -1,6 +1,10 @@
 card:
-  title: Stenogram
+  title: Transkript sjednice
   info: >-
-    Stenogrami sjednica koji se objavljuju na stranici [Parlament
-    BiH](http://www.parlament.ba), mašinski se raščlanjuju u pojedinačne govorne
-    nastupe i prema izvornom redoslijedu kombiniraju u kartici stenograma.
+    # Transkript svih govora parlamentaraca/ki na izabranoj sjednici.
+
+
+    Transkript sjednice, koji je u obliku HTML dokumenta objavljen na *web*
+    stranici [PSBiH](http://www.parlament.ba), automatski dijelimo na
+    pojedinačne govorne nastupe i u izvornom redoslijedu spajamo u karticu
+    “Transkript”.

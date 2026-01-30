@@ -1,14 +1,15 @@
 card:
-  title: Br. zastupničkih pitanja i inicijativa
+  title: Broj zastupničkih pitanja i inicijativa
+  title2: Broj delegatskih pitanja i inicijativa
   info: >-
-    # Broj zastupničkih pitanja i inicijativa koje je zastupnik/ca postavio u jednom sazivu
-    Parlamentarne skupštine BiH u odnosu na prosječnu i maksimalnu vrijednost.
+    # Broj zastupničkih pitanja i inicijativa zastupnika/ce u ovom mandatu u
+    poređenju s prosječnom i najvećom vrijednošću.
 
 
-    Podaci se preuzimaju sa zvanične internet-stranice [Parlamentarne skupštine BiH](http://parlament.ba/oQuestion/GetORQuestions).
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).
   info2: >-
-    # Broj delegatskih pitanja i inicijativa koje je delegat/kinja postavio u jednom sazivu
-    Parlamentarne skupštine BiH u odnosu na prosječnu i maksimalnu vrijednost.
+    # Broj delegatskih pitanja i inicijativa delegata/kinje u ovom mandatu u
+    poređenju s prosječnom i najvećom vrijednošću.
 
 
-    Podaci se preuzimaju sa zvanične internet-stranice [Parlamentarne skupštine BiH](http://parlament.ba/oQuestion/GetORQuestions).
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).
