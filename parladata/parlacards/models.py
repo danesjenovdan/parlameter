@@ -82,7 +82,7 @@ class PersonAvgSpeechesPerSession(PersonScore):
 
 
 class DeviationFromGroup(PersonScore):
-    pass
+    value = models.FloatField(blank=False, null=True)
 
 
 class PersonNumberOfQuestions(PersonScore):

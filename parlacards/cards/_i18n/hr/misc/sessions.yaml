@@ -1,11 +1,13 @@
 card:
   title: Popis sjednica
   info: >-
-    # Popis svih sjednica HS-a koji odgovara korisničkom unosu ({filter}). Popis
-    je sortiran prema {sortBy}{justLastFive}.
+    # Popis svih sjednica ovog saziva Hrvatskog sabora.
 
 
-    Podaci o sjednicama preuzimaju se sa stranice HS-a, točnije
-    [ovjde](http://www.sabor.hr/arhiva-dnevnih-redova-9),
-    [ovjde](http://www.sabor.hr/kronologija-rasprava0001) i
-    [ovdje](http://www.sabor.hr/sjednica-sabora).
+    Na vrhu kartice možete klikom na željeni filter odabrati prikaz sjednica
+    Hrvatskog sabora te njegovih odbora, komisija i drugih tijela. Rezultate
+    možete razvrstati po imenu ili datumu.
+
+
+    Podatke dobivamo s mrežne stranice [Hrvatskog
+    sabora](https://www.sabor.hr/).

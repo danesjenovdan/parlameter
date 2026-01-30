@@ -1,11 +1,11 @@
 card:
   title: Govori
   info: >-
-    # Ispis poveznica na sve govore zastupnica u jednom sazivu, a koji
-    odgovaraju korisničkom izboru, razvrstani prema datumu.
+    # Popis svih govora članica i članova odabranog zastupničkog kluba u ovom
+    mandatu, razvrstanih po datumu.
 
 
-    Učitavaju se poveznice na sve govore odabranog kluba koji se mogu naći u
-    transkriptima objavljenim na web stranicama Hrvatskog sabora, i prikazuju
-    oni koji odgovaraju korisničkom izboru (zastupnice, vremensko razdoblje,
-    vrsta sjednice).
+    Na popis dodajemo poveznice na sve govore članica i članova odabranog
+    zastupničkog kluba, koje dobivamo iz transkripata sjednica na internetskoj
+    stranici Hrvatskog sabora. Pretraživanjem možete tražiti po sadržaju govora,
+    a pomoću filtera ograničiti prikaz na odabrani vremenski period.

@@ -1,36 +1,36 @@
 card:
   title: Glasanje
   info: >-
-    Zbirka glasanja preuzima se s web stranica Parlamenta BiH.
+    # Pregled pojedinačnog glasanja na sjednici.
 
 
-    Rezultati svakog glasanja prikazuju se na tri nivoa: na nivou zastupnika, na
-    nivou klubova i prema politici vlade.
+    Rezultat pojedinačnog glasanja ima tri različita prikaza: na nivou
+    parlamentaraca/ki, na nivou klubova te na nivou vlade.
 
 
-    Prva kartica omogućuje pregled glasova zastupnika i pretraživanje prema
-    vrijednosti glasa (ZA, PROTIV, SUZDRŽAN, ODSUTAN) i imenu zastupnika. Pored
-    kružnog grafikona prikazana je većina glasova na jednom glasanju u
-    Parlamentu. "60% ZA" tako znači da je 60% zastupnika glasalo ZA.
+    Prvi tab omogućava pregled glasova parlamentaraca i parlamentarki,
+    filtriranje prema vrijednosti glasanja (ZA, PROTIV, SUZDRŽANI, NEMA) te
+    pretragu parlamentaraca i parlamentarki. Pored kružnog grafikona prikazuje
+    se većinski glas doma PSBiH u tom glasanju: “60% ZA” znači da je ZA glasalo
+    60% svih parlamentaraca/ki s pravom glasa na tom glasanju.
 
 
-    Druga kartica prikazuje glasove klubova. Na kraju svake linije prikazan je
-    većinski glas kluba, a dugmad sa rezultatima glasanja otvaraju liste
-    zastupniaa koji su tako glasali. Simbol munje upozorava na podjele u
-    klubovima - stavlja se iznad onih glasova koji se razlikuju od većine, a
-    odsutni su izuzeti. Tako da, ako je većina zastupnika kluba odsutna, ne
-    postoji ni većinski glas kluba.
+    Drugi tab prikazuje glasove klubova. Na kraju svake linije prikazan je
+    većinski glas kluba, a opcije s vrijednostima glasanja otvaraju liste
+    parlamentaraca/ki koji/e su dali/e takav glas.
 
 
-    Treća kartica prikazuje rezultat prema politici Vlade. Ovdje također simbol
-    munje upozorava na neočekivane glasove - odnosno odstupanja od većinskog
-    glasa koalicije.
+    Treći tab prikazuje rezultat prema strani vlade. Ponovo se na kraju svake
+    linije prikazuje većinski glas, a opcije s vrijednostima glasanja otvaraju
+    liste parlamentaraca/ki koji/e su dali/e taj glas.
 
 
-    SIMBOL MUNJE
+    Za tačnost rezultata glasanja brinemo se najbolje što možemo, ali je,
+    posebno kod suzdržanih i odsutnih glasova, ne možemo garantovati. Prisustvo
+    parlamentaraca/ki na sjednicama PSBiH ne provjerava se pri svakom glasanju,
+    pa se može desiti da je osoba bila suzdržana, ali je, zbog nedostatka
+    podataka u dokumentu s rezultatima glasanja (koji koristimo kao izvor), na
+    Parlametru ta osoba prikazana kao odsutna (rezultat: nije glasao/la).
 
 
-    Simbol munje upozorava na raskole u klubovima ili u koaliciji - stavlja se
-    iznad onih glasova koji se razlikuju od većinskog glasa kluba ili koalicije,
-    a odsutni su izuzeti. Tako da, ako je većina kluba odsutna, ne postoji ni
-    većinski glas kluba.
+    Skup glasanja preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).

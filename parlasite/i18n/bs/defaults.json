@@ -1,10 +1,10 @@
 {
   "landing": {
     "title": "Parlametar",
-    "lead": "Parlametar je alat koji pomoću analize glasanja i transkripata govora zastupnika/ca olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine.",
+    "lead": "Istraži ko su parlamentarci i parlamentarke, kako glasaju, o čemu razgovaraju na sjednicama, ko zastupa tvoje interese te koje je odluke i akte Parlamentarna skupština BiH (PSBiH) usvojila u ovom mandatu.",
     "search": {
-      "part_one": "Traži",
-      "part_two": "zakone, glasanja, zastupnice, klubove ili zastupničke govore"
+      "part_one": "PRETRAŽI",
+      "part_two": "zakone, glasanja, parlamentarce/ke, klubove ili govore parlamentaraca/ki"
     }
   },
   "about": {

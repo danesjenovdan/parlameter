@@ -1,12 +1,26 @@
 card:
   title: Glasanja
   info: >-
-    # Pregled svih glasanja na sjednici.
+    # Pregled svih glasanja zastupnice ili zastupnika u ovom mandatu.
 
 
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
-    SUZDRŽANA) i broj zastupnica koje nisu glasale i ispišu rezultati.
+    Prikazujemo glasanja u trenutnom mandatu zajedno sa službenim ishodom i
+    osobnim glasom zastupnice ili zastupnika.
 
 
-    Zbirka glasanja preuzima se s web stranica Hrvatskog sabora
-    [HS](http://www.sabor.hr/sjednica-sabora).
+    Pomoću tražilice možete pretraživati po nazivu glasanja, a pomoću filtera
+    možete ograničiti prikaz prema osobnom glasu zastupnice ili zastupnika (ZA,
+    PROTIV, SUZDRŽANI, ODSUTNI).
+
+
+    Skup glasanja dobivamo s mrežne stranice [Hrvatskog
+    sabora](https://www.sabor.hr/).
+
+
+    Za točnost rezultata glasanja trudimo se najbolje što možemo, no posebno kod
+    suzdržanih i odsutnih glasova ne možemo to jamčiti. Prisutnost zastupnica i
+    zastupnika na sjednicama Hrvatskog sabora ne provjerava se pri svakom
+    glasanju, stoga se može dogoditi da je osoba bila suzdržana, ali da zbog
+    nedostatka podataka u dokumentu s rezultatima glasanja, koji koristimo kao
+    izvor, na Parlametru ta osoba bude prikazana kao odsutna (rezultat: nije
+    glasala ili nije glasao).
