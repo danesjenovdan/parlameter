@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlacards', '0035_alter_deviationfromgroup_created_at_and_more'),
+        ("parlacards", "0035_alter_deviationfromgroup_created_at_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='deviationfromgroup',
-            name='value',
+            model_name="deviationfromgroup",
+            name="value",
             field=models.FloatField(null=True),
         ),
     ]
