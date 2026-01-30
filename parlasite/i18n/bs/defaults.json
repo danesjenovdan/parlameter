@@ -1,203 +1,203 @@
 {
-    "landing": {
-        "title": "Parlametar",
-        "lead": "Parlametar je alat koji pomoću analize glasanja i transkripata govora zastupnika/ca olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine.",
-        "search": {
-            "part_one": "Traži",
-            "part_two": "zakone, glasanja, zastupnice, klubove ili zastupničke govore"
-        }
-    },
-    "about": {
-        "lead": "Parlametar je alat koji pomoću analize glasanja i transkripata govora zastupnika/ca olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine.",
-        "afterlead": "Upotrebom user-friendly dizajna i korištenjem tehnološki naprednih modularnih rješenja povećava se transparentnost najvažnije zakonodavne institucije i omogućava učinkovit uvid u proces donošenja odluka.",
-        "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
-        "columns": {
-            "first": {
-                "title": "Javnost",
-                "paragraph": "Funkcionisanje demokratije ovisi o budnom i odgovornom nadzoru rada vladajućih, a preduslov za to je dobro informisana javnost. Hvala što vam nije svejedno."
-            },
-            "second": {
-                "title": "Medijska javnost",
-                "paragraph": "Sve postojeće kartice mogu se besplatno preuzeti i ugraditi na bilo koji website. Mi obrađujemo podatke kako bi se mediji mogli fokusirati na interpretaciju."
-            },
-            "third": {
-                "title": "Programerska zajednica",
-                "paragraph": "Svi podaci su besplatno dostupni kroz dva API sučelja, i sav kôd objavljen je na Githubu. Sve potrebno možete pronaći na <a href=\"https://dev.parlameter.javnarasprava.ba\">stranici za developere/ke</a>. Za sve informacije možete nam se obratiti putem emaila!"
-            }
-        },
-        "thanks": "Parlameter je aplikacija koju <a href=\\\"http://www.zastone.ba\\\" class=\\\"funblue-light-hover\\\">UG Zašto ne</a> i institut <a href=\\\"http://danesjenovdan.si\\\" class=\\\"funblue-light-hover\\\">Danes je nov dan</a>, razvijaju kao bosanskohercegovačku verziju parlameter.si, uz integraciju sa već postojećom platformom javnarasprava.ba, budući da se obje platforme bave digitalnom političkom participacijom, transparentnosti i praćenjem rada parlamenata. Hvala NED-u, Google DNI-u i svim pojedincima koji su pomogli projekat svojim nesebičnim zalaganjem."
-    },
-    "legal": {
-        "title": "Pravne napomene",
-        "body": "<h3>1. O PARLAMETRU</h3><p>Parlametar je online alat koji, pomoću različitih analiza glasanja i transkripata parlamentarnih nastupa, olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine (PSBiH). Uvidom u proces donošenja odluka ovaj alat povećava transparentnost djelovanja najvažnije zakonodavne institucije u BiH.</p><p>Aplikacija se sastoji iz tri dijela: Parla-data (gdje se prikupljaju neobrađeni podaci), Parla-lize (gdje se izračunavaju statističke vrijednosti analiza) i Parla-metra (gdje ukupan sadržaj postaje vidljiv korisnicima/ama u preglednom sučelju).</p><p>Sadržaj Parlametra dostupan je na stranici https://ba.parlameter.si ili kroz samostalne kartice koje se mogu ugrađivati na druge web stranice (kartica je osnovna jedinica, s vlastitom URL adresom, kôdom za ugrađivanje i “info tekstom“, gdje je objašnjena metodologija prema kojoj je kartica nastala).</p><p>Web stranica https://ba.parlameter.si podijeljena je u pet cjelina: Sjednice, Poslanici, Delegati, Klubovi, Legislativa. Svaka se cjelina sastoji od ispisa (ispis sjednica, poslanika/ca, delegata/kinja i klubova) koji služe kao ulazna tačka za pojedinačne dijelove tog sklopa – odnosno profile pojedinačnih poslanika/ca i delegata/kinja, profile klubova i sjednica. Svaka se cjelina, nadalje, sastoji od više podstranica – kod Poslanika, Delegata i Klubova to su Pregled, Glasanja i Govori, dok su kod Sjednica to Glasanja i Transkripti. U situacijama u kojima nije moguće izraditi karticu za podstranicu (jer podaci nisu dostupni), ta se kartica ne prikazuje.</p><p>Na razini Poslanika i Delegata bilježe se sljedeće analize: raznolikost vokabulara, pregled glasanja, najviše/najrjeđe glasaju jednako, riječi koje ga/ju određuju, prisutnost glasanju na sjednicama Parlamentarne skupštine BiH, broj izgovorenih riječi, broj govora na sjednici, politički kompas.</p><p>Na razini klubova poslanika/ca i delegata/kinja bilježe se sljedeće analize: prisutnost na sjednicama Parlamentarne skupštine BiH, prisutnost glasanju na sjednicama Parlamentarne skupštine BiH, raznolikost vokabulara, najlakše/najteže bi im se pridružili/e, odstupanje od kluba, pregled glasanja, riječi koje ih određuju i politički kompas.</p><p>Parlametar ima i tražilicu po transkriptima i glasanjima koja korisnicima/ama omogućava da, unosom ključne riječi, sami/e generišu pet kartica: popis govora u kojima je spomenuta ključna riječ, kako je korištena kroz vrijeme i popis pet poslanika/ca i delegata/kinja, odnosno pet klubova koji su ključnu riječ (ili više njih) najviše koristili/e, kao i popis glasanja u kojima je spomenuta ključna riječ.</p><p>Metodologija analiza javno je dostupna klikom na info oznaku koja postoji na svakoj kartici.</p><h3>2. IZVORI PODATAKA</h3><p>Zbog nedostatka javno dostupnih mašinski čitljivih parlamentarnih podataka, baza aplikacije Parlametar puni se metodom raščlanjivanja sintakse PDF dokumenata web stranice https://parlament.ba, pri čemu može doći do grešaka za koje Udruženje građana i građanki “Zašto ne” (U.G. “Zašto ne”) i Institut Danes je nov dan, odnosno njihovi/e članovi/ce, suradnici/e i autori/ce aplikacije, ne snose nikakvu odgovornost niti mogu dati garancije.</p><h3>3. INTELEKTUALNO VLASNIŠTVO</h3><p>Parlametar ne koristi nikakav kôd čija bi licenca ograničila njegovu upotrebu.</p><p>Svako može besplatno koristiti analitičke kartice bez prethodne saglasnosti autora/ica aplikacije, koji/e, međutim, zadržavaju pravo da, uz slanje obavijesti putem e-maila, ograniče određene vrste korištenja od trenutka primanja e-maila.</p><h3>4. ODRICANJE ODGOVORNOSTI</h3><p>Sve informacije aplikacije Parlametar nisu nužno sveobuhvatne, cjelovite, tačne i ažurne; općenite su i ne uzimaju u obzir posebne okolnosti koje utiču na pojedince ili pojedinačne skupine.</p><p>Autori/ce sučelja uvijek će nastojati dati pravovremene i tačne podatke i informacije, no za moguće netačnosti ili nepotpune podatke ne preuzimaju nikakvu zakonsku ili drugu odgovornost.</p><p>Autori/ce aplikacije ne mogu odgovarati ni za kakve greške/nedosljednosti u podacima koji se preuzimaju od treće strane.</p><p>Zadržavamo pravo pregrupisanja analitičkih kartica u aplikaciji Parlametar. Svi ispisi razvrstani su prema abecedi ili prema vrijednostima izabranih analiza. Raspored kartica na pojedinim podstranicama slučajan je i ne predstavlja nikakve sadržajne ili bilo kakve druge vrijednosne sudove.</p><p>Autori/ce aplikacije nisu odgovorni/e za naknadu:</p><ul> <li> bilo kakve direktne, posredne, slučajne, posebne, krivične, posljedične štete ili bilo kakve druge štete koja proizlazi iz grešaka, zabuna ili netačnosti u sadržaju koji aplikacija preuzima sa službenih stranica, korištenja neoptimalnih statističkih metoda, interpretacije sadržaja aplikacije od trećih osoba ili bilo koje druge činjenice povezane s aplikacijom i njenom upotrebom; </li><li> bilo kakve štete nastale zbog neovlaštenog pristupa našim serverima i/ili bilo kojem od svih u njima pohranjenih podataka. </li></ul><p>Zadržavamo pravo dodati, ukloniti, mijenjati ili nadograditi podatke u bilo koje vrijeme, na bilo koji način, u potpunosti ili djelimično, iz bilo kojeg razloga i bez prethodne najave.</p><p>Unatoč naporima da na platformi u svakom trenutku pružamo tačne podatke i informacije, greške su uvijek moguće. Nastojat ćemo ih što prije otkriti i riješiti, pa ćemo biti zahvalni ako nas o tome i Vi obavijestite. Obvezujemo se da ćemo, u roku od najviše sedam radnih dana, ukloniti svaku grešku na koju nas upozorite.</p><p>Kartice za besplatno ugrađivanje na druge web stranice dostupne su svima, no autori/ce alata ne garantuju ispravno funkcionisanje u svim okolnostima. Nastojat ćemo minimizirati tehničke pogreške, iako ne odgovaramo za moguću nedostupnost servera ili nepravilno prikazivanje kartice na mjestu gdje je ugrađena. Isto vrijedi i za API-je Parla-data i Parla-lize.</p><h3>5. PRAVILA PRIVATNOSTI</h3><p><strong>Ko smo mi?</strong></p><p>Parlametar je projekat nastao saradnjom <a href=\"https://danesjenovdan.si/\">Instituta Danes je nov Dan</a> iz Slovenije i <a href=\"https://zastone.ba\">U.G. Zašto ne</a>, uz finansijsku podršku <a href=\"https://www.ned.org/\">National Endowment for Democracy</a>.</p><p>Parlametar nastao je kao bosanskohercegovačka verzija <a href=\"https://parlameter.si/\">parlameter.si</a> aplikacije te je korišten kako bi se poboljšale funkcionalnosti postojeće platforme U.G. Zašto ne, <a href=\"https://www.javnarasprava.ba\">Javne rasprave</a>. Online platforma napravljena je na temelju otvorenih podataka Parlamentarne skupštine BiH.</p><p><strong>Linkovi na druge stranice</strong></p><p>Ove mrežne stranice mogu sadržavati linkove na druge internet-stranice. Ova se pravila privatnosti odnose samo na internet-stranice Parlametra, pa Vas potičemo da zasebno proučite pravila privatnosti drugih stranica koje posjećujete. Ne možemo biti odgovorni za pravila privatnosti i prakse na drugim internet-stranicama, čak ni ako ih posjećujete putem linkova na ovim stranicama.</p><p>Ako ste se spojili na našu stranicu putem treće strane, ne možemo biti odgovorni za politike privatnosti i prakse na drugim mrežnim stranicama i servisima te Vam savjetujemo da zasebno proučite njihova pravila i politike privatnosti.</p><p><strong>Osobe mlađe od 18 godina (uključujući i osobe koje imaju 18 godina)</strong></p><p>Brinemo se za zaštitu privatnosti osoba mlađih od 18 godina. Ako imate manje od 18 godina, molimo da tražite dopuštenje roditelja/skrbnika prije nego što s nama podijelite svoje lične podatke (primjerice, svoju e-mail adresu prilikom pretplaćivanja na <em>newsletter</em>).</p><p><strong>Pravila privatnosti</strong></p><p>U skladu s Opštom uredbom o zaštiti podataka 2016/679 Evropskog parlamenta i Vijeća od 27. aprila 2016, donosimo opšte podatke o zaštiti privatnosti posjetitelja/ica ovih stranica.</p><p>Vašu privatnost i povjerljivost ličnih podataka smatramo važnim te poštujemo privatnost posjetitelja/ica ovih web stranica u svako doba. Za bilo kakva dodatna pitanja, prigovore ili komentare u vezi sa zaštitom Vaše privatnosti obratite nam se na <a href=\"mailto:info@javnarasprava.ba\">info@javnarasprava.ba</a>.</p><p><strong>Podaci koje dijelite s nama</strong></p><p>Za posjetitelje/ice ovih internet-stranica:</p><ol style=\"list-style-type: upper-roman\"> <li> Informacije koje sami upisujete kroz obrasce za prikupljanje podatka i prilikom registracije: <ol style=\"list-style-type: lower-latin\"> <li> Vaša e-mail adresa koju svojevoljno upisujete ispunjavanjem obrasca za pretplatu na <em>newsletter</em>. </li><li> Druge informacije koje posjetitelji/ice svojevoljno podijele slanjem e-maila na adresu za kontakt. Svi lični podaci koje posjetitelji/ce otkriju tokom komunikacije ostaju strogo povjerljivi i njihovo je korištenje usklađeno s Opštom uredbom o zaštiti podataka. </li></ol> </li><li> Informacije koje automatski prikupljamo od Vas: <ol style=\"list-style-type: lower-latin\"> <li> Ove internet-stranice ne koriste kolačiće. Za praćenje anonimiziranih statistika o prometu koristi se Matomo. Ove se informacije ne dijele s trećim stranama. </li></ol> </li></ol><p><strong>Kako koristimo Vaše podatke</strong></p><p><em>Podaci posjetitelja/ica ovih internet-stranica</em></p><p>E-mail adrese koje ste nam ustupili koristimo isključivo u svrhe slanja <em>newslettera</em> s obavijestima koje se tiču Parlametra i Javne rasprave, odnosno teme na koju ste se svojevoljno pretplatili na stranici. U svakom trenutku imate pravo povući odluku za korištenje Vaše e-mail adrese u ove svrhe.</p><p>Poduzimamo sve potrebne sigurnosne mjere ne bismo li osigurali korištenje Vaših podataka isključivo u svrhe za koje je data dozvola.</p><p>Vaši podaci čuvaju se dok traje potreba za njihovim korištenjem, u skladu sa svrhom za koju je data dozvola, odnosno svrhom na temelju koje su podaci prikupljani po drugim osnovama. Ako s nama podijelite Vašu e-mail adresu za potrebe slanja <em>newslettera</em>, Vaša se adresa čuva sve dok ne otkažete pretplatu (u tom slučaju, Vaša se adresa uklanja iz baze). U svakom trenutku imate pravo zatražiti brisanje ili izmjenu Vaših podataka u bazi. U slučaju da brisanje Vaših podataka nije moguće, imate pravo uložiti prigovor na obradu Vaših podataka.</p><p><em>Podaci o političarima/kama</em></p><p>Na ovoj se stranici koriste isključivo javno dostupni podaci koji se tiču javnih dužnosti političara/ki. Ne dijele se nikakvi privatni lični podaci političara/ki, koji već nisu javno dostupni ili koji spadaju u kategorije podataka koji se posebno štite Opštom uredbom o zaštiti ličnih podataka.</p><p><strong>Ko ima pristup Vašim podacima?</strong></p><p>Podacima posjetitelja/ki ovih stranica (koji se nalaze u zaštićenoj bazi koja se čuva na serverima u Parizu) mogu pristupiti isključivo osobe zaposlene na projektima Parlametar i Javna rasprava, a koje su ovlaštene za pristup podacima i za svrhe za koje postoji dozvola korisnika/ca ili legalna osnova korištenja. Ove podatke nemoguće je povezati s osobama koje se mogu identifikovati (ne prikupljaju se IP adrese) i stoga nije potrebno uvoditi mjere zaštite predviđene Opštom uredbom o zaštiti podataka. Vaše e-mail adrese koje se koriste za slanje <em>newslettera</em> nalaze se u bazi servisa za distribuciju <em>newslettera</em> MailChimp, s kojim je potpisan poseban ugovor o obradi podataka, usklađen s Opštom uredbom o zaštiti podataka. Ovoj bazi pristupaju osobe zaposlene na projektima Parlametar i Javna rasprava prilikom slanja <em>newslettera</em> i ne koriste se za druge svrhe.</p><p><em>Dijeljenje podataka s trećim stranama</em></p><p>Automatski prikupljeni podaci posjetitelja/ki ovih stranica ne dijele se s trećim stranama izvan organizacija koje su zadužene za provedbu projekta.</p><p>Podaci o adresama elektroničke pošte koje podijelite s nama dijele se sa servisom za distribuciju <em>newslettera</em> MailChimp isključivo za potrebe slanja obavijesti za koje ste pretplaćeni.</p><p>Serveri za pohranu anonimiziranih podataka o posjetiteljima/cama nalaze se na teritoriji Evropske unije (EU).</p><p>Ove mrežne stranice koriste servis za distribuciju <em>newslettera</em> MailChimp, zbog kojih se lični podaci koje dijelite s nama (Vaša adresa elektroničke pošte) mogu prenositi u zemlje izvan teritorija BiH, odnosno EU, gdje se nalaze serveri za pohranu podataka. Ove zemlje nemaju nužno jednake zakone zaštite privatnosti kao EU. Davanjem svojih ličnih podataka na korištenje pristajete na ovakvo dijeljenje, pohranu i korištenje podataka. U slučajevima u kojima se Vaši podaci dijele s trećim stranama izvan BiH, odnosno EU, poduzet ćemo sve potrebne korake ne bismo li osigurali zadovoljenje potrebne sigurnosne i tehničke mjere za zaštitu Vaših podataka na način opisan u ovim pravilima privatnosti.</p><p><strong>Vaša prava na privatnost</strong></p><p>Prema Opštoj uredbi o zaštiti podataka, posjetiteljima/cama i korisnicima/ama ovih mrežnih stranica omogućena su sljedeća prava:</p><ul> <li> Pristup podacima – možete tražiti potvrdu obrađuju li se trenutno Vaši lični podaci i tražiti omogućavanje pristupa tim podacima; </li><li> Ispravak – imate pravo tražiti ispravak netačnih ličnih podataka (primjerice, možete tražiti da ažuriramo Vašu e-mail adresu); </li><li>Zaborav – imate pravo tražiti brisanje podataka iz baze;</li><li> Prenosivost – možete tražiti prenos podataka koje ste nam ponudili u mašinski čitljivom i strukturisanom obliku u drugu bazu i dostavu Vaših ličnih podataka u strojno čitljivom formatu; </li><li> Prigovor – možete uložiti prigovor i tražiti ograničenje, odnosno prestanak obrade Vaših ličnih podataka; </li><li> Ograničenje korištenja - možete tražiti da prestanemo obrađivati Vaše lične podatke u bilo kojem trenutku; </li><li> Usprotiviti se automatizovanom profilisanju – ne koristimo sisteme za profilisanje korisnika/ca na stranicama Parlametra. U slučaju uvođenja takve prakse, eksplicitno ćemo tražiti pristanak za upotrebu Vaših podataka u te svrhe. </li></ul><p><strong>Kome se obratiti za zaštitu Vaših prava?</strong></p><p>Za brisanje, izmjenu, ograničavanje korištenja ličnih podataka, kao i sve ostale upite ili zahtjeve u vezi s pravima koja proizlaze iz Opšte uredbe o zaštiti podataka, kontaktirajte nas putem e-mail adrese <a href=\"mailto:info@javnarasprava.ba\">info@javnarasprava.ba</a>.</p><p>Pritužbe zbog povrede ličnih podataka u BiH istražuje i rješava Agencija za zaštitu ličnih podataka. O načinima ulaganja pritužbe saznajte više na njihovoj <a href=\"http://www.azlp.ba/Language.aspx\">internet-stranici</a>.</p><p><strong>Kolačići</strong></p><p>Ove internet-stranice ne koriste kolačiće. Zadnja verzija Pravila korištenja ažurirana je u julu 2022.</p>"
-    },
-    "press": {
-        "todo": true,
-        "title": "Za bržu i pregledniju priču",
-        "body": "Na ovoj su stanici dostupne informacije o Parlameteru, objave za medije te vizualni materijali. Sve je ponuđeno na slobodno korištenje. Izravne upite za izjave i/ili intervjue uputite na adresu <a href=\"mailto:info@javnarasprava.ba\">info@javnarasprava.ba</a>, odazvat ćemo se brzo i s veseljem.",
-        "photos": {
-            "title": "Vizualni materijali"
-        },
-        "releases": {
-            "title": "Saopštenja za medije"
-        },
-        "video": {
-            "title": "Video materijali"
-        }
-    },
-    "menu": {
-        "legislation": "Legislativa",
-        "sessions": "Sjednice",
-        "mps": "Poslanici/e",
-        "mps2": "Delegati/kinje",
-        "pgs": "Klubovi",
-        "tools": "Alati"
-    },
-    "footer": {
-        "heading": "Parlametar",
-        "desc": "Omogućavamo transparentniji uvid u proces donošenja odluka u PSBiH i na pregledan način prezentujemo podatke koji se nalaze na internet-stranici ovog najvažnijeg zakonodavnog tijela u BiH, uz opciju jednostavnog preuzimanja i dijeljenja sadržaja, kao i gotovih vizuelnih materijala.",
-        "contact_mail": "info@zastone.ba",
-        "about_heading": "O projektu",
-        "about": "Prezentacija Parlametera",
-        "about_municipality": "O projektu Tvoja občina",
-        "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
-        "partners_heading": "Partnerji",
-        "legal": "Pravne napomene",
-        "call_for_eighth_session": "Saziv 2018 - 2022",
-        "call_for_ninth_session": "Saziv 2022 - 2026",
-        "support_heading": "Projekt podpira"
-    },
-    "search_popup": {
-        "title": "Kako pretraživati?",
-        "first_paragraph": "Zadani način pretraživanja podrazumijeva široko podudaranje, odnosno, kao rezultat pretrage pojavljuju se svi govori koji sadrže bilo koju riječ iz pretraživanja. Nadalje, među rezultatima pretrage prikazuju se svi gramatički oblici te riječi. Navedeno se jedino ne odnosi na pretraživanje preciznog podudaranja, koje se postiže dodavanjem navodnika ispred i iza riječi (“navodnik”).",
-        "second_paragraph": "Za napredno pretraživanje mogu se koristiti sljedeći operatori:",
-        "operators": [
-            {
-                "name": "I",
-                "description": "pretraživanje će prikazati samo one rezultate koji uključuju sve riječi u nizu povezane veznikom I (bez obzira na njihov redoslijed)",
-                "example_title": "Primjer pretraživanja:",
-                "example_text": "Halid I Genjac",
-                "example_result_title": "Rezultati pretrage:",
-                "example_result_text": "Halid Genjac<br>Genjac, Halid",
-                "example_excluded_result_title": "",
-                "example_excluded_result_text": ""
-            },
-            {
-                "name": "\"NAVODNICI\"",
-                "description": "prikazuje samo rezultate koji sadrže tačan skup znakova",
-                "example_title": "Primjer pretrage:",
-                "example_text": "Humanitarna kriza",
-                "example_result_title": "",
-                "example_result_text": "",
-                "example_excluded_result_title": "",
-                "example_excluded_result_text": ""
-            },
-            {
-                "name": "! (UZVIČNIK)",
-                "description": "rezultati pretraživanja obavezno uključuju riječ označenu uzvičnikom, dok druge riječi u nizu za pretraživanje služe samo za rangiranje rezultata",
-                "example_title": "Primjer pretrage:",
-                "example_text": "Klub !zastupnika",
-                "example_result_title": "Rezultati pretrage:",
-                "example_result_text": "Klub zastupnika,<br> zastupnika kluba,<br> zastupnika manjina",
-                "example_excluded_result_title": "Nije rezultat pretrage",
-                "example_excluded_result_text": "Zastupnički mandat"
-            },
-            {
-                "name": "- (MINUS)",
-                "description": "rezultati pretrage isključuju riječi ispred kojih je stavljen minus (-)",
-                "example_title": "Primjer pretrage:",
-                "example_text": "-Klub zastupnika",
-                "example_result_title": "Rezultati pretrage:",
-                "example_result_text": "zastupnik stranke,<br> zastupnik manjina",
-                "example_excluded_result_title": "Nije rezultat pretrage",
-                "example_excluded_result_text": "Klub zastupnika"
-            }
-        ]
-    },
-    "donation": {
-        "intro": "Donacijom pomažete daljnji razvoj i omogućujete dugoročni rad Parlametra.",
-        "personal": "LIČNA<br>DONACIJA",
-        "business": "KORPORATIVNA<br>DONACIJA",
-        "bitcoin": "BITCOIN DONACIJA",
-        "business_success": "Pojedinosti je najlakše dogovoriti e-mailom.",
-        "business_success_email": "e-mail",
-        "business_success_message": "poruka",
-        "business_success_send": "POŠALJI",
-        "thank_you": "HVALA!",
-        "error": "Ups, nešto nije kako treba. :(",
-        "choice": "DONACIJA PO IZBORU",
-        "amount": "količina",
-        "card": "KARTICOM",
-        "monthly": "mjesečna donacija"
-    },
-    "tools": {
-        "notifications": {
-            "title": "Obavještenja Parlametra",
-            "text": "Prijavite se za obavještenja. Možete odabrati riječ ili frazu i putem e-maila primati obavještenja kada ih neko izgovori u Parlamentarnoj skupštini Bosne i Hercegovine."
-        },
-        "voteComparator": {
-            "title": "Usporedba glasanja",
-            "text": "Usporedba glasanja odgovara na pitanja poput: Kada su zastupnici SDP-a glasali isto kao i zastupnici HDZ-a?"
-        },
-        "unity": {
-            "title": "Enotnost",
-            "text": "Raziskuj enotnost v parlamentarnih skupinah glede na to, koliko strinjanja je bilo pri glasovanjih v poslanskih skupinah."
-        },
-        "compass": {
-            "title": "Parlamentarni kompas",
-            "text": "Vizualizacija svih zastupnika u virtualnom 'prostoru'. Što je veća udaljenost među zastupnicima, veće su razlike u njihovom glasanju."
-        },
-        "wordGroups": {
-            "title": "Grupe riječi",
-            "text": "Istražite ko najviše govori o određenoj temi, ili ko među zastupnicima najčešće koristi određene grupe riječi.<br><br>"
-        }
-    },
-    "general": {
-        "coalition": "koalicija",
-        "opposition": "opozicija",
-        "inactive": "NEAKTIVAN",
-        "overview": "Pregled",
-        "voting": "Glasanja",
-        "speeches": "Govori",
-        "data_published": "objavljeni podaci",
-        "in_review": "u pregledu",
-        "vote-result--enacted": "Usvojen",
-        "vote-result--submitted": "Dostavljeno radi informiranja",
-        "vote-result--rejected": "Odbijen",
-        "vote-result--retracted": "Povučen",
-        "vote-result--adopted": "Prihvaćen",
-        "vote-result--received": "Prima se na znanje",
-        "vote-result--in_procedure": "U proceduri",
-        "legislation": "Legislativa",
-        "other_votings": "Glasanja",
-        "agenda": "Dnevni red",
-        "transcripts": "Transkripti",
-        "tools_intro": "Demokratija je proces koji traje i zavisi od učešća svih nas. U tome vam mogu pomoći sljedeći alati!",
-        "page-not-found-text": "Ovdje nema ništa. Šta tražiš?",
-        "info_email": "info@zastone.ba",
-        "unaffiliated": "Samostalni/a",
-        "no-session-data": "(Još) nemamo podataka za ovu sjednicu."
-    },
-    "social": {
-        "facebook": "https://www.facebook.com/javnarasprava",
-        "twitter": "https://twitter.com/JRasprava",
-        "instagram": "[empty]"
-    },
-    "titles": {
-        "session": "Sjednica",
-        "legislation": "Legislativa",
-        "other-votings": "Glasanja",
-        "agenda": "Dnevni red",
-        "transcript": "Transkript",
-        "voting": "Glasanje",
-        "session-list": "Popis sjednica",
-        "sessions-search": "Traži sjednice",
-        "thank-you": "Hvala!",
-        "ups": ":("
-    },
-    "legislation": {
-        "act": "A",
-        "decree": "O",
-        "law": "Z"
+  "landing": {
+    "title": "Parlametar",
+    "lead": "Parlametar je alat koji pomoću analize glasanja i transkripata govora zastupnika/ca olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine.",
+    "search": {
+      "part_one": "Traži",
+      "part_two": "zakone, glasanja, zastupnice, klubove ili zastupničke govore"
     }
+  },
+  "about": {
+    "lead": "Parlametar je alat koji pomoću analize glasanja i transkripata govora zastupnika/ca olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine.",
+    "afterlead": "Upotrebom user-friendly dizajna i korištenjem tehnološki naprednih modularnih rješenja povećava se transparentnost najvažnije zakonodavne institucije i omogućava učinkovit uvid u proces donošenja odluka.",
+    "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
+    "columns": {
+      "first": {
+        "title": "Javnost",
+        "paragraph": "Funkcionisanje demokratije ovisi o budnom i odgovornom nadzoru rada vladajućih, a preduslov za to je dobro informisana javnost. Hvala što vam nije svejedno."
+      },
+      "second": {
+        "title": "Medijska javnost",
+        "paragraph": "Sve postojeće kartice mogu se besplatno preuzeti i ugraditi na bilo koji website. Mi obrađujemo podatke kako bi se mediji mogli fokusirati na interpretaciju."
+      },
+      "third": {
+        "title": "Programerska zajednica",
+        "paragraph": "Svi podaci su besplatno dostupni kroz dva API sučelja, i sav kôd objavljen je na Githubu. Sve potrebno možete pronaći na <a href=\"https://dev.parlameter.javnarasprava.ba\">stranici za developere/ke</a>. Za sve informacije možete nam se obratiti putem emaila!"
+      }
+    },
+    "thanks": "Parlameter je aplikacija koju <a href=\\\"http://www.zastone.ba\\\" class=\\\"funblue-light-hover\\\">UG Zašto ne</a> i institut <a href=\\\"http://danesjenovdan.si\\\" class=\\\"funblue-light-hover\\\">Danes je nov dan</a>, razvijaju kao bosanskohercegovačku verziju parlameter.si, uz integraciju sa već postojećom platformom javnarasprava.ba, budući da se obje platforme bave digitalnom političkom participacijom, transparentnosti i praćenjem rada parlamenata. Hvala NED-u, Google DNI-u i svim pojedincima koji su pomogli projekat svojim nesebičnim zalaganjem."
+  },
+  "legal": {
+    "title": "Pravne napomene",
+    "body": "<h3>1. O PARLAMETRU</h3><p>Parlametar je online alat koji, pomoću različitih analiza glasanja i transkripata parlamentarnih nastupa, olakšava praćenje rada Parlamentarne skupštine Bosne i Hercegovine (PSBiH). Uvidom u proces donošenja odluka ovaj alat povećava transparentnost djelovanja najvažnije zakonodavne institucije u BiH.</p><p>Aplikacija se sastoji iz tri dijela: Parla-data (gdje se prikupljaju neobrađeni podaci), Parla-lize (gdje se izračunavaju statističke vrijednosti analiza) i Parla-metra (gdje ukupan sadržaj postaje vidljiv korisnicima/ama u preglednom sučelju).</p><p>Sadržaj Parlametra dostupan je na stranici https://ba.parlameter.si ili kroz samostalne kartice koje se mogu ugrađivati na druge web stranice (kartica je osnovna jedinica, s vlastitom URL adresom, kôdom za ugrađivanje i “info tekstom“, gdje je objašnjena metodologija prema kojoj je kartica nastala).</p><p>Web stranica https://ba.parlameter.si podijeljena je u pet cjelina: Sjednice, Poslanici, Delegati, Klubovi, Legislativa. Svaka se cjelina sastoji od ispisa (ispis sjednica, poslanika/ca, delegata/kinja i klubova) koji služe kao ulazna tačka za pojedinačne dijelove tog sklopa – odnosno profile pojedinačnih poslanika/ca i delegata/kinja, profile klubova i sjednica. Svaka se cjelina, nadalje, sastoji od više podstranica – kod Poslanika, Delegata i Klubova to su Pregled, Glasanja i Govori, dok su kod Sjednica to Glasanja i Transkripti. U situacijama u kojima nije moguće izraditi karticu za podstranicu (jer podaci nisu dostupni), ta se kartica ne prikazuje.</p><p>Na razini Poslanika i Delegata bilježe se sljedeće analize: raznolikost vokabulara, pregled glasanja, najviše/najrjeđe glasaju jednako, riječi koje ga/ju određuju, prisutnost glasanju na sjednicama Parlamentarne skupštine BiH, broj izgovorenih riječi, broj govora na sjednici, politički kompas.</p><p>Na razini klubova poslanika/ca i delegata/kinja bilježe se sljedeće analize: prisutnost na sjednicama Parlamentarne skupštine BiH, prisutnost glasanju na sjednicama Parlamentarne skupštine BiH, raznolikost vokabulara, najlakše/najteže bi im se pridružili/e, odstupanje od kluba, pregled glasanja, riječi koje ih određuju i politički kompas.</p><p>Parlametar ima i tražilicu po transkriptima i glasanjima koja korisnicima/ama omogućava da, unosom ključne riječi, sami/e generišu pet kartica: popis govora u kojima je spomenuta ključna riječ, kako je korištena kroz vrijeme i popis pet poslanika/ca i delegata/kinja, odnosno pet klubova koji su ključnu riječ (ili više njih) najviše koristili/e, kao i popis glasanja u kojima je spomenuta ključna riječ.</p><p>Metodologija analiza javno je dostupna klikom na info oznaku koja postoji na svakoj kartici.</p><h3>2. IZVORI PODATAKA</h3><p>Zbog nedostatka javno dostupnih mašinski čitljivih parlamentarnih podataka, baza aplikacije Parlametar puni se metodom raščlanjivanja sintakse PDF dokumenata web stranice https://parlament.ba, pri čemu može doći do grešaka za koje Udruženje građana i građanki “Zašto ne” (U.G. “Zašto ne”) i Institut Danes je nov dan, odnosno njihovi/e članovi/ce, suradnici/e i autori/ce aplikacije, ne snose nikakvu odgovornost niti mogu dati garancije.</p><h3>3. INTELEKTUALNO VLASNIŠTVO</h3><p>Parlametar ne koristi nikakav kôd čija bi licenca ograničila njegovu upotrebu.</p><p>Svako može besplatno koristiti analitičke kartice bez prethodne saglasnosti autora/ica aplikacije, koji/e, međutim, zadržavaju pravo da, uz slanje obavijesti putem e-maila, ograniče određene vrste korištenja od trenutka primanja e-maila.</p><h3>4. ODRICANJE ODGOVORNOSTI</h3><p>Sve informacije aplikacije Parlametar nisu nužno sveobuhvatne, cjelovite, tačne i ažurne; općenite su i ne uzimaju u obzir posebne okolnosti koje utiču na pojedince ili pojedinačne skupine.</p><p>Autori/ce sučelja uvijek će nastojati dati pravovremene i tačne podatke i informacije, no za moguće netačnosti ili nepotpune podatke ne preuzimaju nikakvu zakonsku ili drugu odgovornost.</p><p>Autori/ce aplikacije ne mogu odgovarati ni za kakve greške/nedosljednosti u podacima koji se preuzimaju od treće strane.</p><p>Zadržavamo pravo pregrupisanja analitičkih kartica u aplikaciji Parlametar. Svi ispisi razvrstani su prema abecedi ili prema vrijednostima izabranih analiza. Raspored kartica na pojedinim podstranicama slučajan je i ne predstavlja nikakve sadržajne ili bilo kakve druge vrijednosne sudove.</p><p>Autori/ce aplikacije nisu odgovorni/e za naknadu:</p><ul> <li> bilo kakve direktne, posredne, slučajne, posebne, krivične, posljedične štete ili bilo kakve druge štete koja proizlazi iz grešaka, zabuna ili netačnosti u sadržaju koji aplikacija preuzima sa službenih stranica, korištenja neoptimalnih statističkih metoda, interpretacije sadržaja aplikacije od trećih osoba ili bilo koje druge činjenice povezane s aplikacijom i njenom upotrebom; </li><li> bilo kakve štete nastale zbog neovlaštenog pristupa našim serverima i/ili bilo kojem od svih u njima pohranjenih podataka. </li></ul><p>Zadržavamo pravo dodati, ukloniti, mijenjati ili nadograditi podatke u bilo koje vrijeme, na bilo koji način, u potpunosti ili djelimično, iz bilo kojeg razloga i bez prethodne najave.</p><p>Unatoč naporima da na platformi u svakom trenutku pružamo tačne podatke i informacije, greške su uvijek moguće. Nastojat ćemo ih što prije otkriti i riješiti, pa ćemo biti zahvalni ako nas o tome i Vi obavijestite. Obvezujemo se da ćemo, u roku od najviše sedam radnih dana, ukloniti svaku grešku na koju nas upozorite.</p><p>Kartice za besplatno ugrađivanje na druge web stranice dostupne su svima, no autori/ce alata ne garantuju ispravno funkcionisanje u svim okolnostima. Nastojat ćemo minimizirati tehničke pogreške, iako ne odgovaramo za moguću nedostupnost servera ili nepravilno prikazivanje kartice na mjestu gdje je ugrađena. Isto vrijedi i za API-je Parla-data i Parla-lize.</p><h3>5. PRAVILA PRIVATNOSTI</h3><p><strong>Ko smo mi?</strong></p><p>Parlametar je projekat nastao saradnjom <a href=\"https://danesjenovdan.si/\">Instituta Danes je nov Dan</a> iz Slovenije i <a href=\"https://zastone.ba\">U.G. Zašto ne</a>, uz finansijsku podršku <a href=\"https://www.ned.org/\">National Endowment for Democracy</a>.</p><p>Parlametar nastao je kao bosanskohercegovačka verzija <a href=\"https://parlameter.si/\">parlameter.si</a> aplikacije te je korišten kako bi se poboljšale funkcionalnosti postojeće platforme U.G. Zašto ne, <a href=\"https://www.javnarasprava.ba\">Javne rasprave</a>. Online platforma napravljena je na temelju otvorenih podataka Parlamentarne skupštine BiH.</p><p><strong>Linkovi na druge stranice</strong></p><p>Ove mrežne stranice mogu sadržavati linkove na druge internet-stranice. Ova se pravila privatnosti odnose samo na internet-stranice Parlametra, pa Vas potičemo da zasebno proučite pravila privatnosti drugih stranica koje posjećujete. Ne možemo biti odgovorni za pravila privatnosti i prakse na drugim internet-stranicama, čak ni ako ih posjećujete putem linkova na ovim stranicama.</p><p>Ako ste se spojili na našu stranicu putem treće strane, ne možemo biti odgovorni za politike privatnosti i prakse na drugim mrežnim stranicama i servisima te Vam savjetujemo da zasebno proučite njihova pravila i politike privatnosti.</p><p><strong>Osobe mlađe od 18 godina (uključujući i osobe koje imaju 18 godina)</strong></p><p>Brinemo se za zaštitu privatnosti osoba mlađih od 18 godina. Ako imate manje od 18 godina, molimo da tražite dopuštenje roditelja/skrbnika prije nego što s nama podijelite svoje lične podatke (primjerice, svoju e-mail adresu prilikom pretplaćivanja na <em>newsletter</em>).</p><p><strong>Pravila privatnosti</strong></p><p>U skladu s Opštom uredbom o zaštiti podataka 2016/679 Evropskog parlamenta i Vijeća od 27. aprila 2016, donosimo opšte podatke o zaštiti privatnosti posjetitelja/ica ovih stranica.</p><p>Vašu privatnost i povjerljivost ličnih podataka smatramo važnim te poštujemo privatnost posjetitelja/ica ovih web stranica u svako doba. Za bilo kakva dodatna pitanja, prigovore ili komentare u vezi sa zaštitom Vaše privatnosti obratite nam se na <a href=\"mailto:info@javnarasprava.ba\">info@javnarasprava.ba</a>.</p><p><strong>Podaci koje dijelite s nama</strong></p><p>Za posjetitelje/ice ovih internet-stranica:</p><ol style=\"list-style-type: upper-roman\"> <li> Informacije koje sami upisujete kroz obrasce za prikupljanje podatka i prilikom registracije: <ol style=\"list-style-type: lower-latin\"> <li> Vaša e-mail adresa koju svojevoljno upisujete ispunjavanjem obrasca za pretplatu na <em>newsletter</em>. </li><li> Druge informacije koje posjetitelji/ice svojevoljno podijele slanjem e-maila na adresu za kontakt. Svi lični podaci koje posjetitelji/ce otkriju tokom komunikacije ostaju strogo povjerljivi i njihovo je korištenje usklađeno s Opštom uredbom o zaštiti podataka. </li></ol> </li><li> Informacije koje automatski prikupljamo od Vas: <ol style=\"list-style-type: lower-latin\"> <li> Ove internet-stranice ne koriste kolačiće. Za praćenje anonimiziranih statistika o prometu koristi se Matomo. Ove se informacije ne dijele s trećim stranama. </li></ol> </li></ol><p><strong>Kako koristimo Vaše podatke</strong></p><p><em>Podaci posjetitelja/ica ovih internet-stranica</em></p><p>E-mail adrese koje ste nam ustupili koristimo isključivo u svrhe slanja <em>newslettera</em> s obavijestima koje se tiču Parlametra i Javne rasprave, odnosno teme na koju ste se svojevoljno pretplatili na stranici. U svakom trenutku imate pravo povući odluku za korištenje Vaše e-mail adrese u ove svrhe.</p><p>Poduzimamo sve potrebne sigurnosne mjere ne bismo li osigurali korištenje Vaših podataka isključivo u svrhe za koje je data dozvola.</p><p>Vaši podaci čuvaju se dok traje potreba za njihovim korištenjem, u skladu sa svrhom za koju je data dozvola, odnosno svrhom na temelju koje su podaci prikupljani po drugim osnovama. Ako s nama podijelite Vašu e-mail adresu za potrebe slanja <em>newslettera</em>, Vaša se adresa čuva sve dok ne otkažete pretplatu (u tom slučaju, Vaša se adresa uklanja iz baze). U svakom trenutku imate pravo zatražiti brisanje ili izmjenu Vaših podataka u bazi. U slučaju da brisanje Vaših podataka nije moguće, imate pravo uložiti prigovor na obradu Vaših podataka.</p><p><em>Podaci o političarima/kama</em></p><p>Na ovoj se stranici koriste isključivo javno dostupni podaci koji se tiču javnih dužnosti političara/ki. Ne dijele se nikakvi privatni lični podaci političara/ki, koji već nisu javno dostupni ili koji spadaju u kategorije podataka koji se posebno štite Opštom uredbom o zaštiti ličnih podataka.</p><p><strong>Ko ima pristup Vašim podacima?</strong></p><p>Podacima posjetitelja/ki ovih stranica (koji se nalaze u zaštićenoj bazi koja se čuva na serverima u Parizu) mogu pristupiti isključivo osobe zaposlene na projektima Parlametar i Javna rasprava, a koje su ovlaštene za pristup podacima i za svrhe za koje postoji dozvola korisnika/ca ili legalna osnova korištenja. Ove podatke nemoguće je povezati s osobama koje se mogu identifikovati (ne prikupljaju se IP adrese) i stoga nije potrebno uvoditi mjere zaštite predviđene Opštom uredbom o zaštiti podataka. Vaše e-mail adrese koje se koriste za slanje <em>newslettera</em> nalaze se u bazi servisa za distribuciju <em>newslettera</em> MailChimp, s kojim je potpisan poseban ugovor o obradi podataka, usklađen s Opštom uredbom o zaštiti podataka. Ovoj bazi pristupaju osobe zaposlene na projektima Parlametar i Javna rasprava prilikom slanja <em>newslettera</em> i ne koriste se za druge svrhe.</p><p><em>Dijeljenje podataka s trećim stranama</em></p><p>Automatski prikupljeni podaci posjetitelja/ki ovih stranica ne dijele se s trećim stranama izvan organizacija koje su zadužene za provedbu projekta.</p><p>Podaci o adresama elektroničke pošte koje podijelite s nama dijele se sa servisom za distribuciju <em>newslettera</em> MailChimp isključivo za potrebe slanja obavijesti za koje ste pretplaćeni.</p><p>Serveri za pohranu anonimiziranih podataka o posjetiteljima/cama nalaze se na teritoriji Evropske unije (EU).</p><p>Ove mrežne stranice koriste servis za distribuciju <em>newslettera</em> MailChimp, zbog kojih se lični podaci koje dijelite s nama (Vaša adresa elektroničke pošte) mogu prenositi u zemlje izvan teritorija BiH, odnosno EU, gdje se nalaze serveri za pohranu podataka. Ove zemlje nemaju nužno jednake zakone zaštite privatnosti kao EU. Davanjem svojih ličnih podataka na korištenje pristajete na ovakvo dijeljenje, pohranu i korištenje podataka. U slučajevima u kojima se Vaši podaci dijele s trećim stranama izvan BiH, odnosno EU, poduzet ćemo sve potrebne korake ne bismo li osigurali zadovoljenje potrebne sigurnosne i tehničke mjere za zaštitu Vaših podataka na način opisan u ovim pravilima privatnosti.</p><p><strong>Vaša prava na privatnost</strong></p><p>Prema Opštoj uredbi o zaštiti podataka, posjetiteljima/cama i korisnicima/ama ovih mrežnih stranica omogućena su sljedeća prava:</p><ul> <li> Pristup podacima – možete tražiti potvrdu obrađuju li se trenutno Vaši lični podaci i tražiti omogućavanje pristupa tim podacima; </li><li> Ispravak – imate pravo tražiti ispravak netačnih ličnih podataka (primjerice, možete tražiti da ažuriramo Vašu e-mail adresu); </li><li>Zaborav – imate pravo tražiti brisanje podataka iz baze;</li><li> Prenosivost – možete tražiti prenos podataka koje ste nam ponudili u mašinski čitljivom i strukturisanom obliku u drugu bazu i dostavu Vaših ličnih podataka u strojno čitljivom formatu; </li><li> Prigovor – možete uložiti prigovor i tražiti ograničenje, odnosno prestanak obrade Vaših ličnih podataka; </li><li> Ograničenje korištenja - možete tražiti da prestanemo obrađivati Vaše lične podatke u bilo kojem trenutku; </li><li> Usprotiviti se automatizovanom profilisanju – ne koristimo sisteme za profilisanje korisnika/ca na stranicama Parlametra. U slučaju uvođenja takve prakse, eksplicitno ćemo tražiti pristanak za upotrebu Vaših podataka u te svrhe. </li></ul><p><strong>Kome se obratiti za zaštitu Vaših prava?</strong></p><p>Za brisanje, izmjenu, ograničavanje korištenja ličnih podataka, kao i sve ostale upite ili zahtjeve u vezi s pravima koja proizlaze iz Opšte uredbe o zaštiti podataka, kontaktirajte nas putem e-mail adrese <a href=\"mailto:info@javnarasprava.ba\">info@javnarasprava.ba</a>.</p><p>Pritužbe zbog povrede ličnih podataka u BiH istražuje i rješava Agencija za zaštitu ličnih podataka. O načinima ulaganja pritužbe saznajte više na njihovoj <a href=\"http://www.azlp.ba/Language.aspx\">internet-stranici</a>.</p><p><strong>Kolačići</strong></p><p>Ove internet-stranice ne koriste kolačiće. Zadnja verzija Pravila korištenja ažurirana je u julu 2022.</p>"
+  },
+  "press": {
+    "todo": true,
+    "title": "Za bržu i pregledniju priču",
+    "body": "Na ovoj su stanici dostupne informacije o Parlameteru, objave za medije te vizualni materijali. Sve je ponuđeno na slobodno korištenje. Izravne upite za izjave i/ili intervjue uputite na adresu <a href=\"mailto:info@javnarasprava.ba\">info@javnarasprava.ba</a>, odazvat ćemo se brzo i s veseljem.",
+    "photos": {
+      "title": "Vizualni materijali"
+    },
+    "releases": {
+      "title": "Saopštenja za medije"
+    },
+    "video": {
+      "title": "Video materijali"
+    }
+  },
+  "menu": {
+    "legislation": "Legislativa",
+    "sessions": "Sjednice",
+    "mps": "Poslanici/e",
+    "mps2": "Delegati/kinje",
+    "pgs": "Klubovi",
+    "tools": "Alati"
+  },
+  "footer": {
+    "heading": "Parlametar",
+    "desc": "Omogućavamo transparentniji uvid u proces donošenja odluka u PSBiH i na pregledan način prezentujemo podatke koji se nalaze na internet-stranici ovog najvažnijeg zakonodavnog tijela u BiH, uz opciju jednostavnog preuzimanja i dijeljenja sadržaja, kao i gotovih vizuelnih materijala.",
+    "contact_mail": "info@zastone.ba",
+    "about_heading": "O projektu",
+    "about": "Prezentacija Parlametera",
+    "about_municipality": "O projektu Tvoja občina",
+    "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
+    "partners_heading": "Partnerji",
+    "legal": "Pravne napomene",
+    "call_for_eighth_session": "Saziv 2018 - 2022",
+    "call_for_ninth_session": "Saziv 2022 - 2026",
+    "support_heading": "Projekt podpira"
+  },
+  "search_popup": {
+    "title": "Kako pretraživati?",
+    "first_paragraph": "Zadani način pretraživanja podrazumijeva široko podudaranje, odnosno, kao rezultat pretrage pojavljuju se svi govori koji sadrže bilo koju riječ iz pretraživanja. Nadalje, među rezultatima pretrage prikazuju se svi gramatički oblici te riječi. Navedeno se jedino ne odnosi na pretraživanje preciznog podudaranja, koje se postiže dodavanjem navodnika ispred i iza riječi (“navodnik”).",
+    "second_paragraph": "Za napredno pretraživanje mogu se koristiti sljedeći operatori:",
+    "operators": [
+      {
+        "name": "I",
+        "description": "pretraživanje će prikazati samo one rezultate koji uključuju sve riječi u nizu povezane veznikom I (bez obzira na njihov redoslijed)",
+        "example_title": "Primjer pretraživanja:",
+        "example_text": "Halid I Genjac",
+        "example_result_title": "Rezultati pretrage:",
+        "example_result_text": "Halid Genjac<br>Genjac, Halid",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "\"NAVODNICI\"",
+        "description": "prikazuje samo rezultate koji sadrže tačan skup znakova",
+        "example_title": "Primjer pretrage:",
+        "example_text": "Humanitarna kriza",
+        "example_result_title": "",
+        "example_result_text": "",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "! (UZVIČNIK)",
+        "description": "rezultati pretraživanja obavezno uključuju riječ označenu uzvičnikom, dok druge riječi u nizu za pretraživanje služe samo za rangiranje rezultata",
+        "example_title": "Primjer pretrage:",
+        "example_text": "Klub !zastupnika",
+        "example_result_title": "Rezultati pretrage:",
+        "example_result_text": "Klub zastupnika,<br> zastupnika kluba,<br> zastupnika manjina",
+        "example_excluded_result_title": "Nije rezultat pretrage",
+        "example_excluded_result_text": "Zastupnički mandat"
+      },
+      {
+        "name": "- (MINUS)",
+        "description": "rezultati pretrage isključuju riječi ispred kojih je stavljen minus (-)",
+        "example_title": "Primjer pretrage:",
+        "example_text": "-Klub zastupnika",
+        "example_result_title": "Rezultati pretrage:",
+        "example_result_text": "zastupnik stranke,<br> zastupnik manjina",
+        "example_excluded_result_title": "Nije rezultat pretrage",
+        "example_excluded_result_text": "Klub zastupnika"
+      }
+    ]
+  },
+  "donation": {
+    "intro": "Donacijom pomažete daljnji razvoj i omogućujete dugoročni rad Parlametra.",
+    "personal": "LIČNA<br>DONACIJA",
+    "business": "KORPORATIVNA<br>DONACIJA",
+    "bitcoin": "BITCOIN DONACIJA",
+    "business_success": "Pojedinosti je najlakše dogovoriti e-mailom.",
+    "business_success_email": "e-mail",
+    "business_success_message": "poruka",
+    "business_success_send": "POŠALJI",
+    "thank_you": "HVALA!",
+    "error": "Ups, nešto nije kako treba. :(",
+    "choice": "DONACIJA PO IZBORU",
+    "amount": "količina",
+    "card": "KARTICOM",
+    "monthly": "mjesečna donacija"
+  },
+  "tools": {
+    "notifications": {
+      "title": "Obavještenja Parlametra",
+      "text": "Prijavite se za obavještenja. Možete odabrati riječ ili frazu i putem e-maila primati obavještenja kada ih neko izgovori u Parlamentarnoj skupštini Bosne i Hercegovine."
+    },
+    "voteComparator": {
+      "title": "Usporedba glasanja",
+      "text": "Usporedba glasanja odgovara na pitanja poput: Kada su zastupnici SDP-a glasali isto kao i zastupnici HDZ-a?"
+    },
+    "unity": {
+      "title": "Enotnost",
+      "text": "Raziskuj enotnost v parlamentarnih skupinah glede na to, koliko strinjanja je bilo pri glasovanjih v poslanskih skupinah."
+    },
+    "compass": {
+      "title": "Parlamentarni kompas",
+      "text": "Vizualizacija svih zastupnika u virtualnom 'prostoru'. Što je veća udaljenost među zastupnicima, veće su razlike u njihovom glasanju."
+    },
+    "wordGroups": {
+      "title": "Grupe riječi",
+      "text": "Istražite ko najviše govori o određenoj temi, ili ko među zastupnicima najčešće koristi određene grupe riječi.<br><br>"
+    }
+  },
+  "general": {
+    "coalition": "koalicija",
+    "opposition": "opozicija",
+    "inactive": "NEAKTIVAN",
+    "overview": "Pregled",
+    "voting": "Glasanja",
+    "speeches": "Govori",
+    "data_published": "objavljeni podaci",
+    "in_review": "u pregledu",
+    "vote-result--enacted": "Usvojen",
+    "vote-result--submitted": "Dostavljeno radi informiranja",
+    "vote-result--rejected": "Odbijen",
+    "vote-result--retracted": "Povučen",
+    "vote-result--adopted": "Prihvaćen",
+    "vote-result--received": "Prima se na znanje",
+    "vote-result--in_procedure": "U proceduri",
+    "legislation": "Legislativa",
+    "other_votings": "Glasanja",
+    "agenda": "Dnevni red",
+    "transcripts": "Transkripti",
+    "tools_intro": "Demokratija je proces koji traje i zavisi od učešća svih nas. U tome vam mogu pomoći sljedeći alati!",
+    "page-not-found-text": "Ovdje nema ništa. Šta tražiš?",
+    "info_email": "info@zastone.ba",
+    "unaffiliated": "Samostalni/a",
+    "no-session-data": "(Još) nemamo podataka za ovu sjednicu."
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/javnarasprava",
+    "twitter": "https://twitter.com/JRasprava",
+    "instagram": "[empty]"
+  },
+  "titles": {
+    "session": "Sjednica",
+    "legislation": "Legislativa",
+    "other-votings": "Glasanja",
+    "agenda": "Dnevni red",
+    "transcript": "Transkript",
+    "voting": "Glasanje",
+    "session-list": "Popis sjednica",
+    "sessions-search": "Traži sjednice",
+    "thank-you": "Hvala!",
+    "ups": ":("
+  },
+  "legislation": {
+    "act": "A",
+    "decree": "O",
+    "law": "Z"
+  }
 }
