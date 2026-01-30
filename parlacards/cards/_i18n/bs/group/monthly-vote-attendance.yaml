@@ -1,9 +1,13 @@
 card:
   title: Prisutnost na glasanjima kroz vrijeme
   info: >-
-    # Prisutnost kluba na glasanju na sjednicama Parlamenta BiH tokom vremena.
+    # Prisustvo izabranog kluba na glasanju na sjednicama PSBiH kroz vrijeme.
 
 
-    Uzima se broj glasanja na kojima bi u odabranom mjesecu trebali biti
-    prisutni zastupnici kluba i u postocima se prikazuje na koliko su od svih
-    glasanja bili.
+    Za svaki mjesec posebno prebrojimo sve glasove koje su dali/e svi/e
+    članovi/ice izabranog kluba, a zatim taj broj podijelimo s brojem svih
+    glasova koje je grupa u tom mjesecu mogla dati. Rezultat izražavamo u
+    procentima i prikazujemo na grafikonu.
+
+
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).

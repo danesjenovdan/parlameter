@@ -1,12 +1,35 @@
 card:
-  title: Riječi koje označavaju zastupnika
+  title: Riječi koje označavaju zastupnika/cu
+  title2: Riječi koje označavaju delegata/kinju
   info: >-
-    # Ispis 10 riječi i fraza koje je odabrani zastupnik koristio češće od
-    ostalih zastupnika u Parlamentu.
+    # Ispis deset riječi i fraza koje osoba koristi češće nego ostali/e
+    zastupnici/e.
 
 
-    Analiza se provodi prema statistici
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Analizu provodimo pomoću statistike
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). Iz analize uklanjamo
+    tzv. *stopwords*, tj. riječi koje se pojavljuju često i zato gube
+    reprezentativnost (…) ili nemaju posebno značenje (…). Lista tih riječi
+    dostupna je
+    [ovdje](https://github.com/danesjenovdan/parlameter/blob/dev/parladata/parlacards/lemmatizers/hr/stop_words.py).
 
 
-    Korpus čine svi govori, a dokument svi govori odabranog zastupnika.
+    Osnovu analize (korpus) čine svi govori svih zastupnika/ca, a karticu svi
+    govori ove osobe. Zbog malog broja izgovorenih riječi i uklanjanja
+    *stopwords*, kod nekih se osoba može prikazati manje od deset rezultata.
+  info2: >-
+    # Ispis deset riječi i fraza koje osoba koristi češće nego ostali/e
+    delegati/kinje.
+
+
+    Analizu provodimo pomoću statistike
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). Iz analize uklanjamo
+    tzv. *stopwords*, tj. riječi koje se pojavljuju često i zato gube
+    reprezentativnost (…) ili nemaju posebno značenje (…). Lista tih riječi
+    dostupna je
+    [ovdje](https://github.com/danesjenovdan/parlameter/blob/dev/parladata/parlacards/lemmatizers/hr/stop_words.py).
+
+
+    Osnovu analize (korpus) čine svi govori svih delegata/kinja, a karticu svi
+    govori ove osobe. Zbog malog broja izgovorenih riječi i uklanjanja
+    *stopwords*, kod nekih se osoba može prikazati manje od deset rezultata.
