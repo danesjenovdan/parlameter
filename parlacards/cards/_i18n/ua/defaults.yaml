@@ -275,6 +275,7 @@ absent--m: Відсутній
 absent--plural: Відсутні
 no-term: Позафракційні
 no-data: Brez podatka
+not-in-group: Trenutno nima poslanske skupine
 unity: Єдність
 everybody: Усі
 show: Показати
@@ -466,6 +467,8 @@ deputy--m: Podpredsednik
 deputy--f: Podpredsednica
 member--m: Član
 member--f: Članica
+deputy-member--m: Nadomestni član
+deputy-member--f: Nadomestna članica
 contact: "Контакти"
 mp: Народний депутат
 addressee: Звертається до

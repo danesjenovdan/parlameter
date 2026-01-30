@@ -1,14 +1,29 @@
 card:
-  title: 'Popis glasanja po '
+  title: Jedinstvo glasanja
   info: >-
-    # Popis svih glasanja HS-a koja odgovaraju korisničkom izboru ({text}), za
-    izabrana matična radna tijela ({wbs}), razvrstana prema {sortBy}.
+    # Analiza jedinstva glasanja u Hrvatskom saboru.
 
 
-    Popis svih glasanja koja su se dogodila u aktualnom sazivu HS-a i bila
-    objavljena na stranicama [HS](http://www.sabor.hr/sjednica-sabora) te
-    odgovaraju korisničkom izboru.
+    U ovoj analizi prikazujemo jedinstvo glasanja u odabranoj skupini (Hrvatski
+    sabor, koalicija, pojedini zastupnički klub). Postotak izražava usklađenost
+    zastupnica i zastupnika u pojedinim glasanjima.
 
 
-    Rezultati se klasificiraju bilo po razjedinjenosti odabranog tijela, bilo po
-    datumu.
+    Na vrhu kartice možete, klikom na željeni filter, odabrati promatranu
+    skupinu, tijelo u kojem je glasanje provedeno (Hrvatski sabor ili matična
+    radna tijela) i vremenski period, a rezultate razvrstavati prema razini
+    jedinstva – bilo od najveće prema najmanjoj ili obrnuto.
+
+
+    Jedinstvo za pojedino glasanje izračunavamo tako da prvo utvrdimo većinski
+    glas unutar odabrane skupine (ZA, PROTIV, SUZDRŽANI, ODSUTNI). Zatim
+    prebrojimo koliko je zastupnica i zastupnika glasalo u skladu s tom većinom,
+    a taj broj podijelimo s ukupnim brojem svih članica i članova u skupini.
+    Tako dobivamo udio zastupnica i zastupnika u odabranoj skupini čiji glas
+    odgovara većinskoj odluci. Ako su svi glasovi u pojedinom glasanju pripadali
+    istoj opciji, jedinstvo je 100 %, a ako su glasovi bili raspoređeni između
+    više opcija, jedinstvo je odgovarajuće niže.
+
+
+    Analiza obuhvaća sva glasanja u tekućem sazivu Hrvatskog sabora. Podatke
+    dobivamo s internetske stranice Hrvatskog sabora.
