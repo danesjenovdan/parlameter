@@ -1,16 +1,24 @@
 card:
-  title: Prisutnost na glasanjima
+  title: Prisustvo na glasanju sjednica PSBiH
   info: >-
-    # Prisutnost na glasanjima u odnosu na prosječnu i maksimalnu vrijednost.
-
-
-    Svi glasovi zastupnika/ca se prebroje te se taj broj podijeli sa zbirom svih glasanja na
-    sjednicama na kojima se moralo glasati. Rezultat se ispiše zajedno s prosječnom i maksimalnom
+    # Prisustvo zastupnika/ce na glasanju u poređenju s prosječnom i najvećom
     vrijednošću.
+
+
+    Prebrojimo sve glasove koje je zastupnik/ca dao/la i taj broj dijelimo s
+    ukupnim brojem svih glasanja na kojima je trebalo glasati. Rezultat
+    prikazujemo zajedno s prosječnom i najvećom vrijednošću.
+
+
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).
   info2: >-
-    # Prisutnost na glasanjima u odnosu na prosječnu i maksimalnu vrijednost.
-
-
-    Svi glasovi delegata/kinja se prebroje te se taj broj podijeli sa zbirom svih glasanja na
-    sjednicama na kojima se moralo glasati. Rezultat se ispiše zajedno s prosječnom i maksimalnom
+    # Prisustvo delegata/kinje na glasanju u poređenju s prosječnom i najvećom
     vrijednošću.
+
+
+    Prebrojimo sve glasove koje je delegat/kinja dao/la i taj broj dijelimo s
+    ukupnim brojem svih glasanja na kojima je trebalo/la glasati. Rezultat
+    prikazujemo zajedno s prosječnom i najvećom vrijednošću.
+
+
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).

@@ -1,6 +1,37 @@
 card:
-  title: Popis zastupnika
+  title: Lista zastupnika/ca
+  title2: Lista delegata/kinja
   info: >-
-    # Popis svih trenutno aktivnih poslanika/ca, sortiran abecednim redom.
+    # Lista svih trenutno aktivnih zastupnika/ca koji/e odgovaraju tvom unosu.
+
+
+    Na vrhu kartice možeš klikom na željeni filter birati između različitih
+    analiza (demografija, prisustvo na glasanju, broj zastupničkih pitanja i
+    inicijativa, neslaganje s klubom). Pretraživačem možeš tražiti
+    zastupnika/cu, a listu možeš filtrirati i po klubu, izbornoj jedinici i
+    spolu.
+
+
+    Rezultate možeš sortirati klikom na zaglavlja kolona.
+
+
+    Kolona “Analiza” prikazuje ukupni rezultat izabrane analize za cijeli mandat
+    (npr. procenat prisustva zastupnika/ce na svim glasanjima u izabranom
+    mandatu).
   info2: >-
-    # Popis svih trenutno aktivnih delegata/kinja, sortiran abecednim redom.
+    # Lista svih trenutno aktivnih delegata/kinja koji/e odgovaraju tvom unosu.
+
+
+    Na vrhu kartice možeš klikom na željeni filter birati između različitih
+    analiza (demografija, prisustvo na glasanju, broj delegatskih pitanja i
+    inicijativa, neslaganje s klubom). Pretraživačem možeš tražiti delegata ili
+    delegatkinju, a listu možeš filtrirati i po klubu, izbornoj jedinici i
+    spolu.
+
+
+    Rezultate možeš sortirati klikom na zaglavlja kolona.
+
+
+    Kolona “Analiza” prikazuje ukupni rezultat izabrane analize za cijeli mandat
+    (npr. procenat prisustva delegata ili delegatkinje na svim glasanjima u
+    izabranom mandatu).

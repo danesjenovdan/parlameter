@@ -198,6 +198,7 @@ absent--m: Absent
 absent--plural: Absent
 no-term: No mandate
 no-data: No data
+not-in-group: Trenutno nima poslanske skupine
 unity: Unity
 everybody: All
 show: Show
@@ -410,6 +411,8 @@ deputy--m: Deputy
 deputy--f: Deputy
 member--m: Member
 member--f: Member
+deputy-member--m: Deputy member
+deputy-member--f: Deputy member
 number-of-seats: "Number of seats in the parliament"
 contact: "Contact"
 mp: MP

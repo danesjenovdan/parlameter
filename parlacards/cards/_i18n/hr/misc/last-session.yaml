@@ -1,32 +1,46 @@
 card:
-  title: Posljednja sjednica
+  title: Zadnja sjednica
   tfidf-title: Riječi koje označavaju sjednicu
   attendance-title: Prisutnost klubova na sjednici na glasanju
   votes-title: Glasanja
   info: >-
-    # Pregled statistika posljednje sjednice za koju su podaci objavljeni na web
-    stranicama Hrvatskog sabora [HS](http://www.sabor.hr/sjednica-sabora).
+    # Pregled analiza zadnje sjednice, za koju su podaci objavljeni na mrežnoj
+    stranici [Hrvatskog sabora](https://www.sabor.hr/).
 
 
-    # Riječi koje označavaju sjednicu
+    **RIJEČI KOJE SU OBILJEŽILE SJEDNICU**
 
 
-    Statistike se izračunavaju pomoću modela
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf). Korpus čine svi govori, a
-    dokument svi govori na sjednici.
+    Ispis 10 riječi i fraza koje su na sjednici korištene češće nego na svim
+    prethodnim sjednicama.
 
 
-    # Prisutnost klubova na sjednici na glasanju
+    Analizu provodimo prema statistici
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). Temelj analize
+    (korpus) čine svi govori u Hrvatskom saboru, a dokument čine svi govori na
+    analiziranoj sjednici.
 
 
-    Klubovi su razvrstavani prema postocima, na koliko su glasanja odabrane
-    sjednice bile njihove zastupnice.
+    **PRISUTNOST ZASTUPNIČKIH KLUBOVA NA GLASANJIMA SJEDNICE**
 
 
-    # Glasanja
+    Zastupničke klubove razvrstavamo prema postotku koji predstavlja zbroj
+    prisutnosti njihovih zastupnica i zastupnika na glasanjima odabrane
+    sjednice.
 
 
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
-    SUZDRŽANA) i broj zastupnica koje nisu glasale, te ispišu rezultati. Ruka
-    gore označava glasanja na kojima se nije glasalo individualno nego
-    podizanjem ruke.
+    **GLASANJA**
+
+
+    Za sva glasanja na pojedinoj sjednici prebrojimo sve glasove (ZA, PROTIV,
+    SUZDRŽANI) te broj zastupnica i zastupnika koji nisu glasali. Zatim ispišemo
+    rezultat prema najčešćem načinu na koji se glasalo ili izostanku.
+
+
+    Za točnost rezultata glasanja trudimo se najbolje što možemo. To, međutim,
+    posebno kod suzdržanih i odsutnih glasova ne možemo jamčiti. Prisutnost
+    zastupnica i zastupnika na sjednicama Hrvatskog sabora ne provjerava se pri
+    svakom glasanju, stoga se može dogoditi da je osoba bila suzdržana, a da
+    zbog nedostatka podataka u dokumentu s rezultatima glasanja, koji koristimo
+    kao izvor, na Parlamentru ta osoba bude prikazana kao odsutna (rezultat:
+    nije glasala ili nije glasao).

@@ -65,8 +65,27 @@ export const searchOgImage = {
 
 export const defaultOgImage = (comp, overrides = {}) => {
   const { template, cardState } = comp.$root.$options.contextData;
+
+  let cardTitle;
+  if (cardState?.cardTitle) {
+    cardTitle = cardState.cardTitle;
+  } else if (cardState?.cardTitleKey && this.$te(cardState?.cardTitleKey)) {
+    cardTitle = this.$t(cardState?.cardTitleKey);
+  } else {
+    cardTitle = this.$t('card.title');
+  }
+
+  const { titleSuffix, ...otherOverrides } = overrides;
+  if (titleSuffix) {
+    cardTitle = `${cardTitle} ${titleSuffix}`;
+  }
+
   const obj = {
-    title: cardState?.cardTitle ? cardState?.cardTitle : comp.$t('card.title'),
+    title: cardTitle,
   };
-  template.ogImage = getOgImageUrl(comp, 'generic', assign({}, obj, overrides));
+  template.ogImage = getOgImageUrl(
+    comp,
+    'generic',
+    assign({}, obj, otherOverrides),
+  );
 };

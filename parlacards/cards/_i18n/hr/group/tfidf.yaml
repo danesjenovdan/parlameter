@@ -1,11 +1,19 @@
 card:
   title: Riječi koje označavaju klub
   info: >-
-    # Ispis 10 riječi i fraza koje klub koristi češće od ostalih klubova u HS-u.
+    # Popis 10 riječi i izraza koje odabrani zastupnički klub koristi češće nego
+    ostali zastupnički klubovi.
 
 
-    Analiza se provodi prema statistici
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Analizu provodimo pomoću [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+    statistike. Iz analize uklanjamo tzv. stop-riječi, odnosno one riječi koje
+    se pojavljuju vrlo često i stoga gube svoju reprezentativnost (npr. reći,
+    napisati, biti …), ili same po sebi ne nose nikakvo značenje (npr. Veznici,
+    pomoćne riječi…). Popis tih riječi dostupan je
+    [ovdje](https://github.com/danesjenovdan/parlameter/blob/dev/parladata/parlacards/lemmatizers/hr/stop_words.py).
 
 
-    Korpus čine svi govori, a dokument svi govori svih zastupnica u klubu.
+    Osnovu analize (korpus) čine svi govori svih zastupnica i zastupnika, a
+    dokument predstavljaju svi govori članica i članova tog zastupničkog kluba.
+    Zbog malog broja izgovorenih riječi i uklanjanja "stop riječi", kod nekih
+    zastupničkih klubova može se prikazati manje od 10 rezultata.

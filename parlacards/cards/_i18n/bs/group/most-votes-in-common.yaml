@@ -1,25 +1,22 @@
 card:
   title: Najčešće glasaju jednako
   info: >-
-    # Popis pet zastupnika koje najčešće glasaju jednako 'većinskom glasu
-    kluba'. Klasificirani su prema vrijednostima od najmanje do najveće. Što je
-    vrijednost manja, veće je slaganje u glasanju.
+    # Lista pet zastupnika/ca koji/e najčešće glasaju isto kao većina u
+    izabranom klubu.
 
 
-    Izračunava se euklidska udaljenost između rezultata glasanja kluba i
-    rezultata svih ostalih zastupnika (pri čemu se vrijednost glasa pretvori u
-    brojčane vrijednosti između -1 i 1).
+    Poredani/e su prema procentu podudaranja od najvećeg ka najmanjem.
 
 
-    Kad se izračuna 'udaljenost' između svih zastupnika, razvrstava ih se prema
-    rezultatu i prikazuje se prvih pet.
+    Za svako glasanje najprije izračunamo većinski glas kluba (ZA, PROTIV,
+    SUZDRŽANI, ODSUTNI), tj. onaj glas za koji se odlučilo najviše njegovih
+    članova i članica. Glasanja na kojima je cijeli klub odsutan izostavljamo iz
+    analize.
 
 
-    Brojčane vrijednosti glasova
-
-
-    * -1: protiv
-
-    * 0: suzdržan ili nije prisutan
-
-    * 1: za
+    Zatim izračunamo procenat podudaranja između rezultata glasanja kluba i
+    rezultata glasanja svih zastupnika i zastupnica ovog saziva doma PSBiH. To
+    uradimo tako što broj glasanja na kojima je pojedina osoba glasala isto kao
+    većina u klubu podijelimo s ukupnim brojem svih glasanja na kojima su bili
+    prisutni i osoba i barem jedan/na član/ica kluba. Ako takvih glasanja nema,
+    podudaranje je 0%.
