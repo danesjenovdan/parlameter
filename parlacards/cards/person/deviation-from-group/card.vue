@@ -5,6 +5,7 @@
     percent
     type="person"
     context="votings"
+    no-data-translation-key="not-in-group"
   />
 </template>
 
