@@ -6,7 +6,7 @@ from django.conf import settings
 from django.utils.translation import gettext as _
 from sentry_sdk import capture_message
 
-from parlacards.solr import shorten_highlighted_content, escape_solr_query
+from parlacards.solr import escape_solr_query, shorten_highlighted_content
 from parladata.models import AgendaItem, Law, Speech, Vote
 from parladata.update_utils import send_email
 from parlanotifications.models import Keyword
