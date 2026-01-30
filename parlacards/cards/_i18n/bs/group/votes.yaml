@@ -1,12 +1,24 @@
 card:
   title: Glasanja
   info: >-
-    # Pregled svih glasanja na sjednici.
+    # Pregled svih glasanja i većinskog glasa izabranog kluba.
 
 
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi ( ZA, PROTIV,
-    SUZDRŽANA) i broj zastupnika koji nisu glasali te se ispišu rezultati.
+    Za svako glasanje na sjednici prebrojimo sve glasove (ZA, PROTIV, SUZDRŽANI)
+    te broj zastupnika i zastupnica koji nisu glasali. Na osnovu najčešćeg glasa
+    ili odsustva ispišemo rezultat.
 
 
-    Podaci o glasanju preuzimaju se sa web stranica Parlamenta BiH [Parlament
-    BiH](http://www.izbori.ba/rezultati_izbora?resId=25&langId=1#/2/1/515/0/0/0).
+    Pretraživačem možeš tražiti po naslovu glasanja.
+
+
+    Skup glasanja preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).
+
+
+    Za tačnost rezultata glasanja brinemo se najbolje što možemo, ali je,
+    posebno kod suzdržanih i odsutnih glasova, ne možemo garantovati. Prisustvo
+    zastupnika i zastupnica na sjednicama PSBiH ne provjerava se pri svakom
+    glasanju, pa se može desiti da je osoba bila suzdržana, ali je, zbog
+    nedostatka podataka u dokumentu s rezultatima glasanja (koji koristimo kao
+    izvor), na Parlametru ta osoba prikazana kao odsutna (rezultat: nije
+    glasao/la).

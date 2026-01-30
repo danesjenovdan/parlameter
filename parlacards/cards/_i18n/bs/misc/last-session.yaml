@@ -1,65 +1,60 @@
 card:
-  title: Posljednja sjednica
+  title: Posljednja sjednica Predstavničkog doma
+  title2: Posljednja sjednica Doma naroda
   tfidf-title: Riječi koje označavaju sjednicu
   attendance-title: Prisutnost klubova na sjednici na glasanju
   votes-title: Glasanja
   info: >-
-    # Pregled statistike za posljednju održanu sjednicu Predstavničkog doma Parlamentarne
-    skupštine BiH, za koju su podaci objavljeni na zvaničnoj internet-stranici Parlamentarne
-    skupštine BiH.
+    # Pregled analiza posljednje sjednice Predstavničkog doma za koju su podaci
+    objavljeni na *web* stranici [PSBiH](http://www.parlament.ba).
 
 
-    # Riječi koje označavaju sjednicu
+    **PRISUTNOST KLUBOVA NA GLASANJIMA**
 
 
-    Svi govori sa sjednice preuzimaju se sa zvanične internet-stranice Parlamentarne
-    skupštine BiH, a statistike se izračunavaju pomoću modela [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Klubove razvrstavamo prema procentu, koji predstavlja zbir prisustva
+    njihovih članova i članica na glasanju tokom izabrane sjednice.
 
 
-    # Prisutnost klubova na sjednici tokom glasanja
+    **GLASANJA**
 
 
-    Klubovi su razvrstani prema postocima koji pokazuju na koliko su glasanja njihovi/e
-    poslanici/e bili/e prisutni/e.
+    Za sva glasanja na pojedinačnoj sjednici prebrojimo sve glasove (ZA, PROTIV,
+    SUZDRŽANI, NEMA) te broj zastupnika/ca koji/e nisu glasali/e. Zatim ispišemo
+    rezultat prema najčešćem glasu ili odsustvu.
 
 
-    # Glasanja
-
-
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (“za”, “protiv”,
-    “suzdržan”) i broj poslanika/ca koji/e nisu glasali/e – te se ispišu rezultati.
-    Ruka gore označava glasanja na kojima se glasalo podizanjem ruke, a ne individualno.
-    (Naime, pored individualnog glasanja, kod kojeg se čitaju imena i prezimena poslanika/ca
-    poimenice, koristi se i glasanje podizanjem ruke kod kojeg se ne zapisuje poimenice
-    ko je digao ruku – odnosno glasao “za” – nego se samo pribilježi da je poslanik/ca
-    glasao “za”).
+    Za tačnost rezultata glasanja brinemo se najbolje što možemo, ali je,
+    posebno kod suzdržanih i odsutnih glasova, ne možemo garantovati. Prisustvo
+    zastupnica/ka na sjednicama PD PSBiH ne provjerava se pri svakom glasanju,
+    pa se može desiti da je osoba bila suzdržana tokom glasanja, ali je, zbog
+    nedostatka podataka u dokumentu s rezultatima glasanja (koji koristimo kao
+    izvor), na Parlametru ta osoba prikazana kao odsutna (rezultat: nije
+    glasao/la).
   info2: >-
-    # Pregled statistike za posljednju održanu sjednicu Doma naroda Parlamentarne
-    skupštine BiH, za koju su podaci objavljeni na zvaničnoj internet-stranici Parlamentarne
-    skupštine BiH.
+    # Pregled analiza posljednje sjednice Doma naroda za koju su podaci
+    objavljeni na *web* stranici [PSBiH](http://www.parlament.ba).
 
 
-    # Riječi koje označavaju sjednicu
+    **PRISUTNOST KLUBOVA NA GLASANJIMA**
 
 
-    Svi govori sa sjednice preuzimaju se sa zvanične internet-stranice Parlamentarne
-    skupštine BiH, a statistike se izračunavaju pomoću modela [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Klubove razvrstavamo prema procentu, koji predstavlja zbir prisustva
+    njihovih članova i članica na glasanju tokom izabrane sjednice.
 
 
-    # Prisutnost klubova na sjednici tokom glasanja
+    **GLASANJA**
 
 
-    Klubovi su razvrstani prema postocima koji pokazuju na koliko su glasanja njihovi/e
-    delegati/kinje bili/e prisutni/e.
+    Za sva glasanja na pojedinačnoj sjednici prebrojimo sve glasove (ZA, PROTIV,
+    SUZDRŽANI, NEMA) te broj delegata/kinja koji/e nisu glasali/e. Zatim
+    ispišemo rezultat prema najčešćem glasu ili odsustvu.
 
 
-    # Glasanja
-
-
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (“za”, “protiv”,
-    “suzdržan”) i broj delegata/kinja koji/e nisu glasali/e – te se ispišu rezultati.
-    Ruka gore označava glasanja na kojima se glasalo podizanjem ruke, a ne individualno.
-    (Naime, pored individualnog glasanja, kod kojeg se čitaju imena i prezimena delegata/kinja
-    poimenice, koristi se i glasanje podizanjem ruke, kod kojeg se ne zapisuje poimenice
-    ko je digao ruku – odnosno glasao “za” – nego se samo pribilježi da je delegat/kinja
-    glasao “za”).
+    Za tačnost rezultata glasanja brinemo se najbolje što možemo, ali je,
+    posebno kod suzdržanih i odsutnih glasova, ne možemo garantovati. Prisustvo
+    delegata/kinja na sjednicama DN PSBiH ne provjerava se pri svakom glasanju,
+    pa se može desiti da je osoba bila suzdržana tokom glasanja, ali je, zbog
+    nedostatka podataka u dokumentu s rezultatima glasanja (koji koristimo kao
+    izvor), na Parlametru ta osoba prikazana kao odsutna (rezultat: nije
+    glasao/la).
