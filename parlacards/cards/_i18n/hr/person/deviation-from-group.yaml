@@ -1,14 +1,20 @@
 card:
-  title: Neslaganje s klubom
+  title: Nepodudarnost sa zastupničkim klubom
   info: >-
-    # Odstupanje od većinskog glasa vlastitog kluba u odnosu na prosječnu i
-    najveću vrijednost.
+    # Odstupanje zastupnice ili zastupnika od većinskog glasa vlastitog
+    zastupničkog kluba u usporedbi s prosječnom i najvećom vrijednošću.
 
 
-    Za sva glasanja izračuna se većinski glas za svaki klub. Većinski glas je
-    opcija za koju se odlučio najveći broj zastupnica jednog kluba.
+    Za sva glasanja prvo izračunavamo većinski glas svakog zastupničkog kluba.
+    To je onaj glas (ZA, PROTIV, SUZDRŽANI, ODSUTNI) za koji se odlučila većina
+    njegovih zastupnica i zastupnika.
 
 
-    Za svaku zastupnicu traži se klub kojem pripada i izračuna se postotak
-    slaganja glasova u razdoblju članstva u klubu. Iz svih izračuna su
-    izostavljene zastupnice koje nisu bile prisutne na glasanju.
+    Zatim za svaku zastupnicu ili zastupnika utvrđujemo kojem zastupničkom klubu
+    trenutno pripada. Postotak nepodudarnosti izračunavamo tako da broj glasanja
+    na kojima je osoba glasala drugačije od većinskog glasa, dijelimo s ukupnim
+    brojem svih glasanja. Što je prikazani postotak veći, to je odstupanje
+    zastupnice ili zastupnika od vlastitog zastupničkog kluba veće.
+
+
+    Rezultat prikazujemo zajedno s prosječnom i najvećom vrijednošću.

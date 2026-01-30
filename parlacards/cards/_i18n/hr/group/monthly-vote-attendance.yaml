@@ -1,9 +1,14 @@
 card:
   title: Prisutnost na glasanjima kroz vrijeme
   info: >-
-    # Prisutnost kluba na glasanju na sjednicama HS-a tijekom vremena.
+    # Prisutnost odabranog zastupničkog kluba na glasanjima na plenarnim
+    sjednicama Hrvatskog sabora kroz vrijeme.
 
 
-    Uzima se broj glasanja na kojima bi u odabranom mjesecu trebale biti
-    prisutne zastupnice kluba i u postocima se prikazuje na koliko su od svih
-    glasanja bile.
+    Za svaki mjesec posebno prebrojimo sve glasove svih članica i članova
+    odabranog zastupničkog kluba, a zatim taj broj podijelimo s ukupnim brojem
+    glasova koje je klub u tom mjesecu mogao dati. Rezultat izrazimo u postocima
+    i prikažemo na grafu.
+
+
+    Podatke dobivamo s internetske stranice Hrvatskog sabora.
