@@ -198,6 +198,7 @@ absent--m: Odsutan
 absent--plural: Odsutni
 no-term: Bez mandata
 no-data: Bez podataka
+not-in-group: Trenutno nima poslanske skupine
 unity: Jedinstvenost
 everybody: Svi
 show: Prikaži
@@ -402,6 +403,8 @@ deputy--m: Potpredsjednik
 deputy--f: Potpredsjednica
 member--m: Član
 member--f: Članica
+deputy-member--m: Nadomestni član
+deputy-member--f: Nadomestna članica
 number-of-seats: "Broj zastupničkih mjesta"
 contact: "Kontakt"
 mp: Zastupnica
@@ -438,7 +441,7 @@ analysis-texts--party:
       sazivu HS-a. Podaci se preuzimaju s web stranice sabor. hr.
   number_of_amendments:
     label: Br. podnesenih amandmana
-    titleSuffix: Prema rezultatima analize br. podnesenih amandmana
+    titleSuffix: " prema rezultatima analize br. podnesenih amandmana"
     explanation: ""
   group_unity:
     label: Ujedinjenost glasanja

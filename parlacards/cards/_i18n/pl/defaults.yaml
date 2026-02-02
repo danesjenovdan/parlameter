@@ -198,6 +198,7 @@ absent--m: Nieobecny
 absent--plural: Nieobecni
 no-term: Bez mandatu
 no-data: Brez podatka
+not-in-group: Trenutno nima poslanske skupine
 unity: Enotnost
 everybody: Wszystko
 show: Pokaż
@@ -411,6 +412,8 @@ deputy--m: Podpredsednik
 deputy--f: Podpredsednica
 member--m: Član
 member--f: Članica
+deputy-member--m: Nadomestni član
+deputy-member--f: Nadomestna članica
 number-of-seats: "Liczba miejsc w parlamencie"
 contact: "Kontakt"
 mp: Poseł/Posłanka

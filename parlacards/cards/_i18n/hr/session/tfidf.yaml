@@ -1,12 +1,18 @@
 card:
   title: Riječi koje označavaju sjednicu
   info: >-
-    # Ispis 10 riječi i fraza koje su na sjednici korištene češće nego na svim
-    drugim sjednicama.
+    # Izpis 10 besed in besednih zvez, ki so bile na seji uporabljene pogosteje
+    kot na vseh drugih sejah.
 
 
-    Analiza se provodi prema statistici
-    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
+    Analizu provodimo prema statistici
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). Iz analize uklanjamo
+    tzv. "stop riječi", odnosno riječi koje se pojavljuju vrlo često i stoga
+    gube svoju reprezentativnost (npr. riječi, napisati, biti…) ili riječi koje
+    same po sebi nemaju značenje (npr. veznici, pomoćne riječi…). Popis tih
+    riječi dostupan je
+    [ovdje](https://github.com/danesjenovdan/parlameter/blob/dev/parladata/parlacards/lemmatizers/hr/stop_words.py).
 
 
-    Korpus čine svi govori, a dokument svi govori na sjednici.
+    Temelj analize (korpus) čine svi govori u Hrvatskom saboru, a dokument čine
+    svi govori na analiziranoj sjednici.

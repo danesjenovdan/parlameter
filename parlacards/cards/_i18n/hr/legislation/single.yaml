@@ -1,9 +1,16 @@
 card:
   title: Zakon
   info: >-
-    # Sažetak zakona/akata i rezultati svih s njim povezanih glasanja.
+    # Pregled odabranog zakona ili akta te svih s njim povezanih glasanja i
+    dokumenata.
 
 
-    Sa stranice [www.sabor.hr](http://www.sabor.hr/hr) preuzimaju se sva
-    glasanja vezana za istu PZ/PZE oznaku. Glasanja s istom PZ/PZE oznakom
-    spajamo sa zakonom ili aktom kojem oznaka pripada.
+    Na vrhu kartice prikazan je status zakona ili akta.
+
+
+    Prvi kartični odjeljak omogućuje pregled svih glasanja povezanih s njim,
+    uključujući konačni ishod. Drugi kartični odjeljak prikazuje sve prikupljene
+    dokumente vezane uz zakonodavni postupak.
+
+
+    Podatke dobivamo s internetske stranice Hrvatskog sabora.
