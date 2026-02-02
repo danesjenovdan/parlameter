@@ -1,10 +1,11 @@
 card:
   title: Prisutnost na glasanjima kroz vrijeme
   info: >-
-    # Prisutnost zastupnice na glasanju na sjednicama HS-a tijekom vremena.
+    # Prisutnost zastupnice ili zastupnika na glasanjima na plenarnim sjednicama
+    Hrvatskog sabora kroz vrijeme.
 
 
-    Svaki mjesec prebroje se svi glasovi zastupnice i taj broj se podijeli sa
-    zbrojem svih glasanja sa sjednica na kojima se moralo glasati taj mjesec.
-    Ako zastupnica u odabranom mjesecu nije imala mandat, prikazuje se u kolikom
-    postotku glasanja nije imala pravo glasati.
+    Za svaki mjesec prebrojimo sve glasove zastupnice ili zastupnika. Taj broj
+    dijelimo s ukupnim brojem glasanja na kojima je trebalo glasati u tom
+    mjesecu. Ako osoba u odabranom mjesecu nije imala mandat, za to razdoblje
+    posebno prikazujemo udio glasanja na kojima nije imala pravo glasa.

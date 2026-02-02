@@ -1,12 +1,44 @@
 card:
   title: Glasanja
   info: >-
-    # Pregled svih glasanja na sjednici.
+    # Pregled svih glasanja zastupnika/ce u ovom mandatu.
 
 
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
-    SUZDRŽANA) i broj zastupnika koji nisu glasali i ispišu rezultati.
+    Prikazujemo glasanja u trenutnom mandatu zajedno sa zvaničnim ishodom i
+    ličnim glasom zastupnika/ce.
 
 
-    Zbirka glasanja preuzima se s web stranica Parlamenta BiH [Parlament
-    BiH](http://parlament.ba/session/Read?ConvernerId=1).
+    Pretraživačem možeš tražiti po naslovu glasanja, a filterima ograničiti
+    prikaz prema ličnom glasu zastupnika/ce (ZA, PROTIV, SUZDRŽAN, NEMA).
+
+
+    Skup glasanja preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).
+
+
+    Za tačnost rezultata glasanja brinemo se najbolje što možemo, ali je,
+    posebno kod suzdržanih i odsutnih glasova, ne možemo garantovati. Prisustvo
+    zastupnika/ca na sjednicama PSBiH ne provjerava se pri svakom glasanju, pa
+    se može desiti da je osoba bila suzdržana, ali je, zbog nedostatka podataka
+    u dokumentu s rezultatima glasanja (koji koristimo kao izvor), na Parlametru
+    ta osoba prikazana kao odsutna (rezultat: nije glasao/la).
+  info2: >-
+    # Pregled svih glasanja delegata/kinja u ovom mandatu.
+
+
+    Prikazujemo glasanja u trenutnom mandatu zajedno sa zvaničnim ishodom i
+    ličnim glasom delegata/kinje.
+
+
+    Pretraživačem možeš tražiti po naslovu glasanja, a filterima ograničiti
+    prikaz prema ličnom glasu delegata/kinje (ZA, PROTIV, SUZDRŽAN, NEMA).
+
+
+    Skup glasanja preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).
+
+
+    Za tačnost rezultata glasanja brinemo se najbolje što možemo, ali je,
+    posebno kod suzdržanih i odsutnih glasova, ne možemo garantovati. Prisustvo
+    delegata/kinja na sjednicama PSBiH ne provjerava se pri svakom glasanju, pa
+    se može desiti da je osoba bila suzdržana, ali je, zbog nedostatka podataka
+    u dokumentu s rezultatima glasanja (koji koristimo kao izvor), na Parlametru
+    ta osoba prikazana kao odsutna (rezultat: nije glasao/la).

@@ -1,36 +1,26 @@
 card:
   title: Glasanja
   info: >-
-    # Pregled svih glasanja na sjednici
+    # Pregled svih glasanja održanih na odabranoj sjednici.
 
 
-    Za sva glasanja na pojedinoj sjednici prebroje se svi glasovi (ZA, PROTIV,
-    SUZDRŽANA) i broj zastupnica koje nisu glasale te ispišu rezultati.
+    Za sva glasanja na pojedinoj sjednici prebrojimo sve glasove (ZA, PROTIV,
+    SUZDRŽANI) te broj zastupnica i zastupnika koji nisu glasali. Zatim ispišemo
+    rezultat prema najčešćem načinu na koji se glasalo ili izostanku.
 
 
-    Zbirka glasanja preuzima se sa stranice [HS](http://www.sabor.hr/hr).
+    Pomoću tražilice možete pretraživati po naslovu glasanja, a pomoću filtera
+    možete odabrati prikaz samo donesenih ili samo odbijenih glasanja.
 
 
-    Neočekivana glasanja
+    Skup glasanja dobivamo s mrežne stranice [Hrvatskog
+    sabora](https://www.sabor.hr/).
 
 
-    Za označavanje neočekivanih rezultata koristi se probabilistička metoda
-    analize glavnih komponenti, [kako je implementirana u knjižicama
-    scikit-learn](http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
-    i opisana u [M. Tipping and C. Bishop, Probabilistic Principal Component
-    Analysis, Journal of the Royal Statistical Society, Series B, 61, Part 3,
-    pp. 611-622](http://www.miketipping.com/papers/met-mppca.pdf).
-
-
-    Sva glasanja pretvaraju se u četverodimenzionalne vektore, gdje svaka
-    komponenta predstavlja broj danih glasova određene vrijednosti (ZA, PROTIV,
-    ODSUTNA, SUZDRŽANA). PCA model prilagođava se matrici, a funkcijom
-    [score_samples](https://github.com/scikit-learn/scikit-learn/blob/14031f6/sklearn/decomposition/pca.py#L485)
-    dobiva se "log-likelihood" svakog glasanja u modelu. Model funkcionira tako
-    da prilikom adaptacije "log-likelihood" vrijednost nastoji maksimizirati za
-    što je moguće više glasanja. Kad se dobiju sve "log-likelihood" vrijednosti,
-    rangiraju se od najmanje do najveće i koristi se četvrtina svih glasanja
-    koji modelu najmanje odgovaraju. Kako u usporedbi s modelom ti glasovi
-    najviše odstupaju, kao takvi su najviše "neočekivani". U kartici su označeni
-    simbolom munje. Ruka gore označava glasanja na kojima se nije glasalo
-    individualno nego podizanjem ruke.
+    Za točnost rezultata glasanja trudimo se najbolje što možemo, no posebno kod
+    suzdržanih i odsutnih glasova to ne možemo jamčiti. Prisutnost zastupnica i
+    zastupnika na sjednicama Hrvatskog sabora ne provjerava se pri svakom
+    glasanju, stoga se može dogoditi da je osoba bila suzdržana, ali da zbog
+    nedostatka podataka u dokumentu s rezultatima glasanja, koji koristimo kao
+    izvor, na Parlametru ta osoba bude prikazana kao odsutna (rezultat: nije
+    glasala ili nije glasao).

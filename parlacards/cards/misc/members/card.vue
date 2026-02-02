@@ -245,7 +245,6 @@ export default {
         cardState?.showDemographicsEducation !== 'false',
       showDemographicsMandates: cardState?.showDemographicsMandates !== 'false',
       showDemographicsGroup: cardState?.showDemographicsGroup !== 'false',
-      cardTitleOverride: cardState?.cardTitle,
       // pagination
       membersPerPage,
       count,
@@ -440,9 +439,7 @@ export default {
     headerConfig() {
       return defaultHeaderConfig(this, {
         heading: this.cardData?.data?.mandate?.description,
-        title: `${this.cardTitleOverride || this.$t('card.title')} ${
-          this.currentAnalysisData?.titleSuffix
-        }`,
+        titleSuffix: this.currentAnalysisData?.titleSuffix,
       });
     },
     selectedGroupIds() {

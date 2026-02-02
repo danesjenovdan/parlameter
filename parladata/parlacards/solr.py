@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import datetime, timedelta
 from math import ceil, floor
 
@@ -11,6 +12,25 @@ from parladata.models.common import Mandate
 from parladata.models.legislation import Law
 from parladata.models.speech import Speech
 from parladata.models.vote import Vote
+
+
+def escape_solr_query(query):
+    """Wrap query in quotes for phrase search to avoid special character issues.
+
+    Special chars in Solr: + - && || ! ( ) { } [ ] ^ " ~ * ? : \\ /
+    """
+    # If query already has quotes, return as is
+    if query.startswith('"') and query.endswith('"'):
+        return query
+
+    # Check if query contains special Solr characters
+    special_chars = r"[:\+\-\&\|\!\(\)\{\}\[\]\^~\*\?\\\/]"
+    if re.search(special_chars, query):
+        # Escape any quotes in the query and wrap in quotes
+        escaped_query = query.replace('"', '\\"')
+        return f'"{escaped_query}"'
+
+    return query
 
 
 def commit_to_solr(commander, output):
@@ -104,6 +124,10 @@ def solr_select(
                 "numFound": 0,
             }
         }
+
+    # Wrap query in quotes if it contains special Solr characters (not for wildcards)
+    if text_query != "*" and text_query != "*:*":
+        text_query = escape_solr_query(text_query)
 
     q_params = f"{text_query} AND type:{document_type}"
     if people_ids:

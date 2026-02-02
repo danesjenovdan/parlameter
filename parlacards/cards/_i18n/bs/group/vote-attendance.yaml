@@ -1,9 +1,14 @@
 card:
-  title: Prisutnost na glasanjima
+  title: Prisustvo na glasanju sjednica PSBiH
   info: >-
-    # Prisutnost kluba na glasanjima na sjednicama Parlamenta BiH u odnosu na
-    prosječnu i maksimalnu vrijednost.
+    # Prisustvo izabranog kluba na glasanju u poređenju s prosjekom i najvećom
+    vrijednošću.
 
 
-    Broj glasanja, ako je klub prisutan na sjednici, podijeli se s brojem svih
-    glasanja na sjednici i normalizira (min 1 - max 100).
+    Prebrojimo sve glasove koje su dali svi članovi i članice izabranog kluba, a
+    zatim taj broj podijelimo s brojem svih glasova koje je klub mogao dati.
+    Rezultat izražavamo u procentima i upoređujemo s prosjekom i najvećom
+    vrijednošću.
+
+
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).
