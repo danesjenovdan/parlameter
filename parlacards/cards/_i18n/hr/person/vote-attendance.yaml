@@ -1,9 +1,14 @@
 card:
   title: Prisutnost na glasanjima
   info: >-
-    # Prisutnost na glasanjima u odnosu na prosječnu i maksimalnu vrijednost.
+    # Prisutnost pojedine zastupnice ili zastupnika na glasanjima u usporedbi s
+    prosjekom i s prisutnosti najprisutnije zastupnice ili zastupnika.
 
 
-    Prebroje se svi glasovi zastupnice i taj broj se podijeli sa zbrojem svih
-    glasanja sa sjednica na kojima se moralo glasati. Rezultat se ispiše skupa s
-    prosječnom i maksimalnom vrijednošću.
+    Prebrojimo sve glasove koje je dala zastupnica ili zastupnik i taj broj
+    dijelimo s ukupnim brojem glasanja na kojima je trebalo glasati. Rezultat
+    prikazujemo zajedno s prosječnom i najvišom vrijednošću.
+
+
+    Podatke dobivamo s mrežne stranice [Hrvatskog
+    sabora](https://www.sabor.hr/).

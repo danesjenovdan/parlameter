@@ -1,11 +1,14 @@
 card:
-  title: Popis zakona
+  title: Zakonodavstvo
   info: >-
-    # Popis svih zakona i akata o kojima su u jednom sazivu glasali na
-    sjednicama Hrvatskog sabora, a koje odgovaraju korisničkom izboru (naslov,
-    matično radno tijelo).
+    # Popis svih zakona i akata o kojima se glasalo na odabranoj sjednici.
 
 
-    Podaci o sjednicama preuzeti su s web stranica Hrvatskog sabora.
-    [Zakoni](http://edoc.sabor.hr/Akti.aspx)
-    [Akti](http://edoc.sabor.hr/Akti.aspx)
+    Pomoću tražilice možete pretraživati po naslovu, a klikom na željeni filter
+    možete odabrati prikaz samo zakona ili samo akata. Rezultate možete
+    razvrstati po nazivu, po identifikacijskoj oznaci saborskog akta, datumu ili
+    statusu (donesen, odbijen ili u proceduri).
+
+
+    Podatke dobivamo s mrežne stranice [Hrvatskog
+    sabora](https://www.sabor.hr/).

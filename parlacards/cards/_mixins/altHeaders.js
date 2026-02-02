@@ -1,6 +1,20 @@
 import { assign } from 'lodash-es';
 import sessionClassification from '@/_helpers/sessionClassification.js';
 
+function getCardTitle(comp) {
+  const { cardState } = comp.$root.$options.contextData;
+
+  let cardTitle;
+  if (cardState?.cardTitle) {
+    cardTitle = cardState.cardTitle;
+  } else if (cardState?.cardTitleKey && comp.$te(cardState?.cardTitleKey)) {
+    cardTitle = comp.$t(cardState?.cardTitleKey);
+  } else {
+    cardTitle = comp.$t('card.title');
+  }
+  return cardTitle;
+}
+
 export const personHeader = {
   computed: {
     headerConfig() {
@@ -13,7 +27,7 @@ export const personHeader = {
           ? `${person.group?.acronym} | ${this.$t('coalition')}`
           : person.group?.acronym,
         alternative: cardState?.altHeader,
-        title: this.$t('card.title'),
+        title: getCardTitle(this),
       };
     },
   },
@@ -32,7 +46,7 @@ export const partyHeader = {
           ? `${group.acronym} | ${this.$t('coalition')}`
           : group.acronym,
         alternative: cardState?.altHeader,
-        title: this.$t('card.title'),
+        title: getCardTitle(this),
       };
     },
   },
@@ -46,7 +60,7 @@ export const searchHeader = {
         circleIcon: 'og-search',
         heading: `"${cardState.text}"`,
         alternative: cardState?.altHeader,
-        title: this.$t('card.title'),
+        title: getCardTitle(this),
       };
     },
   },
@@ -66,7 +80,7 @@ export const sessionHeader = {
         heading: sessionName,
         subheading: session?.date,
         alternative: cardState?.altHeader,
-        title: this.$t('card.title'),
+        title: getCardTitle(this),
       };
     },
   },
@@ -74,24 +88,38 @@ export const sessionHeader = {
 
 export const defaultHeaderConfig = (comp, overrides = {}) => {
   const { cardState } = comp.$root.$options.contextData;
+
+  let cardTitle = getCardTitle(comp);
+  const { titleSuffix, ...otherOverrides } = overrides;
+  if (titleSuffix) {
+    cardTitle = `${cardTitle} ${titleSuffix}`;
+  }
+
   const headerConfig = {
     circleIcon: 'og-list',
     heading: '&nbsp;',
     subheading: '',
     alternative: cardState?.altHeader,
-    title: comp.$t('card.title'),
+    title: cardTitle,
   };
-  return assign({}, headerConfig, overrides);
+  return assign({}, headerConfig, otherOverrides);
 };
 
 export const defaultDynamicHeaderConfig = (comp, overrides = {}) => {
   const { cardState } = comp.$root.$options.contextData;
+
+  let cardTitle = getCardTitle(comp);
+  const { titleSuffix, ...otherOverrides } = overrides;
+  if (titleSuffix) {
+    cardTitle = `${cardTitle} ${titleSuffix}`;
+  }
+
   const headerConfig = {
     circleIcon: 'og-list',
     heading: '&nbsp;',
     subheading: '',
     alternative: cardState?.altHeader,
-    title: cardState?.cardTitle ? cardState?.cardTitle : comp.$t('card.title'),
+    title: cardTitle,
   };
-  return assign({}, headerConfig, overrides);
+  return assign({}, headerConfig, otherOverrides);
 };
