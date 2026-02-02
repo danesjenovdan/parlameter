@@ -1,18 +1,20 @@
 card:
   title: Neslaganje s klubom
   info: >-
-    # Popis svih zastupnika iz kluba koji su svrstani prema vrijednosti slaganja
-    s većinskim glasom kluba. Što je veća vrijednost, manje je slaganje.
+    # Lista članova/ica izabranog kluba poredana je prema tome koliko često
+    glasaju drugačije od većine u klubu. Što je vrijednost veća, to je
+    podudaranje manje.
 
 
-    Za svako glasanje izračuna se 'većinski glas kluba' kojem pojedini zastupnik
-    pripada. Zatim se za svakog člana izračunava postotak glasanja kada je
-    zastupnik glasao drugačije od većinskog glasa kluba kojem pripada. Rezultati
-    su razvrstani od najvećeg odstupanja prema najmanjem.
+    Za svako glasanje najprije izračunamo većinski glas izabranog kluba (ZA,
+    PROTIV, SUZDRŽANI, ODSUTNI), tj. onaj glas za koji se odlučilo najviše
+    njegovih članova i članica.
 
 
-    Izuzimaju se zastupnici sa vrijednosti "NISU", što znači da ako je većinski
-    glas kluba "NISU" (većina zastupnika kluba nije bila na glasanju) to
-    glasanje je isključeno iz analize. Ako klub ima više 'većinskih glasova
-    kluba' (dvije opcije imaju jednak najveći broj glasova unutar kluba),
-    uzimaju se obje opcije i uspoređuju s individualnim zastupnicima.
+    Zatim za svaku osobu izračunamo procenat nepodudaranja tako što broj
+    glasanja na kojima je glasala drugačije od većinskog glasa podijelimo s
+    ukupnim brojem svih glasanja. Što je procenat veći, to je veće odstupanje
+    člana/ice od vlastitog kluba.
+
+
+    Rezultati na listi poredani su od najvećeg odstupanja ka najmanjem.

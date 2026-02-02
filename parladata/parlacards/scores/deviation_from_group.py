@@ -88,7 +88,7 @@ def calculate_deviation_from_group(
 
     if not parliamentary_group:
         # voter membership without on_behalf_of means that this is unaffiliated member
-        return 0
+        return None
 
     relevant_people_ids = PersonMembership.objects.filter(
         Q(start_time__lte=timestamp) | Q(start_time__isnull=True),

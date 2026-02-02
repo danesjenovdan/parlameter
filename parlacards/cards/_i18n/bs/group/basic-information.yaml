@@ -1,9 +1,9 @@
 card:
   title: Osnovne informacije
   info: >-
-    # Pregled osnovnih informacija o klubu.
+    # Pregled osnovnih informacija o izabranom klubu.
 
 
-    Podaci su preuzeti s web stranica Parlamenta BiH (kontakt kluba, broj mjesta
-    u Parlamentu), linkovi na društvene mreže preuzeti su sa službenih stranica
-    političkih stranaka.
+    Sadržaj za ovu karticu preuzimamo s *web* stranice
+    [PSBiH](http://www.parlament.ba) i od službi za odnose s javnošću pojedinih
+    klubova, a nedostajuće podatke nalazimo na internetu.

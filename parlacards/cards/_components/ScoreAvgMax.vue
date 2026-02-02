@@ -5,20 +5,18 @@
       <div class="progress_flex">
         <div class="column-title progress_title">
           <div class="me_poslanec">
-            <div class="poslanec_title">
-              {{ getName }}
-            </div>
+            <div class="poslanec_title">{{ getName }}</div>
           </div>
           <div class="other_poslanec">
-            <div v-t="'average'" class="poslanec_title"></div>
+            <div class="poslanec_title">{{ $t('average') }}</div>
           </div>
           <div class="other_poslanec">
-            <div v-t="'maximum'" class="poslanec_title"></div>
+            <div class="poslanec_title">{{ $t('maximum') }}</div>
           </div>
         </div>
         <div class="column-bar progress_bar">
           <div class="me_poslanec">
-            <div class="progress smallbar">
+            <div v-if="hasScore" class="progress smallbar">
               <div
                 :aria-valuenow="getScore"
                 :style="getBarStyle('score')"
@@ -32,6 +30,9 @@
                   {{ formatNumberWithPrecision(getScore) }}
                 </div>
               </div>
+            </div>
+            <div v-else class="progress smallbar">
+              <div class="no-data">{{ noDataText }}</div>
             </div>
           </div>
           <div class="other_poslanec">
@@ -153,6 +154,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    noDataTranslationKey: {
+      type: String,
+      default: null,
+    },
   },
   computed: {
     getName() {
@@ -165,6 +170,23 @@ export default {
         return personHeader.computed.headerConfig.call(this);
       }
       return partyHeader.computed.headerConfig.call(this);
+    },
+    noDataText() {
+      const transKey = this.noDataTranslationKey || 'no-data';
+      let form =
+        this.type === 'person'
+          ? this.person.preferred_pronoun === 'she'
+            ? '--f'
+            : '--m'
+          : '--plural';
+      return this.$te(`${transKey}${form}`)
+        ? this.$t(`${transKey}${form}`)
+        : this.$te(transKey)
+          ? this.$t(transKey)
+          : transKey;
+    },
+    hasScore() {
+      return this.results?.score != null;
     },
     getScore() {
       return this.results?.score ?? 0;
@@ -253,5 +275,13 @@ export default {
   line-height: 30px;
   min-width: 70px;
   text-align: left;
+}
+.progress .no-data {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 20px;
 }
 </style>
