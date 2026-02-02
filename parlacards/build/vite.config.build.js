@@ -50,6 +50,7 @@ export default defineConfig(({ mode }) => {
     clearScreen: false,
     root,
     build: {
+      sourcemap: true,
       manifest: true,
       assetsDir: '',
       rollupOptions: {
