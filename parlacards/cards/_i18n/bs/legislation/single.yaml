@@ -1,9 +1,16 @@
 card:
   title: Zakon
   info: >-
-    # Sadržaj zakona/akata i rezultati svih s njim povezanih glasanja.
+    # Pregled izabranog zakona i svih glasanja i dokumenata povezanih s njim.
 
 
-    Sa stranice [http://www.parlament.ba](http://www.parlament.ba) preuzimaju se
-    sva glasanja vezana za istu PZ/PZE oznaku. Glasanja s istom PZ/PZE oznakom
-    spajamo sa zakonom ili aktom kojem oznaka pripada.
+    Na vrhu kartice prikazan je status zakona.
+
+
+    Prvi tab omogućava pregled svih glasanja koja su s njim povezana,
+    uključujući ishod. Drugi tab prikazuje sve prikupljene dokumente vezane za
+    zakonodavni postupak.
+
+
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba), a
+    analize s platforme Javna rasprava.

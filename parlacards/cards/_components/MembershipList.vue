@@ -67,10 +67,13 @@ export default {
   },
   methods: {
     formatRole(role) {
+      const transKey = role.toLowerCase().replaceAll(' ', '-');
       const form = this.person.preferred_pronoun === 'she' ? '--f' : '--m';
-      return this.$te(`${role}${form}`)
-        ? this.$t(`${role}${form}`)
-        : this.$t(role);
+      return this.$te(`${transKey}${form}`)
+        ? this.$t(`${transKey}${form}`)
+        : this.$te(transKey)
+          ? this.$t(transKey)
+          : role;
     },
   },
 };

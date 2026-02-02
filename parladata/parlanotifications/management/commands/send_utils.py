@@ -6,7 +6,7 @@ from django.conf import settings
 from django.utils.translation import gettext as _
 from sentry_sdk import capture_message
 
-from parlacards.solr import shorten_highlighted_content
+from parlacards.solr import escape_solr_query, shorten_highlighted_content
 from parladata.models import AgendaItem, Law, Speech, Vote
 from parladata.update_utils import send_email
 from parlanotifications.models import Keyword
@@ -20,6 +20,10 @@ def solr_select(
     fl = "speech_id"
     sort = "start_time desc"
     from_date = date_from.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    # Wrap query in quotes if it contains special Solr characters (not for wildcards)
+    if text_query != "*" and text_query != "*:*":
+        text_query = escape_solr_query(text_query)
 
     q_params = f"{text_query} AND type:{document_type}"
     q_params = f"{text_query}"

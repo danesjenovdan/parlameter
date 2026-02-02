@@ -1,14 +1,13 @@
 card:
   title: Zastupnička pitanja i inicijative
   info: >-
-    # Pregled zastupničkih pitanja na nivou kluba.
+    # Ispis svih zastupničkih pitanja i inicijativa članova/ica izabranog kluba
+    u ovom mandatu.
 
 
-    Sva pitanja zastupnika razvrstana su prema klubovima i moguće ih je
-    pretraživati prema imenu zastupnika koji ih je postavilo, prema tome kome su
-    pitanja upućena i prema vremenskom razdoblju. Omogućeno je pretraživanje i
-    prema naslovu pitanja.
+    Sva pitanja i inicijative razvrstamo po klubu, a uz to navedemo koji/e su ih
+    članovi/ice postavili/e te koja je bila tema.
 
 
-    Zastupnička pitanja preuzimaju se sa web stranice [Parlament
-    BiH](https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje).
+    Pitanja i inicijative preuzimamo s *web* stranice
+    [PSBiH](http://www.parlament.ba).

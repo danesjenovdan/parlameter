@@ -1,14 +1,17 @@
 card:
   title: Zastupnička pitanja i inicijative
+  title2: Delegatska pitanja i inicijative
   info: >-
-    # Prikaz svih zastupničkih pitanja i inicijativa koje je zastupnik/ca postavio
-    u aktuelnom sazivu Parlamentarne skupštine BiH.
+    # Ispis svih zastupničkih pitanja i inicijativa izabranog/e zastupnika/ce u
+    ovom mandatu.
 
 
-    Podaci se preuzimaju sa zvanične internet-stranice [Parlamentarne skupštine BiH](http://parlament.ba/oQuestion/GetORQuestions).
+    Pitanja i inicijative preuzimamo s *web* stranice
+    [PSBiH](http://www.parlament.ba).
   info2: >-
-    # Prikaz svih delegatskih pitanja i inicijativa koje je delegat/kinja postavio
-    u aktuelnom sazivu Parlamentarne skupštine BiH.
+    # Ispis svih delegatskih pitanja i inicijativa izabranog/e delegata/kinje u
+    ovom mandatu.
 
 
-    Podaci se preuzimaju sa zvanične internet-stranice [Parlamentarne skupštine BiH](http://parlament.ba/oQuestion/GetORQuestions).
+    Pitanja i inicijative preuzimamo s *web* stranice
+    [PSBiH](http://www.parlament.ba).

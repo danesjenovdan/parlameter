@@ -1,9 +1,11 @@
 card:
-  title: Br. zastupničkih pitanja i inicijativa
+  title: Broj zastupničkih pitanja i inicijativa
   info: >-
-    # Broj zastupničkih pitanja i inicijativa koje je zastupnica postavila u
-    jednom sazivu HS-a u odnosu na prosječnu i maksimalnu vrijednost.
+    # Broj zastupničkih pitanja i inicijativa zastupnice ili zastupnika u ovom
+    mandatu u usporedbi s prosječnim brojem svih zastupnika i zastupnica i s
+    brojem onog zastupnika ili zastupnice koji je imao najviše pitanja i
+    inicijativa.
 
 
-    Podaci su preuzeti sa stranice
-    [HS](http://edoc.sabor.hr/ZastupnickaPitanja.aspx).
+    Podatke dobivamo s mrežne stranice [Hrvatskog
+    sabora](https://www.sabor.hr/).

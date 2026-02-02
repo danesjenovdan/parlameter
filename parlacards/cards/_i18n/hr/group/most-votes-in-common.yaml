@@ -1,25 +1,20 @@
 card:
-  title: Najčešće glasaju jednako
+  title: Najčešće glasaju isto
   info: >-
-    # Popis pet zastupnica koje najčešće glasaju istovjetno 'većinskom glasu
-    kluba'. Klasificirane su prema vrijednostima od najmanje do najveće. Što je
-    vrijednost manja, veće je slaganje u glasanju.
+    # Popis pet zastupnica i zastupnika koji najčešće glasaju isto kao većina u
+    odabranom zastupničkom klubu. Razvrstani su prema postotku podudaranja, od
+    najvećeg prema najmanjem.
 
 
-    Izračunava se euklidska udaljenost između rezultata glasanja kluba i
-    rezultata svih ostalih zastupnica (pri čemu se vrijednost glasa pretvori u
-    brojčane vrijednosti između -1 i 1).
+    Za svako glasanje prvo izračunamo većinski glas zastupničkog kluba (ZA,
+    PROTIV, SUZDRŽANI, ODSUTNI), tj. onaj glas za koji se odlučio najveći broj
+    njegovih članica i članova. Glasanja u kojima je cijeli zastupnički klub
+    odsutan, uklanjamo iz analize.
 
 
-    Kad se izračuna 'udaljenosti' između svih zastupnica, razvrstava ih se prema
-    rezultatu i prikazuje se prvih pet.
-
-
-    Brojčane vrijednosti glasova
-
-
-    * -1: protiv
-
-    * 0: suzdržana ili nije prisutana
-
-    * 1: za
+    Zatim izračunamo postotak podudaranja između rezultata glasanja zastupničkog
+    kluba i rezultata svih zastupnica i zastupnika ovog saziva Hrvatskog sabora.
+    To radimo tako da broj glasanja u kojima je pojedina osoba glasala isto kao
+    većina u klubu, podijelimo s ukupnim brojem svih glasanja na kojima su bila
+    prisutna i ta osoba i barem jedna članica ili član kluba. Ako takvih
+    glasanja nema, podudaranje iznosi 0%.

@@ -1,9 +1,10 @@
 card:
   title: Broj izgovorenih riječi
   info: >-
-    # Broj riječi koje je zastupnica izgovorila u svim svojim govorima u HS-u u
-    odnosu na prosječnu i maksimalnu vrijednost.
+    # Broj izgovorenih riječi zastupnice ili zastupnika u svim dosadašnjim
+    govorima u ovom mandatu u usporedbi s prosječnom i najvećom vrijednošću.
 
 
-    Zbrajaju se riječi u govorima zastupnice preuzetima iz transkripata
-    objavljenih na [HS](http://edoc.sabor.hr/Fonogrami.aspx).
+    Prebrojimo riječi u govorima zastupnice ili zastupnika koje pronađemo u
+    transkriptima na mrežnoj stranici Hrvatskog sabora. Rezultat prikazujemo
+    zajedno s prosječnom i najvećom vrijednošću.

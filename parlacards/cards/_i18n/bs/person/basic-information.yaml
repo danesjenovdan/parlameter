@@ -1,8 +1,16 @@
 card:
   title: Osnovne informacije
   info: >-
-    # Pregled osnovnih informacija o parlamentarcu/ki.
+    # Pregled osnovnih informacija o pojedinačnom/j zastupniku/ci.
 
 
-    Podaci su preuzeti sa zvaničnih internet-stranica [Parlamentarne skupštine BiH](http://www.parlament.ba/) i [CIK-a](https://cik.ba).
-    Ukoliko ove stranice ne nude sve potrebne podatke, oni su prikupljeni iz drugih izvora te potom provjereni.
+    Sadržaj za ovu karticu preuzimamo s *web* stranice
+    [PSBiH](http://www.parlament.ba) i od službi za odnose s javnošću pojedinih
+    klubova, a nedostajuće podatke nalazimo na internetu.
+  info2: >-
+    # Pregled osnovnih informacija o pojedinačnom delegatu/kinji.
+
+
+    Sadržaj za ovu karticu preuzimamo s *web* stranice
+    [PSBiH](http://www.parlament.ba) i od službi za odnose s javnošću pojedinih
+    delegatskih klubova, a nedostajuće podatke nalazimo na internetu.
