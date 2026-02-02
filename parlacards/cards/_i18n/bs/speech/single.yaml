@@ -1,6 +1,13 @@
 card:
   title: Govor
   info: >-
-    Stenogrami sjednica koji se objavljuju na stranici [Parlament
-    BiH](http://www.parlament.ba), mašinski se raščlanjuju u pojedinačne govorne
-    nastupe. Ova kartica predstavlja jedan govor.
+    # Transkript pojedinačnog govora parlamentarca/ke na izabranoj sjednici.
+
+
+    Transkript sjednice, koji je u obliku HTML dokumenta objavljen na *web*
+    stranici [PSBiH](http://www.parlament.ba), automatski dijelimo na
+    pojedinačne govorne nastupe i u izvornom redoslijedu spajamo u karticu
+    “Transkript”.
+
+
+    To je kartica koja predstavlja jedan govor.

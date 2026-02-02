@@ -1,12 +1,19 @@
 card:
   title: Riječi koje označavaju klub
   info: >-
-    # Ispis 10 riječi i fraza koje klub koristi češće od ostalih klubova u
-    Parlamentu.
+    # Ispis deset riječi i fraza koje izabrani klub koristi češće nego ostali
+    klubovi.
 
 
-    Analiza se provodi prema statistici
-    [tf-idf](https://en.wikipedia.org/wiki/Tf-idf).
+    Analizu provodimo pomoću statistike
+    [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). Iz analize uklanjamo
+    tzv. *stopwords*, tj. riječi koje se pojavljuju često i zbog toga gube
+    reprezentativnost (npr. “reći”, “napisati”, “suština”…) ili same po sebi
+    nemaju značenje (npr. veznici, poštapalice …). Lista tih riječi dostupna je
+    [ovdje](https://github.com/danesjenovdan/parlameter/blob/dev/parladata/parlacards/lemmatizers/hr/stop_words.py).
 
 
-    Korpus čine svi govori, a dokument svi govori svih zastupnika u klubu.
+    Osnovu analize (korpus) čine svi govori svih zastupnika/ca, a karticu svi
+    govori članova i članica ovog kluba. Zbog malog broja izgovorenih riječi i
+    uklanjanja *stopwords*, kod nekih se zastupničkih grupa može prikazati manje
+    od deset rezultata.

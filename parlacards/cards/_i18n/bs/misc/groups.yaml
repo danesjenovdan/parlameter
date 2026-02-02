@@ -1,6 +1,47 @@
 card:
   title: Popis klubova
   info: >-
-    Broj zastupnika/ca u klubovima zastupnika u Predstavničkom domu PSBiH prema članstvu u političkim strankama.
-  info2: >-
-    Broj delegata/kinja prema entitetu na čijem su teritoriju izabrani.
+    # Trenutno aktivni klubovi.
+
+
+    Pregled rada trenutno aktivnih klubova u ovom mandatu. Na vrhu kartice,
+    klikom na pojedinačni tab, možeš birati između različitih analiza.
+
+
+    **Broj mjesta**
+
+
+    Prikaz broja zastupnika/ca u pojedinačnoj zastupničkoj grupi.
+
+
+    **Prisutnost na glasanjima**
+
+
+    Lista zastupničkih grupa prema prisutnosti na glasanju.
+
+
+    Prosječna prisutnost članova i članica pojedine zastupničke grupe na svim
+    glasanjima u ovom mandatu.
+
+
+    **Broj zastupničkih pitanja i inicijativa**
+
+
+    Lista zastupničkih grupa prema broju postavljenih zastupničkih pitanja i
+    inicijativa.
+
+
+    Zbir svih zastupničkih pitanja i inicijativa koje su podnijeli/e članovi/ice
+    pojedine zastupničke grupe u ovom mandatu.
+
+
+    **Broj podnesenih amandmana**
+
+
+    Popis klubova s obzirom na rezultate analize po broju uloženih amandmana.
+
+
+    **Ujedinjenost glasanja**
+
+
+    Popis klubova s obzirom na ujedinjenost glasanja.

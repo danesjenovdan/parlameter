@@ -1,26 +1,26 @@
 card:
   title: Najčešće glasaju jednako
   info: >-
-    # Popis pet zastupnika koje najčešće glasaju jednako kao i odabrani
-    zastupnik. Zastupnici se klasificiraju prema vrijednostima od najmanje do
-    najveće. Što je vrijednost manja, veće je slaganje u glasanju.
+    # Lista pet zastupnika/ca koji/e najčešće glasaju isto kao izabrani/a
+    zastupnik/ca.
 
 
-    Izračunava se [euklidska
-    udaljenost](https://en.wikipedia.org/wiki/Euclidean_distance) između
-    rezultata glasanja zastupnika i rezultata svih ostalih zastupnika (pri čemu
-    se vrijednost glasa pretvori u brojčane vrijednosti između -1 i 1).
+    Lista je sortirana prema procentu podudaranja od najvećeg ka najmanjem.
 
 
-    Kad se izračuna 'udaljenosti' između svih zastupnika, razvrstava ih se prema
-    rezultatu i prikazuje se prvih pet.
+    U analizu uključujemo samo ona glasanja na kojima su obje upoređivane osobe
+    bile prisutne i glasale (ZA, PROTIV, SUZDRŽANO). Procenat podudaranja
+    računamo tako što broj glasanja na kojima su obje osobe glasale isto
+    dijelimo s ukupnim brojem glasanja na kojima su obje osobe bile prisutne.
+  info2: >-
+    # Lista pet delegata/kinja koji/e najčešće glasaju isto kao izabrani
+    delegat/kinje.
 
 
-    Brojčane vrijednosti glasova
+    Lista je sortirana prema procentu podudaranja od najvećeg ka najmanjem.
 
 
-    * -1: protiv
-
-    * 0: suzdržan ili nije prisutan
-
-    * 1: za
+    U analizu uključujemo samo ona glasanja na kojima su obje upoređivane osobe
+    bile prisutne i glasale (ZA, PROTIV, SUZDRŽANO). Procenat podudaranja
+    računamo tako što broj glasanja na kojima su obje osobe glasale isto
+    dijelimo s ukupnim brojem glasanja na kojima su obje osobe bile prisutne.
