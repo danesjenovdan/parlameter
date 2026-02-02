@@ -1,4 +1,57 @@
 card:
-  title: Popis klubova
+  title: Popis zastupničkih klubova
   info: >-
-    # todo-misc/groups
+    # Trenutno aktivni zastupnički klubovi.
+
+
+    Pregled rada trenutno aktivnih zastupničkih klubova u ovom mandatu. Na vrhu
+    kartice možete klikom na pojedini karticu birati između različitih analiza.
+
+
+    **BROJ MJESTA**
+
+
+    Prikaz broja zastupnica i zastupnika u pojedinom zastupničkom klubu.
+
+
+    **PRISUTNOST NA GLASANJIMA**
+
+
+    **Popis zastupničkih klubova prema prisutnosti na glasanjima**
+
+
+    Prosječna prisutnost članica i članova pojedinog zastupničkog kluba na svim
+    glasanjima u ovom mandatu.
+
+
+    **BROJ ZASTUPNIČKIH PITANJA I INICIJATIVA**
+
+
+    **Popis zastupničkih klubova prema broju postavljenih zastupničkih pitanja i
+    inicijativa**
+
+
+    Zbroj svih zastupničkih pitanja i inicijativa koje su podnijele članice i
+    članovi pojedinog zastupničkog kluba u ovom mandatu.
+
+
+    **JEDINSTVENOST GLASANJA**
+
+
+    Analiza jedinstvenosti glasanja za svaki zastupnički klub. Što je prikazani
+    postotak veći, to su članice i članovi kluba glasali usklađenije na
+    glasanjima u ovom mandatu.
+
+
+    **RAZNOLIKOST RJEČNIKA**
+
+
+    **Popis zastupničkih klubova prema raznolikosti rječnika**
+
+
+    Usporedba koeficijenata raznolikosti rječnika među zastupničkim klubovima.
+    Viši rezultat znači raznovrsniji rječnik koji članice i članovi kluba
+    koriste u svojim govorima.
+
+
+    Podatke dobivamo s mrežne stranice Hrvatskog sabora.
