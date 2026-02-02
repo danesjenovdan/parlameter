@@ -1,7 +1,7 @@
 import glob
 import itertools
-import sys
 import os
+import sys
 from collections import Counter
 from pathlib import Path
 
@@ -85,6 +85,8 @@ def report_missing_keys(locales):
             # remove card.info2 key from the locale keys (only used for BiH)
             if "card.info2" in all_keys_by_file[locale_file_path]:
                 all_keys_by_file[locale_file_path].remove("card.info2")
+            if "card.title2" in all_keys_by_file[locale_file_path]:
+                all_keys_by_file[locale_file_path].remove("card.title2")
 
     ret = False
     missing_keys_count = Counter()
@@ -98,6 +100,8 @@ def report_missing_keys(locales):
             # remove card.info2 key from the locale keys (only used for BiH)
             if "card.info2" in locale_keys:
                 locale_keys.remove("card.info2")
+            if "card.title2" in locale_keys:
+                locale_keys.remove("card.title2")
 
             if set(locale_keys) != all_keys_by_file[locale_file_path]:
                 # print the locale title box only once on first occurrence

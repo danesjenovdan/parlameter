@@ -1,281 +1,79 @@
 {
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/memberships/?id=6038",
-  "id": 6038,
+  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/person/memberships/?id=61",
+  "id": 61,
   "data": {
     "results": [
       {
-        "start_time": "2023-01-25T00:00:00",
+        "start_time": "2022-07-15T10:25:00",
         "end_time": null,
         "role": "member",
         "organization": {
-          "name": "Odbor za gospodarstvo",
-          "acronym": "Odbor za gospodarstvo",
-          "slug": "24-odbor-za-gospodarstvo",
+          "name": "Delegacija Državnega zbora v Parlamentarni skupščini Organizacije za varnost in sodelovanje v Evropi",
+          "acronym": "Delegacija Državnega zbora v Parlamentarni skupščini Organizacije za varnost in sodelovanje v Evropi",
+          "slug": "62-delegacija-drzavnega-zbora-v-parlamentarni-skupscini-organizacije-za-varnost-in-sodelovanje-v-evropi",
           "color": "#09A2CC",
-          "classification": "committee",
+          "classification": "delegation",
           "is_in_coalition": false
         },
         "on_behalf_of": {}
       },
       {
-        "start_time": "2023-03-30T08:00:36.457802",
+        "start_time": "2025-02-18T08:01:07.753643",
         "end_time": null,
         "role": "member",
         "organization": {
-          "name": "Skupina prijateljstva z Arabsko republiko Egipt",
-          "acronym": "Skupina prijateljstva z Arabsko republiko Egipt",
-          "slug": "130-skupina-prijateljstva-z-arabsko-republiko-egipt",
+          "name": "Kolegij predsednice Državnega zbora",
+          "acronym": "Kolegij predsednice Državnega zbora",
+          "slug": "139-kolegij-predsednice-drzavnega-zbora",
           "color": "#09A2CC",
-          "classification": "friendship_group",
+          "classification": "council",
           "is_in_coalition": false
         },
         "on_behalf_of": {}
       },
       {
-        "start_time": "2023-04-04T14:00:44.506866",
+        "start_time": "2022-07-15T10:25:00",
         "end_time": null,
-        "role": "deputy",
+        "role": "deputy member",
         "organization": {
-          "name": "Komisija za peticije, človekove pravice in enake možnosti",
-          "acronym": null,
-          "slug": "92-komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
+          "name": "Delegacija Državnega zbora v Parlamentarni skupščini Sveta Evrope",
+          "acronym": "Delegacija Državnega zbora v Parlamentarni skupščini Sveta Evrope",
+          "slug": "69-delegacija-drzavnega-zbora-v-parlamentarni-skupscini-sveta-evrope",
           "color": "#09A2CC",
-          "classification": "commission",
+          "classification": "delegation",
           "is_in_coalition": false
         },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva z Združenimi Državami Amerike",
-          "acronym": "Skupina prijateljstva z Združenimi Državami Amerike",
-          "slug": "72-skupina-prijateljstva-z-zdruzenimi-drzavami-amerike",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
+        "on_behalf_of": {
+          "name": "Poslanska skupina nepovezanih poslancev",
+          "acronym": "NP",
+          "slug": "584-poslanska-skupina-nepovezanih-poslancev",
+          "color": "#31A8B1",
+          "classification": "pg",
           "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva s Federativno republiko Brazilijo",
-          "acronym": "Skupina prijateljstva s Federativno republiko Brazilijo",
-          "slug": "117-skupina-prijateljstva-s-federativno-republiko-brazilijo",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva z Avstralijo",
-          "acronym": "Skupina prijateljstva z Avstralijo",
-          "slug": "44-skupina-prijateljstva-z-avstralijo",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva s Češko republiko",
-          "acronym": "Skupina prijateljstva s Češko republiko",
-          "slug": "49-skupina-prijateljstva-s-cesko-republiko",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva z Republiko Hrvaško",
-          "acronym": "Skupina prijateljstva z Republiko Hrvaško",
-          "slug": "40-skupina-prijateljstva-z-republiko-hrvasko",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva z Japonsko",
-          "acronym": "Skupina prijateljstva z Japonsko",
-          "slug": "50-skupina-prijateljstva-z-japonsko",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva s Kanado",
-          "acronym": "Skupina prijateljstva s Kanado",
-          "slug": "113-skupina-prijateljstva-s-kanado",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Mandatno-volilna komisija",
-          "acronym": "Mandatno-volilna komisija",
-          "slug": "35-mandatno-volilna-komisija",
-          "color": "#09A2CC",
-          "classification": "commission",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva z Zvezno republiko Nemčijo",
-          "acronym": "Skupina prijateljstva z Zvezno republiko Nemčijo",
-          "slug": "39-skupina-prijateljstva-z-zvezno-republiko-nemcijo",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Mehika - Skupina prijateljstva z Združenimi mehiškimi državami",
-          "acronym": "{'AN': 'Mexico - Parliamentary Friendship Group with the United Mexican States', '#text': 'Mehika - Skupina prijateljstva z Združenimi mehiškimi državami'}",
-          "slug": "213-mehika-skupina-prijateljstva-z-zdruzenimi-mehiskimi-drzavami",
-          "color": "#09a2cc",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Nova Zelandija - Skupina prijateljstva z Novo Zelandijo",
-          "acronym": "{'AN': 'Parliamentary Friendship Group with New Zealand', '#text': 'Nova Zelandija - Skupina prijateljstva z Novo Zelandijo'}",
-          "slug": "277-nova-zelandija-skupina-prijateljstva-z-novo-zelandijo",
-          "color": "#09a2cc",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-03-21T08:10:14.257616",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva z Republiko Srbijo",
-          "acronym": "Skupina prijateljstva z Republiko Srbijo",
-          "slug": "60-skupina-prijateljstva-z-republiko-srbijo",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2023-08-24T08:00:42.277090",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Skupina prijateljstva z Gruzijo",
-          "acronym": "Skupina prijateljstva z Gruzijo",
-          "slug": "122-skupina-prijateljstva-z-gruzijo",
-          "color": "#09A2CC",
-          "classification": "friendship_group",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2024-09-03T20:02:49.001595",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Komisija za narodni skupnosti",
-          "acronym": "Komisija za narodni skupnosti",
-          "slug": "18-komisija-za-narodni-skupnosti",
-          "color": "#09A2CC",
-          "classification": "commission",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
-      },
-      {
-        "start_time": "2024-09-24T08:01:50.509546",
-        "end_time": null,
-        "role": "member",
-        "organization": {
-          "name": "Odbor za zdravstvo",
-          "acronym": "Odbor za zdravstvo",
-          "slug": "33-odbor-za-zdravstvo",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false
-        },
-        "on_behalf_of": {}
+        }
       }
     ],
     "mandate": {
       "id": 2,
-      "description": "IX",
+      "description": "9. sklic DZ",
       "beginning": "2022-05-13T00:00:01"
     },
     "person": {
-      "slug": "6038-aleksander-prosen-kralj",
-      "name": "Aleksander Prosen Kralj",
-      "honorific_prefix": null,
+      "slug": "61-anze-logar",
+      "name": "Anže Logar",
+      "honorific_prefix": "dr.",
       "honorific_suffix": null,
       "preferred_pronoun": "he",
       "group": {
-        "name": "Svoboda",
-        "acronym": "Svoboda",
-        "slug": "138-svoboda",
-        "color": "#002F42",
+        "name": "Poslanska skupina nepovezanih poslancev",
+        "acronym": "NP",
+        "slug": "584-poslanska-skupina-nepovezanih-poslancev",
+        "color": "#31A8B1",
         "classification": "pg",
-        "is_in_coalition": true
+        "is_in_coalition": false
       },
-      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P422.jpg"
+      "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P238.png",
+      "is_active": true
     }
   }
 }

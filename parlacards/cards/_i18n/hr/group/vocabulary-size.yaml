@@ -1,20 +1,29 @@
 card:
-  title: Raznolikost vokabulara
+  title: Raznolikost rječnika
   info: >-
-    # Bogatstvo vokabulara koji koriste zastupnice odabranog kluba u svojim
-    govorima u usporedbi s prosječnim i maksimalnim vrijednostima drugih
-    klubova.
+    # Raznolikost rječnika u govorima članica i članova odabranog zastupničkog
+    kluba u usporedbi s prosječnom i najvećom vrijednošću.
 
 
-    Iz svih govora prebroje se jedinstvene riječi i broj svih izgovorenih
-    riječi. Potom se prebroji koliko se puta svaka jedinstvena riječ pojavljuje.
-    Jedinstvene riječi podjele se u kategorije na način da su u istom skupu
-    riječi koje se ponavljaju jednom, dvaput, triput itd. Na koncu se izračuna
-    koeficijent gdje je broj svih jedinstvenih izgovorenih riječi iznad
-    razlomačke crte, a ispod je broj riječi koje se ponavljaju s određenom
-    učestalošću (jednom, dvaput, triput …) i pomnoži se s brojem ponavljanja na
-    kvadrat (jedan na kvadrat, dva na kvadrat, tri na kvadrat …).
+    Za izračun prvo prebrojimo pojedine riječi i ukupan broj izgovorenih riječi
+    članica i članova odabranog zastupničkog kluba. Zatim prebrojimo koliko se
+    puta pojavljuje svaka jedinstvena riječ i jedinstvene riječi razvrstamo u
+    kategorije prema broju ponavljanja (spojimo riječi koje se pojavljuju
+    jednom, dvaput, triput itd.).
 
 
-    Rečenica „Danas je novi dan i danas je dan za Parlametar“ daje rezultat 7/
-    ((3*2^2) + (4*1^2)) = 0,4375
+    Na kraju izračunamo koeficijent tako da broj svih jedinstvenih riječi
+    podijelimo sa zbrojem dobivenim na temelju učestalosti ponavljanja riječi.
+    Taj zbroj izračunavamo tako da za svaku kategoriju riječi, prema broju
+    ponavljanja (jednom, dvaput, triput …), pomnožimo broj riječi u toj skupini
+    s kvadratom njihove učestalosti (npr. broj riječi koje se pojavljuju jednom
+    \* 1² \+ broj riječi koje se pojavljuju dvaput \* 2² itd.).
+
+
+    Ako izračun primijenimo na primjer rečenice: "Danas je nov dan i danas je
+    dan za Parlametar", dobijemo rezultat: 7 / ((4 \* 1²) \+ (3 \* 2²)) \=
+    0,4375.
+
+
+    Što je izračunati koeficijent veći, to odabrani zastupnički klub koristi
+    raznovrsniji rječnik, jer se ne oslanja na često ponavljanje istih riječi.

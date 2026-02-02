@@ -1,36 +1,39 @@
 card:
   title: Glasanje
   info: >-
-    Zbirka glasanja preuzima se s web stranica HS-a.
+    # Pregled pojedinog glasanja na sjednici.
 
 
-    Rezultati svakog glasanja prikazuju se na tri razine: na razini zastupnika,
-    na razini klubova i prema politici vlade.
+    Rezultat pojedinog glasanja ima tri različita prikaza: na razini zastupnica
+    i zastupnika, na razini zastupničkih klubova te u odnosu na stav Vlade.
 
 
-    Prva kartica omogućuje pregled glasova zastupnica i pretraživanje prema
-    vrijednosti glasa (ZA, PROTIV, SUZDRŽANA, ODSUTNA) i imenu zastupnice. Pored
-    kružnog grafikona prikazana je većina glasova na jednom glasanju u HS. "60%
-    ZA" tako znači da je 60% zastupnica glasalo ZA.
+    Prva kartica omogućava pregled glasova zastupnica i zastupnika, filtriranje
+    prema vrijednosti glasa (ZA, PROTIV, SUZDRŽANI, ODSUTNI) te pretraživanje
+    pojedinih zastupnica i zastupnika. Uz kružni grafikon prikazuje se i
+    većinski glas Hrvatskog sabora na ovom glasanju. Na primjer, "60 % ZA" znači
+    da je ZA glasalo 60 % svih zastupnica i zastupnika s pravom glasa na tom
+    glasanju.
 
 
-    Druga kartica prikazuje glasove klubova. Na kraju svake linije prikazan je
-    većinski glas kluba, a gumbi s rezultatima glasanja otvaraju liste
-    zastupnica koje su tako glasale. Simbol munje upozorava na podjele u
-    klubovima - stavlja se iznad onih glasova koji se razlikuju od većine, a
-    odsutni su izuzeti. Tako da, ako je većina zastupnica kluba odsutna, ne
-    postoji ni većinski glas kluba.
+    Druga kartica prikazuje glasove zastupničkih klubova. Na kraju svakog retka
+    prikazan je većinski glas zastupničkog kluba, a gumbi s vrijednostima
+    glasova otvaraju popise zastupnica i zastupnika koji su dali taj glas.
 
 
-    Treća kartica prikazuje rezultat prema politici Vlade. Ovdje također simbol
-    munje upozorava na neočekivane glasove - odnosno odstupanja od većinskog
-    glasa koalicije.
+    Treća kartica prikazuje rezultat u odnosu na stav Vlade. Ponovno je na kraju
+    svakog retka prikazan većinski glas, a gumbi s vrijednostima glasova
+    otvaraju popise zastupnica i zastupnika koji su dali taj glas.
 
 
-    SIMBOL MUNJE
+    Za točnost rezultata glasanja trudimo se najbolje što možemo, no posebno kod
+    suzdržanih i odsutnih glasova ne možemo to jamčiti. Prisutnost zastupnica i
+    zastupnika na sjednicama Hrvatskog sabora ne provjerava se pri svakom
+    glasanju, stoga se može dogoditi da je osoba bila suzdržana, ali da zbog
+    nedostatka podataka u dokumentu s rezultatima glasanja, koji koristimo kao
+    izvor, na Parlametru ta osoba bude prikazana kao odsutna (rezultat: nije
+    glasala ili nije glasao).
 
 
-    Simbol munje upozorava na raskole u klubovima ili u koaliciji - stavlja se
-    iznad onih glasova koji se razlikuju od većinskog glasa kluba ili koalicije,
-    a odsutni su izuzeti. Tako da, ako je većina kluba odsutna, ne postoji ni
-    većinski glas kluba.
+    Skup glasanja dobivamo s mrežne stranice [Hrvatskog
+    sabora](https://www.sabor.hr/).

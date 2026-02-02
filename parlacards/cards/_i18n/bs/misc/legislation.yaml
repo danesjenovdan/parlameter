@@ -1,10 +1,13 @@
 card:
   title: Popis zakona
   info: >-
-    # Popis svih akata o kojima se glasalo na sjednici Parlamentarne skupštine BiH
-    u aktuelnom sazivu.
+    # Lista svih zakona i akata o kojima se glasalo u ovom sazivu PSBiH.
 
 
-    Podaci su preuzeti sa zvanične internet-stranice Parlamentarne skupštine BiH ([prijedlozi
-    zakona/zakoni](http://parlament.ba/oLaw/GetOLawsByStatus?SearchTerm=&MandateId=6)
-    i [ostali dokumenti](http://parlament.ba/act/Read?categoryId=8)).
+    Pretraživačem možeš tražiti po naslovu, a klikom na željeni filter biraš
+    prikaz samo zakona iz Predstavničkog doma ili samo zakon iz Doma naroda.
+    Rezultate možeš sortirati po nazivu, broju akta, datumu ili statusu
+    (usvojen, odbijen, u proceduri ili obustavljen).
+
+
+    Podatke preuzimamo s *web* stranice [PSBiH](http://www.parlament.ba).

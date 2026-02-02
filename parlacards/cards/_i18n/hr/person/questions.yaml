@@ -1,9 +1,9 @@
 card:
   title: Zastupnička pitanja i inicijative
   info: >-
-    # Prikaz svih zastupničkih pitanja i inicijativa koje je zastupnica
-    postavila u tom sazivu HS-a.
+    # Popis svih zastupničkih pitanja i inicijativa odabrane zastupnice ili
+    zastupnika u ovom mandatu.
 
 
-    Podaci se preuzimaju s web stranice
-    [HS](http://edoc.sabor.hr/ZastupnickaPitanja.aspx).
+    Pitanja i inicijative dobivamo s mrežne stranice [Hrvatskog
+    sabora](https://www.sabor.hr/).
