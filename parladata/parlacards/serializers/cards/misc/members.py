@@ -188,6 +188,7 @@ class MiscMembersCardSerializer(CardSerializer):
             ScoreModel.objects.filter(
                 person__in=people,
                 playing_field=playing_field,
+                value__isnull=False,
             )
             .order_by("person", "-timestamp")
             .distinct("person")
