@@ -69,10 +69,10 @@ export const defaultOgImage = (comp, overrides = {}) => {
   let cardTitle;
   if (cardState?.cardTitle) {
     cardTitle = cardState.cardTitle;
-  } else if (cardState?.cardTitleKey && this.$te(cardState?.cardTitleKey)) {
-    cardTitle = this.$t(cardState?.cardTitleKey);
+  } else if (cardState?.cardTitleKey && comp.$te(cardState?.cardTitleKey)) {
+    cardTitle = comp.$t(cardState?.cardTitleKey);
   } else {
-    cardTitle = this.$t('card.title');
+    cardTitle = comp.$t('card.title');
   }
 
   const { titleSuffix, ...otherOverrides } = overrides;

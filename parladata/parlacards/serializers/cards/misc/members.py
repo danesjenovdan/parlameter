@@ -392,7 +392,9 @@ class MiscMembersCardSerializer(CardSerializer):
 
             people_by_id = {person.id: person for person in people}
             sorted_scores = sorted(
-                list(latest_scores), key=lambda s: s["value"], reverse=order_reverse
+                list(latest_scores),
+                key=lambda s: s["value"] or 0,  # some models can have null values
+                reverse=order_reverse,
             )
             return [people_by_id[s["person"]] for s in sorted_scores]
 
