@@ -27,7 +27,7 @@
     "axios": "^1.13.2",
     "d3": "^7.9.0",
     "date-fns": "^4.1.0",
-    "fastify": "^5.7.1",
+    "fastify": "^5.7.3",
     "fs-extra": "^11.3.3",
     "html-safe-json": "^2.0.3",
     "lodash-es": "^4.17.23",
