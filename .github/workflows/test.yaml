@@ -13,17 +13,25 @@ jobs:
     defaults:
       run:
         working-directory: ./parladata
+    
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: parladata
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v3
-
-      - name: Set up PostgreSQL
-        uses: harmon758/postgresql-action@v1
-        with:
-          postgresql version: "16"
-          postgresql db: "parladata"
-          postgresql user: postgres
-          postgresql password: postgres
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -41,5 +49,6 @@ jobs:
       - name: Test with pytest
         env:
           DJANGO_SETTINGS_MODULE: parladata_project.settings.k8s
+          DATABASE_HOST: postgres
         run: |
           pytest -n 4
