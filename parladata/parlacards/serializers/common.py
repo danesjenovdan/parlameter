@@ -72,6 +72,7 @@ class ScoreSerializerField(serializers.Field):
         score_object_kwargs = {
             "timestamp__lte": self.context["request_date"],
             score_type: value,
+            "playing_field": self.context["playing_field"],
         }
         score_object = (
             ScoreModel.objects.filter(
@@ -184,11 +185,13 @@ class CommonSerializer(serializers.Serializer):
 
 class CommonCachableSerializer(CommonSerializer):
     def calculate_cache_key(self, instance):
-        raise NotImplementedError("""
+        raise NotImplementedError(
+            """
             You need to define your own function to calculate the cache key.
             Maybe something like:
             `return f'ModelName_{instance.id}_{instance.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'`
-        """)
+        """
+        )
 
     def to_representation(self, instance):
         cache_key = self.calculate_cache_key(instance)
@@ -250,6 +253,8 @@ class PersonScoreCardSerializer(CardSerializer):
             )
         except NoMembershipException as e:
             raise NotFound(detail=str(e), code=404)
+        
+        self.context["playing_field"] = self.playing_field
 
         self.from_timestamp, self.to_timestamp = (
             self.mandate.get_time_range_from_mandate(self.context["request_date"])
@@ -281,6 +286,8 @@ class GroupScoreCardSerializer(CardSerializer):
             )
         except NoMembershipException as e:
             raise NotFound(detail=str(e), code=404)
+        
+        self.context["playing_field"] = self.playing_field
 
         self.from_timestamp, self.to_timestamp = (
             self.mandate.get_time_range_from_mandate(self.context["request_date"])
