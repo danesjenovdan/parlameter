@@ -185,13 +185,11 @@ class CommonSerializer(serializers.Serializer):
 
 class CommonCachableSerializer(CommonSerializer):
     def calculate_cache_key(self, instance):
-        raise NotImplementedError(
-            """
+        raise NotImplementedError("""
             You need to define your own function to calculate the cache key.
             Maybe something like:
             `return f'ModelName_{instance.id}_{instance.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'`
-        """
-        )
+        """)
 
     def to_representation(self, instance):
         cache_key = self.calculate_cache_key(instance)
@@ -253,7 +251,7 @@ class PersonScoreCardSerializer(CardSerializer):
             )
         except NoMembershipException as e:
             raise NotFound(detail=str(e), code=404)
-        
+
         self.context["playing_field"] = self.playing_field
 
         self.from_timestamp, self.to_timestamp = (
@@ -286,7 +284,7 @@ class GroupScoreCardSerializer(CardSerializer):
             )
         except NoMembershipException as e:
             raise NotFound(detail=str(e), code=404)
-        
+
         self.context["playing_field"] = self.playing_field
 
         self.from_timestamp, self.to_timestamp = (
