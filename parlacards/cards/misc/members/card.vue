@@ -654,6 +654,10 @@ export default {
   }
 }
 
+.person-list {
+  margin-bottom: 14px;
+}
+
 .person-list :deep(.column) {
   &.name,
   &.working-bodies-col,
