@@ -663,7 +663,14 @@ export default {
 
   &.barchartcontainer {
     @include breakpoints.respond-to(mobile) {
-      display: none;
+      max-width: 45%;
+
+      .value {
+        display: block;
+        width: 45px;
+        flex-basis: 45px;
+        font-size: 14px;
+      }
     }
   }
 
