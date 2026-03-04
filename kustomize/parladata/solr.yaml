@@ -50,8 +50,8 @@ spec:
       initContainers:
       - name: create-core
         image: parlasolr-ljubljana
-        # Solr 9.x: use docker-entrypoint.sh with solr create_core
-        command: ['sh', '-c', 'solr create_core -c parlasearch']
+        # Solr 9.x: create core offline in init phase (no running server required)
+        command: ['solr-precreate', 'parlasearch', '/parlasearch-conf']
         volumeMounts:
         - name: parlasolr-persistent-storage
           # /var/solr/data it's SOLR_HOME set in Docker file
