@@ -51,7 +51,7 @@ spec:
       - name: create-core
         image: parlasolr-ljubljana
         # create parlasearch core with a convenience script
-        command: ['docker/scripts/precreate-core', 'parlasearch']
+        command: ['sh', '-c', '/opt/docker-solr/scripts/precreate-core parlasearch']
         volumeMounts:
         - name: parlasolr-persistent-storage
           # /var/solr/data it's SOLR_HOME set in Docker file
