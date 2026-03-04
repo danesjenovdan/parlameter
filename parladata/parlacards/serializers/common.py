@@ -72,6 +72,7 @@ class ScoreSerializerField(serializers.Field):
         score_object_kwargs = {
             "timestamp__lte": self.context["request_date"],
             score_type: value,
+            "playing_field": self.context["playing_field"],
         }
         score_object = (
             ScoreModel.objects.filter(
@@ -251,6 +252,8 @@ class PersonScoreCardSerializer(CardSerializer):
         except NoMembershipException as e:
             raise NotFound(detail=str(e), code=404)
 
+        self.context["playing_field"] = self.playing_field
+
         self.from_timestamp, self.to_timestamp = (
             self.mandate.get_time_range_from_mandate(self.context["request_date"])
         )
@@ -281,6 +284,8 @@ class GroupScoreCardSerializer(CardSerializer):
             )
         except NoMembershipException as e:
             raise NotFound(detail=str(e), code=404)
+
+        self.context["playing_field"] = self.playing_field
 
         self.from_timestamp, self.to_timestamp = (
             self.mandate.get_time_range_from_mandate(self.context["request_date"])
