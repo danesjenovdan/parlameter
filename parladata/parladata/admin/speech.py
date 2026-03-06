@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django import forms
 from django.contrib import admin, messages
 from django.db import models
@@ -35,6 +37,30 @@ def duplicate_speech(modeladmin, request, queryset):
         )
 
 
+class ValidSpeechFilter(admin.SimpleListFilter):
+    title = "valid speech"
+    parameter_name = "valid"
+
+    def lookups(self, request, model_admin):
+        return [
+            ("yes", "Valid"),
+            ("no", "Invalid"),
+        ]
+
+    def queryset(self, request, queryset):
+        timestamp = datetime.now()
+        if self.value() == "yes":
+            return queryset.filter(
+                models.Q(valid_from__lt=timestamp) | models.Q(valid_from__isnull=True),
+                models.Q(valid_to__gt=timestamp) | models.Q(valid_to__isnull=True),
+            )
+        elif self.value() == "no":
+            return queryset.exclude(
+                models.Q(valid_from__lt=timestamp) | models.Q(valid_from__isnull=True),
+                models.Q(valid_to__gt=timestamp) | models.Q(valid_to__isnull=True),
+            )
+
+
 class SpeechForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -55,13 +81,14 @@ class SpeechAdmin(admin.ModelAdmin):
         "tags",
         "lemmatized_content",
     ]
-    list_filter = (SessionListFilter, "tags")
+    list_filter = (ValidSpeechFilter, "tags", SessionListFilter)
     search_fields = ["speaker__personname__value", "content"]
     autocomplete_fields = ["motions", "speaker", "session"]
     inlines = []
     list_display = (
         "id",
         "order",
+        "is_valid",
         "tag_list",
         "session_name",
         "speaker",
@@ -86,6 +113,15 @@ class SpeechAdmin(admin.ModelAdmin):
         if obj.session:
             return obj.session.name
         return "Speech has no session"
+
+    def is_valid(self, obj):
+        timestamp = datetime.now()
+        valid_from = obj.valid_from is None or obj.valid_from < timestamp
+        valid_to = obj.valid_to is None or obj.valid_to > timestamp
+        return valid_from and valid_to
+
+    is_valid.boolean = True
+    is_valid.short_description = "Valid"
 
 
 admin.site.register(Speech, SpeechAdmin)
