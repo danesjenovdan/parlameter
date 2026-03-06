@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth.models import Group
 from django.db.models import Count
 
-from parladata.models import Session, Speech, Vote, Mandate
+from parladata.models import Mandate, Session, Speech, Vote
 from parladata.update_utils import send_email
 
 
@@ -56,17 +56,22 @@ def check_for_duplicated_speeches(session_ids=None):
     madnate_id = Mandate.objects.last().id
     if session_ids:
         duplicated_speeches = (
-            Speech.objects.filter_valid_speeches().filter(session__mandate=madnate_id, session__id__in=session_ids).values("content", "speaker", "session", "start_time", "order")
+            Speech.objects.filter_valid_speeches()
+            .filter(session__mandate=madnate_id, session__id__in=session_ids)
+            .values("content", "speaker", "session", "start_time", "order")
             .annotate(same_name=Count("content"))
             .filter(same_name__gt=1)
         )
     else:
         duplicated_speeches = (
-            Speech.objects.filter_valid_speeches().filter(session__mandate=madnate_id).values("content", "speaker", "session", "start_time", "order")
+            Speech.objects.filter_valid_speeches()
+            .filter(session__mandate=madnate_id)
+            .values("content", "speaker", "session", "start_time", "order")
             .annotate(same_name=Count("content"))
             .filter(same_name__gt=1)
         )
     return duplicated_speeches
+
 
 def get_session_with_duplicated_speeches():
     duplicated_speeches = check_for_duplicated_speeches()
