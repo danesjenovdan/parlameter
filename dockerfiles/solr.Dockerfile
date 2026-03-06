@@ -1,4 +1,4 @@
-FROM solr:8.11.0
+FROM solr:8.11.4
 
 COPY ./slolem /opt/solr-slolem
 COPY ./parlasearch-conf /parlasearch-conf
