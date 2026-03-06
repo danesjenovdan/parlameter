@@ -654,6 +654,10 @@ export default {
   }
 }
 
+.person-list {
+  margin-bottom: 14px;
+}
+
 .person-list :deep(.column) {
   &.name,
   &.working-bodies-col,
@@ -663,7 +667,12 @@ export default {
 
   &.barchartcontainer {
     @include breakpoints.respond-to(mobile) {
-      display: none;
+      max-width: 45%;
+
+      .value {
+        display: block;
+        font-size: 14px;
+      }
     }
   }
 
