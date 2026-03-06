@@ -35,6 +35,8 @@ Sentry.init({
     // Chrome on iOS
     '__gCrWeb',
     'Maximum call stack size exceeded',
+    // iOS WebView
+    'window.webkit.messageHandlers',
   ],
   denyUrls: [
     // Chrome extensions
