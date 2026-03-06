@@ -4,22 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><!--page-title--></title>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js"
-      integrity="sha512-14SY6teTzhrLWeL55Q4uCyxr6GQOxF3pEoMxo2mBxXwPRikdMtzKMYWy2B5Lqjr6PHHoGOxZgPaxUYKQrSmu0A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <title>{cardName} dev</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="<!--parlassets-url-->/scss/style.css?v=20250513" />
+    <link
+      rel="stylesheet"
+      href="{assetsUrl}/scss/style.css?v=20250513"
+    />
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="<!--parlassets-url-->/icons/favicon.ico"
+      href="{assetsUrl}/icons/favicon.ico"
     />
     <style>
       html,
@@ -44,13 +41,10 @@
       }
     </style>
     <base target="_blank">
-    <!-- PLAUSIBLE -->
-    <script defer data-domain="glej.hrastnik.parlameter.si" src="https://plausible.lb.djnd.si/js/plausible.js"></script>
-    <!-- END PLAUSIBLE -->
   </head>
   <body>
-    <div class="<!--embed-class-->">
-      <!--ssr-outlet-->
+    <div id="card" class="">
     </div>
+    <script type="module" src="{cardEntry}"></script>
   </body>
 </html>
