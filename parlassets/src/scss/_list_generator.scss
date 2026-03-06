@@ -84,7 +84,7 @@
     @include breakpoints.respond-to(mobile) {
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-top: 7px;
+      // margin-top: 7px;
     }
 
     li {

@@ -32,15 +32,17 @@
         </br></br>
         {% endif %}
 
-        {% if duplicated_speeches %}
+        {% if sessions_with_duplicated_speeches %}
         There are duplicated speeches on sessions:
-        {% for speech in sessions_with_duplicated_speeches %}
+        {% for session in sessions_with_duplicated_speeches %}
             <p>
-                <a href="{{ base_url }}{% url 'admin:parladata_session_change' speech.id %}">{{ speech.session.name }}</a>
+                <a href="{{ base_url }}{% url 'admin:parladata_speech_changelist' %}?session__id__exact={{ session.id }}">{{ session.name }}</a>
             </p>
         {% endfor %}
         </br></br>
         {% endif %}
+
+
 
     </div>
     <div>
