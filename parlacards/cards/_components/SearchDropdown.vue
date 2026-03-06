@@ -324,7 +324,7 @@ export default {
   },
   methods: {
     pressEnter() {
-      if (this.focused === -1) {
+      if (this.focused < 0 || this.focused >= this.filteredItems.length) {
         if (this.allowManualValue) {
           this.$emit('select', this.selectItem(this.localFilter));
         } else {
