@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib.auth.models import Group
 from django.db.models import Count
 
-from parladata.models import Session, Speech, Vote
+from parladata.models import Mandate, Session, Speech, Vote
 from parladata.update_utils import send_email
 
 
@@ -49,23 +49,41 @@ def check_num_of_ballots_per_vote():
     return invalid_votes
 
 
-def check_for_duplicated_speeches():
+def check_for_duplicated_speeches(session_ids=None):
     """
     Test whether there are duplicated speech.
     """
-    duplicated_speeches = (
-        Speech.objects.values("content", "speaker", "session", "start_time", "order")
-        .annotate(same_name=Count("content"))
-        .filter(same_name__gt=1)
-    )
+    madnate_id = Mandate.objects.last().id
+    if session_ids:
+        duplicated_speeches = (
+            Speech.objects.filter_valid_speeches()
+            .filter(session__mandate=madnate_id, session__id__in=session_ids)
+            .values("content", "speaker", "session", "start_time", "order")
+            .annotate(same_name=Count("content"))
+            .filter(same_name__gt=1)
+        )
+    else:
+        duplicated_speeches = (
+            Speech.objects.filter_valid_speeches()
+            .filter(session__mandate=madnate_id)
+            .values("content", "speaker", "session", "start_time", "order")
+            .annotate(same_name=Count("content"))
+            .filter(same_name__gt=1)
+        )
     return duplicated_speeches
+
+
+def get_session_with_duplicated_speeches():
+    duplicated_speeches = check_for_duplicated_speeches()
+    session_ids = set([d["session"] for d in duplicated_speeches])
+    return Session.objects.filter(id__in=session_ids)
 
 
 def run_tests():
     duplicated_sessions = check_for_duplicated_sessions()
     duplicated_votes = check_for_duplicated_votes()
     invalid_votes = check_num_of_ballots_per_vote()
-    duplicated_speeches = check_for_duplicated_speeches()
+    sessions_with_duplicated_speeches = get_session_with_duplicated_speeches()
 
     parser_permission_group = Group.objects.filter(
         name__icontains="parser_owners"
@@ -76,8 +94,8 @@ def run_tests():
     if (
         duplicated_sessions
         or duplicated_votes
-        or check_num_of_ballots_per_vote
-        or check_for_duplicated_speeches
+        or invalid_votes
+        or sessions_with_duplicated_speeches
     ):
         for parser_owner in parser_permission_group.user_set.all():
             send_email(
@@ -89,6 +107,6 @@ def run_tests():
                     "duplicated_sessions": duplicated_sessions,
                     "duplicated_votes": duplicated_votes,
                     "invalid_votes": invalid_votes,
-                    "duplicated_speeches": duplicated_speeches,
+                    "sessions_with_duplicated_speeches": sessions_with_duplicated_speeches,
                 },
             )
