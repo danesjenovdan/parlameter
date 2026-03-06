@@ -56,7 +56,7 @@ class ValidSpeechesFilter(filters.BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
         if "valid_on" in request.GET.keys():
             valid_on = datetime.strptime(request.GET.get("valid_on"), "%Y-%m-%d")
-            queryset = queryset.getValidSpeeches(valid_on)
+            queryset = queryset.filter_valid_speeches(valid_on)
         return queryset
 
 
