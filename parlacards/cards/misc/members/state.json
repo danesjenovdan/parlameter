@@ -8,5 +8,6 @@
   "showDemographicsMandates": "true",
   "showDemographicsGroup": "true",
   "showExportButton": "true",
-  "hiddenAnalyses": ""
+  "hiddenAnalyses": "",
+  "analysis": "presence_votes"
 }
