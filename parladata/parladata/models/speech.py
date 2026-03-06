@@ -12,11 +12,9 @@ class ValidSpeechesQuerySet(models.QuerySet):
         if not timestamp:
             timestamp = datetime.now()
 
-        return (
-            self.filter(
-                models.Q(valid_from__lt=timestamp) | models.Q(valid_from__isnull=True),
-                models.Q(valid_to__gt=timestamp) | models.Q(valid_to__isnull=True),
-            )
+        return self.filter(
+            models.Q(valid_from__lt=timestamp) | models.Q(valid_from__isnull=True),
+            models.Q(valid_to__gt=timestamp) | models.Q(valid_to__isnull=True),
         )
 
 
