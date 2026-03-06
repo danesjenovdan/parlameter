@@ -7,15 +7,13 @@ from parlacards.scores.common import get_lemmatize_method, remove_punctuation, t
 from parladata.behaviors.models import Taggable, Timestampable, Versionable
 
 
-class ValidSpeechesManager(models.Manager):
+class ValidSpeechesQuerySet(models.QuerySet):
     def filter_valid_speeches(self, timestamp=None):
         if not timestamp:
             timestamp = datetime.now()
 
         return (
-            super()
-            .get_queryset()
-            .filter(
+            self.filter(
                 models.Q(valid_from__lt=timestamp) | models.Q(valid_from__isnull=True),
                 models.Q(valid_to__gt=timestamp) | models.Q(valid_to__isnull=True),
             )
@@ -84,7 +82,7 @@ class Speech(Versionable, Timestampable, Taggable):
         help_text=_("Select motions related to the speech"),
         blank=True,
     )
-    objects = ValidSpeechesManager()
+    objects = ValidSpeechesQuerySet.as_manager()
 
     class Meta:
         verbose_name = "Speech"
