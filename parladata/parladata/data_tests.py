@@ -1,13 +1,12 @@
+from datetime import datetime
+
 from django.conf import settings
 from django.contrib.auth.models import Group
 from django.db.models import Count
 
-from parladata.models import Mandate, Session, Speech, Vote, Person
-from parladata.update_utils import send_email
-
 from parlacards.utils import get_playing_fields
-
-from datetime import datetime
+from parladata.models import Mandate, Person, Session, Speech, Vote
+from parladata.update_utils import send_email
 
 
 def check_for_duplicated_sessions():
