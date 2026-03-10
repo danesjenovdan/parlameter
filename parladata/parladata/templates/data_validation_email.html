@@ -1,33 +1,44 @@
 {% load i18n %}
 {% load static %}
 <html>
+
 <body>
     <div>
         <h2>{% translate 'Parladata data validator' %}</h2>
     </div>
     <div>
         {% if duplicated_sessions %}
-            Duplicated sessions:</br></br>
-            {% for session in duplicated_sessions %}
-                <a href="{{ base_url }}{% url 'admin:parlacards_sessiontfidf_changelist' %}?session__id__exact={{ session.id }}">{{session.name}}</a></br>
-            {% endfor %}
-            </br></br>
+        Duplicated sessions:</br></br>
+        {% for session in duplicated_sessions %}
+        <a
+            href="{{ base_url }}{% url 'admin:parladata_session_changelist' %}?session__id__exact={{ session.id }}">{{session.name}}</a></br>
+        {% endfor %}
+        </br></br>
         {% endif %}
 
         {% if duplicated_votes %}
-            There are duplicated votes: </br>
-            {% for vote in duplicated_votes %}
-                <a href="{{ base_url }}{% url 'admin:parladata_vote_change' vote.id %}">{{ vote.name }}</a></br>
-            {% endfor %}
-            </br></br>
+        There are duplicated votes: </br>
+        {% for vote in duplicated_votes %}
+        {% if vote.id %}
+        <a href="{{ base_url }}{% url 'admin:parladata_vote_change' vote.id %}">{{ vote.name }}</a></br>
+        {% else %}
+        {{ vote.name }}</br>
+        {% endif %}
+        {% endfor %}
+        </br></br>
         {% endif %}
 
-        {% if invalid_votes %}
-        There are something wrong with votes:
-        {% for vote in invalid_votes %}
-            <p>
-                <a href="{{ base_url }}{% url 'admin:parladata_vote_change' vote.id %}">{{ vote.name }}</a>
-            </p>
+        {% if invalid_ballots %}
+        There are something wrong with ballots in votes: </br>
+        {% for vote in invalid_ballots %}
+        <p>
+            Balots:{{ vote.count }} </br>
+            Voters:{{ vote.number_of_voters }} </br>
+            Extra voters:{{ vote.extra_voter_id }} </br>
+            Missing voters:{{ vote.missing_voter_ids }} </br>
+            Date and time:{{ vote.date }}</br>
+            <a href="{{ base_url }}{% url 'admin:parladata_vote_change' vote.vote.id %}">{{ vote.vote.name }}</a>
+        </p>
         {% endfor %}
         </br></br>
         {% endif %}
@@ -35,17 +46,17 @@
         {% if sessions_with_duplicated_speeches %}
         There are duplicated speeches on sessions:
         {% for session in sessions_with_duplicated_speeches %}
-            <p>
-                <a href="{{ base_url }}{% url 'admin:parladata_speech_changelist' %}?session__id__exact={{ session.id }}">{{ session.name }}</a>
-            </p>
+        <p>
+            <a href="{{ base_url }}{% url 'admin:parladata_speech_changelist' %}?session__id__exact={{ session.id }}">{{
+                session.name }}</a>
+        </p>
         {% endfor %}
         </br></br>
         {% endif %}
-
-
 
     </div>
     <div>
     </div>
 </body>
+
 </html>
