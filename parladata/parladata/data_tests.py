@@ -51,7 +51,23 @@ def check_num_of_ballots_per_vote():
             number_of_voters = pf.number_of_voters_at(timestamp=v.timestamp)
             count = v.ballots.count()
             if count != number_of_voters:
-                invalid_votes.append((v, count, number_of_voters))
+                voters = pf.query_voters(v.timestamp)
+                extra_voter_id = v.ballots.exclude(personvoter__in=voters).values_list(
+                    "personvoter__id", flat=True
+                )
+                missing_voter_ids = set(voters.values_list("id", flat=True)) - set(
+                    v.ballots.values_list("personvoter__id", flat=True)
+                )
+                invalid_votes.append(
+                    {
+                        "vote": v,
+                        "count": count,
+                        "number_of_voters": number_of_voters,
+                        "extra_voter_id": list(extra_voter_id),
+                        "missing_voter_ids": list(missing_voter_ids),
+                        "date": v.timestamp.isoformat(),
+                    }
+                )
     return invalid_votes
 
 
