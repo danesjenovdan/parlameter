@@ -20,6 +20,12 @@ def check_for_duplicated_sessions():
         .annotate(same_name=Count("name"))
         .filter(same_name__gt=1)
     )
+    for session in duplicated_sessions:
+        session["id"] = list(
+            Session.objects.filter(
+                mandate=2, name=session["name"], organizations=session["organizations"]
+            ).values_list("id", flat=True)
+        )
     return duplicated_sessions
 
 
