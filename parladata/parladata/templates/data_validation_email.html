@@ -10,8 +10,9 @@
         {% if duplicated_sessions %}
         Duplicated sessions:</br></br>
         {% for session in duplicated_sessions %}
-        <a
-            href="{{ base_url }}{% url 'admin:parladata_session_changelist' %}?session__id__exact={{ session.id }}">{{session.name}}</a></br>
+            {% for session_id in session.id %}
+                <a href="{{ base_url }}{% url 'admin:parladata_session_changelist' %}?session__id__exact={{ session_id }}">{{session.name}}</a></br>
+            {% endfor %}
         {% endfor %}
         </br></br>
         {% endif %}
