@@ -11,7 +11,7 @@
         Duplicated sessions:</br></br>
         {% for session in duplicated_sessions %}
             {% for session_id in session.id %}
-                <a href="{{ base_url }}{% url 'admin:parladata_session_changelist' %}?session__id__exact={{ session_id }}">{{session.name}}</a></br>
+                <a href="{{ base_url }}{% url 'admin:parladata_session_change' session_id %}">{{session.name}}</a></br>
             {% endfor %}
         {% endfor %}
         </br></br>
@@ -48,8 +48,9 @@
         There are duplicated speeches on sessions:
         {% for session in sessions_with_duplicated_speeches %}
         <p>
-            <a href="{{ base_url }}{% url 'admin:parladata_speech_changelist' %}?session__id__exact={{ session.id }}">{{
-                session.name }}</a>
+            <a href="{{ base_url }}{% url 'admin:parladata_speech_changelist' %}?session__id__exact={{ session.id }}">
+                {{session.name }}
+            </a>
         </p>
         {% endfor %}
         </br></br>
