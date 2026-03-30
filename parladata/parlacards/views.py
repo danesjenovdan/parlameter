@@ -128,7 +128,7 @@ class CardView(APIView):
             return Response(self.get_serializer_data(request, the_thing_to_serialize))
 
         # otherwise return 404
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        return Response({"error": "not found"}, status=status.HTTP_404_NOT_FOUND)
 
 
 class CachedCardView(CardView):
@@ -153,7 +153,7 @@ class CachedCardView(CardView):
             return Response(serializer_data)
 
         # otherwise return 404
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        return Response({"error": "not found"}, status=status.HTTP_404_NOT_FOUND)
 
 
 class PersonInfo(CardView):
@@ -673,7 +673,7 @@ class LastSession(CardView):
                 return Response(self.get_serializer_data(request, the_thing))
 
         # otherwise return 404
-        return Response(status=status.HTTP_404_NOT_FOUND)
+        return Response({"error": "not found"}, status=status.HTTP_404_NOT_FOUND)
 
 
 class SearchDropdown(CardView):

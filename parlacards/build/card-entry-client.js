@@ -37,6 +37,8 @@ Sentry.init({
     'Maximum call stack size exceeded',
     // iOS WebView
     'window.webkit.messageHandlers',
+    // Facebook and Instagram webviews
+    'Java object is gone',
   ],
   denyUrls: [
     // Chrome extensions
