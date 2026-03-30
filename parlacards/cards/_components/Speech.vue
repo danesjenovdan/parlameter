@@ -1,5 +1,10 @@
 <template>
-  <div :id="speech.id" :class="['speech-holder', { 'just-quote': showQuote }]">
+  <empty-state v-if="!speech || !speech.id" small />
+  <div
+    v-else
+    :id="speech.id"
+    :class="['speech-holder', { 'just-quote': showQuote }]"
+  >
     <div class="person-session">
       <div class="person">
         <template v-if="getPersonLink(speech.person)">
@@ -116,9 +121,13 @@ import { QUOTE_PADDING_LENGTH } from '@/_helpers/constants.js';
 import mapVotes from '@/_helpers/mapVotes.js';
 import sessionName from '@/_helpers/sessionName.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'Speech',
+  components: {
+    EmptyState,
+  },
   mixins: [links],
   props: {
     quote: {
