@@ -28,12 +28,12 @@ resources:
   - parlassets/ingress.yaml
   - parlassets/service.yaml
 images:
-  # - name: parladata-slovenija-staging
-  #   newName: rg.fr-par.scw.cloud/djnd/parladata-slovenija-staging
-  #   newTag: '37df9ef4f3c57119f56c2b8ac4c45e637b0963bc'
-  # - name: parlasolr-slovenija-staging
-  #   newName: rg.fr-par.scw.cloud/djnd/parlasolr-slovenija-staging
-  #   newTag: '37df9ef4f3c57119f56c2b8ac4c45e637b0963bc'
+  - name: parladata-slovenija-staging
+    newName: rg.fr-par.scw.cloud/djnd/parladata-slovenija-staging
+    newTag: '37df9ef4f3c57119f56c2b8ac4c45e637b0963bc'
+  - name: parlasolr-slovenija-staging
+    newName: rg.fr-par.scw.cloud/djnd/parlasolr-slovenija-staging
+    newTag: '37df9ef4f3c57119f56c2b8ac4c45e637b0963bc'
   - name: parlacards-slovenija-staging
     newName: rg.fr-par.scw.cloud/djnd/parlacards-slovenija-staging
     newTag: '37df9ef4f3c57119f56c2b8ac4c45e637b0963bc'
