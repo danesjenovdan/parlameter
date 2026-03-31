@@ -30,7 +30,7 @@ spec:
             - name: VITE_PARLASSETS_URL
               value: https://parlassets-slovenija-staging.lb.djnd.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata-slovenija.lb.djnd.si/v3
+              value: https://parladata-slovenija-staging.lb.djnd.si/v3
             - name: VITE_PARLACARDS_URL
               value: https://parlacards-slovenija-staging.lb.djnd.si
             - name: VITE_PARLASITE_URL

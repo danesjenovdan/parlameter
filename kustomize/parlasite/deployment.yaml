@@ -32,7 +32,7 @@ spec:
             - name: PARLASITE_CARDS_URL
               value: "https://parlacards-slovenija-staging.lb.djnd.si"
             - name: PARLASITE_DATA_URL
-              value: "https://parladata-slovenija.lb.djnd.si/v3"
+              value: "https://parladata-slovenija-staging.lb.djnd.si/v3"
             - name: PARLASITE_LEADER_ID
               value: "4434"
             - name: PARLASITE_ROOT_ORG_ID
