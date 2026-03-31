@@ -5,7 +5,7 @@ metadata:
   labels:
     app: parladata-slovenija-staging
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: parladata-slovenija-staging
@@ -107,11 +107,11 @@ spec:
               value: Slovenija
           resources:
             requests:
-              memory: 400Mi
-              cpu: 300m
+              memory: 300Mi
+              cpu: 200m
             limits:
-              memory: 600Mi
-              cpu: 600m
+              memory: 500Mi
+              cpu: 400m
         - name: parladata-nginx
           ports:
             - name: http
