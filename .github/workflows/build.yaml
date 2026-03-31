@@ -28,7 +28,7 @@ jobs:
           file: dockerfiles/parladata.Dockerfile
           push: true
           tags: |
-            rg.fr-par.scw.cloud/djnd/parladata-slovenija-staging-staging:${{ github.sha }}
+            rg.fr-par.scw.cloud/djnd/parladata-slovenija-staging:${{ github.sha }}
             rg.fr-par.scw.cloud/djnd/parladata-slovenija-staging:latest
 
       - name: Build and push solr
