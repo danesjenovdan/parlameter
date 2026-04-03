@@ -28,11 +28,11 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://cdn.10.parlametar.hr
+              value: https://files.parlametar.hr
             - name: VITE_PARLADATA_URL
-              value: https://data.10.parlametar.hr/v3
+              value: https://data.parlametar.hr/v3
             - name: VITE_PARLACARDS_URL
-              value: https://gledaj.10.parlametar.hr
+              value: https://kartica.parlametar.hr
             - name: VITE_PARLASITE_URL
               value: https://parlametar.hr
             - name: VITE_METAIMAGES_URL

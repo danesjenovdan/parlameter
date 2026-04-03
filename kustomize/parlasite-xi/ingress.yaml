@@ -5,7 +5,7 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
         - parlametar.hr
@@ -13,7 +13,7 @@ spec:
       secretName: parlasite-xi-tls
   rules:
     - host: parlametar.hr
-      http:
+      http: &http_paths
         paths:
           - path: /
             pathType: Prefix
@@ -23,12 +23,4 @@ spec:
                 port:
                   number: 3066
     - host: www.parlametar.hr
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: parlasite-xi
-                port:
-                  number: 3066
+      http: *http_paths
