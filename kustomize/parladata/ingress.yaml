@@ -1,18 +1,34 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: enable-cors
+spec:
+  headers:
+    accessControlAllowOriginList:
+      - "*"
+    accessControlAllowMethods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - OPTIONS
+    accessControlAllowHeaders:
+      - "*"
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: parladata
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - parladata-zagreb.lb.djnd.si
+        - data.zagreb.parlametar.hr
       secretName: parladata-tls
   rules:
-    - host: parladata-zagreb.lb.djnd.si
+    - host: data.zagreb.parlametar.hr
       http:
         paths:
           - path: /
@@ -29,19 +45,15 @@ metadata:
   name: parladata-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*" # TODO
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
+    traefik.ingress.kubernetes.io/router.middlewares: parlameter-zagreb-enable-cors@kubernetescrd
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - files.parladata-zagreb.lb.djnd.si
+        - files.data.zagreb.parlametar.hr
       secretName: parladata-nginx-tls
   rules:
-    - host: files.parladata-zagreb.lb.djnd.si
+    - host: files.data.zagreb.parlametar.hr
       http:
         paths:
           - path: /

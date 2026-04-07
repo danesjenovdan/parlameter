@@ -5,14 +5,15 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
         - gledaj.zagreb.parlametar.hr
+        - kartica.zagreb.parlametar.hr
       secretName: parlacards-tls
   rules:
     - host: gledaj.zagreb.parlametar.hr
-      http:
+      http: &http_paths
         paths:
           - path: /
             pathType: Prefix
@@ -21,3 +22,5 @@ spec:
                 name: parlacards
                 port:
                   number: 3000
+    - host: kartica.zagreb.parlametar.hr
+      http: *http_paths

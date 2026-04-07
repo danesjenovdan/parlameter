@@ -28,17 +28,17 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://cdn.zagreb.parlametar.hr
+              value: https://files.zagreb.parlametar.hr
             - name: VITE_PARLADATA_URL
-              value: https://parladata-zagreb.lb.djnd.si/v3
+              value: https://data.zagreb.parlametar.hr/v3
             - name: VITE_PARLACARDS_URL
-              value: https://gledaj.zagreb.parlametar.hr
+              value: https://kartica.zagreb.parlametar.hr
             - name: VITE_PARLASITE_URL
               value: https://zagreb.parlametar.hr
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.lb.djnd.si/parlameter
             - name: VITE_PARLASITE_URL_BEFORE_2025_05_30
-              value: https://zagreb-2022.parlametar.hr
+              value: https://2022.zagreb.parlametar.hr
             - name: SENTRY_DSN
               value: https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
             - name: SENTRY_ENVIRONMENT

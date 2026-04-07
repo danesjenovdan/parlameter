@@ -28,11 +28,11 @@ spec:
               cpu: 100m
           env:
             - name: PARLASITE_CDN_URL
-              value: "https://cdn.zagreb.parlametar.hr"
+              value: "https://files.zagreb.parlametar.hr"
             - name: PARLASITE_CARDS_URL
-              value: "https://gledaj.zagreb.parlametar.hr"
+              value: "https://kartica.zagreb.parlametar.hr"
             - name: PARLASITE_DATA_URL
-              value: "https://parladata-zagreb.lb.djnd.si/v3"
+              value: "https://data.zagreb.parlametar.hr/v3"
             - name: PARLASITE_LEADER_ID
               value: "79"
             - name: PARLASITE_ROOT_ORG_ID

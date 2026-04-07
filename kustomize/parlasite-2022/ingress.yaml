@@ -5,13 +5,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - zagreb-2022.parlametar.hr
+        - 2022.zagreb.parlametar.hr
       secretName: parlasite-2022-tls
   rules:
-    - host: zagreb-2022.parlametar.hr
+    - host: 2022.zagreb.parlametar.hr
       http:
         paths:
           - path: /
