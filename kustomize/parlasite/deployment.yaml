@@ -28,9 +28,9 @@ spec:
               cpu: 100m
           env:
             - name: PARLASITE_CDN_URL
-              value: "https://cdn.ajdovscina.parlameter.si"
+              value: "https://files.ajdovscina.parlameter.si"
             - name: PARLASITE_CARDS_URL
-              value: "https://glej.ajdovscina.parlameter.si"
+              value: "https://kartica.ajdovscina.parlameter.si"
             - name: PARLASITE_DATA_URL
               value: "https://data.ajdovscina.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
