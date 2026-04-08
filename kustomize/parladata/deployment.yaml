@@ -34,7 +34,7 @@ spec:
             - name: DJANGO_STATIC_ROOT
               value: "/pvc/static"
             - name: DJANGO_STATIC_URL_BASE
-              value: "https://files.ljubljana.parlameter.si/static/"
+              value: "https://files.data.ljubljana.parlameter.si/static/"
           envFrom:
             - secretRef:
                 name: parladata-credentials
@@ -102,7 +102,7 @@ spec:
             - name: DJANGO_STATIC_ROOT
               value: "/pvc/static"
             - name: DJANGO_STATIC_URL_BASE
-              value: "https://files.ljubljana.parlameter.si/static/"
+              value: "https://files.data.ljubljana.parlameter.si/static/"
             - name: INSTALATION_NAME
               value: MOL
           resources:

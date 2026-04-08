@@ -32,10 +32,10 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - files.ljubljana.parlameter.si
+        - files.data.ljubljana.parlameter.si
       secretName: parladata-nginx-tls
   rules:
-    - host: files.ljubljana.parlameter.si
+    - host: files.data.ljubljana.parlameter.si
       http:
         paths:
           - path: /
