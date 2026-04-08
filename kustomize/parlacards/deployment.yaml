@@ -28,11 +28,11 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://cdn.trbovlje.parlameter.si
+              value: https://files.trbovlje.parlameter.si
             - name: VITE_PARLADATA_URL
               value: https://data.trbovlje.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://glej.trbovlje.parlameter.si
+              value: https://kartica.trbovlje.parlameter.si
             - name: VITE_PARLASITE_URL
               value: https://trbovlje.parlameter.si
             - name: VITE_METAIMAGES_URL
