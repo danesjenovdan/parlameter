@@ -1760,7 +1760,7 @@ msgstr "https://zagreb.parlametar.hr/"
 #: parlanotifications/templates/notification.html:243
 #: parlanotifications/templates/notification_speech.html:33
 msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png"
-msgstr "https://files.parlametar.hr/img/logo-parlameter-mejl.png"
+msgstr "https://files.zagreb.parlametar.hr/img/logo-parlameter-mejl.png"
 
 #: parlanotifications/templates/add_keyword.html:22
 #: parlanotifications/templates/notification_speech.html:38
