@@ -28,16 +28,16 @@ resources:
 images:
   - name: parladata-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parladata-hrvaska
-    newTag: '09beb6582dc1b91fba5a92c44eb0ad61d8cecfcd'
+    newTag: '8f78bcdf2cfb7246e4e10441b777b4b3a03830e6'
   - name: parlasolr-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-hrvaska
-    newTag: '09beb6582dc1b91fba5a92c44eb0ad61d8cecfcd'
+    newTag: '8f78bcdf2cfb7246e4e10441b777b4b3a03830e6'
   - name: parlacards-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlacards-hrvaska
-    newTag: '09beb6582dc1b91fba5a92c44eb0ad61d8cecfcd'
+    newTag: '8f78bcdf2cfb7246e4e10441b777b4b3a03830e6'
   - name: parlasite-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlasite-hrvaska
-    newTag: '09beb6582dc1b91fba5a92c44eb0ad61d8cecfcd'
+    newTag: '8f78bcdf2cfb7246e4e10441b777b4b3a03830e6'
   - name: parlassets-hrvaska
     newName: rg.fr-par.scw.cloud/djnd/parlassets-hrvaska
-    newTag: '09beb6582dc1b91fba5a92c44eb0ad61d8cecfcd'
+    newTag: '8f78bcdf2cfb7246e4e10441b777b4b3a03830e6'
