@@ -1736,7 +1736,7 @@ msgid ""
 "https://parlacards-slovenija.lb.djnd.si/tools/notifications/?"
 "id=undefined&no_card_data=true&locale=sl&template=share&action=confirm"
 msgstr ""
-"https://gledaj.10.parlametar.hr/tools/notifications/?"
+"https://kartica.parlametar.hr/tools/notifications/?"
 "id=undefined&no_card_data=true&locale=hr&template=share&action=confirm"
 
 #: parlanotifications/templates/add_keyword.html:13
@@ -1763,7 +1763,7 @@ msgstr "https://parlametar.hr/"
 #: parlanotifications/templates/notification.html:243
 #: parlanotifications/templates/notification_speech.html:33
 msgid "https://parlassets-slovenija.lb.djnd.si/img/logo-parlameter-mejl.png"
-msgstr "https://cdn.10.parlametar.hr/img/logo-parlameter-mejl.png"
+msgstr "https://files.parlametar.hr/img/logo-parlameter-mejl.png"
 
 #: parlanotifications/templates/add_keyword.html:22
 #: parlanotifications/templates/notification_speech.html:38
@@ -1779,7 +1779,7 @@ msgid ""
 "https://parlacards-slovenija.lb.djnd.si/tools/notifications/?"
 "id=undefined&no_card_data=true&locale=sl&template=share&action=list"
 msgstr ""
-"https://gledaj.10.parlametar.hr/tools/notifications/?"
+"https://kartica.parlametar.hr/tools/notifications/?"
 "id=undefined&no_card_data=true&locale=hr&template=share&action=list"
 
 #: parlanotifications/templates/add_keyword.html:22
