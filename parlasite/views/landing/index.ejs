@@ -22,9 +22,9 @@
     <% } %>
   </div>
   <% if (showInfoCard) { %>
-  <div class="col-md-6">
-    <%- fetchCard('/misc/newsletter-signup/', mandateId, { segment: newsletterSegmentId, no_card_data: true }); %>
-  </div>
+  <!-- <div class="col-md-6">
+    <%# fetchCard('/misc/newsletter-signup/', mandateId, { segment: newsletterSegmentId, no_card_data: true }); %>
+  </div> -->
   <% } %>
 </div>
 
@@ -79,10 +79,10 @@
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-md-12">
-    <%- fetchCard('/misc/newsletter-signup/', mandateId, { segment: newsletterSegmentId, no_card_data: true }); %>
+    <%# fetchCard('/misc/newsletter-signup/', mandateId, { segment: newsletterSegmentId, no_card_data: true }); %>
   </div>
-</div>
+</div> -->
 
 <%- await include('../_partials/footer.ejs') %>
