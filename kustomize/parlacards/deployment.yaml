@@ -28,13 +28,13 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-slovenija-staging.lb.djnd.si
+              value: https://files.staging.parlameter.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata-slovenija-staging.lb.djnd.si/v3
+              value: https://data.staging.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards-slovenija-staging.lb.djnd.si
+              value: https://kartica.staging.parlameter.si
             - name: VITE_PARLASITE_URL
-              value: https://parlasite-slovenija-staging.lb.djnd.si
+              value: https://staging.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_05_11
               value: https://viii.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2018-06-20

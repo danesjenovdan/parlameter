@@ -4,15 +4,14 @@ metadata:
   name: parladata-slovenija-staging
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - parladata-slovenija-staging.lb.djnd.si
+        - data.staging.parlameter.si
       secretName: parladata-slovenija-staging-tls
   rules:
-    - host: parladata-slovenija-staging.lb.djnd.si
+    - host: data.staging.parlameter.si
       http:
         paths:
           - path: /
@@ -29,19 +28,14 @@ metadata:
   name: parladata-slovenija-staging-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*" # TODO
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - files.parladata-slovenija-staging.lb.djnd.si
+        - files.data.staging.parlameter.si
       secretName: parladata-slovenija-staging-nginx-tls
   rules:
-    - host: files.parladata-slovenija-staging.lb.djnd.si
+    - host: files.data.staging.parlameter.si
       http:
         paths:
           - path: /
