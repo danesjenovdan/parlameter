@@ -28,11 +28,11 @@ spec:
               cpu: 100m
           env:
             - name: PARLASITE_CDN_URL
-              value: "https://parlassets-bosna.lb.djnd.si"
+              value: "https://files.ba.parlameter.si"
             - name: PARLASITE_CARDS_URL
-              value: "https://parlacards-bosna.lb.djnd.si"
+              value: "https://kartica.ba.parlameter.si"
             - name: PARLASITE_DATA_URL
-              value: "https://parladata-bosna.lb.djnd.si/v3"
+              value: "https://data.ba.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
               value: "0"
             - name: PARLASITE_ROOT_ORG_ID

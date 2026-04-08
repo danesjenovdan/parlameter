@@ -28,11 +28,11 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-bosna.lb.djnd.si
+              value: https://files.ba.parlameter.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata-bosna.lb.djnd.si/v3
+              value: https://data.ba.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards-bosna.lb.djnd.si
+              value: https://kartica.ba.parlameter.si
             - name: VITE_PARLASITE_URL
               value: https://ba.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_11_29

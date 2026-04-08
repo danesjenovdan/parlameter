@@ -4,15 +4,14 @@ metadata:
   name: parladata-bosna
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - parladata-bosna.lb.djnd.si
+        - data.ba.parlameter.si
       secretName: parladata-bosna-tls
   rules:
-    - host: parladata-bosna.lb.djnd.si
+    - host: data.ba.parlameter.si
       http:
         paths:
           - path: /
@@ -29,19 +28,14 @@ metadata:
   name: parladata-bosna-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*" # TODO
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - files.parladata-bosna.lb.djnd.si
+        - files.data.ba.parlameter.si
       secretName: parladata-bosna-nginx-tls
   rules:
-    - host: files.parladata-bosna.lb.djnd.si
+    - host: files.data.ba.parlameter.si
       http:
         paths:
           - path: /
