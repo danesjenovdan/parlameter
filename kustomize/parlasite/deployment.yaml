@@ -28,9 +28,9 @@ spec:
               cpu: 100m
           env:
             - name: PARLASITE_CDN_URL
-              value: "https://cdn.lendava.parlameter.si"
+              value: "https://files.lendava.parlameter.si"
             - name: PARLASITE_CARDS_URL
-              value: "https://glej.lendava.parlameter.si"
+              value: "https://kartica.lendava.parlameter.si"
             - name: PARLASITE_DATA_URL
               value: "https://data.lendava.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
