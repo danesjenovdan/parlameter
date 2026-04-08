@@ -4,25 +4,13 @@ metadata:
   name: parladata-hrastnik
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - parladata-hrastnik.lb.djnd.si
         - data.hrastnik.parlameter.si
       secretName: parladata-tls
   rules:
-    - host: parladata-hrastnik.lb.djnd.si
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: parladata-hrastnik
-                port:
-                  number: 8000
     - host: data.hrastnik.parlameter.si
       http:
         paths:
@@ -40,19 +28,14 @@ metadata:
   name: parladata-hrastnik-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*" # TODO
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - files.parladata-hrastnik.lb.djnd.si
+        - files.data.hrastnik.parlameter.si
       secretName: parladata-hrastnik-nginx-tls
   rules:
-    - host: files.parladata-hrastnik.lb.djnd.si
+    - host: files.data.hrastnik.parlameter.si
       http:
         paths:
           - path: /

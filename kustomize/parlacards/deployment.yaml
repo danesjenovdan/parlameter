@@ -28,11 +28,11 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://cdn.hrastnik.parlameter.si
+              value: https://files.hrastnik.parlameter.si
             - name: VITE_PARLADATA_URL
               value: https://data.hrastnik.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://glej.hrastnik.parlameter.si
+              value: https://kartica.hrastnik.parlameter.si
             - name: VITE_PARLASITE_URL
               value: https://hrastnik.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_12_07

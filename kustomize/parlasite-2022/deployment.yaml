@@ -28,9 +28,9 @@ spec:
               cpu: 100m
           env:
             - name: PARLASITE_CDN_URL
-              value: "https://cdn.hrastnik.parlameter.si"
+              value: "https://files.hrastnik.parlameter.si"
             - name: PARLASITE_CARDS_URL
-              value: "https://glej.hrastnik.parlameter.si"
+              value: "https://kartica.hrastnik.parlameter.si"
             - name: PARLASITE_DATA_URL
               value: "https://data.hrastnik.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
