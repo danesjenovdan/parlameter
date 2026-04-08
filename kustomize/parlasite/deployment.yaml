@@ -28,11 +28,11 @@ spec:
               cpu: 100m
           env:
             - name: PARLASITE_CDN_URL
-              value: "https://parlassets-slovenija.lb.djnd.si"
+              value: "https://files.parlameter.si"
             - name: PARLASITE_CARDS_URL
               value: "https://kartica.parlameter.si"
             - name: PARLASITE_DATA_URL
-              value: "https://parladata-slovenija.lb.djnd.si/v3"
+              value: "https://data.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
               value: "4434"
             - name: PARLASITE_ROOT_ORG_ID

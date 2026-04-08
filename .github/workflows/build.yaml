@@ -48,7 +48,7 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlassets
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-slovenija.lb.djnd.si
+            VITE_PARLASSETS_URL=https://files.parlameter.si
             SENTRY_DSN=https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
             SENTRY_ENVIRONMENT=slovenija
           push: true
@@ -63,7 +63,7 @@ jobs:
           file: dockerfiles/parlafront.Dockerfile
           target: parlacards
           build-args: |
-            VITE_PARLASSETS_URL=https://parlassets-slovenija.lb.djnd.si
+            VITE_PARLASSETS_URL=https://files.parlameter.si
             SENTRY_DSN=https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
             SENTRY_ENVIRONMENT=slovenija
           push: true

@@ -28,9 +28,9 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-slovenija.lb.djnd.si
+              value: https://files.parlameter.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata-slovenija.lb.djnd.si/v3
+              value: https://data.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
               value: https://kartica.parlameter.si
             - name: VITE_PARLASITE_URL
