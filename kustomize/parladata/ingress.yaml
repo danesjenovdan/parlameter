@@ -4,25 +4,13 @@ metadata:
   name: parladata
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - parladata-medvode.lb.djnd.si
         - data.medvode.parlameter.si
       secretName: parladata-tls
   rules:
-    - host: parladata-medvode.lb.djnd.si
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: parladata
-                port:
-                  number: 8000
     - host: data.medvode.parlameter.si
       http:
         paths:
@@ -40,19 +28,14 @@ metadata:
   name: parladata-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*" # TODO
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - files.parladata-medvode.lb.djnd.si
+        - files.data.medvode.parlameter.si
       secretName: parladata-nginx-tls
   rules:
-    - host: files.parladata-medvode.lb.djnd.si
+    - host: files.data.medvode.parlameter.si
       http:
         paths:
           - path: /

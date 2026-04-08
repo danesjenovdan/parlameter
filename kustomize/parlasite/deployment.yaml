@@ -28,9 +28,9 @@ spec:
               cpu: 100m
           env:
             - name: PARLASITE_CDN_URL
-              value: "https://cdn.medvode.parlameter.si"
+              value: "https://files.medvode.parlameter.si"
             - name: PARLASITE_CARDS_URL
-              value: "https://glej.medvode.parlameter.si"
+              value: "https://kartica.medvode.parlameter.si"
             - name: PARLASITE_DATA_URL
               value: "https://data.medvode.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
