@@ -28,9 +28,9 @@ spec:
               cpu: 100m
           env:
             - name: PARLASITE_CDN_URL
-              value: "https://cdn.ljubljana.parlameter.si"
+              value: "https://files.ljubljana.parlameter.si"
             - name: PARLASITE_CARDS_URL
-              value: "https://glej.ljubljana.parlameter.si"
+              value: "https://kartica.ljubljana.parlameter.si"
             - name: PARLASITE_DATA_URL
               value: "https://data.ljubljana.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID

@@ -4,25 +4,13 @@ metadata:
   name: parladata
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - parladata.lb.djnd.si
         - data.ljubljana.parlameter.si
       secretName: parladata-tls
   rules:
-    - host: parladata.lb.djnd.si
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: parladata
-                port:
-                  number: 8000
     - host: data.ljubljana.parlameter.si
       http:
         paths:
@@ -40,19 +28,14 @@ metadata:
   name: parladata-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*" # TODO
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - files.parladata.lb.djnd.si
+        - files.ljubljana.parlameter.si
       secretName: parladata-nginx-tls
   rules:
-    - host: files.parladata.lb.djnd.si
+    - host: files.ljubljana.parlameter.si
       http:
         paths:
           - path: /

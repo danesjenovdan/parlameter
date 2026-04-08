@@ -28,11 +28,11 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://cdn.ljubljana.parlameter.si
+              value: https://files.ljubljana.parlameter.si
             - name: VITE_PARLADATA_URL
               value: https://data.ljubljana.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://glej.ljubljana.parlameter.si
+              value: https://kartica.ljubljana.parlameter.si
             - name: VITE_PARLASITE_URL
               value: https://ljubljana.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_11_29

@@ -5,13 +5,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - glej.ljubljana.parlameter.si
+        - kartica.ljubljana.parlameter.si
       secretName: parlacards-tls
   rules:
-    - host: glej.ljubljana.parlameter.si
+    - host: kartica.ljubljana.parlameter.si
       http:
         paths:
           - path: /
