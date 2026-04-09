@@ -9,7 +9,7 @@ from export.resources.common import (
     get_cached_person_name,
 )
 from parlacards.models import (
-    DeviationFromGroup,
+    AgreementWithGroup,
     GroupMonthlyVoteAttendance,
     GroupNumberOfQuestions,
     GroupStyleScore,
@@ -232,7 +232,7 @@ class GroupMembersResource(CardExport):
         return membership.mandate.description if membership.mandate else None
 
 
-class GroupDeviationFromGroupResource(CardExport):
+class GroupAgreementWithGroupResource(CardExport):
     name = Field()
 
     def get_queryset(self, mandate_id=None, request_id=None):
@@ -243,24 +243,24 @@ class GroupDeviationFromGroupResource(CardExport):
             datetime.now()
         )
 
-        relevant_deviation_querysets = [
-            DeviationFromGroup.objects.filter(
+        relevant_agreement_querysets = [
+            AgreementWithGroup.objects.filter(
                 timestamp__range=(from_timestamp, to_timestamp), person=person
             )
             for person in people
         ]
-        relevant_deviation_ids = (
-            DeviationFromGroup.objects.none()
-            .union(*relevant_deviation_querysets)
+        relevant_agreement_ids = (
+            AgreementWithGroup.objects.none()
+            .union(*relevant_agreement_querysets)
             .values("id")
         )
-        relevant_deviations = DeviationFromGroup.objects.filter(
-            id__in=relevant_deviation_ids
+        relevant_agreements = AgreementWithGroup.objects.filter(
+            id__in=relevant_agreement_ids
         ).order_by("-timestamp")
-        return relevant_deviations
+        return relevant_agreements
 
     class Meta:
-        model = DeviationFromGroup
+        model = AgreementWithGroup
         fields = (
             "name",
             "value",

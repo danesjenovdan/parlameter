@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+from parlacards.scores.agreement_with_group import save_people_agreements_with_group
 from parlacards.scores.attendance import (
     save_groups_vote_attendance,
     save_people_vote_attendance,
@@ -8,7 +9,6 @@ from parlacards.scores.avg_number_of_speeches_per_session import (
     save_people_avg_number_of_speeches_per_session,
 )
 from parlacards.scores.common import get_session_last_speech_dates
-from parlacards.scores.deviation_from_group import save_people_deviations_from_group
 from parlacards.scores.monthly_attendance import (
     save_groups_monthly_vote_attendance,
     save_people_monthly_vote_attendance,
@@ -126,8 +126,8 @@ def force_run_person_analyses(timestamp=None, print_method=print):
         save_people_vocabulary_sizes(playing_field, timestamp)
         print_method("start calculating attendace")
         save_people_vote_attendance(playing_field, timestamp)
-        print_method("start calculating deviations from group")
-        save_people_deviations_from_group(playing_field, timestamp)
+        print_method("start calculating agreements with group")
+        save_people_agreements_with_group(playing_field, timestamp)
         print_method("start calculating monthly vote attendance")
         save_people_monthly_vote_attendance(playing_field, timestamp)
         print_method("start calculating voting distances")
@@ -147,7 +147,7 @@ def run_speech_analyses_on_date(playing_field, timestamp):
 def run_vote_analyses_on_date(playing_field, timestamp):
     save_people_vote_attendance(playing_field, timestamp)
     save_groups_vote_attendance(playing_field, timestamp)
-    save_people_deviations_from_group(playing_field, timestamp)
+    save_people_agreements_with_group(playing_field, timestamp)
     save_organizations_vote_unities(playing_field, timestamp)
     save_people_monthly_vote_attendance(playing_field, timestamp)
     save_groups_monthly_vote_attendance(playing_field, timestamp)

@@ -251,8 +251,8 @@ class TestPersonVotesInCommonView(PersonCardTest):
     columns = ["name", "distance_with", "value", "timestamp"]
 
 
-class TestPersonDeviationFromGroupView(PersonCardTest):
-    endpoint = "/v3/export/person/deviation-from-group"
+class TestPersonAgreementWithGroupView(PersonCardTest):
+    endpoint = "/v3/export/person/agreement-with-group"
 
 
 class TestPersonAverageNumberOfSpeechesPerSessionView(PersonCardTest):

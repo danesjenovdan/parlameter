@@ -123,7 +123,7 @@ class TestGroupMembersResource(GroupResourceExportTest):
     ]
 
 
-class TestGroupDeviationFromGroupResource(GroupResourceExportTest):
-    resource = GroupDeviationFromGroupResource
+class TestGroupAgreementWithGroupResource(GroupResourceExportTest):
+    resource = GroupAgreementWithGroupResource
     csv_results_count = 3
     json_results_count = 1

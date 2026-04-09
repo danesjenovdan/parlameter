@@ -1,14 +1,14 @@
 from datetime import datetime, timedelta
 
+from parlacards.scores.agreement_with_group import (
+    save_sparse_people_agreements_with_group_between,
+)
 from parlacards.scores.attendance import (
     save_sparse_groups_vote_attendance_between,
     save_sparse_people_vote_attendance_between,
 )
 from parlacards.scores.avg_number_of_speeches_per_session import (
     save_sparse_people_avg_number_of_speeches_per_session_between,
-)
-from parlacards.scores.deviation_from_group import (
-    save_sparse_people_deviations_from_group_between,
 )
 from parlacards.scores.monthly_attendance import (
     save_sparse_groups_monthly_vote_attendance_between,
@@ -61,8 +61,8 @@ def calculate_sparse_scores(playing_field):
     save_sparse_groups_voting_distances_between(
         playing_field, datetime_from, datetime_to
     )
-    print("Calculating deviations from group ...")
-    save_sparse_people_deviations_from_group_between(
+    print("Calculating agreements with group ...")
+    save_sparse_people_agreements_with_group_between(
         playing_field, datetime_from, datetime_to
     )
     print("Calculating average number of speeches for people...")

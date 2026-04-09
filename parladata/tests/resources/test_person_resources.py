@@ -72,8 +72,8 @@ class TestVocabularySizeResource(PersonResourceExportTest):
     resource = VocabularySizeResource
 
 
-class TestDeviationFromGroupResource(PersonResourceExportTest):
-    resource = DeviationFromGroupResource
+class TestAgreementWithGroupResource(PersonResourceExportTest):
+    resource = AgreementWithGroupResource
 
 
 class TestPersonMonthlyVoteAttendanceResource(PersonResourceExportTest):

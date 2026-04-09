@@ -1,5 +1,5 @@
 from export.resources.group import (
-    GroupDeviationFromGroupResource,
+    GroupAgreementWithGroupResource,
     GroupInfoResource,
     GroupMembersResource,
     GroupMonthlyVoteAttendanceResource,
@@ -95,13 +95,13 @@ class ExportGroupStyleScores(ExportResourceView):
     resource = GroupStyleScoresResource()
 
 
-class ExportGroupDeviationFromGroup(ExportResourceView):
+class ExportGroupAgreementWithGroup(ExportResourceView):
     """
-    Export group's deviation from group from database and return them as a file in one of the allowed formats (json, csv).
+    Export group's agreement with group from database and return them as a file in one of the allowed formats (json, csv).
     """
 
-    filename = "group_deviation_from_group"
-    resource = GroupDeviationFromGroupResource()
+    filename = "group_agreement_with_group"
+    resource = GroupAgreementWithGroupResource()
 
 
 class ExportGroupInfo(ExportResourceView):

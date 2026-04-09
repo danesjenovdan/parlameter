@@ -5,7 +5,7 @@ from import_export.fields import Field
 
 from export.resources.common import ExportModelResource, get_cached_person_name
 from parlacards.models import (
-    DeviationFromGroup,
+    AgreementWithGroup,
     GroupNumberOfQuestions,
     GroupUnity,
     GroupVocabularySize,
@@ -146,7 +146,7 @@ class MPResource(ExportModelResource):
         return self.get_score(PersonNumberOfQuestions, person)
 
     def dehydrate_mismatch_of_pg(self, person):
-        return self.get_score(DeviationFromGroup, person)
+        return self.get_score(AgreementWithGroup, person)
 
     def dehydrate_presence_votes(self, person):
         return self.get_score(PersonVoteAttendance, person)
