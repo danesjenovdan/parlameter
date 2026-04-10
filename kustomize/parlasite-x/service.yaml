@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: parlasite-x
+spec:
+  selector:
+    app: parlasite-x
+  ports:
+    - protocol: TCP
+      port: 3066
+      targetPort: 3066

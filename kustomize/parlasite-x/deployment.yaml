@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parlasite-x
+  labels:
+    app: parlasite-x
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parlasite-x
+  template:
+    metadata:
+      labels:
+        app: parlasite-x
+    spec:
+      containers:
+        - name: parlasite-x
+          image: parlasite-slovenija
+          ports:
+            - containerPort: 3066
+          resources:
+            requests:
+              memory: 400Mi
+              cpu: 100m
+            limits:
+              memory: 400Mi
+              cpu: 100m
+          env:
+            - name: PARLASITE_CDN_URL
+              value: "https://files.parlameter.si"
+            - name: PARLASITE_CARDS_URL
+              value: "https://kartica.parlameter.si"
+            - name: PARLASITE_DATA_URL
+              value: "https://data.parlameter.si/v3"
+            - name: PARLASITE_LEADER_ID
+              value: ""
+            - name: PARLASITE_ROOT_ORG_ID
+              value: "590"
+            - name: PARLASITE_MANDATE_ID
+              value: "4"
+            - name: PARLASITE_DEFAULT_CARD_DATE
+              value: ""
+            - name: PARLASITE_NEWSLETTER_SEGMENT_ID
+              value: ""
+            - name: SENTRY_DSN
+              value: https://64b10a3bec54dedb44314a61dc68a82b@o1076834.ingest.us.sentry.io/4510062422327296
+            - name: SENTRY_ENVIRONMENT
+              value: slovenija

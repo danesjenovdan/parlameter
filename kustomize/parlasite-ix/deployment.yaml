@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parlasite
+  name: parlasite-ix
   labels:
-    app: parlasite
+    app: parlasite-ix
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: parlasite
+      app: parlasite-ix
   template:
     metadata:
       labels:
-        app: parlasite
+        app: parlasite-ix
     spec:
       containers:
-        - name: parlasite
+        - name: parlasite-ix
           image: parlasite-slovenija
           ports:
             - containerPort: 3066
