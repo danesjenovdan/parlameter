@@ -1,15 +1,15 @@
 card:
-  title: Deviation from the parliamentary group
+  title: Agreement with the parliamentary group
   info: >-
-    # List of all the parliamentary group's MPs, sorted by the extend to which
+    # List of all the parliamentary group's MPs, sorted by the extent to which
     they vote the same as the parliamentary group. The bigger the value, the
-    lower the commonalities in the vote.
+    bigger the commonalities in the vote.
 
 
     Za vsako glasovanje izračunamo "glas poslanske skupine", ki ji pripada
     posamezni/-a poslanec/-ka. Potem za vsakega člana/-ico izračunamo odstotek
     glasovanj, na katerih je poslanec/-ka glasoval/-a drugače od večinskega
-    glasu poslanske skupine in rezultate razvrstimo od največjega odstopanja
+    glasu poslanske skupine in rezultate razvrstimo od največjega strinjanja
     proti najmanjšemu.
 
 

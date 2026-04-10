@@ -1,7 +1,7 @@
 card:
-  title: Nepodudarnost sa zastupničkim klubom
+  title: Slaganje sa zastupničkim klubom
   info: >-
-    # Odstupanje zastupnice ili zastupnika od većinskog glasa vlastitog
+    # Slaganje zastupnice ili zastupnika sa većinskim glasom vlastitog
     zastupničkog kluba u usporedbi s prosječnom i najvećom vrijednošću.
 
 
@@ -11,10 +11,10 @@ card:
 
 
     Zatim za svaku zastupnicu ili zastupnika utvrđujemo kojem zastupničkom klubu
-    trenutno pripada. Postotak nepodudarnosti izračunavamo tako da broj glasanja
-    na kojima je osoba glasala drugačije od većinskog glasa, dijelimo s ukupnim
-    brojem svih glasanja. Što je prikazani postotak veći, to je odstupanje
-    zastupnice ili zastupnika od vlastitog zastupničkog kluba veće.
+    trenutno pripada. Postotak slaganja izračunavamo tako da broj glasanja
+    na kojima je osoba glasala isto kao većinski glas dijelimo s ukupnim
+    brojem svih glasanja. Što je prikazani postotak veći, to je slaganje
+    zastupnice ili zastupnika s vlastitim zastupničkim klubom veće.
 
 
     Rezultat prikazujemo zajedno s prosječnom i najvećom vrijednošću.

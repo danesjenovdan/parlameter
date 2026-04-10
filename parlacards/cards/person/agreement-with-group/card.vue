@@ -13,7 +13,7 @@
 import ScoreAvgMax from '@/_components/ScoreAvgMax.vue';
 
 export default {
-  name: 'CardPersonDeviationFromGroup',
+  name: 'CardPersonAgreementWithGroup',
   components: {
     ScoreAvgMax,
   },

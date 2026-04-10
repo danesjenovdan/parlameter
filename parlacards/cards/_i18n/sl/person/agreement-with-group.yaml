@@ -1,7 +1,7 @@
 card:
-  title: Neujemanje s poslansko skupino
+  title: Ujemanje s poslansko skupino
   info: >-
-    # Odstopanje poslanke ali poslanca od večinskega glasu lastne poslanske
+    # Ujemanje poslanke ali poslanca z večinskim glasom lastne poslanske
     skupine v primerjavi s povprečno in najvišjo vrednostjo.
 
 
@@ -11,9 +11,9 @@ card:
 
 
     Nato za vsako poslanko ali poslanca ugotovimo, kateri poslanski skupini
-    trenutno pripada. Odstotek neujemanja izračunamo tako, da število glasovanj,
-    na katerih je oseba glasovala drugače od večinskega glasu, delimo s skupnim
-    številom vseh glasovanj. Višji kot je prikazan odstotek, večje je razhajanje
+    trenutno pripada. Odstotek ujemanja izračunamo tako, da število glasovanj,
+    na katerih je oseba glasovala enako večinskemu glasu, delimo s skupnim
+    številom vseh glasovanj. Višji kot je prikazan odstotek, večje je ujemanje
     poslanke ali poslanca z lastno poslansko skupino.
 
 

@@ -1,7 +1,7 @@
 card:
-  title: Neujemanje s svetniško skupino
+  title: Ujemanje s svetniško skupino
   info: >-
-    # Odstopanje svetnika_ce od večinskega glasu lastne svetniške skupine v primerjavi
+    # Ujemanje svetnika_ce z večinskim glasom lastne svetniške skupine v primerjavi
     s povprečno in največjo vrednostjo.
 
 
@@ -10,5 +10,5 @@ card:
 
 
     Za vsakega svetnika_co najdemo trenutno svetniško skupino in izračunamo odstotek
-    neujemanja glasov v obdobju članstva v občinskem svetu. Večji kot je prikazan
-    odstotek, večje je neujemanje svetnika_ce s svetniško skupino.
+    ujemanja glasov v obdobju članstva v občinskem svetu. Višji kot je prikazan
+    odstotek, večje je ujemanje svetnika_ce s svetniško skupino.

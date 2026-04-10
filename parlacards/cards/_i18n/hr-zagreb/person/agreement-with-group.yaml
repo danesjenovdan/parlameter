@@ -1,8 +1,8 @@
 card:
-  title: Neslaganje s klubom
+  title: Slaganje s klubom
   info: >-
-    # Odstupanje od većinskog rezultata glasanja kluba kojem gradski zastupnik ili
-    zastupnica pripada, u odnosu na prosječnu i najveću vrijednost.
+    # Slaganje gradskog zastupnika ili zastupnice s većinskim glasom kluba kojem
+    pripada, u odnosu na prosječnu i najveću vrijednost.
 
 
     Za svako glasanje računa se i to kako je većinski glasao koji zastupnički klub.

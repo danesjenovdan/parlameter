@@ -14,7 +14,7 @@ import PersonList from '@/_components/PersonList.vue';
 import numberFormatter from '@/_helpers/numberFormatter.js';
 
 export default {
-  name: 'CardGroupDeviationFromGroup',
+  name: 'CardGroupAgreementWithGroup',
   components: {
     PersonList,
   },
