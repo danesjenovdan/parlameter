@@ -40,7 +40,7 @@ spec:
             - name: PARLASITE_MANDATE_ID
               value: "2"
             - name: PARLASITE_DEFAULT_CARD_DATE
-              value: ""
+              value: "2026-04-04"
             - name: PARLASITE_NEWSLETTER_SEGMENT_ID
               value: ""
             - name: SENTRY_DSN
