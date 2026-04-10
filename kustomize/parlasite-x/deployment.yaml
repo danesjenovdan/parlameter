@@ -34,7 +34,7 @@ spec:
             - name: PARLASITE_DATA_URL
               value: "https://data.parlameter.si/v3"
             - name: PARLASITE_LEADER_ID
-              value: ""
+              value: "4434"
             - name: PARLASITE_ROOT_ORG_ID
               value: "590"
             - name: PARLASITE_MANDATE_ID
