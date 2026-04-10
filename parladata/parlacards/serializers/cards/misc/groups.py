@@ -57,7 +57,7 @@ class GroupAnalysesSerializer(CommonOrganizationSerializer):
             ScoreModel.objects.filter(
                 group_id=group.id,
                 playing_field=self.context["playing_field"],
-                timestamp__lte=self.context["request_date"]
+                timestamp__lte=self.context["request_date"],
             )
             .order_by("-timestamp")
             .first()
