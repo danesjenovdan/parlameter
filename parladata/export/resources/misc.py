@@ -47,7 +47,7 @@ class MPResource(ExportModelResource):
 
     speeches_per_session = Field()
     number_of_questions = Field()
-    mismatch_of_pg = Field()
+    agreement_with_group = Field()
     presence_votes = Field()
     spoken_words = Field()
     vocabulary_size = Field()
@@ -90,7 +90,7 @@ class MPResource(ExportModelResource):
             "number_of_mandates",
             "speeches_per_session",
             "number_of_questions",
-            "mismatch_of_pg",
+            "agreement_with_group",
             "presence_votes",
             "spoken_words",
             "vocabulary_size",
@@ -105,7 +105,7 @@ class MPResource(ExportModelResource):
             "number_of_mandates",
             "speeches_per_session",
             "number_of_questions",
-            "mismatch_of_pg",
+            "agreement_with_group",
             "presence_votes",
             "spoken_words",
             "vocabulary_size",
@@ -145,7 +145,7 @@ class MPResource(ExportModelResource):
     def dehydrate_number_of_questions(self, person):
         return self.get_score(PersonNumberOfQuestions, person)
 
-    def dehydrate_mismatch_of_pg(self, person):
+    def dehydrate_agreement_with_group(self, person):
         return self.get_score(AgreementWithGroup, person)
 
     def dehydrate_presence_votes(self, person):
