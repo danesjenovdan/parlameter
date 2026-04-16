@@ -35,6 +35,8 @@ spec:
               value: https://kartica.parlameter.si
             - name: VITE_PARLASITE_URL
               value: https://parlameter.si
+            - name: VITE_PARLASITE_URL_BEFORE_2025_04_04
+              value: https://ix.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2022_05_11
               value: https://viii.parlameter.si
             - name: VITE_PARLASITE_URL_BEFORE_2018-06-20
