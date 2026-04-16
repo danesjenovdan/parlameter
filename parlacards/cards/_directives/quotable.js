@@ -79,6 +79,10 @@ export default {
     const quoteButton = el.querySelector('.everything .quote-button');
     const speechId = Number(el.getAttribute('id'));
 
+    if (!speechTextElement || !quoteButton) {
+      return;
+    }
+
     // Click outside hides quote button
     let mouseDownWasOutside = false;
     const isOutside = (targetElement) => {
