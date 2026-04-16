@@ -5,13 +5,13 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - parlacards-ua.lb.djnd.si
+        - kartica.ua.parlameter.si
       secretName: parlacards-tls
   rules:
-    - host: parlacards-ua.lb.djnd.si
+    - host: kartica.ua.parlameter.si
       http:
         paths:
           - path: /

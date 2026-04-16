@@ -28,11 +28,11 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://parlassets-ua.lb.djnd.si
+              value: https://files.up.parlameter.si
             - name: VITE_PARLADATA_URL
-              value: https://parladata-ua.lb.djnd.si/v3
+              value: https://data.ua.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
-              value: https://parlacards-ua.lb.djnd.si
+              value: https://kartica.ua.parlameter.si
             - name: VITE_PARLASITE_URL
               value: https://parlameter.chesno.org
             - name: VITE_METAIMAGES_URL

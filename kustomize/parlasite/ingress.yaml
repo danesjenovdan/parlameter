@@ -5,22 +5,12 @@ metadata:
   # annotations:
   #   cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   # tls:
   #   - hosts:
   #       - parlasite-ua.lb.djnd.si
   #     secretName: parlasite-tls
   rules:
-    - host: parlasite-ua.lb.djnd.si
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: parlasite
-                port:
-                  number: 3066
     - host: parlameter.chesno.org
       http:
         paths:

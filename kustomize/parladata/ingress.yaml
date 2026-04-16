@@ -4,15 +4,14 @@ metadata:
   name: parladata-ukrajina
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   tls:
     - hosts:
-        - parladata-ua.lb.djnd.si
+        - data.ua.parlameter.si
       secretName: parladata-ua-tls
   rules:
-    - host: parladata-ua.lb.djnd.si
+    - host: data.ua.parlameter.si
       http:
         paths:
           - path: /
@@ -29,19 +28,14 @@ metadata:
   name: parladata-ukrajina-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "*" # TODO
-    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
-    nginx.ingress.kubernetes.io/proxy-body-size: 10m
 spec:
-  ingressClassName: nginx
+  ingressClassName: taefik
   tls:
     - hosts:
-        - files.parladata-ua.lb.djnd.si
+        - files.data.ua.parlameter.si
       secretName: parladata-ua-nginx-tls
   rules:
-    - host: files.parladata-ua.lb.djnd.si
+    - host: files.data.ua.parlameter.si
       http:
         paths:
           - path: /
