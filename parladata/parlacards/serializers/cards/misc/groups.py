@@ -55,7 +55,9 @@ class GroupAnalysesSerializer(CommonOrganizationSerializer):
 
         score_object = (
             ScoreModel.objects.filter(
-                group_id=group.id, timestamp__lte=self.context["request_date"]
+                group_id=group.id,
+                playing_field=self.context["playing_field"],
+                timestamp__lte=self.context["request_date"],
             )
             .order_by("-timestamp")
             .first()
@@ -76,6 +78,7 @@ class GroupAnalysesSerializer(CommonOrganizationSerializer):
 
         return GroupUnity.objects.filter(
             group=group,
+            playing_field=playing_field,
             timestamp__gte=mandate.beginning,
             timestamp__lte=mandate.ending or datetime.strptime("3000", "%Y"),
         ).aggregate(Avg("value"))["value__avg"]
