@@ -39,6 +39,8 @@ Sentry.init({
     'window.webkit.messageHandlers',
     // Facebook and Instagram webviews
     'Java object is gone',
+    // Chrome webview
+    "Unexpected token 'else'",
   ],
   denyUrls: [
     // Chrome extensions
