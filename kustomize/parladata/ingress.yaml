@@ -48,7 +48,7 @@ metadata:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
     traefik.ingress.kubernetes.io/router.middlewares: parlameter-ukrajina-enable-cors@kubernetescrd
 spec:
-  ingressClassName: taefik
+  ingressClassName: traefik
   tls:
     - hosts:
         - files.data.ua.parlameter.si
