@@ -28,7 +28,7 @@ spec:
               cpu: 200m
           env:
             - name: VITE_PARLASSETS_URL
-              value: https://files.up.parlameter.si
+              value: https://files.ua.parlameter.si
             - name: VITE_PARLADATA_URL
               value: https://data.ua.parlameter.si/v3
             - name: VITE_PARLACARDS_URL
