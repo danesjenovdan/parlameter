@@ -2,17 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: parlasite
-  # annotations:
-  #   cert-manager.io/cluster-issuer: "letsencrypt-production"
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-production"
 spec:
   ingressClassName: traefik
-  # tls:
-  #   - hosts:
-  #       - parlasite-ua.lb.djnd.si
-  #     secretName: parlasite-tls
+  tls:
+    - hosts:
+        - ua.parlameter.si
+        # - parlameter.chesno.org they have cert on their own
+      secretName: parlasite-tls
   rules:
     - host: parlameter.chesno.org
-      http:
+      http: &http_refs
         paths:
           - path: /
             pathType: Prefix
@@ -21,3 +22,5 @@ spec:
                 name: parlasite
                 port:
                   number: 3066
+    - host: ua.parlameter.si
+      http: *http_refs
