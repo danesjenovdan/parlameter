@@ -41,14 +41,17 @@ function isValidErrorForSentry(error, responseText) {
         return false;
       }
     }
-    if (error.response.status === 404 && responseText != null) {
-      if (/^(Template|Card|Locale) '.*' not found$/.test(responseText)) {
-        return false;
-      }
-      if (responseText === '') {
-        return false;
-      }
+    if (error.response.status === 404) {
+      return false;
     }
+    // if (error.response.status === 404 && responseText != null) {
+    //   if (/^(Template|Card|Locale) '.*' not found$/.test(responseText)) {
+    //     return false;
+    //   }
+    //   if (responseText === '') {
+    //     return false;
+    //   }
+    // }
   }
   return true;
 }
