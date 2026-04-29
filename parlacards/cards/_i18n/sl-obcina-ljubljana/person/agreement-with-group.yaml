@@ -1,0 +1,14 @@
+card:
+  title: Ujemanje s svetniškim klubom
+  info: >-
+    # Ujemanje svetnika_ce z večinskim glasom lastnega svetniškega kluba v primerjavi
+    s povprečno in največjo vrednostjo.
+
+
+    Za vsa glasovanja preračunamo večinski glas za vsak svetniški klub. Večinski glas
+    je opcija, za katero se je odločilo največ svetnikov.
+
+
+    Za vsakega svetnika_co najdemo trenutni svetniški klub in izračunamo odstotek
+    ujemanja glasov v obdobju članstva v občinskem svetu. Višji kot je prikazan
+    odstotek, večje je ujemanje svetnika_ce s svetniškim klubom.
