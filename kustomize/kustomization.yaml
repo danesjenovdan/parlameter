@@ -27,16 +27,16 @@ resources:
 images:
   - name: parladata-zagreb
     newName: rg.fr-par.scw.cloud/djnd/parladata-zagreb
-    newTag: '0c8c1a42e436ff5dbdaf701ef89ef4a3a1c0a055'
+    newTag: '6b965736546765680340b5664aef802a785a2b67'
   - name: parlasolr-zagreb
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-zagreb
-    newTag: '0c8c1a42e436ff5dbdaf701ef89ef4a3a1c0a055'
+    newTag: '6b965736546765680340b5664aef802a785a2b67'
   - name: parlacards-zagreb
     newName: rg.fr-par.scw.cloud/djnd/parlacards-zagreb
-    newTag: '0c8c1a42e436ff5dbdaf701ef89ef4a3a1c0a055'
+    newTag: '6b965736546765680340b5664aef802a785a2b67'
   - name: parlasite-zagreb
     newName: rg.fr-par.scw.cloud/djnd/parlasite-zagreb
-    newTag: '0c8c1a42e436ff5dbdaf701ef89ef4a3a1c0a055'
+    newTag: '6b965736546765680340b5664aef802a785a2b67'
   - name: parlassets-zagreb
     newName: rg.fr-par.scw.cloud/djnd/parlassets-zagreb
-    newTag: '0c8c1a42e436ff5dbdaf701ef89ef4a3a1c0a055'
+    newTag: '6b965736546765680340b5664aef802a785a2b67'
