@@ -18,7 +18,7 @@ urlpatterns = [
     path("person/memberships/", PersonMembership.as_view()),
     path("person/most-votes-in-common/", MostVotesInCommon.as_view()),
     path("person/least-votes-in-common/", LeastVotesInCommon.as_view()),
-    path("person/deviation-from-group/", DeviationFromGroup.as_view()),
+    path("person/agreement-with-group/", AgreementWithGroup.as_view()),
     path(
         "person/average-number-of-speeches-per-session/",
         PersonAvgSpeechesPerSession.as_view(),
@@ -45,7 +45,7 @@ urlpatterns = [
     path("group/votes/", GroupBallots.as_view()),
     path("group/most-votes-in-common/", GroupMostVotesInCommon.as_view()),
     path("group/least-votes-in-common/", GroupLeastVotesInCommon.as_view()),
-    path("group/deviation-from-group/", GroupDeviationFromGroup.as_view()),
+    path("group/agreement-with-group/", GroupAgreementWithGroup.as_view()),
     path("group/tfidf/", GroupTfidfView.as_view()),
     path("group/style-scores/", GroupStyleScores.as_view()),
     path("group/speeches/", GroupSpeechesView.as_view()),

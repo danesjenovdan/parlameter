@@ -6,7 +6,7 @@ from export.resources.common import (
     get_cached_person_name,
 )
 from parlacards.models import (
-    DeviationFromGroup,
+    AgreementWithGroup,
     PersonAvgSpeechesPerSession,
     PersonMonthlyVoteAttendance,
     PersonNumberOfQuestions,
@@ -128,9 +128,9 @@ class VocabularySizeResource(PersonCardExport):
         model = PersonVocabularySize
 
 
-class DeviationFromGroupResource(PersonCardExport):
+class AgreementWithGroupResource(PersonCardExport):
     class Meta:
-        model = DeviationFromGroup
+        model = AgreementWithGroup
 
 
 class PersonMonthlyVoteAttendanceResource(PersonCardExport):

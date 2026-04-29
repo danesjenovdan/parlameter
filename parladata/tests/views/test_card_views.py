@@ -159,9 +159,9 @@ def test_person_most_votes_in_common_for_bicameral_systems(
 
 
 @pytest.mark.django_db()
-def test_person_deviation_from_group(first_mandate_member, all_mandate_member):
+def test_person_agreement_with_group(first_mandate_member, all_mandate_member):
     run_test_urls(
-        "/v3/cards/person/deviation-from-group/",
+        "/v3/cards/person/agreement-with-group/",
         [first_mandate_member, all_mandate_member],
     )
 
@@ -332,9 +332,9 @@ def test_group_least_votes_in_common(first_mandate_party, all_mandate_party):
 
 
 @pytest.mark.django_db()
-def test_group_deviation_from_group(first_mandate_party, all_mandate_party):
+def test_group_agreement_with_group(first_mandate_party, all_mandate_party):
     run_test_urls(
-        "/v3/cards/group/deviation-from-group/",
+        "/v3/cards/group/agreement-with-group/",
         [first_mandate_party, all_mandate_party],
     )
 
@@ -349,19 +349,6 @@ def test_group_style_scores(first_mandate_party, all_mandate_party):
     run_test_urls(
         "/v3/cards/group/style-scores/", [first_mandate_party, all_mandate_party]
     )
-
-
-# TODO remove permanently in September 2025
-# @pytest.mark.django_db()
-# def test_group_discord(first_mandate_party, all_mandate_party):
-#     run_test_urls("/v3/cards/group/discord/", [first_mandate_party, all_mandate_party])
-
-
-# TODO remove permanently in September 2025
-# @pytest.mark.django_db()
-# def test_group_discord_with_nonexistent_id():
-#     response = client.get("/v3/cards/group/discord/?id=12000")
-#     assert response.status_code == 404
 
 
 @pytest.mark.django_db()
