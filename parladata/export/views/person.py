@@ -1,5 +1,5 @@
 from export.resources.person import (
-    DeviationFromGroupResource,
+    AgreementWithGroupResource,
     PersonAvgSpeechesPerSessionResource,
     PersonBallotsResource,
     PersonInfoCardResource,
@@ -41,9 +41,9 @@ class ExportPersonNumberOfSpokenWords(ExportResourceView):
     resource = PersonNumberOfSpokenWordsResource()
 
 
-class ExportDeviationFromGroup(ExportResourceView):
-    filename = "deviation_from_group_resource"
-    resource = DeviationFromGroupResource()
+class ExportAgreementWithGroup(ExportResourceView):
+    filename = "agreement_with_group"
+    resource = AgreementWithGroupResource()
 
 
 class ExportPersonMonthlyVoteAttendance(ExportResourceView):

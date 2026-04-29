@@ -442,10 +442,10 @@ analysis-texts:
     explanation:
       Кількість слів, сказаних народним депутатом у всіх попередніх промовах
       у Верховній Раді.
-  mismatch_of_pg:
-    label: Відхилення від фракції/групи
-    titleSuffix: " відхилення від фракції/групи"
-    explanation: Відступ від голосування більшості.
+  agreement_with_group:
+    label: Agreement with the parliamentary group
+    titleSuffix: " agreement with the parliamentary group"
+    explanation: Agreement with the majority voice of ballots group in the assembly.
   working_bodies:
     label: Delovna telesa
     titleSuffix: " po delovnih telesih"

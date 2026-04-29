@@ -25,7 +25,7 @@ urlpatterns = [
     path("person/memberships/", ExportPersonMembership.as_view()),
     path("person/most-votes-in-common/", ExportVotingDistance.as_view()),
     path("person/least-votes-in-common/", ExportVotingDistance.as_view()),
-    path("person/deviation-from-group/", ExportDeviationFromGroup.as_view()),
+    path("person/agreement-with-group/", ExportAgreementWithGroup.as_view()),
     path(
         "person/average-number-of-speeches-per-session/",
         ExportPersonAvgSpeechesPerSession.as_view(),
@@ -61,8 +61,8 @@ urlpatterns = [
     # path('group/votes/', GroupBallots.as_view()),
     path("group/most-votes-in-common/", ExportGroupVotesInCommon.as_view()),
     path("group/least-votes-in-common/", ExportGroupVotesInCommon.as_view()),
-    # group/deviation-from-group only shows people who are active today
-    path("group/deviation-from-group/", ExportGroupDeviationFromGroup.as_view()),
+    # group/agreement-with-group only shows people who are active today
+    path("group/agreement-with-group/", ExportGroupAgreementWithGroup.as_view()),
     path("group/tfidf/", ExportGroupTfidf.as_view()),
     path("group/style-scores/", ExportGroupStyleScores.as_view()),
     # group/speeches it is not implemented because it is not useful

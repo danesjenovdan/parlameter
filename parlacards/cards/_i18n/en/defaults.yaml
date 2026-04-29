@@ -386,10 +386,10 @@ analysis-texts:
     explanation: >-
       The number of words by the MEP said in all his previous speeches in the
       DZ.
-  mismatch_of_pg:
-    label: Deviation from the parliamentary group
-    titleSuffix: " deviation from the parliamentary group"
-    explanation: Derogation from the majority voice of ballots group in the DZ.
+  agreement_with_group:
+    label: Agreement with the parliamentary group
+    titleSuffix: " agreement with the parliamentary group"
+    explanation: Agreement with the majority voice of ballots group in the assembly.
   working_bodies:
     label: Delovna telesa
     titleSuffix: " po delovnih telesih"
