@@ -378,11 +378,11 @@ analysis-texts:
     explanation: >-
       Število besed, ki jih je poslanec izgovoril v vseh svojih dosedanjih
       govorih v DZ.
-  mismatch_of_pg:
-    label: Neujemanje s poslansko skupino
-    titleSuffix: " po neujemanju s poslansko skupino"
+  agreement_with_group:
+    label: Ujemanje s poslansko skupino
+    titleSuffix: " po ujemanju s poslansko skupino"
     explanation:
-      Odstopanje od večinskega glasu poslanske skupine na glasovanjih v
+      Ujemanje z večinskim glasom poslanske skupine na glasovanjih v
       DZ.
   working_bodies:
     label: Delovna telesa
@@ -546,7 +546,7 @@ organization-classifications:
   committee: Odbori
   other: Drugo
   commission: Komisije
-  council: Kolegij predsednice Državnega zbora
+  council: Kolegij predsednika Državnega zbora
   investigative_commission: Preiskovalne komisije
 legislation-classifications:
   act: Akt
