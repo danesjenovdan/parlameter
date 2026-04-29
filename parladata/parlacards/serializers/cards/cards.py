@@ -91,7 +91,9 @@ from parladata.models.motion import Motion
 from parladata.models.organization import (
     CLASSIFICATIONS as ORGANIZATION_CLASSIFICATIONS,
 )
-from parladata.models.organization import Organization
+from parladata.models.organization import (
+    Organization,
+)
 from parladata.models.person import Person
 from parladata.models.public_question import PublicPersonQuestion
 from parladata.models.question import Question
