@@ -94,7 +94,7 @@ List of analysis IDs that can be used on misc/members:
 
 - `number_of_questions` - how many questions / suggestions each member gave
 
-- `mismatch_of_pg` - how many times did each member vote differently from their member group
+- `agreement_with_group` - how many times did each member vote the same as their member group
 
 - `working_bodies` - a list of working bodies each member is a part of
 

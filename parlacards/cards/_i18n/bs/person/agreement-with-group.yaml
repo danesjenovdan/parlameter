@@ -1,0 +1,34 @@
+card:
+  title: Slaganje s klubom
+  info: >-
+    # Slaganje zastupnika/ce s većinskim glasom vlastite zastupničke grupe u
+    poređenju s prosjekom i najvećom vrijednošću.
+
+
+    Za sva glasanja prvo izračunamo većinski glas svakog kluba. To je glas (ZA,
+    PROTIV, SUZDRŽANI, NEMA) koji je izabrala većina njegovih članova/ica.
+
+
+    Zatim za svakog/u zastupnika/cu utvrdimo kojem klubu trenutno pripada.
+    Procenat slaganja računamo tako što broj glasanja na kojima je osoba
+    glasala isto kao većinski glas dijelimo s ukupnim brojem svih
+    glasanja. Što je procenat veći, veće je slaganje osobe s vlastitim klubom.
+
+
+    Rezultat prikazujemo zajedno s prosjekom i najvećom vrijednošću.
+  info2: >-
+    # Slaganje delegata/kinje s većinskim glasom vlastitog kluba u poređenju s
+    prosjekom i najvećom vrijednošću.
+
+
+    Za sva glasanja prvo izračunamo većinski glas svakog kluba. To je glas (ZA,
+    PROTIV, SUZDRŽANI, NEMA) koji je izabrala većina njegovih članova/ica.
+
+
+    Zatim za svakog delegata/kinju utvrdimo kojem klubu trenutno pripada.
+    Procenat slaganja računamo tako što broj glasanja na kojima je osoba
+    glasala isto kao većinski glas dijelimo s ukupnim brojem svih
+    glasanja. Što je procenat veći, veće je slaganje osobe s vlastitim klubom.
+
+
+    Rezultat prikazujemo zajedno s prosjekom i najvećom vrijednošću.
