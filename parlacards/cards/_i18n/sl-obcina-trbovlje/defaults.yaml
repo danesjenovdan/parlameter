@@ -378,12 +378,10 @@ analysis-texts:
     explanation: >-
       Število besed, ki jih je svetnik izgovoril v vseh svojih dosedanjih
       govorih v DZ.
-  mismatch_of_pg:
-    label: Neujemanje s svetniško skupino
-    titleSuffix: " po neujemanju s svetniško skupino"
-    explanation:
-      Odstopanje od večinskega glasu svetniške skupine na glasovanjih v
-      DZ.
+  agreement_with_group:
+    label: Ujemanje s svetniško skupino
+    titleSuffix: " po ujemanju s svetniško skupino"
+    explanation: Ujemanje z večinskim glasom svetniške skupine na glasovanjih v občinskem svetu.
   working_bodies:
     label: Delovna telesa
     titleSuffix: " po delovnih telesih"

@@ -108,7 +108,7 @@ class TestMembersView(ExportTestClass):
         "number_of_mandates",
         "speeches_per_session",
         "number_of_questions",
-        "mismatch_of_pg",
+        "agreement_with_group",
         "presence_votes",
         "spoken_words",
         "vocabulary_size",
@@ -251,8 +251,8 @@ class TestPersonVotesInCommonView(PersonCardTest):
     columns = ["name", "distance_with", "value", "timestamp"]
 
 
-class TestPersonDeviationFromGroupView(PersonCardTest):
-    endpoint = "/v3/export/person/deviation-from-group"
+class TestPersonAgreementWithGroupView(PersonCardTest):
+    endpoint = "/v3/export/person/agreement-with-group"
 
 
 class TestPersonAverageNumberOfSpeechesPerSessionView(PersonCardTest):

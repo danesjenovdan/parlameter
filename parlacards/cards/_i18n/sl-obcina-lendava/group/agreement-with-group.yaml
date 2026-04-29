@@ -1,0 +1,13 @@
+card:
+  title: Ujemanje s svetniškim klubom
+  info: >-
+    # Seznam vseh svetnikov svetniškega kluba, ki so razvrščeni glede na
+    vrednost ujemanja z glasom svetniškega kluba. Večja kot je vrednost, večje
+    je ujemanje.
+
+
+    Za vsako glasovanje izračunamo "glas svetniškega kluba", ki mu pripada
+    posamezni_a svetnik_ca. Potem za vsakega člana_ico izračunamo odstotek
+    glasovanj, na katerih je svetnik_ca glasoval_a enako kot večinski glas
+    glasu svetniškega kluba in rezultate razvrstimo od največjega ujemanja
+    proti najmanjšemu.

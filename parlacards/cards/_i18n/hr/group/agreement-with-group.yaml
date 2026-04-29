@@ -1,0 +1,20 @@
+card:
+  title: Slaganje sa zastupničkim klubom
+  info: >-
+    # Popis članica i članova odabranog zastupničkog kluba, razvrstan prema tome
+    koliko često glasaju u skladu s većinom u zastupničkom klubu. Što je veća
+    vrijednost, to je slaganje veće.
+
+
+    Za svako glasanje prvo izračunamo većinski glas odabranog zastupničkog kluba
+    (ZA, PROTIV, SUZDRŽANI, ODSUTNI), tj. onaj glas za koji se odlučio najveći
+    broj njegovih članica i članova.
+
+
+    Zatim za svaku osobu izračunamo postotak slaganja tako da broj glasanja
+    na kojima je glasala isto kao većinski glas dijelimo s ukupnim
+    brojem svih glasanja. Što je prikazani postotak veći, to je slaganje
+    članice ili člana s vlastitim zastupničkim klubom veće.
+
+
+    Rezultati su na popisu razvrstani od najvećeg slaganja prema najmanjem.

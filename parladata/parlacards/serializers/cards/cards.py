@@ -10,7 +10,7 @@ from rest_framework import serializers
 from rest_framework.exceptions import NotFound
 
 from parlacards.models import (
-    DeviationFromGroup,
+    AgreementWithGroup,
     GroupMonthlyVoteAttendance,
     GroupTfidf,
     GroupUnity,
@@ -279,40 +279,40 @@ class LeastVotesInCommonCardSerializer(PersonScoreCardSerializer):
     results = serializers.SerializerMethodField()
 
 
-class DeviationFromGroupCardSerializer(PersonScoreCardSerializer):
-    results = ScoreSerializerField(property_model_name="DeviationFromGroup")
+class AgreementWithGroupCardSerializer(PersonScoreCardSerializer):
+    results = ScoreSerializerField(property_model_name="AgreementWithGroup")
 
 
-class GroupDeviationFromGroupCardSerializer(GroupScoreCardSerializer):
+class GroupAgreementWithGroupCardSerializer(GroupScoreCardSerializer):
     def get_results(self, group):
         # TODO this is very similar to
         # ScoreSerializerField - consider refactoring
 
         people = group.query_members(self.context["card_date"])
 
-        relevant_deviation_querysets = [
-            DeviationFromGroup.objects.filter(
+        relevant_agreement_querysets = [
+            AgreementWithGroup.objects.filter(
                 timestamp__range=(self.from_timestamp, self.to_timestamp), person=person
             ).order_by("-timestamp")[:1]
             for person in people
         ]
-        relevant_deviation_ids = (
-            DeviationFromGroup.objects.none()
-            .union(*relevant_deviation_querysets)
+        relevant_agreement_ids = (
+            AgreementWithGroup.objects.none()
+            .union(*relevant_agreement_querysets)
             .values("id")
         )
-        relevant_deviations = DeviationFromGroup.objects.filter(
-            id__in=relevant_deviation_ids
+        relevant_agreements = AgreementWithGroup.objects.filter(
+            id__in=relevant_agreement_ids
         )
 
         return [
             {
                 "person": CommonPersonSerializer(
-                    deviation_score.person, context=self.context
+                    agreement_score.person, context=self.context
                 ).data,
-                "value": deviation_score.value,
+                "value": agreement_score.value,
             }
-            for deviation_score in relevant_deviations
+            for agreement_score in relevant_agreements
         ]
 
 

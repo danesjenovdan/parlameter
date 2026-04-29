@@ -59,7 +59,7 @@ class TestMPResource(MiscResourceExportTest):
         "number_of_mandates",
         "speeches_per_session",
         "number_of_questions",
-        "mismatch_of_pg",
+        "agreement_with_group",
         "presence_votes",
         "spoken_words",
         "vocabulary_size",
