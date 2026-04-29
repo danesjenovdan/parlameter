@@ -107,7 +107,7 @@ const analysesIDs = [
     id: 'spoken_words',
   },
   {
-    id: 'mismatch_of_pg',
+    id: 'agreement_with_group',
     unit: 'percent',
   },
   {

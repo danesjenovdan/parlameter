@@ -8,7 +8,7 @@ ALL_MODELS = [
     VotingDistance,
     GroupVotingDistance,
     PersonAvgSpeechesPerSession,
-    DeviationFromGroup,
+    AgreementWithGroup,
     PersonNumberOfQuestions,
     PersonMonthlyVoteAttendance,
     GroupMonthlyVoteAttendance,

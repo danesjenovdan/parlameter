@@ -1,0 +1,20 @@
+card:
+  title: Slaganje s klubom
+  info: >-
+    # Lista članova/ica izabranog kluba poredana je prema tome koliko često
+    glasaju u skladu s većinom u klubu. Što je vrijednost veća, to je
+    slaganje veće.
+
+
+    Za svako glasanje najprije izračunamo većinski glas izabranog kluba (ZA,
+    PROTIV, SUZDRŽANI, ODSUTNI), tj. onaj glas za koji se odlučilo najviše
+    njegovih članova i članica.
+
+
+    Zatim za svaku osobu izračunamo procenat slaganja tako što broj
+    glasanja na kojima je glasala isto kao većinski glas dijelimo s
+    ukupnim brojem svih glasanja. Što je procenat veći, to je veće slaganje
+    člana/ice s vlastitim klubom.
+
+
+    Rezultati na listi poredani su od najvećeg slaganja ka najmanjem.

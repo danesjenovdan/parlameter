@@ -385,12 +385,10 @@ analysis-texts:
     explanation: >-
       Liczba słów wypowiedzianych przez poseła w trakcie wszystkich swoich
       wystąpień w Sejmie.
-  mismatch_of_pg:
-    label: Odchylenie od klubu parlamentarnego
-    titleSuffix: " według odchylenia od klubu parlamentarnego"
-    explanation: >-
-      Odstępstwo od głosu większości klubu parlamentarnego na głosowaniach Sejmu
-      RP.
+  agreement_with_group:
+    label: Agreement with the parliamentary group
+    titleSuffix: " agreement with the parliamentary group"
+    explanation: Agreement with the majority voice of ballots group in the assembly.
   working_bodies:
     label: Delovna telesa
     titleSuffix: " po delovnih telesih"
