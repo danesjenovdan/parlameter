@@ -26,7 +26,7 @@ SCORE_MODELS_MAPPING = {
     "number_of_questions": "PersonNumberOfQuestions",
     "speeches_per_session": "PersonAvgSpeechesPerSession",
     "spoken_words": "PersonNumberOfSpokenWords",
-    "mismatch_of_pg": "DeviationFromGroup",
+    "agreement_with_group": "AgreementWithGroup",
     "vocabulary_size": "PersonVocabularySize",
 }
 

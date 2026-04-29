@@ -378,10 +378,10 @@ analysis-texts:
     explanation: >-
       Broj riječi koje je zastupnica izgovorila u svim svojim dosadašnjim
       govorima u HS.
-  mismatch_of_pg:
-    label: Neslaganje s klubom
-    titleSuffix: " prema neslaganju s klubom"
-    explanation: Odstupanje od većinskog glasa kluba na glasanjima u HS.
+  agreement_with_group:
+    label: Slaganje s klubom
+    titleSuffix: " prema slaganju s klubom"
+    explanation: Slaganje s većinskim glasom kluba na glasanjima u HS.
   working_bodies:
     label: Radna tijela
     titleSuffix: " po radnim tijelima"

@@ -1,0 +1,14 @@
+card:
+  title: Ujemanje s svetniško skupino
+  info: >-
+    # Ujemanje svetnika_ce z večinskim glasom lastne svetniške skupine v primerjavi
+    s povprečno in največjo vrednostjo.
+
+
+    Za vsa glasovanja preračunamo večinski glas za vsako svetniško skupino. Večinski glas
+    je opcija, za katero se je odločilo največ svetnikov.
+
+
+    Za vsakega svetnika_co najdemo trenutno svetniško skupino in izračunamo odstotek
+    ujemanja glasov v obdobju članstva v občinskem svetu. Višji kot je prikazan
+    odstotek, večje je ujemanje svetnika_ce s svetniško skupino.

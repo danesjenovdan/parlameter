@@ -1,0 +1,17 @@
+card:
+  title: Slaganje s klubom
+  info: >-
+    # Slaganje gradskog zastupnika ili zastupnice s većinskim glasom kluba kojem
+    pripada, u odnosu na prosječnu i najveću vrijednost.
+
+
+    Za svako glasanje računa se i to kako je većinski glasao koji zastupnički klub.
+
+
+    Potom se za sva glasanja analizira koliko često je zastupnik ili zastupnica glasao
+    ili glasala u skladu s većinskim glasanjem pripadnog zastupničkog kluba, te se
+    rezultat slaganja izražava u postotku.
+
+
+    Iz svih izračuna izostavljena su glasanja na kojima zastupnici i zastupnice nisu
+    glasale.
