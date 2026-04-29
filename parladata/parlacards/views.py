@@ -7,9 +7,9 @@ from rest_framework.views import APIView
 
 from parlacards.models import Quote
 from parlacards.serializers.cards import (
-    DeviationFromGroupCardSerializer,
+    AgreementWithGroupCardSerializer,
+    GroupAgreementWithGroupCardSerializer,
     GroupCardSerializer,
-    GroupDeviationFromGroupCardSerializer,
     GroupLeastVotesInCommonCardSerializer,
     GroupMediaReportsCardSerializer,
     GroupMembersCardSerializer,
@@ -309,22 +309,22 @@ class PersonAvgSpeechesPerSession(CardView):
     card_serializer = PersonAvgSpeechesPerSessionCardSerializer
 
 
-class DeviationFromGroup(CardView):
+class AgreementWithGroup(CardView):
     """
-    A person's deviation from group voting.
+    A person's agreement with group voting.
     """
 
     thing = Person
-    card_serializer = DeviationFromGroupCardSerializer
+    card_serializer = AgreementWithGroupCardSerializer
 
 
-class GroupDeviationFromGroup(CardView):
+class GroupAgreementWithGroup(CardView):
     """
-    A person's deviation from group voting.
+    A group's agreement with group voting.
     """
 
     thing = Organization
-    card_serializer = GroupDeviationFromGroupCardSerializer
+    card_serializer = GroupAgreementWithGroupCardSerializer
 
 
 class PersonNumberOfQuestions(CardView):

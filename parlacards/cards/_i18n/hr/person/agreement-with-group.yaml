@@ -1,0 +1,20 @@
+card:
+  title: Slaganje sa zastupničkim klubom
+  info: >-
+    # Slaganje zastupnice ili zastupnika sa većinskim glasom vlastitog
+    zastupničkog kluba u usporedbi s prosječnom i najvećom vrijednošću.
+
+
+    Za sva glasanja prvo izračunavamo većinski glas svakog zastupničkog kluba.
+    To je onaj glas (ZA, PROTIV, SUZDRŽANI, ODSUTNI) za koji se odlučila većina
+    njegovih zastupnica i zastupnika.
+
+
+    Zatim za svaku zastupnicu ili zastupnika utvrđujemo kojem zastupničkom klubu
+    trenutno pripada. Postotak slaganja izračunavamo tako da broj glasanja
+    na kojima je osoba glasala isto kao većinski glas dijelimo s ukupnim
+    brojem svih glasanja. Što je prikazani postotak veći, to je slaganje
+    zastupnice ili zastupnika s vlastitim zastupničkim klubom veće.
+
+
+    Rezultat prikazujemo zajedno s prosječnom i najvećom vrijednošću.
