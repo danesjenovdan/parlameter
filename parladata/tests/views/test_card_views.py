@@ -459,6 +459,12 @@ def test_single_minutes():
     assert response.status_code == 200
 
 
+@pytest.mark.django_db()
+def test_session_group_attendance():
+    response = client.get("/v3/cards/session/group-attendance/?id=3782")
+    assert response.status_code == 200
+
+
 # TODO: needs settings.SOLR_URL
 # @pytest.mark.django_db()
 # def test_search_speeches():

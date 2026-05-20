@@ -1,0 +1,107 @@
+{
+  "url": "http://localhost:8000/v3/cards/session/group-attendance/?id=3782",
+  "data": {
+    "results": [
+      {
+        "value": 46.55172413793103,
+        "group": {
+          "name": "Nova Slovenija – Krščanski demokrati",
+          "acronym": "NSi",
+          "slug": "16-nova-slovenija-krscanski-demokrati",
+          "color": "#665F0C",
+          "classification": "pg",
+          "is_in_coalition": false
+        }
+      },
+      {
+        "value": 89.65517241379311,
+        "group": {
+          "name": "Samostojni svetnik Liste kolesarjev in pešcev",
+          "acronym": "LKP",
+          "slug": "17-samostojni-svetnik-liste-kolesarjev-in-pescev",
+          "color": "#B3D7D6",
+          "classification": "pg",
+          "is_in_coalition": false
+        }
+      },
+      {
+        "value": 32.18390804597701,
+        "group": {
+          "name": "Svetniški klub samostojnih svetnikov",
+          "acronym": "SKSS",
+          "slug": "18-svetniski-klub-samostojnih-svetnikov",
+          "color": "#18C7C1",
+          "classification": "pg",
+          "is_in_coalition": false
+        }
+      },
+      {
+        "value": 29.310344827586206,
+        "group": {
+          "name": "Socialni demokrati",
+          "acronym": "SD",
+          "slug": "19-socialni-demokrati",
+          "color": "#E0D874",
+          "classification": "pg",
+          "is_in_coalition": false
+        }
+      },
+      {
+        "value": 82.75862068965517,
+        "group": {
+          "name": "Levica",
+          "acronym": null,
+          "slug": "20-levica",
+          "color": "#035166",
+          "classification": "pg",
+          "is_in_coalition": false
+        }
+      },
+      {
+        "value": 80.34482758620689,
+        "group": {
+          "name": "Slovenska demokratska stranka",
+          "acronym": "SDS",
+          "slug": "21-slovenska-demokratska-stranka",
+          "color": "#CCBE18",
+          "classification": "pg",
+          "is_in_coalition": false
+        }
+      },
+      {
+        "value": 93.25337331334333,
+        "group": {
+          "name": "Lista Zorana Jankovića",
+          "acronym": "LZJ",
+          "slug": "22-lista-zorana-jankovica",
+          "color": "#048EA2",
+          "classification": "pg",
+          "is_in_coalition": true
+        }
+      }
+    ],
+    "mandate": {
+      "id": 1,
+      "description": "Mestni svet MOL 2018–2022",
+      "beginning": "2018-12-17T12:00:00"
+    },
+    "session": {
+      "name": "10. seja Mestnega sveta MOL",
+      "id": 3782,
+      "start_time": "2019-12-16T15:30:00",
+      "end_time": null,
+      "organizations": [
+        {
+          "name": "Mestni svet MOL",
+          "acronym": null,
+          "slug": "1-mestni-svet-mol",
+          "color": "#09A2CC",
+          "classification": "house",
+          "is_in_coalition": false
+        }
+      ],
+      "classification": "regular",
+      "in_review": false
+    }
+  }
+}

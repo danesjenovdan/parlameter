@@ -57,6 +57,7 @@ from parlacards.serializers.cards import (
     RootGroupBasicInfoCardSerializer,
     SearchDropdownSerializer,
     SessionAgendaItemCardSerializer,
+    SessionGroupAttendanceCardSerializer,
     SessionLegislationCardSerializer,
     SessionMinutesCardSerializer,
     SessionSpeechesCardSerializer,
@@ -518,6 +519,11 @@ class SessionAgendaItemsView(CardView):
 class SessionMinutesView(CardView):
     thing = Session
     card_serializer = SessionMinutesCardSerializer
+
+
+class SessionGroupAttendance(CardView):
+    thing = Session
+    card_serializer = SessionGroupAttendanceCardSerializer
 
 
 class GroupMostVotesInCommon(CardView):
