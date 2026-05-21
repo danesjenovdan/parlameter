@@ -1,17 +1,19 @@
 card:
   title: Primerjalnik glasovanj
   info: >-
-    Kartica izpiše vsa glasovanja, ki ustrezajo izbranim pogojem. Pri primerjavi
-    poslanskih skupin uporablja izračunan večinski glas, ki ga izračunamo tako,
-    da preštejemo za katero opcijo je glasovalo največ poslancev poslanske
-    skupine.
+    # Prikaz glasovanj, na katerih so izbrane poslanke in poslanci v prvi
+    skupini glasovali enako, v drugi pa drugače od njih.
 
 
-    Rezultate prikazujemo na tri načine:
+    Z iskalnikoma izbereš poslanke in poslance, katerih glasovanja želiš
+    primerjati. V prvem iskalniku izbiraš osebe, ki so na iskanih glasovanjih
+    glasovale enako (ZA, PROTI, VZDRŽANI, ODSOTNI), v drugem pa tiste, ki so
+    glasovale drugače od prve skupine.
 
 
-    * kot seznam vseh glasovanj,
+    V analizo vključimo le tista glasovanja, v času katerih so imele vse izbrane
+    osebe poslanski mandat.
 
-    * kot črtni grafikon ki predstavlja število glasovanj na dan,
 
-    * kot histogram s seštevki glasovanj glede na matično delovno telo.
+    Podatke o glasovanjih pridobivamo s spletnega mesta
+    [DZ RS](https://www.dz-rs.si/).
