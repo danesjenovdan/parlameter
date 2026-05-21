@@ -50,18 +50,20 @@ add-new-trigger: Dodaj nov sprožilec
 to-notification-list: Na seznam obvestil
 remove: Odstrani
 confirm-delete-notification: Ali želiš odstraniti to obvestilo?
-comparator-text: >-
-  Zanima me, na katerih glasovanjih so {same} glasovali enako, {different} pa
-  drugače od njih. {load}
-comparator-vote-percent: '{num} filtriranih glasovanj predstavlja {percent} vseh glasovanj.'
-select-members-voted-same: Izberi poslance, ki so glasovali enako
-select-members-voted-different: Izberi poslance, ki so glasovali drugače
+select-members-voted-same: Izberi poslanke ali poslance, ki so glasovali enako
+select-members-voted-different: Izberi poslanke ali poslance, ki so glasovali drugače
 tabs:
   vote-list: Seznam glasovanj
   time-chart: Dinamika skozi čas
   bar-chart: Dinamika glede na MDT
-comparator-empty-state-text: Za prikaz glasovanj dodaj vsaj dva akterja.
-comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
+comparator-empty-state-text: Za primerjavo glasovanj izberi vsaj dve poslanki ali poslanca.
+comparator-empty-state-text-same: Za primerjavo glasovanj izberi vsaj eno poslanko ali poslanca v prvi skupini.
+comparator-empty-state-no-results: Ni glasovanj, ki ustrezajo izbranim kriterijem.
+comparator-same-vote: "Enak glas:"
+comparator-different-vote: "Drugačen glas:"
+comparator-vote-count: "Število ustreznih glasovanj:"
+comparator-vote-percentage: "To je {percent} vseh glasovanj."
+compare: Primerjaj
 speakers: Govorci
 input-words: Vnesi posamezno besedo ali več besed, ločenih z vejico.
 empty-text: Za prikaz rezultatov dodaj vsaj dve besedi.
