@@ -1,4 +1,12 @@
 card:
   title: Prisotnost poslanskih skupin na glasovanjih seje
   info: >-
-    # TODO
+    # Pregled prisotnosti poslanskih skupin na glasovanjih izbrane seje.
+
+
+    Poslanske skupine razvrstimo glede na odstotek, ki je seštevek prisotnosti
+    njihovih poslank in poslancev na glasovanjih izbrane seje.
+
+
+    Nabor glasovanj pridobivamo s spletnega mesta [DZ
+    RS](https://www.dz-rs.si/).
