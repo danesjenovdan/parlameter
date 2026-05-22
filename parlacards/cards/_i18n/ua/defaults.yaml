@@ -149,12 +149,20 @@ add-new-trigger: Dodaj nov sprožilec
 to-notification-list: Na seznam obvestil
 remove: Odstrani
 confirm-delete-notification: Ali si prepričan_a, da želiš izbrisati to obvestilo?
+select-members-voted-same: Select MPs who voted the same
+select-members-voted-different: Select MPs who voted differently
 tabs:
-  vote-list: Список голосувань
-  time-chart: Хронологія
-  bar-chart: Динаміка робочого механізму
-comparator-empty-state-text: Для перегляду голосувань додайте щонайменше два значення.
-comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
+  vote-list: List of voting events
+  time-chart: Timeline
+  bar-chart: Working body dynamics
+comparator-empty-state-text: To compare voting events, select at least two MPs.
+comparator-empty-state-text-same: To compare voting events, select at least one MP in the first group.
+comparator-empty-state-no-results: No voting events match the selected criteria.
+comparator-same-vote: "Same vote:"
+comparator-different-vote: "Different vote:"
+comparator-vote-count: "Number of matching voting events:"
+comparator-vote-percentage: "This is {percent} of all voting events."
+compare: Compare
 speakers: Доповідачі
 empty-text: Щоб переглянути результат додайте щонайменше два слова.
 show-relative: Показати відносну метрику
@@ -499,13 +507,6 @@ material: Gradivo
 documents: Dokumenti
 external_analysis: Analize
 other: Drugo
-comparator-text:
-  Я хочу знати, коли {той самий} проголосував таким же чином, але {інший}
-  проголосував інакше. {завантажити}
-comparator-vote-percent: '{кількість} відфільтрованих голосувань становить {відсоток}
-  усіх подій голосування.'
-select-members-voted-same: Izberi poslance, ki so glasovali enako
-select-members-voted-different: Izberi poslance, ki so glasovali drugače
 input-words: Введіть слово або декілька слів розділених комами.
 wordgroups-text: "Показати, хто найбільше говорить про: {слова} {завантажити}"
 only-with-votes: Лише з голосами
