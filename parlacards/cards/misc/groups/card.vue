@@ -70,10 +70,10 @@ const analysesIDs = [
     precision: 2,
     unit: 'percent',
   },
-  {
-    id: 'vocabulary_size',
-    precision: 2,
-  },
+  // {
+  //   id: 'vocabulary_size',
+  //   precision: 2,
+  // },
   // {
   //   id: 'privzdignjeno',
   //   precision: 3,

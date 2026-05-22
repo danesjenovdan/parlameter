@@ -50,18 +50,20 @@ add-new-trigger: Dodaj nov sprožilec
 to-notification-list: Na seznam obvestil
 remove: Odstrani
 confirm-delete-notification: Ali si prepričan_a, da želiš odstraniti to obvestilo?
-comparator-text: >-
-  I want to know, when {same} voted the same, but {different} voted differently.
-  {load}
-comparator-vote-percent: '{num} filtered voting events represents {percent} of all voting events.'
-select-members-voted-same: Izberi poslance, ki so glasovali enako
-select-members-voted-different: Izberi poslance, ki so glasovali drugače
+select-members-voted-same: Select MPs who voted the same
+select-members-voted-different: Select MPs who voted differently
 tabs:
   vote-list: List of voting events
   time-chart: Timeline
   bar-chart: Working body dynamics
-comparator-empty-state-text: To view voting events add at least two agents.
-comparator-empty-state-text-same: Za prikaz glasovanj dodaj vsaj enega akterja, ki je glasoval enako.
+comparator-empty-state-text: To compare voting events, select at least two MPs.
+comparator-empty-state-text-same: To compare voting events, select at least one MP in the first group.
+comparator-empty-state-no-results: No voting events match the selected criteria.
+comparator-same-vote: "Same vote:"
+comparator-different-vote: "Different vote:"
+comparator-vote-count: "Number of matching voting events:"
+comparator-vote-percentage: "This is {percent} of all voting events."
+compare: Compare
 speakers: Speakers
 input-words: Enter a word or multiple words separated by a comma.
 empty-text: To view results add at least two words.
