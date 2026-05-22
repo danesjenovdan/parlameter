@@ -46,6 +46,7 @@ from parlacards.serializers.common import (
     SessionScoreCardSerializer,
 )
 from parlacards.serializers.facets import GroupFacetSerializer, PersonFacetSerializer
+from parlacards.serializers.group_attendance import SessionGroupAttendanceSerializer
 from parlacards.serializers.legislation import (
     LegislationDetailSerializer,
     LegislationSerializer,
@@ -722,6 +723,18 @@ class SingleMinutesCardSerializer(CardSerializer):
             agenda_item.session.mandate, context=self.context
         )
         return serializer.data
+
+
+class SessionGroupAttendanceCardSerializer(SessionScoreCardSerializer):
+    def get_results(self, obj):
+        attendances = SessionGroupAttendance.objects.filter(
+            session=obj,
+            timestamp__lte=self.context["request_date"],
+        )
+        attendance_serializer = SessionGroupAttendanceSerializer(
+            attendances, many=True, context=self.context
+        )
+        return attendance_serializer.data
 
 
 class SessionSpeechesCardSerializer(SessionScoreCardSerializer):
