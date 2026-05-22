@@ -1,6 +1,6 @@
 {
-  "url": "http://localhost:8000/v3/cards/tools/comparator/?id=137&members_same=10044,9877&members_different=10497,10380",
-  "id": 137,
+  "url": "https://data.parlameter.si/v3/cards/tools/comparator/?id=590&votes%3Apage=1&members_same=5977%2C3377",
+  "id": 590,
   "data": {
     "results": {
       "groups": [
@@ -18,22 +18,6 @@
           "slug": "4-socialni-demokrati",
           "color": "#B3422E",
           "classification": "pg",
-          "is_in_coalition": true
-        },
-        {
-          "name": "Levica",
-          "acronym": "Levica",
-          "slug": "6-levica",
-          "color": "#FFAFA1",
-          "classification": "pg",
-          "is_in_coalition": true
-        },
-        {
-          "name": "Nova Slovenija - Krščanski demokrati",
-          "acronym": "NSi",
-          "slug": "7-nova-slovenija-krscanski-demokrati",
-          "color": "#8E7A86",
-          "classification": "pg",
           "is_in_coalition": false
         },
         {
@@ -50,13 +34,37 @@
           "slug": "138-svoboda",
           "color": "#002F42",
           "classification": "pg",
-          "is_in_coalition": true
+          "is_in_coalition": false
         },
         {
-          "name": "Poslanska skupina nepovezanih poslancev",
-          "acronym": "NP",
-          "slug": "584-poslanska-skupina-nepovezanih-poslancev",
-          "color": "#31A8B1",
+          "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+          "acronym": "NSi, SLS, FOKUS",
+          "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+          "color": "#09a2cc",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Državljansko gibanje Resni.ca",
+          "acronym": "Resni.ca",
+          "slug": "592-drzavljansko-gibanje-resnica",
+          "color": "#09a2cc",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Levica in Vesna",
+          "acronym": "Levica in Vesna",
+          "slug": "593-levica-in-vesna",
+          "color": "#09a2cc",
+          "classification": "pg",
+          "is_in_coalition": false
+        },
+        {
+          "name": "Demokrati. Anžeta Logarja",
+          "acronym": "Demokrati",
+          "slug": "595-demokrati-anzeta-logarja",
+          "color": "#09a2cc",
           "classification": "pg",
           "is_in_coalition": false
         }
@@ -74,9 +82,26 @@
             "slug": "4-socialni-demokrati",
             "color": "#B3422E",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P414.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P414.png",
+          "is_active": true
+        },
+        {
+          "slug": "6062-tadej-ostrc",
+          "name": "Tadej Ostrc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Demokrati. Anžeta Logarja",
+            "acronym": "Demokrati",
+            "slug": "595-demokrati-anzeta-logarja",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Tadej_Ostrc.jpg",
           "is_active": true
         },
         {
@@ -91,9 +116,60 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P381.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P381.png",
+          "is_active": true
+        },
+        {
+          "slug": "11435-luka-gorsek",
+          "name": "Luka Goršek",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Socialni demokrati",
+            "acronym": "SD",
+            "slug": "4-socialni-demokrati",
+            "color": "#B3422E",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/LukaGorsek.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "11452-robert-potnik",
+          "name": "Robert Potnik",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Demokrati. Anžeta Logarja",
+            "acronym": "Demokrati",
+            "slug": "595-demokrati-anzeta-logarja",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Robert_Potnik.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "34-matjaz-han",
+          "name": "Matjaž Han",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Socialni demokrati",
+            "acronym": "SD",
+            "slug": "4-socialni-demokrati",
+            "color": "#B3422E",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P018.png",
           "is_active": true
         },
         {
@@ -101,33 +177,33 @@
           "name": "Nataša Avšič Bogovič",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
             "name": "Svoboda",
             "acronym": "Svoboda",
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P370.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P370.png",
           "is_active": true
         },
         {
-          "slug": "5953-darko-krajnc",
-          "name": "Darko Krajnc",
-          "honorific_prefix": "mag.",
+          "slug": "11448-barbara-levstik-sega",
+          "name": "Barbara Levstik Šega",
+          "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": "he",
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Demokrati. Anžeta Logarja",
+            "acronym": "Demokrati",
+            "slug": "595-demokrati-anzeta-logarja",
+            "color": "#09a2cc",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P392.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Barbara_Levstik_Sega.jpg",
           "is_active": true
         },
         {
@@ -144,24 +220,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P040.png",
-          "is_active": true
-        },
-        {
-          "slug": "5960-gasper-ovnik",
-          "name": "Gašper Ovnik",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P399.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P040.png",
           "is_active": true
         },
         {
@@ -178,64 +237,47 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P270.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P270.png",
           "is_active": true
         },
         {
-          "slug": "6037-soniboj-knezak",
-          "name": "Soniboj Knežak",
+          "slug": "11456-aleksander-storek",
+          "name": "Aleksander Štorek",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Socialni demokrati",
-            "acronym": "SD",
-            "slug": "4-socialni-demokrati",
-            "color": "#B3422E",
+            "name": "Državljansko gibanje Resni.ca",
+            "acronym": "Resni.ca",
+            "slug": "592-drzavljansko-gibanje-resnica",
+            "color": "#09a2cc",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P321.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Aleksander_Storek.jpg",
           "is_active": true
         },
         {
-          "slug": "5981-andreja-zivic",
-          "name": "Andreja Živic",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P417.png",
-          "is_active": true
-        },
-        {
-          "slug": "10044-jernej-znidarsic",
-          "name": "Jernej Žnidaršič",
+          "slug": "11445-franc-krizan",
+          "name": "Franc Križan",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Demokrati. Anžeta Logarja",
+            "acronym": "Demokrati",
+            "slug": "595-demokrati-anzeta-logarja",
+            "color": "#09a2cc",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P426.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Franc_Krizan.jpg",
           "is_active": true
         },
         {
-          "slug": "5966-ales-rezar",
-          "name": "Aleš Rezar",
-          "honorific_prefix": null,
+          "slug": "5967-borut-sajovic",
+          "name": "Borut Sajovic",
+          "honorific_prefix": "mag.",
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
@@ -244,9 +286,9 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P405.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P069.png",
           "is_active": true
         },
         {
@@ -256,20 +298,88 @@
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija - Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "7-nova-slovenija-krscanski-demokrati",
-            "color": "#8E7A86",
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P292.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P292.png",
           "is_active": true
         },
         {
-          "slug": "5946-alma-intihar",
-          "name": "Alma Intihar",
-          "honorific_prefix": "mag.",
+          "slug": "3377-andreja-katic",
+          "name": "Andreja Katič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Socialni demokrati",
+            "acronym": "SD",
+            "slug": "4-socialni-demokrati",
+            "color": "#B3422E",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P258.png",
+          "is_active": true
+        },
+        {
+          "slug": "11444-tea-kosir",
+          "name": "Tea Košir",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Demokrati. Anžeta Logarja",
+            "acronym": "Demokrati",
+            "slug": "595-demokrati-anzeta-logarja",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Tea_Kosir.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "11443-andrej-kosec",
+          "name": "Andrej Kosec",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Andrej_Kosec.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "7843-janez-joze-olovec",
+          "name": "Janez Jože Olovec",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Janez_Joze_Olovec.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "11451-metka-pesl-sater",
+          "name": "Metka Pešl Šater",
+          "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "she",
           "group": {
@@ -278,9 +388,9 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P385.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Metka_Pesl_Sater.jpg",
           "is_active": true
         },
         {
@@ -295,15 +405,32 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P423.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P423.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "11446-manja-lesnik",
+          "name": "Manja Lesnik",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Manja_Lesnik.jpg",
           "is_active": true
         },
         {
           "slug": "5952-tamara-kozlovic",
           "name": "Tamara Kozlovič",
-          "honorific_prefix": null,
+          "honorific_prefix": "mag.",
           "honorific_suffix": null,
           "preferred_pronoun": "she",
           "group": {
@@ -312,9 +439,9 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P391.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P391.png",
           "is_active": true
         },
         {
@@ -329,31 +456,14 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P406.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P406.png",
           "is_active": true
         },
         {
-          "slug": "5970-katarina-stravs",
-          "name": "Katarina Štravs",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P408.png",
-          "is_active": true
-        },
-        {
-          "slug": "6038-aleksander-prosen-kralj",
-          "name": "Aleksander Prosen Kralj",
+          "slug": "11440-andrej-klemenc",
+          "name": "Andrej Klemenc",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
@@ -363,9 +473,26 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P422.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Andrej_Klemenc.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "5934-mateja-calusic",
+          "name": "Mateja Čalušić",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P373.png",
           "is_active": true
         },
         {
@@ -382,7 +509,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P268.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P268.png",
           "is_active": true
         },
         {
@@ -399,7 +526,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P311.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P311.png",
           "is_active": true
         },
         {
@@ -416,24 +543,24 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P352.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P352.png",
           "is_active": true
         },
         {
-          "slug": "5945-andrej-hoivik",
-          "name": "Andrej Hoivik",
-          "honorific_prefix": null,
+          "slug": "108-alenka-bratusek",
+          "name": "Alenka Bratušek",
+          "honorific_prefix": "mag.",
           "honorific_suffix": null,
-          "preferred_pronoun": "he",
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Slovenska demokratska stranka",
-            "acronym": "SDS",
-            "slug": "2-slovenska-demokratska-stranka",
-            "color": "#679BBB",
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P384.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/sab-mag-alenka-bratusek.jpg",
           "is_active": true
         },
         {
@@ -448,26 +575,9 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P397.png",
-          "is_active": true
-        },
-        {
-          "slug": "59-franc-rosec",
-          "name": "Franc Rosec",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Slovenska demokratska stranka",
-            "acronym": "SDS",
-            "slug": "2-slovenska-demokratska-stranka",
-            "color": "#679BBB",
-            "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P307.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P397.png",
           "is_active": true
         },
         {
@@ -482,26 +592,43 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P284.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P284.png",
           "is_active": true
         },
         {
-          "slug": "5949-andreja-kert",
-          "name": "Andreja Kert",
+          "slug": "11458-dusko-vujanovic",
+          "name": "Duško Vujanović",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": "she",
+          "preferred_pronoun": "he",
           "group": {
             "name": "Svoboda",
             "acronym": "Svoboda",
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P388.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Dusko_Vujanovic.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "11457-nedeljko-todorovic",
+          "name": "Nedeljko Todorović",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Državljansko gibanje Resni.ca",
+            "acronym": "Resni.ca",
+            "slug": "592-drzavljansko-gibanje-resnica",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Nedeljko_Todorovic.jpg",
           "is_active": true
         },
         {
@@ -516,60 +643,77 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P411.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P411.png",
           "is_active": true
         },
         {
-          "slug": "10380-branko-zlobko",
-          "name": "Branko Zlobko",
+          "slug": "3768-vinko-logaj",
+          "name": "Vinko Logaj",
+          "honorific_prefix": "dr.",
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Vinko-Logaj.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "11442-katja-kokot",
+          "name": "Katja Kokot",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Državljansko gibanje Resni.ca",
+            "acronym": "Resni.ca",
+            "slug": "592-drzavljansko-gibanje-resnica",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Katja_Kokot.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "11459-marjeta-marjetka-smid",
+          "name": "Marjeta (Marjetka) Šmid",
+          "honorific_prefix": "mag.",
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Marjeta_Smid.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "4729-srecko-ocvirk",
+          "name": "Srečko Ocvirk",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/10380.jpg",
-          "is_active": true
-        },
-        {
-          "slug": "5975-rastislav-vrecko",
-          "name": "Rastislav Vrečko",
-          "honorific_prefix": "mag.",
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P412.png",
-          "is_active": true
-        },
-        {
-          "slug": "5942-tatjana-greif",
-          "name": "Tatjana Greif",
-          "honorific_prefix": "dr.",
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Levica",
-            "acronym": "Levica",
-            "slug": "6-levica",
-            "color": "#FFAFA1",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P382.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Srecko_Ocvirk.jpg",
           "is_active": true
         },
         {
@@ -586,34 +730,24 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P396.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P396.png",
           "is_active": true
         },
         {
-          "slug": "44-dejan-kaloh",
-          "name": "Dejan Kaloh",
-          "honorific_prefix": "mag.",
+          "slug": "5963-martin-premk",
+          "name": "Martin Premk",
+          "honorific_prefix": "dr.",
           "honorific_suffix": null,
           "preferred_pronoun": "he",
-          "group": null,
-          "image": "/media/P310.png",
-          "is_active": true
-        },
-        {
-          "slug": "3733-uros-brezan",
-          "name": "Uroš Brežan",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": null,
           "group": {
             "name": "Svoboda",
             "acronym": "Svoboda",
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P427-uros-brezan.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P402.png",
           "is_active": true
         },
         {
@@ -630,41 +764,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P252.png",
-          "is_active": true
-        },
-        {
-          "slug": "5963-martin-premk",
-          "name": "Martin Premk",
-          "honorific_prefix": "dr.",
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P402.png",
-          "is_active": true
-        },
-        {
-          "slug": "6035-milan-jakopovic",
-          "name": "Milan Jakopovič",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Levica",
-            "acronym": "Levica",
-            "slug": "6-levica",
-            "color": "#FFAFA1",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P421.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P252.png",
           "is_active": true
         },
         {
@@ -674,31 +774,14 @@
           "honorific_suffix": null,
           "preferred_pronoun": "she",
           "group": {
-            "name": "Nova Slovenija - Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "7-nova-slovenija-krscanski-demokrati",
-            "color": "#8E7A86",
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P169.jpg",
-          "is_active": true
-        },
-        {
-          "slug": "41-eva-irgl",
-          "name": "Eva Irgl",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Poslanska skupina nepovezanih poslancev",
-            "acronym": "NP",
-            "slug": "584-poslanska-skupina-nepovezanih-poslancev",
-            "color": "#31A8B1",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "/media/P023.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P169.jpg",
           "is_active": true
         },
         {
@@ -713,43 +796,26 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P386.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P386.png",
           "is_active": true
         },
         {
-          "slug": "5931-mirjam-bon-klanjscek",
-          "name": "Mirjam Bon Klanjšček",
-          "honorific_prefix": "dr.",
+          "slug": "11436-matej-grah",
+          "name": "Matej Grah",
+          "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": "she",
+          "preferred_pronoun": "he",
           "group": {
             "name": "Svoboda",
             "acronym": "Svoboda",
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P235.png",
-          "is_active": true
-        },
-        {
-          "slug": "46-joze-tanko",
-          "name": "Jože Tanko",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Slovenska demokratska stranka",
-            "acronym": "SDS",
-            "slug": "2-slovenska-demokratska-stranka",
-            "color": "#679BBB",
-            "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P077.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Matej_Grah.jpg",
           "is_active": true
         },
         {
@@ -766,7 +832,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P025.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P025.png",
           "is_active": true
         },
         {
@@ -776,14 +842,14 @@
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija - Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "7-nova-slovenija-krscanski-demokrati",
-            "color": "#8E7A86",
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P371.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P371.jpg",
           "is_active": true
         },
         {
@@ -798,9 +864,9 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P415.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P415.png",
           "is_active": true
         },
         {
@@ -815,26 +881,9 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P210.png",
-          "is_active": true
-        },
-        {
-          "slug": "5938-rado-gladek",
-          "name": "Rado Gladek",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Slovenska demokratska stranka",
-            "acronym": "SDS",
-            "slug": "2-slovenska-demokratska-stranka",
-            "color": "#679BBB",
-            "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P377.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P210.png",
           "is_active": true
         },
         {
@@ -851,7 +900,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P309.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P309.png",
           "is_active": true
         },
         {
@@ -868,24 +917,41 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P187.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P187.png",
           "is_active": true
         },
         {
-          "slug": "9-bojana-mursic",
-          "name": "Bojana Muršič",
-          "honorific_prefix": "mag.",
+          "slug": "5938-rado-gladek",
+          "name": "Rado Gladek",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P377.png",
+          "is_active": true
+        },
+        {
+          "slug": "11439-jana-jerman",
+          "name": "Jana Jerman",
+          "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "she",
           "group": {
-            "name": "Socialni demokrati",
-            "acronym": "SD",
-            "slug": "4-socialni-demokrati",
-            "color": "#B3422E",
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P275.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Jana_Jerman.jpg",
           "is_active": true
         },
         {
@@ -900,9 +966,26 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P416.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P416.png",
+          "is_active": true
+        },
+        {
+          "slug": "11449-boris-mijic",
+          "name": "Boris Mijič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Državljansko gibanje Resni.ca",
+            "acronym": "Resni.ca",
+            "slug": "592-drzavljansko-gibanje-resnica",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Boris_Mijic.jpg",
           "is_active": true
         },
         {
@@ -919,7 +1002,41 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P387.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P387.png",
+          "is_active": true
+        },
+        {
+          "slug": "6013-klemen-bostjancic",
+          "name": "Klemen Boštjančič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Klemen-Bostjancic.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "5929-matej-arcon",
+          "name": "Matej Arčon",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P369.png",
           "is_active": true
         },
         {
@@ -936,17 +1053,41 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P429-andrej-poglajen.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P429-andrej-poglajen.jpg",
           "is_active": true
         },
         {
-          "slug": "5969-mojca-setinc-pasek",
-          "name": "Mojca Šetinc Pašek",
+          "slug": "4402-vladimir-sega",
+          "name": "Vladimir Šega",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": null,
-          "image": "/media/P407.png",
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Levica in Vesna",
+            "acronym": "Levica in Vesna",
+            "slug": "593-levica-in-vesna",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Vladimir_Sega.jpg",
+          "is_active": true
+        },
+        {
+          "slug": "11453-darko-ratajc",
+          "name": "Darko Ratajc",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Socialni demokrati",
+            "acronym": "SD",
+            "slug": "4-socialni-demokrati",
+            "color": "#B3422E",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/DarkoRatajc.jpg",
           "is_active": true
         },
         {
@@ -963,41 +1104,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P092.png",
-          "is_active": true
-        },
-        {
-          "slug": "10497-franc-medic",
-          "name": "Franc Medic",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Nova Slovenija - Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "7-nova-slovenija-krscanski-demokrati",
-            "color": "#8E7A86",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "/media/P430-franc-medic.jpg",
-          "is_active": true
-        },
-        {
-          "slug": "15-matej-tasner-vatovec",
-          "name": "Matej Tašner Vatovec",
-          "honorific_prefix": "dr.",
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Levica",
-            "acronym": "Levica",
-            "slug": "6-levica",
-            "color": "#FFAFA1",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P288.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P092.png",
           "is_active": true
         },
         {
@@ -1014,41 +1121,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P167.png",
-          "is_active": true
-        },
-        {
-          "slug": "5959-tine-novak",
-          "name": "Tine Novak",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Poslanska skupina nepovezanih poslancev",
-            "acronym": "NP",
-            "slug": "584-poslanska-skupina-nepovezanih-poslancev",
-            "color": "#31A8B1",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "/media/P398.png",
-          "is_active": true
-        },
-        {
-          "slug": "85-jozef-horvat",
-          "name": "Jožef Horvat",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Nova Slovenija - Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "7-nova-slovenija-krscanski-demokrati",
-            "color": "#8E7A86",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "/media/P020.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P167.png",
           "is_active": true
         },
         {
@@ -1063,9 +1136,9 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P425.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P425.png",
           "is_active": true
         },
         {
@@ -1080,53 +1153,43 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P404.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P404.png",
           "is_active": true
         },
         {
-          "slug": "24-miha-kordis",
-          "name": "Miha Kordiš",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": null,
-          "image": "/media/P262.png",
-          "is_active": true
-        },
-        {
-          "slug": "61-anze-logar",
-          "name": "Anže Logar",
+          "slug": "5939-robert-golob",
+          "name": "Robert Golob",
           "honorific_prefix": "dr.",
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Poslanska skupina nepovezanih poslancev",
-            "acronym": "NP",
-            "slug": "584-poslanska-skupina-nepovezanih-poslancev",
-            "color": "#31A8B1",
+            "name": "Svoboda",
+            "acronym": "Svoboda",
+            "slug": "138-svoboda",
+            "color": "#002F42",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P238.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Robert_Golob.jpg",
           "is_active": true
         },
         {
-          "slug": "5944-alenka-helbl",
-          "name": "Alenka Helbl",
+          "slug": "11454-zoran-stevanovic",
+          "name": "Zoran Stevanović",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": "she",
+          "preferred_pronoun": "he",
           "group": {
-            "name": "Slovenska demokratska stranka",
-            "acronym": "SDS",
-            "slug": "2-slovenska-demokratska-stranka",
-            "color": "#679BBB",
+            "name": "Državljansko gibanje Resni.ca",
+            "acronym": "Resni.ca",
+            "slug": "592-drzavljansko-gibanje-resnica",
+            "color": "#09a2cc",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P383.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Zoran_Stevanovic.jpg",
           "is_active": true
         },
         {
@@ -1136,31 +1199,31 @@
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija - Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "7-nova-slovenija-krscanski-demokrati",
-            "color": "#8E7A86",
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P338.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P338.png",
           "is_active": true
         },
         {
-          "slug": "5950-urska-klakocar-zupancic",
-          "name": "Urška Klakočar Zupančič",
-          "honorific_prefix": "mag.",
+          "slug": "3613-tina-brecelj",
+          "name": "Tina Brecelj",
+          "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "she",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Levica in Vesna",
+            "acronym": "Levica in Vesna",
+            "slug": "593-levica-in-vesna",
+            "color": "#09a2cc",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P389.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/G1373.png",
           "is_active": true
         },
         {
@@ -1177,7 +1240,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/kosi.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/kosi.jpg",
           "is_active": true
         },
         {
@@ -1194,41 +1257,41 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P409.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P409.png",
           "is_active": true
         },
         {
-          "slug": "5941-miroslav-gregoric",
-          "name": "Miroslav Gregorič",
+          "slug": "3089-ales-hojs",
+          "name": "Aleš Hojs",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P380.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Ales_Hojs.jpg",
           "is_active": true
         },
         {
-          "slug": "6036-jonas-znidarsic",
-          "name": "Jonas Žnidaršič",
+          "slug": "11438-aleksander-gungl",
+          "name": "Aleksander Gungl",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Socialni demokrati",
-            "acronym": "SD",
-            "slug": "4-socialni-demokrati",
-            "color": "#B3422E",
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P420.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Aleksander_Gungl.jpg",
           "is_active": true
         },
         {
@@ -1245,7 +1308,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P239.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P239.png",
           "is_active": true
         },
         {
@@ -1262,24 +1325,24 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P029.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P029.png",
           "is_active": true
         },
         {
-          "slug": "17-predrag-bakovic",
-          "name": "Predrag Baković",
+          "slug": "11441-adrijana-kocjancic",
+          "name": "Adrijana Kocjančič",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Socialni demokrati",
-            "acronym": "SD",
-            "slug": "4-socialni-demokrati",
-            "color": "#B3422E",
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P319.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Adrijana_Kocjancic.jpg",
           "is_active": true
         },
         {
@@ -1289,31 +1352,14 @@
           "honorific_suffix": null,
           "preferred_pronoun": "she",
           "group": {
-            "name": "Levica",
-            "acronym": "Levica",
-            "slug": "6-levica",
-            "color": "#FFAFA1",
+            "name": "Levica in Vesna",
+            "acronym": "Levica in Vesna",
+            "slug": "593-levica-in-vesna",
+            "color": "#09a2cc",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P334.png",
-          "is_active": true
-        },
-        {
-          "slug": "20-jani-prednik",
-          "name": "Jani Prednik",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Socialni demokrati",
-            "acronym": "SD",
-            "slug": "4-socialni-demokrati",
-            "color": "#B3422E",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P320.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P334.png",
           "is_active": true
         },
         {
@@ -1323,36 +1369,36 @@
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Nova Slovenija - Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "7-nova-slovenija-krscanski-demokrati",
-            "color": "#8E7A86",
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P418.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P418.jpg",
           "is_active": true
         },
         {
-          "slug": "6016-bojan-cebela",
-          "name": "Bojan Čebela",
+          "slug": "11437-jana-grzinic",
+          "name": "Jana Gržinič",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": "he",
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P419.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Jana_Grzinic.jpg",
           "is_active": true
         },
         {
-          "slug": "5972-lucija-tacer",
-          "name": "Lucija Tacer",
+          "slug": "5972-lucija-tacer-perlin",
+          "name": "Lucija Tacer Perlin",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "she",
@@ -1362,26 +1408,26 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P410.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P410.png",
           "is_active": true
         },
         {
-          "slug": "3808-ales-lipicnik",
-          "name": "Aleš Lipičnik",
+          "slug": "4051-asta-vrecko",
+          "name": "Asta Vrečko",
           "honorific_prefix": null,
           "honorific_suffix": null,
-          "preferred_pronoun": null,
+          "preferred_pronoun": "she",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Levica in Vesna",
+            "acronym": "Levica in Vesna",
+            "slug": "593-levica-in-vesna",
+            "color": "#09a2cc",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/lipicnik.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Asta-Vrecko.jpg",
           "is_active": true
         },
         {
@@ -1396,9 +1442,26 @@
             "slug": "4-socialni-demokrati",
             "color": "#B3422E",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P317.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P317.png",
+          "is_active": true
+        },
+        {
+          "slug": "8518-martin-mikolic",
+          "name": "Martin Mikolič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+            "acronym": "NSi, SLS, FOKUS",
+            "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Martin_Mikolic.jpg",
           "is_active": true
         },
         {
@@ -1415,7 +1478,7 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P351.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P351.png",
           "is_active": true
         },
         {
@@ -1430,77 +1493,43 @@
             "slug": "138-svoboda",
             "color": "#002F42",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P376.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P376.png",
           "is_active": true
         },
         {
-          "slug": "64-jurij-lep",
-          "name": "Jurij Lep",
+          "slug": "11447-vinko-levstek",
+          "name": "Vinko Levstek",
           "honorific_prefix": null,
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/np-jurij-lep.jpg",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Vinko_Levstek.jpg",
           "is_active": true
         },
         {
-          "slug": "5935-jozica-derganc",
-          "name": "Jožica Derganc",
+          "slug": "11450-damjan-muzel",
+          "name": "Damjan Muzel",
           "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P374.jpg",
-          "is_active": true
-        },
-        {
-          "slug": "5962-dean-premik",
-          "name": "Dean Premik",
-          "honorific_prefix": "mag.",
           "honorific_suffix": null,
           "preferred_pronoun": "he",
           "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
+            "name": "Slovenska demokratska stranka",
+            "acronym": "SDS",
+            "slug": "2-slovenska-demokratska-stranka",
+            "color": "#679BBB",
             "classification": "pg",
-            "is_in_coalition": true
+            "is_in_coalition": false
           },
-          "image": "/media/P401.png",
-          "is_active": true
-        },
-        {
-          "slug": "5940-vera-granfol",
-          "name": "Vera Granfol",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P379.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Damjan_Muzel.jpg",
           "is_active": true
         },
         {
@@ -1517,7 +1546,41 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P277.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P277.png",
+          "is_active": true
+        },
+        {
+          "slug": "27-luka-mesec",
+          "name": "Luka Mesec",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "he",
+          "group": {
+            "name": "Levica in Vesna",
+            "acronym": "Levica in Vesna",
+            "slug": "593-levica-in-vesna",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P273.png",
+          "is_active": true
+        },
+        {
+          "slug": "23-mojca-znidaric",
+          "name": "Mojca Žnidarič",
+          "honorific_prefix": null,
+          "honorific_suffix": null,
+          "preferred_pronoun": "she",
+          "group": {
+            "name": "Demokrati. Anžeta Logarja",
+            "acronym": "Demokrati",
+            "slug": "595-demokrati-anzeta-logarja",
+            "color": "#09a2cc",
+            "classification": "pg",
+            "is_in_coalition": false
+          },
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/Mojca_Znidaric.jpg",
           "is_active": true
         },
         {
@@ -1534,211 +1597,417 @@
             "classification": "pg",
             "is_in_coalition": false
           },
-          "image": "/media/P308.png",
-          "is_active": true
-        },
-        {
-          "slug": "5954-miha-lamut",
-          "name": "Miha Lamut",
-          "honorific_prefix": null,
-          "honorific_suffix": null,
-          "preferred_pronoun": "he",
-          "group": {
-            "name": "Svoboda",
-            "acronym": "Svoboda",
-            "slug": "138-svoboda",
-            "color": "#002F42",
-            "classification": "pg",
-            "is_in_coalition": true
-          },
-          "image": "/media/P393.png",
-          "is_active": true
-        },
-        {
-          "slug": "5933-vida-cadonic-spelic",
-          "name": "Vida Čadonič Špelič",
-          "honorific_prefix": "dr.",
-          "honorific_suffix": null,
-          "preferred_pronoun": "she",
-          "group": {
-            "name": "Nova Slovenija - Krščanski demokrati",
-            "acronym": "NSi",
-            "slug": "7-nova-slovenija-krscanski-demokrati",
-            "color": "#8E7A86",
-            "classification": "pg",
-            "is_in_coalition": false
-          },
-          "image": "/media/P372.png",
+          "image": "https://s3.fr-par.scw.cloud/parlameter/slovenija/P308.png",
           "is_active": true
         }
       ],
       "votes": [
         {
           "all_votes": {
-            "for": 28,
-            "against": 48,
-            "abstain": 3,
-            "absent": 11,
-            "did not vote": 0
-          },
-          "passed": false,
-          "id": 16463,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Spremembe proračuna Republike Slovenije za leto 2025 - Amandma: 2561 Direkcija RS za vode (150201) 15. 11. 2024 [SDS - Poslanska skupina Slovenske demokratske stranke]",
-          "timestamp": "2024-11-20T15:52:32",
-          "session": {
-            "name": "25. redna seja",
-            "id": 6257,
-            "start_time": "2024-11-18T12:03:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ IX",
-                "slug": "137-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "regular",
-            "in_review": false,
-            "has_transcript": true,
-            "has_agenda_items": false,
-            "has_minutes": false,
-            "has_legislation": true,
-            "has_votes": true
-          }
-        },
-        {
-          "all_votes": {
-            "for": 23,
-            "against": 47,
-            "abstain": 4,
-            "absent": 16,
-            "did not vote": 0
-          },
-          "passed": false,
-          "id": 16518,
-          "is_outlier": false,
-          "has_outliers": false,
-          "has_named_votes": true,
-          "title": "Proračun Republike Slovenije za leto 2026 - Amandma: 2431 Direkcija Republike Slovenije za infrastrukturo (130202) 13. 11. 2024 [NSi - Poslanska skupina Nova Slovenija - krščanski demokrati]",
-          "timestamp": "2024-11-20T18:29:14",
-          "session": {
-            "name": "25. redna seja",
-            "id": 6257,
-            "start_time": "2024-11-18T12:03:00",
-            "end_time": null,
-            "organizations": [
-              {
-                "name": "Državni zbor",
-                "acronym": "DZ IX",
-                "slug": "137-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
-                "is_in_coalition": false
-              }
-            ],
-            "classification": "regular",
-            "in_review": false,
-            "has_transcript": true,
-            "has_agenda_items": false,
-            "has_minutes": false,
-            "has_legislation": true,
-            "has_votes": true
-          }
-        },
-        {
-          "all_votes": {
-            "for": 48,
-            "against": 26,
-            "abstain": 1,
-            "absent": 15,
+            "for": 89,
+            "against": 0,
+            "abstain": 0,
+            "absent": 1,
             "did not vote": 0
           },
           "passed": true,
-          "id": 16599,
+          "id": 23239,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o davku na dodano vrednost - Ponovno odločanje",
-          "timestamp": "2024-11-28T11:51:23",
+          "title": "Dnevni red v celoti",
+          "timestamp": "2026-04-10T11:14:12",
           "session": {
-            "name": "89. izredna seja",
-            "id": 6315,
-            "start_time": "2024-11-28T10:00:00",
+            "name": "1. redna seja",
+            "joint_data": null,
+            "id": 7415,
+            "start_time": "2026-04-10T09:30:00",
             "end_time": null,
             "organizations": [
               {
                 "name": "Državni zbor",
-                "acronym": "DZ IX",
-                "slug": "137-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": false,
+            "has_minutes": false,
+            "has_legislation": false,
+            "has_votes": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 61,
+            "against": 0,
+            "abstain": 27,
+            "absent": 2,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 23240,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Sklep o imenovanju predsednika in podpredsednika Mandatno-volilne komisije - Glasovanje predlogu sklepa o imenovanju predsednika in podpredsednika MVK",
+          "timestamp": "2026-04-10T11:16:09",
+          "session": {
+            "name": "1. redna seja",
+            "joint_data": null,
+            "id": 7415,
+            "start_time": "2026-04-10T09:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": false,
+            "has_minutes": false,
+            "has_legislation": false,
+            "has_votes": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 62,
+            "against": 0,
+            "abstain": 27,
+            "absent": 1,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 23241,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Zapisnik o ugotovitvi izida volitev poslancev v Državni zbor - Glasovanje",
+          "timestamp": "2026-04-10T14:48:32",
+          "session": {
+            "name": "1. redna seja",
+            "joint_data": null,
+            "id": 7415,
+            "start_time": "2026-04-10T09:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": false,
+            "has_minutes": false,
+            "has_legislation": false,
+            "has_votes": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 82,
+            "against": 0,
+            "abstain": 0,
+            "absent": 8,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 23242,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Predlog za izvolitev predsednika Državnega zbora Republike Slovenije - Glasovanje o sestavi komisije za tajno glasovanje",
+          "timestamp": "2026-04-10T16:19:54",
+          "session": {
+            "name": "1. redna seja",
+            "joint_data": null,
+            "id": 7415,
+            "start_time": "2026-04-10T09:30:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "regular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": false,
+            "has_minutes": false,
+            "has_legislation": false,
+            "has_votes": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 76,
+            "against": 0,
+            "abstain": 7,
+            "absent": 7,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 23243,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Dnevni red v celoti",
+          "timestamp": "2026-04-21T11:02:00",
+          "session": {
+            "name": "1. izredna seja",
+            "joint_data": null,
+            "id": 7417,
+            "start_time": "2026-04-21T11:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
                 "is_in_coalition": false
               }
             ],
             "classification": "irregular",
-            "in_review": true,
+            "in_review": false,
             "has_transcript": true,
             "has_agenda_items": false,
             "has_minutes": false,
-            "has_legislation": true,
+            "has_legislation": false,
             "has_votes": true
           }
         },
         {
           "all_votes": {
-            "for": 51,
-            "against": 33,
+            "for": 85,
+            "against": 0,
+            "abstain": 0,
+            "absent": 5,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 23244,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Odlok o ustanovitvi in nalogah delovnih teles Državnega zbora - Glasovanje o aktu v celoti",
+          "timestamp": "2026-04-21T11:23:40",
+          "session": {
+            "name": "1. izredna seja",
+            "joint_data": null,
+            "id": 7417,
+            "start_time": "2026-04-21T11:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "irregular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": false,
+            "has_minutes": false,
+            "has_legislation": false,
+            "has_votes": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 49,
+            "against": 36,
+            "abstain": 0,
+            "absent": 5,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 23245,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Sklep o imenovanju predsednikov in podpredsednikov delovnih teles Državnega zbora - Evidenčna odločitev Državnega zbora o odločitvi Kolegija predsednika Državnega zbora (Sklep o določitvi števila mest poslanskih skupin v delovnih telesih) 21. 04. 2026",
+          "timestamp": "2026-04-21T11:40:40",
+          "session": {
+            "name": "1. izredna seja",
+            "joint_data": null,
+            "id": 7417,
+            "start_time": "2026-04-21T11:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "irregular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": false,
+            "has_minutes": false,
+            "has_legislation": false,
+            "has_votes": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 49,
+            "against": 0,
+            "abstain": 0,
+            "absent": 41,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 23246,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Sklep o imenovanju predsednikov in podpredsednikov delovnih teles Državnega zbora - Glasovanje o aktu v celoti",
+          "timestamp": "2026-04-21T11:52:00",
+          "session": {
+            "name": "1. izredna seja",
+            "joint_data": null,
+            "id": 7417,
+            "start_time": "2026-04-21T11:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "irregular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": false,
+            "has_minutes": false,
+            "has_legislation": false,
+            "has_votes": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 84,
+            "against": 0,
             "abstain": 0,
             "absent": 6,
             "did not vote": 0
           },
           "passed": true,
-          "id": 18602,
+          "id": 23247,
           "is_outlier": false,
           "has_outliers": false,
           "has_named_votes": true,
-          "title": "Zakon o spremembah in dopolnitvah Zakona o zdravljenju neplodnosti in postopkih oploditve z biomedicinsko pomočjo - Glasovanje o Predlogu sklepa o nedopustnosti razpisa zakonodajnega referenduma",
-          "timestamp": "2025-07-04T17:22:25",
+          "title": "Predlog za izvolitev podpredsednika Državnega zbora Republike Slovenije - Glasovanje o sestavi komsije za tajno glasovanje",
+          "timestamp": "2026-04-21T12:17:36",
           "session": {
-            "name": "107. izredna seja",
-            "id": 6561,
-            "start_time": "2025-07-04T10:00:00",
+            "name": "1. izredna seja",
+            "joint_data": null,
+            "id": 7417,
+            "start_time": "2026-04-21T11:00:00",
             "end_time": null,
             "organizations": [
               {
                 "name": "Državni zbor",
-                "acronym": "DZ IX",
-                "slug": "137-drzavni-zbor",
-                "color": "#09A2CC",
-                "classification": "root",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
                 "is_in_coalition": false
               }
             ],
             "classification": "irregular",
-            "in_review": true,
+            "in_review": false,
             "has_transcript": true,
             "has_agenda_items": false,
             "has_minutes": false,
-            "has_legislation": true,
+            "has_legislation": false,
+            "has_votes": true
+          }
+        },
+        {
+          "all_votes": {
+            "for": 50,
+            "against": 0,
+            "abstain": 35,
+            "absent": 5,
+            "did not vote": 0
+          },
+          "passed": true,
+          "id": 23248,
+          "is_outlier": false,
+          "has_outliers": false,
+          "has_named_votes": true,
+          "title": "Širitev dnevnega reda",
+          "timestamp": "2026-04-24T11:32:25",
+          "session": {
+            "name": "2. izredna seja",
+            "joint_data": null,
+            "id": 7416,
+            "start_time": "2026-04-24T11:00:00",
+            "end_time": null,
+            "organizations": [
+              {
+                "name": "Državni zbor",
+                "acronym": "Državni zbor X",
+                "slug": "590-drzavni-zbor",
+                "color": "#09a2cc",
+                "classification": "house",
+                "is_in_coalition": false
+              }
+            ],
+            "classification": "irregular",
+            "in_review": false,
+            "has_transcript": true,
+            "has_agenda_items": false,
+            "has_minutes": false,
+            "has_legislation": false,
             "has_votes": true
           }
         }
       ],
-      "votes_total": 2676
+      "votes_total": 64
     },
-    "mandate": {
-      "id": 2,
-      "description": "IX",
-      "beginning": "2022-05-13T00:00:01"
-    },
-    "votes:count": 4,
-    "votes:pages": 1,
+    "mandate": {},
+    "votes:count": 42,
+    "votes:pages": 5,
     "votes:page": 1,
     "votes:per_page": 10
   }

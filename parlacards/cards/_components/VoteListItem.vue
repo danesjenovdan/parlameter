@@ -388,18 +388,34 @@ export default {
 
 @media (max-width: 767px) {
   .single_voting .session_title {
-    height: 105px;
-    margin-left: 54px;
+    height: 80px;
+    margin: 15px 0;
 
     p {
       max-height: 80px;
+      margin: 0;
       overflow: hidden;
     }
   }
 
+  .single_voting .session_votes {
+    margin: 15px 0;
+
+    .row {
+      font-size: 21px;
+    }
+  }
+
+  .border-left {
+    border-left: none;
+    padding-inline: 0;
+  }
+
   .single_voting {
+    padding-bottom: 0;
+
     .icon-col {
-      margin-top: 32px;
+      margin-top: 21px;
     }
   }
 }

@@ -68,10 +68,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-footer > a img {
-  max-height: 100%;
-  height: 30px;
-  width: auto;
+.card-footer > a {
+  display: inline-block;
+  padding: 3px;
+  margin: -3px;
+  background: #fff;
+  border-radius: 2px;
+
+  img {
+    height: 32px;
+    width: auto;
+  }
 }
 
 .card-info:not(.card-exit)::before {

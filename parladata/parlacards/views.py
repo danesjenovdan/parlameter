@@ -57,6 +57,7 @@ from parlacards.serializers.cards import (
     RootGroupBasicInfoCardSerializer,
     SearchDropdownSerializer,
     SessionAgendaItemCardSerializer,
+    SessionGroupAttendanceCardSerializer,
     SessionLegislationCardSerializer,
     SessionMinutesCardSerializer,
     SessionSpeechesCardSerializer,
@@ -520,7 +521,12 @@ class SessionMinutesView(CardView):
     card_serializer = SessionMinutesCardSerializer
 
 
-class GroupMostVotesInCommon(CachedCardView):
+class SessionGroupAttendance(CardView):
+    thing = Session
+    card_serializer = SessionGroupAttendanceCardSerializer
+
+
+class GroupMostVotesInCommon(CardView):
     """
     A group's most equal voters.
     """

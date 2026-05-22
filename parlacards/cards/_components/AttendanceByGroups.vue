@@ -1,5 +1,5 @@
 <template>
-  <empty-state v-if="!attendance?.length" small />
+  <empty-state v-if="!attendance?.length" small text="no-data" />
   <div v-else class="party-grid">
     <template v-for="(party, index) in sortedAttendance" :key="index">
       <div class="grid-item chart-label">
