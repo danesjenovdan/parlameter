@@ -196,10 +196,6 @@ class PersonCardTest(ExportTestClass):
     columns = ["name", "value", "timestamp"]
 
 
-class TestPersonVocabularySizeView(PersonCardTest):
-    endpoint = "/v3/export/person/vocabulary-size"
-
-
 class TestPersonInfoView(PersonCardTest):
     endpoint = "/v3/export/person/basic-information"
     columns = [
