@@ -244,6 +244,7 @@ export default {
       height: $portrait-size;
       width: $portrait-size;
       margin-right: $portrait-margin;
+      object-fit: cover;
     }
 
     .name {
