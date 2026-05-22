@@ -10,7 +10,7 @@
 import common from '@/_mixins/common.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
-import { sessionTranscriptContextUrl } from '@/_mixins/contextUrls.js';
+import { sessionVotesContextUrl } from '@/_mixins/contextUrls.js';
 import AttendanceByGroups from '@/_components/AttendanceByGroups.vue';
 
 export default {
@@ -18,7 +18,7 @@ export default {
   components: {
     AttendanceByGroups,
   },
-  mixins: [common, sessionTranscriptContextUrl, sessionHeader, sessionOgImage],
+  mixins: [common, sessionVotesContextUrl, sessionHeader, sessionOgImage],
   cardInfo: {
     doubleWidth: true,
   },
