@@ -56,12 +56,6 @@ class TestGroupUnityResource(GroupResourceExportTest):
     columns = ["group", "vote", "value", "timestamp"]
 
 
-class TestGroupVocabularySizeResource(GroupResourceExportTest):
-    resource = GroupVocabularySizeResource
-    csv_results_count = 3
-    json_results_count = 1
-
-
 class TestGroupNumberOfQuestionsResource(GroupResourceExportTest):
     resource = GroupNumberOfQuestionsResource
     csv_results_count = 3

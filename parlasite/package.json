@@ -9,7 +9,7 @@
     "start": "node server/index.js"
   },
   "dependencies": {
-    "@sentry/node": "^10.50.0",
+    "@sentry/node": "^10.53.1",
     "ejs": "^5.0.2",
     "express": "^5.2.1",
     "limiter": "^3.0.0",
@@ -21,7 +21,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.5",
-    "globals": "^17.5.0",
+    "globals": "^17.6.0",
     "nodemon": "^3.1.14",
     "prettier": "^3.8.3"
   }
