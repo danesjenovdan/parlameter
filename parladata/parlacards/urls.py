@@ -12,7 +12,8 @@ urlpatterns = [
     path("misc/menu-search/", SearchDropdown.as_view()),
     path("misc/basic-information/", RootOrganization.as_view()),
     path("person/basic-information/", PersonInfo.as_view()),
-    path("person/vocabulary-size/", VocabularySize.as_view()),
+    # TODO: remove everything related to vocabulary size
+    # path("person/vocabulary-size/", VocabularySize.as_view()),
     path("person/votes/", Ballots.as_view()),
     path("person/questions/", Questions.as_view()),
     path("person/memberships/", PersonMembership.as_view()),
@@ -37,7 +38,8 @@ urlpatterns = [
     path("person/public-answers/", PersonPublicQuestionView.as_view()),
     path("group/basic-information/", GroupInfo.as_view()),
     path("group/members/", GroupMembers.as_view()),
-    path("group/vocabulary-size/", GroupVocabularySize.as_view()),
+    # TODO: remove everything related to vocabulary size
+    # path("group/vocabulary-size/", GroupVocabularySize.as_view()),
     path("group/number-of-questions/", GroupNumberOfQuestions.as_view()),
     path("group/monthly-vote-attendance/", GroupMonthlyVoteAttendance.as_view()),
     path("group/questions/", GroupQuestions.as_view()),

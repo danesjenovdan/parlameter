@@ -19,7 +19,8 @@ urlpatterns = [
     # path('misc/basic-information/', RootOrganization.as_view()),
     # PEOPLE
     path("person/basic-information/", ExportPersonInfo.as_view()),
-    path("person/vocabulary-size/", ExportVocabularySize.as_view()),
+    # TODO: remove everything related to vocabulary size
+    # path("person/vocabulary-size/", ExportVocabularySize.as_view()),
     path("person/votes/", ExportPersonBallots.as_view()),
     path("person/questions/", ExportPersonQuestions.as_view()),
     path("person/memberships/", ExportPersonMembership.as_view()),
@@ -51,7 +52,8 @@ urlpatterns = [
     path("group/unity/", ExportGroupUnity.as_view()),
     path("group/basic-information/", ExportGroupInfo.as_view()),
     path("group/members/", ExportGroupMembers.as_view()),
-    path("group/vocabulary-size/", ExportGroupVocabularySize.as_view()),
+    # TODO: remove everything related to vocabulary size
+    # path("group/vocabulary-size/", ExportGroupVocabularySize.as_view()),
     path("group/number-of-questions/", ExportGroupNumberOfQuestions.as_view()),
     path("group/monthly-vote-attendance/", ExportGroupMonthlyVoteAttendance.as_view()),
     # group/questions it is not implemented because it is not useful

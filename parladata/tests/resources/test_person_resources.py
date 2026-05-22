@@ -68,10 +68,6 @@ class TestPersonNumberOfSpokenWordsResource(PersonResourceExportTest):
     resource = PersonNumberOfSpokenWordsResource
 
 
-class TestVocabularySizeResource(PersonResourceExportTest):
-    resource = VocabularySizeResource
-
-
 class TestAgreementWithGroupResource(PersonResourceExportTest):
     resource = AgreementWithGroupResource
 
