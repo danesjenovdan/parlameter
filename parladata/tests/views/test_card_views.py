@@ -92,13 +92,6 @@ def test_person_basic_information(first_mandate_member, all_mandate_member):
 
 
 @pytest.mark.django_db()
-def test_person_vocabulary_size(first_mandate_member, all_mandate_member):
-    run_test_urls(
-        "/v3/cards/person/vocabulary-size/", [first_mandate_member, all_mandate_member]
-    )
-
-
-@pytest.mark.django_db()
 def test_person_votes(first_mandate_member, all_mandate_member):
     run_test_urls("/v3/cards/person/votes/", [first_mandate_member, all_mandate_member])
 
@@ -262,13 +255,6 @@ def test_group_basic_information(first_mandate_party, all_mandate_party):
 @pytest.mark.django_db()
 def test_group_members(first_mandate_party, all_mandate_party):
     run_test_urls("/v3/cards/group/members/", [first_mandate_party, all_mandate_party])
-
-
-@pytest.mark.django_db()
-def test_group_vocabulary_size(first_mandate_party, all_mandate_party):
-    run_test_urls(
-        "/v3/cards/group/vocabulary-size/", [first_mandate_party, all_mandate_party]
-    )
 
 
 @pytest.mark.django_db()
@@ -456,6 +442,12 @@ def test_single_law():
 @pytest.mark.django_db()
 def test_single_minutes():
     response = client.get("/v3/cards/minutes/single/?id=28813")
+    assert response.status_code == 200
+
+
+@pytest.mark.django_db()
+def test_session_group_attendance():
+    response = client.get("/v3/cards/session/group-attendance/?id=3782")
     assert response.status_code == 200
 
 
