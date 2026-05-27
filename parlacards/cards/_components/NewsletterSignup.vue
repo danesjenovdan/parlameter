@@ -129,7 +129,7 @@ export default {
       if (this.gdprChecked && this.inputEmail) {
         this.isLoading = true;
         axios
-          .post('https://podpri.lb.djnd.si/api/subscribe/', {
+          .post('https://podpri.djnd.si/api/subscribe/', {
             email: this.inputEmail,
             segment_id: this.segmentId,
           })
@@ -147,7 +147,7 @@ export default {
       this.isLoading = true;
       const email = encodeURIComponent(this.email);
       const token = encodeURIComponent(this.token);
-      const url = `https://podpri.lb.djnd.si/api/segments/my/?email=${email}&token=${token}`;
+      const url = `https://podpri.djnd.si/api/segments/my/?email=${email}&token=${token}`;
       axios
         .get(url)
         .then((response) => {
@@ -171,7 +171,7 @@ export default {
       this.isLoading = true;
       const email = encodeURIComponent(this.email);
       const token = encodeURIComponent(this.token);
-      const url = `https://podpri.lb.djnd.si/api/segments/${this.segmentId}/contact/?email=${email}&token=${token}`;
+      const url = `https://podpri.djnd.si/api/segments/${this.segmentId}/contact/?email=${email}&token=${token}`;
       axios.delete(url).then(() => {
         this.resetCard();
       });
