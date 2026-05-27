@@ -111,7 +111,10 @@ export default {
         : 'seat_count';
 
     // parse hidden analyses into an array
-    const hiddenAnalyses = cardState?.hiddenAnalyses?.split('|') || [];
+    const hiddenAnalysesParam = Array.isArray(cardState?.hiddenAnalyses)
+      ? cardState.hiddenAnalyses.map((a) => String(a)).join('|')
+      : String(cardState?.hiddenAnalyses);
+    const hiddenAnalyses = hiddenAnalysesParam?.split('|') || [];
 
     // filter out hidden analyses and translate them
     const analyses = analysesIDs
