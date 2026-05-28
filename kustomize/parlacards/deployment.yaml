@@ -36,7 +36,7 @@ spec:
             - name: VITE_PARLASITE_URL
               value: https://parlametar.hr
             - name: VITE_METAIMAGES_URL
-              value: https://meta-image-generator.lb.djnd.si/parlameter
+              value: https://meta-image-generator.djnd.si/parlameter
             - name: VITE_PARLASITE_URL_BEFORE_2020-07-21
               value: https://9.parlametar.hr
             - name: VITE_PARLASITE_URL_BEFORE_2024-03-24
