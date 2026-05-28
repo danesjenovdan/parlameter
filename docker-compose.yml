@@ -81,7 +81,7 @@ services:
       - VITE_PARLADATA_URL=http://parladata:8000/v3
       - VITE_PARLACARDS_URL=http://localhost:3000
       - VITE_PARLASITE_URL=http://localhost:3066
-      - VITE_METAIMAGES_URL=https://meta-image-generator.lb.djnd.si/parlameter
+      - VITE_METAIMAGES_URL=https://meta-image-generator.djnd.si/parlameter
       - SENTRY_DSN=https://not-configured/dev
       - SENTRY_ENVIRONMENT=development
     volumes:
