@@ -7,7 +7,7 @@ const config = {
     cdn: process.env.PARLASITE_CDN_URL || 'http://localhost:8080',
     cards: process.env.PARLASITE_CARDS_URL || 'http://localhost:3000',
     parladata: process.env.PARLASITE_DATA_URL || 'http://localhost:8000/v3',
-    metaImages: 'https://meta-image-generator.lb.djnd.si/parlameter',
+    metaImages: 'https://meta-image-generator.djnd.si/parlameter',
   },
   mandates: [
     // insert mandates for selector here e.g. { id: 1, name: '2018–2022', url: 'https://x.parlameter.si' },
