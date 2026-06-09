@@ -13,7 +13,6 @@ from parlacards.models import (
     PersonNumberOfSpokenWords,
     PersonStyleScore,
     PersonTfidf,
-    PersonVocabularySize,
     PersonVoteAttendance,
     VotingDistance,
 )
@@ -121,11 +120,6 @@ class PersonInfoCardResource(CardExport):
 class PersonNumberOfSpokenWordsResource(PersonCardExport):
     class Meta:
         model = PersonNumberOfSpokenWords
-
-
-class VocabularySizeResource(PersonCardExport):
-    class Meta:
-        model = PersonVocabularySize
 
 
 class AgreementWithGroupResource(PersonCardExport):

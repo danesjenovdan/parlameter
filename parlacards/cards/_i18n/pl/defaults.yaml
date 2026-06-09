@@ -458,24 +458,6 @@ analysis-texts--party:
     label: Enotnost glasovanj
     titleSuffix: " glede na enotnost glasovanj"
     explanation: ""
-  vocabulary_size:
-    label: Różnorodność słownictwa
-    titleSuffix: " zgodnie z wynikami analizy różnorodności słownictwa"
-    explanation: >-
-      W każdym wystąpieniu poselskim liczymy unikalne słowa i liczbę wszystkich
-      wypowiedzianych słów. Następnie liczymy ile razy pojawia się każde
-      unikalne słowo. Dzielimy je na kategorie, łącząc wszystkie słowa, które
-      powtarzają się raz, dwa razy, trzy razy itd. Na koniec obliczamy
-      współczynnik, w którym liczba wszystkich unikalnych wypowiedzianych słów
-      jest umieszczona powyżej linii ułamka, a pod linią liczba słów
-      powtarzających się z określoną częstotliwością (raz, dwa, trzy razy...)
-      jest mnożona przez częstotliwość na kwadrat (jeden na kwadrat, dwa na
-      kwadrat, trzy na kwadrat...). Zdanie "Dzisiaj jest nowy dzień i dzisiaj
-      jest dzień dla Parlametru" daje wynik: 7 / ((3 * 2 ^ 2) + (4 * 1 ^ 2)) =
-      0,4375 <br> <br> Sumujemy poszczególne wyniki dla każdego klubu
-      parlamentarnego i dzielimy przez liczbę reprezentantów klubu. Dzielimy
-      poszczególne sumy przez sumę całkowitą i normalizujemy (min 1 - maks.
-      100).
   privzdignjeno:
     label: Podniosłe słownictwo
     titleSuffix: " zgodnie z wynikami analizy podniosłego słownictwa"

@@ -27,7 +27,6 @@ SCORE_MODELS_MAPPING = {
     "speeches_per_session": "PersonAvgSpeechesPerSession",
     "spoken_words": "PersonNumberOfSpokenWords",
     "agreement_with_group": "AgreementWithGroup",
-    "vocabulary_size": "PersonVocabularySize",
 }
 
 
