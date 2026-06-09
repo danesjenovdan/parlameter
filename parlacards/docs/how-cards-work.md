@@ -115,7 +115,3 @@ List of analysis IDs that can be used on misc/members:
 - `number_of_amendments` - how many amendments each group gave
 
 - `group_unity` - how differently do members of each group vote on average
-
-- analysis of transcripts:
-
-  - `vocabulary_size` - how rich vocabulary they use
