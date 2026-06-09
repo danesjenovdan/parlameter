@@ -55,14 +55,6 @@ class SessionScore(Score):
         abstract = True
 
 
-class PersonVocabularySize(PersonScore):
-    pass
-
-
-class GroupVocabularySize(GroupScore):
-    pass
-
-
 class VotingDistance(PersonScore):
     target = models.ForeignKey(
         "parladata.Person", related_name="target_people", on_delete=models.CASCADE
