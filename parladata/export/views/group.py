@@ -7,7 +7,6 @@ from export.resources.group import (
     GroupStyleScoresResource,
     GroupTfidfResource,
     GroupUnityResource,
-    GroupVocabularySizeResource,
     GroupVoteAttendanceResource,
     GroupVotesInCommonResource,
 )
@@ -21,15 +20,6 @@ class ExportGroupUnity(ExportResourceView):
 
     filename = "group_unity"
     resource = GroupUnityResource()
-
-
-class ExportGroupVocabularySize(ExportResourceView):
-    """
-    Export group's vocabulary size from database and return them as a file in one of the allowed formats (json, csv).
-    """
-
-    filename = "group_vocabulary_size"
-    resource = GroupVocabularySizeResource()
 
 
 class ExportGroupNumberOfQuestions(ExportResourceView):

@@ -15,7 +15,6 @@ from parlacards.models import (
     GroupStyleScore,
     GroupTfidf,
     GroupUnity,
-    GroupVocabularySize,
     GroupVoteAttendance,
     GroupVotingDistance,
 )
@@ -61,11 +60,6 @@ class GroupUnityResource(GroupCardExport):
             "value",
             "timestamp",
         )
-
-
-class GroupVocabularySizeResource(GroupCardExport):
-    class Meta:
-        model = GroupVocabularySize
 
 
 class GroupNumberOfQuestionsResource(GroupCardExport):
