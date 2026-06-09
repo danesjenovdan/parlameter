@@ -111,7 +111,6 @@ class TestMembersView(ExportTestClass):
         "agreement_with_group",
         "presence_votes",
         "spoken_words",
-        "vocabulary_size",
     ]
 
 
@@ -123,7 +122,6 @@ class TestGroupsView(ExportTestClass):
         "acronym",
         "number_of_members_at",
         "group_unity",
-        "vocabulary_size",
         "number_of_questions",
         "vote_attendance",
     ]

@@ -21,7 +21,6 @@ from parlacards.serializers.cards import (
     GroupStyleScoresCardSerializer,
     GroupTfidfCardSerializer,
     GroupUnityCardSerializer,
-    GroupVocabularySizeCardSerializer,
     GroupVoteAttendanceCardSerializer,
     GroupVoteCardSerializer,
     LeastVotesInCommonCardSerializer,
@@ -50,7 +49,6 @@ from parlacards.serializers.cards import (
     PersonQuestionCardSerializer,
     PersonSpeechesCardSerializer,
     PersonTfidfCardSerializer,
-    PersonVocabularySizeCardSerializer,
     PersonVoteAttendanceCardSerializer,
     PublicPersonQuestionCardSerializer,
     QuoteCardSerializer,
@@ -227,24 +225,6 @@ class Legislation(CardView):
 
     thing = Mandate
     card_serializer = LegislationCardSerializer
-
-
-class VocabularySize(CardView):
-    """
-    A person's vocabulary size.
-    """
-
-    thing = Person
-    card_serializer = PersonVocabularySizeCardSerializer
-
-
-class GroupVocabularySize(CardView):
-    """
-    An organization's vocabulary size.
-    """
-
-    thing = Organization
-    card_serializer = GroupVocabularySizeCardSerializer
 
 
 class Ballots(CardView):

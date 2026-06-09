@@ -449,22 +449,6 @@ analysis-texts--party:
     label: Ujedinjenost glasanja
     titleSuffix: " prema ujedinjenosti glasanja"
     explanation: ""
-  vocabulary_size:
-    label: Raznolikost vokabulara
-    titleSuffix: " prema rezultatima analize raznolikosti vokabulara"
-    explanation: >-
-      Iz svih govora zastupnice prebroje se jedinstvene riječi i broj svih
-      izgovorenih riječi. Potom se prebroji koliko se puta svaka jedinstvena
-      riječ pojavljuje. Jedinstvene riječi podjele se u kategorije na način da
-      su u istom skupu riječi koje se ponavljaju jednom, dvaput, triput itd. Na
-      koncu se izračuna koeficijent gdje je broj svih jedinstvenih izgovorenih
-      riječi iznad razlomačke crte, a ispod je broj riječi koje se ponavljaju s
-      određenom učestalošću (jednom, dvaput, triput …) i pomnoži se s brojem
-      ponavljanja na kvadrat (jedan na kvadrat, dva na kvadrat, tri na kvadrat
-      …). Rečenica „Danas je novi dan i danas je dan za Parlametar“ daje
-      rezultat 7/ ((3*2^2) + (4*1^2)) = 0,4375<br><br>Za svaki klub zbrajaju se
-      rezultati zastupnica i dijele s brojem zastupnica u klubu. Pojedinačni
-      rezultati podijele se s ukupnim zbrojem i normaliziraju (min 1 - max 100).
   privzdignjeno:
     label: Uzvišeni rječnik
     titleSuffix: " prema rezultatima analize uzvišenog rječnika"

@@ -459,18 +459,6 @@ analysis-texts--party:
     label: Enotnost glasovanj
     titleSuffix: " glede na enotnost glasovanj"
     explanation: ""
-  vocabulary_size:
-    label: Vocabulary strength
-    titleSuffix: " vocabulary strength"
-    explanation: >-
-      We count all unique words in an MP's speech. Then we count the number of
-      occurrences or this words. We join them based on the number of
-      occurrences. In the end we calculate a coefficient best explained with an
-      example: For the phrase "Today is a new day and today is a day for
-      Parlameter" the result is 7 / ((3*2^2) + (4*1^2)) = 0,4375<br><br>We sum
-      the individual results for every parliamentary group and divide it with
-      the number of representatives in the group. We divide individual sums with
-      the common sum and normalise (min 1 - max 100).
   privzdignjeno:
     label: Elevated speech
     titleSuffix: " elevated speech"

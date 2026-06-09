@@ -8,7 +8,7 @@ from tests.fixtures.common import *
 
 
 @pytest.mark.django_db()
-def test_calculate_vocabulary_size(
+def test_calculate_style_scores(
     first_person, second_person, last_person, ending_date_of_first_mandate
 ):
     timestamp = ending_date_of_first_mandate
