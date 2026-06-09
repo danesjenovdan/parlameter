@@ -8,7 +8,6 @@ from parlacards.models import (
     AgreementWithGroup,
     GroupNumberOfQuestions,
     GroupUnity,
-    GroupVocabularySize,
     GroupVoteAttendance,
     PersonAvgSpeechesPerSession,
     PersonMonthlyVoteAttendance,
@@ -16,7 +15,6 @@ from parlacards.models import (
     PersonNumberOfSpokenWords,
     PersonStyleScore,
     PersonTfidf,
-    PersonVocabularySize,
     PersonVoteAttendance,
     VotingDistance,
 )
@@ -50,7 +48,6 @@ class MPResource(ExportModelResource):
     agreement_with_group = Field()
     presence_votes = Field()
     spoken_words = Field()
-    vocabulary_size = Field()
 
     def get_queryset(self, mandate_id=None, request_id=None):
         """
@@ -93,7 +90,6 @@ class MPResource(ExportModelResource):
             "agreement_with_group",
             "presence_votes",
             "spoken_words",
-            "vocabulary_size",
         )
         export_order = (
             "id",
@@ -108,7 +104,6 @@ class MPResource(ExportModelResource):
             "agreement_with_group",
             "presence_votes",
             "spoken_words",
-            "vocabulary_size",
         )
 
     def dehydrate_name(self, person):
@@ -154,16 +149,12 @@ class MPResource(ExportModelResource):
     def dehydrate_spoken_words(self, person):
         return self.get_score(PersonNumberOfSpokenWords, person)
 
-    def dehydrate_vocabulary_size(self, person):
-        return self.get_score(PersonVocabularySize, person)
-
 
 class GroupsResource(ExportModelResource):
     name = Field()
     acronym = Field()
     number_of_members_at = Field()
     group_unity = Field()
-    vocabulary_size = Field()
     number_of_questions = Field()
     vote_attendance = Field()
 
@@ -202,7 +193,6 @@ class GroupsResource(ExportModelResource):
             "acronym",
             "number_of_members_at",
             "group_unity",
-            "vocabulary_size",
             "number_of_questions",
             "vote_attendance",
         )
@@ -236,9 +226,6 @@ class GroupsResource(ExportModelResource):
 
     def dehydrate_group_unity(self, organization):
         return self.get_group_unity_score(organization)
-
-    def dehydrate_vocabulary_size(self, organization):
-        return self.get_group_score(GroupVocabularySize, organization)
 
     def dehydrate_number_of_questions(self, organization):
         return self.get_group_score(GroupNumberOfQuestions, organization)
