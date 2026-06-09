@@ -20,10 +20,6 @@ from parlacards.scores.number_of_questions import (
 from parlacards.scores.number_of_spoken_words import save_people_number_of_spoken_words
 from parlacards.scores.session_attendance import save_groups_vote_attendance_on_sessions
 from parlacards.scores.unity import save_organizations_vote_unities
-from parlacards.scores.vocabulary_size import (
-    save_groups_vocabulary_sizes,
-    save_people_vocabulary_sizes,
-)
 from parlacards.scores.voting_distance import (
     save_groups_voting_distances,
     save_voting_distances,
@@ -110,7 +106,6 @@ def force_run_group_analyses(timestamp=None, print_method=print):
         save_groups_monthly_vote_attendance(playing_field, timestamp)
         save_groups_vote_attendance_on_sessions(playing_field, timestamp)
         save_groups_vote_attendance(playing_field, timestamp)
-        save_groups_vocabulary_sizes(playing_field, timestamp)
 
 
 def force_run_person_analyses(timestamp=None, print_method=print):
@@ -122,8 +117,6 @@ def force_run_person_analyses(timestamp=None, print_method=print):
         save_people_avg_number_of_speeches_per_session(playing_field, timestamp)
         print_method("start calculating number of spoken words")
         save_people_number_of_spoken_words(playing_field, timestamp)
-        print_method("start calculating vocabulary size")
-        save_people_vocabulary_sizes(playing_field, timestamp)
         print_method("start calculating attendace")
         save_people_vote_attendance(playing_field, timestamp)
         print_method("start calculating agreements with group")
@@ -140,8 +133,6 @@ def force_run_person_analyses(timestamp=None, print_method=print):
 def run_speech_analyses_on_date(playing_field, timestamp):
     save_people_avg_number_of_speeches_per_session(playing_field, timestamp)
     save_people_number_of_spoken_words(playing_field, timestamp)
-    save_people_vocabulary_sizes(playing_field, timestamp)
-    save_groups_vocabulary_sizes(playing_field, timestamp)
 
 
 def run_vote_analyses_on_date(playing_field, timestamp):

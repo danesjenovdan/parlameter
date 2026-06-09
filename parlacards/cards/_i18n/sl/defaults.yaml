@@ -452,22 +452,6 @@ analysis-texts--party:
     label: Enotnost glasovanj
     titleSuffix: " glede na enotnost glasovanj"
     explanation: ""
-  vocabulary_size:
-    label: Raznolikost besedišča
-    titleSuffix: " glede na raznolikost besedišča"
-    explanation: >-
-      Iz vseh poslančevih govorov preštejemo unikatne besede ter število vseh
-      izgovorjenih besed. Potem preštejemo, kolikokrat se vsaka unikatna beseda
-      pojavi. Razdelimo jih v kategorije, tako da združimo vse besede, ki se
-      ponovijo enkrat, dvakrat, trikrat itn. Na koncu izračunamo koeficient,
-      kjer nad ulomkovo črto postavimo število vseh unikatnih izgovorjenih
-      besed, pod ulomkovo črto pa število besed, ki se ponovijo z neko frekvenco
-      (enkrat, dvakrat, trikrat ...) in množimo s frekvenco na kvadrat (ena na
-      kvadrat, dva na kvadrat, tri na kvadrat ...). Za poved "Danes je nov dan
-      in danes je dan za Parlameter" je rezultat: 7 / ((3*2^2) + (4*1^2)) =
-      0,4375<br><br>Za vsako poslansko skupino seštejemo rezultate poslancev in
-      delimo s številom poslancev v njej. Posamezne seštevke delimo s skupnim
-      seštevkom in normaliziramo (min 1 - max 100).
   privzdignjeno:
     label: Privzdignjeno besedje
     titleSuffix: " glede na rezultate analize s privzdignjenim besedjem"

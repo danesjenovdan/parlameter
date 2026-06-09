@@ -3,8 +3,6 @@ from django.core.management.base import BaseCommand
 from parlacards.models import *
 
 ALL_MODELS = [
-    PersonVocabularySize,
-    GroupVocabularySize,
     VotingDistance,
     GroupVotingDistance,
     PersonAvgSpeechesPerSession,
