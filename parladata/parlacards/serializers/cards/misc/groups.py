@@ -7,7 +7,6 @@ from rest_framework import serializers
 from parlacards.models import (
     GroupNumberOfQuestions,
     GroupUnity,
-    GroupVocabularySize,
     GroupVoteAttendance,
 )
 from parlacards.serializers.common import (
@@ -23,7 +22,6 @@ class GroupAnalysesSerializer(CommonOrganizationSerializer):
     def calculate_cache_key(self, group):
         all_analyses = (
             GroupUnity,
-            GroupVocabularySize,
             GroupNumberOfQuestions,
             GroupVoteAttendance,
         )
@@ -88,7 +86,6 @@ class GroupAnalysesSerializer(CommonOrganizationSerializer):
             "seat_count": obj.number_of_members_at(self.context["request_date"]),
             "group_unity": self.get_group_unity_value(obj),
             "number_of_amendments": None,  # TODO
-            "vocabulary_size": self.get_group_value(obj, "GroupVocabularySize"),
             "number_of_questions": self.get_group_value(obj, "GroupNumberOfQuestions"),
             "vote_attendance": self.get_group_value(obj, "GroupVoteAttendance"),
         }

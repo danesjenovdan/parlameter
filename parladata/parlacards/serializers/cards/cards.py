@@ -111,10 +111,6 @@ class PersonCardSerializer(PersonScoreCardSerializer):
         return person_serializer.data
 
 
-class PersonVocabularySizeCardSerializer(PersonScoreCardSerializer):
-    results = ScoreSerializerField(property_model_name="PersonVocabularySize")
-
-
 class PersonAvgSpeechesPerSessionCardSerializer(PersonScoreCardSerializer):
     results = ScoreSerializerField(property_model_name="PersonAvgSpeechesPerSession")
 
@@ -136,10 +132,6 @@ class PersonMonthlyVoteAttendanceCardSerializer(PersonScoreCardSerializer):
 
 class PersonNumberOfQuestionsCardSerializer(PersonScoreCardSerializer):
     results = ScoreSerializerField(property_model_name="PersonNumberOfQuestions")
-
-
-class GroupVocabularySizeCardSerializer(GroupScoreCardSerializer):
-    results = ScoreSerializerField(property_model_name="GroupVocabularySize")
 
 
 class PersonBallotCardSerializer(PersonScoreCardSerializer):
