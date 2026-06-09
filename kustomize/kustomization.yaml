@@ -25,16 +25,16 @@ resources:
 images:
   - name: parladata-medvode
     newName: rg.fr-par.scw.cloud/djnd/parladata-medvode
-    newTag: '97657355fbdd3ce77104c42d6b52bdce65de2069'
+    newTag: 'f4cbd0d2337a60ae7c618dc0e45f36ecc9318889'
   - name: parlasolr-medvode
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-medvode
-    newTag: '97657355fbdd3ce77104c42d6b52bdce65de2069'
+    newTag: 'f4cbd0d2337a60ae7c618dc0e45f36ecc9318889'
   - name: parlacards-medvode
     newName: rg.fr-par.scw.cloud/djnd/parlacards-medvode
-    newTag: '97657355fbdd3ce77104c42d6b52bdce65de2069'
+    newTag: 'f4cbd0d2337a60ae7c618dc0e45f36ecc9318889'
   - name: parlasite-medvode
     newName: rg.fr-par.scw.cloud/djnd/parlasite-medvode
-    newTag: '97657355fbdd3ce77104c42d6b52bdce65de2069'
+    newTag: 'f4cbd0d2337a60ae7c618dc0e45f36ecc9318889'
   - name: parlassets-medvode
     newName: rg.fr-par.scw.cloud/djnd/parlassets-medvode
-    newTag: '97657355fbdd3ce77104c42d6b52bdce65de2069'
+    newTag: 'f4cbd0d2337a60ae7c618dc0e45f36ecc9318889'
