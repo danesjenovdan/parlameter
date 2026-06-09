@@ -71,10 +71,6 @@ const analysesIDs = [
     unit: 'percent',
   },
   // {
-  //   id: 'vocabulary_size',
-  //   precision: 2,
-  // },
-  // {
   //   id: 'privzdignjeno',
   //   precision: 3,
   // },

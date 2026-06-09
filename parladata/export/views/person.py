@@ -12,19 +12,9 @@ from export.resources.person import (
     PersonStyleScoresResource,
     PersonTfidfResource,
     PersonVoteAttendanceResource,
-    VocabularySizeResource,
     VotingDistanceResource,
 )
 from export.views.common import ExportResourceView
-
-
-class ExportVocabularySize(ExportResourceView):
-    """
-    Export person's vocabulary size from database and return them as a file in one of the allowed formats (json, csv).
-    """
-
-    filename = "vocabulary_size"
-    resource = VocabularySizeResource()
 
 
 class ExportPersonInfo(ExportResourceView):
