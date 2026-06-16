@@ -43,7 +43,7 @@ spec:
           resources:
             requests:
               memory: 200Mi
-              cpu: 100m
+              cpu: 200m
             limits:
               memory: 200Mi
               cpu: 200m
@@ -64,7 +64,7 @@ spec:
           resources:
             requests:
               memory: 200Mi
-              cpu: 100m
+              cpu: 200m
             limits:
               memory: 200Mi
               cpu: 200m
@@ -107,11 +107,11 @@ spec:
               value: MOL
           resources:
             requests:
-              memory: 400Mi
-              cpu: 100m
+              memory: 500Mi
+              cpu: 500m
             limits:
-              memory: 400Mi
-              cpu: 600m
+              memory: 1000Mi
+              cpu: 1000m
         - name: parladata-nginx
           ports:
             - name: http
