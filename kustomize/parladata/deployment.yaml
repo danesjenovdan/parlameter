@@ -68,7 +68,7 @@ spec:
         - name: parladata
           image: parladata-zagreb
           volumeMounts:
-            - name: parladata-shared-storage 
+            - name: parladata-shared-storage
               mountPath: /pvc
           command:
             - gunicorn
@@ -101,11 +101,11 @@ spec:
               value: default
           resources:
             requests:
-              memory: 400Mi
-              cpu: 200m
-            limits:
               memory: 500Mi
-              cpu: 400m
+              cpu: 500m
+            limits:
+              memory: 1000Mi
+              cpu: 1000m
         - name: parladata-nginx
           ports:
             - name: http
