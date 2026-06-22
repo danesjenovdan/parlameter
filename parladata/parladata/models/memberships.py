@@ -44,8 +44,6 @@ class Membership(Timestampable):
         "Mandate",
         verbose_name=_("Mandate"),
         help_text=_("Select the mandate."),
-        blank=True,
-        null=True,
         related_name="%(class)ss",
         on_delete=models.CASCADE,
     )

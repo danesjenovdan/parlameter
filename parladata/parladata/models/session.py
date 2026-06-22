@@ -124,11 +124,15 @@ class SessionOrganizationThrough(models.Model):
         "Session",
         on_delete=models.CASCADE,
         related_name="session_organization_through",
+        verbose_name=_("session"),
+        help_text=_("Select the session associated with the organization"),
     )
     organization = models.ForeignKey(
         "Organization",
         on_delete=models.CASCADE,
         related_name="session_organization_through",
+        verbose_name=_("organization"),
+        help_text=_("Select the organization associated with the session"),
     )
     name = models.TextField(
         verbose_name=_("name"),
