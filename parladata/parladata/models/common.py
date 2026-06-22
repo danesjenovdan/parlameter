@@ -104,8 +104,10 @@ class Mandate(models.Model):
 
 
 class EducationLevel(Timestampable):
-    text = models.TextField()
-    order = models.PositiveIntegerField(default=1)
+    text = models.TextField(verbose_name=_("text"), help_text=_("Education level text"))
+    order = models.PositiveIntegerField(
+        default=1, verbose_name=_("order"), help_text=_("Order of the education level")
+    )
 
     def __str__(self):
         return self.text

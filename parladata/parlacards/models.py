@@ -1,15 +1,28 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from parladata.behaviors.models import Timestampable
 
 
 # Create your models here.
 class Score(Timestampable):
-    timestamp = models.DateTimeField(blank=False, null=False)
-    value = models.FloatField(blank=False, null=False)
+    timestamp = models.DateTimeField(
+        blank=False,
+        null=False,
+        verbose_name=_("timestamp"),
+        help_text=_("Timestamp of the score"),
+    )
+    value = models.FloatField(
+        blank=False,
+        null=False,
+        verbose_name=_("value"),
+        help_text=_("Value of the score"),
+    )
     playing_field = models.ForeignKey(
         "parladata.Organization",
         on_delete=models.CASCADE,
+        verbose_name=_("playing field"),
+        help_text=_("Organization associated with the score"),
     )
     # TODO maybe add mandate?
 
@@ -19,7 +32,11 @@ class Score(Timestampable):
 
 class PersonScore(Score):
     person = models.ForeignKey(
-        "parladata.Person", related_name="%(class)s_related", on_delete=models.CASCADE
+        "parladata.Person",
+        related_name="%(class)s_related",
+        on_delete=models.CASCADE,
+        verbose_name=_("person"),
+        help_text=_("Select the person associated with the score"),
     )
 
     def __str__(self):
@@ -34,6 +51,8 @@ class GroupScore(Score):
         "parladata.Organization",
         related_name="%(class)s_related",
         on_delete=models.CASCADE,
+        verbose_name=_("group"),
+        help_text=_("Select the group associated with the score"),
     )
 
     def __str__(self):
@@ -45,7 +64,11 @@ class GroupScore(Score):
 
 class SessionScore(Score):
     session = models.ForeignKey(
-        "parladata.Session", related_name="%(class)s_related", on_delete=models.CASCADE
+        "parladata.Session",
+        related_name="%(class)s_related",
+        on_delete=models.CASCADE,
+        verbose_name=_("session"),
+        help_text=_("Select the session associated with the score"),
     )
 
     def __str__(self):
@@ -57,7 +80,11 @@ class SessionScore(Score):
 
 class VotingDistance(PersonScore):
     target = models.ForeignKey(
-        "parladata.Person", related_name="target_people", on_delete=models.CASCADE
+        "parladata.Person",
+        related_name="target_people",
+        on_delete=models.CASCADE,
+        verbose_name=_("target"),
+        help_text=_("Select the target person for the voting distance"),
     )
 
 
@@ -66,6 +93,8 @@ class GroupVotingDistance(GroupScore):
         "parladata.Person",
         related_name="target_organizations",
         on_delete=models.CASCADE,
+        verbose_name=_("target"),
+        help_text=_("Select the target person for the group voting distance"),
     )
 
 
@@ -74,7 +103,12 @@ class PersonAvgSpeechesPerSession(PersonScore):
 
 
 class AgreementWithGroup(PersonScore):
-    value = models.FloatField(blank=False, null=True)
+    value = models.FloatField(
+        blank=False,
+        null=True,
+        verbose_name=_("value"),
+        help_text=_("Value of the agreement with the group"),
+    )
 
 
 class PersonNumberOfQuestions(PersonScore):
@@ -82,13 +116,33 @@ class PersonNumberOfQuestions(PersonScore):
 
 
 class PersonMonthlyVoteAttendance(PersonScore):
-    no_mandate = models.FloatField(blank=False, null=False)
-    no_data = models.FloatField(blank=False, null=False)
+    no_mandate = models.FloatField(
+        blank=False,
+        null=False,
+        verbose_name=_("no mandate"),
+        help_text=_("Percentage person has no mandate"),
+    )
+    no_data = models.FloatField(
+        blank=False,
+        null=False,
+        verbose_name=_("no data"),
+        help_text=_("Percentage person has no data"),
+    )
 
 
 class GroupMonthlyVoteAttendance(GroupScore):
-    no_mandate = models.FloatField(blank=False, null=False)
-    no_data = models.FloatField(blank=False, null=False)
+    no_mandate = models.FloatField(
+        blank=False,
+        null=False,
+        verbose_name=_("no mandate"),
+        help_text=_("Percentage group has no mandate"),
+    )
+    no_data = models.FloatField(
+        blank=False,
+        null=False,
+        verbose_name=_("no data"),
+        help_text=_("Percentage group has no data"),
+    )
 
 
 class GroupNumberOfQuestions(GroupScore):
@@ -104,11 +158,21 @@ class GroupVoteAttendance(GroupScore):
 
 
 class PersonStyleScore(PersonScore):
-    style = models.TextField(blank=False, null=False)
+    style = models.TextField(
+        blank=False,
+        null=False,
+        verbose_name=_("style"),
+        help_text=_("Style of the person"),
+    )
 
 
 class GroupStyleScore(GroupScore):
-    style = models.TextField(blank=False, null=False)
+    style = models.TextField(
+        blank=False,
+        null=False,
+        verbose_name=_("style"),
+        help_text=_("Style of the group"),
+    )
 
 
 class PersonNumberOfSpokenWords(PersonScore):
@@ -116,15 +180,21 @@ class PersonNumberOfSpokenWords(PersonScore):
 
 
 class PersonTfidf(PersonScore):
-    token = models.TextField(blank=False, null=False)
+    token = models.TextField(
+        blank=False, null=False, verbose_name=_("token"), help_text=_("TFIDF token")
+    )
 
 
 class GroupTfidf(GroupScore):
-    token = models.TextField(blank=False, null=False)
+    token = models.TextField(
+        blank=False, null=False, verbose_name=_("token"), help_text=_("TFIDF token")
+    )
 
 
 class SessionTfidf(SessionScore):
-    token = models.TextField(blank=False, null=False)
+    token = models.TextField(
+        blank=False, null=False, verbose_name=_("token"), help_text=_("TFIDF token")
+    )
 
 
 class SessionGroupAttendance(SessionScore):
@@ -132,6 +202,8 @@ class SessionGroupAttendance(SessionScore):
         "parladata.Organization",
         related_name="%(class)s_related",
         on_delete=models.CASCADE,
+        verbose_name=_("group"),
+        help_text=_("Select the group associated with the session attendance"),
     )
 
 
@@ -143,19 +215,32 @@ class Quote(Timestampable):
     """Model for quoted text from speeches."""
 
     speech = models.ForeignKey(
-        "parladata.Speech", related_name="quotes", on_delete=models.CASCADE
+        "parladata.Speech",
+        related_name="quotes",
+        on_delete=models.CASCADE,
+        verbose_name=_("speech"),
+        help_text=_("Select the speech from which the quote is taken"),
     )
 
     quote_content = models.TextField(
-        blank=True, null=True, help_text="text quoted in a speech"
+        blank=True,
+        null=True,
+        help_text="text quoted in a speech",
+        verbose_name=_("quote content"),
     )
 
     start_index = models.IntegerField(
-        blank=True, null=True, help_text="index of first character of quote string"
+        blank=True,
+        null=True,
+        help_text="index of first character of quote string",
+        verbose_name=_("start index"),
     )
 
     end_index = models.IntegerField(
-        blank=True, null=True, help_text="index of last character of quote string"
+        blank=True,
+        null=True,
+        help_text="index of last character of quote string",
+        verbose_name=_("end index"),
     )
 
 
@@ -164,9 +249,13 @@ class GroupUnity(Score):
         "parladata.Vote",
         related_name="organization_vote_unities",
         on_delete=models.CASCADE,
+        verbose_name=_("vote"),
+        help_text=_("Select the vote associated with the group unity"),
     )
     group = models.ForeignKey(
         "parladata.Organization",
         related_name="organization_vote_unities",
         on_delete=models.CASCADE,
+        verbose_name=_("group"),
+        help_text=_("Select the group associated with the group unity"),
     )
