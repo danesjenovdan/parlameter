@@ -7,28 +7,46 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0083_alter_organizationmembership_member'),
+        ("parladata", "0083_alter_organizationmembership_member"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='educationlevel',
-            name='order',
-            field=models.PositiveIntegerField(default=1, help_text='Order of the education level', verbose_name='order'),
+            model_name="educationlevel",
+            name="order",
+            field=models.PositiveIntegerField(
+                default=1,
+                help_text="Order of the education level",
+                verbose_name="order",
+            ),
         ),
         migrations.AlterField(
-            model_name='educationlevel',
-            name='text',
-            field=models.TextField(help_text='Education level text', verbose_name='text'),
+            model_name="educationlevel",
+            name="text",
+            field=models.TextField(
+                help_text="Education level text", verbose_name="text"
+            ),
         ),
         migrations.AlterField(
-            model_name='sessionorganizationthrough',
-            name='organization',
-            field=models.ForeignKey(help_text='Select the organization associated with the session', on_delete=django.db.models.deletion.CASCADE, related_name='session_organization_through', to='parladata.organization', verbose_name='organization'),
+            model_name="sessionorganizationthrough",
+            name="organization",
+            field=models.ForeignKey(
+                help_text="Select the organization associated with the session",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="session_organization_through",
+                to="parladata.organization",
+                verbose_name="organization",
+            ),
         ),
         migrations.AlterField(
-            model_name='sessionorganizationthrough',
-            name='session',
-            field=models.ForeignKey(help_text='Select the session associated with the organization', on_delete=django.db.models.deletion.CASCADE, related_name='session_organization_through', to='parladata.session', verbose_name='session'),
+            model_name="sessionorganizationthrough",
+            name="session",
+            field=models.ForeignKey(
+                help_text="Select the session associated with the organization",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="session_organization_through",
+                to="parladata.session",
+                verbose_name="session",
+            ),
         ),
     ]

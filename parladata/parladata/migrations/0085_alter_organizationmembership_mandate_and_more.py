@@ -7,20 +7,37 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0084_alter_educationlevel_order_alter_educationlevel_text_and_more'),
+        (
+            "parladata",
+            "0084_alter_educationlevel_order_alter_educationlevel_text_and_more",
+        ),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='organizationmembership',
-            name='mandate',
-            field=models.ForeignKey(default=1, help_text='Select the mandate.', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)ss', to='parladata.mandate', verbose_name='Mandate'),
+            model_name="organizationmembership",
+            name="mandate",
+            field=models.ForeignKey(
+                default=1,
+                help_text="Select the mandate.",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)ss",
+                to="parladata.mandate",
+                verbose_name="Mandate",
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='personmembership',
-            name='mandate',
-            field=models.ForeignKey(default=1, help_text='Select the mandate.', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)ss', to='parladata.mandate', verbose_name='Mandate'),
+            model_name="personmembership",
+            name="mandate",
+            field=models.ForeignKey(
+                default=1,
+                help_text="Select the mandate.",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)ss",
+                to="parladata.mandate",
+                verbose_name="Mandate",
+            ),
             preserve_default=False,
         ),
     ]

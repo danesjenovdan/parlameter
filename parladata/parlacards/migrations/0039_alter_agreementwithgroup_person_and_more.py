@@ -7,474 +7,821 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parlacards', '0038_remove_personvocabularysize_person_and_more'),
-        ('parladata', '0084_alter_educationlevel_order_alter_educationlevel_text_and_more'),
+        ("parlacards", "0038_remove_personvocabularysize_person_and_more"),
+        (
+            "parladata",
+            "0084_alter_educationlevel_order_alter_educationlevel_text_and_more",
+        ),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='agreementwithgroup',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='agreementwithgroup',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='agreementwithgroup',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='agreementwithgroup',
-            name='value',
-            field=models.FloatField(help_text='Value of the agreement with the group', null=True, verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='groupdiscord',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='groupdiscord',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='groupdiscord',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='groupdiscord',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='groupmonthlyvoteattendance',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='groupmonthlyvoteattendance',
-            name='no_data',
-            field=models.FloatField(help_text='Percentage group has no data', verbose_name='no data'),
-        ),
-        migrations.AlterField(
-            model_name='groupmonthlyvoteattendance',
-            name='no_mandate',
-            field=models.FloatField(help_text='Percentage group has no mandate', verbose_name='no mandate'),
-        ),
-        migrations.AlterField(
-            model_name='groupmonthlyvoteattendance',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='groupmonthlyvoteattendance',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='groupmonthlyvoteattendance',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='groupnumberofquestions',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='groupnumberofquestions',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='groupnumberofquestions',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='groupnumberofquestions',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='groupstylescore',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='groupstylescore',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='groupstylescore',
-            name='style',
-            field=models.TextField(help_text='Style of the group', verbose_name='style'),
-        ),
-        migrations.AlterField(
-            model_name='groupstylescore',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='groupstylescore',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='grouptfidf',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='grouptfidf',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='grouptfidf',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='grouptfidf',
-            name='token',
-            field=models.TextField(help_text='TFIDF token', verbose_name='token'),
-        ),
-        migrations.AlterField(
-            model_name='grouptfidf',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='groupunity',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the group unity', on_delete=django.db.models.deletion.CASCADE, related_name='organization_vote_unities', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='groupunity',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='groupunity',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='groupunity',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='groupunity',
-            name='vote',
-            field=models.ForeignKey(help_text='Select the vote associated with the group unity', on_delete=django.db.models.deletion.CASCADE, related_name='organization_vote_unities', to='parladata.vote', verbose_name='vote'),
-        ),
-        migrations.AlterField(
-            model_name='groupvoteattendance',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='groupvoteattendance',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='groupvoteattendance',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='groupvoteattendance',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='groupvotingdistance',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='groupvotingdistance',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='groupvotingdistance',
-            name='target',
-            field=models.ForeignKey(help_text='Select the target person for the group voting distance', on_delete=django.db.models.deletion.CASCADE, related_name='target_organizations', to='parladata.person', verbose_name='target'),
-        ),
-        migrations.AlterField(
-            model_name='groupvotingdistance',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='groupvotingdistance',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personavgspeechespersession',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='personavgspeechespersession',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='personavgspeechespersession',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='personavgspeechespersession',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personmonthlyvoteattendance',
-            name='no_data',
-            field=models.FloatField(help_text='Percentage person has no data', verbose_name='no data'),
-        ),
-        migrations.AlterField(
-            model_name='personmonthlyvoteattendance',
-            name='no_mandate',
-            field=models.FloatField(help_text='Percentage person has no mandate', verbose_name='no mandate'),
-        ),
-        migrations.AlterField(
-            model_name='personmonthlyvoteattendance',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='personmonthlyvoteattendance',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='personmonthlyvoteattendance',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='personmonthlyvoteattendance',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofquestions',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofquestions',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofquestions',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofquestions',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofspokenwords',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofspokenwords',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofspokenwords',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='personnumberofspokenwords',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personstylescore',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='personstylescore',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='personstylescore',
-            name='style',
-            field=models.TextField(help_text='Style of the person', verbose_name='style'),
-        ),
-        migrations.AlterField(
-            model_name='personstylescore',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='personstylescore',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='persontfidf',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='persontfidf',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='persontfidf',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='persontfidf',
-            name='token',
-            field=models.TextField(help_text='TFIDF token', verbose_name='token'),
-        ),
-        migrations.AlterField(
-            model_name='persontfidf',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='personvoteattendance',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='personvoteattendance',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='personvoteattendance',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='personvoteattendance',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='quote',
-            name='end_index',
-            field=models.IntegerField(blank=True, help_text='index of last character of quote string', null=True, verbose_name='end index'),
-        ),
-        migrations.AlterField(
-            model_name='quote',
-            name='quote_content',
-            field=models.TextField(blank=True, help_text='text quoted in a speech', null=True, verbose_name='quote content'),
-        ),
-        migrations.AlterField(
-            model_name='quote',
-            name='speech',
-            field=models.ForeignKey(help_text='Select the speech from which the quote is taken', on_delete=django.db.models.deletion.CASCADE, related_name='quotes', to='parladata.speech', verbose_name='speech'),
-        ),
-        migrations.AlterField(
-            model_name='quote',
-            name='start_index',
-            field=models.IntegerField(blank=True, help_text='index of first character of quote string', null=True, verbose_name='start index'),
-        ),
-        migrations.AlterField(
-            model_name='sessiongroupattendance',
-            name='group',
-            field=models.ForeignKey(help_text='Select the group associated with the session attendance', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.organization', verbose_name='group'),
-        ),
-        migrations.AlterField(
-            model_name='sessiongroupattendance',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='sessiongroupattendance',
-            name='session',
-            field=models.ForeignKey(help_text='Select the session associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.session', verbose_name='session'),
-        ),
-        migrations.AlterField(
-            model_name='sessiongroupattendance',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='sessiongroupattendance',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='sessiontfidf',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='sessiontfidf',
-            name='session',
-            field=models.ForeignKey(help_text='Select the session associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.session', verbose_name='session'),
-        ),
-        migrations.AlterField(
-            model_name='sessiontfidf',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='sessiontfidf',
-            name='token',
-            field=models.TextField(help_text='TFIDF token', verbose_name='token'),
-        ),
-        migrations.AlterField(
-            model_name='sessiontfidf',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
-        ),
-        migrations.AlterField(
-            model_name='votingdistance',
-            name='person',
-            field=models.ForeignKey(help_text='Select the person associated with the score', on_delete=django.db.models.deletion.CASCADE, related_name='%(class)s_related', to='parladata.person', verbose_name='person'),
-        ),
-        migrations.AlterField(
-            model_name='votingdistance',
-            name='playing_field',
-            field=models.ForeignKey(help_text='Organization associated with the score', on_delete=django.db.models.deletion.CASCADE, to='parladata.organization', verbose_name='playing field'),
-        ),
-        migrations.AlterField(
-            model_name='votingdistance',
-            name='target',
-            field=models.ForeignKey(help_text='Select the target person for the voting distance', on_delete=django.db.models.deletion.CASCADE, related_name='target_people', to='parladata.person', verbose_name='target'),
-        ),
-        migrations.AlterField(
-            model_name='votingdistance',
-            name='timestamp',
-            field=models.DateTimeField(help_text='Timestamp of the score', verbose_name='timestamp'),
-        ),
-        migrations.AlterField(
-            model_name='votingdistance',
-            name='value',
-            field=models.FloatField(help_text='Value of the score', verbose_name='value'),
+            model_name="agreementwithgroup",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agreementwithgroup",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agreementwithgroup",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="agreementwithgroup",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the agreement with the group",
+                null=True,
+                verbose_name="value",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupdiscord",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupdiscord",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupdiscord",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupdiscord",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupmonthlyvoteattendance",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupmonthlyvoteattendance",
+            name="no_data",
+            field=models.FloatField(
+                help_text="Percentage group has no data", verbose_name="no data"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupmonthlyvoteattendance",
+            name="no_mandate",
+            field=models.FloatField(
+                help_text="Percentage group has no mandate", verbose_name="no mandate"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupmonthlyvoteattendance",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupmonthlyvoteattendance",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupmonthlyvoteattendance",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupnumberofquestions",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupnumberofquestions",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupnumberofquestions",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupnumberofquestions",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupstylescore",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupstylescore",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupstylescore",
+            name="style",
+            field=models.TextField(
+                help_text="Style of the group", verbose_name="style"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupstylescore",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupstylescore",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="grouptfidf",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="grouptfidf",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="grouptfidf",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="grouptfidf",
+            name="token",
+            field=models.TextField(help_text="TFIDF token", verbose_name="token"),
+        ),
+        migrations.AlterField(
+            model_name="grouptfidf",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupunity",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the group unity",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="organization_vote_unities",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupunity",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupunity",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupunity",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupunity",
+            name="vote",
+            field=models.ForeignKey(
+                help_text="Select the vote associated with the group unity",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="organization_vote_unities",
+                to="parladata.vote",
+                verbose_name="vote",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvoteattendance",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvoteattendance",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvoteattendance",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvoteattendance",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvotingdistance",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvotingdistance",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvotingdistance",
+            name="target",
+            field=models.ForeignKey(
+                help_text="Select the target person for the group voting distance",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="target_organizations",
+                to="parladata.person",
+                verbose_name="target",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvotingdistance",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="groupvotingdistance",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personavgspeechespersession",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personavgspeechespersession",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personavgspeechespersession",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personavgspeechespersession",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmonthlyvoteattendance",
+            name="no_data",
+            field=models.FloatField(
+                help_text="Percentage person has no data", verbose_name="no data"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmonthlyvoteattendance",
+            name="no_mandate",
+            field=models.FloatField(
+                help_text="Percentage person has no mandate", verbose_name="no mandate"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmonthlyvoteattendance",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmonthlyvoteattendance",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmonthlyvoteattendance",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personmonthlyvoteattendance",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofquestions",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofquestions",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofquestions",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofquestions",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofspokenwords",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofspokenwords",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofspokenwords",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personnumberofspokenwords",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personstylescore",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personstylescore",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personstylescore",
+            name="style",
+            field=models.TextField(
+                help_text="Style of the person", verbose_name="style"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personstylescore",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personstylescore",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="persontfidf",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="persontfidf",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="persontfidf",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="persontfidf",
+            name="token",
+            field=models.TextField(help_text="TFIDF token", verbose_name="token"),
+        ),
+        migrations.AlterField(
+            model_name="persontfidf",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personvoteattendance",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personvoteattendance",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personvoteattendance",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="personvoteattendance",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="quote",
+            name="end_index",
+            field=models.IntegerField(
+                blank=True,
+                help_text="index of last character of quote string",
+                null=True,
+                verbose_name="end index",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="quote",
+            name="quote_content",
+            field=models.TextField(
+                blank=True,
+                help_text="text quoted in a speech",
+                null=True,
+                verbose_name="quote content",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="quote",
+            name="speech",
+            field=models.ForeignKey(
+                help_text="Select the speech from which the quote is taken",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="quotes",
+                to="parladata.speech",
+                verbose_name="speech",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="quote",
+            name="start_index",
+            field=models.IntegerField(
+                blank=True,
+                help_text="index of first character of quote string",
+                null=True,
+                verbose_name="start index",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiongroupattendance",
+            name="group",
+            field=models.ForeignKey(
+                help_text="Select the group associated with the session attendance",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.organization",
+                verbose_name="group",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiongroupattendance",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiongroupattendance",
+            name="session",
+            field=models.ForeignKey(
+                help_text="Select the session associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.session",
+                verbose_name="session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiongroupattendance",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiongroupattendance",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiontfidf",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiontfidf",
+            name="session",
+            field=models.ForeignKey(
+                help_text="Select the session associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.session",
+                verbose_name="session",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiontfidf",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="sessiontfidf",
+            name="token",
+            field=models.TextField(help_text="TFIDF token", verbose_name="token"),
+        ),
+        migrations.AlterField(
+            model_name="sessiontfidf",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="votingdistance",
+            name="person",
+            field=models.ForeignKey(
+                help_text="Select the person associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="%(class)s_related",
+                to="parladata.person",
+                verbose_name="person",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="votingdistance",
+            name="playing_field",
+            field=models.ForeignKey(
+                help_text="Organization associated with the score",
+                on_delete=django.db.models.deletion.CASCADE,
+                to="parladata.organization",
+                verbose_name="playing field",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="votingdistance",
+            name="target",
+            field=models.ForeignKey(
+                help_text="Select the target person for the voting distance",
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="target_people",
+                to="parladata.person",
+                verbose_name="target",
+            ),
+        ),
+        migrations.AlterField(
+            model_name="votingdistance",
+            name="timestamp",
+            field=models.DateTimeField(
+                help_text="Timestamp of the score", verbose_name="timestamp"
+            ),
+        ),
+        migrations.AlterField(
+            model_name="votingdistance",
+            name="value",
+            field=models.FloatField(
+                help_text="Value of the score", verbose_name="value"
+            ),
         ),
     ]
