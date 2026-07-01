@@ -319,7 +319,7 @@ vote_types:
   personal_property_decree: dekret w sprawie planu zarządzania nieruchomościami
   other: inne
 tools:
-  notifications: Parlametr powiadomienia
+  notifications: Powiadomienia
   vote-comparator: Komparator głosowań
   unity: Enotnost
   compass: Sejmowy kompas
