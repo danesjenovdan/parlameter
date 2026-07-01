@@ -379,7 +379,7 @@ vote_types:
   other: інше
   agenda: порядок денний
 tools:
-  notifications: Сповіщення Парламетру
+  notifications: Сповіщення
   vote-comparator: Порівняння голосувань
   unity: Enotnost
   compass: Парламентський компас

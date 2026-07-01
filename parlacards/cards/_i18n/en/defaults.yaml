@@ -319,7 +319,7 @@ vote_types:
   personal_property_decree: odlok o načrtu ravnanja s stvarnim premoženjem
   other: other
 tools:
-  notifications: Parlameter notifications
+  notifications: Notifications
   vote-comparator: Vote comparator
   unity: Unity
   compass: Parliamentary compass
