@@ -1,201 +1,201 @@
 {
-    "landing": {
-        "title": "Parlameter",
-        "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Občinskem svetu Občine Ajdovščina.",
-        "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
-        "search": {
-            "part_one": "Išči",
-            "part_two": "odloke, glasovanja, svetnike, svetniške klube ali njihove govore"
-        }
-    },
-    "about": {
-        "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
-        "afterlead": "Uporabnikom prijazna vizualna zasnova in tehnološko napredna modularna zasnova povečujeta transparentnost delovanja najpomembnejše demokratične institucije in omogočata učinkovit vpogled v odločevalski proces.",
-        "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
-        "columns": {
-            "first": {
-                "title": "Splošna javnost",
-                "paragraph": "Delovanje demokracije je odvisno od budnega in odgovornega nadzora nad delovanjem oblasti, za kar pa je predpogoj dobro informirana javnost. Hvala, ker ti ni vseeno."
-            },
-            "second": {
-                "title": "Medijska javnost",
-                "paragraph": "Vse obstoječe kartice je mogoče brezplačno vdelati na katero koli spletno mesto. Podatke obdelamo mi, da se lahko mediji posvetijo interpretaciji."
-            },
-            "third": {
-                "title": "Razvijalska javnost",
-                "paragraph": "Vsi podatki so brezplačno na voljo preko dveh API vmesnikov, na Githubu pa je objavljena tudi vsa koda. Vse potrebno najdeš na <a href=\"https://dev.parlameter.si\">strani za razvijalce</a>, če potrebuješ še kakšno pomoč, pa se nam javi po e-pošti!"
-            }
-        },
-        "thanks": "Parlameter nastaja v okviru inštituta <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, ki se osredotoča na digitalno politično participacijo, transparentnost in nadzor. Hvala Google DNI, Amebisu, Ameriški ambasadi, NED in vsem posameznicam in posameznikom, ki so nam nesebično pomagali pri razvoju."
-    },
-    "legal": {
-        "title": "Pravno obvestilo"
-    },
-    "press": {
-        "todo": true,
-        "title": "Za boljšo in lepšo zgodbo",
-        "body": "Na tej strani so zbrane informacije o Parlametru, objave za medije ter vizualni materiali. Vse je ponujeno v prosto rabo. Neposredna vprašanja in/ali povabila k izjavam oz. intervjujem naslovite na <a href=\"mailto:info@parlameter.si\">info@parlameter.si</a>, odzvali se bomo hitro in z veseljem.",
-        "photos": {
-            "title": "Slikovno gradivo"
-        },
-        "releases": {
-            "title": "Objave za medije"
-        },
-        "video": {
-            "title": "Video gradivo"
-        }
-    },
-    "menu": {
-        "legislation": "Odloki",
-        "sessions": "Seje",
-        "mps": "Svetniki",
-        "pgs": "Svetniški klubi",
-        "tools": "Orodja"
-    },
-    "footer": {
-        "heading": "Parlameter",
-        "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
-        "contact_mail": "info@parlameter.si",
-        "about_heading": "O projektu",
-        "about": "Predstavitev Parlametra",
-        "about_municipality": "O projektu Tvoja občina",
-        "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
-        "partners_heading": "Partnerji",
-        "legal": "Pravno obvestilo",
-        "support_heading": "Projekt podpira"
-    },
-    "search_popup": {
-        "title": "Kako iskati?",
-        "first_paragraph": "Za privzet način iskanja je nastavljeno široko ujemanje (med zadetki se znajdejo vsi govori, ki vsebujejo katero koli od besed v iskalnem nizu). Med rezultati zadetkov se zaradi pregibanja pojavljajo vse slovnične oblike znotraj iste besedne vrste. To ne velja zgolj za iskanje z natančnim ujemanjem (\"narekovaji\").",
-        "second_paragraph": "Če želiš svoj iskalni niz dodatno modificirati, lahko uporabiš naslednje operatorje:",
-        "operators": [
-            {
-                "name": "IN",
-                "description": "med rezultati iskanja bodo zgolj zadetki, ki vključujejo vse besede v iskalnem nizu (a ne glede na njihov vrstni red)",
-                "example_title": "Primer iskanja:",
-                "example_text": "Ivan IN Cankar",
-                "example_result_title": "Rezultati iskanja:",
-                "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
-                "example_excluded_result_title": "",
-                "example_excluded_result_text": ""
-            },
-            {
-                "name": "\"NAREKOVAJI\"",
-                "description": "med rezultati iskanja bodo samo zadetki, ki vključujejo točen nabor znakov",
-                "example_title": "Primer iskanja:",
-                "example_text": "Humanitarna kriza",
-                "example_result_title": "",
-                "example_result_text": "",
-                "example_excluded_result_title": "",
-                "example_excluded_result_text": ""
-            },
-            {
-                "name": "! (KLICAJ)",
-                "description": "rezultati iskanja nujno vključujejo s klicajem označeno besedo v iskalnem nizu, druge besede iskalnega niza pa služijo zgolj za rangiranje rezultatov",
-                "example_title": "Primer iskanja:",
-                "example_text": "Poslanska !skupina",
-                "example_result_title": "Rezultati iskanja:",
-                "example_result_text": "Poslanska skupina,<br> skupina poslancev,<br> mednarodna skupina",
-                "example_excluded_result_title": "Ni rezultat iskanja",
-                "example_excluded_result_text": "Poslanska služba"
-            },
-            {
-                "name": "- (MINUS)",
-                "description": "rezultati iskanja izključujejo zadetke s posamezno besedo v iskalnem nizu, če to besedo predhaja minus (-)",
-                "example_title": "Primer iskanja:",
-                "example_text": "-Poslanska skupina",
-                "example_result_title": "Rezultati iskanja:",
-                "example_result_text": "skupina poslancev,<br> mednarodna skupina",
-                "example_excluded_result_title": "Ni rezultat iskanja",
-                "example_excluded_result_text": "Poslanska skupina"
-            }
-        ]
-    },
-    "donation": {
-        "intro": "Tvoja donacija bo pomagala zagotoviti nadaljnji razvoj in omogočiti dolgoročno delovanje Parlametra.",
-        "personal": "OSEBNA<br>DONACIJA",
-        "business": "CORPORATE<br>DONACIJA",
-        "bitcoin": "BITCOIN DONACIJA",
-        "business_success": "Najlažje, da se o podrobnostih pogovorimo po e-pošti.",
-        "business_success_email": "e-pošta",
-        "business_success_message": "sporočilo",
-        "business_success_send": "POŠLJI",
-        "thank_you": "HVALA!",
-        "error": "Ups, nekaj je šlo narobe. :(",
-        "choice": "DONACIJA PO IZBIRI",
-        "amount": "količina",
-        "card": "S KARTICO",
-        "monthly": "mesečna donacija"
-    },
-    "tools": {
-        "notifications": {
-            "title": "Parlameter obvestila",
-            "text": "Prijavi se na obvestila. Izberi besedo ali besedno zvezo in prejmi e-pošto, ko bo uporabljena v državnem zboru."
-        },
-        "voteComparator": {
-            "title": "Primerjalnik glasovanj",
-            "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?"
-        },
-        "unity": {
-            "title": "Enotnost",
-            "text": "Raziskuj enotnost v parlamentarnih skupinah glede na to, koliko strinjanja je bilo pri glasovanjih v poslanskih skupinah."
-        },
-        "compass": {
-            "title": "Parlamentarni kompas",
-            "text": "Vizualizacija vseh poslank in poslancev v virtualnem \"prostoru\". Dlje ko sta poslanca narazen, bolj različno glasujeta."
-        },
-        "wordGroups": {
-            "title": "Skupine besed",
-            "text": "Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>"
-        }
-    },
-    "general": {
-        "coalition": "koalicija",
-        "opposition": "opozicija",
-        "inactive": "NEAKTIVEN",
-        "overview": "Pregled",
-        "voting": "Glasovanja",
-        "speeches": "Govori",
-        "data_published": "podatki objavljeni",
-        "in_review": "v pregledu",
-        "vote-result--enacted": "Sprejet",
-        "vote-result--submitted": "Oddan",
-        "vote-result--rejected": "Zavrnjen",
-        "vote-result--retracted": "Umaknjen",
-        "vote-result--adopted": "Sprejet",
-        "vote-result--received": "Prejet",
-        "vote-result--in_procedure": "V obravnavi",
-        "legislation": "Odloki",
-        "other_votings": "Glasovanja",
-        "agenda": "Dnevni red",
-        "transcripts": "Transkript",
-        "minutes": "Zapisnik",
-        "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja. Pri tem ti lahko pomagajo spodnja orodja!",
-        "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
-        "info_email": "info@parlameter.si",
-        "unaffiliated": "nepovezan/a",
-        "no-session-data": "Za to sejo (še) nimamo podatkov."
-    },
-    "social": {
-        "facebook": "https://www.facebook.com/parlameter",
-        "twitter": "https://twitter.com/Parlameter_si",
-        "instagram": "[empty]"
-    },
-    "titles": {
-        "session": "Seja",
-        "legislation": "Odloki",
-        "other-votings": "Glasovanja",
-        "agenda": "Dnevni red",
-        "transcript": "Transkript",
-        "minutes": "Zapisnik",
-        "voting": "Glasovanje",
-        "session-list": "Seznam sej",
-        "sessions-search": "Išči seje",
-        "thank-you": "Hvala!",
-        "ups": ":(",
-        "leader": "Župan"
-    },
-    "legislation": {
-        "decree": "O"
+  "landing": {
+    "title": "Parlameter",
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Občinskem svetu Občine Ajdovščina.",
+    "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
+    "search": {
+      "part_one": "Išči",
+      "part_two": "odloke, glasovanja, svetnike, svetniške klube ali njihove govore"
     }
+  },
+  "about": {
+    "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
+    "afterlead": "Uporabnikom prijazna vizualna zasnova in tehnološko napredna modularna zasnova povečujeta transparentnost delovanja najpomembnejše demokratične institucije in omogočata učinkovit vpogled v odločevalski proces.",
+    "videourl": "https://www.youtube.com/embed/49rAjdfnmYU",
+    "columns": {
+      "first": {
+        "title": "Splošna javnost",
+        "paragraph": "Delovanje demokracije je odvisno od budnega in odgovornega nadzora nad delovanjem oblasti, za kar pa je predpogoj dobro informirana javnost. Hvala, ker ti ni vseeno."
+      },
+      "second": {
+        "title": "Medijska javnost",
+        "paragraph": "Vse obstoječe kartice je mogoče brezplačno vdelati na katero koli spletno mesto. Podatke obdelamo mi, da se lahko mediji posvetijo interpretaciji."
+      },
+      "third": {
+        "title": "Razvijalska javnost",
+        "paragraph": "Vsi podatki so brezplačno na voljo preko dveh API vmesnikov, na Githubu pa je objavljena tudi vsa koda. Vse potrebno najdeš na <a href=\"https://dev.parlameter.si\">strani za razvijalce</a>, če potrebuješ še kakšno pomoč, pa se nam javi po e-pošti!"
+      }
+    },
+    "thanks": "Parlameter nastaja v okviru inštituta <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, ki se osredotoča na digitalno politično participacijo, transparentnost in nadzor. Hvala Google DNI, Amebisu, Ameriški ambasadi, NED in vsem posameznicam in posameznikom, ki so nam nesebično pomagali pri razvoju."
+  },
+  "legal": {
+    "title": "Pravno obvestilo"
+  },
+  "press": {
+    "todo": true,
+    "title": "Za boljšo in lepšo zgodbo",
+    "body": "Na tej strani so zbrane informacije o Parlametru, objave za medije ter vizualni materiali. Vse je ponujeno v prosto rabo. Neposredna vprašanja in/ali povabila k izjavam oz. intervjujem naslovite na <a href=\"mailto:info@parlameter.si\">info@parlameter.si</a>, odzvali se bomo hitro in z veseljem.",
+    "photos": {
+      "title": "Slikovno gradivo"
+    },
+    "releases": {
+      "title": "Objave za medije"
+    },
+    "video": {
+      "title": "Video gradivo"
+    }
+  },
+  "menu": {
+    "legislation": "Odloki",
+    "sessions": "Seje",
+    "mps": "Svetniki",
+    "pgs": "Svetniški klubi",
+    "tools": "Orodja"
+  },
+  "footer": {
+    "heading": "Parlameter",
+    "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
+    "contact_mail": "info@parlameter.si",
+    "about_heading": "O projektu",
+    "about": "Predstavitev Parlametra",
+    "about_municipality": "O projektu Tvoja občina",
+    "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
+    "partners_heading": "Partnerji",
+    "legal": "Pravno obvestilo",
+    "support_heading": "Projekt podpira"
+  },
+  "search_popup": {
+    "title": "Kako iskati?",
+    "first_paragraph": "Za privzet način iskanja je nastavljeno široko ujemanje (med zadetki se znajdejo vsi govori, ki vsebujejo katero koli od besed v iskalnem nizu). Med rezultati zadetkov se zaradi pregibanja pojavljajo vse slovnične oblike znotraj iste besedne vrste. To ne velja zgolj za iskanje z natančnim ujemanjem (\"narekovaji\").",
+    "second_paragraph": "Če želiš svoj iskalni niz dodatno modificirati, lahko uporabiš naslednje operatorje:",
+    "operators": [
+      {
+        "name": "IN",
+        "description": "med rezultati iskanja bodo zgolj zadetki, ki vključujejo vse besede v iskalnem nizu (a ne glede na njihov vrstni red)",
+        "example_title": "Primer iskanja:",
+        "example_text": "Ivan IN Cankar",
+        "example_result_title": "Rezultati iskanja:",
+        "example_result_text": "Ivan Cankar<br> Cankar, Ivan",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "\"NAREKOVAJI\"",
+        "description": "med rezultati iskanja bodo samo zadetki, ki vključujejo točen nabor znakov",
+        "example_title": "Primer iskanja:",
+        "example_text": "Humanitarna kriza",
+        "example_result_title": "",
+        "example_result_text": "",
+        "example_excluded_result_title": "",
+        "example_excluded_result_text": ""
+      },
+      {
+        "name": "! (KLICAJ)",
+        "description": "rezultati iskanja nujno vključujejo s klicajem označeno besedo v iskalnem nizu, druge besede iskalnega niza pa služijo zgolj za rangiranje rezultatov",
+        "example_title": "Primer iskanja:",
+        "example_text": "Poslanska !skupina",
+        "example_result_title": "Rezultati iskanja:",
+        "example_result_text": "Poslanska skupina,<br> skupina poslancev,<br> mednarodna skupina",
+        "example_excluded_result_title": "Ni rezultat iskanja",
+        "example_excluded_result_text": "Poslanska služba"
+      },
+      {
+        "name": "- (MINUS)",
+        "description": "rezultati iskanja izključujejo zadetke s posamezno besedo v iskalnem nizu, če to besedo predhaja minus (-)",
+        "example_title": "Primer iskanja:",
+        "example_text": "-Poslanska skupina",
+        "example_result_title": "Rezultati iskanja:",
+        "example_result_text": "skupina poslancev,<br> mednarodna skupina",
+        "example_excluded_result_title": "Ni rezultat iskanja",
+        "example_excluded_result_text": "Poslanska skupina"
+      }
+    ]
+  },
+  "donation": {
+    "intro": "Tvoja donacija bo pomagala zagotoviti nadaljnji razvoj in omogočiti dolgoročno delovanje Parlametra.",
+    "personal": "OSEBNA<br>DONACIJA",
+    "business": "CORPORATE<br>DONACIJA",
+    "bitcoin": "BITCOIN DONACIJA",
+    "business_success": "Najlažje, da se o podrobnostih pogovorimo po e-pošti.",
+    "business_success_email": "e-pošta",
+    "business_success_message": "sporočilo",
+    "business_success_send": "POŠLJI",
+    "thank_you": "HVALA!",
+    "error": "Ups, nekaj je šlo narobe. :(",
+    "choice": "DONACIJA PO IZBIRI",
+    "amount": "količina",
+    "card": "S KARTICO",
+    "monthly": "mesečna donacija"
+  },
+  "tools": {
+    "notifications": {
+      "title": "Obvestila",
+      "text": "Prijavi se na obvestila. Izberi besedo ali besedno zvezo in prejmi e-pošto, ko bo uporabljena v državnem zboru."
+    },
+    "voteComparator": {
+      "title": "Primerjalnik glasovanj",
+      "text": "S primerjalnikom glasovanj lahko odgovoriš na vprašanja kot je: Kdaj so poslanci Levice glasovali enako kot poslanci SDS?"
+    },
+    "unity": {
+      "title": "Enotnost",
+      "text": "Raziskuj enotnost v parlamentarnih skupinah glede na to, koliko strinjanja je bilo pri glasovanjih v poslanskih skupinah."
+    },
+    "compass": {
+      "title": "Parlamentarni kompas",
+      "text": "Vizualizacija vseh poslank in poslancev v virtualnem \"prostoru\". Dlje ko sta poslanca narazen, bolj različno glasujeta."
+    },
+    "wordGroups": {
+      "title": "Skupine besed",
+      "text": "Razišči, kdo največ govori o določenih tematikah oziroma kdo največkrat izgovori določene skupine besed.<br><br>"
+    }
+  },
+  "general": {
+    "coalition": "koalicija",
+    "opposition": "opozicija",
+    "inactive": "NEAKTIVEN",
+    "overview": "Pregled",
+    "voting": "Glasovanja",
+    "speeches": "Govori",
+    "data_published": "podatki objavljeni",
+    "in_review": "v pregledu",
+    "vote-result--enacted": "Sprejet",
+    "vote-result--submitted": "Oddan",
+    "vote-result--rejected": "Zavrnjen",
+    "vote-result--retracted": "Umaknjen",
+    "vote-result--adopted": "Sprejet",
+    "vote-result--received": "Prejet",
+    "vote-result--in_procedure": "V obravnavi",
+    "legislation": "Odloki",
+    "other_votings": "Glasovanja",
+    "agenda": "Dnevni red",
+    "transcripts": "Transkript",
+    "minutes": "Zapisnik",
+    "tools_intro": "Demokracija je nenehen proces, odvisen od našega sodelovanja. Pri tem ti lahko pomagajo spodnja orodja!",
+    "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
+    "info_email": "info@parlameter.si",
+    "unaffiliated": "nepovezan/a",
+    "no-session-data": "Za to sejo (še) nimamo podatkov."
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/parlameter",
+    "twitter": "https://twitter.com/Parlameter_si",
+    "instagram": "[empty]"
+  },
+  "titles": {
+    "session": "Seja",
+    "legislation": "Odloki",
+    "other-votings": "Glasovanja",
+    "agenda": "Dnevni red",
+    "transcript": "Transkript",
+    "minutes": "Zapisnik",
+    "voting": "Glasovanje",
+    "session-list": "Seznam sej",
+    "sessions-search": "Išči seje",
+    "thank-you": "Hvala!",
+    "ups": ":(",
+    "leader": "Župan"
+  },
+  "legislation": {
+    "decree": "O"
+  }
 }
