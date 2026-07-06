@@ -310,7 +310,7 @@ vote_types:
   personal_property_decree: tip glasanja
   other: ostalo
 tools:
-  notifications: Obavještenja Parlametra
+  notifications: Obavještenja
   vote-comparator: Komparator glasanja
   unity: Jedinstvo
   compass: Parlamentarni kompas
