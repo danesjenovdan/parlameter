@@ -129,7 +129,7 @@
   },
   "tools": {
     "notifications": {
-      "title": "Parlametr powiadomienia",
+      "title": "Powiadomienia",
       "text": "Fragmenty z posiedzeń sejmowych! Otrzymuj powiadomienia e-mail za każdym razem, gdy ktoś w sejmie wypowie wybrane przez ciebie słowo (lub więcej słów)."
     },
     "voteComparator": {
