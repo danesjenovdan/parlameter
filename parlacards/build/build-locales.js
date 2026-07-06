@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import jsYaml from 'js-yaml';
+import { load as loadYaml } from 'js-yaml';
 import * as glob from 'glob';
 import { resolve, dirname, join, relative } from 'path';
 import { fileURLToPath } from 'url';
@@ -16,7 +16,7 @@ glob.sync(join(localesPath, '**/*.yaml')).forEach((file) => {
   const cardName = fileParts.slice(1).join('/').replace('.yaml', '');
   const locale = fileParts[0];
   const yamlText = fs.readFileSync(file, 'utf-8');
-  const data = jsYaml.load(yamlText);
+  const data = yamlText ? loadYaml(yamlText) : {};
 
   locales[locale] = locales[locale] ?? {};
   locales[locale][cardName] = data;
