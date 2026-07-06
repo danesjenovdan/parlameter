@@ -107,11 +107,11 @@ spec:
               value: Slovenija
           resources:
             requests:
-              memory: 500Mi
-              cpu: 500m
-            limits:
               memory: 1000Mi
               cpu: 1000m
+            limits:
+              memory: 1500Mi
+              cpu: 2000m
         - name: parladata-nginx
           ports:
             - name: http

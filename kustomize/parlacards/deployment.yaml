@@ -22,10 +22,10 @@ spec:
           resources:
             requests:
               memory: 1000Mi
-              cpu: 200m
+              cpu: 500m
             limits:
               memory: 1000Mi
-              cpu: 200m
+              cpu: 500m
           env:
             - name: VITE_PARLASSETS_URL
               value: https://files.parlameter.si
