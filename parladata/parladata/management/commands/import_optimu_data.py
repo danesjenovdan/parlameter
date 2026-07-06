@@ -209,8 +209,13 @@ class Command(BaseCommand):
         for point in self.data["NewDataSet"]["PointOfDiscussion"]:
             description = point.get("Description", "").strip()
             description_items = description.split("\n\n")
-            if len(description_items) == 3:
-                title = description_items[1]
+            if len(description_items) > 2:
+                title = description_items[-2]
+                if not title:
+                    if description_items[-1]:
+                        title = description_items[-1]
+                    else:
+                        title = description
             else:
                 title = description
             ai_order += 1
