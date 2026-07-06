@@ -129,7 +129,7 @@
   },
   "tools": {
     "notifications": {
-      "title": "Parlameter notifications",
+      "title": "Notifications",
       "text": "Parliamentary clipping! Get an email alert every time someone says a word (or more words)."
     },
     "voteComparator": {
