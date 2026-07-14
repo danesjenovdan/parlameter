@@ -1,279 +1,301 @@
 <template>
   <card-wrapper :header-config="headerConfig" max-height>
-    <div class="date-and-stuff">
-      <a
-        v-if="results.session?.name"
-        :href="getSessionVotesLink(results.session)"
-        class="funblue-light-hover"
-      >
-        {{ results.session?.name }} </a
-      ><span v-if="results.session?.start_time" class="date"
-        >, {{ formatDate(results.session?.start_time) }}</span
-      >
-    </div>
-
-    <div :class="['summary', { 'fire-badge': results.result?.is_outlier }]">
-      <div class="result">
-        <template v-if="results.result?.passed === true">
-          <i class="accepted glyphicon glyphicon-ok"></i>
-          <div v-t="'vote-passed'" class="text"></div>
-        </template>
-        <template v-else-if="results.result?.passed === false">
-          <i class="not-accepted glyphicon glyphicon-remove"></i>
-          <div v-t="'vote-not-passed'" class="text"></div>
-        </template>
-        <template v-else>
-          <i class="glyphicon parlaicon-unknown"></i>
-          <div v-t="'vote-unknown'" class="text"></div>
-        </template>
-      </div>
-      <div class="name">
-        <template v-if="projects && projects.length">
-          <template v-for="(project, i) in projects">
-            <div
-              v-if="i !== 0"
-              :key="project"
-              :style="{ top: visibleTooltipTopPos }"
-              :class="[
-                'tooltip',
-                `tooltip-${data.id}-${i}`,
-                { 'tooltip--show': visibleTooltip === `${data.id}-${i}` },
-              ]"
-            >
-              {{ project }}
-            </div>
-          </template>
-          <p class="projects">
-            <component
-              :is="i > 0 ? 'a' : 'span'"
-              v-for="(project, i) in projects"
-              :key="project"
-              :class="['project', { 'project--tooltip': i > 0 }]"
-              :data-target="`${data.id}-${i}`"
-              href="#"
-              @click.prevent="() => {}"
-              @mouseover="setVisibleTooltip(`${data.id}-${i}`)"
-              @mouseout="visibleTooltip = null"
-            >
-              <template v-if="i === 0">{{ project }}</template>
-              <span v-else>{{ i + 1 }}</span>
-            </component>
-          </p>
-        </template>
-        <p>{{ title }}</p>
-      </div>
-    </div>
-
-    <template v-if="results.members?.length">
-      <div
-        v-if="content"
-        v-t="'summary'"
-        class="izvlecek-switch visible-xs"
-        @click="showMobileExcerpt = !showMobileExcerpt"
-      />
-      <excerpt
-        v-if="showMobileExcerpt && content"
-        :content="content"
-        :main-law="excerptData"
-        :show-parent="true"
-        class="visible-xs"
-      />
-      <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
-        <p-tab :label="$t('mps')">
-          <poslanci
-            :members="filteredMembers"
-            :result="results.result"
-            :all-votes="allVotes"
-            :state="state"
-            :did-not-vote-present="didNotVotePresent"
-            :anonymous-votes-present="hasAnonymousVotes"
-            @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
-          />
-        </p-tab>
-        <p-tab v-if="!hasAnonymousVotes" :label="$t('parties')">
-          <poslanske-skupine
-            :members="filteredMembers"
-            :parties="extendedGroups"
-            :state="state"
-            :selected-party="state.selectedParty || null"
-            :selected-option="state.selectedOption || null"
-            :did-not-vote-present="didNotVotePresent"
-            :anonymous-votes-present="hasAnonymousVotes"
-            @selectedparty="(newParty) => (state.selectedParty = newParty)"
-            @selectedoption="(newOption) => (state.selectedOption = newOption)"
-          />
-        </p-tab>
-        <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
-          <poslanske-skupine
-            :members="filteredMembers"
-            :parties="results.government_sides"
-            :state="state"
-            :selected-party="state.selectedParty || null"
-            :selected-option="state.selectedOption || null"
-            :did-not-vote-present="didNotVotePresent"
-            :anonymous-votes-present="hasAnonymousVotes"
-            @selectedparty="(newParty) => (state.selectedParty = newParty)"
-            @selectedoption="(newOption) => (state.selectedOption = newOption)"
-          />
-        </p-tab>
-        <p-tab v-if="results.documents?.length" :label="$t('documents')">
-          <documents :documents="results.documents" />
-        </p-tab>
-        <p-tab
-          v-if="results.external_analysis?.length"
-          :label="$t('external_analysis')"
-        >
-          <documents :documents="results.external_analysis" />
-        </p-tab>
-      </p-tabs>
-      <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
-        <p-tab v-if="content" :label="$t('summary')">
-          <excerpt
-            :content="content"
-            :main-law="excerptData"
-            :show-parent="true"
-          />
-        </p-tab>
-        <p-tab :label="$t('mps')">
-          <poslanci
-            :members="filteredMembers"
-            :result="results.result"
-            :all-votes="allVotes"
-            :state="state"
-            :did-not-vote-present="didNotVotePresent"
-            :anonymous-votes-present="hasAnonymousVotes"
-            @namefilter="(newNameFilter) => (state.nameFilter = newNameFilter)"
-          />
-        </p-tab>
-        <p-tab v-if="!hasAnonymousVotes" :label="$t('parties')">
-          <poslanske-skupine
-            :members="filteredMembers"
-            :parties="extendedGroups"
-            :state="state"
-            :selected-party="state.selectedParty || null"
-            :selected-option="state.selectedOption || null"
-            :did-not-vote-present="didNotVotePresent"
-            :anonymous-votes-present="hasAnonymousVotes"
-            @selectedparty="(newParty) => (state.selectedParty = newParty)"
-            @selectedoption="(newOption) => (state.selectedOption = newOption)"
-          />
-        </p-tab>
-        <p-tab v-if="results.government_sides?.length" :label="$t('gov-side')">
-          <poslanske-skupine
-            :members="filteredMembers"
-            :parties="results.government_sides"
-            :state="state"
-            :selected-party="state.selectedParty || null"
-            :selected-option="state.selectedOption || null"
-            :did-not-vote-present="didNotVotePresent"
-            :anonymous-votes-present="hasAnonymousVotes"
-            @selectedparty="(newParty) => (state.selectedParty = newParty)"
-            @selectedoption="(newOption) => (state.selectedOption = newOption)"
-          />
-        </p-tab>
-        <p-tab v-if="results.documents?.length" :label="$t('documents')">
-          <documents :documents="results.documents" />
-        </p-tab>
-        <p-tab
-          v-if="results.external_analysis?.length"
-          :label="$t('external_analysis')"
-        >
-          <documents :documents="results.external_analysis" />
-        </p-tab>
-      </p-tabs>
-    </template>
+    <empty-state v-if="!results || !results.all_votes" text="no-data" />
     <template v-else>
-      <div v-if="allVotes" class="session_voting row">
-        <div class="col-md-6 col-md-offset-3">
-          <div class="session_votes">
-            <div class="row">
+      <div class="date-and-stuff">
+        <a
+          v-if="results.session?.name"
+          :href="getSessionVotesLink(results.session)"
+          class="funblue-light-hover"
+        >
+          {{ results.session?.name }} </a
+        ><span v-if="results.session?.start_time" class="date"
+          >, {{ formatDate(results.session?.start_time) }}</span
+        >
+      </div>
+
+      <div :class="['summary', { 'fire-badge': results.result?.is_outlier }]">
+        <div class="result">
+          <template v-if="results.result?.passed === true">
+            <i class="accepted glyphicon glyphicon-ok"></i>
+            <div v-t="'vote-passed'" class="text"></div>
+          </template>
+          <template v-else-if="results.result?.passed === false">
+            <i class="not-accepted glyphicon glyphicon-remove"></i>
+            <div v-t="'vote-not-passed'" class="text"></div>
+          </template>
+          <template v-else>
+            <i class="glyphicon parlaicon-unknown"></i>
+            <div v-t="'vote-unknown'" class="text"></div>
+          </template>
+        </div>
+        <div class="name">
+          <template v-if="projects && projects.length">
+            <template v-for="(project, i) in projects">
               <div
-                v-if="
-                  !(voteNumbers['did not vote'] > 0 && voteNumbers?.for === 0)
-                "
-                :class="{
-                  'col-xs-2 col-xs-offset-1': numberOfBallotTypes === 5,
-                  'col-xs-3': numberOfBallotTypes === 4,
-                  'col-xs-4': numberOfBallotTypes === 3,
-                  'col-xs-6': numberOfBallotTypes === 2,
-                }"
+                v-if="i !== 0"
+                :key="project"
+                :style="{ top: visibleTooltipTopPos }"
+                :class="[
+                  'tooltip',
+                  `tooltip-${data.id}-${i}`,
+                  { 'tooltip--show': visibleTooltip === `${data.id}-${i}` },
+                ]"
               >
-                {{ voteNumbers?.for }}
-                <div v-t="'vote-for-plural'" class="type"></div>
-                <div class="indicator aye">&nbsp;</div>
+                {{ project }}
               </div>
-              <div
-                v-if="
-                  !(
-                    voteNumbers['did not vote'] > 0 &&
-                    voteNumbers?.against === 0
-                  )
-                "
-                :class="{
-                  'col-xs-2': numberOfBallotTypes === 5,
-                  'col-xs-3': numberOfBallotTypes === 4,
-                  'col-xs-4': numberOfBallotTypes === 3,
-                  'col-xs-6': numberOfBallotTypes === 2,
-                }"
+            </template>
+            <p class="projects">
+              <component
+                :is="i > 0 ? 'a' : 'span'"
+                v-for="(project, i) in projects"
+                :key="project"
+                :class="['project', { 'project--tooltip': i > 0 }]"
+                :data-target="`${data.id}-${i}`"
+                href="#"
+                @click.prevent="() => {}"
+                @mouseover="setVisibleTooltip(`${data.id}-${i}`)"
+                @mouseout="visibleTooltip = null"
               >
-                {{ voteNumbers?.against }}
-                <div v-t="'vote-against-plural'" class="type"></div>
-                <div class="indicator ney">&nbsp;</div>
-              </div>
-              <div
-                v-if="
-                  !(
-                    voteNumbers['did not vote'] > 0 &&
-                    voteNumbers?.abstain === 0
-                  )
-                "
-                :class="{
-                  'col-xs-2': numberOfBallotTypes === 5,
-                  'col-xs-3': numberOfBallotTypes === 4,
-                  'col-xs-4': numberOfBallotTypes === 3,
-                  'col-xs-6': numberOfBallotTypes === 2,
-                }"
-              >
-                {{ voteNumbers?.abstain }}
-                <div v-t="'vote-abstain-plural'" class="type"></div>
-                <div class="indicator abstention">&nbsp;</div>
-              </div>
-              <div
-                v-if="
-                  !(
-                    voteNumbers['did not vote'] > 0 && voteNumbers?.absent === 0
-                  )
-                "
-                :class="{
-                  'col-xs-2': numberOfBallotTypes === 5,
-                  'col-xs-3': numberOfBallotTypes === 4,
-                  'col-xs-4': numberOfBallotTypes === 3,
-                  'col-xs-6': numberOfBallotTypes === 2,
-                }"
-              >
-                {{ voteNumbers?.absent }}
-                <div v-t="'vote-absent-plural'" class="type"></div>
-                <div class="indicator not">&nbsp;</div>
-              </div>
-              <div
-                v-if="voteNumbers['did not vote'] > 0"
-                :class="{
-                  'col-xs-2': numberOfBallotTypes === 5,
-                  'col-xs-3': numberOfBallotTypes === 4,
-                  'col-xs-4': numberOfBallotTypes === 3,
-                  'col-xs-6': numberOfBallotTypes === 2,
-                }"
-              >
-                {{ voteNumbers['did not vote'] }}
-                <div v-t="'vote-did-not-vote-plural'" class="type"></div>
-                <div class="indicator none">&nbsp;</div>
+                <template v-if="i === 0">{{ project }}</template>
+                <span v-else>{{ i + 1 }}</span>
+              </component>
+            </p>
+          </template>
+          <p>{{ title }}</p>
+        </div>
+      </div>
+
+      <template v-if="results.members?.length">
+        <div
+          v-if="content"
+          v-t="'summary'"
+          class="izvlecek-switch visible-xs"
+          @click="showMobileExcerpt = !showMobileExcerpt"
+        />
+        <excerpt
+          v-if="showMobileExcerpt && content"
+          :content="content"
+          :main-law="excerptData"
+          :show-parent="true"
+          class="visible-xs"
+        />
+        <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
+          <p-tab :label="$t('mps')">
+            <poslanci
+              :members="filteredMembers"
+              :result="results.result"
+              :all-votes="allVotes"
+              :state="state"
+              :did-not-vote-present="didNotVotePresent"
+              :anonymous-votes-present="hasAnonymousVotes"
+              @namefilter="
+                (newNameFilter) => (state.nameFilter = newNameFilter)
+              "
+            />
+          </p-tab>
+          <p-tab v-if="!hasAnonymousVotes" :label="$t('parties')">
+            <poslanske-skupine
+              :members="filteredMembers"
+              :parties="extendedGroups"
+              :state="state"
+              :selected-party="state.selectedParty || null"
+              :selected-option="state.selectedOption || null"
+              :did-not-vote-present="didNotVotePresent"
+              :anonymous-votes-present="hasAnonymousVotes"
+              @selectedparty="(newParty) => (state.selectedParty = newParty)"
+              @selectedoption="
+                (newOption) => (state.selectedOption = newOption)
+              "
+            />
+          </p-tab>
+          <p-tab
+            v-if="results.government_sides?.length"
+            :label="$t('gov-side')"
+          >
+            <poslanske-skupine
+              :members="filteredMembers"
+              :parties="results.government_sides"
+              :state="state"
+              :selected-party="state.selectedParty || null"
+              :selected-option="state.selectedOption || null"
+              :did-not-vote-present="didNotVotePresent"
+              :anonymous-votes-present="hasAnonymousVotes"
+              @selectedparty="(newParty) => (state.selectedParty = newParty)"
+              @selectedoption="
+                (newOption) => (state.selectedOption = newOption)
+              "
+            />
+          </p-tab>
+          <p-tab v-if="results.documents?.length" :label="$t('documents')">
+            <documents :documents="results.documents" />
+          </p-tab>
+          <p-tab
+            v-if="results.external_analysis?.length"
+            :label="$t('external_analysis')"
+          >
+            <documents :documents="results.external_analysis" />
+          </p-tab>
+        </p-tabs>
+        <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
+          <p-tab v-if="content" :label="$t('summary')">
+            <excerpt
+              :content="content"
+              :main-law="excerptData"
+              :show-parent="true"
+            />
+          </p-tab>
+          <p-tab :label="$t('mps')">
+            <poslanci
+              :members="filteredMembers"
+              :result="results.result"
+              :all-votes="allVotes"
+              :state="state"
+              :did-not-vote-present="didNotVotePresent"
+              :anonymous-votes-present="hasAnonymousVotes"
+              @namefilter="
+                (newNameFilter) => (state.nameFilter = newNameFilter)
+              "
+            />
+          </p-tab>
+          <p-tab v-if="!hasAnonymousVotes" :label="$t('parties')">
+            <poslanske-skupine
+              :members="filteredMembers"
+              :parties="extendedGroups"
+              :state="state"
+              :selected-party="state.selectedParty || null"
+              :selected-option="state.selectedOption || null"
+              :did-not-vote-present="didNotVotePresent"
+              :anonymous-votes-present="hasAnonymousVotes"
+              @selectedparty="(newParty) => (state.selectedParty = newParty)"
+              @selectedoption="
+                (newOption) => (state.selectedOption = newOption)
+              "
+            />
+          </p-tab>
+          <p-tab
+            v-if="results.government_sides?.length"
+            :label="$t('gov-side')"
+          >
+            <poslanske-skupine
+              :members="filteredMembers"
+              :parties="results.government_sides"
+              :state="state"
+              :selected-party="state.selectedParty || null"
+              :selected-option="state.selectedOption || null"
+              :did-not-vote-present="didNotVotePresent"
+              :anonymous-votes-present="hasAnonymousVotes"
+              @selectedparty="(newParty) => (state.selectedParty = newParty)"
+              @selectedoption="
+                (newOption) => (state.selectedOption = newOption)
+              "
+            />
+          </p-tab>
+          <p-tab v-if="results.documents?.length" :label="$t('documents')">
+            <documents :documents="results.documents" />
+          </p-tab>
+          <p-tab
+            v-if="results.external_analysis?.length"
+            :label="$t('external_analysis')"
+          >
+            <documents :documents="results.external_analysis" />
+          </p-tab>
+        </p-tabs>
+      </template>
+      <template v-else>
+        <div v-if="allVotes" class="session_voting row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="session_votes">
+              <div class="row">
+                <div
+                  v-if="
+                    !(voteNumbers['did not vote'] > 0 && voteNumbers?.for === 0)
+                  "
+                  :class="{
+                    'col-xs-2 col-xs-offset-1': numberOfBallotTypes === 5,
+                    'col-xs-3': numberOfBallotTypes === 4,
+                    'col-xs-4': numberOfBallotTypes === 3,
+                    'col-xs-6': numberOfBallotTypes === 2,
+                  }"
+                >
+                  {{ voteNumbers?.for }}
+                  <div v-t="'vote-for-plural'" class="type"></div>
+                  <div class="indicator aye">&nbsp;</div>
+                </div>
+                <div
+                  v-if="
+                    !(
+                      voteNumbers['did not vote'] > 0 &&
+                      voteNumbers?.against === 0
+                    )
+                  "
+                  :class="{
+                    'col-xs-2': numberOfBallotTypes === 5,
+                    'col-xs-3': numberOfBallotTypes === 4,
+                    'col-xs-4': numberOfBallotTypes === 3,
+                    'col-xs-6': numberOfBallotTypes === 2,
+                  }"
+                >
+                  {{ voteNumbers?.against }}
+                  <div v-t="'vote-against-plural'" class="type"></div>
+                  <div class="indicator ney">&nbsp;</div>
+                </div>
+                <div
+                  v-if="
+                    !(
+                      voteNumbers['did not vote'] > 0 &&
+                      voteNumbers?.abstain === 0
+                    )
+                  "
+                  :class="{
+                    'col-xs-2': numberOfBallotTypes === 5,
+                    'col-xs-3': numberOfBallotTypes === 4,
+                    'col-xs-4': numberOfBallotTypes === 3,
+                    'col-xs-6': numberOfBallotTypes === 2,
+                  }"
+                >
+                  {{ voteNumbers?.abstain }}
+                  <div v-t="'vote-abstain-plural'" class="type"></div>
+                  <div class="indicator abstention">&nbsp;</div>
+                </div>
+                <div
+                  v-if="
+                    !(
+                      voteNumbers['did not vote'] > 0 &&
+                      voteNumbers?.absent === 0
+                    )
+                  "
+                  :class="{
+                    'col-xs-2': numberOfBallotTypes === 5,
+                    'col-xs-3': numberOfBallotTypes === 4,
+                    'col-xs-4': numberOfBallotTypes === 3,
+                    'col-xs-6': numberOfBallotTypes === 2,
+                  }"
+                >
+                  {{ voteNumbers?.absent }}
+                  <div v-t="'vote-absent-plural'" class="type"></div>
+                  <div class="indicator not">&nbsp;</div>
+                </div>
+                <div
+                  v-if="voteNumbers['did not vote'] > 0"
+                  :class="{
+                    'col-xs-2': numberOfBallotTypes === 5,
+                    'col-xs-3': numberOfBallotTypes === 4,
+                    'col-xs-4': numberOfBallotTypes === 3,
+                    'col-xs-6': numberOfBallotTypes === 2,
+                  }"
+                >
+                  {{ voteNumbers['did not vote'] }}
+                  <div v-t="'vote-did-not-vote-plural'" class="type"></div>
+                  <div class="indicator none">&nbsp;</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <data-not-published :text="$t('data-not-published.show-of-hands')" />
+        <data-not-published :text="$t('data-not-published.show-of-hands')" />
+      </template>
     </template>
   </card-wrapper>
 </template>
@@ -296,6 +318,7 @@ import fixAbstractHtml from '@/_helpers/fixAbstractHtml.js';
 import { BALLOT_OPTIONS } from '@/_helpers/constants.js';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
+import EmptyState from '@/_components/EmptyState.vue';
 
 export default {
   name: 'CardVoteSingle',
@@ -307,6 +330,7 @@ export default {
     Excerpt,
     DataNotPublished,
     Documents,
+    EmptyState,
   },
   mixins: [common, links, voteSessionVotesContextUrl, sessionOgImage],
   cardInfo: {
@@ -465,6 +489,10 @@ export default {
 <style lang="scss" scoped>
 @use 'parlassets/scss/colors';
 @use 'parlassets/scss/breakpoints';
+
+:deep(.card-content) {
+  min-height: 265px;
+}
 
 .p-tabs :deep(.p-tabs-content) {
   &,
