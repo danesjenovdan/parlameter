@@ -13,10 +13,29 @@ const sm = i18n.siteMap;
 
 const router = express.Router();
 
-// TODO: figure out how to know when to return 404
-// TODO: is there a way to preload this?
-async function isMotionValid(/* sessionId, motionId */) {
-  return true;
+async function isMotionValid(sessionId, motionId) {
+  const params = stringifyParams({
+    id: motionId,
+    date: defaultCardDate || null,
+  });
+  try {
+    const res = await sentryFetch(
+      `${urls.parladata}/cards/vote/single/${params}`,
+    );
+    const data = await res.json();
+    if (!data || !data.results) {
+      return false;
+    }
+    if (data.results.session) {
+      return data.results.session.id === sessionId;
+    }
+    return true;
+  } catch (error) {
+    if (error.response && [400, 404].includes(error.response.status)) {
+      return false;
+    }
+    throw error;
+  }
 }
 
 async function getNewData(id) {
@@ -166,7 +185,8 @@ const renderMotion = async (render, req, res, next) => {
   const sesData = await getNewData(req.params.id);
   if (sesData) {
     const motionId = Number(req.params.motionId);
-    const isValid = await isMotionValid(sesData.session.id, motionId);
+    const sessionId = Number(sesData.session.id);
+    const isValid = await isMotionValid(sessionId, motionId);
     if (isValid) {
       render('seja/glasovanje', {
         ogImageUrl: getOgImageUrl('circle', {
