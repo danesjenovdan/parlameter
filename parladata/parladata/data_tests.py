@@ -129,7 +129,11 @@ def check_pg_without_parser_names():
         classification=""
     ).filter(parser_names__isnull=True) | Organization.objects.exclude(
         classification__isnull=True
-    ).exclude(classification="").filter(parser_names="")
+    ).exclude(
+        classification=""
+    ).filter(
+        parser_names=""
+    )
 
 
 def run_tests():
