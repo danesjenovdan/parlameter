@@ -1,16 +1,18 @@
 <template>
-  <transparent-wrapper>
+  <TransparentWrapper>
     <Seats :seat-data="seatData" />
-  </transparent-wrapper>
+  </TransparentWrapper>
 </template>
 
 <script>
 import common from '@/_mixins/common.js';
+import TransparentWrapper from '@/_components/TransparentWrapper.vue';
 import Seats from '@/_components/Seats.vue';
 
 export default {
   name: 'CardMiscSeats',
   components: {
+    TransparentWrapper,
     Seats,
   },
   mixins: [common],
