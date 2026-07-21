@@ -177,7 +177,7 @@ export default {
     flex-wrap: wrap;
     gap: 8px 16px;
     justify-content: center;
-    margin-block: 20px;
+    margin-top: 20px;
   }
 
   .legend-item {

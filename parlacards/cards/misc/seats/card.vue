@@ -1,12 +1,11 @@
 <template>
-  <card-wrapper :header-config="headerConfig" max-height>
+  <transparent-wrapper>
     <Seats :seat-data="seatData" />
-  </card-wrapper>
+  </transparent-wrapper>
 </template>
 
 <script>
 import common from '@/_mixins/common.js';
-import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import Seats from '@/_components/Seats.vue';
 
 export default {
@@ -31,7 +30,6 @@ export default {
       .sort((a, b) => b.seats - a.seats);
 
     return {
-      headerConfig: defaultHeaderConfig(this),
       seatData,
     };
   },
