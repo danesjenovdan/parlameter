@@ -5,7 +5,7 @@ from django.contrib.auth.models import Group
 from django.db.models import Count
 
 from parlacards.utils import get_playing_fields
-from parladata.models import Mandate, Person, Session, Speech, Vote
+from parladata.models import Mandate, Motion, Organization, Session, Speech, Vote
 from parladata.update_utils import send_email
 
 
@@ -107,11 +107,43 @@ def get_session_with_duplicated_speeches():
     return Session.objects.filter(id__in=session_ids)
 
 
+def check_for_votes_without_motion():
+    """
+    Test whether there are votes without an attached motion.
+    """
+    return Vote.objects.filter(motion__isnull=True)
+
+
+def check_for_motions_without_session():
+    """
+    Test whether there are motions without an attached session.
+    """
+    return Motion.objects.filter(session__isnull=True)
+
+
+def check_pg_without_parser_names():
+    """
+    Test whether organizations with classification are missing parser names.
+    """
+    return Organization.objects.exclude(classification__isnull=True).exclude(
+        classification=""
+    ).filter(parser_names__isnull=True) | Organization.objects.exclude(
+        classification__isnull=True
+    ).exclude(
+        classification=""
+    ).filter(
+        parser_names=""
+    )
+
+
 def run_tests():
     duplicated_sessions = check_for_duplicated_sessions()
     duplicated_votes = check_for_duplicated_votes()
     invalid_ballots = check_num_of_ballots_per_vote()
     sessions_with_duplicated_speeches = get_session_with_duplicated_speeches()
+    votes_without_motion = check_for_votes_without_motion()
+    motions_without_session = check_for_motions_without_session()
+    pg_without_parser_names = check_pg_without_parser_names()
 
     parser_permission_group = Group.objects.filter(
         name__icontains="parser_owners"
@@ -124,6 +156,9 @@ def run_tests():
         or duplicated_votes
         or invalid_ballots
         or sessions_with_duplicated_speeches
+        or votes_without_motion
+        or motions_without_session
+        or pg_without_parser_names
     ):
         for parser_owner in parser_permission_group.user_set.all():
             send_email(
@@ -136,5 +171,8 @@ def run_tests():
                     "duplicated_votes": duplicated_votes,
                     "invalid_ballots": invalid_ballots,
                     "sessions_with_duplicated_speeches": sessions_with_duplicated_speeches,
+                    "votes_without_motion": votes_without_motion,
+                    "motions_without_session": motions_without_session,
+                    "pg_without_parser_names": pg_without_parser_names,
                 },
             )
