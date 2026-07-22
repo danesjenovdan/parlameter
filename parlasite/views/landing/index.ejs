@@ -4,10 +4,11 @@
 
 <%
   var showInfoCard = false; // TODO: get from config
+  var showSeats = false; // TODO: get from config
 %>
 
 <div class="row about-wrapper">
-  <div class="<%- showInfoCard ? 'col-md-6' : 'col-md-10 col-md-offset-1' %>" id="about">
+  <div class="<%- showInfoCard || showSeats ? 'col-md-6' : 'col-md-10 col-md-offset-1' %>" id="about">
     <div class="lead-text-container <%- showInfoCard ? '' : 'text-center' %>">
       <span class="lead-text">
         <%- i18n('landing.lead') %>
@@ -24,6 +25,10 @@
   <% if (showInfoCard) { %>
   <div class="col-md-6">
     <%- fetchCard('/misc/basic-information/', mandateId); %>
+  </div>
+  <% } else if (showSeats) { %>
+  <div class="col-md-6">
+    <%- fetchCard('/misc/seats/', rootOrgId); %>
   </div>
   <% } %>
 </div>
