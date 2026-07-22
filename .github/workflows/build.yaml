@@ -49,7 +49,7 @@ jobs:
           target: parlassets
           build-args: |
             VITE_PARLASSETS_URL=https://files.parlametar.hr
-            SENTRY_DSN=https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
+            SENTRY_DSN=https://14e0c5a0b2d24367b75f1640b2360814@bugsink.danesjenovdan.si/4
             SENTRY_ENVIRONMENT=hrvaska
           push: true
           tags: |
@@ -64,7 +64,7 @@ jobs:
           target: parlacards
           build-args: |
             VITE_PARLASSETS_URL=https://files.parlametar.hr
-            SENTRY_DSN=https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
+            SENTRY_DSN=https://14e0c5a0b2d24367b75f1640b2360814@bugsink.danesjenovdan.si/4
             SENTRY_ENVIRONMENT=hrvaska
           push: true
           tags: |
