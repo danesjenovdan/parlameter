@@ -40,6 +40,6 @@ spec:
             - name: VITE_METAIMAGES_URL
               value: https://meta-image-generator.djnd.si/parlameter
             - name: SENTRY_DSN
-              value: https://07dc842d53be467b8f158c93984a3fb9@o1076834.ingest.us.sentry.io/6080015
+              value: https://14e0c5a0b2d24367b75f1640b2360814@bugsink.danesjenovdan.si/4
             - name: SENTRY_ENVIRONMENT
               value: bosna
