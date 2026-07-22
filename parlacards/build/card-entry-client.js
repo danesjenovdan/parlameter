@@ -22,6 +22,7 @@ Sentry.init({
   app,
   dsn: '{sentryDsn}',
   environment: '{sentryEnv}',
+  tracesSampleRate: 0,
   // Ignore some external errors, such as facebook,
   // twitter, slack bots or link crawlers and scanners.
   ignoreErrors: [
