@@ -56,6 +56,30 @@
         </br></br>
         {% endif %}
 
+        {% if votes_without_motion %}
+        There are votes without motion:</br>
+        {% for vote in votes_without_motion %}
+        <a href="{{ base_url }}{% url 'admin:parladata_vote_change' vote.id %}">{{ vote.name|default:vote.id }}</a></br>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        {% if motions_without_session %}
+        There are motions without session:</br>
+        {% for motion in motions_without_session %}
+        <a href="{{ base_url }}{% url 'admin:parladata_motion_change' motion.id %}">{{ motion.title|default:motion.id }}</a></br>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
+        {% if pg_without_parser_names %}
+        There are organizations with classification and without parser names:</br>
+        {% for organization in pg_without_parser_names %}
+        <a href="{{ base_url }}{% url 'admin:parladata_organization_change' organization.id %}">{{ organization.name|default:organization.id }}</a></br>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
     </div>
     <div>
     </div>

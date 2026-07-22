@@ -5,6 +5,7 @@ from parlacards.views import *
 urlpatterns = [
     path("misc/members/", Voters.as_view()),
     path("misc/groups/", ParliamentaryGroups.as_view()),
+    path("misc/seats/", ParliamentaryGroups.as_view()),
     path("misc/sessions/", Sessions.as_view()),
     path("misc/legislation/", Legislation.as_view()),
     path("misc/last-session/", LastSession.as_view()),
