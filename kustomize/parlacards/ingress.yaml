@@ -8,12 +8,11 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - parlacards-bosna.lb.djnd.si
         - kartica.ba.parlameter.si
       secretName: parlacards-tls
   rules:
-    - host: parlacards-bosna.lb.djnd.si
-      http: &http_paths
+    - host: kartica.ba.parlameter.si
+      http:
         paths:
           - path: /
             pathType: Prefix
@@ -22,5 +21,3 @@ spec:
                 name: parlacards
                 port:
                   number: 3000
-    - host: kartica.ba.parlameter.si
-      http: *http_paths
