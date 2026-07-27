@@ -1,18 +1,32 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-www
+spec:
+  redirectRegex:
+    regex: ^https?://www.parlameter.si/(.*)
+    replacement: https://parlameter.si/${1}
+    permanent: true
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: parlasite-x
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
+    traefik.ingress.kubernetes.io/router.middlewares: |
+      traefik-redirect-to-https@kubernetescrd,
+      parlameter-slovenija-redirect-www@kubernetescrd
 spec:
   ingressClassName: traefik
   tls:
     - hosts:
         - parlameter.si
+        - www.parlameter.si
       secretName: parlasite-x-tls
   rules:
     - host: parlameter.si
-      http:
+      http: &http_paths
         paths:
           - path: /
             pathType: Prefix
@@ -21,3 +35,5 @@ spec:
                 name: parlasite-x
                 port:
                   number: 3066
+    - host: www.parlameter.si
+      http: *http_paths
