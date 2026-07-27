@@ -11,6 +11,7 @@ const sentryEnv = process.env.SENTRY_ENVIRONMENT || '';
 Sentry.init({
   dsn: isProd ? sentryDsn : '',
   environment: sentryEnv,
+  tracesSampleRate: 0,
 });
 
 /* eslint-disable no-console */

@@ -1,0 +1,133 @@
+{
+  "url": "https://data.parlameter.si/v3/cards/misc/groups/?id=590",
+  "id": "590",
+  "data": {
+    "results": [
+      {
+        "name": "Slovenska demokratska stranka",
+        "acronym": "SDS",
+        "slug": "2-slovenska-demokratska-stranka",
+        "color": "#679BBB",
+        "classification": "pg",
+        "is_in_coalition": false,
+        "results": {
+          "seat_count": 28,
+          "group_unity": 97.39816599636691,
+          "number_of_amendments": null,
+          "number_of_questions": 24.0,
+          "vote_attendance": 98.61963190184049
+        }
+      },
+      {
+        "name": "Socialni demokrati",
+        "acronym": "SD",
+        "slug": "4-socialni-demokrati",
+        "color": "#B3422E",
+        "classification": "pg",
+        "is_in_coalition": false,
+        "results": {
+          "seat_count": 6,
+          "group_unity": 85.7971014492753,
+          "number_of_amendments": null,
+          "number_of_questions": 14.0,
+          "vote_attendance": 87.5
+        }
+      },
+      {
+        "name": "Italijanska in madžarska narodna skupnost",
+        "acronym": "IMNS",
+        "slug": "10-italijanska-in-madzarska-narodna-skupnost",
+        "color": "#C3CB2C",
+        "classification": "pg",
+        "is_in_coalition": false,
+        "results": {
+          "seat_count": 2,
+          "group_unity": 68.39622641509433,
+          "number_of_amendments": null,
+          "number_of_questions": 2.0,
+          "vote_attendance": 51.724137931034484
+        }
+      },
+      {
+        "name": "Svoboda",
+        "acronym": "Svoboda",
+        "slug": "138-svoboda",
+        "color": "#002F42",
+        "classification": "pg",
+        "is_in_coalition": false,
+        "results": {
+          "seat_count": 29,
+          "group_unity": 82.60869565217389,
+          "number_of_amendments": null,
+          "number_of_questions": 77.0,
+          "vote_attendance": 82.46135552913199
+        }
+      },
+      {
+        "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
+        "acronym": "NSi, SLS, FOKUS",
+        "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
+        "color": "#09a2cc",
+        "classification": "pg",
+        "is_in_coalition": false,
+        "results": {
+          "seat_count": 9,
+          "group_unity": 95.68495514147688,
+          "number_of_amendments": null,
+          "number_of_questions": 8.0,
+          "vote_attendance": 98.33659491193738
+        }
+      },
+      {
+        "name": "Državljansko gibanje Resni.ca",
+        "acronym": "Resni.ca",
+        "slug": "592-drzavljansko-gibanje-resnica",
+        "color": "#09a2cc",
+        "classification": "pg",
+        "is_in_coalition": false,
+        "results": {
+          "seat_count": 5,
+          "group_unity": 93.04347826086956,
+          "number_of_amendments": null,
+          "number_of_questions": 28.0,
+          "vote_attendance": 93.10344827586206
+        }
+      },
+      {
+        "name": "Levica in Vesna",
+        "acronym": "Levica in Vesna",
+        "slug": "593-levica-in-vesna",
+        "color": "#09a2cc",
+        "classification": "pg",
+        "is_in_coalition": false,
+        "results": {
+          "seat_count": 5,
+          "group_unity": 80.69565217391305,
+          "number_of_amendments": null,
+          "number_of_questions": 2.0,
+          "vote_attendance": 78.10344827586206
+        }
+      },
+      {
+        "name": "Demokrati. Anžeta Logarja",
+        "acronym": "Demokrati",
+        "slug": "595-demokrati-anzeta-logarja",
+        "color": "#09a2cc",
+        "classification": "pg",
+        "is_in_coalition": false,
+        "results": {
+          "seat_count": 6,
+          "group_unity": 89.71014492753629,
+          "number_of_amendments": null,
+          "number_of_questions": 3.0,
+          "vote_attendance": 89.85507246376811
+        }
+      }
+    ],
+    "mandate": {
+      "id": 4,
+      "description": "10. sklic DZ",
+      "beginning": "2026-04-10T00:00:00"
+    }
+  }
+}
