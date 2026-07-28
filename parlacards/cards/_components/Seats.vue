@@ -178,9 +178,9 @@ export default {
     },
     getTooltipLines(seatIdx) {
       const member = this.seatIdxToMember[seatIdx];
-      if (!member) return '';
+      if (!member) return [];
       const group = member.group;
-      if (!group) return member.name || '';
+      if (!group) return [member.name || ''];
       return [`${member.name}`, `${group.acronym || group.name}`];
     },
     getTooltipText(seatIdx) {
