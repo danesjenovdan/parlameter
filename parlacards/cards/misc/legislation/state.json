@@ -2,5 +2,6 @@
   "showEpaColumn": false,
   "generator": true,
   "organizationTabs": "33;Predstavnički dom|34;Dom naroda",
-  "filterByStatus": true
+  "filterByStatus": true,
+  "filterByClassification": true
 }
