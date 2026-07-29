@@ -116,9 +116,7 @@ import SortableTable from '@/_components/SortableTable.vue';
 import Pagination from '@/_components/Pagination.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import { LEGISLATION_PER_PAGE } from '@/_helpers/constants.js';
-import legislationStatus, {
-  sortLegislationStatuses,
-} from '@/_helpers/legislationStatus.js';
+import legislationStatus from '@/_helpers/legislationStatus.js';
 
 export default {
   name: 'Legislation',
@@ -177,15 +175,12 @@ export default {
       }));
 
     const statuses = cardData?.data?.results?.statuses || [];
-    const filterOptionsStatus = statuses
-      .slice()
-      .sort(sortLegislationStatuses)
-      .map((status) => ({
-        id: status,
-        color: status,
-        label: this.$t(legislationStatus(status).translationKey),
-        selected: cardState?.filter === status,
-      }));
+    const filterOptionsStatus = statuses.slice().map((status) => ({
+      id: status,
+      color: status,
+      label: this.$t(legislationStatus(status).translationKey),
+      selected: cardState?.filter === status,
+    }));
 
     // by default we filter by classification if not filtering by status, but if
     // the cardState has filterByClassification set to true, we override that
