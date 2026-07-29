@@ -26,3 +26,9 @@ spec:
             limits:
               memory: 25Mi
               cpu: 25m
+          startupProbe:
+            httpGet:
+              path: /readyz
+              port: 80
+            periodSeconds: 10
+            failureThreshold: 30 # 30x10 = 300s = 5min

@@ -90,10 +90,10 @@ spec:
           ports:
             - containerPort: 8000
           envFrom:
-              - secretRef:
-                  name: parladata-slovenija-staging-credentials
-              - secretRef:
-                  name: parladata-sentry
+            - secretRef:
+                name: parladata-slovenija-staging-credentials
+            - secretRef:
+                name: parladata-sentry
           env:
             - name: DJANGO_SETTINGS_MODULE
               value: parladata_project.settings.k8s
@@ -112,6 +112,12 @@ spec:
             limits:
               memory: 500Mi
               cpu: 400m
+          startupProbe:
+            httpGet:
+              path: /
+              port: 8000
+            periodSeconds: 10
+            failureThreshold: 30 # 30x10 = 300s = 5min
         - name: parladata-nginx
           ports:
             - name: http
