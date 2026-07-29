@@ -47,3 +47,9 @@ spec:
               value: https://f7d45d6c90ea4cacb514a111c8c3e310@bugsink.danesjenovdan.si/5
             - name: SENTRY_ENVIRONMENT
               value: slovenija
+          startupProbe:
+            httpGet:
+              path: /readyz
+              port: 3066
+            periodSeconds: 10
+            failureThreshold: 30 # 30x10 = 300s = 5min
