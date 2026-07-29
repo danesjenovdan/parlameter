@@ -86,6 +86,10 @@ const renderCardHandler = async (request, reply) => {
 
 fastify.get('/:group/:method', renderCardHandler);
 
+fastify.get('/readyz', async (request, reply) => {
+  return reply.status(200).type('application/json').send({ ok: true });
+});
+
 fastify.listen({ port: process.env.PORT || 3000, host: '0.0.0.0' }, (error) => {
   if (error) {
     fastify.log.error(error);
