@@ -5,6 +5,7 @@ from parlacards.serializers.cards.misc.groups import MiscGroupsCardSerializer
 from parlacards.serializers.cards.misc.last_session import MiscLastSessionCardSerializer
 from parlacards.serializers.cards.misc.legislation import LegislationCardSerializer
 from parlacards.serializers.cards.misc.members import MiscMembersCardSerializer
+from parlacards.serializers.cards.misc.seats import MiscSeatsCardSerializer
 from parlacards.serializers.cards.misc.sessions import SessionsCardSerializer
 from parlacards.serializers.cards.person.questions import PersonQuestionCardSerializer
 from parlacards.serializers.cards.person.recent_activity import (

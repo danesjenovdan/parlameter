@@ -37,6 +37,7 @@ from parlacards.serializers.cards import (
     MiscGroupsCardSerializer,
     MiscLastSessionCardSerializer,
     MiscMembersCardSerializer,
+    MiscSeatsCardSerializer,
     MostVotesInCommonCardSerializer,
     NumberOfSpokenWordsCardSerializer,
     PersonAvgSpeechesPerSessionCardSerializer,
@@ -198,6 +199,15 @@ class ParliamentaryGroups(CardView):
 
     thing = Organization
     card_serializer = MiscGroupsCardSerializer
+
+
+class GroupSeats(CardView):
+    """
+    List parties in an organization.
+    """
+
+    thing = Organization
+    card_serializer = MiscSeatsCardSerializer
 
 
 class GroupVoteAttendance(CardView):

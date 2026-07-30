@@ -41,3 +41,13 @@ spec:
               value: https://14e0c5a0b2d24367b75f1640b2360814@bugsink.danesjenovdan.si/4
             - name: SENTRY_ENVIRONMENT
               value: trbovlje
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 10"] # give load balancer time to stop sending traffic to this pod
+          startupProbe:
+            httpGet:
+              path: /readyz
+              port: 3000
+            periodSeconds: 10
+            failureThreshold: 30 # 30x10 = 300s = 5min
