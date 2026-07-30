@@ -1,5 +1,5 @@
 {
-  "url": "https://data.parlameter.si/v3/cards/misc/groups/?id=590",
+  "url": "http://localhost:8000/v3/cards/misc/seats/?id=590",
   "id": "590",
   "data": {
     "results": [
@@ -12,10 +12,204 @@
         "is_in_coalition": false,
         "results": {
           "seat_count": 28,
-          "group_unity": 97.39816599636691,
-          "number_of_amendments": null,
-          "number_of_questions": 24.0,
-          "vote_attendance": 98.61963190184049
+          "members": [
+            {
+              "slug": "11441-adrijana-kocjancic",
+              "name": "Adrijana Kocjančič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "47-alenka-jeraj",
+              "name": "Alenka Jeraj",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "3089-ales-hojs",
+              "name": "Aleš Hojs",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11443-andrej-kosec",
+              "name": "Andrej Kosec",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "6456-andrej-kosi",
+              "name": "Andrej Kosi",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "6482-andrej-poglajen",
+              "name": "Andrej Poglajen",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "49-anja-bah-zibert",
+              "name": "Anja Bah Žibert",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5971-anton-sturbej",
+              "name": "Anton Šturbej",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "55-bojan-podkrajsek",
+              "name": "Bojan Podkrajšek",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11450-damjan-muzel",
+              "name": "Damjan Muzel",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "51-danijel-krivec",
+              "name": "Danijel Krivec",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "48-franc-breznik",
+              "name": "Franc Breznik",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "56-franci-kepa",
+              "name": "Franci Kepa",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11437-jana-grzinic",
+              "name": "Jana Gržinič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "7843-janez-joze-olovec",
+              "name": "Janez Jože Olovec",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "42-jelka-godec",
+              "name": "Jelka Godec",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5948-jozef-jelen",
+              "name": "Jožef Jelen",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "60-jozef-lenart",
+              "name": "Jožef Lenart",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "32-karmen-furman",
+              "name": "Karmen Furman",
+              "honorific_prefix": "mag.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "11517-luka-simonic",
+              "name": "Luka Simonič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11446-manja-lesnik",
+              "name": "Manja Lesnik",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "11508-marusa-babnik",
+              "name": "Maruša Babnik",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5938-rado-gladek",
+              "name": "Rado Gladek",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "53-tomaz-lisec",
+              "name": "Tomaž Lisec",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11447-vinko-levstek",
+              "name": "Vinko Levstek",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5957-zoran-mojskerc",
+              "name": "Zoran Mojškerc",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "38-zvonko-cernac",
+              "name": "Zvonko Černač",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "52-zan-mahnic",
+              "name": "Žan Mahnič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            }
+          ]
         }
       },
       {
@@ -27,10 +221,50 @@
         "is_in_coalition": false,
         "results": {
           "seat_count": 6,
-          "group_unity": 85.7971014492753,
-          "number_of_amendments": null,
-          "number_of_questions": 14.0,
-          "vote_attendance": 87.5
+          "members": [
+            {
+              "slug": "3377-andreja-katic",
+              "name": "Andreja Katič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5977-damijan-bezjak-zrim",
+              "name": "Damijan Bezjak Zrim",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11453-darko-ratajc",
+              "name": "Darko Ratajc",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11435-luka-gorsek",
+              "name": "Luka Goršek",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "34-matjaz-han",
+              "name": "Matjaž Han",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "33-meira-hot",
+              "name": "Meira Hot",
+              "honorific_prefix": "mag.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            }
+          ]
         }
       },
       {
@@ -42,10 +276,22 @@
         "is_in_coalition": false,
         "results": {
           "seat_count": 2,
-          "group_unity": 68.39622641509433,
-          "number_of_amendments": null,
-          "number_of_questions": 2.0,
-          "vote_attendance": 51.724137931034484
+          "members": [
+            {
+              "slug": "14-felice-ziza",
+              "name": "Felice Ziza",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5-ferenc-horvath",
+              "name": "Ferenc Horváth",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            }
+          ]
         }
       },
       {
@@ -57,25 +303,287 @@
         "is_in_coalition": false,
         "results": {
           "seat_count": 29,
-          "group_unity": 82.60869565217389,
-          "number_of_amendments": null,
-          "number_of_questions": 77.0,
-          "vote_attendance": 82.46135552913199
+          "members": [
+            {
+              "slug": "108-alenka-bratusek",
+              "name": "Alenka Bratušek",
+              "honorific_prefix": "mag.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "11440-andrej-klemenc",
+              "name": "Andrej Klemenc",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5965-andreja-rajbensu",
+              "name": "Andreja Rajbenšu",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5967-borut-sajovic",
+              "name": "Borut Sajovic",
+              "honorific_prefix": "mag.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "9877-dejan-suc",
+              "name": "Dejan Süč",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5968-dusan-stojanovic",
+              "name": "Dušan Stojanovič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11458-dusko-vujanovic",
+              "name": "Duško Vujanović",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11439-jana-jerman",
+              "name": "Jana Jerman",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "13-janja-sluga",
+              "name": "Janja Sluga",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "6013-klemen-bostjancic",
+              "name": "Klemen Boštjančič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5943-lena-grgurevic",
+              "name": "Lena Grgurevič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5979-lenart-zavbi",
+              "name": "Lenart Žavbi",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5972-lucija-tacer-perlin",
+              "name": "Lucija Tacer Perlin",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5963-martin-premk",
+              "name": "Martin Premk",
+              "honorific_prefix": "dr.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5929-matej-arcon",
+              "name": "Matej Arčon",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11436-matej-grah",
+              "name": "Matej Grah",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5934-mateja-calusic",
+              "name": "Mateja Čalušić",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "11451-metka-pesl-sater",
+              "name": "Metka Pešl Šater",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5930-natasa-avsic-bogovic",
+              "name": "Nataša Avšič Bogovič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5939-robert-golob",
+              "name": "Robert Golob",
+              "honorific_prefix": "dr.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5947-robert-janev",
+              "name": "Robert Janev",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5937-sandra-gazinkovski",
+              "name": "Sandra Gazinkovski",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5980-sara-zibrat",
+              "name": "Sara Žibrat",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5952-tamara-kozlovic",
+              "name": "Tamara Kozlovič",
+              "honorific_prefix": "mag.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5974-tamara-vonta",
+              "name": "Tamara Vonta",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "5973-teodor-uranic",
+              "name": "Teodor Uranič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5958-tereza-novak",
+              "name": "Tereza Novak",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "6045-tomaz-lah",
+              "name": "Tomaž Lah",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "3768-vinko-logaj",
+              "name": "Vinko Logaj",
+              "honorific_prefix": "dr.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            }
+          ]
         }
       },
       {
         "name": "Nova Slovenija, Slovenska ljudska stranka, FOKUS Marka Lotriča",
         "acronym": "NSi, SLS, FOKUS",
         "slug": "591-nova-slovenija-slovenska-ljudska-stranka-fokus-marka-lotrica",
-        "color": "#09a2cc",
+        "color": "#8e7a86",
         "classification": "pg",
         "is_in_coalition": false,
         "results": {
           "seat_count": 9,
-          "group_unity": 95.68495514147688,
-          "number_of_amendments": null,
-          "number_of_questions": 8.0,
-          "vote_attendance": 98.33659491193738
+          "members": [
+            {
+              "slug": "11438-aleksander-gungl",
+              "name": "Aleksander Gungl",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "81-aleksander-rebersek",
+              "name": "Aleksander Reberšek",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "99-andrej-cernigoj",
+              "name": "Andrej Černigoj",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "82-iva-dimic",
+              "name": "Iva Dimic",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "3240-janez-beja",
+              "name": "Janez Beja",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "5978-janez-zakelj",
+              "name": "Janez Žakelj",
+              "honorific_prefix": "mag.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11459-marjeta-marjetka-smid",
+              "name": "Marjeta (Marjetka) Šmid",
+              "honorific_prefix": "mag.",
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "8518-martin-mikolic",
+              "name": "Martin Mikolič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "4729-srecko-ocvirk",
+              "name": "Srečko Ocvirk",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            }
+          ]
         }
       },
       {
@@ -87,40 +595,146 @@
         "is_in_coalition": false,
         "results": {
           "seat_count": 5,
-          "group_unity": 93.04347826086956,
-          "number_of_amendments": null,
-          "number_of_questions": 28.0,
-          "vote_attendance": 93.10344827586206
+          "members": [
+            {
+              "slug": "11456-aleksander-storek",
+              "name": "Aleksander Štorek",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11449-boris-mijic",
+              "name": "Boris Mijič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11442-katja-kokot",
+              "name": "Katja Kokot",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "11457-nedeljko-todorovic",
+              "name": "Nedeljko Todorović",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "11454-zoran-stevanovic",
+              "name": "Zoran Stevanović",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            }
+          ]
         }
       },
       {
-        "name": "Levica in Vesna",
-        "acronym": "Levica in Vesna",
-        "slug": "593-levica-in-vesna",
-        "color": "#09a2cc",
+        "name": "Levica",
+        "acronym": "Levica",
+        "slug": "593-levica",
+        "color": "#ffafa1",
         "classification": "pg",
         "is_in_coalition": false,
         "results": {
           "seat_count": 5,
-          "group_unity": 80.69565217391305,
-          "number_of_amendments": null,
-          "number_of_questions": 2.0,
-          "vote_attendance": 78.10344827586206
+          "members": [
+            {
+              "slug": "4051-asta-vrecko",
+              "name": "Asta Vrečko",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "27-luka-mesec",
+              "name": "Luka Mesec",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "28-natasa-sukic",
+              "name": "Nataša Sukič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "3613-tina-brecelj",
+              "name": "Tina Brecelj",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "4402-vladimir-sega",
+              "name": "Vladimir Šega",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            }
+          ]
         }
       },
       {
         "name": "Demokrati. Anžeta Logarja",
         "acronym": "Demokrati",
         "slug": "595-demokrati-anzeta-logarja",
-        "color": "#09a2cc",
+        "color": "#3f7ba3",
         "classification": "pg",
         "is_in_coalition": false,
         "results": {
           "seat_count": 6,
-          "group_unity": 89.71014492753629,
-          "number_of_amendments": null,
-          "number_of_questions": 3.0,
-          "vote_attendance": 89.85507246376811
+          "members": [
+            {
+              "slug": "11521-ana-cajhen",
+              "name": "Ana Cajhen",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "11519-dejan-zakrajsek",
+              "name": "Dejan Zakrajšek",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "103-elena-zavadlav-usaj",
+              "name": "Elena Zavadlav Ušaj",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "11445-franc-krizan",
+              "name": "Franc Križan",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            },
+            {
+              "slug": "23-mojca-znidaric",
+              "name": "Mojca Žnidarič",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "she"
+            },
+            {
+              "slug": "11452-robert-potnik",
+              "name": "Robert Potnik",
+              "honorific_prefix": null,
+              "honorific_suffix": null,
+              "preferred_pronoun": "he"
+            }
+          ]
         }
       }
     ],

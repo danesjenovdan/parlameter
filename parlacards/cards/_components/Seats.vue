@@ -1,17 +1,26 @@
 <template>
   <div class="seats-component">
     <div class="seats">
+      <div
+        ref="seatTooltip"
+        :class="['seat-tooltip', { visible: tooltipVisible }]"
+      ></div>
       <svg xmlns="http://www.w3.org/2000/svg" :viewBox="viewBox">
         <g>
           <circle
             v-for="(circle, i) in seats"
             :key="circle.id"
+            class="clickable-seat"
             :cx="circle.cx"
             :cy="circle.cy"
             :r="dotSize"
             :data-index="i"
             :data-id="circle.id"
             :fill="getDotColor(i)"
+            :title="getTooltipText(i)"
+            @mouseout="onMouseOut(i)"
+            @mouseover="onMouseOver(i)"
+            @click="openLink(getPersonLink(seatIdxToMember[i]))"
           ></circle>
         </g>
       </svg>
@@ -127,6 +136,16 @@ export default {
     dotSize: { type: Number, default: 25 },
   },
   data() {
+    const seatIdxToMember = {};
+    let seatIdx = 0;
+    for (const group of this.seatData) {
+      const memberGroup = { ...group, members: undefined };
+      for (const member of group.members) {
+        seatIdxToMember[seatIdx] = { ...member, group: memberGroup };
+        seatIdx++;
+      }
+    }
+
     return {
       seats: generateSeats(this.seatCount, {
         baseRadius: this.baseRadius,
@@ -134,6 +153,8 @@ export default {
         seatArcLength: this.seatArcLength,
         arcDegrees: this.arcDegrees,
       }),
+      seatIdxToMember,
+      tooltipVisible: false,
     };
   },
   computed: {
@@ -151,25 +172,118 @@ export default {
   },
   methods: {
     getDotColor(seatIdx) {
-      let seatCount = 0;
-      for (let i = 0; i < this.seatData.length; i++) {
-        const group = this.seatData[i];
-        seatCount += group.seats;
-        if (seatIdx < seatCount) {
-          return group.color || '#ccc';
-        }
-      }
-      return '#ccc';
+      const member = this.seatIdxToMember[seatIdx];
+      const group = member ? member.group : null;
+      return group ? group.color : '#ccc';
+    },
+    getTooltipLines(seatIdx) {
+      const member = this.seatIdxToMember[seatIdx];
+      if (!member) return [];
+      const group = member.group;
+      if (!group) return [member.name || ''];
+      return [`${member.name}`, `${group.acronym || group.name}`];
+    },
+    getTooltipText(seatIdx) {
+      return this.getTooltipLines(seatIdx).join(' - ');
+    },
+    onMouseOut() {
+      this.tooltipVisible = false;
+    },
+    onMouseOver(seatIdx) {
+      const tooltip = this.$refs.seatTooltip;
+      if (!tooltip) return;
+      const member = this.seatIdxToMember[seatIdx];
+      if (!member) return;
+      const circle = this.$el.querySelector(`circle[data-index="${seatIdx}"]`);
+      if (!circle) return;
+      tooltip.innerHTML = this.getTooltipLines(seatIdx)
+        .map((line, i) => {
+          if (i === 0) return `<div class="seat-tooltip-name">${line}</div>`;
+          return `<div class="seat-tooltip-group">${line}</div>`;
+        })
+        .join('');
+      tooltip.style.left = '';
+      tooltip.style.top = '';
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const rect = circle.getBoundingClientRect();
+      const parentRect = this.$el.getBoundingClientRect();
+
+      // put the tooltip above the circle, centered horizontally, but offset it
+      // to the left or right if it would go off the edge of the parent container
+      const tooltipX =
+        Math.min(
+          Math.max(
+            rect.left + rect.width / 2 - tooltipRect.width / 2,
+            parentRect.left,
+          ),
+          parentRect.right - tooltipRect.width,
+        ) - parentRect.left;
+      const tooltipY = rect.top - parentRect.top;
+      tooltip.style.left = `${tooltipX}px`;
+      tooltip.style.top = `${tooltipY - 4}px`;
+      this.tooltipVisible = true;
+    },
+    openLink(url) {
+      if (!url) return;
+      window.location.href = url;
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@use 'parlassets/scss/colors';
+
 .seats-component {
+  position: relative;
+
   .seats {
     margin-top: 0;
     margin-inline: 10px;
+
+    svg {
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+    }
+
+    .clickable-seat {
+      cursor: pointer;
+
+      &:hover {
+        stroke: colors.$link;
+        stroke-width: 6px;
+      }
+    }
+
+    .seat-tooltip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      background-color: colors.$font-default;
+      color: colors.$white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: center;
+      white-space: pre-line;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s ease-out;
+
+      &.visible {
+        opacity: 1;
+      }
+
+      :deep(.seat-tooltip-name) {
+        font-weight: 500;
+      }
+
+      :deep(.seat-tooltip-group) {
+        font-size: 12px;
+      }
+    }
   }
 
   .legend {
