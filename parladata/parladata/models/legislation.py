@@ -12,14 +12,26 @@ class LegislationStatus(Timestampable):
         blank=True,
         null=True,
     )
+    order = models.IntegerField(
+        verbose_name=_("Order"),
+        help_text=_("Order of legislation status"),
+        default=0,
+    )
 
     class Meta:
         verbose_name = _("Legislation status")
         verbose_name_plural = _("Legislation statuses")
-        ordering = ["name"]
+        ordering = ["order"]
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        if self.order is None or self.order == 0:
+            max_order = LegislationStatus.objects.order_by("-order").first()
+            max_value = max_order.order if max_order else 0
+            self.order = max_value + 100
+        return super().save(*args, **kwargs)
 
     @classmethod
     def get_or_create_default_photo_pk(cls):
