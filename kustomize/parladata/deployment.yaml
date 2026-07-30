@@ -112,6 +112,10 @@ spec:
             limits:
               memory: 1500Mi
               cpu: 2000m
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 10"] # give load balancer time to stop sending traffic to this pod
           startupProbe:
             httpGet:
               path: /

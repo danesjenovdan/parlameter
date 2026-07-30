@@ -47,6 +47,10 @@ spec:
               value: https://14e0c5a0b2d24367b75f1640b2360814@bugsink.danesjenovdan.si/4
             - name: SENTRY_ENVIRONMENT
               value: slovenija
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 10"] # give load balancer time to stop sending traffic to this pod
           startupProbe:
             httpGet:
               path: /readyz
