@@ -45,6 +45,10 @@ spec:
               value: https://14e0c5a0b2d24367b75f1640b2360814@bugsink.danesjenovdan.si/4
             - name: SENTRY_ENVIRONMENT
               value: slovenija-staging
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 10"]
           startupProbe:
             httpGet:
               path: /misc/search/?id=0&template=site&locale=sl&no_card_data=true
