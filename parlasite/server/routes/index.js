@@ -5,12 +5,6 @@ const sm = i18n.siteMap;
 module.exports = (app) => {
   app.use('/', require('./landing'));
 
-  app.get('/hello', (req, res) => {
-    res.json({
-      ok: true,
-    });
-  });
-
   app.use(`/${sm.landing.legislation}`, require('./zakonodaja'));
   app.use(`/${sm.landing.sessions}`, require('./seje'));
   app.use(`/${sm.landing.tools}`, require('./orodja'));
@@ -20,4 +14,10 @@ module.exports = (app) => {
   app.use(`/${sm.session.base}`, require('./seja'));
 
   app.use('/api', require('./api'));
+
+  app.get('/readyz', (req, res) => {
+    res.json({
+      ok: true,
+    });
+  });
 };
