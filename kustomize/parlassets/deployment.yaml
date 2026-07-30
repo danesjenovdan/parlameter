@@ -26,3 +26,13 @@ spec:
             limits:
               memory: 25Mi
               cpu: 25m
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 5"] # give load balancer time to stop sending traffic to this pod
+          startupProbe:
+            httpGet:
+              path: /readyz
+              port: 80
+            periodSeconds: 10
+            failureThreshold: 30 # 30x10 = 300s = 5min
