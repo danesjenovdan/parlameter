@@ -41,6 +41,10 @@ spec:
               value: https://f7d45d6c90ea4cacb514a111c8c3e310@bugsink.danesjenovdan.si/5
             - name: SENTRY_ENVIRONMENT
               value: TODO-BRANCH-NAME-HERE
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 10"] # give load balancer time to stop sending traffic to this pod
           startupProbe:
             httpGet:
               path: /readyz
