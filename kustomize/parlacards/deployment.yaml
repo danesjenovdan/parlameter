@@ -51,9 +51,3 @@ spec:
               port: 3000
             periodSeconds: 10
             failureThreshold: 30 # 30x10 = 300s = 5min
-          readinessProbe:
-            httpGet:
-              path: /misc/search/?id=0&template=site&locale=sl&no_card_data=true
-              port: 3000
-            initialDelaySeconds: 15
-            periodSeconds: 60
