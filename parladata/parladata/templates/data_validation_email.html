@@ -64,6 +64,14 @@
         </br></br>
         {% endif %}
 
+        {% if motions_without_vote %}
+        There are motions without vote:</br>
+        {% for motion in motions_without_vote %}
+        <a href="{{ base_url }}{% url 'admin:parladata_motion_change' motion.id %}">{{ motion.title|default:motion.id }}</a></br>
+        {% endfor %}
+        </br></br>
+        {% endif %}
+
         {% if motions_without_session %}
         There are motions without session:</br>
         {% for motion in motions_without_session %}

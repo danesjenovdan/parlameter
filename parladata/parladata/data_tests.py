@@ -114,6 +114,13 @@ def check_for_votes_without_motion():
     return Vote.objects.filter(motion__isnull=True)
 
 
+def check_for_motion_without_vote():
+    """
+    Test whether there are motions without an attached vote.
+    """
+    return Motion.objects.filter(vote__isnull=True)
+
+
 def check_for_motions_without_session():
     """
     Test whether there are motions without an attached session.
@@ -142,6 +149,7 @@ def run_tests():
     invalid_ballots = check_num_of_ballots_per_vote()
     sessions_with_duplicated_speeches = get_session_with_duplicated_speeches()
     votes_without_motion = check_for_votes_without_motion()
+    motions_without_vote = check_for_motion_without_vote()
     motions_without_session = check_for_motions_without_session()
     pg_without_parser_names = check_pg_without_parser_names()
 
@@ -158,6 +166,7 @@ def run_tests():
         or sessions_with_duplicated_speeches
         or votes_without_motion
         or motions_without_session
+        or motions_without_vote
         or pg_without_parser_names
     ):
         for parser_owner in parser_permission_group.user_set.all():
@@ -173,6 +182,7 @@ def run_tests():
                     "sessions_with_duplicated_speeches": sessions_with_duplicated_speeches,
                     "votes_without_motion": votes_without_motion,
                     "motions_without_session": motions_without_session,
+                    "motions_without_vote": motions_without_vote,
                     "pg_without_parser_names": pg_without_parser_names,
                 },
             )
