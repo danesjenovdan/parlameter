@@ -11,7 +11,7 @@ DATABASE_PASSWORD=$(kubectl get secret $SECRETS_NAME -n $K8S_NAMESPACE -o jsonpa
 
 echo
 echo "PORT FORWARDING"
-nohup kubectl port-forward pod/postgresql-15-0 54321:5432 --namespace=shared &>/dev/null &
+nohup kubectl port-forward deployment/postgresql-djnd 54321:5432 --namespace=shared &>/dev/null &
 
 # store the kubectl pid for later
 KUBECTL_PID=$!
@@ -30,16 +30,16 @@ PGPASSWORD=$DATABASE_PASSWORD \
 
 # echo
 # echo "DROPPING THE DB VOLUME"
-# docker-compose down -v
-# docker-compose up -d
+# docker compose down -v
+# docker compose up -d
 
 # sleep 5
 
 # echo
 # echo "LOADING DB INTO CONTAINER"
-# docker container exec -i $(docker-compose ps -q db) psql -U postgres parladata < db.dump
+# docker container exec -i $(docker compose ps -q db) psql -U postgres parladata < db.dump
 
-# docker-compose down
+# docker compose down
 
 echo "STOPPING PORT FORWARDING"
 kill $KUBECTL_PID
@@ -47,4 +47,4 @@ kill $KUBECTL_PID
 echo
 echo "ALL DONE, DATABASE DUMP SAVED to db.dump"
 echo "DROPPING AND IMPORTING DB IS DISABLED, DO IT MANUALLY OR FIX THE SCRIPT :D"
-# echo "ALL DONE, YOU CAN RUN docker-compose up AND/OR DELETE db.dump"
+# echo "ALL DONE, YOU CAN RUN docker compose up AND/OR DELETE db.dump"

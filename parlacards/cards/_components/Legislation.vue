@@ -22,15 +22,32 @@
             @update:model-value="searchLegislation"
           />
         </div>
-        <!-- only show filters if we have more than one classification to show -->
-        <div v-if="filterOptions.length > 1" class="filter buttons-filter">
+        <div
+          v-if="filterByStatus && filterOptionsStatus.length > 1"
+          class="filter buttons-filter"
+        >
           <striped-button
-            v-for="filterOption in filterOptions"
+            v-for="filterOption in filterOptionsStatus"
             :key="filterOption.id"
             :color="filterOption.color"
-            :selected="selectedFilterOption === filterOption"
+            :selected="selectedFilterOptionStatus === filterOption"
             :small-text="filterOption.label"
-            @click="selectFilterOption(filterOption)"
+            @click="selectFilterOptionStatus(filterOption)"
+          />
+        </div>
+        <div
+          v-if="
+            filterByClassification && filterOptionsClassification.length > 1
+          "
+          class="filter buttons-filter"
+        >
+          <striped-button
+            v-for="filterOption in filterOptionsClassification"
+            :key="filterOption.id"
+            :color="filterOption.color"
+            :selected="selectedFilterOptionClassification === filterOption"
+            :small-text="filterOption.label"
+            @click="selectFilterOptionClassification(filterOption)"
           />
         </div>
         <!--
@@ -99,9 +116,7 @@ import SortableTable from '@/_components/SortableTable.vue';
 import Pagination from '@/_components/Pagination.vue';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import { LEGISLATION_PER_PAGE } from '@/_helpers/constants.js';
-import legislationStatus, {
-  sortLegislationStatuses,
-} from '@/_helpers/legislationStatus.js';
+import legislationStatus from '@/_helpers/legislationStatus.js';
 
 export default {
   name: 'Legislation',
@@ -160,22 +175,24 @@ export default {
       }));
 
     const statuses = cardData?.data?.results?.statuses || [];
-    const filterOptionsStatus = statuses
-      .slice()
-      .sort(sortLegislationStatuses)
-      .map((status) => ({
-        id: status,
-        color: status,
-        label: this.$t(legislationStatus(status).translationKey),
-        selected: cardState?.filter === status,
-      }));
+    const filterOptionsStatus = statuses.slice().map((status) => ({
+      id: status,
+      color: status,
+      label: this.$t(legislationStatus(status).translationKey),
+      selected: cardState?.filter === status,
+    }));
 
+    // by default we filter by classification if not filtering by status, but if
+    // the cardState has filterByClassification set to true, we override that
     const filterByStatus =
       cardState?.filterByStatus && cardState?.filterByStatus !== 'false';
-
-    const filterOptions = filterByStatus
-      ? filterOptionsStatus
-      : filterOptionsClassification;
+    let filterByClassification = !filterByStatus;
+    if (
+      cardState?.filterByClassification &&
+      cardState?.filterByClassification !== 'false'
+    ) {
+      filterByClassification = true;
+    }
 
     const orgs = (cardState?.organizationTabs || '')
       .split('|')
@@ -199,8 +216,10 @@ export default {
 
     return {
       legislation: cardData?.data?.results || [],
-      filterOptions,
+      filterOptionsStatus,
+      filterOptionsClassification,
       filterByStatus,
+      filterByClassification,
       currentFilter: cardState?.filter,
       currentSort: 'timestamp',
       currentSortOrder: 'desc',
@@ -248,11 +267,17 @@ export default {
         url.searchParams.set('organization', this.currentOrganizationTab);
       }
 
-      if (this.selectedFilterOption && !this.filterByStatus) {
-        url.searchParams.set('classification', this.selectedFilterOption.id);
+      if (
+        this.selectedFilterOptionClassification &&
+        this.filterByClassification
+      ) {
+        url.searchParams.set(
+          'classification',
+          this.selectedFilterOptionClassification.id,
+        );
       }
-      if (this.selectedFilterOption && this.filterByStatus) {
-        url.searchParams.set('status', this.selectedFilterOption.id);
+      if (this.selectedFilterOptionStatus && this.filterByStatus) {
+        url.searchParams.set('status', this.selectedFilterOptionStatus.id);
       }
 
       // set sort param
@@ -341,8 +366,11 @@ export default {
         ].filter(Boolean);
       });
     },
-    selectedFilterOption() {
-      return this.filterOptions.find((fo) => fo.selected);
+    selectedFilterOptionStatus() {
+      return this.filterOptionsStatus.find((fo) => fo.selected);
+    },
+    selectedFilterOptionClassification() {
+      return this.filterOptionsClassification.find((fo) => fo.selected);
     },
   },
 
@@ -350,12 +378,13 @@ export default {
     currentSort() {
       this.searchLegislationImmediate();
     },
-
     currentSortOrder() {
       this.searchLegislationImmediate();
     },
-
-    selectedFilterOption() {
+    selectedFilterOptionStatus() {
+      this.searchLegislationImmediate();
+    },
+    selectedFilterOptionClassification() {
       this.searchLegislationImmediate();
     },
   },
@@ -368,16 +397,24 @@ export default {
   },
 
   methods: {
-    selectFilterOption(filterOption) {
+    selectFilterOptionStatus(filterOption) {
       if (filterOption.selected) {
         filterOption.selected = false;
       } else {
-        this.filterOptions.forEach((fo) => {
+        this.filterOptionsStatus.forEach((fo) => {
           fo.selected = filterOption === fo;
         });
       }
     },
-
+    selectFilterOptionClassification(filterOption) {
+      if (filterOption.selected) {
+        filterOption.selected = false;
+      } else {
+        this.filterOptionsClassification.forEach((fo) => {
+          fo.selected = filterOption === fo;
+        });
+      }
+    },
     selectSort(sortId) {
       if (this.currentSort === sortId) {
         this.currentSortOrder =
@@ -387,7 +424,6 @@ export default {
         this.currentSortOrder = 'asc';
       }
     },
-
     searchLegislationImmediate() {
       this.isLoading = true;
       this.legislationPerPage = Array(this.pages);
@@ -401,11 +437,9 @@ export default {
         this.isLoading = false;
       });
     },
-
     searchLegislation: debounce(function searchLegislation() {
       this.searchLegislationImmediate();
     }, 750),
-
     onPageChange(newPage) {
       this.page = newPage;
       this.scrollToTop();
@@ -418,7 +452,6 @@ export default {
         });
       }
     },
-
     // TODO extract this
     scrollToTop() {
       const el = this.$refs.card?.$el || this.$refs.card;

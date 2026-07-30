@@ -90,10 +90,10 @@ spec:
           ports:
             - containerPort: 8000
           envFrom:
-              - secretRef:
-                  name: parladata-credentials
-              - secretRef:
-                  name: parladata-sentry
+            - secretRef:
+                name: parladata-credentials
+            - secretRef:
+                name: parladata-sentry
           env:
             - name: DJANGO_SETTINGS_MODULE
               value: parladata_project.settings.k8s
@@ -112,6 +112,16 @@ spec:
             limits:
               memory: 400Mi
               cpu: 400m
+          lifecycle:
+            preStop:
+              exec:
+                command: ["sh", "-c", "sleep 10"] # give load balancer time to stop sending traffic to this pod
+          startupProbe:
+            httpGet:
+              path: /
+              port: 8000
+            periodSeconds: 10
+            failureThreshold: 30 # 30x10 = 300s = 5min
         - name: parladata-nginx
           ports:
             - name: http

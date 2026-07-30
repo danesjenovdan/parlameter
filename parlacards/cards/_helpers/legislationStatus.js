@@ -37,10 +37,3 @@ export default (status) => {
   const key = status || 'in_procedure';
   return LEGISLATION_STATUSES[key] || LEGISLATION_STATUSES.in_procedure;
 };
-
-export const sortLegislationStatuses = (a, b) => {
-  const statuses = Object.keys(LEGISLATION_STATUSES);
-  const aIndex = statuses.indexOf(a);
-  const bIndex = statuses.indexOf(b);
-  return aIndex - bIndex;
-};
