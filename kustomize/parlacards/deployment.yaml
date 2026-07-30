@@ -48,16 +48,10 @@ spec:
           lifecycle:
             preStop:
               exec:
-                command: ["sh", "-c", "sleep 10"]
+                command: ["sh", "-c", "sleep 10"] # give load balancer time to stop sending traffic to this pod
           startupProbe:
             httpGet:
-              path: /misc/search/?id=0&template=site&locale=sl&no_card_data=true
+              path: /readyz
               port: 3000
             periodSeconds: 10
             failureThreshold: 30 # 30x10 = 300s = 5min
-          readinessProbe:
-            httpGet:
-              path: /misc/search/?id=0&template=site&locale=sl&no_card_data=true
-              port: 3000
-            initialDelaySeconds: 15
-            periodSeconds: 60
