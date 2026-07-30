@@ -28,6 +28,7 @@ export default {
         acronym: g.acronym,
         color: g.color,
         seats: g.results.seat_count,
+        members: g.results.members,
       }))
       .sort((a, b) => b.seats - a.seats);
 

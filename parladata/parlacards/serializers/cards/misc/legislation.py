@@ -54,11 +54,7 @@ class LegislationMixin:
         )
 
     def _get_statuses(self):
-        return (
-            LegislationStatus.objects.all()
-            .distinct("name")
-            .values_list("name", flat=True)
-        )
+        return LegislationStatus.objects.all().values_list("name", flat=True)
 
 
 class LegislationCardSerializer(CardSerializer, LegislationMixin):

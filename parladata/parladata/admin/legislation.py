@@ -65,7 +65,7 @@ class LegislationConsiderationAdmin(admin.ModelAdmin):
 
 
 class LegislationStatusAdmin(admin.ModelAdmin):
-    list_display = ("name",)
+    list_display = ("name", "order")
     search_fields = ("name",)
     readonly_fields = ["created_at", "updated_at"]
 
