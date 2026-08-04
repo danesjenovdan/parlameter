@@ -1,7 +1,7 @@
 # ---
 # actual image
 # ---
-FROM node:24-alpine
+FROM node:26-alpine
 
 # install tini
 RUN apk add --no-cache tini
@@ -11,9 +11,9 @@ ENTRYPOINT ["/sbin/tini", "--"]
 WORKDIR /app
 
 # install production dependencies only
-COPY parlasite/package.json parlasite/yarn.lock ./
+COPY parlasite/package.json parlasite/package-lock.json ./
 ENV NODE_ENV=production
-RUN yarn && yarn cache clean
+RUN npm ci
 
 # copy all files and run build
 COPY parlasite .
