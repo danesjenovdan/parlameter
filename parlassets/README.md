@@ -15,7 +15,7 @@ See [../README.md](../README.md)
 ### Install dependencies
 
 ```sh
-yarn
+npm i
 ```
 
 ### Build and serve files
@@ -23,5 +23,5 @@ yarn
 Running this command build the css and watch scss files for changes while serving the static files on `http://localhost:8080/` by default.
 
 ```sh
-yarn dev
+npm run dev
 ```
