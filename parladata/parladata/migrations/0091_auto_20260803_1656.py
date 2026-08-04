@@ -23,7 +23,7 @@ def set_procedure_type_fk(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("parladata", "0089_law_procedure_type_fk"),
+        ("parladata", "0090_law_procedure_type_fk"),
     ]
 
     operations = [

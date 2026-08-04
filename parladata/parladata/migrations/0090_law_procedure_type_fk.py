@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("parladata", "0088_amendment_result"),
+        ("parladata", "0089_amendment_result"),
     ]
 
     operations = [

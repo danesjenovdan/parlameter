@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("parladata", "0091_remove_law_procedure_type"),
+        ("parladata", "0092_remove_law_procedure_type"),
     ]
 
     operations = [

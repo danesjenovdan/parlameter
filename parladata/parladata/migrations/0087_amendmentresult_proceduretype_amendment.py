@@ -7,7 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("parladata", "0085_alter_organizationmembership_mandate_and_more"),
+        ("parladata", "0086_alter_legislationstatus_options_and_more"),
     ]
 
     operations = [
