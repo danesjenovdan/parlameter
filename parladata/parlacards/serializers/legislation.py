@@ -45,7 +45,7 @@ class LegislationDetailSerializer(LegislationSerializer):
     def get_documents(self, obj):
         links = (
             Link.objects.filter(
-                Q(motion__law=obj) | Q(legislation_consideration__legislation=obj)
+                Q(motion__law=obj) | Q(legislation_consideration__legislation=obj) | Q(legislation=obj)
             )
             .exclude(tags__name="vote-pdf")
             .distinct("url")

@@ -189,10 +189,13 @@ class LinkAdmin(admin.ModelAdmin):
         "organization",
         "membership",
         "answer",
+        "legislation_consideration",
+        "legislation",
     ]
     fields = [
         "url",
         "name",
+        "note",
         "tags",
         "session",
         "agenda_item",
@@ -202,8 +205,9 @@ class LinkAdmin(admin.ModelAdmin):
         "organization",
         "membership",
         "date",
-        "note",
         "answer",
+        "legislation_consideration",
+        "legislation",
     ]
     readonly_fields = ["created_at", "updated_at"]
     list_filter = (ParsableFilter,)

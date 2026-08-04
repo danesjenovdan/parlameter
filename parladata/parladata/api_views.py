@@ -289,6 +289,7 @@ class LinkView(viewsets.ModelViewSet):
         "organization",
         "question",
         "legislation_consideration",
+        "legislation",
     )
 
 
