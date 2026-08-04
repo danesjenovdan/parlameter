@@ -1,14 +1,14 @@
 # ---
 # build stage image
 # ---
-FROM node:24-alpine AS build-parlacards
+FROM node:26-alpine AS build-parlacards
 
 # set current directory
 WORKDIR /app
 
 # install dependencies
-COPY parlacards/package.json parlacards/yarn.lock ./
-RUN yarn
+COPY parlacards/package.json parlacards/package-lock.json ./
+RUN npm ci
 
 # copy all files and run build
 # NOTE: image needs to be build in root not in parlacards folder to have access to parlassets folder
@@ -18,24 +18,24 @@ COPY parlacards .
 ARG VITE_PARLASSETS_URL
 ARG SENTRY_DSN
 ARG SENTRY_ENVIRONMENT
-RUN yarn build
+RUN npm run build
 
 # ---
 # build stage image
 # ---
-FROM node:24-alpine AS build-parlassets
+FROM node:26-alpine AS build-parlassets
 
 # set current directory
 WORKDIR /app
 
 # install dependencies
-COPY parlassets/package.json parlassets/yarn.lock ./
-RUN yarn
+COPY parlassets/package.json parlassets/package-lock.json ./
+RUN npm ci
 
 # copy all files and run build
 COPY parlassets .
 ENV NODE_ENV=production
-RUN yarn build
+RUN npm run build
 
 # ---
 # actual image for parlassets; use `--target parlassets` to build
@@ -52,7 +52,7 @@ COPY --from=build-parlacards /app/dist/client /usr/share/nginx/html/assets
 # ---
 # actual image for parlacards; use `--target parlacards` to build
 # ---
-FROM node:24-alpine AS parlacards
+FROM node:26-alpine AS parlacards
 
 # install tini
 RUN apk add --no-cache tini
@@ -62,9 +62,9 @@ ENTRYPOINT ["/sbin/tini", "--"]
 WORKDIR /app
 
 # install production dependencies only
-COPY parlacards/package.json parlacards/yarn.lock ./
+COPY parlacards/package.json parlacards/package-lock.json ./
 ENV NODE_ENV=production
-RUN yarn && yarn cache clean
+RUN npm ci
 
 # copy all needed files from build stage image
 COPY --from=build-parlacards /app/build ./build

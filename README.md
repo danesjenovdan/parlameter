@@ -49,7 +49,7 @@ There are two options for running `parlacards` depending on what you want to do:
 
 ```sh
 # start a development server (with hot reload and good dev experience, but doesnt work within parlasite)
-yarn dev
+npm run dev
 ```
 
 #### b) serving built cards that work inside parlasite
@@ -57,14 +57,14 @@ yarn dev
 ```sh
 # build the cards
 VITE_PARLASSETS_URL=http://localhost:8080 \
-yarn build
+npm run build
 
 # serve the built cards
 VITE_PARLASSETS_URL=http://localhost:8080 \
 VITE_PARLACARDS_URL=http://localhost:3000 \
 VITE_PARLASITE_URL=http://localhost:3066 \
 VITE_PARLADATA_URL=http://localhost:8000/v3 \
-yarn start
+npm run start
 ```
 
 > [!NOTE]
