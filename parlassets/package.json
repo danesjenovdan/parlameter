@@ -5,16 +5,16 @@
   "license": "Unlicense",
   "scripts": {
     "build": "node build/build-scss.js",
-    "watch": "nodemon --ext scss --exec \"yarn build\"",
+    "watch": "nodemon --ext scss --exec \"npm run build\"",
     "serve": "http-server --cors -c-1 -p 8080",
     "dev": "run-p watch serve"
   },
   "dependencies": {
-    "autoprefixer": "^10.5.2",
+    "autoprefixer": "^10.5.4",
     "cssnano": "^8.0.2",
-    "postcss": "^8.5.16",
+    "postcss": "^8.5.25",
     "postcss-cli": "^11.0.1",
-    "sass": "^1.101.0"
+    "sass": "^1.102.0"
   },
   "devDependencies": {
     "http-server": "^14.1.1",

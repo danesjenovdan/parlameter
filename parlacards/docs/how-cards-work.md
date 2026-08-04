@@ -32,7 +32,7 @@ When creating a new card there are some required files:
 
 Not strictly required while developing but could error when built:
 
-- `_i18n/<lang>/<cardName>.yaml` - The locale file for the card. (You can use `yarn lint:locales` to check if any locale files are missing)
+- `_i18n/<lang>/<cardName>.yaml` - The locale file for the card. (You can use `npm run lint:locales` to check if any locale files are missing)
 
 ## Data
 

@@ -249,6 +249,8 @@ export default {
 
     .clickable-seat {
       cursor: pointer;
+      stroke: colors.$font-default;
+      stroke-width: 4px;
 
       &:hover {
         stroke: colors.$link;
@@ -292,24 +294,25 @@ export default {
     gap: 8px 16px;
     justify-content: center;
     margin-top: 20px;
-  }
 
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1;
-  }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
 
-  .legend-dot {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin-bottom: 3px;
-    border-radius: 50%;
-    flex-shrink: 0;
+      .legend-dot {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-bottom: 3px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        border: 1px solid colors.$font-default;
+      }
+    }
   }
 }
 </style>

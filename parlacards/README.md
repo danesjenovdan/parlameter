@@ -15,7 +15,7 @@ See [../README.md](../README.md)
 ### Install dependencies
 
 ```sh
-yarn
+npm i
 ```
 
 ### Run card dev server
@@ -23,7 +23,7 @@ yarn
 To develop cards run this command. It will run the card dev server on `http://localhost:3000/` by default.
 
 ```sh
-yarn dev
+npm run dev
 ```
 
 ### Run parlassets
@@ -33,19 +33,19 @@ The dev server will expect parlassets to be served from port 8080.
 In another terminal open run this command to build and serve the static files required.
 
 ```sh
-cd ../parlassets && yarn dev
+cd ../parlassets && npm run dev
 ```
 
 ---
 
 ## Working on the SSR server
 
-_Note that you need to have built the cards at least once before with `yarn build`_
+_Note that you need to have built the cards at least once before with `npm run build`_
 
 To work on the server that serves the server-side rendered cards run this command. It will run the server on `http://localhost:3000/` by default.
 
 ```sh
-yarn start:watch
+npm run start:watch
 ```
 
 
@@ -57,7 +57,7 @@ yarn start:watch
 ### Install dependencies
 
 ```sh
-yarn
+npm i
 ```
 
 ### Build
@@ -68,7 +68,7 @@ This will build:
 - locale markdown files
 
 ```sh
-yarn build
+npm run build
 ```
 
 ### Run server
@@ -76,7 +76,7 @@ yarn build
 This runs the production server that will render and serve built cards.
 
 ```sh
-yarn start
+npm run start
 ```
 
 ---
