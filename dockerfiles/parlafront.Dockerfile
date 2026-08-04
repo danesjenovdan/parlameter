@@ -23,19 +23,19 @@ RUN yarn build
 # ---
 # build stage image
 # ---
-FROM node:24-alpine AS build-parlassets
+FROM node:26-alpine AS build-parlassets
 
 # set current directory
 WORKDIR /app
 
 # install dependencies
-COPY parlassets/package.json parlassets/yarn.lock ./
-RUN yarn
+COPY parlassets/package.json parlassets/package-lock.json ./
+RUN npm ci
 
 # copy all files and run build
 COPY parlassets .
 ENV NODE_ENV=production
-RUN yarn build
+RUN npm run build
 
 # ---
 # actual image for parlassets; use `--target parlassets` to build
