@@ -1,4 +1,5 @@
 from parladata.models.agenda_item import AgendaItem
+from parladata.models.amendment import Amendment, AmendmentResult
 from parladata.models.area import Area
 from parladata.models.ballot import Ballot
 from parladata.models.common import Mandate
@@ -10,6 +11,7 @@ from parladata.models.legislation import (
     LegislationStatus,
     Procedure,
     ProcedurePhase,
+    ProcedureType,
 )
 from parladata.models.link import Link
 from parladata.models.media import MediaReport, Medium

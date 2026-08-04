@@ -283,7 +283,13 @@ class LinkView(viewsets.ModelViewSet):
     queryset = Link.objects.all().order_by("id")
     serializer_class = LinkSerializer
     filter_backends = (DjangoFilterBackend,)
-    filterset_fields = ("person", "tags__name", "organization", "question")
+    filterset_fields = (
+        "person",
+        "tags__name",
+        "organization",
+        "question",
+        "legislation_consideration",
+    )
 
 
 class DocumentView(viewsets.ModelViewSet):
@@ -451,3 +457,33 @@ class PublicPersonAnswerView(viewsets.ModelViewSet):
     filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
     filterset_fields = ("mandate",)
     ordering_fields = ("date",)
+
+
+class AmendmentView(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Amendment.objects.all().order_by("id")
+    serializer_class = AmendmentSerializer
+    fields = "__all__"
+    filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
+    filterset_fields = ("motion", "legislation")
+    ordering_fields = ("title",)
+
+
+class AmendmentResultView(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = AmendmentResult.objects.all().order_by("id")
+    serializer_class = AmendmentResultSerializer
+    fields = "__all__"
+    filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
+    filterset_fields = ("name",)
+    ordering_fields = ("name",)
+
+
+class ProcedureTypeView(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = ProcedureType.objects.all().order_by("id")
+    serializer_class = ProcedureTypeSerializer
+    fields = "__all__"
+    filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
+    filterset_fields = ("name",)
+    ordering_fields = ("name",)
