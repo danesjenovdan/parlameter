@@ -73,7 +73,7 @@ services:
     build:
       context: .
       dockerfile: ./dockerfiles/dev.parlacards.Dockerfile
-    command: sh -c 'yarn build && yarn start:watch'
+    command: sh -c 'npm run build && npm run start:watch'
     ports:
       - 3000:3000
     environment:
