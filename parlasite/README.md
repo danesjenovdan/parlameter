@@ -12,8 +12,8 @@ See [../README.md](../README.md)
 
 ## Installation
 
-Download/clone the git repository and run `yarn`.
+Download/clone the git repository and run `npm i`.
 
 ## Start local (development) server
 
-Run `yarn dev`. It will serve the website on `localhost:3066` and watch for file changes and restart the server when needed, but you will still need to reload the page in the browser.
+Run `npm run dev`. It will serve the website on `localhost:3066` and watch for file changes and restart the server when needed, but you will still need to reload the page in the browser.
