@@ -17,9 +17,9 @@ django-tinymce
 nltk
 slugify
 Pillow
-pytest
-pytest-django
-pytest-cov
+pytest==9.0.3
+pytest-django==4.12.0
+pytest-cov==7.1.0
 drf-spectacular
 pytest-xdist
 python-memcached
