@@ -7,13 +7,21 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0093_rename_procedure_type_fk_law_procedure_type'),
+        ("parladata", "0093_rename_procedure_type_fk_law_procedure_type"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='link',
-            name='legislation',
-            field=models.ForeignKey(blank=True, help_text='Select the legislation this link belongs to.', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='links', to='parladata.law', verbose_name='Legislation'),
+            model_name="link",
+            name="legislation",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Select the legislation this link belongs to.",
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="links",
+                to="parladata.law",
+                verbose_name="Legislation",
+            ),
         ),
     ]
