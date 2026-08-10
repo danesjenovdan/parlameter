@@ -117,12 +117,13 @@ class Law(Timestampable, Taggable):
         blank=True,
         null=True,
     )
-    procedure_type = models.TextField(
-        verbose_name=_("procedure_type"),
-        help_text=_("Insert the type of procedure (e.g., 'regular', 'urgent'...)"),
+    procedure_type = models.ForeignKey(
+        "ProcedureType",
+        verbose_name=_("Procedure type"),
+        help_text=_("Select the type of procedure"),
         blank=True,
         null=True,
-        max_length=255,
+        on_delete=models.SET_NULL,
     )
     classification = models.ForeignKey(
         "LegislationClassification",
@@ -258,6 +259,23 @@ class LegislationClassification(Timestampable):
     class Meta:
         verbose_name = _("Legislation classification")
         verbose_name_plural = _("Legislation classifications")
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+
+
+class ProcedureType(Timestampable):
+    name = models.TextField(
+        verbose_name=_("Name"),
+        help_text=_("Type of procedure (e.g., 'regular', 'urgent', 'short'...)"),
+        blank=True,
+        null=True,
+    )
+
+    class Meta:
+        verbose_name = _("Procedure type")
+        verbose_name_plural = _("Procedure types")
         ordering = ["name"]
 
     def __str__(self):
