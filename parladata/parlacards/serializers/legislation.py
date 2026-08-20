@@ -8,6 +8,29 @@ from parladata.models.link import Link
 from parladata.models.vote import Vote
 
 
+def _serialize_legislation_documents(legislation, context=None):
+    links = (
+        Link.objects.filter(
+            Q(motion__law=legislation)
+            | Q(legislation_consideration__legislation=legislation)
+            | Q(legislation=legislation)
+        )
+        .exclude(tags__name="vote-pdf")
+        .select_related("legislation_consideration__procedure_phase")
+        .distinct("url")
+    )
+
+    documents = []
+    for link in links:
+        doc = LinkSerializer(link, context=context).data
+        phase = None
+        if link.legislation_consideration:
+            phase = link.legislation_consideration.procedure_phase
+        doc["group"] = phase.name if phase and phase.name else "law"
+        documents.append(doc)
+    return documents
+
+
 class LegislationSerializer(CommonCachableSerializer):
     id = serializers.IntegerField()
     uid = serializers.CharField()
@@ -43,13 +66,84 @@ class LegislationDetailSerializer(LegislationSerializer):
         return BareVoteSerializer(votes, many=True, context=self.context).data
 
     def get_documents(self, obj):
-        links = (
-            Link.objects.filter(
-                Q(motion__law=obj)
-                | Q(legislation_consideration__legislation=obj)
-                | Q(legislation=obj)
-            )
-            .exclude(tags__name="vote-pdf")
-            .distinct("url")
+        return _serialize_legislation_documents(obj, context=self.context)
+
+
+class LegislationBasicInfoDetailSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    text = serializers.CharField()
+    epa = serializers.CharField()
+    status = serializers.CharField(source="status.name")
+
+
+class LegislationBasicInfoSerializer(CommonCachableSerializer):
+    legislation = serializers.SerializerMethodField()
+
+    def calculate_cache_key(self, legislation):
+        return f'LegislationBasicInfoSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
+
+    def get_legislation(self, legislation):
+        return LegislationBasicInfoDetailSerializer(legislation, context=self.context).data
+
+
+class LegislationInfoSerializer(LegislationBasicInfoSerializer):
+    epa = serializers.CharField()
+    proposed_by = serializers.CharField(source="proposer_text")
+    classification = serializers.CharField(source="classification.name")
+    procedure_type = serializers.CharField(source="procedure_type.name")
+    timestamp = serializers.DateTimeField()
+    tags = serializers.SerializerMethodField()
+
+    def calculate_cache_key(self, legislation):
+        return f'LegislationInfoSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
+
+    def get_classification(self, obj):
+        return obj.classification.name if obj.classification else None
+
+    def get_tags(self, obj):
+        return [tag.name for tag in obj.tags.all()]
+
+
+class LegislationProcedureSerializer(LegislationBasicInfoSerializer):
+    procedure_type = serializers.CharField(source="procedure_type.name")
+    considerations = serializers.SerializerMethodField()
+
+    def calculate_cache_key(self, legislation):
+        return f'LegislationProcedureSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
+
+    def get_considerations(self, obj):
+        considerations = (
+            obj.legislationconsideration_set.all()
+            .prefetch_related("procedure_phase")
+            .distinct("procedure_phase", "timestamp")
+            .order_by("timestamp")
         )
-        return LinkSerializer(links, many=True, context=self.context).data
+        return [
+            {
+                "id": consideration.id,
+                "name": consideration.procedure_phase.name,
+                "timestamp": consideration.timestamp,
+            }
+            for consideration in considerations
+        ]
+
+
+class LegislationDocumentsSerializer(LegislationBasicInfoSerializer):
+    documents = serializers.SerializerMethodField()
+
+    def calculate_cache_key(self, legislation):
+        return f'LegislationDocsSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
+
+    def get_documents(self, obj):
+        return _serialize_legislation_documents(obj, context=self.context)
+
+
+class LegislationVotesSerializer(LegislationBasicInfoSerializer):
+    votes = serializers.SerializerMethodField()
+
+    def calculate_cache_key(self, legislation):
+        return f'LegislationVotesSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
+
+    def get_votes(self, obj):
+        votes = Vote.objects.filter(motion__law=obj)
+        return BareVoteSerializer(votes, many=True, context=self.context).data
