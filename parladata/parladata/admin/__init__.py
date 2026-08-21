@@ -1,5 +1,6 @@
 import parladata.admin.admin
 import parladata.admin.agenda_item
+import parladata.admin.amendment
 import parladata.admin.legislation
 import parladata.admin.media
 import parladata.admin.memberships

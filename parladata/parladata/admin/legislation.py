@@ -11,6 +11,7 @@ from parladata.models import (
     LegislationStatus,
     Procedure,
     ProcedurePhase,
+    ProcedureType,
 )
 
 
@@ -23,7 +24,7 @@ class LegislationConsiderationInline(admin.TabularInline):
 
 
 class LawAdmin(admin.ModelAdmin):
-    list_display = ("text", "get_sessions", "status", "epa")
+    list_display = ("text", "get_sessions", "status", "epa", "procedure_type")
     list_filter = (SessionLegislationListFilter,)
     search_fields = ("text", "epa")
     exclude = ("session",)
@@ -76,9 +77,16 @@ class LegislationClassificationAdmin(admin.ModelAdmin):
     readonly_fields = ["created_at", "updated_at"]
 
 
+class ProcedureTypeAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
+    readonly_fields = ["created_at", "updated_at"]
+
+
 admin.site.register(Law, LawAdmin)
 admin.site.register(Procedure, ProcedureAdmin)
 admin.site.register(ProcedurePhase, ProcedurePhaseAdmin)
 admin.site.register(LegislationConsideration, LegislationConsiderationAdmin)
 admin.site.register(LegislationStatus, LegislationStatusAdmin)
 admin.site.register(LegislationClassification, LegislationClassificationAdmin)
+admin.site.register(ProcedureType, ProcedureTypeAdmin)

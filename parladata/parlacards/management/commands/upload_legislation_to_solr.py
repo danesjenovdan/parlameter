@@ -63,6 +63,7 @@ class Command(BaseCommand):
                     "session_id": law.session.id if law.session else None,
                     "start_time": law.timestamp.isoformat() if law.timestamp else None,
                     "content": law.text,
+                    "proposer": law.proposer_text,
                 }
             )
 
