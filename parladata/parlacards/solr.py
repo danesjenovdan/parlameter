@@ -148,6 +148,10 @@ def solr_select(
         "fl": fl,
     }
 
+    if document_type == "law":
+        params["qf"] = "content proposer"
+        params["defType"] = "edismax"
+
     if highlight:
         params["hl"] = "true"
         params["hl.fl"] = "content"
