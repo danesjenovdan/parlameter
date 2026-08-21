@@ -1,9 +1,9 @@
 from django.contrib.auth.models import Group, Permission
 from django.contrib.contenttypes.models import ContentType
 from django.core.management.base import BaseCommand, CommandError
-from parlacards.models import GroupTfidf, PersonTfidf, SessionTfidf
 from taggit.models import Tag
 
+from parlacards.models import GroupTfidf, PersonTfidf, SessionTfidf
 from parladata.models import (
     AgendaItem,
     Area,

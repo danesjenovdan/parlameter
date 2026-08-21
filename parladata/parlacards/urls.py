@@ -1,4 +1,5 @@
 from django.urls import path
+
 from parlacards.views import *
 
 urlpatterns = [
