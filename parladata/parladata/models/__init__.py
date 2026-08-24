@@ -12,6 +12,7 @@ from parladata.models.legislation import (
     Procedure,
     ProcedurePhase,
     ProcedureType,
+    ProcedureTypeDefaultPhase,
 )
 from parladata.models.link import Link
 from parladata.models.media import MediaReport, Medium

@@ -1,9 +1,9 @@
 from django.db.models import Q
-from rest_framework import serializers
-
 from parlacards.serializers.common import CommonCachableSerializer, CommonSerializer
 from parlacards.serializers.link import LinkSerializer
 from parlacards.serializers.vote import BareVoteSerializer
+from rest_framework import serializers
+
 from parladata.models.link import Link
 from parladata.models.vote import Vote
 
@@ -83,7 +83,9 @@ class LegislationBasicInfoSerializer(CommonCachableSerializer):
         return f'LegislationBasicInfoSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
 
     def get_legislation(self, legislation):
-        return LegislationBasicInfoDetailSerializer(legislation, context=self.context).data
+        return LegislationBasicInfoDetailSerializer(
+            legislation, context=self.context
+        ).data
 
 
 class LegislationInfoSerializer(LegislationBasicInfoSerializer):
@@ -107,6 +109,7 @@ class LegislationInfoSerializer(LegislationBasicInfoSerializer):
 class LegislationProcedureSerializer(LegislationBasicInfoSerializer):
     procedure_type = serializers.CharField(source="procedure_type.name")
     considerations = serializers.SerializerMethodField()
+    future_considerations = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):
         return f'LegislationProcedureSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
@@ -126,6 +129,26 @@ class LegislationProcedureSerializer(LegislationBasicInfoSerializer):
             }
             for consideration in considerations
         ]
+
+    def get_future_considerations(self, obj):
+        last_consideration = (
+            obj.legislationconsideration_set.all()
+            .prefetch_related("procedure_phase")
+            .distinct("procedure_phase", "timestamp")
+            .order_by("timestamp").last().procedure_phase.name
+        )
+        # Show only the phases that come after the last consideration
+        future_phases = []
+        last_phase_found = False
+        for phase in obj.procedure_type.default_phases.all().order_by("order").prefetch_related("procedure_phase"):
+            if last_phase_found:
+                future_phases.append({
+                    "id": phase.procedure_phase.id,
+                    "name": phase.procedure_phase.name,
+                })
+            if phase.procedure_phase.name == last_consideration:
+                last_phase_found = True
+        return future_phases
 
 
 class LegislationDocumentsSerializer(LegislationBasicInfoSerializer):
