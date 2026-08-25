@@ -25,16 +25,16 @@ resources:
 images:
   - name: parladata-ukrajina
     newName: rg.fr-par.scw.cloud/djnd/parladata-ukrajina
-    newTag: 'f0ff561ad87bd20477f697c15b5e49e7135cfa9d'
+    newTag: '067e12dbd75a47039eb6b184cbf647f6e296dd66'
   - name: parlasolr-ukrajina
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-ukrajina
-    newTag: 'f0ff561ad87bd20477f697c15b5e49e7135cfa9d'
+    newTag: '067e12dbd75a47039eb6b184cbf647f6e296dd66'
   - name: parlacards-ukrajina
     newName: rg.fr-par.scw.cloud/djnd/parlacards-ukrajina
-    newTag: 'f0ff561ad87bd20477f697c15b5e49e7135cfa9d'
+    newTag: '067e12dbd75a47039eb6b184cbf647f6e296dd66'
   - name: parlasite-ukrajina
     newName: rg.fr-par.scw.cloud/djnd/parlasite-ukrajina
-    newTag: 'f0ff561ad87bd20477f697c15b5e49e7135cfa9d'
+    newTag: '067e12dbd75a47039eb6b184cbf647f6e296dd66'
   - name: parlassets-ukrajina
     newName: rg.fr-par.scw.cloud/djnd/parlassets-ukrajina
-    newTag: 'f0ff561ad87bd20477f697c15b5e49e7135cfa9d'
+    newTag: '067e12dbd75a47039eb6b184cbf647f6e296dd66'
