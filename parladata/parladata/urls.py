@@ -34,6 +34,9 @@ router.register(r"media", MediumView)
 router.register(r"media-reports", MediaReportView)
 router.register(r"public-person-questions", PublicPersonQuestionView)
 router.register(r"public-person-answers", PublicPersonAnswerView)
+router.register(r"amendments", AmendmentView)
+router.register(r"procedure-types", ProcedureTypeView)
+router.register(r"amendment-results", AmendmentResultView)
 
 urlpatterns = [
     re_path(r"^", include(router.urls)),

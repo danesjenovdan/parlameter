@@ -41,6 +41,7 @@
   <field name="title"         type="text_general" indexed="true"  stored="true" multiValued="false" />
   <field name="content"       type="text_general" indexed="true"  stored="true" multiValued="false"
          termVectors="true" termPositions="true" termOffsets="true" />
+  <field name="proposer"      type="text_general"       indexed="true"  stored="true" multiValued="false"/>
 
 
   <!-- ================================= END FIELD DEFINITIONS ================================= -->
