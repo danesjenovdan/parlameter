@@ -112,7 +112,7 @@ def calculate_cache_key_for_page(object_list, metadata):
     meta_string = "_".join(meta_string_items)
 
     if object_list.count() == 0:
-        return f'{meta_string}_no_items'
+        return f"{meta_string}_no_items"
 
     latest_timestamp = max(map(lambda item: item.updated_at, object_list))
     return f'{meta_string}_{latest_timestamp.strftime("%Y-%m-%dT%H:%M:%S")}'
