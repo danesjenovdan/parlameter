@@ -53,12 +53,18 @@
     "tools": "Tools"
   },
   "footer": {
-    "about": "About the project",
-    "newsletter_sign_up": "Sign up for the newsletter!",
-    "newsletter_submit": "Submit",
-    "donate": "Donate!",
-    "press": "Press corner",
-    "legal": "Legal notice"
+    "description": "Parlameter is an open-source tool developed and maintained by <a href=\"https://danesjenovdan.si\" target=\"_blank\">Today Is a New Day, Institute for Other Studies</a>. The code is freely available on our <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repository</a>.",
+    "about": "About Parlameter",
+    "legal": "Legal notice and data protection",
+    "financial_support": "Financial support",
+    "contact_mail": "info@parlameter.si",
+    "support_our_work": "Support our work!",
+    "select_donation": "Select donation amount.",
+    "donation_custom": "Custom",
+    "donation_monthly": "Monthly",
+    "newsletter_title": "Interested in what we do? Subscribe to our Newsletter!",
+    "newsletter_email_label": "Enter your email address",
+    "newsletter_subscribe": "Subscribe"
   },
   "search_popup": {
     "title": "How to search?",

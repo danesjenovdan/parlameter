@@ -53,16 +53,18 @@
     "tools": "Narzędzia"
   },
   "footer": {
-    "heading": "Parlameter",
-    "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
-    "contact_mail": "mol@parlameter.si",
-    "about_heading": "O projekcieu",
-    "about": "Predstavitev Parlametra",
-    "about_municipality": "O projektu Tvoja občina",
-    "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
-    "partners_heading": "Partnerji",
-    "legal": "Informacje prawne",
-    "support_heading": "Projekt podpira"
+    "description": "Parlameter is an open-source tool developed and maintained by <a href=\"https://danesjenovdan.si\" target=\"_blank\">Today Is a New Day, Institute for Other Studies</a>. The code is freely available on our <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repository</a>.",
+    "about": "About Parlameter",
+    "legal": "Legal notice and data protection",
+    "financial_support": "Financial support",
+    "contact_mail": "info@parlameter.si",
+    "support_our_work": "Support our work!",
+    "select_donation": "Select donation amount.",
+    "donation_custom": "Custom",
+    "donation_monthly": "Monthly",
+    "newsletter_title": "Interested in what we do? Subscribe to our Newsletter!",
+    "newsletter_email_label": "Enter your email address",
+    "newsletter_subscribe": "Subscribe"
   },
   "search_popup": {
     "title": "Jak szukać?",
