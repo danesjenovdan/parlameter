@@ -106,14 +106,13 @@ class SolrPaginator(Paginator):
         return self._get_page(objects, number, self)
 
 
-# TODO document how this works and make sure the assertion holds
 def calculate_cache_key_for_page(object_list, metadata):
     meta_sorted_items = sorted(metadata.items())
     meta_string_items = map(lambda tuple: f"{tuple[0]}={tuple[1]}", meta_sorted_items)
     meta_string = "_".join(meta_string_items)
 
-    # if object_list is an empty queryset call to max() fails
-    assert object_list.count() > 0
+    if object_list.count() == 0:
+        return f'{meta_string}_no_items'
 
     latest_timestamp = max(map(lambda item: item.updated_at, object_list))
     return f'{meta_string}_{latest_timestamp.strftime("%Y-%m-%dT%H:%M:%S")}'
