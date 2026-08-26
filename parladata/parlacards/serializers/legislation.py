@@ -1,10 +1,12 @@
 from django.db.models import Q
+from rest_framework import serializers
+from rest_framework.exceptions import NotFound
+
 from parlacards.serializers.common import CommonCachableSerializer, CommonSerializer
 from parlacards.serializers.link import LinkSerializer
 from parlacards.serializers.vote import BareVoteSerializer
-from rest_framework import serializers
-
 from parladata.models.link import Link
+from parladata.models.summary import Summary
 from parladata.models.vote import Vote
 
 
@@ -135,17 +137,25 @@ class LegislationProcedureSerializer(LegislationBasicInfoSerializer):
             obj.legislationconsideration_set.all()
             .prefetch_related("procedure_phase")
             .distinct("procedure_phase", "timestamp")
-            .order_by("timestamp").last().procedure_phase.name
+            .order_by("timestamp")
+            .last()
+            .procedure_phase.name
         )
         # Show only the phases that come after the last consideration
         future_phases = []
         last_phase_found = False
-        for phase in obj.procedure_type.default_phases.all().order_by("order").prefetch_related("procedure_phase"):
+        for phase in (
+            obj.procedure_type.default_phases.all()
+            .order_by("order")
+            .prefetch_related("procedure_phase")
+        ):
             if last_phase_found:
-                future_phases.append({
-                    "id": phase.procedure_phase.id,
-                    "name": phase.procedure_phase.name,
-                })
+                future_phases.append(
+                    {
+                        "id": phase.procedure_phase.id,
+                        "name": phase.procedure_phase.name,
+                    }
+                )
             if phase.procedure_phase.name == last_consideration:
                 last_phase_found = True
         return future_phases
@@ -170,3 +180,41 @@ class LegislationVotesSerializer(LegislationBasicInfoSerializer):
     def get_votes(self, obj):
         votes = Vote.objects.filter(motion__law=obj)
         return BareVoteSerializer(votes, many=True, context=self.context).data
+
+
+class LegislationSummarySerializer(LegislationBasicInfoSerializer):
+    summary = serializers.SerializerMethodField()
+
+    def calculate_cache_key(self, legislation):
+        return f'LegislationSummarySerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
+
+    def get_summary(self, obj):
+        links = Link.objects.filter(
+            Q(legislation=obj) | Q(legislation_consideration__legislation=obj),
+            Q(tags__name__icontains="proposal") | Q(tags__name__icontains="enacted"),
+        )
+
+        if links.exists():
+            summary = Summary.objects.filter(link__in=links, is_approved=True)
+            if summary:
+                summary = summary.latest("created_at")
+                return {
+                    "text": summary.text,
+                    "link": (
+                        LinkSerializer(summary.link, context=self.context).data
+                        if summary.link
+                        else None
+                    ),
+                    "ai_model": summary.ai_model,
+                    "ai_model_version": summary.ai_model_version,
+                }
+            else:
+                return {
+                    "text": None,
+                    "link": LinkSerializer(
+                        links.latest("created_at"), context=self.context
+                    ).data,
+                    "ai_model": None,
+                    "ai_model_version": None,
+                }
+        raise NotFound("No approved summary found for this legislation.")

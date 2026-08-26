@@ -7,33 +7,88 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parladata', '0094_link_legislation'),
+        ("parladata", "0094_link_legislation"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='proceduretype',
+            name="proceduretype",
             options={},
         ),
         migrations.CreateModel(
-            name='ProcedureTypeDefaultPhase',
+            name="ProcedureTypeDefaultPhase",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True, db_index=True, help_text='The time the object was created.', verbose_name='created_at')),
-                ('updated_at', models.DateTimeField(auto_now=True, db_index=True, help_text='The time the object was last updated.', verbose_name='updated_at')),
-                ('order', models.IntegerField(default=0, help_text='Order of the phase in the procedure', verbose_name='Order')),
-                ('procedure_phase', models.ForeignKey(help_text='Phase of the procedure', on_delete=django.db.models.deletion.CASCADE, related_name='procedure_type_default_phases', to='parladata.procedurephase', verbose_name='Procedure phase')),
-                ('procedure_type', models.ForeignKey(help_text='Type of procedure', on_delete=django.db.models.deletion.CASCADE, related_name='default_phases', to='parladata.proceduretype', verbose_name='Procedure type')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True,
+                        db_index=True,
+                        help_text="The time the object was created.",
+                        verbose_name="created_at",
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        auto_now=True,
+                        db_index=True,
+                        help_text="The time the object was last updated.",
+                        verbose_name="updated_at",
+                    ),
+                ),
+                (
+                    "order",
+                    models.IntegerField(
+                        default=0,
+                        help_text="Order of the phase in the procedure",
+                        verbose_name="Order",
+                    ),
+                ),
+                (
+                    "procedure_phase",
+                    models.ForeignKey(
+                        help_text="Phase of the procedure",
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="procedure_type_default_phases",
+                        to="parladata.procedurephase",
+                        verbose_name="Procedure phase",
+                    ),
+                ),
+                (
+                    "procedure_type",
+                    models.ForeignKey(
+                        help_text="Type of procedure",
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="default_phases",
+                        to="parladata.proceduretype",
+                        verbose_name="Procedure type",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Procedure type',
-                'verbose_name_plural': 'Procedure types',
-                'ordering': ['order'],
+                "verbose_name": "Procedure type",
+                "verbose_name_plural": "Procedure types",
+                "ordering": ["order"],
             },
         ),
         migrations.AddField(
-            model_name='proceduretype',
-            name='default_procedure_phases',
-            field=models.ManyToManyField(blank=True, help_text='Default phases for this type of procedure', through='parladata.ProcedureTypeDefaultPhase', to='parladata.procedurephase', verbose_name='Default procedure phases'),
+            model_name="proceduretype",
+            name="default_procedure_phases",
+            field=models.ManyToManyField(
+                blank=True,
+                help_text="Default phases for this type of procedure",
+                through="parladata.ProcedureTypeDefaultPhase",
+                to="parladata.procedurephase",
+                verbose_name="Default procedure phases",
+            ),
         ),
     ]
