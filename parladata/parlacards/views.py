@@ -25,11 +25,12 @@ from parlacards.serializers.cards import (
     GroupVoteCardSerializer,
     LeastVotesInCommonCardSerializer,
     LegislationCardSerializer,
+    LegislationDetailCardSerializer,
     LegislationDocumentsCardSerializer,
     LegislationInfoCardSerializer,
     LegislationProcedureCardSerializer,
+    LegislationSummaryCardSerializer,
     LegislationVotesCardSerializer,
-    LegislationDetailCardSerializer,
     MandateLegislationCardSerializer,
     MandateMinutesCardSerializer,
     MandateMostUsedByPeopleCardSerializer,
@@ -503,6 +504,11 @@ class LegislationDocuments(CardView):
 class LegislationVotes(CardView):
     thing = Law
     card_serializer = LegislationVotesCardSerializer
+
+
+class LegislationSummary(CardView):
+    thing = Law
+    card_serializer = LegislationSummaryCardSerializer
 
 
 class SingleMinutes(CardView):

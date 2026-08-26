@@ -66,6 +66,7 @@ urlpatterns = [
     path("legislation/procedure/", LegislationProcedure.as_view()),
     path("legislation/documents/", LegislationDocuments.as_view()),
     path("legislation/votes/", LegislationVotes.as_view()),
+    path("legislation/summary/", LegislationSummary.as_view()),
     path("minutes/single/", SingleMinutes.as_view()),
     path("search/votes/", MandateVotes.as_view()),
     path("search/minutes/", MandateMinutes.as_view()),

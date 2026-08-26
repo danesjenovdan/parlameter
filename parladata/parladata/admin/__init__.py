@@ -2,6 +2,7 @@ import parladata.admin.admin
 import parladata.admin.agenda_item
 import parladata.admin.amendment
 import parladata.admin.legislation
+import parladata.admin.link
 import parladata.admin.media
 import parladata.admin.memberships
 import parladata.admin.motion
@@ -11,4 +12,5 @@ import parladata.admin.public_question
 import parladata.admin.question
 import parladata.admin.session
 import parladata.admin.speech
+import parladata.admin.summary
 import parladata.admin.vote
