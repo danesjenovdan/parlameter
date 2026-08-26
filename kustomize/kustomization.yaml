@@ -25,16 +25,16 @@ resources:
 images:
   - name: parladata-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parladata-trbovlje
-    newTag: '638d3c5fa7f3b1be775f02cbd09a8fe3ddbc8876'
+    newTag: '75577c599fd8bb26cdcd69279e2e5a153da08fe8'
   - name: parlasolr-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlasolr-trbovlje
-    newTag: '638d3c5fa7f3b1be775f02cbd09a8fe3ddbc8876'
+    newTag: '75577c599fd8bb26cdcd69279e2e5a153da08fe8'
   - name: parlacards-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlacards-trbovlje
-    newTag: '638d3c5fa7f3b1be775f02cbd09a8fe3ddbc8876'
+    newTag: '75577c599fd8bb26cdcd69279e2e5a153da08fe8'
   - name: parlasite-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlasite-trbovlje
-    newTag: '638d3c5fa7f3b1be775f02cbd09a8fe3ddbc8876'
+    newTag: '75577c599fd8bb26cdcd69279e2e5a153da08fe8'
   - name: parlassets-trbovlje
     newName: rg.fr-par.scw.cloud/djnd/parlassets-trbovlje
-    newTag: '638d3c5fa7f3b1be775f02cbd09a8fe3ddbc8876'
+    newTag: '75577c599fd8bb26cdcd69279e2e5a153da08fe8'
