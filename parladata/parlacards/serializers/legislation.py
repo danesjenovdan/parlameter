@@ -44,6 +44,7 @@ class LegislationSerializer(CommonCachableSerializer):
     has_votes = serializers.BooleanField()
     has_abstract = serializers.BooleanField()
     timestamp = serializers.DateTimeField()
+    last_consideration = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):
         return f'LegislationSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
@@ -53,6 +54,14 @@ class LegislationSerializer(CommonCachableSerializer):
 
     def get_classification(self, obj):
         return obj.classification.name if obj.classification else None
+
+    def get_last_consideration(self, obj):
+        last_consideration = (
+            obj.legislationconsideration_set.exclude(timestamp__isnull=True)
+            .order_by("-timestamp")
+            .first()
+        )
+        return last_consideration.timestamp if last_consideration else None
 
 
 class LegislationDetailSerializer(LegislationSerializer):
