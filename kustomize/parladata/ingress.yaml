@@ -4,6 +4,9 @@ metadata:
   name: parladata-slovenija
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
+    traefik.ingress.kubernetes.io/router.middlewares: |
+      traefik-redirect-to-https@kubernetescrd,
+      traefik-plugin-blockuseragent@kubernetescrd
 spec:
   ingressClassName: traefik
   tls:
@@ -28,6 +31,8 @@ metadata:
   name: parladata-slovenija-nginx
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-production"
+    traefik.ingress.kubernetes.io/router.middlewares: |
+      traefik-redirect-to-https@kubernetescrd
 spec:
   ingressClassName: traefik
   tls:
