@@ -53,16 +53,18 @@
     "tools": "Orodja"
   },
   "footer": {
-    "heading": "Parlameter",
-    "desc": "Skrbimo za transkripte in glasovanja od njihovega zajetja do vizualizacije in objave.",
-    "contact_mail": "mol@parlameter.si",
-    "about_heading": "O projektu",
+    "description": "Parlameter je odprtokodno orodje, ki ga razvija in vzdržuje <a href=\"https://danesjenovdan.si\" target=\"_blank\">Danes je nov dan, Inštitut za druga vprašanja</a>. Celotna koda je prosto dostopna na <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repozitoriju</a>.",
     "about": "Predstavitev Parlametra",
-    "about_municipality": "O projektu Tvoja občina",
-    "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
-    "partners_heading": "Partnerji",
-    "legal": "Pravno obvestilo",
-    "support_heading": "Projekt podpira"
+    "legal": "Pravno obvestilo in varstvo osebnih podatkov",
+    "financial_support": "Finančna podpora",
+    "contact_mail": "info@parlameter.si",
+    "support_our_work": "Podpri naše delo!",
+    "select_donation": "Izberi višino donacije.",
+    "donation_custom": "Poljubno",
+    "donation_monthly": "Mesečno",
+    "newsletter_title": "Te zanima, kaj delamo? Naroči se na Občasnik!",
+    "newsletter_email_label": "Vpiši svoj e-naslov",
+    "newsletter_subscribe": "Naroči se"
   },
   "search_popup": {
     "title": "Kako iskati?",

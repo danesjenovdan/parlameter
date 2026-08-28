@@ -296,3 +296,21 @@ class PublicPersonQuestionSerializer(serializers.ModelSerializer):
         model = PublicPersonQuestion
         fields = "__all__"
         extra_kwargs = {"author_email": {"write_only": True}}
+
+
+class AmendmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Amendment
+        fields = "__all__"
+
+
+class AmendmentResultSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AmendmentResult
+        fields = "__all__"
+
+
+class ProcedureTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProcedureType
+        fields = "__all__"
