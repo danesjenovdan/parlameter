@@ -53,16 +53,18 @@
     "tools": "Alati"
   },
   "footer": {
-    "heading": "Parlametar",
-    "desc": "Pratimo transkripte i glasanja od njihovog nastanka do vizualizacije i objave.",
-    "contact_mail": "info@parlametar.hr",
-    "about_heading": "O projektu",
+    "description": "Parlameter je alat otvorenog koda koji razvija i održava <a href=\"https://danesjenovdan.si\" target=\"_blank\">Danes je nov dan, Inštitut za druga vprašanja</a>. Cijeli kod slobodno je dostupan na <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repozitoriju</a>. Internetska stranica Parlametar HR uspostavljena je u suradnji s organizacijom <a href=\"https://gong.hr\" target=\"_blank\">Gong</a>.",
     "about": "Prezentacija Parlametra",
-    "about_municipality": "O projektu Tvoja občina",
-    "about_municipality_link": "https://danesjenovdan.si/novice/podpora-sklada-active-citizens-fund-v-sloveniji",
-    "partners_heading": "Partneri",
     "legal": "Pravne napomene",
-    "support_heading": "Projekt podpira"
+    "financial_support": "Financijska podrška",
+    "contact_mail": "info@parlametar.hr",
+    "support_our_work": "Podržite naš rad!",
+    "select_donation": "Odaberite iznos donacije.",
+    "donation_custom": "Po izboru",
+    "donation_monthly": "Mjesečno",
+    "newsletter_title": "Te zanima, kaj delamo? Naroči se na Občasnik!",
+    "newsletter_email_label": "Vpiši svoj e-naslov",
+    "newsletter_subscribe": "Naroči se"
   },
   "search_popup": {
     "title": "Kako pretraživati?",
