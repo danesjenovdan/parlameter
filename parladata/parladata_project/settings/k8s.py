@@ -86,6 +86,14 @@ MEDIA_URL = env["MEDIA_URL"]
 
 SOLR_URL = env["SOLR_URL"]
 
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 # Mail settings
 
@@ -105,7 +113,9 @@ REPLY_TO_EMAIL = os.getenv("PARLAMETER_REPLY_TO_EMAIL", "info@parlameter.si")
 PARLAMETER_ENABLE_S3 = os.getenv("PARLAMETER_ENABLE_S3", False)
 # DJANGO STORAGE SETTINGS
 if PARLAMETER_ENABLE_S3:
-    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    STORAGES["default"] = {
+        "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+    }
     AWS_ACCESS_KEY_ID = os.getenv("PARLAMETER_AWS_ACCESS_KEY_ID", "")
     AWS_SECRET_ACCESS_KEY = os.getenv("PARLAMETER_AWS_SECRET_ACCESS_KEY", "")
     AWS_STORAGE_BUCKET_NAME = os.getenv("PARLAMETER_AWS_STORAGE_BUCKET_NAME", "")
