@@ -92,9 +92,7 @@ from parladata.models.motion import Motion
 from parladata.models.organization import (
     CLASSIFICATIONS as ORGANIZATION_CLASSIFICATIONS,
 )
-from parladata.models.organization import (
-    Organization,
-)
+from parladata.models.organization import Organization
 from parladata.models.person import Person
 from parladata.models.public_question import PublicPersonQuestion
 from parladata.models.question import Question
@@ -511,7 +509,7 @@ class GroupCardSerializer(GroupScoreCardSerializer):
         paged_object_list, pagination_metadata = create_paginator(
             self.context.get("GET", {}), members, prefix="members:"
         )
-        page_cache_key = f"GroupCardSerializer_{calculate_cache_key_for_page(paged_object_list, pagination_metadata)}"
+        page_cache_key = f"GroupCardSerializer_{instance.id}_{calculate_cache_key_for_page(paged_object_list, pagination_metadata)}"
 
         # if there's something in the cache return it, otherwise serialize and save
         if cached_members := cache.get(page_cache_key):

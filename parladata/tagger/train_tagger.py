@@ -1,7 +1,7 @@
+import _pickle as pickle
 import re
 import sys
 
-import _pickle as pickle
 import pycrfsuite
 
 
