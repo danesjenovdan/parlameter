@@ -3,54 +3,80 @@
 <footer class="footer">
   <div class="container">
     <div class="row border_top">
-      <div class="col-lg-12">
-        <div class="row equal">
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 footer-about">
-            <h4><%- i18n('footer.heading') %></h4>
-            <p><%- i18n('footer.desc') %></p>
-            <a href="mailto:<%- i18n('footer.contact_mail') %>"><%- i18n('footer.contact_mail') %></a>
-            <div class="social-media">
-              <a target="_blank" href="<%- i18n('social.facebook') %>" class="parlaicon parlaicon-facebook-parlameter nodec" data-mc="social" data-ma="link" data-mn="facebook" data-mv="">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <title>Facebook</title>
-                  <path d="M10 0.4c-5.302 0-9.6 4.298-9.6 9.6s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6-4.298-9.6-9.6-9.6zM12.274 7.034h-1.443c-0.171 0-0.361 0.225-0.361 0.524v1.042h1.805l-0.273 1.486h-1.532v4.461h-1.703v-4.461h-1.545v-1.486h1.545v-0.874c0-1.254 0.87-2.273 2.064-2.273h1.443v1.581z" class="blue"></path>
-                </svg>
-              </a>
-              <a target="_blank" href="<%- i18n('social.twitter') %>" class="parlaicon parlaicon-twitter-parlameter nodec" data-mc="social" data-ma="link" data-mn="twitter" data-mv="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <title>X</title>
-                  <path d="M10 .4A9.6 9.6 0 0 0 .4 10a9.6 9.6 0 0 0 9.6 9.6 9.6 9.6 0 0 0 9.6-9.6A9.6 9.6 0 0 0 10 .4M4.887 5.383H8.12l2.233 2.951 2.613-2.951h1.568L11.092 9.3l4.021 5.316H11.96l-2.47-3.23-2.83 3.23H5.091l3.646-4.191zm1.843.885 5.688 7.43h.87l-5.624-7.43Z" class="blue"/>
-                </svg>
-              </a>
+      <div class="col-12 col-sm-6 col-md-4 footer-col">
+        <div class="footer-block">
+          <div class="lead"><%- i18n("footer.description") %></div>
+        </div>
+        <div class="footer-block">
+          <div><a href="https://parlameter.org/sl/" target="_blank"><%= i18n("footer.about") %></a></div>
+          <div><a href="/<%= sm.landing.legal %>"><%= i18n("footer.legal") %></a></div>
+          <div><a href="https://danesjenovdan.si/impact4values/" target="_blank"><%= i18n("footer.financial_support") %></a></div>
+        </div>
+        <div class="footer-block">
+          <div><a href="mailto:<%= i18n("footer.contact_mail") %>" target="_blank" rel="noopener noreferrer"><%= i18n("footer.contact_mail") %></a></div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 footer-col">
+        <div class="footer-block">
+          <div class="support-box">
+            <div class="text">
+              <div class="title"><%= i18n("footer.support_our_work") %></div>
+              <div class="desc"><%= i18n("footer.select_donation") %></div>
+            </div>
+            <div class="buttons">
+              <%
+                const query = {
+                  referrer: `${request.protocol}://${request.hostname}${request.originalUrl}`,
+                  utm_source: request.hostname,
+                  utm_medium: 'website',
+                  utm_campaign: 'parlameter-footer',
+                };
+                const donateOptions = [
+                  { amount: 11, label: '11 €' },
+                  { amount: 24, label: '24 €' },
+                  { amount: null, label: i18n("footer.donation_custom") },
+                  { amount: null, label: i18n("footer.donation_monthly"), monthly: true },
+                ];
+                donateOptions.forEach(option => {
+                  const url = new URL('https://moj.djnd.si/danes-je-nov-dan/doniraj');
+                  if (option.amount) {
+                    url.pathname += '/info';
+                    url.searchParams.set('znesek', option.amount);
+                  }
+                  if (option.monthly) {
+                    url.searchParams.set('mesecna', 'true');
+                  }
+                  url.searchParams.append('referrer', query.referrer);
+                  url.searchParams.append('utm_source', query.utm_source);
+                  url.searchParams.append('utm_medium', query.utm_medium);
+                  url.searchParams.append('utm_campaign', query.utm_campaign);
+                  url.searchParams.append('utm_content', option.label);
+                  option.url = url.toString();
+                });
+              %>
+              <% for (const option of donateOptions) { %>
+                <a href="<%= option.url %>" target="_blank" rel="noopener noreferrer">
+                  <span><%= option.label %></span>
+                </a>
+              <% } %>
             </div>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <p class="text-uppercase"><%- i18n('footer.about_heading') %></p>
-            <p class="arrow-link">
-              <a href="<%- sm.landing.about %>" target="_blank"><%- i18n('footer.about') %></a>
-              <svg fill="#005554" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M94.8,50.4L59.3,14.9c-1.1-1.1-2.8-1.1-3.9,0c-1.1,1.1-1.1,2.9,0,4l29,29.1H7.6c-1.5,0-2.8,1-2.8,2.5C4.8,52,6.1,53,7.6,53  H84L55.3,81.9c-1.1,1.1-1.1,2.9,0,4c0.5,0.5,1.3,0.9,2,0.9s1.4-0.2,2-0.8L94.8,50.4z"></path></svg>
-            </p>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <p class="text-uppercase"><%- i18n('footer.partners_heading') %></p>
-            <div class="row partners">
-              <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
-                <a target="_blank" href="https://danesjenovdan.si/">
-                  <img class="img-responsive" src="<%- config.urls.cdn %>/img/djdn-logo.svg" alt="logo">
-                </a>
-              </div>
-              <div class="col-lg-6 col-md-6 col-sm-10 col-xs-12">
-                <a target="_blank" href="https://gong.hr/">
-                  <img class="img-responsive" src="<%- config.urls.cdn %>/img/gong-logo.png" alt="logo">
-                </a>
-              </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 footer-col">
+        <div class="footer-block">
+          <div class="lead semi-bold"><%= i18n("footer.newsletter_title") %></div>
+          <form class="newsletter-form">
+            <div class="form-group">
+              <label>
+                <span><%= i18n("footer.newsletter_email_label") %></span>
+                <input type="email" id="newsletter-email" required>
+              </label>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <p class="footer-legal">
-              <a href="/<%- sm.landing.legal %>"><%- i18n('footer.legal') %></a>
-            </p>
-          </div>
+            <div class="form-group">
+              <button class="submit-button"><%= i18n("footer.newsletter_subscribe") %></button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -58,71 +84,7 @@
   <div class="stripeelbottom"></div>
 </footer>
 
-<script src="<%- config.urls.cdn %>/js/js.js?v=20250513"></script>
+<script src="<%- config.urls.cdn %>/js/js.js?v=20260821"></script>
 </body>
-
-<style>
-footer.footer {
-  height: 184px;
-}
-.footer .row h4 {
-  margin-top: 0;
-  margin-bottom: 5px;
-  font-weight: 400;
-}
-.partners {
-  display: flex;
-  align-items: center;
-}
-footer.footer .footer-about a {
-  color: #333;
-}
-.footer-acf {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.footer-acf p {
-  margin-bottom: 0;
-}
-.arrow-link {
-  display: flex;
-  align-items: center;
-}
-.arrow-link svg {
-  width: 14px;
-  margin-left: 5px;
-}
-.acf-logo {
-  max-width: 210px;
-  margin: 0 30px;
-}
-@media (max-width: 991.98px) {
-  .acf-logo {
-    max-width: 120px;
-  }
-}
-.footer-legal {
-  text-align: right;
-}
-@media (max-width: 991.98px) {
-  .footer-legal {
-    text-align: left;
-  }
-}
-footer.footer .border_top {
-  padding: 20px 10px 10px 10px;
-}
-.equal {
-  display: flex;
-  display: -webkit-flex;
-  flex-wrap: wrap;
-}
-@media (max-width: 991.98px) {
-  .equal > div {
-    margin-bottom: 20px;
-  }
-}
-</style>
 
 </html>

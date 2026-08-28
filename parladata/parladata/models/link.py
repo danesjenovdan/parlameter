@@ -116,6 +116,15 @@ class Link(Timestampable, Taggable):
         on_delete=models.CASCADE,
         related_name="links",
     )
+    legislation = models.ForeignKey(
+        "Law",
+        verbose_name=_("Legislation"),
+        help_text=_("Select the legislation this link belongs to."),
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="links",
+    )
 
     class Meta:
         verbose_name = _("link")
