@@ -91,7 +91,7 @@ export default {
     },
     getSessionAgendaLink(agendaItem, session) {
       const { urls, siteMap: sm } = this.$root.$options.contextData;
-      return `${urls.site}/${sm.session.base}/${session?.id}/${sm.session.agenda}#${agendaItem.id}`;
+      return `${urls.site}/${sm.session.base}/${session?.id}/${sm.session.agenda}#${agendaItem?.id}`;
     },
     getSessionAgendaCardLink(agendaItem) {
       const { urls } = this.$root.$options.contextData;
