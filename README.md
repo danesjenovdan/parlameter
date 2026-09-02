@@ -14,16 +14,17 @@ docker-compose up
 
 Running docker compose will:
 
-- start `postgresql`, `memcached`, and `solr`
+- start `postgresql` and `solr`
 - start `parladata` on port `8000` (backend)
 - start `parlassets` on port `8080` (static files)
 - start `parlasite` on port `3066` (frontend)
-- start a `parlacards` <!-- dev --> server on port `3000`
+- start a `parlacards` server with built cards on port `3000`
+- start a `parlacards` server for card development on port `3001`
 
 You should now be able to access the Parlameter website on http://localhost:3066 and the admin interface at http://localhost:8000/admin.
 
 > [!NOTE]
-> This will start the `parlacards` "production" server inside docker. The cards will build and then be statically served on every restart. Because of some underlying issues with how the dev mode differs from production, you will need to run parlacards separately if you want to work on a single card!
+> The `parlacards` server on port 3000 is a "production" style server that builds cards only on restart. Use the development server on port 3001 for card development with hot reload.
 
 **If something doesn't load you may need to change evironment variables in docker-compose.yaml with correct urls.**
 
