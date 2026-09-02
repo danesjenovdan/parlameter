@@ -5,7 +5,7 @@
   "license": "Unlicense",
   "type": "module",
   "scripts": {
-    "dev": "vite --config build/vite.config.dev.js",
+    "dev": "vite --config build/vite.config.dev.js --port 3001",
     "build": "npm run build:client && npm run build:server && npm run build:locales",
     "build:client": "vite build --config build/vite.config.build.js --ssrManifest --outDir dist/client",
     "build:server": "SSR=1 vite build --config build/vite.config.build.js --ssr --outDir dist/server",
