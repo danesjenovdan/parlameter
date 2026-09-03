@@ -1,104 +1,21 @@
 {
-  "url": "https://data.parlameter.si/v3/cards/misc/legislation/?id=4",
-  "id": "4",
+  "url": "http://localhost:8000/v3/cards/misc/legislation/?id=4",
+  "id": 4,
   "data": {
     "results": {
       "legislation": [
         {
-          "id": 8611,
-          "uid": "PZ|B67D9E654ED74551C1258E41002A28AE",
-          "text": "Zakon o spremembah in dopolnitvah Zakona o trgu finančnih instrumentov",
-          "epa": "204-X",
-          "status": "in_procedure",
-          "passed": false,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2026-07-27T00:00:00"
-        },
-        {
-          "id": 8612,
-          "uid": "PZ|DAFB0989CB872531C1258E41002A252A",
-          "text": "Zakon o spremembah in dopolnitvah Zakona o oblikah alternativnih investicijskih skladov",
-          "epa": "205-X",
-          "status": "in_procedure",
-          "passed": false,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2026-07-27T00:00:00"
-        },
-        {
-          "id": 8613,
-          "uid": "PZ|87650F2E00A69502C1258E41002FC638",
-          "text": "Zakon o finančni podpori mladim za dostop do kulturnih dobrin",
-          "epa": "206-X",
-          "status": "in_procedure",
-          "passed": false,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2026-07-27T00:00:00"
-        },
-        {
-          "id": 8607,
-          "uid": "PZ|AFB286F0AC386E05C1258E3E003669FF",
-          "text": "Zakon o spremembah in dopolnitvah Zakona o referendumu in o ljudski iniciativi",
-          "epa": "202-X",
-          "status": "in_procedure",
-          "passed": false,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2026-07-24T00:00:00"
-        },
-        {
-          "id": 8614,
-          "uid": "PA|A2B2653D560E8A2AC1258E41002843D8",
-          "text": "Predlog za razrešitev z mesta člana strokovnega sveta Agencije za zavarovalni nadzor",
-          "epa": "203-X",
+          "id": 8604,
+          "uid": "PA|714FAB29C962BECCC1258E350042AED4",
+          "text": "Predlog za začetek postopka za spremembo III. poglavja Ustave Republike Slovenije z osnutkom Ustavnega zakona",
+          "epa": "187-X",
           "status": "in_procedure",
           "passed": false,
           "classification": "act",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2026-07-24T00:00:00"
-        },
-        {
-          "id": 8608,
-          "uid": "PA|18EDA1EBB1FF2B9FC1258E3D004C7FB7",
-          "text": "Predlog za razpis posvetovalnega referenduma o pogojevanju pravice do denarne socialne pomoči z aktivnim vključevanjem delovno sposobnih upravičencev v družbeno koristna dela",
-          "epa": "191-X",
-          "status": "in_procedure",
-          "passed": false,
-          "classification": "act",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2026-07-23T00:00:00"
-        },
-        {
-          "id": 8609,
-          "uid": "PA|F14407335860CFE7C1258E3D004CBD15",
-          "text": "Predlog za razpis posvetovalnega referenduma o volilni pravici na lokalnih volitvah v Republiki Sloveniji",
-          "epa": "192-X",
-          "status": "in_procedure",
-          "passed": false,
-          "classification": "act",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2026-07-23T00:00:00"
-        },
-        {
-          "id": 8610,
-          "uid": "PA|E230BC0EDCC0867FC1258E3D004CF3AE",
-          "text": "Predlog za razpis posvetovalnega referenduma o ukinitvi obveznega plačevanja prispevka za programe RTV Slovenija",
-          "epa": "193-X",
-          "status": "in_procedure",
-          "passed": false,
-          "classification": "act",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2026-07-23T00:00:00"
+          "timestamp": "2026-07-15T00:00:00",
+          "last_consideration": null
         },
         {
           "id": 8605,
@@ -110,7 +27,73 @@
           "classification": "act",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2026-07-22T00:00:00"
+          "timestamp": "2026-07-22T00:00:00",
+          "last_consideration": null
+        },
+        {
+          "id": 8608,
+          "uid": "PA|18EDA1EBB1FF2B9FC1258E3D004C7FB7",
+          "text": "Predlog za razpis posvetovalnega referenduma o pogojevanju pravice do denarne socialne pomoči z aktivnim vključevanjem delovno sposobnih upravičencev v družbeno koristna dela",
+          "epa": "191-X",
+          "status": "in_procedure",
+          "passed": false,
+          "classification": "act",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2026-07-23T00:00:00",
+          "last_consideration": null
+        },
+        {
+          "id": 8609,
+          "uid": "PA|F14407335860CFE7C1258E3D004CBD15",
+          "text": "Predlog za razpis posvetovalnega referenduma o volilni pravici na lokalnih volitvah v Republiki Sloveniji",
+          "epa": "192-X",
+          "status": "in_procedure",
+          "passed": false,
+          "classification": "act",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2026-07-23T00:00:00",
+          "last_consideration": null
+        },
+        {
+          "id": 8610,
+          "uid": "PA|E230BC0EDCC0867FC1258E3D004CF3AE",
+          "text": "Predlog za razpis posvetovalnega referenduma o ukinitvi obveznega plačevanja prispevka za programe RTV Slovenija",
+          "epa": "193-X",
+          "status": "in_procedure",
+          "passed": false,
+          "classification": "act",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2026-07-23T00:00:00",
+          "last_consideration": null
+        },
+        {
+          "id": 8607,
+          "uid": "PZ|AFB286F0AC386E05C1258E3E003669FF",
+          "text": "Zakon o spremembah in dopolnitvah Zakona o referendumu in o ljudski iniciativi",
+          "epa": "202-X",
+          "status": "in_procedure",
+          "passed": false,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2026-07-24T00:00:00",
+          "last_consideration": "2026-07-24T00:00:00"
+        },
+        {
+          "id": 8503,
+          "uid": "PZ|145FC40C0FBF4D40C1258DF8002D1CDD",
+          "text": "Zakon o spremembah in dopolnitvah Zakona o parlamentarni preiskavi",
+          "epa": "71-X",
+          "status": "enacted",
+          "passed": false,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2026-05-15T00:00:00",
+          "last_consideration": "2026-07-21T00:00:00"
         },
         {
           "id": 8606,
@@ -122,18 +105,53 @@
           "classification": "law",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2026-07-17T00:00:00"
+          "timestamp": "2026-07-17T00:00:00",
+          "last_consideration": "2026-07-20T00:00:00"
+        },
+        {
+          "id": 8554,
+          "uid": "PZ|2DD196F1D1A2679CC1258E06001F9717",
+          "text": "Predlog za sklenitev sporazuma o vzajemni obravnavi neporočenih vzdrževanih otrok članov diplomatskih predstavništev in konzulatov Republike Slovenije in Združenih držav Amerike",
+          "epa": "95-X",
+          "status": "in_procedure",
+          "passed": false,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2026-05-28T00:00:00",
+          "last_consideration": "2026-07-15T00:00:00"
+        },
+        {
+          "id": 8591,
+          "uid": "PZ|39C52C6A64D5F957C1258E29002C942C",
+          "text": "Zakon o ratifikaciji Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Drugega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji in Tretjega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji",
+          "epa": "165-X",
+          "status": "enacted",
+          "passed": true,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2026-07-03T00:00:00",
+          "last_consideration": "2026-07-15T00:00:00"
         }
       ],
       "classifications": ["act", "law"],
-      "statuses": ["enacted", "in_procedure", "rejected", "submitted"]
+      "statuses": [
+        "in_procedure",
+        "rejected",
+        "enacted",
+        "test",
+        "submitted",
+        "test2",
+        "test3"
+      ]
     },
     "mandate": {
       "id": 4,
       "description": "10. sklic DZ",
       "beginning": "2026-04-10T00:00:00"
     },
-    "legislation:count": 125,
+    "legislation:count": 121,
     "legislation:pages": 13,
     "legislation:page": 1,
     "legislation:per_page": 10

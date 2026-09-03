@@ -16,7 +16,7 @@
     <div class="legislation-list-container">
       <div class="filters">
         <div class="filter text-filter">
-          <div v-t="'title-search'" class="filter-label"></div>
+          <div class="filter-label">{{ $t('title-search') }}</div>
           <search-field
             v-model="textFilter"
             @update:model-value="searchLegislation"
@@ -221,7 +221,7 @@ export default {
       filterByStatus,
       filterByClassification,
       currentFilter: cardState?.filter,
-      currentSort: 'timestamp',
+      currentSort: 'last_consideration',
       currentSortOrder: 'desc',
       textFilter: cardState?.text || '',
       // onlyAbstracts: !!state.onlyAbstracts,
@@ -313,8 +313,8 @@ export default {
             }
           : null,
         {
-          id: 'timestamp',
-          label: this.$t('date'),
+          id: 'last_consideration',
+          label: this.$t('legislation-last-consideration'),
           additionalClass: 'date-col',
         },
         {
@@ -330,7 +330,7 @@ export default {
     mappedItems() {
       return this.currentPageLegislation.map((legislation) => {
         const status = legislationStatus(legislation.status);
-        let dateString = dateFormatter(legislation.timestamp);
+        let dateString = dateFormatter(legislation.last_consideration);
         if (!dateString || dateString === 'Invalid Date') {
           dateString = 'N/A';
         }
@@ -567,6 +567,12 @@ export default {
           display: none;
         }
       }
+    }
+  }
+
+  .headers .column {
+    &.date-col {
+      white-space: normal;
     }
   }
 
