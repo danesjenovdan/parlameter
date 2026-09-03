@@ -190,3 +190,39 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.parlaicon-legislation-act {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/legislation-act.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-legislation-date {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/legislation-date.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-legislation-epa {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/legislation-epa.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-legislation-procedure {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/legislation-procedure.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-legislation-proposer {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/legislation-proposer.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parlaicon-legislation-tags {
+    background-image: url(encode-svg(str-replace(fs-readFile('icons/legislation-tags.svg'), '#333', '#{colors.$font-default}')));
+    background-repeat: no-repeat;
+    background-position: center;
+}

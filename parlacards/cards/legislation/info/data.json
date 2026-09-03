@@ -1,0 +1,25 @@
+{
+  "url": "http://localhost:8000/v3/cards/legislation/info/?id=8515",
+  "id": 8515,
+  "data": {
+    "results": {
+      "legislation": {
+        "id": 8515,
+        "text": "Zakon o spremembah in dopolnitvah Zakona o Slovenskem državnem holdingu",
+        "epa": "61-X",
+        "status": "in_procedure"
+      },
+      "epa": "61-X",
+      "proposed_by": "Rajbenšu Andreja",
+      "classification": "law",
+      "procedure_type": "skrajšani",
+      "timestamp": "2026-05-08T00:00:00",
+      "tags": ["državni holding", "zakon"]
+    },
+    "mandate": {
+      "id": 4,
+      "description": "10. sklic DZ",
+      "beginning": "2026-04-10T00:00:00"
+    }
+  }
+}

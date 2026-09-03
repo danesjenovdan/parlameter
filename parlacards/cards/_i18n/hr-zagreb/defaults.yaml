@@ -561,3 +561,8 @@ error-message: Ups, nešto se dogodilo.
 remove: Ukloni
 joint-session: Skupna seja
 legislation-last-consideration: Najnovije razmatranje
+legislation-type: Vrsta akta
+legislation-proposer: Predlagatelj
+legislation-procedure-type: Vrsta postopka
+legislation-procedure-start: Začetek postopka
+legislation-areas: Področja

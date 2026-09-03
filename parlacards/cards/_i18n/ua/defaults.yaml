@@ -557,3 +557,8 @@ send: Pošlji
 error-message: Prišlo je do napake.
 joint-session: Skupna seja
 legislation-last-consideration: Zadnja obravnava
+legislation-type: Vrsta akta
+legislation-proposer: Predlagatelj
+legislation-procedure-type: Vrsta postopka
+legislation-procedure-start: Začetek postopka
+legislation-areas: Področja

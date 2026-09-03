@@ -102,8 +102,8 @@ class LegislationBasicInfoSerializer(CommonCachableSerializer):
 class LegislationInfoSerializer(LegislationBasicInfoSerializer):
     epa = serializers.CharField()
     proposed_by = serializers.CharField(source="proposer_text")
-    classification = serializers.CharField(source="classification.name")
-    procedure_type = serializers.CharField(source="procedure_type.name")
+    classification = serializers.SerializerMethodField()
+    procedure_type = serializers.SerializerMethodField()
     timestamp = serializers.DateTimeField()
     tags = serializers.SerializerMethodField()
 
@@ -112,6 +112,9 @@ class LegislationInfoSerializer(LegislationBasicInfoSerializer):
 
     def get_classification(self, obj):
         return obj.classification.name if obj.classification else None
+
+    def get_procedure_type(self, obj):
+        return obj.procedure_type.name if obj.procedure_type else None
 
     def get_tags(self, obj):
         return [tag.name for tag in obj.tags.all()]
