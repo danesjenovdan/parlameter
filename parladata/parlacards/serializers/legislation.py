@@ -171,17 +171,6 @@ class LegislationDocumentsSerializer(CommonCachableSerializer):
         return _serialize_legislation_documents(obj, context=self.context)
 
 
-class LegislationVotesSerializer(CommonCachableSerializer):
-    votes = serializers.SerializerMethodField()
-
-    def calculate_cache_key(self, legislation):
-        return f'LegislationVotesSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
-
-    def get_votes(self, obj):
-        votes = Vote.objects.filter(motion__law=obj)
-        return BareVoteSerializer(votes, many=True, context=self.context).data
-
-
 class LegislationSummarySerializer(CommonCachableSerializer):
     summary = serializers.SerializerMethodField()
 

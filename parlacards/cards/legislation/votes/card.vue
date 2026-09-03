@@ -33,7 +33,7 @@
               v-for="vote in votes"
               :key="vote.id"
               :vote="vote"
-              :session="session"
+              :session="vote.session"
             />
           </template>
         </div>
@@ -49,9 +49,7 @@
 import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import cancelableRequest from '@/_mixins/cancelableRequest.js';
-import { sessionHeader } from '@/_mixins/altHeaders.js';
-import { sessionOgImage } from '@/_mixins/ogImages.js';
-import { sessionVotesContextUrl } from '@/_mixins/contextUrls.js';
+import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import SearchField from '@/_components/SearchField.vue';
 import StripedButton from '@/_components/StripedButton.vue';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
@@ -61,7 +59,7 @@ import infiniteScroll from '@/_directives/infiniteScroll.js';
 import { debounce } from 'lodash-es';
 
 export default {
-  name: 'CardSessionVotes',
+  name: 'CardLegislationVotes',
   directives: {
     infiniteScroll,
   },
@@ -72,14 +70,7 @@ export default {
     VoteListItem,
     EmptyState,
   },
-  mixins: [
-    common,
-    sessionVotesContextUrl,
-    sessionHeader,
-    sessionOgImage,
-    links,
-    cancelableRequest,
-  ],
+  mixins: [common, links, cancelableRequest],
   cardInfo: {
     doubleWidth: true,
   },
@@ -110,9 +101,13 @@ export default {
         isLoading: false,
       },
       votes: cardData?.data?.results || [],
-      session: cardData?.data?.session || {},
+      legislation: cardData?.data?.legislation || {},
       passedOptions,
       textFilter,
+      headerConfig: defaultHeaderConfig(this, {
+        heading: cardData?.data?.mandate?.description,
+        // title: results?.legislation?.text,
+      }),
     };
   },
   computed: {

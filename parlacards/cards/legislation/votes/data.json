@@ -1,0 +1,103 @@
+{
+  "url": "http://localhost:8000/v3/cards/legislation/votes/?id=8591",
+  "id": 8591,
+  "data": {
+    "results": [
+      {
+        "all_votes": {
+          "for": 11,
+          "against": 0,
+          "abstain": 0,
+          "absent": 0,
+          "did not vote": 0
+        },
+        "passed": true,
+        "id": 23531,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Zakon o ratifikaciji Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Drugega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji in Tretjega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji - Glasovanje o členih predloga zakona",
+        "timestamp": "2026-07-08T15:09:28",
+        "session": {
+          "name": "3. nujna seja",
+          "joint_data": null,
+          "id": 7481,
+          "start_time": "2026-07-08T15:00:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Odbor za zunanjo politiko",
+              "acronym": "Odbor za zunanjo politiko",
+              "slug": "34-odbor-za-zunanjo-politiko",
+              "color": "#09A2CC",
+              "classification": "committee",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "urgent",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": false,
+          "has_minutes": false,
+          "has_legislation": false,
+          "has_votes": true
+        }
+      },
+      {
+        "all_votes": {
+          "for": 78,
+          "against": 0,
+          "abstain": 0,
+          "absent": 12,
+          "did not vote": 0
+        },
+        "passed": true,
+        "id": 23458,
+        "is_outlier": false,
+        "has_outliers": false,
+        "has_named_votes": true,
+        "title": "Zakon o ratifikaciji Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Drugega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji in Tretjega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji - Glasovanje o zakonu v celoti",
+        "timestamp": "2026-07-15T10:03:53",
+        "session": {
+          "name": "17. izredna seja",
+          "joint_data": null,
+          "id": 7531,
+          "start_time": "2026-07-15T10:00:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Državni zbor",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
+              "classification": "house",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "irregular",
+          "in_review": false,
+          "has_transcript": true,
+          "has_agenda_items": false,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        }
+      }
+    ],
+    "mandate": {
+      "id": 4,
+      "description": "10. sklic DZ",
+      "beginning": "2026-04-10T00:00:00"
+    },
+    "legislation": {
+      "id": 8591,
+      "text": "Zakon o ratifikaciji Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Drugega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji in Tretjega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji",
+      "epa": "165-X",
+      "status": "enacted"
+    },
+    "count": 2,
+    "pages": 1,
+    "page": 1,
+    "per_page": 10
+  }
+}
