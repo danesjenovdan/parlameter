@@ -50,11 +50,11 @@ from parlacards.serializers.group_attendance import SessionGroupAttendanceSerial
 from parlacards.serializers.legislation import (
     LegislationBasicInfoDetailSerializer,
     LegislationDetailSerializer,
-    LegislationDocumentsSerializer,
     LegislationInfoSerializer,
     LegislationProcedureSerializer,
     LegislationSerializer,
     LegislationSummarySerializer,
+    _serialize_legislation_documents,
 )
 from parlacards.serializers.media import MediaReportSerializer
 from parlacards.serializers.membership import MembershipSerializer
@@ -1316,8 +1316,7 @@ class LegislationProcedureCardSerializer(CardLegislationMandateSerializer):
 
 class LegislationDocumentsCardSerializer(CardLegislationMandateSerializer):
     def get_results(self, legislation):
-        serializer = LegislationDocumentsSerializer(legislation, context=self.context)
-        return serializer.data
+        return _serialize_legislation_documents(legislation, context=self.context)
 
 
 class LegislationVotesCardSerializer(CardLegislationMandateSerializer):

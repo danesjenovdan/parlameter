@@ -161,16 +161,6 @@ class LegislationProcedureSerializer(CommonCachableSerializer):
         return future_phases
 
 
-class LegislationDocumentsSerializer(CommonCachableSerializer):
-    documents = serializers.SerializerMethodField()
-
-    def calculate_cache_key(self, legislation):
-        return f'LegislationDocsSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
-
-    def get_documents(self, obj):
-        return _serialize_legislation_documents(obj, context=self.context)
-
-
 class LegislationSummarySerializer(CommonCachableSerializer):
     summary = serializers.SerializerMethodField()
 
