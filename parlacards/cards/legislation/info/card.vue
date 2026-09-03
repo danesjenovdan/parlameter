@@ -109,10 +109,9 @@ export default {
   mixins: [common, links],
   data() {
     const { cardData } = this.$root.$options.contextData;
-    const results = cardData?.data?.results ?? {};
 
     return {
-      results,
+      results: cardData?.data?.results ?? {},
       headerConfig: defaultHeaderConfig(this, {
         heading: cardData?.data?.mandate?.description,
         // title: results?.legislation?.text,

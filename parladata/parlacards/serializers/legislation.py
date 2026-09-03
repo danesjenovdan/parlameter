@@ -87,19 +87,7 @@ class LegislationBasicInfoDetailSerializer(serializers.Serializer):
     status = serializers.CharField(source="status.name")
 
 
-class LegislationBasicInfoSerializer(CommonCachableSerializer):
-    legislation = serializers.SerializerMethodField()
-
-    def calculate_cache_key(self, legislation):
-        return f'LegislationBasicInfoSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
-
-    def get_legislation(self, legislation):
-        return LegislationBasicInfoDetailSerializer(
-            legislation, context=self.context
-        ).data
-
-
-class LegislationInfoSerializer(LegislationBasicInfoSerializer):
+class LegislationInfoSerializer(CommonCachableSerializer):
     epa = serializers.CharField()
     proposed_by = serializers.CharField(source="proposer_text")
     classification = serializers.SerializerMethodField()
@@ -120,7 +108,7 @@ class LegislationInfoSerializer(LegislationBasicInfoSerializer):
         return [tag.name for tag in obj.tags.all()]
 
 
-class LegislationProcedureSerializer(LegislationBasicInfoSerializer):
+class LegislationProcedureSerializer(CommonCachableSerializer):
     procedure_type = serializers.CharField(source="procedure_type.name")
     considerations = serializers.SerializerMethodField()
     future_considerations = serializers.SerializerMethodField()
@@ -173,7 +161,7 @@ class LegislationProcedureSerializer(LegislationBasicInfoSerializer):
         return future_phases
 
 
-class LegislationDocumentsSerializer(LegislationBasicInfoSerializer):
+class LegislationDocumentsSerializer(CommonCachableSerializer):
     documents = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):
@@ -183,7 +171,7 @@ class LegislationDocumentsSerializer(LegislationBasicInfoSerializer):
         return _serialize_legislation_documents(obj, context=self.context)
 
 
-class LegislationVotesSerializer(LegislationBasicInfoSerializer):
+class LegislationVotesSerializer(CommonCachableSerializer):
     votes = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):
@@ -194,7 +182,7 @@ class LegislationVotesSerializer(LegislationBasicInfoSerializer):
         return BareVoteSerializer(votes, many=True, context=self.context).data
 
 
-class LegislationSummarySerializer(LegislationBasicInfoSerializer):
+class LegislationSummarySerializer(CommonCachableSerializer):
     summary = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):

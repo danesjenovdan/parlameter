@@ -48,6 +48,7 @@ from parlacards.serializers.common import (
 from parlacards.serializers.facets import GroupFacetSerializer, PersonFacetSerializer
 from parlacards.serializers.group_attendance import SessionGroupAttendanceSerializer
 from parlacards.serializers.legislation import (
+    LegislationBasicInfoDetailSerializer,
     LegislationDetailSerializer,
     LegislationDocumentsSerializer,
     LegislationInfoSerializer,
@@ -1290,6 +1291,12 @@ class ToolsUnityCardSerializer(CardSerializer):
 # LEGISLATION
 #
 class CardLegislationMandateSerializer(CardSerializer):
+    legislation = serializers.SerializerMethodField()
+
+    def get_legislation(self, obj):
+        serializer = LegislationBasicInfoDetailSerializer(obj, context=self.context)
+        return serializer.data
+
     def get_mandate(self, legislation):
         serializer = MandateSerializer(legislation.mandate, context=self.context)
         return serializer.data
