@@ -189,7 +189,7 @@ function slovenianDate(isoDate) {
   return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
 }
 
-function fixFetchCardArgs(cardPath, id, params = {}) {
+function fixFetchCardArgs(res, cardPath, id, params = {}) {
   // optional second argument
   if (typeof id === 'object') {
     params = id;
@@ -209,7 +209,7 @@ function fixFetchCardArgs(cardPath, id, params = {}) {
   }
 
   params.template = 'site';
-  params.locale = locale;
+  params.locale = res.locals.lang || res.app.locals.lang || locale;
 
   if (!params.date && defaultCardDate) {
     params.date = defaultCardDate;
@@ -256,7 +256,7 @@ async function fetchCardAsync(req, cardPath, params, uid, responseTimings) {
 // It has a bound `this` object with {req, res, outPromises, responseTimings}
 function fetchCard(cardPath, id, params = {}) {
   // due to historical reasons, fix different ways of calling this function
-  ({ cardPath, params } = fixFetchCardArgs(cardPath, id, params));
+  ({ cardPath, params } = fixFetchCardArgs(this.res, cardPath, id, params));
 
   // generate a unique ID for this async call
   // this is used to replace the placeholder in the HTML later
