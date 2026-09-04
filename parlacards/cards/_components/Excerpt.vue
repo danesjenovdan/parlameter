@@ -1,18 +1,6 @@
 <template>
   <div class="excerpt">
     <div
-      v-if="icon"
-      :class="{ 'show-parent': showParent }"
-      class="icon-container"
-    >
-      <div
-        :style="{
-          'background-image': `url('${slugs.urls.cdn}/icons/legislation/${icon}')`,
-        }"
-        class="icon"
-      />
-    </div>
-    <div
       v-if="content || content.length !== 0"
       :class="{ 'show-parent': showParent }"
       class="rich-text"
@@ -51,15 +39,6 @@ export default {
       type: Boolean,
       default: true,
     },
-    icon: {
-      type: String,
-      default: '',
-    },
-  },
-  data() {
-    return {
-      slugs: this.$root.slugs,
-    };
   },
 };
 </script>

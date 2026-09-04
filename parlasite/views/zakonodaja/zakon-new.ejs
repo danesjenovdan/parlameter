@@ -1,0 +1,39 @@
+<%- await include('../_partials/header.ejs') %>
+
+<div class="session-container">
+  <div class="row header text-center">
+    <div class="col-lg-12">
+      <div class="media-object img-circle session-logo backgroundred law-logo">
+        <b><%= i18n(`legislation.${lawData.results.classification || 'decree'}`) %></b>
+      </div>
+
+      <h1 style="max-width: 600px; position: relative; margin: auto;"><%= lawData.results.text %></h1>
+
+      <br>
+      <h2 class="result">
+        <div class="parlaicon vote-result--<%= lawData.results.status || 'in_procedure' %>" class="result-icon"></div>
+        <div class="text"><%= i18n(`general.vote-result--${lawData.results.status || 'in_procedure'}`) %></div>
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <%- fetchCard('/legislation/info/', lawData.results.id) %>
+  </div>
+  <div class="col-md-6">
+    <%- fetchCard('/legislation/procedure/', lawData.results.id) %>
+  </div>
+  <div class="col-md-12">
+    <%- fetchCard('/legislation/summary/', lawData.results.id) %>
+  </div>
+  <div class="col-md-12">
+    <%- fetchCard('/legislation/votes/', lawData.results.id) %>
+  </div>
+  <div class="col-md-12">
+    <%- fetchCard('/legislation/documents/', lawData.results.id) %>
+  </div>
+</div>
+
+<%- await include('../_partials/footer.ejs') %>

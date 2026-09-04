@@ -26,6 +26,11 @@ from parlacards.serializers.cards import (
     LeastVotesInCommonCardSerializer,
     LegislationCardSerializer,
     LegislationDetailCardSerializer,
+    LegislationDocumentsCardSerializer,
+    LegislationInfoCardSerializer,
+    LegislationProcedureCardSerializer,
+    LegislationSummaryCardSerializer,
+    LegislationVotesCardSerializer,
     MandateLegislationCardSerializer,
     MandateMinutesCardSerializer,
     MandateMostUsedByPeopleCardSerializer,
@@ -479,6 +484,31 @@ class SingleVote(CardView):
 class SingleLegislation(CardView):
     thing = Law
     card_serializer = LegislationDetailCardSerializer
+
+
+class LegislationInfo(CardView):
+    thing = Law
+    card_serializer = LegislationInfoCardSerializer
+
+
+class LegislationProcedure(CardView):
+    thing = Law
+    card_serializer = LegislationProcedureCardSerializer
+
+
+class LegislationDocuments(CardView):
+    thing = Law
+    card_serializer = LegislationDocumentsCardSerializer
+
+
+class LegislationVotes(CardView):
+    thing = Law
+    card_serializer = LegislationVotesCardSerializer
+
+
+class LegislationSummary(CardView):
+    thing = Law
+    card_serializer = LegislationSummaryCardSerializer
 
 
 class SingleMinutes(CardView):

@@ -1,3 +1,4 @@
+from adminsortable2.admin import SortableAdminBase, SortableInlineAdminMixin
 from django.conf import settings
 from django.contrib import admin
 from django.urls import reverse
@@ -12,6 +13,7 @@ from parladata.models import (
     Procedure,
     ProcedurePhase,
     ProcedureType,
+    ProcedureTypeDefaultPhase,
 )
 
 
@@ -77,10 +79,19 @@ class LegislationClassificationAdmin(admin.ModelAdmin):
     readonly_fields = ["created_at", "updated_at"]
 
 
-class ProcedureTypeAdmin(admin.ModelAdmin):
+class ProcedureTypeDefaultPhaseInline(SortableInlineAdminMixin, admin.TabularInline):
+    model = ProcedureTypeDefaultPhase
+    fk_name = "procedure_type"
+    fields = ["procedure_phase", "order"]
+    extra = 0
+    readonly_fields = ["created_at", "updated_at"]
+
+
+class ProcedureTypeAdmin(SortableAdminBase, admin.ModelAdmin):
     list_display = ("name",)
     search_fields = ("name",)
     readonly_fields = ["created_at", "updated_at"]
+    inlines = [ProcedureTypeDefaultPhaseInline]
 
 
 admin.site.register(Law, LawAdmin)

@@ -132,4 +132,4 @@ class Link(Timestampable, Taggable):
         # ordering = ['-created_at']
 
     def __str__(self):
-        return self.url
+        return f"{self.id} {self.url}"

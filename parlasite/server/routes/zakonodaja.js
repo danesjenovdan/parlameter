@@ -60,4 +60,24 @@ router.get(
   }),
 );
 
+router.get(
+  '/new/:slug',
+  ar(async (render, req, res, next) => {
+    const lawData = await getNewData(req.params.slug);
+    if (lawData) {
+      render('zakonodaja/zakon-new', {
+        ogImageUrl: getOgImageUrl('circle', {
+          title: i18n('titles.legislation'),
+          h1: lawData.results.text,
+        }),
+        activeMenu: 'legislation_act',
+        pageTitle: i18n('titles.legislation'),
+        lawData,
+      });
+    } else {
+      next();
+    }
+  }),
+);
+
 module.exports = router;
