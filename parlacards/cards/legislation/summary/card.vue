@@ -1,5 +1,5 @@
 <template>
-  <card-wrapper :header-config="headerConfig" maxHeight>
+  <card-wrapper :header-config="headerConfig" max-height>
     <div class="legislation-summary">
       <Excerpt :content="summary.text || 'N/A'" :show-parent="false" />
     </div>
