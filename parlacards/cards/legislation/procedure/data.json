@@ -1,0 +1,33 @@
+{
+  "url": "http://localhost:8000/v3/cards/legislation/procedure/?id=8515",
+  "id": 8515,
+  "data": {
+    "results": {
+      "procedure_type": "skrajšani",
+      "considerations": [
+        {
+          "id": 14645,
+          "name": "obravnava postopka - skrajšani postopek",
+          "timestamp": "2026-05-11T00:00:00"
+        },
+        {
+          "id": 14646,
+          "name": "druga obravnava MDT - skrajšani postopek",
+          "timestamp": "2026-05-20T00:00:00"
+        }
+      ],
+      "future_considerations": []
+    },
+    "mandate": {
+      "id": 4,
+      "description": "10. sklic DZ",
+      "beginning": "2026-04-10T00:00:00"
+    },
+    "legislation": {
+      "id": 8515,
+      "text": "Zakon o spremembah in dopolnitvah Zakona o Slovenskem državnem holdingu",
+      "epa": "61-X",
+      "status": "in_procedure"
+    }
+  }
+}
