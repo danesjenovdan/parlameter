@@ -116,7 +116,7 @@ class GroupQuestionCardSerializer(GroupScoreCardSerializer):
         )
 
         # calculate cache key for the page
-        page_cache_key = f"GroupQuestionCardSerializer_{calculate_cache_key_for_page(paged_object_list, pagination_metadata)}"
+        page_cache_key = f"GroupQuestionCardSerializer_{group.id}_{calculate_cache_key_for_page(paged_object_list, pagination_metadata)}"
 
         # if there's something in the cache return it, otherwise serialize and save to the cache
         if cached_members := cache.get(page_cache_key):

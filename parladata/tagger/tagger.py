@@ -10,10 +10,10 @@ import sys
 
 reldir = os.path.dirname(os.path.abspath(__file__))
 
+import _pickle as pickle
 from io import StringIO
 from subprocess import PIPE, Popen
 
-import _pickle as pickle
 import pycrfsuite
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.naive_bayes import MultinomialNB

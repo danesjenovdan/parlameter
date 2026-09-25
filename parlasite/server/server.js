@@ -45,6 +45,18 @@ function setupExpress() {
       next();
     });
 
+    // request info middleware
+    app.use((req, res, next) => {
+      res.locals.request = {
+        protocol: req.protocol,
+        hostname: req.hostname,
+        originalUrl: req.originalUrl,
+        params: req.params,
+        query: req.query,
+      };
+      next();
+    });
+
     require('./routes')(app);
 
     // all other routes

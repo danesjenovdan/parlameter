@@ -1,15 +1,13 @@
 from django.core.management.base import BaseCommand, CommandError
+
 from parlacards.models import GroupUnity
 from parlacards.scores.unity import save_organizations_vote_unities
-
 from parladata.models.common import Mandate
 from parladata.models.motion import Motion
 from parladata.models.organization import (
     CLASSIFICATIONS as ORGANIZATION_CLASSIFICATIONS,
 )
-from parladata.models.organization import (
-    Organization,
-)
+from parladata.models.organization import Organization
 
 
 class Command(BaseCommand):

@@ -87,23 +87,11 @@ class LegislationBasicInfoDetailSerializer(serializers.Serializer):
     status = serializers.CharField(source="status.name")
 
 
-class LegislationBasicInfoSerializer(CommonCachableSerializer):
-    legislation = serializers.SerializerMethodField()
-
-    def calculate_cache_key(self, legislation):
-        return f'LegislationBasicInfoSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
-
-    def get_legislation(self, legislation):
-        return LegislationBasicInfoDetailSerializer(
-            legislation, context=self.context
-        ).data
-
-
-class LegislationInfoSerializer(LegislationBasicInfoSerializer):
+class LegislationInfoSerializer(CommonCachableSerializer):
     epa = serializers.CharField()
     proposed_by = serializers.CharField(source="proposer_text")
-    classification = serializers.CharField(source="classification.name")
-    procedure_type = serializers.CharField(source="procedure_type.name")
+    classification = serializers.SerializerMethodField()
+    procedure_type = serializers.SerializerMethodField()
     timestamp = serializers.DateTimeField()
     tags = serializers.SerializerMethodField()
 
@@ -113,11 +101,14 @@ class LegislationInfoSerializer(LegislationBasicInfoSerializer):
     def get_classification(self, obj):
         return obj.classification.name if obj.classification else None
 
+    def get_procedure_type(self, obj):
+        return obj.procedure_type.name if obj.procedure_type else None
+
     def get_tags(self, obj):
         return [tag.name for tag in obj.tags.all()]
 
 
-class LegislationProcedureSerializer(LegislationBasicInfoSerializer):
+class LegislationProcedureSerializer(CommonCachableSerializer):
     procedure_type = serializers.CharField(source="procedure_type.name")
     considerations = serializers.SerializerMethodField()
     future_considerations = serializers.SerializerMethodField()
@@ -170,28 +161,7 @@ class LegislationProcedureSerializer(LegislationBasicInfoSerializer):
         return future_phases
 
 
-class LegislationDocumentsSerializer(LegislationBasicInfoSerializer):
-    documents = serializers.SerializerMethodField()
-
-    def calculate_cache_key(self, legislation):
-        return f'LegislationDocsSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
-
-    def get_documents(self, obj):
-        return _serialize_legislation_documents(obj, context=self.context)
-
-
-class LegislationVotesSerializer(LegislationBasicInfoSerializer):
-    votes = serializers.SerializerMethodField()
-
-    def calculate_cache_key(self, legislation):
-        return f'LegislationVotesSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
-
-    def get_votes(self, obj):
-        votes = Vote.objects.filter(motion__law=obj)
-        return BareVoteSerializer(votes, many=True, context=self.context).data
-
-
-class LegislationSummarySerializer(LegislationBasicInfoSerializer):
+class LegislationSummarySerializer(CommonCachableSerializer):
     summary = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):

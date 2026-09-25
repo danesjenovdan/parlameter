@@ -34,16 +34,30 @@ export default {
       type: Array,
       required: true,
     },
+    groupBy: {
+      type: String,
+      default: 'tags',
+      validate: (value) => ['tags', 'group'].includes(value),
+    },
   },
   computed: {
     otherGroupTag() {
       return this.$t('other');
     },
     groupedDocuments() {
-      return groupBy(
-        this.documents,
-        (document) => document?.tags?.[0]?.name || this.otherGroupTag,
-      );
+      if (this.groupBy === 'tags') {
+        return groupBy(
+          this.documents,
+          (document) => document?.tags?.[0]?.name || this.otherGroupTag,
+        );
+      }
+      if (this.groupBy === 'group') {
+        return groupBy(
+          this.documents,
+          (document) => document?.group || this.otherGroupTag,
+        );
+      }
+      return { [this.otherGroupTag]: this.documents };
     },
     hasGroups() {
       const groupKeys = Object.keys(this.groupedDocuments);

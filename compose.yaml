@@ -11,23 +11,23 @@ services:
     build:
       context: ./parladata
       dockerfile: ../dockerfiles/parladata.Dockerfile
-    ports:
-      - 8000:8000
-    depends_on:
-      - db
+    # make it available on localhost directly
+    network_mode: host
+    # ports:
+    #   - 8000:8000
     environment:
       PYTHONUNBUFFERED: 1
       DJANGO_DEBUG: "yes"
       DJANGO_SETTINGS_MODULE: parladata_project.settings.k8s
       DJANGO_SECRET_KEY: make-me-secret
-      DJANGO_DATABASE_HOST: db
+      DJANGO_DATABASE_HOST: localhost
       PARLADATA_URL: http://localhost:8000/v1
       PARLALIZE_URL: http://localhost:8080/v1
       ISCI_URL: http://localhost:8888/
       PARLAMETER_URL: https://parlameter.si/
       CARDS_URL: https://glej.parlameter.si/
       NOTIFICATIONS_URL: https://obvestila.parlameter.si/
-      PARLAMETER_SOLR_URL: http://solr:8983/solr/parlasearch
+      PARLAMETER_SOLR_URL: http://localhost:8983/solr/parlasearch
       PARLAMETER_ENABLE_S3: ""
       PARLAMETER_AWS_ACCESS_KEY_ID: ""
       PARLAMETER_AWS_SECRET_ACCESS_KEY: ""
@@ -38,6 +38,8 @@ services:
     volumes:
       - ./parladata:/app
       - ./parladata/ipython_config.py:/root/.ipython/profile_default/ipython_config.py
+    depends_on:
+      - db
 
   db:
     image: postgres:16-alpine
@@ -45,23 +47,21 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: parladata
-    ports:
-      - 5432:5432
+    # make it available on localhost directly
+    network_mode: host
+    # ports:
+    #   - 5432:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
-
-  cache:
-    image: memcached
-    entrypoint:
-      - memcached
-      - -m 64
 
   solr:
     build:
       context: ./parladata/solr
       dockerfile: ../../dockerfiles/solr.Dockerfile
-    ports:
-      - 8983:8983
+    # make it available on localhost directly
+    network_mode: host
+    # ports:
+    #   - 8983:8983
     volumes:
       - solrdata:/var/solr
       - ./parladata/solr/parlasearch-conf:/parlasearch-conf
@@ -72,13 +72,15 @@ services:
   parlacards:
     build:
       context: .
-      dockerfile: ./dockerfiles/dev.parlacards.Dockerfile
-    command: sh -c 'npm run build && npm run start:watch'
-    ports:
-      - 3000:3000
+      dockerfile: ./dockerfiles/dev.parlafront.Dockerfile
+      target: parlacards
+    # make it available on localhost directly
+    network_mode: host
+    # ports:
+    #   - 3000:3000
     environment:
       - VITE_PARLASSETS_URL=http://localhost:8080
-      - VITE_PARLADATA_URL=http://parladata:8000/v3
+      - VITE_PARLADATA_URL=http://localhost:8000/v3
       - VITE_PARLACARDS_URL=http://localhost:3000
       - VITE_PARLASITE_URL=http://localhost:3066
       - VITE_METAIMAGES_URL=https://meta-image-generator.djnd.si/parlameter
@@ -87,43 +89,69 @@ services:
     volumes:
       - ./parlacards/build/:/app/build
       - ./parlacards/cards/:/app/cards
-      # #
-      # - ./parlacards/dist/:/app/dist
-      # #
+      - ./parlacards/dist/:/app/dist
       - ./parlacards/server/:/app/server
-      - ./parlacards/eslint.config.js:/app/eslint.config.js
       - ./parlacards/.prettierrc.json:/app/.prettierrc.json
+      - ./parlacards/eslint.config.js:/app/eslint.config.js
       - ./parlacards/instrument.js:/app/instrument.js
+      - ./parlacards/jsconfig.json:/app/jsconfig.json
       - ./parlassets/:/parlassets
 
+  parlacards-dev:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/dev.parlafront.Dockerfile
+      target: parlacards-dev
+    # make it available on localhost directly
+    network_mode: host
+    # ports:
+    #   - 3001:3001
+    environment:
+      - VITE_PARLASSETS_URL=http://localhost:8080
+      - VITE_PARLADATA_URL=http://localhost:8000/v3
+      - VITE_PARLACARDS_URL=http://localhost:3000
+      - VITE_PARLASITE_URL=http://localhost:3066
+      - VITE_METAIMAGES_URL=https://meta-image-generator.djnd.si/parlameter
+    volumes:
+      - ./parlacards/build/:/app/build
+      - ./parlacards/cards/:/app/cards
+      - ./parlacards/.prettierrc.json:/app/.prettierrc.json
+      - ./parlacards/eslint.config.js:/app/eslint.config.js
+      - ./parlacards/jsconfig.json:/app/jsconfig.json
+      - ./parlassets/:/parlassets
 
   parlassets:
     build:
       context: .
-      dockerfile: ./dockerfiles/dev.parlassets.Dockerfile
-    ports:
-      - 8080:8080
+      dockerfile: ./dockerfiles/dev.parlafront.Dockerfile
+      target: parlassets
+    # make it available on localhost directly
+    network_mode: host
+    # ports:
+    #   - 8080:8080
     volumes:
       - ./parlassets/build/:/app/build
       - ./parlassets/public/:/app/public
       - ./parlassets/src/:/app/src
-      #
       - ./parlacards/dist/client:/app/public/assets
-      #
+    depends_on:
+      - parlacards
 
   parlasite:
     build:
       context: .
       dockerfile: ./dockerfiles/dev.parlasite.Dockerfile
-    ports:
-      - 3066:3066
+    # make it available on localhost directly
+    network_mode: host
+    # ports:
+    #   - 3066:3066
     environment:
       - PARLASITE_CDN_URL=http://localhost:8080
-      - PARLASITE_CARDS_URL=http://parlacards:3000
-      - PARLASITE_DATA_URL=http://parladata:8000/v3
+      - PARLASITE_CARDS_URL=http://localhost:3000
+      - PARLASITE_DATA_URL=http://localhost:8000/v3
       - PARLASITE_LEADER_ID=4434
-      - PARLASITE_ROOT_ORG_ID=137
-      - PARLASITE_MANDATE_ID=2
+      - PARLASITE_ROOT_ORG_ID=590
+      - PARLASITE_MANDATE_ID=4
       - PARLASITE_DEFAULT_CARD_DATE=
       - PARLASITE_NEWSLETTER_SEGMENT_ID=
       - SENTRY_DSN=https://not-configured/dev

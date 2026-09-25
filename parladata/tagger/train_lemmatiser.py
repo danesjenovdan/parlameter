@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*-coding:utf8-*-
+import _pickle as pickle
 import sys
 
-import _pickle as pickle
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
