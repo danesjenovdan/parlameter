@@ -42,6 +42,7 @@ class SocialForm(ModelForm):
             "agenda_item",
             "legislation_consideration",
             "answer",
+            "legislation",
         ]
 
 
@@ -59,6 +60,7 @@ class OrganizationLinkForm(ModelForm):
             "agenda_item",
             "legislation_consideration",
             "answer",
+            "legislation",
         ]
 
 
@@ -76,6 +78,7 @@ class MotionLinkForm(ModelForm):
             "agenda_item",
             "legislation_consideration",
             "answer",
+            "legislation",
         ]
 
 
@@ -92,6 +95,7 @@ class LinkOrganizationInline(admin.TabularInline):
         "agenda_item",
         "legislation_consideration",
         "answer",
+        "legislation",
     ]
     extra = 0
 
@@ -108,6 +112,7 @@ class LinkMembershipInline(admin.TabularInline):
         "agenda_item",
         "legislation_consideration",
         "answer",
+        "legislation",
     ]
     extra = 0
 
@@ -125,6 +130,7 @@ class LinkMotionInline(admin.TabularInline):
         "agenda_item",
         "legislation_consideration",
         "answer",
+        "legislation",
     ]
     extra = 0
 
@@ -141,6 +147,7 @@ class LinkQuestionInline(admin.TabularInline):
         "agenda_item",
         "legislation_consideration",
         "answer",
+        "legislation",
     ]
     extra = 0
 
@@ -157,6 +164,7 @@ class LinkAnswerInline(admin.TabularInline):
         "agenda_item",
         "legislation_consideration",
         "question",
+        "legislation",
     ]
     extra = 0
 
@@ -174,6 +182,7 @@ class LinkPersonSocialInline(admin.TabularInline):
         "agenda_item",
         "legislation_consideration",
         "answer",
+        "legislation",
     ]
     extra = 0
 
