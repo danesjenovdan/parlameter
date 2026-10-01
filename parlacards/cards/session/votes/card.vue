@@ -3,7 +3,7 @@
     <div class="votes-list">
       <div class="filters">
         <div class="filter text-filter">
-          <div v-t="'title-search'" class="filter-label"></div>
+          <div class="filter-label">{{ $t('title-search') }}</div>
           <search-field
             v-model="textFilter"
             @update:model-value="searchVotes"
@@ -47,8 +47,8 @@
 
 <script>
 import common from '@/_mixins/common.js';
-import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import links from '@/_mixins/links.js';
+import cancelableRequest from '@/_mixins/cancelableRequest.js';
 import { sessionHeader } from '@/_mixins/altHeaders.js';
 import { sessionOgImage } from '@/_mixins/ogImages.js';
 import { sessionVotesContextUrl } from '@/_mixins/contextUrls.js';
