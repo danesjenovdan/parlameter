@@ -142,7 +142,11 @@ class LegislationProcedureSerializer(CommonCachableSerializer):
             .distinct("procedure_phase", "timestamp")
             .order_by("timestamp")
             .last()
-            .procedure_phase.name
+        )
+        last_consideration_phase_name = (
+            last_consideration.procedure_phase.name
+            if last_consideration and last_consideration.procedure_phase
+            else None
         )
         # Show only the phases that come after the last consideration
         future_phases = []
@@ -152,14 +156,14 @@ class LegislationProcedureSerializer(CommonCachableSerializer):
             .order_by("order")
             .prefetch_related("procedure_phase")
         ):
-            if last_phase_found:
+            if last_phase_found or last_consideration_phase_name is None:
                 future_phases.append(
                     {
                         "id": phase.procedure_phase.id,
                         "name": phase.procedure_phase.name,
                     }
                 )
-            if phase.procedure_phase.name == last_consideration:
+            if phase.procedure_phase.name == last_consideration_phase_name:
                 last_phase_found = True
         return future_phases
 
