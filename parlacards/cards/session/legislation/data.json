@@ -1,19 +1,99 @@
 {
-  "url": "https://parladata-slovenija.lb.djnd.si/v3/cards/session/legislation/?id=437",
+  "url": "http://localhost:8000/v3/cards/session/legislation/?id=437",
+  "id": 437,
   "data": {
     "results": {
       "legislation": [
         {
-          "id": 895,
-          "uid": "PZ8|C1257A70003EE6A1C125862C00537B8D",
-          "text": "Zakon o ratifikaciji Sporazuma med Vlado Republike Slovenije in Vlado Mongolije o mednarodnem cestnem prevozu potnikov in blaga",
-          "epa": "1506-VIII",
-          "status": "enacted",
-          "passed": true,
+          "id": 785,
+          "uid": "PZ|6CEB0126116062DFC1258744004A630F",
+          "text": "Zakon o spremembah in dopolnitvah Zakona o igrah na srečo",
+          "epa": "2096-VIII",
+          "status": "rejected",
+          "passed": null,
           "classification": "law",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2021-12-23T00:00:00"
+          "timestamp": "2021-09-02T00:00:00",
+          "last_consideration": "2022-03-23T16:54:28"
+        },
+        {
+          "id": 909,
+          "uid": "PZ|D8619A870ACB42CBC125879D004AE879",
+          "text": "Zakon o varstvu okolja",
+          "epa": "2317-VIII",
+          "status": "enacted",
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-11-30T00:00:00",
+          "last_consideration": "2022-03-16T15:25:11"
+        },
+        {
+          "id": 894,
+          "uid": "PZ|4F9F0A16262F6335C125877C00253C50",
+          "text": "Zakon o ratifikaciji Sporazuma med Vlado Republike Slovenije in Organizacijo za sodelovanje pri skupnem oboroževanju (OCCAR) o upravljanju programa Boxer s strani OCCAR",
+          "epa": "2238-VIII",
+          "status": "enacted",
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-12-02T00:00:00",
+          "last_consideration": "2022-02-21T11:42:15"
+        },
+        {
+          "id": 486,
+          "uid": "PA|5D9D56E57C6EEF09C12587CE0044BDFB",
+          "text": "Predlog za imenovanje člana Sveta Banke Slovenije - viceguvernerja",
+          "epa": "2439-VIII",
+          "status": "rejected",
+          "passed": null,
+          "classification": "act",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2022-01-18T00:00:00",
+          "last_consideration": "2022-02-04T19:24:41"
+        },
+        {
+          "id": 908,
+          "uid": "PZ8|C1257A70003EE6A1C12586DC0023312E",
+          "text": "Zakon o spremembah in dopolnitvah Zakona o pokojninskem in invalidskem zavarovanju",
+          "epa": "1897-VIII",
+          "status": "rejected",
+          "passed": false,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-05-21T00:00:00",
+          "last_consideration": "2022-02-04T19:08:21"
+        },
+        {
+          "id": 910,
+          "uid": "PZ|ABDABDDC2CEE772BC12587AB003B973E",
+          "text": "Zakon o spremembah in dopolnitvah Zakona o nalezljivih boleznih",
+          "epa": "2366-VIII",
+          "status": "rejected",
+          "passed": null,
+          "classification": "law",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2021-12-14T00:00:00",
+          "last_consideration": "2022-02-04T19:06:49"
+        },
+        {
+          "id": 487,
+          "uid": "PA|7827313037FBBAC9C12587CF0043EC73",
+          "text": "Vmesno poročilo o opravljeni parlamentarni preiskavi Preiskovalne komisije o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in političnega vplivanja na potek oziroma izid predkazenskih in drugih postopkov",
+          "epa": "2445-VIII",
+          "status": "rejected",
+          "passed": null,
+          "classification": "act",
+          "has_votes": true,
+          "has_abstract": false,
+          "timestamp": "2022-01-19T00:00:00",
+          "last_consideration": "2022-02-04T19:04:01"
         },
         {
           "id": 911,
@@ -25,7 +105,8 @@
           "classification": "law",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2021-12-22T00:00:00"
+          "timestamp": "2021-12-22T00:00:00",
+          "last_consideration": "2022-02-04T19:02:10"
         },
         {
           "id": 878,
@@ -37,101 +118,41 @@
           "classification": "law",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2021-11-19T00:00:00"
+          "timestamp": "2021-11-19T00:00:00",
+          "last_consideration": "2022-02-04T19:01:31"
         },
         {
-          "id": 897,
-          "uid": "PZ8|C1257A70003EE6A1C125878B0025863E",
-          "text": "Zakon o preprečevanju pranja denarja in financiranja terorizma",
-          "epa": "2268-VIII",
+          "id": 883,
+          "uid": "PA|9BEB0114A6170077C12587DE00378084",
+          "text": "Razprava o odgovoru ministra za obrambo mag. Mateja Tonina na poslansko vprašanje Mojce Žnidarič v zvezi s sistemsko ureditvijo področja gasilstva",
+          "epa": "2489-VIII",
           "status": "rejected",
-          "passed": false,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-12T00:00:00"
-        },
-        {
-          "id": 899,
-          "uid": "PZ8|C1257A70003EE6A1C125878800467CA0",
-          "text": "Zakon o spremembah in dopolnitvi Zakona o poslancih",
-          "epa": "2249-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-09T00:00:00"
-        },
-        {
-          "id": 900,
-          "uid": "PZ8|C1257A70003EE6A1C1258784004477BA",
-          "text": "Zakon o spremembah in dopolnitvah Zakona o sistemu jamstva za vloge",
-          "epa": "2248-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-05T00:00:00"
-        },
-        {
-          "id": 798,
-          "uid": "PZ8|C1257A70003EE6A1C1258783003F714C",
-          "text": "Zakon o spremembah Zakona o Javnem štipendijskem, razvojnem, invalidskem in preživninskem skladu Republike Slovenije",
-          "epa": "2242-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-11-04T00:00:00"
-        },
-        {
-          "id": 799,
-          "uid": "PZ8|C1257A70003EE6A1C125877B00467B37",
-          "text": "Zakon o spremembah in dopolnitvah Zakona o rudarstvu",
-          "epa": "2233-VIII",
-          "status": null,
           "passed": null,
-          "classification": "law",
+          "classification": "act",
           "has_votes": true,
           "has_abstract": false,
-          "timestamp": "2021-10-27T00:00:00"
-        },
-        {
-          "id": 912,
-          "uid": "PZ8|C1257A70003EE6A1C125876F004036A1",
-          "text": "Zakon o sanaciji v preteklosti onesnaženega okolja na območju Mestne občine Celje v Celjski kotlini",
-          "epa": "2206-VIII",
-          "status": null,
-          "passed": null,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-10-15T00:00:00"
-        },
-        {
-          "id": 898,
-          "uid": "PZ8|C1257A70003EE6A1C12586B8001C728C",
-          "text": "Zakon o omejitvi in porazdelitvi valutnega tveganja med kreditodajalci in kreditojemalci kreditov v švicarskih frankih",
-          "epa": "1797-VIII",
-          "status": "enacted",
-          "passed": true,
-          "classification": "law",
-          "has_votes": true,
-          "has_abstract": false,
-          "timestamp": "2021-04-14T00:00:00"
+          "timestamp": "2022-02-03T00:00:00",
+          "last_consideration": "2022-02-03T00:00:00"
         }
       ],
-      "classifications": ["act", "law"]
+      "classifications": ["act", "law"],
+      "statuses": [
+        "in_procedure",
+        "rejected",
+        "enacted",
+        "test",
+        "submitted",
+        "test2",
+        "test3"
+      ]
     },
     "mandate": {
-      "description": "VIII",
-      "beginning": null
+      "id": 1,
+      "description": "8. sklic DZ",
+      "beginning": "2018-06-22T00:00:00"
     },
-    "legislation:count": 10,
-    "legislation:pages": 1,
+    "legislation:count": 33,
+    "legislation:pages": 4,
     "legislation:page": 1,
     "legislation:per_page": 10
   }

@@ -1,4 +1,4 @@
-from django.db.models import Q
+from django.db.models import Max, Q
 
 from parlacards.pagination import create_paginator
 from parlacards.serializers.common import CardSerializer, MandateSerializer
@@ -13,7 +13,7 @@ from parladata.models.legislation import (
 class LegislationMixin:
     def _get_legislation(self, params, mandate=None, session=None):
         text_filter = params.get("text", "")
-        order = params.get("order_by", "-timestamp")
+        order = params.get("order_by", "-last_consideration")
         classification_filter = params.get("classification", None)
         organization_filter = params.get("organization", None)
         status_filter = params.get("status", None)
@@ -42,7 +42,11 @@ class LegislationMixin:
             legislation = legislation.filter(status__name__in=statuses)
 
         # needs to be a new query because distinct and order_by need the same field as first param
-        legislation = Law.objects.filter(id__in=legislation).order_by(order, "id")
+        legislation = (
+            Law.objects.filter(id__in=legislation)
+            .annotate(last_consideration=Max("legislationconsideration__timestamp"))
+            .order_by(order, "id")
+        )
 
         return legislation
 

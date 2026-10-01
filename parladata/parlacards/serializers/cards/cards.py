@@ -48,8 +48,13 @@ from parlacards.serializers.common import (
 from parlacards.serializers.facets import GroupFacetSerializer, PersonFacetSerializer
 from parlacards.serializers.group_attendance import SessionGroupAttendanceSerializer
 from parlacards.serializers.legislation import (
+    LegislationBasicInfoDetailSerializer,
     LegislationDetailSerializer,
+    LegislationInfoSerializer,
+    LegislationProcedureSerializer,
     LegislationSerializer,
+    LegislationSummarySerializer,
+    _serialize_legislation_documents,
 )
 from parlacards.serializers.media import MediaReportSerializer
 from parlacards.serializers.membership import MembershipSerializer
@@ -71,6 +76,7 @@ from parlacards.serializers.style_scores import StyleScoresSerializer
 from parlacards.serializers.tfidf import TfidfSerializer
 from parlacards.serializers.unity import GroupUnityScoreSerializerField
 from parlacards.serializers.vote import (
+    BareVoteSerializer,
     SessionVoteSerializer,
     ToolsUnitySerializer,
     VoteSerializer,
@@ -1279,3 +1285,79 @@ class ToolsUnityCardSerializer(CardSerializer):
                 "bodies": bodies,
             },
         }
+
+
+#
+# LEGISLATION
+#
+class CardLegislationMandateSerializer(CardSerializer):
+    legislation = serializers.SerializerMethodField()
+
+    def get_legislation(self, obj):
+        serializer = LegislationBasicInfoDetailSerializer(obj, context=self.context)
+        return serializer.data
+
+    def get_mandate(self, legislation):
+        serializer = MandateSerializer(legislation.mandate, context=self.context)
+        return serializer.data
+
+
+class LegislationInfoCardSerializer(CardLegislationMandateSerializer):
+    def get_results(self, legislation):
+        serializer = LegislationInfoSerializer(legislation, context=self.context)
+        return serializer.data
+
+
+class LegislationProcedureCardSerializer(CardLegislationMandateSerializer):
+    def get_results(self, legislation):
+        serializer = LegislationProcedureSerializer(legislation, context=self.context)
+        return serializer.data
+
+
+class LegislationDocumentsCardSerializer(CardLegislationMandateSerializer):
+    def get_results(self, legislation):
+        return _serialize_legislation_documents(legislation, context=self.context)
+
+
+class LegislationVotesCardSerializer(CardLegislationMandateSerializer):
+    def get_results(self, obj):
+        # this is implemented in to_representation for pagination
+        return None
+
+    def to_representation(self, instance):
+        parent_data = super().to_representation(instance)
+
+        # instance is the law
+        votes = Vote.objects.filter(motion__law=instance).order_by(
+            "timestamp", "id"  # fallback ordering
+        )
+
+        # TODO: maybe lemmatize?, maybe search by each word separately?
+        if text := self.context.get("GET", {}).get("text", None):
+            votes = votes.filter(motion__text__icontains=text)
+
+        passed_string = self.context.get("GET", {}).get("passed", None)
+        if passed_string in ["true", "false"]:
+            passed_bool = passed_string == "true"
+            votes = votes.filter(result=passed_bool)
+
+        paged_object_list, pagination_metadata = create_paginator(
+            self.context.get("GET", {}), votes
+        )
+
+        # serialize votes
+        vote_serializer = BareVoteSerializer(
+            paged_object_list, many=True, context=self.context
+        )
+
+        return {
+            **parent_data,
+            **pagination_metadata,
+            "results": vote_serializer.data,
+        }
+
+
+class LegislationSummaryCardSerializer(CardLegislationMandateSerializer):
+    def get_results(self, legislation):
+        serializer = LegislationSummarySerializer(legislation, context=self.context)
+        return serializer.data

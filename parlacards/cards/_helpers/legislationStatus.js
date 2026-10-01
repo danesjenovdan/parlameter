@@ -35,5 +35,10 @@ const LEGISLATION_STATUSES = {
 
 export default (status) => {
   const key = status || 'in_procedure';
-  return LEGISLATION_STATUSES[key] || LEGISLATION_STATUSES.in_procedure;
+  return (
+    LEGISLATION_STATUSES[key] || {
+      iconClass: '',
+      translationKey: key,
+    }
+  );
 };
