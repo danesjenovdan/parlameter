@@ -12,9 +12,10 @@
     "build:locales": "node build/build-locales.js",
     "start": "node --import ./instrument.js server/index.js",
     "start:watch": "nodemon -e js,cjs,mjs,vue,html --import ./instrument.js server/index.js",
-    "lint": "npm run lint:eslint && npm run lint:component-names",
+    "lint": "npm run lint:eslint && npm run lint:component-names && npm run lint:unused-components",
     "lint:eslint": "eslint .",
-    "lint:component-names": "node build/lint-component-names.js"
+    "lint:component-names": "node build/lint-component-names.js",
+    "lint:unused-components": "node build/lint-unused-components.js"
   },
   "dependencies": {
     "@fastify/cors": "^11.3.0",
