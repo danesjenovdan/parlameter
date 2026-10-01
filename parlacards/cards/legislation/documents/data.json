@@ -1,0 +1,68 @@
+{
+  "url": "http://localhost:8000/v3/cards/legislation/documents/?id=8591",
+  "id": 8591,
+  "data": {
+    "results": [
+      {
+        "id": 125623,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/00c3e0aefd12839e4a17396cabfdf9acb6dedb1f2b06b0a7721c75806ad2d18e",
+        "name": "Mnenje",
+        "tags": [],
+        "group": "obravnava MDT - ratifikacija"
+      },
+      {
+        "id": 125846,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/4356d72fb9869ba2ea2c8ea3cd1650db0f3ec08b6394d680e95c4e22c92d51f0",
+        "name": "Dopis Državnemu svetu",
+        "tags": [],
+        "group": "sprejet predlog"
+      },
+      {
+        "id": 125845,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/4863aa98541b38609a62c1fd39c7c8d0ccc17950a39418021c05726c86bf88fd",
+        "name": "Besedilo zakona poslano Državnemu svetu",
+        "tags": [],
+        "group": "sprejet predlog"
+      },
+      {
+        "id": 125621,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/f00a7ce50a5d5e7fd2094ac4849c1a62bbe0c94c52d687c3b6690092c4901ae4",
+        "name": "Obvestilo o dodelitvi",
+        "tags": [],
+        "group": "obravnava MDT - ratifikacija"
+      },
+      {
+        "id": 125619,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/f2eb5fab6ec9673832e41c5d5c555d70bfcb8ad6ad8089850731b574f6f246b0",
+        "name": "Dopis poslancem o objavi predloga zakona v omrežju DZ",
+        "tags": [],
+        "group": "obravnava MDT - ratifikacija"
+      },
+      {
+        "id": 125620,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/f303afa3956443591862c9c72b5b1d241f6ffe89c4faf4a9ef7622570c5d5631",
+        "name": "Obvestilo Državnemu svetu (drugi odstavek 215. člena)",
+        "tags": [],
+        "group": "obravnava MDT - ratifikacija"
+      },
+      {
+        "id": 125622,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ff0186a87fb4b76468c5b5d2dd3b7e70cd60caccf30a7586bee2afbcfa3c4b5d",
+        "name": "Obvestilo o dodelitvi",
+        "tags": [],
+        "group": "obravnava MDT - ratifikacija"
+      }
+    ],
+    "mandate": {
+      "id": 4,
+      "description": "10. sklic DZ",
+      "beginning": "2026-04-10T00:00:00"
+    },
+    "legislation": {
+      "id": 8591,
+      "text": "Zakon o ratifikaciji Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Drugega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji in Tretjega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji",
+      "epa": "165-X",
+      "status": "enacted"
+    }
+  }
+}
