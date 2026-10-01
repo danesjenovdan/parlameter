@@ -151,11 +151,16 @@ class LegislationProcedureSerializer(CommonCachableSerializer):
         # Show only the phases that come after the last consideration
         future_phases = []
         last_phase_found = False
-        for phase in (
-            obj.procedure_type.default_phases.all()
-            .order_by("order")
-            .prefetch_related("procedure_phase")
-        ):
+        procedure_type_default_phases = (
+            (
+                obj.procedure_type.default_phases.all()
+                .order_by("order")
+                .prefetch_related("procedure_phase")
+            )
+            if obj.procedure_type
+            else []
+        )
+        for phase in procedure_type_default_phases:
             if last_phase_found or last_consideration_phase_name is None:
                 future_phases.append(
                     {
