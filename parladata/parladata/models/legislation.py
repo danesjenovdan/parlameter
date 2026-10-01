@@ -272,11 +272,40 @@ class ProcedureType(Timestampable):
         blank=True,
         null=True,
     )
+    default_procedure_phases = models.ManyToManyField(
+        "ProcedurePhase",
+        verbose_name=_("Default procedure phases"),
+        help_text=_("Default phases for this type of procedure"),
+        blank=True,
+        through="ProcedureTypeDefaultPhase",
+    )
+
+
+class ProcedureTypeDefaultPhase(Timestampable):
+    procedure_type = models.ForeignKey(
+        "ProcedureType",
+        verbose_name=_("Procedure type"),
+        help_text=_("Type of procedure"),
+        on_delete=models.CASCADE,
+        related_name="default_phases",
+    )
+    procedure_phase = models.ForeignKey(
+        "ProcedurePhase",
+        verbose_name=_("Procedure phase"),
+        help_text=_("Phase of the procedure"),
+        on_delete=models.CASCADE,
+        related_name="procedure_type_default_phases",
+    )
+    order = models.IntegerField(
+        verbose_name=_("Order"),
+        help_text=_("Order of the phase in the procedure"),
+        default=0,
+    )
 
     class Meta:
         verbose_name = _("Procedure type")
         verbose_name_plural = _("Procedure types")
-        ordering = ["name"]
+        ordering = ["order"]
 
     def __str__(self):
-        return self.name
+        return self.procedure_phase.name
