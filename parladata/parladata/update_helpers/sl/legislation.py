@@ -3,7 +3,6 @@ from django.db.models import Q
 from parladata.models import Law, LegislationStatus, Motion
 
 ENACTED = LegislationStatus.objects.get(name="enacted")
-ACCEPTED = LegislationStatus.objects.get(name="submitted")
 REJECTED = LegislationStatus.objects.get(name="rejected")
 
 
