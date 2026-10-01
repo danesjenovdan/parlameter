@@ -109,12 +109,15 @@ class LegislationInfoSerializer(CommonCachableSerializer):
 
 
 class LegislationProcedureSerializer(CommonCachableSerializer):
-    procedure_type = serializers.CharField(source="procedure_type.name")
+    procedure_type = serializers.SerializerMethodField()
     considerations = serializers.SerializerMethodField()
     future_considerations = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):
         return f'LegislationProcedureSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
+
+    def get_procedure_type(self, obj):
+        return obj.procedure_type.name if obj.procedure_type else None
 
     def get_considerations(self, obj):
         considerations = (
@@ -139,24 +142,33 @@ class LegislationProcedureSerializer(CommonCachableSerializer):
             .distinct("procedure_phase", "timestamp")
             .order_by("timestamp")
             .last()
-            .procedure_phase.name
+        )
+        last_consideration_phase_name = (
+            last_consideration.procedure_phase.name
+            if last_consideration and last_consideration.procedure_phase
+            else None
         )
         # Show only the phases that come after the last consideration
         future_phases = []
         last_phase_found = False
-        for phase in (
-            obj.procedure_type.default_phases.all()
-            .order_by("order")
-            .prefetch_related("procedure_phase")
-        ):
-            if last_phase_found:
+        procedure_type_default_phases = (
+            (
+                obj.procedure_type.default_phases.all()
+                .order_by("order")
+                .prefetch_related("procedure_phase")
+            )
+            if obj.procedure_type
+            else []
+        )
+        for phase in procedure_type_default_phases:
+            if last_phase_found or last_consideration_phase_name is None:
                 future_phases.append(
                     {
                         "id": phase.procedure_phase.id,
                         "name": phase.procedure_phase.name,
                     }
                 )
-            if phase.procedure_phase.name == last_consideration:
+            if phase.procedure_phase.name == last_consideration_phase_name:
                 last_phase_found = True
         return future_phases
 
