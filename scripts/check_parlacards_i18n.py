@@ -1,6 +1,7 @@
 import glob
 import itertools
 import os
+import shutil
 import sys
 from collections import Counter
 from pathlib import Path
@@ -52,6 +53,10 @@ def report_missing_files(locales):
             box_print(locale, "+")
             missing_files = all_files - this_locale_paths
             for missing_file in missing_files:
+                # shutil.copy(
+                #     f"parlacards/cards/_i18n/sl/{missing_file}",
+                #     f"parlacards/cards/_i18n/{locale}/{missing_file}",
+                # )
                 print(missing_file)
             print()
             ret = True
