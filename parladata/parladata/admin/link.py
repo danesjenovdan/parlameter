@@ -220,6 +220,7 @@ class LinkAdmin(admin.ModelAdmin):
     ]
     readonly_fields = ["created_at", "updated_at"]
     list_filter = (ParsableFilter,)
+    search_fields = ("name", "note", "tags__name", "id")
 
 
 admin.site.register(Link, LinkAdmin)

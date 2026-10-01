@@ -33,5 +33,16 @@ compNames.forEach((compName) => {
   });
 });
 
-// eslint-disable-next-line no-console
-console.log(usageCount);
+const sortedUsageCount = Object.entries(usageCount).sort((a, b) => b[1] - a[1]);
+const unusedComponents = sortedUsageCount
+  .filter(([, count]) => count === 0)
+  .map(([compName]) => compName);
+
+if (unusedComponents.length === 0) {
+  // eslint-disable-next-line no-console
+  console.log('No unused components found.');
+} else {
+  // eslint-disable-next-line no-console
+  console.log(`Found unused components: \n  ${unusedComponents.join('\n  ')}`);
+  process.exit(1);
+}
