@@ -109,12 +109,15 @@ class LegislationInfoSerializer(CommonCachableSerializer):
 
 
 class LegislationProcedureSerializer(CommonCachableSerializer):
-    procedure_type = serializers.CharField(source="procedure_type.name")
+    procedure_type = serializers.SerializerMethodField()
     considerations = serializers.SerializerMethodField()
     future_considerations = serializers.SerializerMethodField()
 
     def calculate_cache_key(self, legislation):
         return f'LegislationProcedureSerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
+
+    def get_procedure_type(self, obj):
+        return obj.procedure_type.name if obj.procedure_type else None
 
     def get_considerations(self, obj):
         considerations = (
