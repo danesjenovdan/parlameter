@@ -5,9 +5,27 @@ $(function () {
   // show/hide mobile menu
   $(".mobile-menu__button").on("click", function (e) {
     e.preventDefault();
-    $("mobile-menu__hamburger").removeClass("mobile-menu__hambuger--closed");
     $(".menu-container").toggleClass("open");
+    if ($(".menu-container").hasClass("open")) {
+      $("a.mobile-menu__hamburger").attr("aria-label", "Close navigation");
+    } else {
+      $("a.mobile-menu__hamburger").attr("aria-label", "Open navigation");
+    }
   });
+
+  function toggleInert() {
+    if (window.innerWidth > 992) {
+      $(".menu-container").removeClass("open");
+      $(".mobile-menu__button").attr("inert", "");
+    } else {
+      $(".mobile-menu__button").removeAttr("inert");
+    }
+  }
+
+  window.addEventListener("resize", function () {
+    toggleInert();
+  });
+  toggleInert();
 
   // mandate selector
   $("select.mandate-select").on("change", function () {
