@@ -1,6 +1,7 @@
 {
   "landing": {
     "title": "Parlameter",
+    "home-link-label": "Parlameter – vstopna stran",
     "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Državnem zboru.",
     "description": "Razišči, kdo so poslanci in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je Državni zbor sprejel v tem mandatu.",
     "search": {
@@ -46,11 +47,13 @@
     }
   },
   "menu": {
+    "navigation-label": "Glavna navigacija",
     "legislation": "Zakonodaja",
     "sessions": "Seje",
     "mps": "Poslanci",
     "pgs": "Poslanske skupine",
-    "tools": "Orodja"
+    "tools": "Orodja",
+    "search": "Iskanje"
   },
   "footer": {
     "description": "Parlameter je odprtokodno orodje, ki ga razvija in vzdržuje <a href=\"https://danesjenovdan.si\" target=\"_blank\">Danes je nov dan, Inštitut za druga vprašanja</a>. Celotna koda je prosto dostopna na <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repozitoriju</a>.",

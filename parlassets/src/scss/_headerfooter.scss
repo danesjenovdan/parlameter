@@ -156,7 +156,7 @@ body.flex-body {
       cursor: default;
     }
 
-    &__hambuger {
+    &__hamburger {
       height: 25px;
       width: 28px;
       background-size: contain;
@@ -212,15 +212,15 @@ body.flex-body {
         transform: scale(60);
       }
 
-      .mobile-menu__hambuger-line--1 {
+      .mobile-menu__hamburger-line--1 {
         transform: translateY(12px) translateY(-50%) rotate(-135deg);
       }
 
-      .mobile-menu__hambuger-line--2 {
+      .mobile-menu__hamburger-line--2 {
         opacity: 0;
       }
 
-      .mobile-menu__hambuger-line--3 {
+      .mobile-menu__hamburger-line--3 {
         transform: translateY(-12px) translateY(50%) rotate(135deg);
       }
     }
@@ -291,15 +291,15 @@ body.flex-body {
   }
 }
 
-.menu-container.open .mobile-menu__hambuger-line--1 {
+.menu-container.open .mobile-menu__hamburger-line--1 {
   transform: translateY(12px) translateY(-50%) rotate(-135deg);
 }
 
-.menu-container.open .mobile-menu__hambuger-line--2 {
+.menu-container.open .mobile-menu__hamburger-line--2 {
   opacity: 0;
 }
 
-.menu-container.open .mobile-menu__hambuger-line--3 {
+.menu-container.open .mobile-menu__hamburger-line--3 {
   transform: translateY(-12px) translateY(50%) rotate(135deg);
 }
 

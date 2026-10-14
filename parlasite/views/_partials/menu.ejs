@@ -2,10 +2,10 @@
   function isActiveMenu(currentMenu) {
     if (typeof activeMenu !== 'undefined') {
       if (activeMenu === currentMenu) {
-        return 'active'
+        return true;
       }
     }
-    return '';
+    return false;
   }
 %>
 <body class="flex-body">
@@ -14,8 +14,8 @@
     <div class="container">
       <div class="menu-container">
         <div class="logo-and-mandate">
-          <a class="logo" href="/">
-            <img class="logo-image-height" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="logo">
+          <a class="logo" href="/" aria-label="<%- i18n('landing.home-link-label') %>">
+            <img class="logo-image-height" src="<%- config.urls.cdn %>/img/logo-parlameter.svg" alt="">
           </a>
           <% if (config.mandates?.length) { %>
           <div class="select">
@@ -27,22 +27,22 @@
           </div>
           <% } %>
         </div>
-        <div class="menu">
-          <a class="<%- isActiveMenu('sessions')    %>" href="/<%- sm.landing.sessions    %>"><%- i18n('menu.sessions')    %></a>
-          <a class="<%- isActiveMenu('mps')         %>" href="/<%- sm.landing.members     %>"><%- i18n('menu.mps')         %></a>
-          <a class="<%- isActiveMenu('pgs')         %>" href="/<%- sm.landing.parties     %>"><%- i18n('menu.pgs')         %></a>
-          <a class="<%- isActiveMenu('legislation') %>" href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
-          <a class="<%- isActiveMenu('tools')       %>" href="/<%- sm.landing.tools       %>"><%- i18n('menu.tools')       %></a>
-        </div>
+        <nav aria-label="<%- i18n('menu.navigation-label') %>" class="menu">
+          <a <% if (isActiveMenu('sessions')) {    %>class="active" aria-current="page"<% } %> href="/<%- sm.landing.sessions    %>"><%- i18n('menu.sessions')    %></a>
+          <a <% if (isActiveMenu('mps')) {         %>class="active" aria-current="page"<% } %> href="/<%- sm.landing.members     %>"><%- i18n('menu.mps')         %></a>
+          <a <% if (isActiveMenu('pgs')) {         %>class="active" aria-current="page"<% } %> href="/<%- sm.landing.parties     %>"><%- i18n('menu.pgs')         %></a>
+          <a <% if (isActiveMenu('legislation')) { %>class="active" aria-current="page"<% } %> href="/<%- sm.landing.legislation %>"><%- i18n('menu.legislation') %></a>
+          <a <% if (isActiveMenu('tools')) {       %>class="active" aria-current="page"<% } %> href="/<%- sm.landing.tools       %>"><%- i18n('menu.tools')       %></a>
+        </nav>
         <div class="open-search">
-          <a href="/<%- sm.landing.sessions %>/<%- sm.sessions.search.base %>/"><span class="glyphicon glyphicon-search"></span></a>
+          <a href="/<%- sm.landing.sessions %>/<%- sm.sessions.search.base %>/"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span class="sr-only"><%- i18n('menu.search') %></span></a>
         </div>
         <div class="mobile-menu__button">
           <span class="mobile-menu__bg"></span>
-          <a href="#" class="mobile-menu__hambuger">
-            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--1"></span>
-            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--2"></span>
-            <span class="mobile-menu__hambuger-line mobile-menu__hambuger-line--3"></span>
+          <a href="#" class="mobile-menu__hamburger" aria-label="Open navigation">
+            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--1"></span>
+            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--2"></span>
+            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--3"></span>
           </a>
         </div>
       </div>
