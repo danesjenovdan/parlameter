@@ -31,6 +31,15 @@ $(function () {
   $("select.mandate-select").on("change", function () {
     window.location.href = $(this).val();
   });
+
+  // search info modal
+  $("#modal-search-how")
+    .on("show.bs.modal", function (event) {
+      $(".searchinfo").attr("aria-expanded", "true");
+    })
+    .on("hide.bs.modal", function (event) {
+      $(".searchinfo").attr("aria-expanded", "false");
+    });
 });
 
 // LEGAL TEXT

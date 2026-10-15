@@ -64,6 +64,7 @@
 .searchinfo {
     background-color: colors.$white;
     border-radius: 50%;
+    border: none;
     color: colors.$link;
     cursor: pointer;
     font-family: 'Roboto Slab', serif;
@@ -75,6 +76,15 @@
     width: 20px;
 
     @include helper.card(1);
+
+    &:hover {
+      background-color: colors.$link-hover-background;
+    }
+
+    &:focus-visible {
+      outline: 2px solid colors.$link;
+      outline-offset: 2px;
+    }
 }
 // end of search info button
 

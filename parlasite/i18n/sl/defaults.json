@@ -6,7 +6,8 @@
     "description": "Razišči, kdo so poslanci in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je Državni zbor sprejel v tem mandatu.",
     "search": {
       "part_one": "Išči",
-      "part_two": "odloke in akte, glasovanja, poslance, poslanske skupine ali njihove govore"
+      "part_two": "odloke in akte, glasovanja, poslance, poslanske skupine ali njihove govore",
+      "info-label": "Informacije o iskanju"
     }
   },
   "about": {
