@@ -3,26 +3,29 @@
 <footer class="footer">
   <div class="container">
     <div class="row border_top">
-      <div class="col-12 col-sm-6 col-md-4 footer-col">
+      <h2 class="sr-only"><%= i18n("footer.footer-label") %></h2>
+      <section class="col-12 col-sm-6 col-md-4 footer-col">
         <div class="footer-block">
           <div class="lead"><%- i18n("footer.description") %></div>
         </div>
         <div class="footer-block">
-          <div><a href="https://parlameter.org/sl/" target="_blank"><%= i18n("footer.about") %></a></div>
-          <div><a href="/<%= sm.landing.legal %>"><%= i18n("footer.legal") %></a></div>
-          <% if (i18n.exists("footer.financial_support_link")) { %>
-          <div><a href="<%= i18n("footer.financial_support_link") %>" target="_blank"><%= i18n("footer.financial_support") %></a></div>
-          <% } %>
+          <nav>
+            <div><a href="https://parlameter.org/sl/" target="_blank"><%= i18n("footer.about") %></a></div>
+            <div><a href="/<%= sm.landing.legal %>"><%= i18n("footer.legal") %></a></div>
+            <% if (i18n.exists("footer.financial_support_link")) { %>
+            <div><a href="<%= i18n("footer.financial_support_link") %>" target="_blank"><%= i18n("footer.financial_support") %></a></div>
+            <% } %>
+          </nav>
         </div>
         <div class="footer-block">
-          <div><a href="mailto:<%= i18n("footer.contact_mail") %>" target="_blank" rel="noopener noreferrer"><%= i18n("footer.contact_mail") %></a></div>
+          <address><a href="mailto:<%= i18n("footer.contact_mail") %>" target="_blank" rel="noopener noreferrer"><%= i18n("footer.contact_mail") %></a></address>
         </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 footer-col">
+      </section>
+      <section class="col-12 col-sm-6 col-md-4 footer-col">
         <div class="footer-block">
           <div class="support-box">
             <div class="text">
-              <div class="title"><%= i18n("footer.support_our_work") %></div>
+              <h3 class="title"><%= i18n("footer.support_our_work") %></h3>
               <div class="desc"><%= i18n("footer.select_donation") %></div>
             </div>
             <div class="buttons">
@@ -64,10 +67,10 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 footer-col">
+      </section>
+      <section class="col-12 col-sm-6 col-md-4 footer-col">
         <div class="footer-block">
-          <div class="lead semi-bold"><%= i18n("footer.newsletter_title") %></div>
+          <h3 class="lead semi-bold"><%= i18n("footer.newsletter_title") %></h3>
           <form class="newsletter-form">
             <div class="form-group">
               <label>
@@ -80,7 +83,7 @@
             </div>
           </form>
         </div>
-      </div>
+      </section>
     </div>
   </div>
   <div class="stripeelbottom"></div>

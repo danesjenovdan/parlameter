@@ -338,6 +338,12 @@ footer.footer {
       font-size: 14px;
       line-height: 1.5;
 
+      address {
+        margin-bottom: 0;
+        font-style: inherit;
+        line-height: inherit;
+      }
+
       a {
         color: inherit;
         font-weight: 400;
@@ -349,10 +355,11 @@ footer.footer {
       }
 
       .lead {
+        margin-top: 0;
+        margin-bottom: 0;
         font-size: 16px;
         line-height: 1.3;
         font-weight: 400;
-        margin-bottom: 0;
 
         a {
           font-weight: 600;
@@ -369,6 +376,10 @@ footer.footer {
           line-height: 1.3;
 
           .title {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: 1.3;
             font-weight: 600;
           }
 
