@@ -394,6 +394,12 @@ footer.footer {
         &:hover {
           text-decoration: none;
         }
+
+        &:focus-visible {
+          border-radius: 2px;
+          outline: 2px solid colors.$link;
+          outline-offset: 2px;
+        }
       }
 
       .lead {
@@ -474,6 +480,12 @@ footer.footer {
               line-height: 32px;
               padding: 0 8px;
               font-size: 14px;
+
+              &:focus-visible {
+                border-radius: 2px;
+                outline: 2px solid colors.$link;
+                outline-offset: 2px;
+              }
             }
           }
 
@@ -488,6 +500,12 @@ footer.footer {
 
             &:hover {
               background: colors.$tab-active;
+            }
+
+            &:focus-visible {
+              border-radius: 2px;
+              outline: 2px solid colors.$link;
+              outline-offset: 2px;
             }
           }
         }
