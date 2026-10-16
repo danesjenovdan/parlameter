@@ -28,6 +28,14 @@
           </div>
           <% } %>
         </div>
+        <div class="mobile-menu__button">
+          <span class="mobile-menu__bg"></span>
+          <a href="#" class="mobile-menu__hamburger" aria-label="Open navigation">
+            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--1"></span>
+            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--2"></span>
+            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--3"></span>
+          </a>
+        </div>
         <nav aria-label="<%- i18n('menu.navigation-label') %>" class="menu">
           <a <% if (isActiveMenu('sessions')) {    %>class="active" aria-current="page"<% } %> href="/<%- sm.landing.sessions    %>"><%- i18n('menu.sessions')    %></a>
           <a <% if (isActiveMenu('mps')) {         %>class="active" aria-current="page"<% } %> href="/<%- sm.landing.members     %>"><%- i18n('menu.mps')         %></a>
@@ -37,14 +45,6 @@
         </nav>
         <div class="open-search">
           <a href="/<%- sm.landing.sessions %>/<%- sm.sessions.search.base %>/"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span class="sr-only"><%- i18n('menu.search') %></span></a>
-        </div>
-        <div class="mobile-menu__button">
-          <span class="mobile-menu__bg"></span>
-          <a href="#" class="mobile-menu__hamburger" aria-label="Open navigation">
-            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--1"></span>
-            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--2"></span>
-            <span class="mobile-menu__hamburger-line mobile-menu__hamburger-line--3"></span>
-          </a>
         </div>
       </div>
     </div>
