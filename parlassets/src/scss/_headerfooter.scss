@@ -32,6 +32,37 @@ body.flex-body {
   }
 }
 
+// skip to content
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  display: inline-block;
+  width: auto !important;
+  padding: 0.5rem 0.75rem;
+  background: colors.$white;
+  border: 1px solid colors.$font-default;
+  z-index: 99999;
+  text-decoration: none;
+  outline: none;
+
+  &,
+  &:hover,
+  &:focus {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+}
+
+.skip-link:not(:focus) {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
 // MENU
 .menu-container {
   width: 100%;

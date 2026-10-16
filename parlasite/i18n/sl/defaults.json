@@ -48,6 +48,7 @@
     }
   },
   "menu": {
+    "skip-link": "Preskoči na glavno vsebino",
     "navigation-label": "Glavna navigacija",
     "legislation": "Zakonodaja",
     "sessions": "Seje",
