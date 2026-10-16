@@ -3,6 +3,9 @@ django-autoslug
 psycopg==3.2.1
 djangorestframework==3.18.1
 django-filter
+langchain==1.4.3
+langchain-google-genai==4.4.0
+pymupdf==1.28.2
 gunicorn
 django-taggit
 django-oauth-toolkit
