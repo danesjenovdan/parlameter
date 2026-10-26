@@ -472,6 +472,8 @@ accepted: прийнято
 rejected: відхилено
 gov-side: Коаліція чи Опозиція
 summary: Звіт
+summary-created-info-ai: Povzetek ustvarjen {date} z modelom {model} iz besedila dokumenta {document}.
+summary-created-info-human: Povzetek ustvarjen {date} ročno iz besedila dokumenta {document}.
 all-mps: Усі народні депутати
 whole-term: Повний термін повноважень
 last-year: Попередній рік
@@ -511,7 +513,9 @@ voted-for--f: Голосувала ЗА
 voted-against--plural: Голосували ПРОТИ
 voted-abstain--m: Утримався від голосування
 session-type: Вид засідання
-no-abstract: Приносимо вибачення, опис цього законопроєкту відсутній.
+no-summary: Приносимо вибачення, опис цього законопроєкту відсутній.
+no-summary-no-document: Za ta zakon še nimamo dokumenta za povzetek.
+no-summary-error: Za ta zakon ni bilo mogoče ustvariti povzetka. ({error})
 session-processing: Запит знаходиться в процесі обробки.
 legislation: Законопроєкт
 abstract: Теза
