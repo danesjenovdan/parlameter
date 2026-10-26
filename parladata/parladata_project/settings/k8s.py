@@ -19,6 +19,7 @@ env = dict(
     MEDIA_URL=os.getenv("DJANGO_MEDIA_URL_BASE", "/media/"),
     SOLR_URL=os.getenv("PARLAMETER_SOLR_URL", "http://solr:8983/solr/parlasearch"),
     ER_API_KEY=os.getenv("EVENTREGISTRY_API_KEY", ""),
+    GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY", ""),
     INSTALATION_NAME=os.getenv("INSTALATION_NAME", ""),
     PARSER_INTERVAL_HOURS=int(os.getenv("PARSER_INTERVAL_HOURS", 24)),
     DJANGO_BASE_URL=os.getenv("DJANGO_BASE_URL", "http://localhost:8000"),
@@ -161,6 +162,7 @@ if sentry_url := os.getenv("DJANGO_SENTRY_URL", False):
     )
 
 ER_API_KEY = env["ER_API_KEY"]
+GOOGLE_API_KEY = env["GOOGLE_API_KEY"]
 
 INSTALATION_NAME = env["INSTALATION_NAME"]
 PARSER_INTERVAL_HOURS = env["PARSER_INTERVAL_HOURS"]

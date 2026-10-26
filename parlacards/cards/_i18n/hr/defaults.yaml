@@ -191,7 +191,9 @@ time-period: Vremensko razdoblje
 session-type: Vrsta sjednice
 no-results: Bez rezultata.
 no-speeches: Bez govora.
-no-abstract: Za ovaj zakon, na žalost, nemamo sažetka.
+no-summary: Za ovaj zakon, na žalost, nemamo sažetka.
+no-summary-no-document: Za ta zakon še nimamo dokumenta za povzetek.
+no-summary-error: Za ta zakon ni bilo mogoče ustvariti povzetka. ({error})
 present--f: Prisutna
 present--m: Prisutan
 present--plural: Prisutni
@@ -500,6 +502,8 @@ accepted: doneseni
 rejected: odbijen
 gov-side: Vlada
 summary: Sažetak
+summary-created-info-ai: Povzetek ustvarjen {date} z modelom {model} iz besedila dokumenta {document}.
+summary-created-info-human: Povzetek ustvarjen {date} ročno iz besedila dokumenta {document}.
 all-mps: Sve zastupnice
 whole-term: Cijeli mandat
 last-year: Posljednjih godinu dana

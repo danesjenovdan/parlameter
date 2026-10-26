@@ -22,7 +22,8 @@ from parladata.models.organization import Organization
 from parladata.models.person import Person
 from parladata.models.public_question import PublicPersonAnswer, PublicPersonQuestion
 from parladata.models.question import Answer, Question
-from parladata.models.session import Session, SessionOrganizationThrough
+from parladata.models.session import Session, SessionOrganizationThrough, Sitting
 from parladata.models.speech import Speech
+from parladata.models.summary import Summary
 from parladata.models.versionable_properties import PersonName
 from parladata.models.vote import Vote
