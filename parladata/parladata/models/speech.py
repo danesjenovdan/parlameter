@@ -55,6 +55,15 @@ class Speech(Versionable, Timestampable, Taggable):
         on_delete=models.CASCADE,
         related_name="speeches",
     )
+    sitting = models.ForeignKey(
+        "Sitting",
+        verbose_name=_("Sitting"),
+        help_text=_("Select the sitting of the speech."),
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="speeches",
+    )
     start_time = models.DateTimeField(
         verbose_name=_("start_time"),
         help_text=_("Select the start time"),
