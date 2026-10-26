@@ -114,6 +114,7 @@ class SpeechSerializer(TaggitSerializer, serializers.ModelSerializer):
             "end_time",
             "speaker",
             "session",
+            "sitting",
             "agenda_items",
             "agenda_item_order",
             "tags",
@@ -313,4 +314,10 @@ class AmendmentResultSerializer(serializers.ModelSerializer):
 class ProcedureTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProcedureType
+        fields = "__all__"
+
+
+class SittingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sitting
         fields = "__all__"

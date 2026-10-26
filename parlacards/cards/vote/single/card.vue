@@ -67,19 +67,6 @@
       </div>
 
       <template v-if="results.members?.length">
-        <div
-          v-if="content"
-          v-t="'summary'"
-          class="izvlecek-switch visible-xs"
-          @click="showMobileExcerpt = !showMobileExcerpt"
-        />
-        <excerpt
-          v-if="showMobileExcerpt && content"
-          :content="content"
-          :main-law="excerptData"
-          :show-parent="true"
-          class="visible-xs"
-        />
         <p-tabs :start-tab="selectedTab" class="visible-xs" @switch="focusTab">
           <p-tab :label="$t('mps')">
             <poslanci
@@ -138,13 +125,6 @@
           </p-tab>
         </p-tabs>
         <p-tabs :start-tab="selectedTab" class="hidden-xs" @switch="focusTab">
-          <p-tab v-if="content" :label="$t('summary')">
-            <excerpt
-              :content="content"
-              :main-law="excerptData"
-              :show-parent="true"
-            />
-          </p-tab>
           <p-tab :label="$t('mps')">
             <poslanci
               :members="filteredMembers"
@@ -311,10 +291,8 @@ import { parseVoteTitle } from '@/_helpers/voteTitle.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
 import PTab from '@/_components/Tab.vue';
 import PTabs from '@/_components/Tabs.vue';
-import Excerpt from '@/_components/Excerpt.vue';
 import DataNotPublished from '@/_components/DataNotPublished.vue';
 import Documents from '@/_components/Documents.vue';
-import fixAbstractHtml from '@/_helpers/fixAbstractHtml.js';
 import { BALLOT_OPTIONS } from '@/_helpers/constants.js';
 import Poslanci from './Poslanci.vue';
 import PoslanskeSkupine from './PoslanskeSkupine.vue';
@@ -327,7 +305,6 @@ export default {
     PoslanskeSkupine,
     PTab,
     PTabs,
-    Excerpt,
     DataNotPublished,
     Documents,
     EmptyState,
@@ -423,7 +400,6 @@ export default {
       state: cardState || {},
       selectedTab: cardState?.selectedTab || 0,
       headerConfig: defaultHeaderConfig(this),
-      showMobileExcerpt: false,
       visibleTooltip: null,
       visibleTooltipTopPos: '20px',
       allVotes,
@@ -454,16 +430,6 @@ export default {
         },
       ).length;
       return this.voteNumbers['did not vote'] > 0 ? realNumberOfBallotTypes : 4;
-    },
-    excerptData() {
-      return {
-        epa: this.results.legislation?.epa || '',
-        name: this.results.legislation?.text,
-        link: this.getLegislationLink(this.results.legislation),
-      };
-    },
-    content() {
-      return fixAbstractHtml(this.results.abstract);
     },
     hasAnonymousVotes() {
       return this.results.members.length > this.filteredMembers.length;
