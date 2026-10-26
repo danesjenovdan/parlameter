@@ -191,7 +191,9 @@ time-period: Time frame
 session-type: Session type
 no-results: No hits.
 no-speeches: No speeches.
-no-abstract: We apologise there is no summary for this law.
+no-summary: We apologise there is no summary for this law.
+no-summary-no-document: Za ta zakon še nimamo dokumenta za povzetek.
+no-summary-error: Za ta zakon ni bilo mogoče ustvariti povzetka. ({error})
 present--f: Present
 present--m: Present
 present--plural: Present
@@ -510,6 +512,8 @@ accepted: passed
 rejected: not passed
 gov-side: Government or Opposition
 summary: Summary
+summary-created-info-ai: Povzetek ustvarjen {date} z modelom {model} iz besedila dokumenta {document}.
+summary-created-info-human: Povzetek ustvarjen {date} ročno iz besedila dokumenta {document}.
 all-mps: All MPs
 whole-term: The whole term of office
 last-year: Previous year

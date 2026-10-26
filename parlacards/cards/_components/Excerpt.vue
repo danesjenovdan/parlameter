@@ -1,29 +1,19 @@
 <template>
   <div class="excerpt">
-    <div
-      v-if="content || content.length !== 0"
-      :class="{ 'show-parent': showParent }"
-      class="rich-text"
-    >
+    <div class="rich-text">
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="text-container" v-html="content"></div>
-    </div>
-    <div v-else class="no-abstract">
-      <p v-t="'no-abstract'"></p>
-    </div>
-    <div v-if="showParent && mainLaw?.epa" class="metacontainer">
-      <hr />
-      <div class="metadata">
-        <div class="main-law-label">Matični zakon:</div>
-        <div class="main-law-name">
-          <a :href="mainLaw?.link">{{ mainLaw.name }}</a>
-        </div>
-      </div>
+      <div v-if="isMarkdown" class="markdown-content" v-html="mdContent"></div>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <div v-else class="text-container" v-html="content"></div>
     </div>
   </div>
 </template>
 
 <script>
+import { Remarkable } from 'remarkable';
+
+const md = new Remarkable();
+
 export default {
   name: 'Excerpt',
   props: {
@@ -31,13 +21,14 @@ export default {
       type: String,
       required: true,
     },
-    mainLaw: {
-      type: Object,
-      default: () => ({}),
-    },
-    showParent: {
+    isMarkdown: {
       type: Boolean,
-      default: true,
+      default: false,
+    },
+  },
+  computed: {
+    mdContent() {
+      return md.render(this.content);
     },
   },
 };
@@ -49,185 +40,82 @@ export default {
 
 .excerpt {
   display: flex;
-  flex-wrap: no-wrap;
-  font-size: 13px;
-  font-family: 'Roboto Slab', serif;
-  font-weight: 300;
-  line-height: 1.5em;
-  margin: 12px 0;
+  flex-direction: column;
+  margin-bottom: 20px;
   padding: 40px;
+  min-height: breakpoints.$half-card-height;
   background: colors.$background;
-  height: 442px;
-  position: relative;
+  font-family: 'Roboto Slab', serif;
+  --_font-size: 16px;
+  font-size: var(--_font-size);
+  font-weight: 300;
+  line-height: 1.5;
 
   @include breakpoints.respond-to(mobile) {
     padding: 20px;
+    --_font-size: 14px;
   }
 
-  .icon-container {
-    display: flex;
-
-    @include breakpoints.respond-to(mobile) {
-      display: none;
+  :deep(.markdown-content) {
+    > *:first-child {
+      margin-top: 0;
     }
 
-    &.show-parent {
-      max-height: 349px;
+    > *:last-child {
+      margin-bottom: 0;
     }
 
-    .icon {
-      display: block;
-      flex: 1;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 65%;
-      width: 100px;
-      height: 100px;
-      background-color: colors.$white;
-      border-radius: 50%;
-      align-self: center;
-    }
-  }
-
-  .rich-text {
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 0 40px;
-    max-height: 360px;
-    display: flex;
-    margin: auto;
-    width: 100%;
-
-    @include breakpoints.respond-to(mobile) {
-      padding: 0 20px 0 10px;
-      height: 320px;
+    h1 {
+      margin-top: 1em;
+      margin-bottom: var(--_font-size);
+      font-size: 1.5em;
+      font-weight: 500;
     }
 
-    &.show-parent {
-      max-height: 320px;
-
-      @include breakpoints.respond-to(mobile) {
-        padding: 0;
-        min-height: 320px;
-      }
+    h2 {
+      margin-top: 1em;
+      margin-bottom: var(--_font-size);
+      font-size: 1.25em;
+      font-weight: 500;
     }
 
-    .text-container {
-      width: 100%;
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 1em;
+      margin-bottom: var(--_font-size);
+      font-size: 1.125em;
+      font-weight: 500;
+    }
 
-      :deep(p) {
-        flex: 2;
-        font-size: 18px;
-        border-bottom: 1px solid colors.$font-placeholder;
-        margin-bottom: 0;
-        padding-top: 1em;
-        padding-bottom: 1em;
+    p,
+    ul,
+    ol {
+      margin-bottom: var(--_font-size);
+      font-size: 1em;
+    }
 
-        &:empty {
-          display: none;
+    ul,
+    ol {
+      padding-left: 2em;
+
+      li {
+        &::marker {
+          font-variant-numeric: tabular-nums;
         }
 
-        > br:only-child {
-          display: none;
-        }
-      }
-
-      :deep(ul) {
-        padding-left: 0;
-        margin-bottom: 1em;
-        font-size: 14px;
-
-        li {
-          list-style-type: none;
-          padding-left: 20px;
-          padding-top: 1em;
-          padding-bottom: 1em;
-          border-bottom: 1px solid colors.$font-placeholder;
-
-          &:last-child {
-            border-bottom: none !important;
-          }
-
-          &::before {
-            content: '';
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-image: url('#{get-parlassets-url()}/icons/puscica-izvlecki.svg');
-            background-size: contain;
-            margin-right: 5px;
-            margin-left: -18px;
-          }
+        ul,
+        ol {
+          margin-bottom: 0;
         }
       }
     }
-  }
-}
 
-hr {
-  background: colors.$font-placeholder;
-  height: 1px;
-  margin: 10px 0 0 0;
-}
-
-.metacontainer {
-  position: absolute;
-  width: calc(100% - 80px);
-  bottom: 10px;
-  background: colors.$background;
-
-  .metadata {
-    font-size: 14px;
-    @include breakpoints.respond-to(desktop) {
-      display: flex;
+    strong,
+    b {
+      font-weight: 500;
     }
-
-    .main-law-label {
-      background-image: url('#{get-parlassets-url()}/icons/zakon.svg');
-      background-size: 20px 19px;
-      background-repeat: no-repeat;
-      font-family: Roboto, sans-serif;
-      font-weight: 300;
-      margin-top: 12px;
-      padding-left: 30px;
-      width: 130px;
-    }
-
-    .main-law-name {
-      flex: 1;
-      margin-top: 12px;
-    }
-  }
-}
-
-.no-abstract {
-  font-family: 'Roboto Slab', serif;
-  text-align: center;
-  font-size: 16px;
-  color: colors.$font-default;
-  width: 100%;
-  font-style: italic;
-  padding-bottom: 40px;
-
-  p {
-    max-width: 150px;
-    margin: auto;
-    margin-top: 18px;
-    font-size: 13px;
-  }
-
-  &::before {
-    content: '';
-    width: 70px;
-    height: 70px;
-    position: relative;
-    margin: auto;
-    margin-top: 100px;
-    display: block;
-    background-image: url('#{get-parlassets-url()}/icons/missing-excerpt.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
   }
 }
 </style>
