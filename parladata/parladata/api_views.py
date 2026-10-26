@@ -488,3 +488,13 @@ class ProcedureTypeView(viewsets.ModelViewSet):
     filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
     filterset_fields = ("name",)
     ordering_fields = ("name",)
+
+
+class SittingView(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    queryset = Sitting.objects.all().order_by("id")
+    serializer_class = SittingSerializer
+    fields = "__all__"
+    filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
+    filterset_fields = ("session", "date", "uid")
+    ordering_fields = ("date",)

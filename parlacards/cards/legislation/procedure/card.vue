@@ -13,6 +13,7 @@
         <div class="considerations">
           <div
             v-for="(c, i) in allConsiderations"
+            :key="i"
             :class="{ consideration: true, 'consideration--future': c.future }"
             :style="`--this-anchor: --consideration-${i}; --next-anchor: --consideration-${i + 1};`"
           >

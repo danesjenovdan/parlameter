@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 
 from parladata.admin.filters import SessionOrganizationsListFilter
-from parladata.models import Link, Session
+from parladata.models import Link, Session, Sitting
 
 
 class SessionLinkInline(admin.TabularInline):
@@ -19,6 +19,7 @@ class SessionLinkInline(admin.TabularInline):
         "agenda_item",
         "answer",
         "legislation_consideration",
+        "legislation",
     ]
     extra = 0
 
@@ -57,6 +58,11 @@ class SessionAdmin(admin.ModelAdmin):
     ]
     readonly_fields = ["created_at", "updated_at"]
     list_filter = ("mandate", SessionOrganizationsListFilter)
+
+    # prefetch related for performance optimization
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        return qs.prefetch_related("links", "organizations")
 
     list_per_page = 25
 
@@ -104,4 +110,13 @@ class SessionAdmin(admin.ModelAdmin):
     agenda_items.short_description = "Agenda items"
 
 
+class SittingAdmin(admin.ModelAdmin):
+    search_fields = ["session__name", "date", "uid"]
+    list_display = ["id", "session", "date", "uid"]
+    list_filter = ("session__mandate",)
+    list_per_page = 25
+    autocomplete_fields = ["session"]
+
+
+admin.site.register(Sitting, SittingAdmin)
 admin.site.register(Session, SessionAdmin)
