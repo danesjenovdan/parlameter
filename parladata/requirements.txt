@@ -39,7 +39,7 @@ eventregistry
 tablib
 django-import-export==4.1.1
 djangorestframework-csv==3.0.2
-drf-recaptcha==3.1.0
+drf-recaptcha==4.0.3
 xmltodict==1.0.4
 
 # tagger/lemmatizer
