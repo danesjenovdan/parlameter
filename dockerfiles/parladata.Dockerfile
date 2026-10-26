@@ -1,5 +1,5 @@
 # we have to use python 3.8 since Lemmagen does not support 3.9
-FROM python:3.12
+FROM python:3.14
 
 RUN apt-get update && \
     apt-get upgrade -y && \

@@ -125,6 +125,12 @@ class Link(Timestampable, Taggable):
         on_delete=models.CASCADE,
         related_name="links",
     )
+    is_parsable = models.BooleanField(
+        verbose_name=_("Is parsable"),
+        help_text=_("Indicates whether the link is parsable."),
+        blank=True,
+        null=True,
+    )
 
     class Meta:
         verbose_name = _("link")

@@ -147,3 +147,31 @@ class SessionOrganizationThrough(models.Model):
 
     def __str__(self):
         return f"{self.session} - {self.organization} - {self.name}"
+
+
+class Sitting(models.Model):
+    session = models.ForeignKey(
+        "Session",
+        on_delete=models.CASCADE,
+        related_name="sittings",
+        verbose_name=_("session"),
+        help_text=_("Select the session for this sitting"),
+    )
+    date = models.DateField(
+        verbose_name=_("date"),
+        help_text=_("Date of the sitting"),
+    )
+    uid = models.CharField(
+        max_length=255,
+        verbose_name=_("uid"),
+        help_text=_("Unique identifier for the sitting"),
+        blank=True,
+        null=True,
+    )
+
+    class Meta:
+        verbose_name = _("sitting")
+        verbose_name_plural = _("sittings")
+
+    def __str__(self):
+        return f"{self.session} - {self.date}"

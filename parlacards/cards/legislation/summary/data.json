@@ -4,15 +4,17 @@
   "data": {
     "results": {
       "summary": {
-        "text": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+        "text": "# Test heading\n\n\n\nVlada Republike Slovenije predlaga nov zakon o specializiranih organih za obravnavo korupcijskih kaznivih dejanj in organiziranega kriminala, ki ga želi sprejeti po nujnem postopku zaradi preprečitve težko popravljivih posledic za delovanje države in varnost.\n\n## Test heading 2\n\n### Test heading 3\n\n**Kaj predlog zakona ureja in kateri problem naslavlja:**\nPredlog zakona ureja delovanje specializiranih organov, ki se borijo proti korupciji in organiziranemu kriminalu. Naslavlja problem naraščanja gospodarske kriminalitete po letu 2022 in kompleksnost organizirane kriminalitete, ki zahteva posebna finančna, informacijska, forenzična in mednarodna znanja. Trenutni sistem se sooča s pomanjkanjem stabilne kadrovske sestave, učinkovite koordinacije in jasne institucionalne odgovornosti, kar podaljšuje čas od začetka preiskave do pravnomočnega zaključka postopka.\n\n* List item\n  * indented list item\n    * indented list item\n    * indented list item\n* List item two\n\n**Ključne spremembe oz. novosti:**\nGlavna novost je tesnejše povezovanje in krepitev pristojnosti med tremi ključnimi institucijami: Nacionalnim preiskovalnim uradom (NPU), Specializiranim tožilstvom za pregon korupcije in organiziranega kriminala ter Specializiranim sodiščem za sojenje v teh zadevah. Cilj je zagotoviti stabilnejšo kadrovsko sestavo, trajnejšo specializacijo znotraj teh organov, učinkovitejšo koordinacijo med njimi ter jasnejšo institucionalno odgovornost. S tem se bo skrajšal čas postopkov in omogočil učinkovitejši pregon.\n1. List item\n1. List item two\n    1. indented list item\n\n**Na koga predlog vpliva:**\nPredlog zakona neposredno vpliva na delovanje pravosodnega sistema v Sloveniji, predvsem na policijo, tožilstvo in sodišča, ki se ukvarjajo z gospodarsko, korupcijsko in organizirano kriminaliteto. Posredno vpliva na vse državljane, saj obljublja vzpostavitev ničelne tolerance do korupcije in klientelizma, kar naj bi povečalo zaupanje v pravosodne institucije in prispevalo k večji pravičnosti ter varnosti v družbi. Vplival bo tudi na storilce teh kaznivih dejanj, saj bodo soočeni z bolj odločnim in specializiranim pregonom.",
         "link": {
-          "id": 125845,
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/4863aa98541b38609a62c1fd39c7c8d0ccc17950a39418021c05726c86bf88fd",
-          "name": "Besedilo zakona poslano Državnemu svetu",
+          "id": 126229,
+          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/154bc924d8cb1e1ecfc6f5a63b4892ff621df9e18fcf39fd4990c1016dbf76ee",
+          "name": "Besedilo Predloga zakona o specializiranih organih za obravnavo korupcijskih kaznivih dejanj in organiziranega kriminala",
           "tags": [{ "id": 16, "name": "proposal", "slug": "proposal" }]
         },
-        "ai_model": "n/a",
-        "ai_model_version": "n/a"
+        "error": "failed to parse",
+        "updated_at": "2026-10-20T12:00:00",
+        "ai_model": "google_genai",
+        "ai_model_version": "gemini-2.5-flash"
       }
     },
     "mandate": {
@@ -21,9 +23,9 @@
       "beginning": "2026-04-10T00:00:00"
     },
     "legislation": {
-      "id": 8591,
-      "text": "Zakon o ratifikaciji Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji, Drugega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji in Tretjega protokola o spremembi Pogodbe o prijateljstvu in sodelovanju v jugovzhodni Aziji",
-      "epa": "165-X",
+      "id": 8606,
+      "text": "Zakon o specializiranih organih za obravnavo korupcijskih kaznivih dejanj in organiziranega kriminala",
+      "epa": "188-X",
       "status": "enacted"
     }
   }
