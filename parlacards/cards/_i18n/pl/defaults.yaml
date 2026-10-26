@@ -191,7 +191,9 @@ time-period: Okres czasu
 session-type: Typu posiedzenia
 no-results: Bez trafień.
 no-speeches: Bez wystąpień.
-no-abstract: Przepraszamy, dla tej ustawy nie mamy streszczenia.
+no-summary: Przepraszamy, dla tej ustawy nie mamy streszczenia.
+no-summary-no-document: Za ta zakon še nimamo dokumenta za povzetek.
+no-summary-error: Za ta zakon ni bilo mogoče ustvariti povzetka. ({error})
 present--f: Obecna
 present--m: Obecny
 present--plural: Obecni
@@ -509,6 +511,8 @@ accepted: przyjęto
 rejected: odrzucono
 gov-side: Strona rządząca
 summary: Podsumowanie
+summary-created-info-ai: Povzetek ustvarjen {date} z modelom {model} iz besedila dokumenta {document}.
+summary-created-info-human: Povzetek ustvarjen {date} ročno iz besedila dokumenta {document}.
 all-mps: Wszyscy posłowie
 whole-term: Cała kadencja
 last-year: Poprzedni rok

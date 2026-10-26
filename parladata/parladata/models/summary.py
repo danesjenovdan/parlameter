@@ -33,10 +33,17 @@ class Summary(Timestampable):
         blank=True,
         null=True,
     )
-    is_approved = models.BooleanField(
-        verbose_name=_("Is Approved"),
-        help_text=_("Indicates whether the summary has been approved."),
-        default=False,
+    prompt = models.TextField(
+        verbose_name=_("Prompt"),
+        help_text=_("The prompt used to generate the summary."),
+        blank=True,
+        null=True,
+    )
+    approved_at = models.DateTimeField(
+        verbose_name=_("Approved At"),
+        help_text=_("The date and time when the summary was approved."),
+        blank=True,
+        null=True,
     )
 
     class Meta:
