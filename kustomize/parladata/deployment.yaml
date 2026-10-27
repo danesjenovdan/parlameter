@@ -124,6 +124,7 @@ spec:
               containerPort: 80
               protocol: TCP
           image: nginx:alpine
+          imagePullPolicy: Always
           volumeMounts:
             - name: parladata-shared-storage
               mountPath: /usr/share/nginx/html
