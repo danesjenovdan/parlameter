@@ -305,19 +305,18 @@ const asyncRender = (fn) => (req, res, next) => {
   responseTimings.push('requestStart', performance.now());
 
   const outPromises = [];
-  const render = (view, opts) => {
+  const render = (view, data) => {
     const i18n = res.locals.i18n || req.app.locals.i18n;
-    const options = {
-      ...opts,
+    const renderData = {
+      ...data,
       slovenianDate,
       sessionName: sessionName.bind({ i18n }),
       joinSessionNamesAndOrgs,
       // bind the `this` object to the fetchCard function so we can access the
       // req, res and outPromises in the function when called from the template
       fetchCard: fetchCard.bind({ req, res, outPromises, responseTimings }),
-      async: true,
     };
-    res.render(view, options, (error, promise) => {
+    res.render(view, renderData, (error, promise) => {
       if (error) {
         next(error);
       } else {
