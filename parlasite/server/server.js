@@ -1,4 +1,5 @@
 const Sentry = require('@sentry/node');
+const ejs = require('ejs');
 const express = require('express');
 const config = require('../config');
 const { sanitizeSlug } = require('./sanitize');
@@ -17,10 +18,15 @@ function setupExpress() {
     app.disable('x-powered-by');
 
     // set template renderer
-    app.set('view engine', 'ejs');
-    app.set('view options', {
+    const ejsOptions = {
+      views: [].concat(app.get('views')),
+      cache: app.enabled('view cache'),
       async: true,
+    };
+    app.engine('ejs', (path, data, cb) => {
+      ejs.renderFile(path, data, ejsOptions, cb);
     });
+    app.set('view engine', 'ejs');
     app.locals.lang = config.locale;
     app.locals.i18n = i18n;
     app.locals.config = config;
