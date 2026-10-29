@@ -10,11 +10,11 @@
     "dev": "run-p watch serve"
   },
   "dependencies": {
-    "autoprefixer": "^10.6.1",
-    "cssnano": "^9.1.2",
-    "postcss": "^8.5.28",
+    "autoprefixer": "^10.6.2",
+    "cssnano": "^9.9.0",
+    "postcss": "^8.5.32",
     "postcss-cli": "^12.0.0",
-    "sass": "^1.105.1"
+    "sass": "^1.107.0"
   },
   "devDependencies": {
     "http-server": "^14.1.1",
