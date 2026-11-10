@@ -542,10 +542,11 @@ export default {
       font-size: 14px;
 
       a {
+        display: inline-block;
         margin-left: -0.3em;
         padding: 0.15em 0.3em;
-        -webkit-box-decoration-break: clone;
-        box-decoration-break: clone;
+        // -webkit-box-decoration-break: clone;
+        // box-decoration-break: clone;
       }
     }
   }

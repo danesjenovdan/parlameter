@@ -1,8 +1,12 @@
 <div class="session-container">
   <div class="row header text-center">
     <div class="col-lg-12">
-      <div class="media-object img-circle session-logo backgroundblue">
-        <b>S</b>
+      <div class="media-object img-circle session-logo backgroundblue inverticoncolor">
+        <% if (typeof sessionIcon !== 'undefined') { %>
+          <img src="<%- sessionIcon %>" class="img-responsive">
+        <% } else { %>
+          <img src="<%- config.urls.cdn %>/icons/seja-redna.svg" class="img-responsive">
+        <% } %>
       </div>
 
       <h1><%- sessionName(session) %></h1>
