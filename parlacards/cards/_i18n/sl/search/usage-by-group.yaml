@@ -5,6 +5,5 @@ card:
     skupino.
 
 
-    Za vsak iskalni niz preverimo, v koliko govorih poslank in poslancev
-    poslanskih skupin se pojavi. Seštejemo jih glede na poslansko skupino in
-    prikažemo v krožnem grafikonu.
+    Preverimo, v koliko govorih članic in članov posamezne poslanske skupine se
+    pojavi lema iskalnega niza, nato deleže prikažemo v krožnem grafikonu.

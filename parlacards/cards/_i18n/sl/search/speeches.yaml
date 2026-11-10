@@ -1,9 +1,16 @@
 card:
   title: Nastopi, v katerih je bil iskalni niz izrečen
   info: >-
-    # Seznam povezav do vseh govorov, ki vsebujejo iskalni niz.
+    # Seznam vseh govorov, v katerih je bil izrečen iskalni niz.
 
 
-    Po transkriptih vseh sej poiščemo in izpišemo povezave do vseh govorov, v
-    katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu od
-    najnovejše do najstarejše.
+    Po transkriptih vseh sej poiščemo govore, v katerih se pojavi lema iskalnega
+    niza, torej osnovna oblika vpisane besede ali besedne zveze.
+
+
+    Govore razvrstimo po sejah, te pa od najnovejše proti najstarejši. Pri
+    vsakem govoru izpišemo poslanko ali poslanca in odlomek, v katerem se pojavi
+    iskalni niz.
+
+
+    Transkripte pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
