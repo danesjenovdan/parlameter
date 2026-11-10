@@ -1,10 +1,12 @@
 card:
-  title: Največkrat so pojem uporabili
+  title: Največkrat so iskalni niz uporabili
   info: >-
-    # Seznam 5 poslancev, ki so iskalni niz največkrat uporabili, razvrščen od
-    največje proti najmanjši vrednosti.
+    # Seznam petih poslank in poslancev, ki so iskalni niz uporabili največkrat.
 
 
-    Preštejemo, kolikokrat je posamezni_a poslanec_ka izrekel_a iskani niz in
-    osebe, ki so ga uporabile vsaj enkrat, rangiramo glede na število pojavitev.
-    Prikažemo prvih pet.
+    Preštejemo, kolikokrat je posamezna oseba izrekla iskalni niz, in na seznam
+    uvrstimo pet oseb, ki so ga izrekle največkrat.
+
+
+    Pri vsaki izpišemo tudi poslansko skupino in število pojavitev iskalnega
+    niza.
