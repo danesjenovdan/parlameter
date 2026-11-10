@@ -34,6 +34,16 @@
       h3 {
         margin-top: 10px;
       }
+
+      a {
+        color: colors.$link;
+
+        &:focus-visible {
+          border-radius: 2px;
+          outline: 2px solid colors.$link;
+          outline-offset: 2px;
+        }
+      }
     }
   }
 
@@ -297,10 +307,6 @@
     background-color: colors.$gradient-third;
   }
 
-  &.law-logo {
-    background-color: colors.$icon-transcript;
-  }
-
   &.backgroundwhite {
     background-color: colors.$white;
 
@@ -310,8 +316,13 @@
     background-repeat: no-repeat;
   }
 
+  &.inverticoncolor img {
+    filter: brightness(0) invert(1);
+  }
+
   &.law-logo {
     background-color: colors.$icon-transcript;
+    padding: $padding * 2;
   }
 
   b {
@@ -493,6 +504,20 @@
   .single_voting {
     background: colors.$background;
     margin-bottom: 20px;
+
+    & > a:focus-visible,
+    & > a:hover {
+      text-decoration: none;
+      color: colors.$link;
+      outline: 2px solid colors.$link;
+      outline-offset: -2px;
+    }
+
+    & > a:focus,
+    & > a:active {
+      text-decoration: none;
+      color: colors.$link;
+    }
   }
   .session_title {
     margin: 15px 0;
