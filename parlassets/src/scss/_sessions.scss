@@ -297,10 +297,6 @@
     background-color: colors.$gradient-third;
   }
 
-  &.law-logo {
-    background-color: colors.$icon-transcript;
-  }
-
   &.backgroundwhite {
     background-color: colors.$white;
 
@@ -310,8 +306,13 @@
     background-repeat: no-repeat;
   }
 
+  &.inverticoncolor img {
+    filter: brightness(0) invert(1);
+  }
+
   &.law-logo {
     background-color: colors.$icon-transcript;
+    padding: $padding * 2;
   }
 
   b {
