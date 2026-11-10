@@ -20,7 +20,7 @@
   "tools": {
     "notifications": "obavijesti",
     "voteComparator": "komparator-glasanja",
-    "discord": "pretrazivac-razjedinjenosti",
+    "unity": "enotnost",
     "compass": "saborski-kompas",
     "wordGroups": "grupe-rijeci"
   },
@@ -43,6 +43,7 @@
     "otherVotings": "glasanja",
     "transcript": "transkript",
     "agenda": "dnevni-red",
-    "vote": "glasanje"
+    "vote": "glasanje",
+    "minutes": "zapisnik"
   }
 }

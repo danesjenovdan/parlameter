@@ -31,7 +31,8 @@
     "thanks": "Parlameter nastaja v okviru inštituta <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, ki se osredotoča na digitalno politično participacijo, transparentnost in nadzor. Hvala Google DNI, Amebisu, Ameriški ambasadi, NED in vsem posameznicam in posameznikom, ki so nam nesebično pomagali pri razvoju."
   },
   "legal": {
-    "title": "Pravno obvestilo"
+    "title": "Pravno obvestilo",
+    "body": "[empty]"
   },
   "press": {
     "todo": true,
@@ -174,6 +175,7 @@
     "vote-result--adopted": "Sprejet",
     "vote-result--received": "Prejet",
     "vote-result--in_procedure": "V obravnavi",
+    "vote-result--suspended": "Suspended",
     "legislation": "Zakonodaja",
     "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
