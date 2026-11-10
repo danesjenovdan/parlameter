@@ -31,3 +31,7 @@ jobs:
       - name: Check parlacards i18n files for missing files or translation keys
         run: |
           python3 scripts/check_parlacards_i18n.py
+
+      - name: Check parlasite i18n files for missing files or translation keys
+        run: |
+          python3 scripts/check_parlasite_i18n.py
