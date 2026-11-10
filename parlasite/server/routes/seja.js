@@ -92,6 +92,7 @@ const renderLegislation = async (render, req, res, next) => {
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('general.legislation')}`,
       activeTab: 'zakonodaja',
+      sessionIcon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
       ...sesData,
     });
   } else {
@@ -112,6 +113,7 @@ const renderVotes = async (render, req, res, next) => {
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.other-votings')}`,
       activeTab: 'glasovanja',
+      sessionIcon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
       ...sesData,
     });
   } else {
@@ -132,6 +134,7 @@ const renderAgenda = async (render, req, res, next) => {
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.agenda')}`,
       activeTab: 'dnevni-red',
+      sessionIcon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
       ...sesData,
     });
   } else {
@@ -152,6 +155,7 @@ const renderTranscript = async (render, req, res, next) => {
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.transcript')}`,
       activeTab: 'transkript',
+      sessionIcon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
       ...sesData,
       page: req.query.page || 1,
     });
@@ -173,6 +177,7 @@ const renderMinutes = async (render, req, res, next) => {
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')} - ${i18n('titles.minutes')}`,
       activeTab: 'minutes',
+      sessionIcon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
       ...sesData,
       page: req.query.page || 1,
     });
@@ -198,6 +203,7 @@ const renderMotion = async (render, req, res, next) => {
         activeMenu: 'session',
         pageTitle: `${i18n('titles.session')} - ${i18n('titles.voting')}`,
         activeTab: 'glasovanje',
+        sessionIcon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
         ...sesData,
         motionId,
       });
@@ -222,6 +228,7 @@ const renderEmpty = async (render, req, res, next) => {
       activeMenu: 'session',
       pageTitle: `${i18n('titles.session')}`,
       activeTab: 'no-data',
+      sessionIcon: `${urls.cdn}/icons/${sessionClassification(sesData.session.classification).icon}.svg`,
       ...sesData,
     });
   } else {

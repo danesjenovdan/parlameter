@@ -1,11 +1,13 @@
 {
   "landing": {
     "title": "Parlametar Zagreb",
+    "home-link-label": "Parlameter – vstopna stran",
     "lead": "Parlametar Zagreb je alat koji, pomoću analize glasanja i transkripata zastupničkih nastupa, olakšava praćenje rada Gradske skupštine Grada Zagreba.",
     "description": "Saznajte tko su zastupnici u Gradskoj skupštini Grada Zagreba i kako glasaju, o čemu raspravljaju na sjednicama, tko zastupa vaše interese i koje je uredbe i akte Gradska skupština donijela u ovom mandatu.",
     "search": {
       "part_one": "Traži",
-      "part_two": "gradski zastupnici i zastupnice, glasanja ili prisutnost na glasanjima"
+      "part_two": "gradski zastupnici i zastupnice, glasanja ili prisutnost na glasanjima",
+      "info-label": "Informacije o iskanju"
     }
   },
   "about": {
@@ -47,13 +49,17 @@
     }
   },
   "menu": {
+    "skip-link": "Preskoči na glavno vsebino",
+    "navigation-label": "Glavna navigacija",
     "legislation": "Sve odluke",
     "sessions": "Sjednice",
     "mps": "Zastupnici",
     "pgs": "Klubovi",
-    "tools": "Alati"
+    "tools": "Alati",
+    "search": "Iskanje"
   },
   "footer": {
+    "footer-label": "Informacije v nogi",
     "description": "Parlameter je alat otvorenog koda koji razvija i održava <a href=\"https://danesjenovdan.si\" target=\"_blank\">Danes je nov dan, Inštitut za druga vprašanja</a>. Cijeli kod slobodno je dostupan na <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repozitoriju</a>. Internetska stranica Parlametar Zagreb uspostavljena je u suradnji s organizacijom <a href=\"https://gong.hr\" target=\"_blank\">Gong</a>.",
     "about": "Prezentacija Parlametra",
     "legal": "Pravne napomene",
@@ -140,9 +146,9 @@
       "title": "Komparator glasanja",
       "text": "Komparator glasanja odgovara na pitanja poput: Kada su zastupnici SDP-a glasali isto kao i zastupnici HDZ-a?"
     },
-    "discord": {
-      "title": "Pretraživač razjedinjenosti",
-      "text": "Istražite nesložnosti unutar klubova zastupnica s obzirom na to koliko je unutar kluba bilo neslaganja u glasanju."
+    "unity": {
+      "title": "Enotnost",
+      "text": "Raziskuj enotnost v državnem zboru skozi usklajenost glasovanj različnih parlamentarnih skupin."
     },
     "compass": {
       "title": "Saborski kompas",
@@ -169,15 +175,18 @@
     "vote-result--adopted": "Prihvaćen",
     "vote-result--received": "Prima se na znanje",
     "vote-result--in_procedure": "U proceduri",
+    "vote-result--suspended": "Suspended",
     "legislation": "Odluke",
     "other_votings": "Glasanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkripti",
+    "minutes": "Zapisnik",
     "tools_intro": "Demokracija je kontinuirani proces koji ovisi o našem sudjelovanju u njemu. Pomoći će sljedeći alati!",
     "page-not-found-text": "Ovdje nema ništa. Što tražiš?",
     "info_email": "info@parlametar.hr",
     "unaffiliated": "izvan klubova",
-    "no-session-data": "(Još) nemamo podataka za ovu sjednicu."
+    "no-session-data": "(Još) nemamo podataka za ovu sjednicu.",
+    "joint-session": "Skupna seja"
   },
   "social": {
     "facebook": "https://www.facebook.com/parlametar",
@@ -190,15 +199,17 @@
     "other-votings": "Glasanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",
+    "minutes": "Zapisnik",
     "voting": "Glasanje",
     "session-list": "Popis sjednica",
     "sessions-search": "Traži sjednice",
     "thank-you": "Hvala!",
-    "ups": ":("
+    "ups": ":(",
+    "leader": "Predsednik DZ"
   },
   "legislation": {
-    "decree": "O",
     "act": "A",
+    "decree": "O",
     "law": "Z"
   }
 }
