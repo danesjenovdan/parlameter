@@ -22,9 +22,15 @@
     font-style: italic;
     font-size: 24px;
     // text-align: center;
-    margin: 45px 20px 45px 25px;
+    margin: 45px 10px 45px 10px;
     @include breakpoints.respond-to(mobile) {
         font-size: 18px;
+    }
+
+    a:focus-visible {
+        border-radius: 2px;
+        outline: 2px solid colors.$link;
+        outline-offset: 2px;
     }
 }
 
@@ -34,6 +40,7 @@
 #about .lead-text-container a:visited {
     display: inline-block;
     text-decoration: none;
+    padding-inline: 10px;
 }
 
 #about .lead-text-container .lead-text {

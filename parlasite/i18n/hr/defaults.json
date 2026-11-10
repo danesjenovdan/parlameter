@@ -1,10 +1,13 @@
 {
   "landing": {
     "title": "Parlametar",
+    "home-link-label": "Parlameter – vstopna stran",
     "lead": "Istraži tko su zastupnice i zastupnici, kako glasaju, o čemu raspravljaju na sjednicama, tko zastupa tvoje interese te koje je odluke i akte Hrvatski sabor donio u ovom mandatu.",
+    "description": "Razišči, kdo so poslanci in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je Državni zbor sprejel v tem mandatu.",
     "search": {
       "part_one": "Traži",
-      "part_two": "odluke i akte, glasanja, zastupnice i zastupnike, zastupničke klubove ili njihove govore"
+      "part_two": "odluke i akte, glasanja, zastupnice i zastupnike, zastupničke klubove ili njihove govore",
+      "info-label": "Informacije o iskanju"
     }
   },
   "about": {
@@ -46,13 +49,17 @@
     }
   },
   "menu": {
+    "skip-link": "Preskoči na glavno vsebino",
+    "navigation-label": "Glavna navigacija",
     "legislation": "Zakonodavstvo",
     "sessions": "Sjednice",
     "mps": "Zastupnice",
     "pgs": "Klubovi",
-    "tools": "Alati"
+    "tools": "Alati",
+    "search": "Iskanje"
   },
   "footer": {
+    "footer-label": "Informacije v nogi",
     "description": "Parlameter je alat otvorenog koda koji razvija i održava <a href=\"https://danesjenovdan.si\" target=\"_blank\">Danes je nov dan, Inštitut za druga vprašanja</a>. Cijeli kod slobodno je dostupan na <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repozitoriju</a>. Internetska stranica Parlametar HR uspostavljena je u suradnji s organizacijom <a href=\"https://gong.hr\" target=\"_blank\">Gong</a>.",
     "about": "Prezentacija Parlametra",
     "legal": "Pravne napomene",
@@ -168,15 +175,18 @@
     "vote-result--adopted": "Prihvaćen",
     "vote-result--received": "Prima se na znanje",
     "vote-result--in_procedure": "U proceduri",
+    "vote-result--suspended": "Suspended",
     "legislation": "Zakonodavstvo",
     "other_votings": "Glasanja",
     "agenda": "Dnevni red",
     "transcripts": "Transkripti",
+    "minutes": "Zapisnik",
     "tools_intro": "Demokracija je proces koji traje i ovisi o sudjelovanju svih nas. U tome vam mogu pomoći sljedeći alati!",
     "page-not-found-text": "Ovdje nema ništa. Što tražiš?",
     "info_email": "info@parlametar.hr",
     "unaffiliated": "nepovezana",
-    "no-session-data": "(Još) nemamo podataka za ovu sjednicu."
+    "no-session-data": "(Još) nemamo podataka za ovu sjednicu.",
+    "joint-session": "Skupna seja"
   },
   "social": {
     "facebook": "https://www.facebook.com/parlametar",
@@ -189,15 +199,17 @@
     "other-votings": "Glasanja",
     "agenda": "Dnevni red",
     "transcript": "Transkript",
+    "minutes": "Zapisnik",
     "voting": "Glasanje",
     "session-list": "Popis sjednica",
     "sessions-search": "Traži sjednice",
     "thank-you": "Hvala!",
-    "ups": ":("
+    "ups": ":(",
+    "leader": "Predsednik DZ"
   },
   "legislation": {
-    "decree": "U",
     "act": "A",
+    "decree": "U",
     "law": "Z"
   }
 }
