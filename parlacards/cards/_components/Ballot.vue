@@ -79,9 +79,18 @@ export default {
     margin: 10px 0;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     text-decoration: none;
     background-color: colors.$link-hover-background;
+    color: colors.$link;
+    outline: 2px solid colors.$link;
+    outline-offset: -2px;
+  }
+
+  &:focus,
+  &:active {
+    text-decoration: none;
     color: colors.$link;
   }
 

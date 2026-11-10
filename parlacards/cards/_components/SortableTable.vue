@@ -52,8 +52,8 @@
           }}</template>
           <template v-else-if="cell">
             <template v-if="cell.link">
-              <a v-if="cell.image" :href="cell.link">
-                <img :src="cell.image" :style="cell.imageStyle" />
+              <a v-if="cell.image" :href="cell.link" tabindex="-1">
+                <img :src="cell.image" :style="cell.imageStyle" alt="" />
               </a>
               <a v-else :href="cell.link" class="funblue-light-hover">
                 {{ cell.text }}

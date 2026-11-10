@@ -19,6 +19,16 @@
 
     .group-extra-info {
       margin-bottom: 30px;
+
+      a {
+        color: colors.$link;
+
+        &:focus-visible {
+          border-radius: 2px;
+          outline: 2px solid colors.$link;
+          outline-offset: 2px;
+        }
+      }
     }
   }
 }
@@ -30,7 +40,7 @@
     display: inline-block;
 
     li {
-      overflow: hidden;
+      // overflow: hidden;
       float: left;
       text-align: center;
       list-style: none;
@@ -66,6 +76,17 @@
           color: colors.$white;
           background-color: colors.$tab-active;
           text-decoration: none;
+        }
+
+        &:focus {
+          text-decoration: none;
+        }
+
+        &:focus-visible {
+          text-decoration: none;
+          border-radius: 2px;
+          outline: 2px solid colors.$link;
+          outline-offset: 2px;
         }
 
         @include breakpoints.respond-to(mobile) {

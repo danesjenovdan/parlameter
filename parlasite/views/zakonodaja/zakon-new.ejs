@@ -3,8 +3,8 @@
 <div class="session-container">
   <div class="row header text-center">
     <div class="col-lg-12">
-      <div class="media-object img-circle session-logo backgroundred law-logo">
-        <b><%= i18n(`legislation.${lawData.results.classification || 'decree'}`) %></b>
+      <div class="media-object img-circle session-logo backgroundred inverticoncolor law-logo">
+        <img src="<%- config.urls.cdn %>/icons/legislation-act.svg" class="img-responsive">
       </div>
 
       <h1 style="max-width: 600px; position: relative; margin: auto;"><%= lawData.results.text %></h1>

@@ -1,11 +1,13 @@
 {
   "landing": {
     "title": "Parlameter",
+    "home-link-label": "Parlameter – vstopna stran",
     "lead": "Parlameter je orodje, ki z analizo glasovanj in transkriptov nastopov lajša spremljanje dela v Občinskem svetu Občine Ajdovščina.",
     "description": "Razišči, kdo so svetniki v tvoji občini in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je občina sprejela v tem mandatu.",
     "search": {
       "part_one": "Išči",
-      "part_two": "odloke, glasovanja, svetnike, svetniške klube ali njihove govore"
+      "part_two": "odloke, glasovanja, svetnike, svetniške klube ali njihove govore",
+      "info-label": "Informacije o iskanju"
     }
   },
   "about": {
@@ -29,7 +31,8 @@
     "thanks": "Parlameter nastaja v okviru inštituta <a href=\"http://danesjenovdan.si\" class=\"funblue-light-hover\">Danes je nov dan</a>, ki se osredotoča na digitalno politično participacijo, transparentnost in nadzor. Hvala Google DNI, Amebisu, Ameriški ambasadi, NED in vsem posameznicam in posameznikom, ki so nam nesebično pomagali pri razvoju."
   },
   "legal": {
-    "title": "Pravno obvestilo"
+    "title": "Pravno obvestilo",
+    "body": "[empty]"
   },
   "press": {
     "todo": true,
@@ -46,13 +49,17 @@
     }
   },
   "menu": {
+    "skip-link": "Preskoči na glavno vsebino",
+    "navigation-label": "Glavna navigacija",
     "legislation": "Odloki",
     "sessions": "Seje",
     "mps": "Svetniki",
     "pgs": "Svetniški klubi",
-    "tools": "Orodja"
+    "tools": "Orodja",
+    "search": "Iskanje"
   },
   "footer": {
+    "footer-label": "Informacije v nogi",
     "description": "Parlameter je odprtokodno orodje, ki ga razvija in vzdržuje <a href=\"https://danesjenovdan.si\" target=\"_blank\">Danes je nov dan, Inštitut za druga vprašanja</a>. Celotna koda je prosto dostopna na <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repozitoriju</a>. Spletno mesto Parlameter Ajdovščina je bilo vzpostavljeno v sodelovanju z <a href=\"https://www.ajdovscina.si\" target=\"_blank\" rel=\"noopener noreferrer\">Občino Ajdovščina</a>.",
     "about": "Predstavitev Parlametra",
     "legal": "Pravno obvestilo in varstvo osebnih podatkov",
@@ -168,6 +175,7 @@
     "vote-result--adopted": "Sprejet",
     "vote-result--received": "Prejet",
     "vote-result--in_procedure": "V obravnavi",
+    "vote-result--suspended": "Suspended",
     "legislation": "Odloki",
     "other_votings": "Glasovanja",
     "agenda": "Dnevni red",
@@ -177,7 +185,8 @@
     "page-not-found-text": "Tukaj ni ničesar. Kaj pa iščeš?",
     "info_email": "info@parlameter.si",
     "unaffiliated": "nepovezan/a",
-    "no-session-data": "Za to sejo (še) nimamo podatkov."
+    "no-session-data": "Za to sejo (še) nimamo podatkov.",
+    "joint-session": "Skupna seja"
   },
   "social": {
     "facebook": "https://www.facebook.com/parlameter",
@@ -199,6 +208,8 @@
     "leader": "Župan"
   },
   "legislation": {
-    "decree": "O"
+    "act": "A",
+    "decree": "O",
+    "law": "Z"
   }
 }
