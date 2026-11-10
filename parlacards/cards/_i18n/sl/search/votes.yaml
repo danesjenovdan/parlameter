@@ -1,9 +1,12 @@
 card:
   title: Glasovanja, ki vsebujejo iskalni niz
   info: >-
-    # Pregled vseh glasovanj, ki vsebujejo iskalni niz, razvščenih glede na čas.
+    # Pregled glasovanj, ki vsebujejo iskalni niz.
 
 
-    Poiščemo in izpišemo povezave do vseh glasovanj, v
-    katerih se pojavi lema iskanega niza, nato jih razvrstimo po datumu (od
-    najnovejše do najstarejše) in podobnosti z iskalnim nizom.
+    Poiščemo glasovanja, v naslovu katerih se pojavi lema iskalnega niza, torej
+    osnovna oblika vpisane besede. Glasovanja razvrstimo po sejah in pri vsakem
+    izpišemo uradni izid ter število glasov ZA, PROTI, VZDRŽANI in ODSOTNI.
+
+
+    Nabor glasovanj pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
