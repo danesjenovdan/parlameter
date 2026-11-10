@@ -1,10 +1,13 @@
 {
   "landing": {
     "title": "Parlametr",
+    "home-link-label": "Parlameter – vstopna stran",
     "lead": "Parlametr jest narzędziem, które analizując głosowania i zapisy wystąpień, ułatwia monitorowanie pracy Sejmu RP.",
+    "description": "Razišči, kdo so poslanci in kako glasujejo, o čem se pogovarjajo na sejah, kdo zastopa tvoje interese ter katere odloke in akte je Državni zbor sprejel v tem mandatu.",
     "search": {
       "part_one": "Szukaj",
-      "part_two": "ustawy, głosowania, posłowie, kluby parlamentarne i ich wystąpienia"
+      "part_two": "ustawy, głosowania, posłowie, kluby parlamentarne i ich wystąpienia",
+      "info-label": "Informacije o iskanju"
     }
   },
   "about": {
@@ -46,13 +49,17 @@
     }
   },
   "menu": {
+    "skip-link": "Preskoči na glavno vsebino",
+    "navigation-label": "Glavna navigacija",
     "legislation": "Projekty",
     "sessions": "Posiedzenia",
     "mps": "Posłowie",
     "pgs": "Kluby",
-    "tools": "Narzędzia"
+    "tools": "Narzędzia",
+    "search": "Iskanje"
   },
   "footer": {
+    "footer-label": "Informacije v nogi",
     "description": "Parlameter is an open-source tool developed and maintained by <a href=\"https://danesjenovdan.si\" target=\"_blank\">Today Is a New Day, Institute for Other Studies</a>. The code is freely available on our <a href=\"https://github.com/danesjenovdan/parlameter\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub repository</a>.",
     "about": "About Parlameter",
     "legal": "Legal notice and data protection",
@@ -168,13 +175,18 @@
     "vote-result--adopted": "Przyjęto",
     "vote-result--received": "Otrzymano",
     "vote-result--in_procedure": "W czytaniu",
+    "vote-result--suspended": "Suspended",
     "legislation": "Debaty",
     "other_votings": "Inne głosowania",
     "agenda": "Dnevni red",
     "transcripts": "Transkrypcje",
+    "minutes": "Zapisnik",
     "tools_intro": "Demokracja jest procesem ciągłym, który zależy od naszego uczestnictwa w nim. Skorzystaj z poniższych narzędzi, aby pomóc ci się lepiej zaangażować!",
     "page-not-found-text": "Tutaj niczego nie ma. Czego szukasz?",
-    "info_email": "info@parlameter.si"
+    "info_email": "info@parlameter.si",
+    "unaffiliated": "nepovezan/a",
+    "no-session-data": "Za to sejo (še) nimamo podatkov.",
+    "joint-session": "Skupna seja"
   },
   "social": {
     "facebook": "https://www.facebook.com/parlameter",
@@ -187,13 +199,17 @@
     "other-votings": "Inne głosowania",
     "agenda": "Dnevni red",
     "transcript": "Transkrypcja",
+    "minutes": "Zapisnik",
     "voting": "Głosowanie",
     "session-list": "Lista posiedzeń",
     "sessions-search": "Szukaj posiedzenia",
     "thank-you": "Dziękujemy!",
-    "ups": ":("
+    "ups": ":(",
+    "leader": "Predsednik DZ"
   },
   "legislation": {
-    "decree": "O"
+    "act": "A",
+    "decree": "O",
+    "law": "Z"
   }
 }

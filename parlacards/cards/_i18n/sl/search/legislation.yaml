@@ -1,8 +1,17 @@
 card:
   title: Zakoni, ki vsebujejo iskalni niz
   info: >-
-    # Seznam vseh zakonov in aktov, ki v naslovu vsebujejo iskalni niz, in so o
-    njih glasovali v času trenutnega sklica.
+    # Seznam zakonov in aktov, ki ustrezajo iskalnemu nizu.
 
 
-    Zakone razvrstimo po podobnosti z iskalnim nizom.
+    V analizo vključimo vse zakone in akte, o katerih se je glasovalo v tem
+    sklicu. Iskalni niz primerjamo z naslovom akta in z njegovim predlagateljem,
+    zato med zadetki najdeš tudi akte, ki jih je vložila iskana oseba ali
+    poslanska skupina.
+
+
+    Pri vsakem zadetku izpišemo naslov, številko EPA (evidenca parlamentarnega
+    akta) in status.
+
+
+    Podatke pridobivamo s spletnega mesta [DZ RS](https://www.dz-rs.si/).
