@@ -1,9 +1,13 @@
 card:
   title: Raba skozi čas
   info: >-
-    # Pregled pogostosti pojavljanja iskalnega niza v govorih glede na čas.
+    # Pogostost pojavljanja iskalnega niza v govorih poslank in poslancev skozi
+    čas.
 
 
-    Preštejemo pojavitve iskanega niza skozi mandat in jih seštejemo po
-    mesecih. Rezultate potem prikažemo bodisi v celem mandatu bodisi v zadnjem
-    letu.
+    Preštejemo vse pojavitve leme iskalnega niza v transkriptih sej in jih
+    seštejemo po mesecih. Rezultat prikažemo na črtnem grafu.
+
+
+    S klikom na želeni zavihek izbereš prikaz za celoten mandat ali za zadnje
+    leto.

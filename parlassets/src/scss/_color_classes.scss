@@ -12,13 +12,25 @@
 
   &:hover {
     background-color: colors.$link-hover-background;
-    text-decoration: none;
+    text-decoration: underline;
+    color: colors.$link;
+  }
+
+  &:active,
+  &:focus {
     color: colors.$link;
   }
 }
 
 .funblue-light-hover {
   @include link-hover;
+
+  &:focus-visible {
+    color: colors.$link;
+    border-radius: 2px;
+    outline: 2px solid colors.$link;
+    outline-offset: 2px;
+  }
 }
 
 .inactive {

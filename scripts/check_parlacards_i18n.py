@@ -24,15 +24,6 @@ def underline_print(text, underline="-"):
     print(underline * len(text))
 
 
-def count_files(locales):
-    counts = Counter()
-    for locale in locales:
-        counts[locale] = len(
-            glob.glob(f"parlacards/cards/_i18n/{locale}/**/*", recursive=True)
-        )
-    return counts
-
-
 def report_missing_files(locales):
     locale_paths = {}
     for locale in locales:
