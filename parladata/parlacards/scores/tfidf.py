@@ -1,5 +1,5 @@
-from datetime import datetime
 import re
+from datetime import datetime
 
 from django.db.models import Q
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -27,11 +27,16 @@ def filter_numeric_tokens(token):
     enumeration_pattern = re.compile(r"^\d+\.$")
     if token.isdigit():
         # keep four-digit numbers (e.g. years), drop other plain numbers
-        return len(token) == 4 and (token.startswith("2") or token.startswith("19"))  # keep years starting with 1 (e.g., 2xxx)
+        return len(token) == 4 and (
+            token.startswith("2") or token.startswith("19")
+        )  # keep years starting with 1 (e.g., 2xxx)
     # drop decimal numbers (e.g. "12,2") and enumeration markers (e.g. "1.")
-    return not decimal_number_pattern.match(token) and not dot_decimal_number_pattern.match(token) and not enumeration_pattern.match(
-        token
-    ) and not hour_number_pattern.match(token)
+    return (
+        not decimal_number_pattern.match(token)
+        and not dot_decimal_number_pattern.match(token)
+        and not enumeration_pattern.match(token)
+        and not hour_number_pattern.match(token)
+    )
 
 
 #
