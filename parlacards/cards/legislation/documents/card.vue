@@ -1,7 +1,14 @@
 <template>
   <card-wrapper :header-config="headerConfig">
     <div class="legislation-documents">
-      <documents :documents="documents" group-by="group" />
+      <documents
+        :documents="documents"
+        group-by="group"
+        :translate-group-keys="[
+          'legislation-procedure-phases',
+          'legislation-classifications',
+        ]"
+      />
     </div>
   </card-wrapper>
 </template>
