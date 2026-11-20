@@ -1,3 +1,4 @@
+import re
 from datetime import datetime
 
 from django.db.models import Q
@@ -14,6 +15,28 @@ from parladata.models.common import Mandate
 from parladata.models.memberships import PersonMembership
 from parladata.models.session import Session
 from parladata.models.speech import Speech
+
+
+# filter numbers and numbers wichs ends with . and decimal numbers like 12,2 except year numbers from tfidf
+def filter_numeric_tokens(token):
+    if not token:
+        return False
+    decimal_number_pattern = re.compile(r"^\d+\,\d+$")
+    dot_decimal_number_pattern = re.compile(r"^\d+\.\d+$")
+    hour_number_pattern = re.compile(r"^\d+\:\d+$")
+    enumeration_pattern = re.compile(r"^\d+\.$")
+    if token.isdigit():
+        # keep four-digit numbers (e.g. years), drop other plain numbers
+        return len(token) == 4 and (
+            token.startswith("2") or token.startswith("19")
+        )  # keep years starting with 1 (e.g., 2xxx)
+    # drop decimal numbers (e.g. "12,2") and enumeration markers (e.g. "1.")
+    return (
+        not decimal_number_pattern.match(token)
+        and not dot_decimal_number_pattern.match(token)
+        and not enumeration_pattern.match(token)
+        and not hour_number_pattern.match(token)
+    )
 
 
 #
@@ -279,7 +302,7 @@ def calculate_sessions_tfidf(playing_field, timestamp=None):
 
     feature_names = tfidfVectorizer.get_feature_names_out()
 
-    output = []
+    output = {}
     for session_index, session_id in enumerate(session_ids):
 
         # Value can be one item matrix so get the item out of them.
@@ -298,9 +321,13 @@ def calculate_sessions_tfidf(playing_field, timestamp=None):
         # sort in place
         session_tfidf.sort(key=lambda x: x[1], reverse=True)
 
-        # TODO when refactoring change this to a single
-        # dictionary instead of a list of dictionaries
-        output.append({"session_id": session_id, "tfidf": session_tfidf[:30]})
+        session_tfidf = [
+            (token, score)
+            for token, score in session_tfidf
+            if filter_numeric_tokens(token)
+        ]
+
+        output[session_id] = session_tfidf[:30]
 
     return output
 
@@ -311,14 +338,14 @@ def save_sessions_tfidf(playing_field, timestamp=None):
 
     sessions_tfidf = calculate_sessions_tfidf(playing_field, timestamp)
 
-    for tfidf in sessions_tfidf:
-        for score in tfidf["tfidf"]:
-            if score[1] > 0 and score[0] != "":
+    for session_id, tfidfs in sessions_tfidf.items():
+        for token, score in tfidfs:
+            if score > 0 and token != "":
                 SessionTfidf(
-                    session_id=tfidf["session_id"],
+                    session_id=session_id,
                     timestamp=timestamp,
-                    token=score[0],
-                    value=score[1],
+                    token=token,
+                    value=score,
                     playing_field=playing_field,
                 ).save()
 
@@ -349,14 +376,14 @@ def save_session_tfidf_on_last_speech_date(playing_field, session):
     timestamp = session.speeches.latest("start_time").start_time
     sessions_tfidf = calculate_sessions_tfidf(playing_field, timestamp)
 
-    for tfidf in sessions_tfidf:
-        for score in tfidf["tfidf"]:
-            if tfidf["session_id"] == session.id and score[1] > 0 and score[0] != "":
+    for session_id, tfidfs in sessions_tfidf.items():
+        for token, score in tfidfs:
+            if session_id == session.id and score > 0 and token != "":
                 SessionTfidf(
-                    session_id=tfidf["session_id"],
+                    session_id=session_id,
                     timestamp=timestamp,
-                    token=score[0],
-                    value=score[1],
+                    token=token,
+                    value=score,
                     playing_field=playing_field,
                 ).save()
 
@@ -366,14 +393,15 @@ def save_sessions_tfidf_on_last_speech_date(playing_field, sessions):
     sessions_tfidf = calculate_sessions_tfidf(playing_field, timestamp)
     session_ids = sessions.values_list("id", flat=True)
 
-    for tfidf in sessions_tfidf:
-        for score in tfidf["tfidf"]:
-            if tfidf["session_id"] in session_ids and score[1] > 0 and score[0] != "":
+    for session_id, tfidfs in sessions_tfidf.items():
+        print(tfidfs)
+        for token, score in tfidfs:
+            if session_id in session_ids and score > 0 and token != "":
                 SessionTfidf(
-                    session_id=tfidf["session_id"],
+                    session_id=session_id,
                     timestamp=timestamp,
-                    token=score[0],
-                    value=score[1],
+                    token=token,
+                    value=score,
                     playing_field=playing_field,
                 ).save()
 
