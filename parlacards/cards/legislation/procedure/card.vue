@@ -277,7 +277,7 @@ export default {
           &.consideration--rejected {
             .consideration-connector {
               .consideration-connector-line {
-                background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="8"%3E%3Crect width="4" height="4" fill="%23#{string.slice("#{colors.$button-against}", 2)}"/%3E%3C/svg%3E');
+                background: none;
               }
             }
           }
