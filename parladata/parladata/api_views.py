@@ -6,7 +6,6 @@ from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend, Filter, FilterSet
 from oauth2_provider.contrib.rest_framework import OAuth2Authentication
-from raven.contrib.django.raven_compat.models import client
 from rest_framework import (
     filters,
     generics,
