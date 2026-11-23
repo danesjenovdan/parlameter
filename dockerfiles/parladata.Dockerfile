@@ -1,5 +1,5 @@
 # we have to use python 3.8 since Lemmagen does not support 3.9
-FROM python:3.14 AS builder
+FROM python:3.15 AS builder
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
@@ -34,7 +34,7 @@ EXPOSE 8000
 
 RUN python3 manage.py compilemessages
 
-FROM python:3.14 AS runtime
+FROM python:3.15 AS runtime
 
 RUN apt-get update && \
     apt-get upgrade -y && \
