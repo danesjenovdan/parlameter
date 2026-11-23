@@ -175,11 +175,10 @@ class LegislationProcedureSerializer(CommonCachableSerializer):
 
 class LegislationSummarySerializer(CommonCachableSerializer):
     summary = serializers.SerializerMethodField()
+    created_at = serializers.DateTimeField()
 
     def calculate_cache_key(self, legislation):
-        summary = Summary.objects.filter(
-            link__legislation=legislation, approved_at__isnull=False
-        )
+        summary = Summary.objects.filter(law=legislation, approved_at__isnull=False)
         if summary.exists():
             summary = summary.latest("approved_at")
             return f'LegislationSummarySerializer_{legislation.id}_{summary.id}_{summary.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
@@ -188,32 +187,35 @@ class LegislationSummarySerializer(CommonCachableSerializer):
             return f'LegislationSummarySerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
 
     def get_summary(self, obj):
-        links = Link.objects.filter(
-            Q(legislation=obj) | Q(legislation_consideration__legislation=obj),
-            Q(tags__name__icontains="proposal") | Q(tags__name__icontains="enacted"),
-        )
+        summary = Summary.objects.filter(law=obj, approved_at__isnull=False)
 
-        if links.exists():
-            summary = Summary.objects.filter(link__in=links, approved_at__isnull=False)
-            if summary:
-                summary = summary.latest("approved_at")
-                return {
-                    "text": summary.text,
-                    "link": (
-                        LinkSerializer(summary.link, context=self.context).data
-                        if summary.link
-                        else None
-                    ),
-                    "ai_model": summary.ai_model,
-                    "ai_model_version": summary.ai_model_version,
-                }
-            else:
-                return {
-                    "text": None,
-                    "link": LinkSerializer(
-                        links.latest("created_at"), context=self.context
-                    ).data,
-                    "ai_model": None,
-                    "ai_model_version": None,
-                }
+        if summary.exists():
+            summary = summary.latest("approved_at")
+            data = {
+                "text": summary.text,
+                "links": (
+                    LinkSerializer(summary.links, context=self.context, many=True).data
+                    if summary.links.exists()
+                    else None
+                ),
+                "ai_model": summary.ai_model,
+                "ai_model_version": summary.ai_model_version,
+                "updated_at": summary.created_at,
+            }
+            if summary.error:
+                data["error"] = summary.error
+            return data
+        else:
+            links = Link.objects.filter(
+                Q(legislation=obj) | Q(legislation_consideration__legislation=obj),
+                Q(tags__name__icontains="proposal")
+                | Q(tags__name__icontains="enacted"),
+            )
+            return {
+                "text": None,
+                "links": LinkSerializer(links, context=self.context, many=True).data,
+                "ai_model": None,
+                "ai_model_version": None,
+                "error": "No approved summary found for this legislation.",
+            }
         raise NotFound("No approved summary found for this legislation.")
