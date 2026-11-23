@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.SCW_SECRET_TOKEN }}
 
       - name: Build and push parladata
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: ./parladata
           file: dockerfiles/parladata.Dockerfile
@@ -32,7 +32,7 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parladata-TODO-BRANCH-NAME-HERE:latest
 
       - name: Build and push solr
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: ./parladata/solr
           file: dockerfiles/solr.Dockerfile
@@ -42,7 +42,7 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parlasolr-TODO-BRANCH-NAME-HERE:latest
 
       - name: Build and push parlassets
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: dockerfiles/parlafront.Dockerfile
@@ -57,7 +57,7 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parlassets-TODO-BRANCH-NAME-HERE:latest
 
       - name: Build and push parlacards
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: dockerfiles/parlafront.Dockerfile
@@ -72,7 +72,7 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parlacards-TODO-BRANCH-NAME-HERE:latest
 
       - name: Build and push parlasite
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: dockerfiles/parlasite.Dockerfile
