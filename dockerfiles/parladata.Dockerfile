@@ -1,5 +1,7 @@
 # we have to use python 3.8 since Lemmagen does not support 3.9
-FROM python:3.14
+FROM python:3.14 as builder
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -8,29 +10,50 @@ RUN apt-get update && \
     libsasl2-modules \
     gettext
 
-RUN /usr/local/bin/python -m pip install --upgrade pip
-
-RUN mkdir /app
 WORKDIR /app
 
-COPY requirements.txt /app/
-RUN pip install -r requirements.txt
+ENV UV_COMPILE_BYTECODE=1 \
+	UV_LINK_MODE=copy \
+	UV_PYTHON_DOWNLOADS=0 \
+	UV_PROJECT_ENVIRONMENT=/opt/venv \
+	PATH="/opt/venv/bin:$PATH" \
+    DJANGO_SETTINGS_MODULE=parladata_project.settings.k8s \
+	PYTHONUNBUFFERED=1
 
-COPY . /app
+# Install dependencies first (cached separately from app code changes).
+COPY pyproject.toml uv.lock ./
+RUN --mount=type=cache,target=/root/.cache/uv \
+	uv sync --locked --no-dev --no-install-project
 
-RUN python3 manage.py compilemessages
+COPY . .
+
+RUN --mount=type=cache,target=/root/.cache/uv \
+	uv sync --locked --no-dev
 
 EXPOSE 8000
 
-ENV DJANGO_SETTINGS_MODULE=parladata_project.settings.k8s
+RUN python3 manage.py compilemessages
+
+FROM python:3.14 as runtime
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y \
+    libmemcached-dev \
+    libsasl2-modules \
+
+EXPOSE 8000
+
+WORKDIR /app
+
+COPY --from=builder /app /app
+
+ENV UV_PROJECT_ENVIRONMENT=/opt/venv \
+	PATH="/opt/venv/bin:$PATH" \
+	DJANGO_SETTINGS_MODULE=parladata_project.settings.k8s \
+	PYTHONUNBUFFERED=1
+
+COPY --from=builder /opt/venv /opt/venv
+COPY --from=builder /app /app
 
 CMD exec python manage.py runserver 0.0.0.0:8000
-
-
-# FROM python:3.8
-# RUN apt-get update && apt-get install --yes postgresql-client
-# RUN mkdir /app
-# WORKDIR /app
-# COPY . /app
-# RUN pip install -r requirements.txt
-# EXPOSE 8000
