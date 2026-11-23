@@ -1041,15 +1041,15 @@ wheels = [
 
 [[package]]
 name = "jwcrypto"
-version = "1.6.1"
+version = "1.6.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cryptography" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/13/8f/e802d77957903483129813ce6fa01a72a906f9cdd454039d1ec1e6d1e44a/jwcrypto-1.6.1.tar.gz", hash = "sha256:a1e1570da5c2e35dbcd375ec1d2891a24de8eb35ee2c1fe8e91978efb72cfe90", size = 116287, upload-time = "2026-09-15T21:22:33.286Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/56/94/039f7ec559e6028a4136c9b11505495baf2d3b627c06e8af7f0e23b8bb12/jwcrypto-1.6.2.tar.gz", hash = "sha256:47f3a880a0321ceefaab3e24c7b79e8c661beeaa47bdedc2ce686e9d9e440d8f", size = 120335, upload-time = "2026-11-23T19:29:55.063Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/31/a4/ee780473e42a3edaf65da1ad37f5c601a9c740e215c1e09db36bf90f3f59/jwcrypto-1.6.1-py3-none-any.whl", hash = "sha256:77e856818e514cb3d64a1043b6885a7d52f5cc37773f5e944de02103c8d3a54f", size = 121267, upload-time = "2026-09-15T21:22:32.27Z" },
+    { url = "https://files.pythonhosted.org/packages/81/b3/b03056a0a5904380547a1abf7447c159c77ef9c3935d55436a1738127ae9/jwcrypto-1.6.2-py3-none-any.whl", hash = "sha256:3fb14515fd2ee51cb35842154d358cc15138219c1e829e97ab510066e74dc464", size = 125108, upload-time = "2026-11-23T19:29:53.992Z" },
 ]
 
 [[package]]
@@ -1176,7 +1176,7 @@ wheels = [
 
 [[package]]
 name = "langsmith"
-version = "0.16.0"
+version = "0.16.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
@@ -1194,9 +1194,9 @@ dependencies = [
     { name = "xxhash" },
     { name = "zstandard" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e9/d0/48f803bba3f2032739095779977f38771a350d0b527d44de2ddb0ce067ca/langsmith-0.16.0.tar.gz", hash = "sha256:8111f149c720bc838ee16104d9eec59fe9379d67015dbce00b4fd2dcd910ca69", size = 5123269, upload-time = "2026-11-21T00:39:39.171Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/34/96/8b1ed7d37bae1f9cd9bd42a4588d26d3855ea80a5932294101feef09cad2/langsmith-0.16.1.tar.gz", hash = "sha256:20f09ff3cc2c26dd0af94a1306c988e48e46bdea2268d8e24f63bfd54f10e6a8", size = 5124903, upload-time = "2026-11-23T20:32:24.686Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0e/20/7fdaa85d1ff7a45f611b52e2be0c75d28d95b54420ab0083d672f32aa7df/langsmith-0.16.0-py3-none-any.whl", hash = "sha256:edd738910a595751218299c9791099db1b5c63ae6dc21ca68009dbfb6344524a", size = 1036883, upload-time = "2026-11-21T00:39:37.173Z" },
+    { url = "https://files.pythonhosted.org/packages/63/79/b2b50b0a6c6ac21c85411d4c5f02e27a5ea965c73ec2836011930d28e65b/langsmith-0.16.1-py3-none-any.whl", hash = "sha256:6d7ca07f254839309b6f797062271f5447c25112eda0cec9a0e7606eef77d5ee", size = 1037706, upload-time = "2026-11-23T20:32:22.367Z" },
 ]
 
 [[package]]
@@ -1590,7 +1590,7 @@ requires-dist = [
     { name = "python-memcached", specifier = "==1.62" },
     { name = "requests", specifier = "==2.34.2" },
     { name = "scikit-learn", specifier = "==1.9.1" },
-    { name = "sentry-sdk", specifier = "==3.0.0" },
+    { name = "sentry-sdk", specifier = "==2.76.0" },
     { name = "xmltodict", specifier = "==1.0.4" },
 ]
 
@@ -2331,15 +2331,15 @@ wheels = [
 
 [[package]]
 name = "sentry-sdk"
-version = "3.0.0"
+version = "2.76.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "certifi" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/63/25/54c58ddabc95f72ca32c2188247e0bf12584c0d65e117aba212afa6b54e1/sentry_sdk-3.0.0.tar.gz", hash = "sha256:daa5f0baa931dfd8c4d6844b4992764683a1abdcbad968c76703c34f0e244f13", size = 888885, upload-time = "2026-11-23T09:30:35.104Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/69/f5/0ea84f508b959db1b1349b446034b945ea8c0c7d5b8f463860acbdf77764/sentry_sdk-2.76.0.tar.gz", hash = "sha256:08115d93eab60ab6e49e2b867254aaa0babaca4dfa4d8fcf905c5d980e157041", size = 1092284, upload-time = "2026-11-23T08:47:59.093Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2e/4b/69643d19c9954f930a03deb06e3f80c57b2d6ecb325bdc9ca3fa1b6d1d30/sentry_sdk-3.0.0-py3-none-any.whl", hash = "sha256:22cfcdb11b494e8efa82a48edd655afdf99179df37f2ed37f18846b938455c36", size = 472979, upload-time = "2026-11-23T09:30:33.705Z" },
+    { url = "https://files.pythonhosted.org/packages/e2/7f/ed55e3b972af18226da01dc5d0a11a966cb15d4bc0f5f74ab4e6ba0c105d/sentry_sdk-2.76.0-py3-none-any.whl", hash = "sha256:1cd9a82a1610ce8f472efd3841542e3b957a26d5ffe83ddf48215bfd07c3833f", size = 555933, upload-time = "2026-11-23T08:47:57.442Z" },
 ]
 
 [[package]]

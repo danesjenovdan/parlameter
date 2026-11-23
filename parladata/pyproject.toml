@@ -36,7 +36,7 @@ dependencies = [
     "martor==1.9.2",
     "django-colorfield==0.14.0",
     "django-admin-sortable2==2.4",
-    "sentry-sdk==3.0.0",
+    "sentry-sdk==2.76.0",
     "eventregistry==11.0",
     "django-import-export==4.4.6",
     "djangorestframework-csv==3.0.2",
