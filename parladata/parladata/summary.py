@@ -89,7 +89,7 @@ def create_summary(links_queryset) -> Summary | None:
             ai_model_version=None,
             prompt=None,
             law=law,
-            error=Summary.Error.NO_VALID_PDF_DATA,
+            error=Summary.ERROR.PARSING_FAILED,
         )
         summary.links.set(links_queryset)
         return summary

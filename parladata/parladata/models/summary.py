@@ -7,7 +7,7 @@ from parladata.behaviors.models import Timestampable
 class Summary(Timestampable):
     """Summary of a law or legislation."""
 
-    class ERROR(models.TextChoices):
+    class Error(models.TextChoices):
         NONE = "", _("None")
         PARSING_FAILED = "parsing_failed", _("Parsing Failed")
 
@@ -61,8 +61,8 @@ class Summary(Timestampable):
         help_text=_("The error message if the summary generation failed."),
         null=True,
         blank=True,
-        choices=ERROR.choices,
-        default=ERROR.NONE,
+        choices=Error.choices,
+        default=Error.NONE,
         max_length=1024,
     )
 

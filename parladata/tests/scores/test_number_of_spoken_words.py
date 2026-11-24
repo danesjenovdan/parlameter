@@ -16,19 +16,19 @@ def test_calculate_number_of_spoken_words(
     first_person_speeches = (
         Speech.objects.filter_valid_speeches(timestamp)
         .filter(speaker=first_person, start_time__lte=timestamp)
-        .values_list("lemmatized_content", flat=True)
+        .values_list("lemmatized_content", "content")
     )
 
     second_person_speeches = (
         Speech.objects.filter_valid_speeches(timestamp)
         .filter(speaker=second_person, start_time__lte=timestamp)
-        .values_list("lemmatized_content", flat=True)
+        .values_list("lemmatized_content", "content")
     )
 
     last_person_speeches = (
         Speech.objects.filter_valid_speeches(timestamp)
         .filter(speaker=last_person, start_time__lte=timestamp)
-        .values_list("lemmatized_content", flat=True)
+        .values_list("lemmatized_content", "content")
     )
 
     number_of_spoken_words = calculate_number_of_spoken_words(first_person_speeches)
