@@ -1,21 +1,29 @@
 {
-  "url": "http://localhost:8000/v3/cards/legislation/summary/?id=8591",
-  "id": 8591,
+  "url": "https://data.parlameter.si/v3/cards/legislation/summary/?id=8606",
+  "id": 8606,
   "data": {
     "results": {
       "summary": {
-        "text": "# Test heading\n\n\n\nVlada Republike Slovenije predlaga nov zakon o specializiranih organih za obravnavo korupcijskih kaznivih dejanj in organiziranega kriminala, ki ga želi sprejeti po nujnem postopku zaradi preprečitve težko popravljivih posledic za delovanje države in varnost.\n\n## Test heading 2\n\n### Test heading 3\n\n**Kaj predlog zakona ureja in kateri problem naslavlja:**\nPredlog zakona ureja delovanje specializiranih organov, ki se borijo proti korupciji in organiziranemu kriminalu. Naslavlja problem naraščanja gospodarske kriminalitete po letu 2022 in kompleksnost organizirane kriminalitete, ki zahteva posebna finančna, informacijska, forenzična in mednarodna znanja. Trenutni sistem se sooča s pomanjkanjem stabilne kadrovske sestave, učinkovite koordinacije in jasne institucionalne odgovornosti, kar podaljšuje čas od začetka preiskave do pravnomočnega zaključka postopka.\n\n* List item\n  * indented list item\n    * indented list item\n    * indented list item\n* List item two\n\n**Ključne spremembe oz. novosti:**\nGlavna novost je tesnejše povezovanje in krepitev pristojnosti med tremi ključnimi institucijami: Nacionalnim preiskovalnim uradom (NPU), Specializiranim tožilstvom za pregon korupcije in organiziranega kriminala ter Specializiranim sodiščem za sojenje v teh zadevah. Cilj je zagotoviti stabilnejšo kadrovsko sestavo, trajnejšo specializacijo znotraj teh organov, učinkovitejšo koordinacijo med njimi ter jasnejšo institucionalno odgovornost. S tem se bo skrajšal čas postopkov in omogočil učinkovitejši pregon.\n1. List item\n1. List item two\n    1. indented list item\n\n**Na koga predlog vpliva:**\nPredlog zakona neposredno vpliva na delovanje pravosodnega sistema v Sloveniji, predvsem na policijo, tožilstvo in sodišča, ki se ukvarjajo z gospodarsko, korupcijsko in organizirano kriminaliteto. Posredno vpliva na vse državljane, saj obljublja vzpostavitev ničelne tolerance do korupcije in klientelizma, kar naj bi povečalo zaupanje v pravosodne institucije in prispevalo k večji pravičnosti ter varnosti v družbi. Vplival bo tudi na storilce teh kaznivih dejanj, saj bodo soočeni z bolj odločnim in specializiranim pregonom.",
-        "link": {
-          "id": 126229,
-          "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/154bc924d8cb1e1ecfc6f5a63b4892ff621df9e18fcf39fd4990c1016dbf76ee",
-          "name": "Besedilo Predloga zakona o specializiranih organih za obravnavo korupcijskih kaznivih dejanj in organiziranega kriminala",
-          "tags": [{ "id": 16, "name": "proposal", "slug": "proposal" }]
-        },
-        "error": "failed to parse",
-        "updated_at": "2026-10-20T12:00:00",
+        "text": "Tukaj je jedrnat povzetek predloga zakona, pripravljen za širšo javnost:\n\n**Kaj predlog zakona ureja in kateri problem naslavlja**\nPredlog zakona celovito ureja delovanje in pristojnosti specializiranih organov za obravnavo korupcijskih, gospodarskih in organiziranih kaznivih dejanj ter terorizma. Predlagatelj naslavlja težave dolgotrajnih sodnih postopkov, tveganj zastaranj, razdrobljenosti odgovornosti ter neenakomerne obremenjenosti organov pregona in sojenja. Obstoječi model štirih ločenih oddelkov na okrožnih sodiščih se je izkazal za pomanjkljivega, saj so bili sodniki pogosto obremenjeni tudi z rednimi zadevami, kar je upočasnjevalo reševanje najzahtevnejših primerov.\n\n**Ključne spremembe in novosti**\n1. **Novo sodišče:** Ukinjajo se dosedanji štirje specializirani oddelki pri okrožnih sodiščih, namesto njih pa se ustanavlja enotno **Specializirano sodišče RS za sojenje v zadevah korupcije in organiziranega kriminala** s sedežem v Ljubljani in pristojnostjo za celotno državo.\n2. **Reorganizacija tožilstva:** Specializirano državno tožilstvo (SDT) se preoblikuje v **Specializirano tožilstvo za pregon korupcije in organiziranega kriminala (StKOK)**. Minimalno število imenovanih tožilcev se povečuje z 10 na 25, uvajata se dva namestnika vodje in vzpostavlja posebna enota za analitično podporo.\n3. **Povezava z NPU:** Za Nacionalni preiskovalni urad (NPU) preiskava zadev iz pristojnosti StKOK postaja obvezna, pisna zahteva vodje StKOK za začetek ali prevzem preiskave pa zavezujoča.\n4. **Pritožbena instanca in sodna uprava:** Za pritožbe zoper odločitve novega specializiranega sodišča bo izključno pristojno Višje sodišče v Mariboru. Nadzorne sodno-upravne pristojnosti nad tem sodiščem bo neposredno izvajal predsednik Vrhovnega sodišča RS.\n5. **Hitrejši postopki:** Zadeve, v katerih so korupcijskih kaznivih dejanj osumljene uradne osebe, se določajo kot absolutno prednostne in nujne (sojenje bo potekalo tudi v času sodnih počitnic). Uvaja se tožilski model preiskave, podoben ureditvi pri Evropskem javnem tožilstvu (EJT).\n6. **Transparentnost:** Predsednik specializiranega sodišča bo o rezultatih in trendih dela sodišča enkrat letno neposredno poročal Državnemu zboru RS.\n\n**Na koga predlog vpliva**\n- **Na pravosodne organe in policijo:** Prinaša reorganizacijo sodnikov in tožilcev ter njihovo popolno usmeritev izključno na specializirane zadeve, prinaša pa jim tudi višje plače (na ravni vrhovnih sodnikov/tožilcev). Preiskovalcem na NPU določa jasnejše in obvezne naloge.\n- **Na druge državne organe:** KPK, Finančna uprava (FURS), Urad za preprečevanje pranja denarja ter inšpekcije bodo morali obvezno in neposredno sodelovati s StKOK.\n- **Na osumljence in obdolžence (zlasti uradne osebe):** Postopki zoper njih bodo tekli hitreje, bolj neprekinjeno in prednostno, ob ohranitvi vseh ustavnih procesnih jamstev in sodnega nadzora.\n- **Na širšo javnost in gospodarstvo:** Povečujeta se transparentnost obravnave najtežjih oblik kriminala in pravna varnost ter zmanjšujejo javnofinančne izgube zaradi korupcije.",
+        "links": [
+          {
+            "id": 126229,
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/154bc924d8cb1e1ecfc6f5a63b4892ff621df9e18fcf39fd4990c1016dbf76ee",
+            "name": "Besedilo Predloga zakona o specializiranih organih za obravnavo korupcijskih kaznivih dejanj in organiziranega kriminala",
+            "tags": [{ "id": 16, "name": "proposal", "slug": "proposal" }]
+          },
+          {
+            "id": 126230,
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/17280968db876c4be70040002b4848d080fd6116f03be24b73e5554b20e0b5b1",
+            "name": "Besedilo Predloga zakona o specializiranih organih za obravnavo korupcijskih kaznivih dejanj in organiziranega kriminala",
+            "tags": [{ "id": 16, "name": "proposal", "slug": "proposal" }]
+          }
+        ],
         "ai_model": "google_genai",
-        "ai_model_version": "gemini-2.5-flash"
-      }
+        "ai_model_version": "gemini-3.8-flash",
+        "updated_at": "2026-11-23T22:02:25.511704"
+      },
+      "created_at": "2026-07-27T15:17:40.246876"
     },
     "mandate": {
       "id": 4,

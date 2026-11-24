@@ -503,8 +503,8 @@ accepted: sprejeti
 rejected: zavrnjeni
 gov-side: Stran vlade
 summary: Povzetek
-summary-created-info-ai: Povzetek ustvarjen {date} z modelom {model} iz besedila dokumenta {document}.
-summary-created-info-human: Povzetek ustvarjen {date} ročno iz besedila dokumenta {document}.
+summary-created-info-ai: "Povzetek ustvarjen {date} z modelom {model} iz besedila dokumentov: {documents}."
+summary-created-info-human: "Povzetek ustvarjen {date} ročno iz besedila dokumentov: {documents}."
 all-mps: Vsi svetniki
 whole-term: Celoten mandat
 last-year: Zadnje leto
