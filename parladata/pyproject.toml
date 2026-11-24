@@ -29,6 +29,7 @@ dependencies = [
     "pytest==9.1.1",
     "pytest-django==4.14.0",
     "pytest-cov==7.1.0",
+    "pytest-xdist==3.8.0",
     "drf-spectacular==0.30.0",
     "python-memcached==1.62",
     "django-debug-toolbar==8.0.0",
