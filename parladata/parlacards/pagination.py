@@ -14,7 +14,7 @@ def valid_positive_int(number, default):
         if isinstance(number, float) and not number.is_integer():
             raise ValueError
         number = int(number)
-    except (TypeError, ValueError):
+    except TypeError, ValueError:
         number = default
     if number < 1:
         number = default

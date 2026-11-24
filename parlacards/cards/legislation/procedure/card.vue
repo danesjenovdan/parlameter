@@ -1,20 +1,24 @@
 <template>
   <card-wrapper :header-config="headerConfig">
     <div class="legislation-procedure-card">
-      <div v-if="results.procedure_type" class="procedure-info">
-        <span>{{ $t(procedureTypeKey) }}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 56 47">
+      <div class="procedure-info">
+        <span>{{ procedureType }}</span>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 56 47">
           <path
             d="M55.025 37.391 33.346 2.945A6.28 6.28 0 0 0 28 0a6.28 6.28 0 0 0-5.346 2.945L.974 37.39c-1.235 1.962-1.298 4.344-.173 6.371C1.928 45.789 3.99 47 6.32 47h43.357c2.329 0 4.392-1.211 5.52-3.238s1.062-4.41-.173-6.37m-27.026 3.332a3.145 3.145 0 0 1-3.154-3.138 3.145 3.145 0 0 1 3.154-3.139 3.145 3.145 0 0 1 3.155 3.139 3.145 3.145 0 0 1-3.155 3.138m2.466-11.737A2.467 2.467 0 0 1 28 31.308a2.467 2.467 0 0 1-2.465-2.322l-.845-15.12a3.305 3.305 0 0 1 3.31-3.48c1.903 0 3.417 1.59 3.31 3.48z"
           />
-        </svg>
+        </svg> -->
       </div>
       <div class="procedure-timeline">
         <div class="considerations">
           <div
             v-for="(c, i) in allConsiderations"
             :key="i"
-            :class="{ consideration: true, 'consideration--future': c.future }"
+            :class="{
+              consideration: true,
+              'consideration--future': c.future,
+              'consideration--rejected': c.rejected,
+            }"
             :style="`--this-anchor: --consideration-${i}; --next-anchor: --consideration-${i + 1};`"
           >
             <div class="consideration-icon-col">
@@ -45,6 +49,16 @@
                   />
                 </svg>
                 <svg
+                  v-else-if="c.rejected"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 134 134"
+                >
+                  <path
+                    d="M0 21L21 0l46 46 46-46 21 21-47 46 47 46-21 21-46-47-46 47-21-21 46-46z"
+                  />
+                </svg>
+                <svg
                   v-else
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -58,9 +72,12 @@
               </div>
             </div>
             <div class="consideration-text-col">
-              <div class="consideration-name">{{ c.name }}</div>
-              <div class="consideration-timestamp">
-                {{ formatDate(c.timestamp) }}
+              <div class="consideration-name">{{ formatConsideration(c) }}</div>
+              <div
+                v-if="!(c.future && !c.timestamp)"
+                class="consideration-timestamp"
+              >
+                {{ formatDate(c.timestamp, 'N/A') }}
               </div>
             </div>
             <div class="consideration-connector">
@@ -78,6 +95,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import { capitalizeFirst } from '@/_helpers/stringCasing.js';
 
 export default {
   name: 'CardLegislationProcedure',
@@ -85,12 +103,14 @@ export default {
   data() {
     const { cardData } = this.$root.$options.contextData;
     const results = cardData?.data?.results ?? {};
+    const legislation = cardData?.data?.legislation ?? {};
 
     return {
       results,
+      legislation,
       headerConfig: defaultHeaderConfig(this, {
         heading: cardData?.data?.mandate?.description,
-        // title: results?.legislation?.text,
+        subheading: legislation?.text,
       }),
     };
   },
@@ -99,17 +119,33 @@ export default {
       const curr = (this.results.considerations || []).map((c) => {
         return { ...c, future: false };
       });
+      if (curr.length > 0 && this.legislation.status === 'rejected') {
+        curr[curr.length - 1].rejected = true;
+      }
       const future = (this.results.future_considerations || []).map((c) => {
         return { ...c, future: true };
       });
       return [...curr, ...future];
     },
-    procedureTypeKey() {
-      return `procedure-type.${this.results.procedure_type || 'unknown'}`;
+    procedureType() {
+      const type = this.results.procedure_type || 'unknown';
+      const key = `legislation-procedure-types.${type}`;
+      if (this.$te(key)) {
+        return this.$t(key);
+      }
+      return capitalizeFirst(this.results.procedure_type);
     },
   },
   methods: {
     formatDate: dateFormatter,
+    formatConsideration(c) {
+      const phase = c.name || 'unknown';
+      const key = `legislation-procedure-phases.${phase}`;
+      if (this.$te(key)) {
+        return this.$t(key);
+      }
+      return capitalizeFirst(c.name);
+    },
   },
 };
 </script>
@@ -183,6 +219,19 @@ export default {
           }
         }
 
+        &.consideration--rejected {
+          .consideration-icon-col {
+            .consideration-circle {
+              padding: 8px;
+
+              svg {
+                fill: colors.$button-against;
+                stroke-width: 5;
+              }
+            }
+          }
+        }
+
         .consideration-text-col {
           flex: 1;
 
@@ -222,6 +271,14 @@ export default {
             .consideration-connector-line {
               background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="8"%3E%3Crect width="4" height="4" fill="%23#{string.slice("#{colors.$button-for}", 2)}"/%3E%3C/svg%3E');
               background-repeat: repeat-y;
+            }
+          }
+
+          &.consideration--rejected {
+            .consideration-connector {
+              .consideration-connector-line {
+                background: none;
+              }
             }
           }
         }

@@ -23,6 +23,7 @@
 <script>
 import { groupBy } from 'lodash-es';
 import ScrollShadow from '@/_components/ScrollShadow.vue';
+import { capitalizeFirst } from '@/_helpers/stringCasing.js';
 
 export default {
   name: 'Documents',
@@ -39,6 +40,10 @@ export default {
       default: 'tags',
       validate: (value) => ['tags', 'group'].includes(value),
     },
+    translateGroupKeys: {
+      type: Array,
+      required: false,
+    },
   },
   computed: {
     otherGroupTag() {
@@ -54,7 +59,8 @@ export default {
       if (this.groupBy === 'group') {
         return groupBy(
           this.documents,
-          (document) => document?.group || this.otherGroupTag,
+          (document) =>
+            this.translateGroup(document?.group) || this.otherGroupTag,
         );
       }
       return { [this.otherGroupTag]: this.documents };
@@ -62,6 +68,19 @@ export default {
     hasGroups() {
       const groupKeys = Object.keys(this.groupedDocuments);
       return groupKeys.length > 1 || groupKeys[0] !== this.otherGroupTag;
+    },
+  },
+  methods: {
+    translateGroup(groupName) {
+      if (this.translateGroupKeys) {
+        for (const key of this.translateGroupKeys) {
+          if (this.$te(`${key}.${groupName}`)) {
+            return this.$t(`${key}.${groupName}`);
+          }
+        }
+        return capitalizeFirst(groupName);
+      }
+      return groupName;
     },
   },
 };
