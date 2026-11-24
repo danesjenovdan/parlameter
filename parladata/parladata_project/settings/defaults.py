@@ -2,7 +2,6 @@
 import os
 from datetime import datetime
 
-import raven
 from corsheaders.defaults import default_headers
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +21,6 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "parladata",
     "django_extensions",
-    "raven.contrib.django.raven_compat",
     "corsheaders",
     "oauth2_provider",
     "rest_framework",

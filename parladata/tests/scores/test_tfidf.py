@@ -123,32 +123,36 @@ def test_calculate_sessions_tfidf(main_organization, ending_date_of_first_mandat
 
     # print statement for easier test updates
     # print(
-    #     tfidfs[0]['tfidf'][0][0],
-    #     tfidfs[0]['tfidf'][0][1],
-    #     tfidfs[0]['tfidf'][1][0],
-    #     tfidfs[0]['tfidf'][1][1],
-    #     tfidfs[1]['tfidf'][0][0],
-    #     tfidfs[1]['tfidf'][0][1],
-    #     tfidfs[1]['tfidf'][1][0],
-    #     tfidfs[1]['tfidf'][1][1],
-    #     tfidfs[1]['tfidf'][-2][0],
-    #     tfidfs[1]['tfidf'][-2][1]
+    #     tfidfs[0][1][0][0],
+    #     tfidfs[0][1][0][1],
+    #     tfidfs[0][1][1][0],
+    #     tfidfs[0][1][1][1],
+    #     tfidfs[1][1][0][0],
+    #     tfidfs[1][1][0][1],
+    #     tfidfs[1][1][1][0],
+    #     tfidfs[1][1][1][1],
+    #     tfidfs[1][1][-2][0],
+    #     tfidfs[1][1][-2][1]
     # )
 
+    tfidfs = list(tfidfs.items())
+
+    print(tfidfs)
+
     assert len(tfidfs) == 2
-    assert len(tfidfs[0]["tfidf"]) == 30
+    assert len(tfidfs[0][1]) == 30
 
-    assert tfidfs[0]["tfidf"][0][0] == "nadzoren"
-    assert tfidfs[0]["tfidf"][0][1] == 0.05211
+    assert tfidfs[0][1][0][0] == "nadzoren"
+    assert tfidfs[0][1][0][1] == 0.05211
 
-    assert tfidfs[0]["tfidf"][1][0] == "proračunski"
-    assert tfidfs[0]["tfidf"][1][1] == 0.05047
+    assert tfidfs[0][1][1][0] == "proračunski"
+    assert tfidfs[0][1][1][1] == 0.05047
 
-    assert tfidfs[1]["tfidf"][0][0] == "dom"
-    assert tfidfs[1]["tfidf"][0][1] == 0.0655
+    assert tfidfs[1][1][0][0] == "dom"
+    assert tfidfs[1][1][0][1] == 0.0655
 
-    assert tfidfs[1]["tfidf"][1][0] == "predlog"
-    assert tfidfs[1]["tfidf"][1][1] == 0.0618
+    assert tfidfs[1][1][1][0] == "predlog"
+    assert tfidfs[1][1][1][1] == 0.0618
 
-    assert tfidfs[1]["tfidf"][-2][0] == "besedilo"
-    assert tfidfs[1]["tfidf"][-2][1] == 0.047
+    assert tfidfs[1][1][-2][0] == "besedilo"
+    assert tfidfs[1][1][-2][1] == 0.047
