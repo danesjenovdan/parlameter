@@ -6,7 +6,6 @@ from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend, Filter, FilterSet
 from oauth2_provider.contrib.rest_framework import OAuth2Authentication
-from raven.contrib.django.raven_compat.models import client
 from rest_framework import (
     filters,
     generics,
@@ -55,7 +54,11 @@ class ValidSpeechesFilter(filters.BaseFilterBackend):
 
     def filter_queryset(self, request, queryset, view):
         if "valid_on" in request.GET.keys():
-            valid_on = datetime.strptime(request.GET.get("valid_on"), "%Y-%m-%d")
+            date_string = request.GET.get("valid_on")
+            if "T" in date_string:
+                valid_on = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S")
+            else:
+                valid_on = datetime.strptime(date_string, "%Y-%m-%d")
             queryset = queryset.filter_valid_speeches(valid_on)
         return queryset
 
