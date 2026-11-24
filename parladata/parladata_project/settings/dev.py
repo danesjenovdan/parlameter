@@ -25,14 +25,6 @@ STATIC_URL = "/parlastatic/parlalize/"
 STATIC_ROOT = "/home/parlauser/parlastatic/parlalize/"
 
 
-RAVEN_CONFIG = {
-    #'dsn': 'http://123sdfsd123:123gdfsg123@sentry.url.si/40',
-    # If you are using git, you can also automatically configure the
-    # release based on the git info.
-    #    'release': raven.fetch_git_sha(os.path.dirname(__file__)),
-}
-
-
 # Mail settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
