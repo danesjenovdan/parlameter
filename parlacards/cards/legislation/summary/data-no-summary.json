@@ -1,0 +1,34 @@
+{
+  "url": "https://data.parlameter.si/v3/cards/legislation/summary/?id=8703",
+  "id": 8703,
+  "data": {
+    "results": {
+      "summary": {
+        "text": null,
+        "links": [
+          {
+            "id": 128248,
+            "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/395a26b0c71cf61346ddfcb6add0a59da288a2d9ca6f869443c101975f895582",
+            "name": "Besedilo Predloga zakona o spremembi in dopolnitvi Zakona o ustanovitvi občin ter o določitvi njihovih območij",
+            "tags": [{ "id": 16, "name": "proposal", "slug": "proposal" }]
+          }
+        ],
+        "ai_model": null,
+        "ai_model_version": null,
+        "error": "No approved summary found for this legislation."
+      },
+      "created_at": "2026-10-24T14:13:01.679222"
+    },
+    "mandate": {
+      "id": 4,
+      "description": "10. sklic DZ",
+      "beginning": "2026-04-10T00:00:00"
+    },
+    "legislation": {
+      "id": 8703,
+      "text": "Zakon o spremembi in dopolnitvi Zakona o ustanovitvi občin ter o določitvi njihovih območij",
+      "epa": "367-X",
+      "status": "in_procedure"
+    }
+  }
+}
