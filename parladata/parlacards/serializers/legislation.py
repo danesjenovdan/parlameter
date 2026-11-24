@@ -177,20 +177,28 @@ class LegislationSummarySerializer(CommonCachableSerializer):
     summary = serializers.SerializerMethodField()
     created_at = serializers.DateTimeField()
 
+    def get_approved_summary(self, obj):
+        law_summary = Summary.objects.filter(law=obj)
+        approved_summary = law_summary.filter(approved_at__isnull=False)
+        if approved_summary.exists():
+            return approved_summary.latest("approved_at")
+        elif law_summary.exists():
+            if law_summary.latest("created_at").error == Summary.Error.PARSING_FAILED:
+                return law_summary.latest("created_at")
+        return None
+
     def calculate_cache_key(self, legislation):
-        summary = Summary.objects.filter(law=legislation, approved_at__isnull=False)
-        if summary.exists():
-            summary = summary.latest("approved_at")
+        summary = self.get_approved_summary(legislation)
+        if summary:
             return f'LegislationSummarySerializer_{legislation.id}_{summary.id}_{summary.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
         else:
             summary = None
             return f'LegislationSummarySerializer_{legislation.id}_{legislation.updated_at.strftime("%Y-%m-%dT%H:%M:%S")}'
 
     def get_summary(self, obj):
-        summary = Summary.objects.filter(law=obj, approved_at__isnull=False)
+        summary = self.get_approved_summary(obj)
 
-        if summary.exists():
-            summary = summary.latest("approved_at")
+        if summary:
             data = {
                 "text": summary.text,
                 "links": (
