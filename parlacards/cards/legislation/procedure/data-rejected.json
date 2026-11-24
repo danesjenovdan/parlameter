@@ -1,0 +1,38 @@
+{
+  "url": "https://data.parlameter.si/v3/cards/legislation/procedure/?id=8487",
+  "id": 8487,
+  "data": {
+    "results": {
+      "procedure_type": "redni",
+      "considerations": [
+        {
+          "id": 14655,
+          "name": "prva obravnava",
+          "timestamp": "2026-04-13T00:00:00"
+        },
+        {
+          "id": 114655,
+          "name": "prva obravnava copy",
+          "timestamp": "2026-04-13T00:00:00"
+        }
+      ],
+      "future_considerations": [
+        { "id": 3, "name": "druga obravnava - MDT" },
+        { "id": 2, "name": "druga obravnava - DZ" },
+        { "id": 22, "name": "tretja obravnava" },
+        { "id": 20, "name": "sprejet predlog" }
+      ]
+    },
+    "mandate": {
+      "id": 4,
+      "description": "10. sklic DZ",
+      "beginning": "2026-04-10T00:00:00"
+    },
+    "legislation": {
+      "id": 8487,
+      "text": "Zakon o ukrepih pri dolgotrajni oskrbi in začasni podpori izvajalcem institucionalnega varstva",
+      "epa": "9-X",
+      "status": "rejected"
+    }
+  }
+}

@@ -559,3 +559,43 @@ legislation-proposer: Predlagatelj
 legislation-procedure-type: Vrsta postopka
 legislation-procedure-start: Začetek postopka
 legislation-areas: Področja
+legislation-procedure-types:
+  unknown: Neznan postopek
+  dvofazni: Dvofazni postopek
+  ratifikacija: Ratifikacija
+  nujni: Nujni postopek
+  redni: Redni postopek
+  skrajšani: Skrajšani postopek
+  enofazni: Enofazni postopek
+legislation-procedure-phases:
+  unknown: Neznana faza
+  druga faza: Druga faza
+  obravnava: Obravnava
+  dopolnjen predlog: Dopolnjen predlog
+  zaključena obravnava na mdt: Zaključena obravnava na matičnem delovnem telesu
+  obravnava DZ - predlog za razpravo o odgovoru: Obravnava državnega zbora - predlog za razpravo o odgovoru
+  zahteva za ponovno odločanje: Zahteva za ponovno odločanje
+  tretja obravnava - skrajšani postopek: Tretja obravnava
+  tretja obravnava - nujni postopek: Tretja obravnava
+  tretja obravnava: Tretja obravnava
+  sprejet sklep: Sprejet sklep
+  sprejet predlog: Sprejet predlog
+  prva obravnava: Prva obravnava
+  prva faza: Prva faza
+  obravnava postopka - skrajšani postopek: Obravnava postopka
+  obravnava postopka - nujni postopek: Obravnava postopka
+  obravnava pobude: Obravnava pobude
+  obravnava MDT - ratifikacija: Obravnava matičnega delovnega telesa
+  obravnava DZ - ratifikacija: Obravnava državnega zbora
+  obravnava - MDT: Obravnava matičnega delovnega telesa
+  obravnava - DZ: Obravnava državnega zbora
+  konec postopka - seznanitev: Konec postopka
+  konec postopka - predstavitev: Konec postopka
+  konec postopka: Konec postopka
+  druga obravnava MDT - skrajšani postopek: Druga obravnava matičnega delovnega telesa
+  druga obravnava MDT - nujni postopek: Druga obravnava matičnega delovnega telesa
+  druga obravnava DZ - skrajšani postopek: Druga obravnava državnega zbora
+  druga obravnava DZ - nujni postopek: Druga obravnava državnega zbora
+  druga obravnava - MDT: Druga obravnava matičnega delovnega telesa
+  druga obravnava - DZ: Druga obravnava državnega zbora
+  zakonodajni referendum: Zakonodajni referendum

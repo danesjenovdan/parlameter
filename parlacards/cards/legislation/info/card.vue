@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div v-if="results.procedure_type" class="row">
+      <div class="row">
         <div class="parlaicon-container">
           <span
             class="parlaicon parlaicon-legislation-procedure"
@@ -58,7 +58,7 @@
         <div class="bordertop0">
           <span class="key">
             <span>{{ $t('legislation-procedure-type') }}: </span>
-            <b>{{ results.procedure_type }}</b>
+            <b>{{ procedureType }}</b>
           </span>
         </div>
       </div>
@@ -103,6 +103,7 @@ import common from '@/_mixins/common.js';
 import links from '@/_mixins/links.js';
 import { defaultHeaderConfig } from '@/_mixins/altHeaders.js';
 import dateFormatter from '@/_helpers/dateFormatter.js';
+import { capitalizeFirst } from '@/_helpers/stringCasing.js';
 
 export default {
   name: 'CardLegislationInfo',
@@ -117,6 +118,16 @@ export default {
         // title: results?.legislation?.text,
       }),
     };
+  },
+  computed: {
+    procedureType() {
+      const type = this.results.procedure_type || 'unknown';
+      const key = `legislation-procedure-types.${type}`;
+      if (this.$te(key)) {
+        return this.$t(key);
+      }
+      return capitalizeFirst(this.results.procedure_type);
+    },
   },
   methods: {
     formatDate: dateFormatter,
