@@ -38,17 +38,21 @@ jobs:
         with:
           python-version: "3.14"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
+
       - name: Install dependencies
+        env:
+          UV_PYTHON_DOWNLOADS: "0"
         run: |
           sudo apt-get update
           sudo apt-get install -y libmemcached-dev libsasl2-modules
-          python -m pip install --upgrade pip
-          echo "classla==2.2.3" >> requirements.txt
-          pip install -r requirements.txt
+          uv sync --locked --no-dev
+          uv pip install classla==2.2.3
 
       - name: Test with pytest
         env:
           DJANGO_SETTINGS_MODULE: parladata_project.settings.k8s
           DATABASE_HOST: postgres
         run: |
-          pytest -n 4
+          uv run pytest -n 4
