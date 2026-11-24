@@ -1,28 +1,148 @@
 {
-  "url": "http://localhost:8000/v3/cards/misc/sessions/?id=2",
-  "id": "2",
+  "url": "https://data.parlameter.si/v3/cards/misc/sessions/?id=4",
+  "id": "4",
   "error": false,
   "data": {
     "results": {
       "sessions": [
         {
-          "name": "111. izredna seja",
+          "name": "4. redna seja",
           "joint_data": null,
-          "id": 6579,
-          "start_time": "2025-07-24T10:01:00",
+          "id": 7716,
+          "start_time": "2026-11-16T12:00:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
+              "classification": "house",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": true,
+          "has_transcript": true,
+          "has_agenda_items": false,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        },
+        {
+          "name": "31. izredna seja",
+          "joint_data": null,
+          "id": 7715,
+          "start_time": "2026-11-12T11:00:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Državni zbor",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
               "classification": "house",
               "is_in_coalition": false
             }
           ],
           "classification": "irregular",
           "in_review": true,
+          "has_transcript": true,
+          "has_agenda_items": false,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        },
+        {
+          "name": "30. izredna seja",
+          "joint_data": null,
+          "id": 7708,
+          "start_time": "2026-11-05T09:00:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Državni zbor",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
+              "classification": "house",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "irregular",
+          "in_review": true,
+          "has_transcript": true,
+          "has_agenda_items": false,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        },
+        {
+          "name": "3. redna seja",
+          "joint_data": null,
+          "id": 7671,
+          "start_time": "2026-10-19T12:00:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Državni zbor",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
+              "classification": "house",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "regular",
+          "in_review": true,
+          "has_transcript": true,
+          "has_agenda_items": false,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        },
+        {
+          "name": "29. izredna seja",
+          "joint_data": null,
+          "id": 7674,
+          "start_time": "2026-10-16T11:00:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Državni zbor",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
+              "classification": "house",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "irregular",
+          "in_review": true,
+          "has_transcript": true,
+          "has_agenda_items": false,
+          "has_minutes": false,
+          "has_legislation": true,
+          "has_votes": true
+        },
+        {
+          "name": "28. izredna seja",
+          "joint_data": null,
+          "id": 7644,
+          "start_time": "2026-10-06T09:00:00",
+          "end_time": null,
+          "organizations": [
+            {
+              "name": "Državni zbor",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
+              "classification": "house",
+              "is_in_coalition": false
+            }
+          ],
+          "classification": "irregular",
+          "in_review": false,
           "has_transcript": true,
           "has_agenda_items": false,
           "has_minutes": false,
@@ -30,17 +150,17 @@
           "has_votes": true
         },
         {
-          "name": "110. izredna seja",
+          "name": "25. izredna seja",
           "joint_data": null,
-          "id": 6576,
-          "start_time": "2025-07-18T14:25:00",
+          "id": 7574,
+          "start_time": "2026-10-01T09:00:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
               "classification": "house",
               "is_in_coalition": false
             }
@@ -54,17 +174,17 @@
           "has_votes": true
         },
         {
-          "name": "109. izredna seja",
+          "name": "27. izredna seja",
           "joint_data": null,
-          "id": 6577,
-          "start_time": "2025-07-18T09:59:00",
+          "id": 7630,
+          "start_time": "2026-09-30T09:00:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
               "classification": "house",
               "is_in_coalition": false
             }
@@ -78,41 +198,17 @@
           "has_votes": true
         },
         {
-          "name": "108. izredna seja",
+          "name": "2. redna seja",
           "joint_data": null,
-          "id": 6573,
-          "start_time": "2025-07-17T10:00:00",
+          "id": 7577,
+          "start_time": "2026-09-21T12:00:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
-              "classification": "house",
-              "is_in_coalition": false
-            }
-          ],
-          "classification": "irregular",
-          "in_review": true,
-          "has_transcript": true,
-          "has_agenda_items": false,
-          "has_minutes": false,
-          "has_legislation": true,
-          "has_votes": true
-        },
-        {
-          "name": "33. redna seja",
-          "joint_data": null,
-          "id": 6564,
-          "start_time": "2025-07-07T12:00:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
               "classification": "house",
               "is_in_coalition": false
             }
@@ -126,119 +222,23 @@
           "has_votes": true
         },
         {
-          "name": "107. izredna seja",
+          "name": "26. izredna seja",
           "joint_data": null,
-          "id": 6561,
-          "start_time": "2025-07-04T10:00:00",
+          "id": 7575,
+          "start_time": "2026-09-18T18:00:00",
           "end_time": null,
           "organizations": [
             {
               "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
+              "acronym": "Državni zbor X",
+              "slug": "590-drzavni-zbor",
+              "color": "#09a2cc",
               "classification": "house",
               "is_in_coalition": false
             }
           ],
           "classification": "irregular",
-          "in_review": true,
-          "has_transcript": true,
-          "has_agenda_items": false,
-          "has_minutes": false,
-          "has_legislation": true,
-          "has_votes": true
-        },
-        {
-          "name": "106. izredna seja",
-          "joint_data": null,
-          "id": 6541,
-          "start_time": "2025-06-20T15:10:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
-              "classification": "house",
-              "is_in_coalition": false
-            }
-          ],
-          "classification": "irregular",
-          "in_review": true,
-          "has_transcript": true,
-          "has_agenda_items": false,
-          "has_minutes": false,
-          "has_legislation": true,
-          "has_votes": true
-        },
-        {
-          "name": "32. redna seja",
-          "joint_data": null,
-          "id": 6535,
-          "start_time": "2025-06-16T12:00:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
-              "classification": "house",
-              "is_in_coalition": false
-            }
-          ],
-          "classification": "regular",
-          "in_review": true,
-          "has_transcript": true,
-          "has_agenda_items": false,
-          "has_minutes": false,
-          "has_legislation": true,
-          "has_votes": true
-        },
-        {
-          "name": "105. izredna seja",
-          "joint_data": null,
-          "id": 6531,
-          "start_time": "2025-06-12T11:00:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
-              "classification": "house",
-              "is_in_coalition": false
-            }
-          ],
-          "classification": "irregular",
-          "in_review": true,
-          "has_transcript": true,
-          "has_agenda_items": false,
-          "has_minutes": false,
-          "has_legislation": true,
-          "has_votes": true
-        },
-        {
-          "name": "104. izredna seja",
-          "joint_data": null,
-          "id": 6508,
-          "start_time": "2025-05-27T10:00:00",
-          "end_time": null,
-          "organizations": [
-            {
-              "name": "Državni zbor",
-              "acronym": "DZ IX",
-              "slug": "137-drzavni-zbor",
-              "color": "#09A2CC",
-              "classification": "house",
-              "is_in_coalition": false
-            }
-          ],
-          "classification": "irregular",
-          "in_review": true,
+          "in_review": false,
           "has_transcript": true,
           "has_agenda_items": false,
           "has_minutes": false,
@@ -248,220 +248,13 @@
       ],
       "organizations": [
         {
-          "name": "Odbor za gospodarstvo",
-          "acronym": "Odbor za gospodarstvo",
-          "slug": "24-odbor-za-gospodarstvo",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 207
-        },
-        {
-          "name": "Skupni odbor",
-          "acronym": null,
-          "slug": "104-skupni-odbor",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 6
-        },
-        {
-          "name": "Komisija za nadzor obveščevalnih in varnostnih služb",
-          "acronym": "Komisija za nadzor obveščevalnih in varnostnih služb",
-          "slug": "17-komisija-za-nadzor-obvescevalnih-in-varnostnih-sluzb",
-          "color": "#09A2CC",
-          "classification": "commission",
-          "is_in_coalition": false,
-          "session_count": 80
-        },
-        {
-          "name": "Odbor za finance",
-          "acronym": "Odbor za finance",
-          "slug": "23-odbor-za-finance",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 209
-        },
-        {
-          "name": "Odbor za pravosodje",
-          "acronym": "Odbor za pravosodje",
-          "slug": "31-odbor-za-pravosodje",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 224
-        },
-        {
-          "name": "Odbor za obrambo",
-          "acronym": "Odbor za obrambo",
-          "slug": "30-odbor-za-obrambo",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 159
-        },
-        {
-          "name": "Odbor za zunanjo politiko",
-          "acronym": "Odbor za zunanjo politiko",
-          "slug": "34-odbor-za-zunanjo-politiko",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 386
-        },
-        {
-          "name": "Odbor za zadeve Evropske unije",
-          "acronym": "Odbor za zadeve Evropske unije",
-          "slug": "32-odbor-za-zadeve-evropske-unije",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 509
-        },
-        {
-          "name": "Odbor za kulturo",
-          "acronym": "Odbor za kulturo",
-          "slug": "28-odbor-za-kulturo",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 173
-        },
-        {
-          "name": "Mandatno-volilna komisija",
-          "acronym": "Mandatno-volilna komisija",
-          "slug": "35-mandatno-volilna-komisija",
-          "color": "#09A2CC",
-          "classification": "commission",
-          "is_in_coalition": false,
-          "session_count": 208
-        },
-        {
-          "name": "Komisija za peticije, človekove pravice in enake možnosti",
-          "acronym": null,
-          "slug": "92-komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
-          "color": "#09A2CC",
-          "classification": "commission",
-          "is_in_coalition": false,
-          "session_count": 62
-        },
-        {
-          "name": "Pododbor za spremljanje rakavih obolenj v Republiki Sloveniji",
-          "acronym": null,
-          "slug": "106-pododbor-za-spremljanje-rakavih-obolenj-v-republiki-sloveniji",
-          "color": "#09A2CC",
-          "classification": "other",
-          "is_in_coalition": false,
-          "session_count": 9
-        },
-        {
-          "name": "Ustavna komisija",
-          "acronym": "Ustavna komisija",
-          "slug": "88-ustavna-komisija",
-          "color": "#09A2CC",
-          "classification": "commission",
-          "is_in_coalition": false,
-          "session_count": 16
-        },
-        {
-          "name": "Odbor za delo, družino, socialne zadeve in invalide",
-          "acronym": null,
-          "slug": "93-odbor-za-delo-druzino-socialne-zadeve-in-invalide",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 320
-        },
-        {
-          "name": "Odbor za notranje zadeve, javno upravo in lokalno samoupravo",
-          "acronym": null,
-          "slug": "97-odbor-za-notranje-zadeve-javno-upravo-in-lokalno-samoupravo",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 301
-        },
-        {
-          "name": "Kolegij predsednice Državnega zbora",
-          "acronym": "Kolegij predsednice Državnega zbora",
-          "slug": "139-kolegij-predsednice-drzavnega-zbora",
+          "name": "Kolegij predsednika Državnega zbora",
+          "acronym": "Kolegij predsednika Državnega zbora",
+          "slug": "15-kolegij-predsednika-drzavnega-zbora",
           "color": "#09A2CC",
           "classification": "council",
           "is_in_coalition": false,
-          "session_count": 135
-        },
-        {
-          "name": "Odbor za infrastrukturo, okolje in prostor",
-          "acronym": null,
-          "slug": "94-odbor-za-infrastrukturo-okolje-in-prostor",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 301
-        },
-        {
-          "name": "Odbor za kmetijstvo, gozdarstvo in prehrano",
-          "acronym": null,
-          "slug": "95-odbor-za-kmetijstvo-gozdarstvo-in-prehrano",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 228
-        },
-        {
-          "name": "Preiskovalna komisija o ugotavljanju zlorab in nezakonitosti pri gradnji povezovalnega kanala C0 na območju ljubljanskega vodonosnika Ljubljanskega polja",
-          "acronym": "Preiskovalna komisija o ugotavljanju zlorab in nezakonitosti pri gradnji povezovalnega kanala C0 na območju ljubljanskega vodonosnika Ljubljanskega polja",
-          "slug": "395-preiskovalna-komisija-o-ugotavljanju-zlorab-in-nezakonitosti-pri-gradnji-povezovalnega-kanala-c0-na-obmocju-ljubljanskega-vodonosnika-ljubljanskega-polja",
-          "color": "#09A2CC",
-          "classification": "investigative_commission",
-          "is_in_coalition": false,
-          "session_count": 3
-        },
-        {
-          "name": "Preiskovalna komisija o ugotavljanju politične odgovornosti nosilcev javnih funkcij zaradi domnevnega nezakonitega financiranja političnih strank in strankarske politične propagande v medijih pred in med volitvami poslancev v Državni zbor leta 2022 s finančnimi sredstvi podjetij v državni lasti, državnih institucij ter subjektov iz tujine",
-          "acronym": "Preiskovalna komisija o ugotavljanju politične odgovornosti nosilcev javnih funkcij zaradi domnevnega nezakonitega financiranja političnih strank in strankarske politične propagande v medijih pred in med volitvami poslancev v Državni zbor leta 2022 s finančnimi sredstvi podjetij v državni lasti, državnih institucij ter subjektov iz tujine",
-          "slug": "220-preiskovalna-komisija-o-ugotavljanju-politicne-odgovornosti-nosilcev-javnih-funkcij-zaradi-domnevnega-nezakonitega-financiranja-politicnih-strank-in-strankarske-politicne-propagande-v-medijih-pred-in-med-volitvami-poslancev-v-drzavni-zbor-leta-2022-s-financnimi-sredstvi-podjetij-v-drzavni-lasti-drzavnih-institucij-ter-subjektov-iz-tujine",
-          "color": "#09A2CC",
-          "classification": "investigative_commission",
-          "is_in_coalition": false,
-          "session_count": 19
-        },
-        {
-          "name": "Preiskovalna komisija o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in drugih pristojnih državnih organov s področij davkov in preprečevanja pranja denarja ter nedopustnega političnega vplivanja na potek oziroma izid posameznih predkazenskih in postopkov finančnega nadzora ter odkrivanja in preprečevanja pranja denarja",
-          "acronym": "Preiskovalna komisija o ugotavljanju morebitne politične odgovornosti nosilcev javnih funkcij zaradi suma nedopustnega političnega vmešavanja v delo policije in drugih pristojnih državnih organov s področij davkov in preprečevanja pranja denarja ter nedopustnega političnega vplivanja na potek oziroma izid posameznih predkazenskih in postopkov finančnega nadzora ter odkrivanja in preprečevanja pranja denarja",
-          "slug": "285-preiskovalna-komisija-o-ugotavljanju-morebitne-politicne-odgovornosti-nosilcev-javnih-funkcij-zaradi-suma-nedopustnega-politicnega-vmesavanja-v-delo-policije-in-drugih-pristojnih-drzavnih-organov-s-podrocij-davkov-in-preprecevanja-pranja-denarja-ter-nedopustnega-politicnega-vplivanja-na-potek-oziroma-izid-posameznih-predkazenskih-in-postopkov-financnega-nadzora-ter-odkrivanja-in-preprecevanja-pranja-denarja",
-          "color": "#09A2CC",
-          "classification": "investigative_commission",
-          "is_in_coalition": false,
-          "session_count": 7
-        },
-        {
-          "name": "Odbor za izobraževanje, znanost in mladino",
-          "acronym": "Odbor Za Izobraževanje, Znanost In Mladino Ix",
-          "slug": "223-odbor-za-izobrazevanje-znanost-in-mladino",
-          "color": "#09A2CC",
-          "classification": "committee",
-          "is_in_coalition": false,
-          "session_count": 63
-        },
-        {
-          "name": "Komisija za poslovnik",
-          "acronym": "Komisija za poslovnik",
-          "slug": "21-komisija-za-poslovnik",
-          "color": "#09A2CC",
-          "classification": "commission",
-          "is_in_coalition": false,
-          "session_count": 40
-        },
-        {
-          "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-          "acronym": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
-          "slug": "19-komisija-za-odnose-s-slovenci-v-zamejstvu-in-po-svetu",
-          "color": "#09A2CC",
-          "classification": "commission",
-          "is_in_coalition": false,
-          "session_count": 65
+          "session_count": 296
         },
         {
           "name": "Komisija za nadzor javnih financ",
@@ -470,7 +263,16 @@
           "color": "#09A2CC",
           "classification": "commission",
           "is_in_coalition": false,
-          "session_count": 223
+          "session_count": 245
+        },
+        {
+          "name": "Komisija za nadzor obveščevalnih in varnostnih služb",
+          "acronym": "Komisija za nadzor obveščevalnih in varnostnih služb",
+          "slug": "17-komisija-za-nadzor-obvescevalnih-in-varnostnih-sluzb",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false,
+          "session_count": 121
         },
         {
           "name": "Komisija za narodni skupnosti",
@@ -479,44 +281,206 @@
           "color": "#09A2CC",
           "classification": "commission",
           "is_in_coalition": false,
-          "session_count": 41
+          "session_count": 46
+        },
+        {
+          "name": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
+          "acronym": "Komisija za odnose s Slovenci v zamejstvu in po svetu",
+          "slug": "19-komisija-za-odnose-s-slovenci-v-zamejstvu-in-po-svetu",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false,
+          "session_count": 77
+        },
+        {
+          "name": "Komisija za poslovnik",
+          "acronym": "Komisija za poslovnik",
+          "slug": "21-komisija-za-poslovnik",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false,
+          "session_count": 43
+        },
+        {
+          "name": "Odbor za finance",
+          "acronym": "Odbor za finance",
+          "slug": "23-odbor-za-finance",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 242
+        },
+        {
+          "name": "Odbor za gospodarstvo",
+          "acronym": "Odbor za gospodarstvo",
+          "slug": "24-odbor-za-gospodarstvo-delo-in-sport",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 230
+        },
+        {
+          "name": "Odbor za kulturo",
+          "acronym": "Odbor za kulturo",
+          "slug": "28-odbor-za-kulturo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 193
+        },
+        {
+          "name": "Odbor za obrambo",
+          "acronym": "Odbor za obrambo",
+          "slug": "30-odbor-za-obrambo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 183
+        },
+        {
+          "name": "Odbor za pravosodje",
+          "acronym": "Odbor za pravosodje",
+          "slug": "31-odbor-za-pravosodje",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 252
+        },
+        {
+          "name": "Odbor za zadeve Evropske unije",
+          "acronym": "Odbor za zadeve Evropske unije",
+          "slug": "32-odbor-za-zadeve-evropske-unije",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 561
         },
         {
           "name": "Odbor za zdravstvo",
           "acronym": "Odbor za zdravstvo",
-          "slug": "33-odbor-za-zdravstvo",
+          "slug": "33-odbor-za-zdravje",
           "color": "#09A2CC",
           "classification": "committee",
           "is_in_coalition": false,
-          "session_count": 229
+          "session_count": 255
         },
         {
-          "name": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
-          "acronym": "Preiskovalna komisija o ugotavljanju domnevnega finančnega izčrpavanja podjetja GEN-I, domnevno spornih praks v zvezi s podjetjem STAR SOLAR d.o.o., domnevnega nezakonitega financiranja politične stranke GIBANJE SVOBODA in domnevnega nezakonitega financiranja volilne kampanje GIBANJA SVOBODA za redne volitve poslancev v Državni zbor Republike Slovenije leta 2022",
-          "slug": "402-preiskovalna-komisija-o-ugotavljanju-domnevnega-financnega-izcrpavanja-podjetja-gen-i-domnevno-spornih-praks-v-zvezi-s-podjetjem-star-solar-doo-domnevnega-nezakonitega-financiranja-politicne-stranke-gibanje-svoboda-in-domnevnega-nezakonitega-financiranja-volilne-kampanje-gibanja-svoboda-za-redne-volitve-poslancev-v-drzavni-zbor-republike-slovenije-leta-2022",
+          "name": "Odbor za zunanjo politiko",
+          "acronym": "Odbor za zunanjo politiko",
+          "slug": "34-odbor-za-zunanjo-politiko",
           "color": "#09A2CC",
-          "classification": "investigative_commission",
+          "classification": "committee",
           "is_in_coalition": false,
-          "session_count": 2
+          "session_count": 447
+        },
+        {
+          "name": "Mandatno-volilna komisija",
+          "acronym": "Mandatno-volilna komisija",
+          "slug": "35-mandatno-volilna-komisija",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false,
+          "session_count": 244
+        },
+        {
+          "name": "Komisija za peticije, človekove pravice in enake možnosti",
+          "acronym": null,
+          "slug": "92-komisija-za-peticije-clovekove-pravice-in-enake-moznosti",
+          "color": "#09A2CC",
+          "classification": "commission",
+          "is_in_coalition": false,
+          "session_count": 75
+        },
+        {
+          "name": "Odbor za delo, družino, socialne zadeve in invalide",
+          "acronym": null,
+          "slug": "93-odbor-za-demografijo-druzino-socialne-zadeve-in-invalide",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 347
+        },
+        {
+          "name": "Odbor za infrastrukturo in energetiko",
+          "acronym": null,
+          "slug": "94-odbor-za-infrastrukturo-in-energetiko",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 326
+        },
+        {
+          "name": "Odbor za kmetijstvo, gozdarstvo in prehrano",
+          "acronym": null,
+          "slug": "95-odbor-za-kmetijstvo-gozdarstvo-in-prehransko-suverenost",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 247
+        },
+        {
+          "name": "Odbor za notranje zadeve in javno upravo",
+          "acronym": null,
+          "slug": "97-odbor-za-notranje-zadeve-in-javno-upravo",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 351
+        },
+        {
+          "name": "Odbor za izobraževanje, mladino in znanost",
+          "acronym": null,
+          "slug": "99-odbor-za-izobrazevanje-mladino-in-znanost",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 227
+        },
+        {
+          "name": "Skupni odbor",
+          "acronym": null,
+          "slug": "104-skupni-odbor",
+          "color": "#09A2CC",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 9
         },
         {
           "name": "Državni zbor",
-          "acronym": "DZ IX",
-          "slug": "137-drzavni-zbor",
-          "color": "#09A2CC",
+          "acronym": "Državni zbor X",
+          "slug": "590-drzavni-zbor",
+          "color": "#09a2cc",
           "classification": "house",
           "is_in_coalition": false,
-          "session_count": 143
+          "session_count": 35
+        },
+        {
+          "name": "Odbor za okolje in prostor",
+          "acronym": "Odbor za okolje in prostor",
+          "slug": "603-odbor-za-okolje-in-prostor",
+          "color": "#09a2cc",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 11
+        },
+        {
+          "name": "Odbor za lokalno samoupravo, kohezijo in regionalni razvoj",
+          "acronym": "Odbor za lokalno samoupravo, kohezijo in regionalni razvoj",
+          "slug": "8061-odbor-za-lokalno-samoupravo-kohezijo-in-regionalni-razvoj",
+          "color": "#09a2cc",
+          "classification": "committee",
+          "is_in_coalition": false,
+          "session_count": 7
         }
       ]
     },
     "mandate": {
-      "id": 2,
-      "description": "IX",
-      "beginning": "2022-05-13T00:00:01"
+      "id": 4,
+      "description": "10. sklic DZ",
+      "beginning": "2026-04-10T00:00:00"
     },
-    "sessions:count": 143,
-    "sessions:pages": 15,
+    "sessions:count": 35,
+    "sessions:pages": 4,
     "sessions:page": 1,
     "sessions:per_page": 10
   }

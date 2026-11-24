@@ -1,30 +1,18 @@
 <template>
   <card-wrapper ref="card" :header-config="headerConfig" max-height>
-    <template #generator>
-      <div class="session-list-generator">
-        <!-- only show filters if we have more than one classification to show -->
-        <div v-if="filters.length > 1" class="row filters-row">
-          <div class="col-md-7">
-            <blue-button-list
-              v-model="currentFilter"
-              :items="filters"
-              @update:model-value="selectTab"
-            />
-          </div>
-          <!-- only show working bodies dropdown if we have more than one organization -->
-          <div v-if="workingBodies?.length > 1" class="col-md-5 filters">
-            <p-search-dropdown
-              v-model="workingBodies"
-              :placeholder="inputPlaceholder"
-              class="dropdown-filter"
-              @update:model-value="searchSessionsImmediate"
-            />
-          </div>
-        </div>
+    <div class="filters">
+      <div class="filter">
+        <label class="filter-label">{{ $t('organization') }}</label>
+        <PSearchDropdown
+          v-model="workingBodies"
+          single
+          hide-clear
+          class="dropdown-filter"
+          @update:model-value="searchSessionsImmediate"
+        />
       </div>
-    </template>
+    </div>
     <div v-if="isLoading" class="nalagalnik"></div>
-    <!-- show loader while fetching results -->
     <template v-else>
       <sortable-table
         :columns="columns"
@@ -101,13 +89,8 @@ export default {
     const sessionsPerPage = Array(pages);
     sessionsPerPage[initialPage - 1] = results;
 
-    // group organizations by classifications
-    const classifications = (cardData?.data?.results?.organizations || [])
-      .filter((organization) => {
-        // this is to filter out organizations without a classification
-        return organization.classification != null;
-      })
-      .sort((a, b) => {
+    const sortedOrgs = (cardData?.data?.results?.organizations || []).sort(
+      (a, b) => {
         // make sure `house` comes first and `other` comes last
         if (a.classification !== b.classification) {
           if (a.classification === 'house') {
@@ -124,33 +107,19 @@ export default {
           }
         }
         return 0;
-      })
-      .reduce((returnValue, organization) => {
-        if (organization.session_count > 0) {
-          const { classification, slug } = organization;
-          returnValue[classification] = returnValue[classification] ?? {};
-          returnValue[classification][slug] = organization;
-        }
-        return returnValue;
-      }, {});
+      },
+    );
 
-    // create tabs
-    const tabs = Object.keys(classifications).map((classificationKey) => {
+    const defaultSelectedWorkingBody =
+      sortedOrgs.find((org) => org.classification === 'house') ?? sortedOrgs[0];
+    const workingBodies = sortedOrgs.map((org) => {
       return {
-        id: classificationKey,
-        title: this.$t(`organization-classifications.${classificationKey}`),
-        orgSlugs: Object.keys(classifications[classificationKey]),
-        organizations: classifications[classificationKey],
+        id: (org.slug || '').split('-')[0],
+        slug: org.slug,
+        label: org.name,
+        selected: defaultSelectedWorkingBody.slug === org.slug,
       };
     });
-
-    const showOrganizationColumn = (() => {
-      let value = String(cardState?.showOrganizationColumn);
-      if (value === 'true') value = 'always';
-      if (value === 'false') value = 'never';
-      if (['always', 'never', 'secondary-only'].includes(value)) return value;
-      return 'secondary-only';
-    })();
 
     const showEndDate = (() => {
       const value = String(cardState?.showEndDate);
@@ -160,18 +129,13 @@ export default {
     })();
 
     return {
-      tabs,
-      // sessions: cardData?.data?.results,
-      workingBodies: [],
-      filters: tabs.map((tab) => ({ label: tab.title, id: tab.id })),
+      workingBodies,
       currentSort: 'start_time',
       currentSortOrder: 'desc',
-      currentFilter: cardState?.filters || tabs?.[0]?.id,
       headerConfig: defaultHeaderConfig(this, {
         heading: cardData?.data?.mandate?.description,
         title: this.$t('card.title'),
       }),
-      showOrganizationColumn,
       showEndDate,
       // pagination
       pages,
@@ -190,10 +154,7 @@ export default {
 
       // set per-page setting
       url.searchParams.set('sessions:per_page', this.perPage);
-
       url.searchParams.set('sessions:page', this.page);
-
-      url.searchParams.set('classification', this.currentFilter);
 
       if (this.currentWorkingBodies.length > 0) {
         url.searchParams.set(
@@ -208,17 +169,12 @@ export default {
       const sortPrefix = this.currentSortOrder === 'desc' ? '-' : '';
       const sort = this.currentSort;
       url.searchParams.set('order_by', `${sortPrefix}${sort}`);
+      console.log(url.toString());
 
       return url.toString();
     },
-    isFirstTabActive() {
-      return this.currentFilter === this.tabs?.[0]?.id;
-    },
     columns() {
-      const showOrgCol =
-        this.showOrganizationColumn === 'always' ||
-        (this.showOrganizationColumn === 'secondary-only' &&
-          !this.isFirstTabActive);
+      const showOrgCol = false; //TODO
 
       return [
         { id: 'image', label: '', additionalClass: 'image' },
@@ -261,23 +217,12 @@ export default {
         .map((workingBody) => workingBody.id);
     },
 
-    inputPlaceholder() {
-      return this.currentWorkingBodies.length > 0
-        ? this.$t('selected-placeholder', {
-            num: this.currentWorkingBodies.length,
-          })
-        : this.$t('select-working-body-placeholder');
-    },
-
     currentPageSessions() {
       return this.sessionsPerPage[this.page - 1] || [];
     },
 
     mappedSessions() {
-      const showOrgCol =
-        this.showOrganizationColumn === 'always' ||
-        (this.showOrganizationColumn === 'secondary-only' &&
-          !this.isFirstTabActive);
+      const showOrgCol = false; //TODO
 
       return this.currentPageSessions.map((session) =>
         [
@@ -320,35 +265,6 @@ export default {
       }
       // start a request to get sorted sessions
       this.searchSessionsImmediate();
-    },
-
-    selectTab() {
-      // update dropdown of working bodies when tab changes; this is done first
-      // to reset the selected working bodies before requesting new sessions,
-      // so it doesn't filter out all sessions
-      this.updateWorkingBodies();
-
-      // reset sorting
-      this.currentSort = 'start_time';
-      this.currentSortOrder = 'desc';
-
-      // start a request to get new sessions for this tab
-      this.searchSessionsImmediate();
-    },
-
-    updateWorkingBodies() {
-      // get current tab
-      const currentTab = this.tabs.find((tab) => tab.id === this.currentFilter);
-
-      // map all organization slugs in the tab to
-      // proper objects that PSearchDropdown can consume
-      this.workingBodies = currentTab.orgSlugs.map((slug) => {
-        return {
-          id: slug,
-          selected: false,
-          label: currentTab.organizations[slug].name,
-        };
-      });
     },
 
     searchSessionsImmediate() {
@@ -394,15 +310,23 @@ export default {
 <style lang="scss" scoped>
 @use 'parlassets/scss/breakpoints';
 
-.filters-row {
+.filters {
   display: flex;
-  margin-top: 14px;
+  padding-bottom: 12px;
 
-  .filters {
-    .dropdown-filter {
-      margin: 0;
-      flex: 1.5;
+  .filter {
+    width: 50%;
+
+    @include breakpoints.respond-to(mobile) {
+      width: 100%;
     }
+  }
+
+  .filter-label {
+    display: block;
+    height: 20px;
+    margin-bottom: 0;
+    overflow: hidden;
   }
 }
 
