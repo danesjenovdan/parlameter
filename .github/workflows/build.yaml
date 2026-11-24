@@ -9,20 +9,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v4
 
       - name: Login to Scaleway
-        uses: docker/login-action@v2
+        uses: docker/login-action@v4
         with:
           registry: rg.fr-par.scw.cloud/djnd
           username: nologin
           password: ${{ secrets.SCW_SECRET_TOKEN }}
 
       - name: Build and push parladata
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: ./parladata
           file: dockerfiles/parladata.Dockerfile
@@ -32,7 +32,7 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parladata-ukrajina:latest
 
       - name: Build and push solr
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: ./parladata/solr
           file: dockerfiles/solr.Dockerfile
@@ -42,7 +42,7 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parlasolr-ukrajina:latest
 
       - name: Build and push parlassets
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: dockerfiles/parlafront.Dockerfile
@@ -57,7 +57,7 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parlassets-ukrajina:latest
 
       - name: Build and push parlacards
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: dockerfiles/parlafront.Dockerfile
@@ -72,7 +72,7 @@ jobs:
             rg.fr-par.scw.cloud/djnd/parlacards-ukrajina:latest
 
       - name: Build and push parlasite
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: dockerfiles/parlasite.Dockerfile
@@ -86,7 +86,7 @@ jobs:
           sed -i "s/newTag: .*\+/newTag\: '${{ github.sha }}'/" kustomize/kustomization.yaml
 
       - name: Commit and push new image versions
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v11
         with:
           add: '.'
           message: 'Update image versions in kustomize/kustomization.yaml'

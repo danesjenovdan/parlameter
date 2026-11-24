@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # Python dependencies declared in pyproject.toml / uv.lock
+  - package-ecosystem: "uv"
+    directory: "parladata/"
+    schedule:
+      interval: "weekly"
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
+
+  # Base image and other Dockerfile instructions
+  - package-ecosystem: "docker"
+    directory: "dockerfiles/"
+    schedule:
+      interval: "weekly"
+
+  # Actions used in the GitHub workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
