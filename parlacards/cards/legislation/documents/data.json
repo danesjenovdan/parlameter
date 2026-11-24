@@ -51,6 +51,40 @@
         "name": "Obvestilo o dodelitvi",
         "tags": [],
         "group": "obravnava MDT - ratifikacija"
+      },
+      {
+        "id": 1125622,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ff0186a87fb4b76468c5b5d2dd3b7e70cd60caccf30a7586bee2afbcfa3c4b5d",
+        "name": "Obvestilo o dodelitvi",
+        "tags": [],
+        "group": "law"
+      },
+      {
+        "id": 2125622,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ff0186a87fb4b76468c5b5d2dd3b7e70cd60caccf30a7586bee2afbcfa3c4b5d",
+        "name": "Obvestilo o dodelitvi",
+        "tags": [],
+        "group": ""
+      },
+      {
+        "id": 3125622,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ff0186a87fb4b76468c5b5d2dd3b7e70cd60caccf30a7586bee2afbcfa3c4b5d",
+        "name": "Obvestilo o dodelitvi",
+        "tags": [],
+        "group": null
+      },
+      {
+        "id": 4125622,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ff0186a87fb4b76468c5b5d2dd3b7e70cd60caccf30a7586bee2afbcfa3c4b5d",
+        "name": "Obvestilo o dodelitvi",
+        "tags": []
+      },
+      {
+        "id": 5125622,
+        "url": "http://imss.dz-rs.si/IMiS/ImisAdmin.nsf/ImisnetAgent?OpenAgent&2&DZ-MSS-01/ff0186a87fb4b76468c5b5d2dd3b7e70cd60caccf30a7586bee2afbcfa3c4b5d",
+        "name": "Obvestilo o dodelitvi",
+        "tags": [],
+        "group": "nekaj poljubnega"
       }
     ],
     "mandate": {
