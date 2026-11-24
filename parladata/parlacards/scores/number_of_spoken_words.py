@@ -10,14 +10,17 @@ from parladata.models.speech import Speech
 
 def calculate_number_of_spoken_words(speeches):
     number_of_spoken_words = 0
-    for speech in speeches:
+    for lemma_speech, speech in speeches:
         # if there is no lemmatized_content we should bail
         # the data is not ready to run this analysis
-        if not speech:
+        if not lemma_speech:
+            # check if speech has only punctuation
+            if speech and all(char in ".,;:!?()[]{}" for char in speech):
+                continue
             raise ValueError("Lemmatized speech is missing.")
 
         # count spaces and add 1
-        number_of_spoken_words += speech.count(" ") + 1
+        number_of_spoken_words += lemma_speech.count(" ") + 1
 
     return number_of_spoken_words
 
@@ -31,7 +34,7 @@ def save_person_number_of_spoken_words(person, playing_field, timestamp=None):
     speeches = (
         Speech.objects.filter_valid_speeches(timestamp)
         .filter(speaker=person, session__mandate=mandate, start_time__lte=timestamp)
-        .values_list("lemmatized_content", flat=True)
+        .values_list("lemmatized_content", "content")
     )
 
     PersonNumberOfSpokenWords(
